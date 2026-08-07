@@ -3,24 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>M6 Renew - Total House Rehabilitation & Renovation Hub</title>
-  <meta name="description" content="Official project tracker and before/after showcase for the M6 house total rehabilitation and modern architectural renovation.">
+  <title>M6 Renew - House Total Rehabilitation Hub | Myrteveien 6</title>
+  <meta name="description" content="Official project tracker and before/after showcase for the Myrteveien 6 (M6) total house rehabilitation in Tolvsrød/Tønsberg.">
   <link rel="stylesheet" href="styles.css">
-  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
-  <!-- Sticky Header -->
+  <!-- Sticky Header Nav -->
   <header>
     <div class="header-container">
       <div class="brand">
         <i data-lucide="home"></i> M6 RENEW
-        <span class="brand-badge">REHAB HUB</span>
+        <span class="brand-badge">TOLVSRØD</span>
       </div>
       <nav>
-        <a href="#visualizer" class="nav-link active">Before & After</a>
-        <a href="#roadmap" class="nav-link">Master Roadmap</a>
+        <a href="index.html" class="nav-link active">Main Overview</a>
+        <a href="#visualizer" class="nav-link">Before & After</a>
+        <a href="sequence.html" class="nav-link subpage-link">
+          <i data-lucide="layers" style="width:14px; vertical-align:-1px;"></i> Building Sequence
+        </a>
         <a href="#notebooklm" class="nav-link">NotebookLM AI</a>
         <a href="#budget" class="nav-link">Budget Tracker</a>
       </nav>
@@ -33,52 +35,108 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
+      <div style="display:inline-flex; align-items:center; gap:0.5rem; background:rgba(56,189,248,0.1); border:1px solid var(--border-glow); padding:0.3rem 0.8rem; border-radius:20px; font-size:0.85rem; color:var(--accent-cyan); margin-bottom:1rem;">
+        <i data-lucide="map-pin" style="width:14px;"></i> Myrteveien 6, 3152 Tolvsrød (Gnr 140 / Bnr 371)
+      </div>
       <h1>M6 Total House Rehabilitation</h1>
       <p class="hero-subtitle">
-        Planning, tracking, and showcasing the complete architectural transformation of M6 Residence from a 1974 vintage dwelling into an ultra-modern Scandinavian home.
+        Central planning & progress hub for transforming a 1974 vintage family home into a high-performance Scandinavian architectural residence. Powered by TEK17 engineering and Google NotebookLM AI synthesis.
       </p>
+
       <div class="stats-grid">
         <div class="stat-card">
           <div class="stat-value">220 m²</div>
-          <div class="stat-label">Post-Rehab Area</div>
+          <div class="stat-label">Total Living Area</div>
         </div>
         <div class="stat-card">
-          <div class="stat-value">Phase 3</div>
-          <div class="stat-label">Current Stage (HVAC)</div>
+          <div class="stat-value">Stage 6</div>
+          <div class="stat-label">Technical Rough-In</div>
         </div>
         <div class="stat-card">
-          <div class="stat-value">44.7%</div>
-          <div class="stat-label">Budget Spent (€98.5k)</div>
+          <div class="stat-value">€98.5k</div>
+          <div class="stat-label">Spent of €220k Budget</div>
         </div>
       </div>
     </div>
     
-    <!-- Hero Card Quick Highlights -->
-    <div class="card notebooklm-card" style="margin:0;">
+    <!-- Hero Project Summary Card -->
+    <div class="card notebooklm-card">
       <div class="notebooklm-header">
         <div class="notebook-icon"><i data-lucide="cpu"></i></div>
         <div>
-          <h3>NotebookLM Project Linked</h3>
-          <p style="color:var(--text-muted); font-size:0.88rem;">Connected to <strong>m6 - renew</strong></p>
+          <h3>NotebookLM Integration</h3>
+          <p style="color:var(--text-muted); font-size:0.85rem;">Project: <strong>m6 - renew</strong></p>
         </div>
       </div>
-      <p style="font-size:0.9rem; color: var(--text-muted); margin-bottom: 1.2rem;">
-        All renovation blueprints, contractor quotes, U-value calculations, and electrical schematics are synced with Google NotebookLM for AI insight generation.
+      <p style="font-size:0.88rem; color: var(--text-muted); margin-bottom: 1.2rem;">
+        Synchronized with 5 structured Markdown source documents covering U-values, NIBE heat pump, Schüco triple-glazing, radon barrier membranes, and contractor contracts.
       </p>
-      <button class="btn-sm" style="width:100%; padding:0.7rem;" onclick="openNotebookModal()">
-        <i data-lucide="file-text"></i> View Synced Sources & Prompts
-      </button>
+      <div style="display:flex; gap:0.75rem;">
+        <button class="btn-sm" style="flex:1; justify-content:center; padding:0.6rem;" onclick="openNotebookModal()">
+          <i data-lucide="file-text" style="width:14px;"></i> View Sources
+        </button>
+        <a href="sequence.html" class="btn-sm" style="flex:1; justify-content:center; padding:0.6rem; background:var(--gradient-brand); color:white; border:none; text-decoration:none;">
+          <i data-lucide="arrow-right" style="width:14px;"></i> Sub Page: Sequence
+        </a>
+      </div>
     </div>
   </section>
 
   <div class="container">
+
+    <!-- Project Highlight Feature Grid -->
+    <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:1.5rem; margin-bottom:4rem;">
+      <div class="card">
+        <div style="color:var(--accent-cyan); font-size:1.8rem; margin-bottom:0.5rem;"><i data-lucide="shield-check"></i></div>
+        <h3 style="font-size:1.2rem; margin-bottom:0.4rem;">Thermal Envelope Upgrade</h3>
+        <p style="font-size:0.88rem; color:var(--text-muted);">
+          200mm Rockwool exterior wall insulation + Shou Sugi Ban burned timber cladding + Ruukki metal roofing with 350mm ceiling fiber insulation (Ug ≤ 0.5 W/m²K).
+        </p>
+      </div>
+
+      <div class="card">
+        <div style="color:var(--accent-emerald); font-size:1.8rem; margin-bottom:0.5rem;"><i data-lucide="flame"></i></div>
+        <h3 style="font-size:1.2rem; margin-bottom:0.4rem;">HVAC & Hydronic Comfort</h3>
+        <p style="font-size:0.88rem; color:var(--text-muted);">
+          NIBE F2120 Air-to-Water heat pump with Uponor hydronic floor heating loops across all 3 levels & Systemair heat recovery ventilation (>88% efficiency).
+        </p>
+      </div>
+
+      <div class="card">
+        <div style="color:var(--accent-purple); font-size:1.8rem; margin-bottom:0.5rem;"><i data-lucide="layout"></i></div>
+        <h3 style="font-size:1.2rem; margin-bottom:0.4rem;">65 m² Open-Concept Zone</h3>
+        <p style="font-size:0.88rem; color:var(--text-muted);">
+          Insertion of HEB 220 structural steel beam replacing 1974 partition walls, integrating high ceiling acoustics, waterfall marble island, and fireplace.
+        </p>
+      </div>
+    </div>
+
+    <!-- Subpage Callout Card: Standard & Recommended Building Order -->
+    <section class="card" style="background: linear-gradient(135deg, rgba(20,27,41,0.95) 0%, rgba(30,41,59,0.95) 100%); border: 1px solid var(--border-glow); margin-bottom: 4rem; padding: 2.5rem;">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.5rem;">
+        <div style="max-width:750px;">
+          <div style="font-size:0.8rem; font-weight:700; color:var(--accent-cyan); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:0.4rem;">
+            DEDICATED SUB PAGE GUIDE
+          </div>
+          <h2 style="font-size:2rem; margin-bottom:0.6rem;">Standard & Recommended Building Order (Byggerekkefølge)</h2>
+          <p style="color:var(--text-muted); font-size:0.95rem;">
+            Explore the recommended 9-stage engineering sequence for total house rehabilitation. Learn critical dependencies, technical guidelines, and common out-of-order errors to prevent moisture entrapment and costly demolition rework.
+          </p>
+        </div>
+        <div>
+          <a href="sequence.html" class="notebooklm-btn" style="padding:0.8rem 1.8rem; font-size:1rem;">
+            <i data-lucide="layers"></i> Explore Building Sequence Sub Page →
+          </a>
+        </div>
+      </div>
+    </section>
 
     <!-- Interactive Before & After Visualizer -->
     <section id="visualizer" class="visualizer-section">
       <div class="section-header">
         <div>
           <h2 class="section-title">Before & After Visualizer</h2>
-          <p class="section-desc">Drag the interactive slider to compare the original 1974 condition with the target modern rehabilitation design.</p>
+          <p class="section-desc">Drag the interactive slider to compare original 1974 conditions with target modern rehabilitation designs.</p>
         </div>
         <div class="view-controls">
           <button class="toggle-btn active" id="btnSliderView" onclick="setViewMode('slider')">
@@ -92,7 +150,7 @@
 
       <!-- Room Selection Tabs -->
       <div class="room-tabs" id="roomTabs">
-        <button class="room-btn active" onclick="switchRoom('exterior')">🏠 Exterior & Facade</button>
+        <button class="room-btn active" onclick="switchRoom('exterior')">🏠 Exterior Facade</button>
         <button class="room-btn" onclick="switchRoom('living')">🛋️ Open Living Room</button>
         <button class="room-btn" onclick="switchRoom('kitchen')">🍳 Kitchen & Island</button>
         <button class="room-btn" onclick="switchRoom('bathroom')">🚿 Master Bathroom</button>
@@ -100,25 +158,18 @@
 
       <!-- Split Slider Container -->
       <div class="slider-wrapper" id="sliderContainer">
-        <!-- AFTER image (background layer) -->
         <img id="imgAfter" src="assets/images/exterior_after.jpg" alt="After Renovation" class="slider-img img-after">
-        
-        <!-- BEFORE image (clipped top layer) -->
         <div class="img-before-wrapper" id="beforeWrapper">
           <img id="imgBefore" src="assets/images/exterior_before.jpg" alt="Before Renovation">
         </div>
-
-        <!-- Handle Line & Drag Button -->
         <div class="slider-handle" id="sliderHandle">
           <div class="slider-handle-button">↔</div>
         </div>
-
-        <!-- Visual Badges -->
-        <div class="badge-before">BEFORE (1974 Vintage)</div>
+        <div class="badge-before">BEFORE (1974 Original)</div>
         <div class="badge-after">AFTER (2026 Target)</div>
       </div>
 
-      <!-- Side-by-Side View (Toggled via JS) -->
+      <!-- Side-by-Side View -->
       <div class="side-by-side-wrapper" id="sideContainer">
         <div class="side-card">
           <span class="badge-before">BEFORE</span>
@@ -135,7 +186,7 @@
         <div>
           <h3 class="room-info-title" id="roomTitle">Exterior & Facade Transformation</h3>
           <p class="room-info-details" id="roomDetails">
-            Replacing degraded wooden siding with Shou Sugi Ban burned timber, installing triple-glazed Schüco sliding glass walls, and adding integrated warm architectural exterior lighting.
+            Replacing degraded 1974 wooden siding with Shou Sugi Ban burned timber, installing triple-glazed Schüco sliding glass walls, and adding integrated warm architectural exterior lighting.
           </p>
         </div>
         <div>
@@ -144,119 +195,49 @@
       </div>
     </section>
 
-    <!-- Roadmap & NotebookLM Panel Grid -->
-    <div class="grid-2col" id="roadmap">
-      <!-- Master Timeline Card -->
-      <div class="card">
-        <div class="section-header" style="margin-bottom: 1.5rem; padding-bottom: 0.5rem;">
-          <div>
-            <h2 style="font-size:1.5rem;">Master Rehabilitation Roadmap</h2>
-            <p style="font-size:0.85rem; color:var(--text-muted);">Interactive phase checklist & current milestone status</p>
-          </div>
-          <span class="status-badge status-progress">Overall Progress: 62%</span>
-        </div>
-
-        <div class="timeline">
-          <!-- Phase 1 -->
-          <div class="timeline-item completed">
-            <div class="timeline-dot"></div>
-            <div class="timeline-header">
-              <span class="timeline-title">Phase 1: Permits & Demolition</span>
-              <span class="status-badge status-completed">Completed</span>
-            </div>
-            <p style="font-size:0.88rem; color:var(--text-muted);">Gutting interior walls, structural engineering approval, HEB 220 steel beam installation.</p>
-            <ul class="checklist">
-              <li class="checklist-item"><input type="checkbox" checked disabled> Municipal building permit approval</li>
-              <li class="checklist-item"><input type="checkbox" checked disabled> Structural beam insertion for open ceiling</li>
-              <li class="checklist-item"><input type="checkbox" checked disabled> Debris container disposal</li>
-            </ul>
-          </div>
-
-          <!-- Phase 2 -->
-          <div class="timeline-item completed">
-            <div class="timeline-dot"></div>
-            <div class="timeline-header">
-              <span class="timeline-title">Phase 2: Building Envelope & Insulation</span>
-              <span class="status-badge status-completed">Completed</span>
-            </div>
-            <p style="font-size:0.88rem; color:var(--text-muted);">350mm ceiling insulation, Schüco triple-pane windows, airtight INTELLO membrane.</p>
-            <ul class="checklist">
-              <li class="checklist-item"><input type="checkbox" checked disabled> Standing seam metal roof & PV mounts</li>
-              <li class="checklist-item"><input type="checkbox" checked disabled> Triple glass Schüco frames mounted</li>
-            </ul>
-          </div>
-
-          <!-- Phase 3 -->
-          <div class="timeline-item in-progress">
-            <div class="timeline-dot"></div>
-            <div class="timeline-header">
-              <span class="timeline-title">Phase 3: HVAC & Technical Utilities</span>
-              <span class="status-badge status-progress">In Progress</span>
-            </div>
-            <p style="font-size:0.88rem; color:var(--text-muted);">NIBE Air-to-Water Heat Pump, hydronic floor loops, 3-phase 63A main panel upgrade.</p>
-            <ul class="checklist">
-              <li class="checklist-item"><input type="checkbox" checked onchange="saveProgress()"> Heat pump outdoor unit set</li>
-              <li class="checklist-item"><input type="checkbox" id="taskFloor" onchange="saveProgress()"> Hydronic floor heating loops laying</li>
-              <li class="checklist-item"><input type="checkbox" id="taskHrv" onchange="saveProgress()"> HRV heat recovery ventilation ducts</li>
-            </ul>
-          </div>
-
-          <!-- Phase 4 -->
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-header">
-              <span class="timeline-title">Phase 4: Interior Finishes & Kitchen</span>
-              <span class="status-badge status-planned">Planned</span>
-            </div>
-            <p style="font-size:0.88rem; color:var(--text-muted);">Level 4 plastering, oak flooring, custom marble island kitchen, spa bathroom tiles.</p>
-          </div>
+    <!-- NotebookLM Panel & Source Export -->
+    <section id="notebooklm" class="card notebooklm-card" style="margin-bottom: 4rem;">
+      <div class="notebooklm-header">
+        <div class="notebook-icon"><i data-lucide="brain"></i></div>
+        <div>
+          <h3>NotebookLM Project Sources ("m6 - renew")</h3>
+          <p style="font-size:0.85rem; color:var(--text-muted);">Synchronized Markdown repository context files ready for AI ingestion</p>
         </div>
       </div>
 
-      <!-- NotebookLM Quick Actions Card -->
-      <div id="notebooklm" class="card notebooklm-card">
-        <div class="notebooklm-header">
-          <div class="notebook-icon"><i data-lucide="brain"></i></div>
-          <div>
-            <h3>NotebookLM Sources</h3>
-            <p style="font-size:0.85rem; color:var(--text-muted);">Directly sync repo context with NotebookLM</p>
-          </div>
+      <div class="sources-list" style="display:grid; grid-template-columns: repeat(2, 1fr); gap:1rem;">
+        <div class="source-item">
+          <span>📄 01_PROJECT_OVERVIEW.md</span>
+          <button class="btn-sm" onclick="copySourceContent(1)">Copy Text</button>
         </div>
+        <div class="source-item">
+          <span>📄 02_TECHNICAL_SPECS.md</span>
+          <button class="btn-sm" onclick="copySourceContent(2)">Copy Text</button>
+        </div>
+        <div class="source-item">
+          <span>📄 03_BUDGET_CONTRACTORS.md</span>
+          <button class="btn-sm" onclick="copySourceContent(3)">Copy Text</button>
+        </div>
+        <div class="source-item">
+          <span>📄 04_RENOVATION_TIMELINE.md</span>
+          <button class="btn-sm" onclick="copySourceContent(4)">Copy Text</button>
+        </div>
+        <div class="source-item" style="grid-column: span 2;">
+          <span>📄 05_BUILDING_SEQUENCE.md (Standard 9-Stage Order)</span>
+          <button class="btn-sm" onclick="copySourceContent(5)">Copy Text</button>
+        </div>
+      </div>
 
-        <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom: 1rem;">
-          Upload these Markdown documentation files into your <strong>m6 - renew</strong> NotebookLM project workspace:
+      <div style="background: rgba(0,0,0,0.3); border:1px solid var(--border-glow); padding: 1.2rem; border-radius: var(--radius-md);">
+        <h4 style="font-size:0.95rem; margin-bottom: 0.5rem; color:var(--accent-cyan);">💡 Suggested NotebookLM Prompt</h4>
+        <p style="font-size:0.85rem; color:var(--text-muted); font-style:italic;" id="promptText">
+          "Analyze the M6 building sequence and explain why Stage 5 (Envelope & Weather-tightness) must be certified before starting Stage 6 (Hydronic floor heating & PEX plumbing)."
         </p>
-
-        <div class="sources-list">
-          <div class="source-item">
-            <span>📄 01_PROJECT_OVERVIEW.md</span>
-            <button class="btn-sm" onclick="copySourceContent(1)">Copy Text</button>
-          </div>
-          <div class="source-item">
-            <span>📄 02_TECHNICAL_SPECS.md</span>
-            <button class="btn-sm" onclick="copySourceContent(2)">Copy Text</button>
-          </div>
-          <div class="source-item">
-            <span>📄 03_BUDGET_CONTRACTORS.md</span>
-            <button class="btn-sm" onclick="copySourceContent(3)">Copy Text</button>
-          </div>
-          <div class="source-item">
-            <span>📄 04_RENOVATION_TIMELINE.md</span>
-            <button class="btn-sm" onclick="copySourceContent(4)">Copy Text</button>
-          </div>
-        </div>
-
-        <div style="background: rgba(0,0,0,0.3); border:1px solid var(--border-glow); padding: 1rem; border-radius: var(--radius-sm);">
-          <h4 style="font-size:0.95rem; margin-bottom: 0.5rem; color:var(--accent-cyan);">💡 Suggested NotebookLM Prompt</h4>
-          <p style="font-size:0.82rem; color:var(--text-muted); font-style:italic;" id="promptText">
-            "Based on technical specs, what is the calculated annual energy savings of replacing the 1974 wall cavity with 200mm Rockwool and installing the NIBE Heat Pump?"
-          </p>
-          <button class="btn-sm" style="margin-top:0.75rem; width:100%;" onclick="copyPrompt()">
-            <i data-lucide="copy" style="width:12px; vertical-align:-1px;"></i> Copy Prompt to Clipboard
-          </button>
-        </div>
+        <button class="btn-sm" style="margin-top:0.75rem; width:100%; justify-content:center;" onclick="copyPrompt()">
+          <i data-lucide="copy" style="width:14px;"></i> Copy Prompt to Clipboard
+        </button>
       </div>
-    </div>
+    </section>
 
     <!-- Budget Tracker Section -->
     <section id="budget" class="card" style="margin-bottom: 4rem;">
@@ -287,35 +268,35 @@
         </thead>
         <tbody>
           <tr>
-            <td><strong>Demolition & Structural</strong></td>
+            <td><strong>Demolition & Structural Steel</strong></td>
             <td>€28,000</td>
             <td>€29,200</td>
             <td><span class="status-badge status-completed">Completed</span></td>
             <td>Nordic Build AS</td>
           </tr>
           <tr>
-            <td><strong>Roofing & Windows</strong></td>
+            <td><strong>Roofing, Insulation & Windows</strong></td>
             <td>€48,000</td>
             <td>€46,500</td>
             <td><span class="status-badge status-completed">Completed</span></td>
             <td>Schüco / Ruukki</td>
           </tr>
           <tr>
-            <td><strong>HVAC & Electrical</strong></td>
+            <td><strong>HVAC & Electrical Rough-In</strong></td>
             <td>€42,000</td>
             <td>€31,000</td>
             <td><span class="status-badge status-progress">In Progress</span></td>
             <td>Thermic Flow AS / Volta Tech</td>
           </tr>
           <tr>
-            <td><strong>Insulation & Cladding</strong></td>
+            <td><strong>Exterior Shou Sugi Ban Cladding</strong></td>
             <td>€35,000</td>
             <td>€12,000</td>
             <td><span class="status-badge status-progress">In Progress</span></td>
             <td>Shou Sugi Ban Timber Co.</td>
           </tr>
           <tr>
-            <td><strong>Interior & Kitchen</strong></td>
+            <td><strong>Interior Oak & Kitchen Island</strong></td>
             <td>€45,000</td>
             <td>€11,000</td>
             <td><span class="status-badge status-planned">Planned</span></td>
@@ -338,7 +319,7 @@
   <div class="modal-overlay" id="notebookModal">
     <div class="modal-card">
       <div class="modal-header">
-        <h3><i data-lucide="sparkles" style="color:var(--accent-cyan)"></i> NotebookLM Connection Guide</h3>
+        <h3><i data-lucide="sparkles" style="color:var(--accent-cyan)"></i> NotebookLM Integration Guide</h3>
         <button class="close-modal" onclick="closeNotebookModal()">&times;</button>
       </div>
       <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom: 1.5rem;">
@@ -352,24 +333,20 @@
         <li>Use NotebookLM's Audio Overview feature to generate a podcast-style discussion summarizing the rehabilitation plan!</li>
       </ol>
 
-      <button class="btn-sm" style="width:100%; padding:0.8rem; background:var(--gradient-brand); color:white; border:none; border-radius:30px; font-weight:700;" onclick="closeNotebookModal()">
+      <button class="btn-sm" style="width:100%; padding:0.8rem; background:var(--gradient-brand); color:white; border:none; border-radius:30px; font-weight:700; justify-content:center;" onclick="closeNotebookModal()">
         Got It! Close Guide
       </button>
     </div>
   </div>
 
-  <!-- Toast Notification element -->
-  <div class="toast" id="toastNotification">Notification Message</div>
+  <div class="toast" id="toastNotification">Notification</div>
 
-  <!-- Footer -->
   <footer>
-    <p>M6 Renew - House Total Rehabilitation & Architectural Modernization Project</p>
-    <p style="margin-top:0.5rem; font-size:0.8rem; opacity:0.6;">Repository: <a href="https://github.com/magnuskiro/m6-renew" target="_blank">github.com/magnuskiro/m6-renew</a> • NotebookLM Connected: "m6 - renew"</p>
+    <p>M6 Renew - Myrteveien 6 House Total Rehabilitation Project</p>
+    <p style="margin-top:0.5rem; font-size:0.8rem; opacity:0.6;">Repository: <a href="https://github.com/magnuskiro-visma/m6-renew" target="_blank">github.com/magnuskiro-visma/m6-renew</a> • NotebookLM Project: "m6 - renew"</p>
   </footer>
 
   <script src="app.js"></script>
-  <script>
-    lucide.createIcons();
-  </script>
+  <script>lucide.createIcons();</script>
 </body>
 </html>

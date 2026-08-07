@@ -1,4 +1,4 @@
-// M6 Renew - Interactive Application Logic
+// M6 Renew - Multi-Page Application Logic
 
 // Room Data Definitions
 const roomsData = {
@@ -31,7 +31,7 @@ const roomsData = {
     details: 'Transforming original dated bath into a minimalist luxury spa with Italian large-format porcelain slabs, micro-cement walls, concealed thermostatic valves, walk-in rain shower, freestanding tub, and integrated cedar sauna.',
     status: 'Plumbing Rough-In',
     statusClass: 'status-progress',
-    beforeImg: 'assets/images/living_before.jpg', // fallback high quality illustration
+    beforeImg: 'assets/images/living_before.jpg',
     afterImg: 'assets/images/living_after.jpg'
   }
 };
@@ -39,24 +39,14 @@ const roomsData = {
 let currentRoom = 'exterior';
 let isDragging = false;
 
-// DOM Elements
-const sliderContainer = document.getElementById('sliderContainer');
-const beforeWrapper = document.getElementById('beforeWrapper');
-const sliderHandle = document.getElementById('sliderHandle');
-const imgBefore = document.getElementById('imgBefore');
-const imgAfter = document.getElementById('imgAfter');
-
-const sideContainer = document.getElementById('sideContainer');
-const sideImgBefore = document.getElementById('sideImgBefore');
-const sideImgAfter = document.getElementById('sideImgAfter');
-
-const roomTitle = document.getElementById('roomTitle');
-const roomDetails = document.getElementById('roomDetails');
-const roomStatusBadge = document.getElementById('roomStatusBadge');
-
 // Initialize Visualizer Slider Drag Functionality
 function initSlider() {
-  if (!sliderContainer || !sliderHandle) return;
+  const sliderContainer = document.getElementById('sliderContainer');
+  const sliderHandle = document.getElementById('sliderHandle');
+  const beforeWrapper = document.getElementById('beforeWrapper');
+  const imgBefore = document.getElementById('imgBefore');
+
+  if (!sliderContainer || !sliderHandle || !beforeWrapper || !imgBefore) return;
 
   function moveSlider(clientX) {
     const rect = sliderContainer.getBoundingClientRect();
@@ -67,53 +57,37 @@ function initSlider() {
     const percent = (x / rect.width) * 100;
     beforeWrapper.style.width = `${percent}%`;
     sliderHandle.style.left = `${percent}%`;
-    
-    // Ensure image inner width matches container width so it clips properly without distortion
     imgBefore.style.width = `${rect.width}px`;
   }
 
-  // Mouse Events
   sliderHandle.addEventListener('mousedown', (e) => {
     isDragging = true;
     e.preventDefault();
   });
 
-  window.addEventListener('mouseup', () => {
-    isDragging = false;
-  });
-
+  window.addEventListener('mouseup', () => { isDragging = false; });
   window.addEventListener('mousemove', (e) => {
     if (!isDragging) return;
     moveSlider(e.clientX);
   });
 
-  // Click anywhere on container to move handle
   sliderContainer.addEventListener('click', (e) => {
     if (e.target.closest('.slider-handle-button')) return;
     moveSlider(e.clientX);
   });
 
-  // Touch Events for Mobile
-  sliderHandle.addEventListener('touchstart', () => {
-    isDragging = true;
-  });
-
-  window.addEventListener('touchend', () => {
-    isDragging = false;
-  });
-
+  sliderHandle.addEventListener('touchstart', () => { isDragging = true; });
+  window.addEventListener('touchend', () => { isDragging = false; });
   window.addEventListener('touchmove', (e) => {
     if (!isDragging || !e.touches[0]) return;
     moveSlider(e.touches[0].clientX);
   });
 
-  // Handle window resize
   window.addEventListener('resize', () => {
     const rect = sliderContainer.getBoundingClientRect();
-    imgBefore.style.width = `${rect.width}px`;
+    if (imgBefore) imgBefore.style.width = `${rect.width}px`;
   });
 
-  // Initial calculation
   const rect = sliderContainer.getBoundingClientRect();
   imgBefore.style.width = `${rect.width}px`;
 }
@@ -124,59 +98,76 @@ function switchRoom(roomKey) {
   currentRoom = roomKey;
   const data = roomsData[roomKey];
 
-  // Update button active state
+  const imgBefore = document.getElementById('imgBefore');
+  const imgAfter = document.getElementById('imgAfter');
+  const sideImgBefore = document.getElementById('sideImgBefore');
+  const sideImgAfter = document.getElementById('sideImgAfter');
+  const beforeWrapper = document.getElementById('beforeWrapper');
+  const sliderHandle = document.getElementById('sliderHandle');
+  const sliderContainer = document.getElementById('sliderContainer');
+
+  const roomTitle = document.getElementById('roomTitle');
+  const roomDetails = document.getElementById('roomDetails');
+  const roomStatusBadge = document.getElementById('roomStatusBadge');
+
   const buttons = document.querySelectorAll('.room-btn');
   buttons.forEach(btn => btn.classList.remove('active'));
-  event.currentTarget.classList.add('active');
+  if (event && event.currentTarget) event.currentTarget.classList.add('active');
 
-  // Update Images
-  imgBefore.src = data.beforeImg;
-  imgAfter.src = data.afterImg;
-  sideImgBefore.src = data.beforeImg;
-  sideImgAfter.src = data.afterImg;
+  if (imgBefore) imgBefore.src = data.beforeImg;
+  if (imgAfter) imgAfter.src = data.afterImg;
+  if (sideImgBefore) sideImgBefore.src = data.beforeImg;
+  if (sideImgAfter) sideImgAfter.src = data.afterImg;
 
-  // Reset handle position to center 50%
-  beforeWrapper.style.width = '50%';
-  sliderHandle.style.left = '50%';
+  if (beforeWrapper) beforeWrapper.style.width = '50%';
+  if (sliderHandle) sliderHandle.style.left = '50%';
 
-  // Update Info Text
-  roomTitle.textContent = data.title;
-  roomDetails.textContent = data.details;
-  roomStatusBadge.textContent = data.status;
-  roomStatusBadge.className = `status-badge ${data.statusClass}`;
+  if (roomTitle) roomTitle.textContent = data.title;
+  if (roomDetails) roomDetails.textContent = data.details;
+  if (roomStatusBadge) {
+    roomStatusBadge.textContent = data.status;
+    roomStatusBadge.className = `status-badge ${data.statusClass}`;
+  }
 
-  // Recalculate inner image bounds
-  const rect = sliderContainer.getBoundingClientRect();
-  imgBefore.style.width = `${rect.width}px`;
+  if (sliderContainer && imgBefore) {
+    const rect = sliderContainer.getBoundingClientRect();
+    imgBefore.style.width = `${rect.width}px`;
+  }
 }
 
 // View Mode Toggle (Slider vs Side-by-Side)
 function setViewMode(mode) {
+  const sliderContainer = document.getElementById('sliderContainer');
+  const sideContainer = document.getElementById('sideContainer');
   const btnSlider = document.getElementById('btnSliderView');
   const btnSide = document.getElementById('btnSideView');
+  const imgBefore = document.getElementById('imgBefore');
 
   if (mode === 'slider') {
-    sliderContainer.style.display = 'block';
-    sideContainer.style.display = 'none';
-    btnSlider.classList.add('active');
-    btnSide.classList.remove('active');
-    const rect = sliderContainer.getBoundingClientRect();
-    imgBefore.style.width = `${rect.width}px`;
+    if (sliderContainer) sliderContainer.style.display = 'block';
+    if (sideContainer) sideContainer.style.display = 'none';
+    if (btnSlider) btnSlider.classList.add('active');
+    if (btnSide) btnSide.classList.remove('active');
+    if (sliderContainer && imgBefore) {
+      const rect = sliderContainer.getBoundingClientRect();
+      imgBefore.style.width = `${rect.width}px`;
+    }
   } else {
-    sliderContainer.style.display = 'none';
-    sideContainer.style.display = 'grid';
-    btnSide.classList.add('active');
-    btnSlider.classList.remove('active');
+    if (sliderContainer) sliderContainer.style.display = 'none';
+    if (sideContainer) sideContainer.style.display = 'grid';
+    if (btnSide) btnSide.classList.add('active');
+    if (btnSlider) btnSlider.classList.remove('active');
   }
 }
 
 // Copy NotebookLM Source Text
 function copySourceContent(sourceId) {
   const sourceTexts = {
-    1: "M6 Rehabilitation - Project Overview\nLocation: M6 Residence | Target Living Area: 220 m²\nGoal: Transform 1974 vintage building into zero-net ready Scandinavian home with TEK17 thermal specs.",
+    1: "M6 Rehabilitation - Project Overview\nLocation: Myrteveien 6, Tolvsrød (Gnr 140 / Bnr 371)\nGoal: Transform 1974 vintage building into zero-net ready Scandinavian home with TEK17 thermal specs.",
     2: "M6 Technical Specs:\nWall insulation: 200mm Rockwool exterior + Shou Sugi Ban timber cladding.\nHeat Source: NIBE Air-to-Water inverter heat pump.\nWindows: Schüco triple-pane aluminum (Uw = 0.78 W/m²K).",
     3: "M6 Budget Breakdown:\nTotal Allocated: €220,000 | Spent to date: €98,500\nKey Contractors: Nordic Build AS, Thermic Flow AS, Volta Tech AS.",
-    4: "M6 Master Timeline:\nPhase 1: Permits & Demolition (Done)\nPhase 2: Envelope & Roofing (Done)\nPhase 3: Technical & Floor Heating (In Progress)\nPhase 4: Interior & Kitchen (Planned)"
+    4: "M6 Master Timeline:\nPhase 1: Permits & Demolition (Done)\nPhase 2: Envelope & Roofing (Done)\nPhase 3: Technical & Floor Heating (In Progress)\nPhase 4: Interior & Kitchen (Planned)",
+    5: "M6 Recommended 9-Stage Building Sequence (Byggerekkefølge):\nStage 1: Permits & Rigging\nStage 2: Demolition & Utrensing\nStage 3: Foundation, Drainage & Radon\nStage 4: Structural Steel (HEB 220)\nStage 5: Building Envelope Weather-tightness\nStage 6: Technical Rough-In (Electrical, PEX, HRV)\nStage 7: Insulation, Vapor Barrier (INTELLO) & Boarding\nStage 8: Wet Rooms (BVN) & Oak Flooring\nStage 9: Commissioning & Occupancy Permit"
   };
 
   const text = sourceTexts[sourceId] || "";
@@ -187,24 +178,28 @@ function copySourceContent(sourceId) {
 
 // Copy NotebookLM Prompt
 function copyPrompt() {
-  const prompt = document.getElementById('promptText').innerText;
-  navigator.clipboard.writeText(prompt).then(() => {
+  const promptEl = document.getElementById('promptText');
+  if (!promptEl) return;
+  navigator.clipboard.writeText(promptEl.innerText).then(() => {
     showToast("NotebookLM prompt copied!");
   });
 }
 
 // Modal Controls
 function openNotebookModal() {
-  document.getElementById('notebookModal').classList.add('active');
+  const modal = document.getElementById('notebookModal');
+  if (modal) modal.classList.add('active');
 }
 
 function closeNotebookModal() {
-  document.getElementById('notebookModal').classList.remove('active');
+  const modal = document.getElementById('notebookModal');
+  if (modal) modal.classList.remove('active');
 }
 
 // Toast Notifications
 function showToast(message) {
   const toast = document.getElementById('toastNotification');
+  if (!toast) return;
   toast.textContent = message;
   toast.classList.add('show');
   setTimeout(() => {
@@ -212,24 +207,7 @@ function showToast(message) {
   }, 3000);
 }
 
-// Save Checklist state to LocalStorage
-function saveProgress() {
-  const floorChecked = document.getElementById('taskFloor')?.checked;
-  const hrvChecked = document.getElementById('taskHrv')?.checked;
-  localStorage.setItem('m6_task_floor', floorChecked);
-  localStorage.setItem('m6_task_hrv', hrvChecked);
-  showToast("Progress saved!");
-}
-
-function loadProgress() {
-  const floorChecked = localStorage.getItem('m6_task_floor') === 'true';
-  const hrvChecked = localStorage.getItem('m6_task_hrv') === 'true';
-  if (document.getElementById('taskFloor')) document.getElementById('taskFloor').checked = floorChecked;
-  if (document.getElementById('taskHrv')) document.getElementById('taskHrv').checked = hrvChecked;
-}
-
 // On Page Load
 document.addEventListener('DOMContentLoaded', () => {
   initSlider();
-  loadProgress();
 });

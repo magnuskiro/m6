@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Standard Building Order & Sequence | M6 Renew Sub Page</title>
+  <meta name="description" content="Recommended 9-stage building sequence and technical execution order for total house rehabilitation at Myrteveien 6.">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Sticky Header Nav -->
+  <header>
+    <div class="header-container">
+      <div class="brand">
+        <i data-lucide="home"></i> M6 RENEW
+        <span class="brand-badge">SUB PAGE</span>
+      </div>
+      <nav>
+        <a href="index.html" class="nav-link">Main Overview</a>
+        <a href="index.html#visualizer" class="nav-link">Before & After</a>
+        <a href="sequence.html" class="nav-link subpage-link active">
+          <i data-lucide="layers" style="width:14px; vertical-align:-1px;"></i> Building Sequence
+        </a>
+        <a href="index.html#notebooklm" class="nav-link">NotebookLM AI</a>
+        <a href="index.html#budget" class="nav-link">Budget Tracker</a>
+      </nav>
+      <a href="https://notebooklm.google.com/" target="_blank" rel="noopener noreferrer" class="notebooklm-btn">
+        <i data-lucide="sparkles"></i> Open NotebookLM Project
+      </a>
+    </div>
+  </header>
+
+  <!-- Sub Page Hero Banner -->
+  <section class="subpage-hero">
+    <div style="display:inline-flex; align-items:center; gap:0.5rem; background:rgba(56,189,248,0.1); border:1px solid var(--border-glow); padding:0.3rem 0.8rem; border-radius:20px; font-size:0.85rem; color:var(--accent-cyan); margin-bottom:1rem;">
+      <i data-lucide="compass" style="width:14px;"></i> SINTEF Byggforsk & TEK17 Standard Workflow
+    </div>
+    <h1>Standard & Recommended Building Order</h1>
+    <p>
+      The definitive 9-stage project sequence for total house rehabilitation (Totalrehabilitering). Following this strict engineering order prevents moisture entrapment, avoids costly tear-outs, and ensures structural integrity.
+    </p>
+  </section>
+
+  <div class="container">
+
+    <!-- Interactive Stage Stepper Navigation -->
+    <div class="sequence-stepper">
+      <div class="step-pill active" onclick="scrollToStage(1)">
+        <span class="step-num">01</span>
+        <span class="step-name">Permits & Setup</span>
+      </div>
+      <div class="step-pill" onclick="scrollToStage(2)">
+        <span class="step-num">02</span>
+        <span class="step-name">Demolition</span>
+      </div>
+      <div class="step-pill" onclick="scrollToStage(3)">
+        <span class="step-num">03</span>
+        <span class="step-name">Drainage & Radon</span>
+      </div>
+      <div class="step-pill" onclick="scrollToStage(4)">
+        <span class="step-num">04</span>
+        <span class="step-name">Structural Steel</span>
+      </div>
+      <div class="step-pill" onclick="scrollToStage(5)">
+        <span class="step-num">05</span>
+        <span class="step-name">Envelope Shell</span>
+      </div>
+      <div class="step-pill" onclick="scrollToStage(6)">
+        <span class="step-num">06</span>
+        <span class="step-name">Technical Rough-In</span>
+      </div>
+      <div class="step-pill" onclick="scrollToStage(7)">
+        <span class="step-num">07</span>
+        <span class="step-name">Vapor & Boarding</span>
+      </div>
+      <div class="step-pill" onclick="scrollToStage(8)">
+        <span class="step-num">08</span>
+        <span class="step-name">Wet Rooms & Oak</span>
+      </div>
+      <div class="step-pill" onclick="scrollToStage(9)">
+        <span class="step-num">09</span>
+        <span class="step-name">Commissioning</span>
+      </div>
+    </div>
+
+    <!-- 9-Stage Detailed Sequence Cards -->
+    <div class="sequence-list">
+
+      <!-- Stage 1 -->
+      <article class="sequence-card" id="stage-1">
+        <span class="sequence-card-number">01</span>
+        <div class="sequence-card-header">
+          <span class="stage-badge">Stage 1</span>
+          <h2 class="stage-title">Pre-Assessment, Permits & Site Setup (Rigging)</h2>
+          <span class="status-badge status-completed" style="margin-left:auto;">Completed</span>
+        </div>
+        <p style="color:var(--text-muted); font-size:0.95rem;">
+          <strong>Primary Goal:</strong> Establish legal municipal compliance, structural risk mitigation, and site safety before any physical work.
+        </p>
+
+        <div class="grid-3col">
+          <div class="subbox subbox-tasks">
+            <h4><i data-lucide="check-square"></i> Key Execution Tasks</h4>
+            <ul class="subbox-list">
+              <li>Architectural 3D scan & municipal building application (Søknad om tiltak).</li>
+              <li>Hazardous materials audit (Asbestos tiles, lead paint, PCB sealants).</li>
+              <li>Site rigging: Temporary 3-phase power, water connection, waste containers.</li>
+            </ul>
+          </div>
+          <div class="subbox subbox-rules">
+            <h4><i data-lucide="file-check"></i> Technical Standards</h4>
+            <ul class="subbox-list">
+              <li>TEK17 Municipal RAM approval.</li>
+              <li>HSE site fencing & waste handling plan.</li>
+              <li>Structural engineer sign-off on load capacity.</li>
+            </ul>
+          </div>
+          <div class="subbox subbox-warnings">
+            <h4><i data-lucide="alert-circle"></i> Critical Dependency</h4>
+            <ul class="subbox-list">
+              <li>No demolition or structural modification allowed prior to formal municipal permit issuance.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- Stage 2 -->
+      <article class="sequence-card" id="stage-2">
+        <span class="sequence-card-number">02</span>
+        <div class="sequence-card-header">
+          <span class="stage-badge">Stage 2</span>
+          <h2 class="stage-title">Selective Demolition & Gutting (Utrensing)</h2>
+          <span class="status-badge status-completed" style="margin-left:auto;">Completed</span>
+        </div>
+        <p style="color:var(--text-muted); font-size:0.95rem;">
+          <strong>Primary Goal:</strong> Strip interior spaces down to timber framing studs without disturbing load-bearing members.
+        </p>
+
+        <div class="grid-3col">
+          <div class="subbox subbox-tasks">
+            <h4><i data-lucide="check-square"></i> Key Execution Tasks</h4>
+            <ul class="subbox-list">
+              <li>Systematic wallboard, ceiling plaster, and old fiberglass removal.</li>
+              <li>Demolition of obsolete 1970s iron pipes and knob/tube wiring.</li>
+              <li>Removal of non-bearing partition walls for open living layout.</li>
+            </ul>
+          </div>
+          <div class="subbox subbox-rules">
+            <h4><i data-lucide="file-check"></i> Technical Standards</h4>
+            <ul class="subbox-list">
+              <li>NS 3467 Waste sorting rate > 90%.</li>
+              <li>Dust containment barriers & HEPA air scrubbers.</li>
+            </ul>
+          </div>
+          <div class="subbox subbox-warnings">
+            <h4><i data-lucide="alert-circle"></i> Critical Dependency</h4>
+            <ul class="subbox-list">
+              <li>Mark all load-bearing posts clearly in red before demolition crews begin wall removal.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- Stage 3 -->
+      <article class="sequence-card" id="stage-3">
+        <span class="sequence-card-number">03</span>
+        <div class="sequence-card-header">
+          <span class="stage-badge">Stage 3</span>
+          <h2 class="stage-title">Foundation, Drainage & Radon Mitigation</h2>
+          <span class="status-badge status-completed" style="margin-left:auto;">Completed</span>
+        </div>
+        <p style="color:var(--text-muted); font-size:0.95rem;">
+          <strong>Primary Goal:</strong> Permanent perimeter ground moisture drainage, radon gas isolation, and sub-slab thermal insulation.
+        </p>
+
+        <div class="grid-3col">
+          <div class="subbox subbox-tasks">
+            <h4><i data-lucide="check-square"></i> Key Execution Tasks</h4>
+            <ul class="subbox-list">
+              <li>Exca-vating footings; installing Platon dimpled membrane & XPS.</li>
+              <li>New perforated drainage pipes leading to stormwater discharge pit.</li>
+              <li>Laying 200mm EPS slab insulation + RadoStop radon membrane + suction pit.</li>
+            </ul>
+          </div>
+          <div class="subbox subbox-rules">
+            <h4><i data-lucide="file-check"></i> Technical Standards</h4>
+            <ul class="subbox-list">
+              <li>Radon concentration target < 50 Bq/m³ (Action limit 100 Bq/m³).</li>
+              <li>SINTEF Byggforsk 514.221 Drainage details.</li>
+            </ul>
+          </div>
+          <div class="subbox subbox-warnings">
+            <h4><i data-lucide="alert-circle"></i> Critical Dependency</h4>
+            <ul class="subbox-list">
+              <li>Radon membrane must be pressure sealed around ground penetrations before pouring concrete.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- Stage 4 -->
+      <article class="sequence-card" id="stage-4">
+        <span class="sequence-card-number">04</span>
+        <div class="sequence-card-header">
+          <span class="stage-badge">Stage 4</span>
+          <h2 class="stage-title">Structural Reconfiguration & Support Steel</h2>
+          <span class="status-badge status-completed" style="margin-left:auto;">Completed</span>
+        </div>
+        <p style="color:var(--text-muted); font-size:0.95rem;">
+          <strong>Primary Goal:</strong> Safe load transfer and structural steel placement for 65 m² open-concept ceiling span.
+        </p>
+
+        <div class="grid-3col">
+          <div class="subbox subbox-tasks">
+            <h4><i data-lucide="check-square"></i> Key Execution Tasks</h4>
+            <ul class="subbox-list">
+              <li>Erection of temporary hydraulic shoring posts on both levels.</li>
+              <li>Insertion of HEB 220 steel beam & column support assemblies.</li>
+              <li>Timber floor joist leveling, sistering, and structural bolting.</li>
+            </ul>
+          </div>
+          <div class="subbox subbox-rules">
+            <h4><i data-lucide="file-check"></i> Technical Standards</h4>
+            <ul class="subbox-list">
+              <li>Eurocode 3 (Norsk NS-EN 1993) Steel Design.</li>
+              <li>Deflection limit L/500 under full dead/live load.</li>
+            </ul>
+          </div>
+          <div class="subbox subbox-warnings">
+            <h4><i data-lucide="alert-circle"></i> Critical Dependency</h4>
+            <ul class="subbox-list">
+              <li>Shoring posts cannot be removed until steel connections are torque tested and certified.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- Stage 5 -->
+      <article class="sequence-card" id="stage-5">
+        <span class="sequence-card-number">05</span>
+        <div class="sequence-card-header">
+          <span class="stage-badge">Stage 5</span>
+          <h2 class="stage-title">Building Envelope & Weather-Tight Shell</h2>
+          <span class="status-badge status-completed" style="margin-left:auto;">Completed</span>
+        </div>
+        <p style="color:var(--text-muted); font-size:0.95rem;">
+          <strong>Primary Goal:</strong> Achieving 100% weather-tight building shell before interior technical installations.
+        </p>
+
+        <div class="grid-3col">
+          <div class="subbox subbox-tasks">
+            <h4><i data-lucide="check-square"></i> Key Execution Tasks</h4>
+            <ul class="subbox-list">
+              <li>Roofing: Ruukki standing seam metal roof + 350mm ceiling fiber insulation.</li>
+              <li>200mm Rockwool continuous exterior wall insulation board installation.</li>
+              <li>Schüco triple-pane window (Uw 0.78) mounting + Shou Sugi Ban cladding.</li>
+            </ul>
+          </div>
+          <div class="subbox subbox-rules">
+            <h4><i data-lucide="file-check"></i> Technical Standards</h4>
+            <ul class="subbox-list">
+              <li>TEK17 U-value wall: 0.15 W/m²K, roof: 0.11 W/m²K.</li>
+              <li>Taped wind barrier (vindsperre) membrane seams.</li>
+            </ul>
+          </div>
+          <div class="subbox subbox-warnings">
+            <h4><i data-lucide="alert-circle"></i> Critical Dependency</h4>
+            <ul class="subbox-list">
+              <li>MUST certify house 100% waterproof before starting interior insulation or electrical cabling!</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- Stage 6 -->
+      <article class="sequence-card" id="stage-6">
+        <span class="sequence-card-number">06</span>
+        <div class="sequence-card-header">
+          <span class="stage-badge">Stage 6</span>
+          <h2 class="stage-title">Technical Rough-In (Electrical, Plumbing & HVAC)</h2>
+          <span class="status-badge status-progress" style="margin-left:auto;">In Progress (75%)</span>
+        </div>
+        <p style="color:var(--text-muted); font-size:0.95rem;">
+          <strong>Primary Goal:</strong> Core infrastructure routing within cavities prior to vapor sealing and wall boarding.
+        </p>
+
+        <div class="grid-3col">
+          <div class="subbox subbox-tasks">
+            <h4><i data-lucide="check-square"></i> Key Execution Tasks</h4>
+            <ul class="subbox-list">
+              <li>Main 3-phase 63A panel setup, KNX automation conduits, Cat6a ethernet.</li>
+              <li>PEX-in-PEX manifold distribution + Geberit Silent drain stacks.</li>
+              <li>Systemair HRV duct routing + Uponor hydronic floor heating loops & screed.</li>
+            </ul>
+          </div>
+          <div class="subbox subbox-rules">
+            <h4><i data-lucide="file-check"></i> Technical Standards</h4>
+            <ul class="subbox-list">
+              <li>NEK 400:2022 Electrical safety code.</li>
+              <li>PEX pressure leak testing at 1.5x working pressure for 24h.</li>
+            </ul>
+          </div>
+          <div class="subbox subbox-warnings">
+            <h4><i data-lucide="alert-circle"></i> Critical Dependency</h4>
+            <ul class="subbox-list">
+              <li>All pipe leak & electrical continuity tests MUST pass before enclosing cavities with drywall.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- Stage 7 -->
+      <article class="sequence-card" id="stage-7">
+        <span class="sequence-card-number">07</span>
+        <div class="sequence-card-header">
+          <span class="stage-badge">Stage 7</span>
+          <h2 class="stage-title">Insulation, Vapor Sealing & Wall Boarding</h2>
+          <span class="status-badge status-planned" style="margin-left:auto;">Planned</span>
+        </div>
+        <p style="color:var(--text-muted); font-size:0.95rem;">
+          <strong>Primary Goal:</strong> Thermal insulation, acoustic dampening, strict airtightness sealing, and drywall boarding.
+        </p>
+
+        <div class="grid-3col">
+          <div class="subbox subbox-tasks">
+            <h4><i data-lucide="check-square"></i> Key Execution Tasks</h4>
+            <ul class="subbox-list">
+              <li>100mm cavity insulation fitting without compression or gaps.</li>
+              <li>Pro Clima INTELLO variable vapor membrane sealing + Tescon Vana taping.</li>
+              <li>48mm internal service cavity batten setup + Gypsum boarding & plastering.</li>
+            </ul>
+          </div>
+          <div class="subbox subbox-rules">
+            <h4><i data-lucide="file-check"></i> Technical Standards</h4>
+            <ul class="subbox-list">
+              <li>Airtightness target n50 < 0.6 ACH@50Pa.</li>
+              <li>Level 4 (Q4) smooth plastering finish.</li>
+            </ul>
+          </div>
+          <div class="subbox subbox-warnings">
+            <h4><i data-lucide="alert-circle"></i> Critical Dependency</h4>
+            <ul class="subbox-list">
+              <li>Vapor barrier must NEVER be punctured by electrical outlets; use the 48mm service cavity.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- Stage 8 -->
+      <article class="sequence-card" id="stage-8">
+        <span class="sequence-card-number">08</span>
+        <div class="sequence-card-header">
+          <span class="stage-badge">Stage 8</span>
+          <h2 class="stage-title">Wet Rooms, Surface Finishes & Custom Joinery</h2>
+          <span class="status-badge status-planned" style="margin-left:auto;">Planned</span>
+        </div>
+        <p style="color:var(--text-muted); font-size:0.95rem;">
+          <strong>Primary Goal:</strong> Certified wet room waterproofing membrane and high-end aesthetic interior finishes.
+        </p>
+
+        <div class="grid-3col">
+          <div class="subbox subbox-tasks">
+            <h4><i data-lucide="check-square"></i> Key Execution Tasks</h4>
+            <ul class="subbox-list">
+              <li>Bathroom liquid membrane waterproofing strictly per BVN standards.</li>
+              <li>Large format Italian porcelain tiling + natural white oak flooring.</li>
+              <li>Custom kitchen island, wardrobes, internal doors, and skirtings.</li>
+            </ul>
+          </div>
+          <div class="subbox subbox-rules">
+            <h4><i data-lucide="file-check"></i> Technical Standards</h4>
+            <ul class="subbox-list">
+              <li>Byggebransjens Våtromsnorm (BVN) certified membrane.</li>
+              <li>Screed moisture level < 2% CM before oak floor laying.</li>
+            </ul>
+          </div>
+          <div class="subbox subbox-warnings">
+            <h4><i data-lucide="alert-circle"></i> Critical Dependency</h4>
+            <ul class="subbox-list">
+              <li>Do not lay hardwood floors until screed moisture test verifies complete drying.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- Stage 9 -->
+      <article class="sequence-card" id="stage-9">
+        <span class="sequence-card-number">09</span>
+        <div class="sequence-card-header">
+          <span class="stage-badge">Stage 9</span>
+          <h2 class="stage-title">Technical Hookup, Commissioning & Handover</h2>
+          <span class="status-badge status-planned" style="margin-left:auto;">Planned</span>
+        </div>
+        <p style="color:var(--text-muted); font-size:0.95rem;">
+          <strong>Primary Goal:</strong> System startup, smart home programming, legal compliance, and municipal occupancy permit.
+        </p>
+
+        <div class="grid-3col">
+          <div class="subbox subbox-tasks">
+            <h4><i data-lucide="check-square"></i> Key Execution Tasks</h4>
+            <ul class="subbox-list">
+              <li>NIBE heat pump startup, hydronic balancing & floor warming calibration.</li>
+              <li>Systemair HRV air flow balancing + KNX smart switch programming.</li>
+              <li>Blower door air tightness test + municipal final occupancy inspection.</li>
+            </ul>
+          </div>
+          <div class="subbox subbox-rules">
+            <h4><i data-lucide="file-check"></i> Technical Standards</h4>
+            <ul class="subbox-list">
+              <li>Electrical Compliance Certificate (Samsvarserklæring).</li>
+              <li>Municipal Occupancy Certificate (Ferdigattest).</li>
+            </ul>
+          </div>
+          <div class="subbox subbox-warnings">
+            <h4><i data-lucide="alert-circle"></i> Critical Dependency</h4>
+            <ul class="subbox-list">
+              <li>Occupancy permit must be issued before moving furniture or family into the house.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Out of Order Failures Section -->
+    <section class="card" style="margin-top:4rem; border:1px solid rgba(244,63,94,0.3); background:rgba(20,27,41,0.95);">
+      <h2 style="font-size:1.8rem; margin-bottom:1rem; color:var(--accent-rose);">
+        <i data-lucide="alert-triangle" style="vertical-align:-3px;"></i> Out-of-Order Sequence Errors & Risks
+      </h2>
+      <p style="color:var(--text-muted); margin-bottom:1.5rem;">
+        Deviating from the recommended building sequence causes severe financial and structural consequences. Here are the top risks prevented by following our 9-stage sequence:
+      </p>
+
+      <div class="warning-callout">
+        <i data-lucide="droplet" style="color:var(--accent-rose); width:28px; height:28px; flex-shrink:0;"></i>
+        <div>
+          <h4>Risk 1: Insulating cavities before roof & windows are 100% waterproof</h4>
+          <p>
+            Rainwater leaks into raw Rockwool insulation. Trapped moisture inside wall cavities causes rotting timber studs and toxic black mold growth within 3 weeks. <strong>Always complete Stage 5 before Stage 7.</strong>
+          </p>
+        </div>
+      </div>
+
+      <div class="warning-callout" style="margin-top:1rem;">
+        <i data-lucide="hammer" style="color:var(--accent-rose); width:28px; height:28px; flex-shrink:0;"></i>
+        <div>
+          <h4>Risk 2: Installing drywall boards before technical pressure testing</h4>
+          <p>
+            A missed PEX joint leak or un-routed cable requires ripping off brand new drywall boards, resulting in thousands of Euros in wasted materials and labor. <strong>Always pressure test Stage 6 before boarding in Stage 7.</strong>
+          </p>
+        </div>
+      </div>
+
+      <div class="warning-callout" style="margin-top:1rem;">
+        <i data-lucide="slash" style="color:var(--accent-rose); width:28px; height:28px; flex-shrink:0;"></i>
+        <div>
+          <h4>Risk 3: Laying oak flooring over uncured concrete screed</h4>
+          <p>
+            Moisture evaporating from damp concrete screed expands into natural oak flooring, causing severe cupping, buckling, and floor glue failure. <strong>Measure screed moisture (< 2%) before Stage 8.</strong>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- NotebookLM Source Export Bar -->
+    <div class="card notebooklm-card" style="margin-top:3rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+      <div style="display:flex; align-items:center; gap:1rem;">
+        <div class="notebook-icon"><i data-lucide="file-text"></i></div>
+        <div>
+          <h3>Export Building Sequence to NotebookLM</h3>
+          <p style="font-size:0.85rem; color:var(--text-muted);">Source file: <code>notebooklm/sources/05_BUILDING_SEQUENCE.md</code></p>
+        </div>
+      </div>
+      <button class="btn-sm" style="padding:0.7rem 1.4rem; background:var(--gradient-brand); color:white; border:none; border-radius:30px; font-weight:700;" onclick="copySourceContent(5)">
+        <i data-lucide="copy" style="width:14px;"></i> Copy 05_BUILDING_SEQUENCE.md Text
+      </button>
+    </div>
+
+  </div>
+
+  <div class="toast" id="toastNotification">Notification</div>
+
+  <footer>
+    <p>M6 Renew - Recommended Building Sequence & Engineering Order Sub Page</p>
+    <p style="margin-top:0.5rem; font-size:0.8rem; opacity:0.6;">Repository: <a href="https://github.com/magnuskiro-visma/m6-renew" target="_blank">github.com/magnuskiro-visma/m6-renew</a> • NotebookLM Project: "m6 - renew"</p>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    lucide.createIcons();
+    function scrollToStage(stageNum) {
+      const el = document.getElementById(`stage-${stageNum}`);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const pills = document.querySelectorAll('.step-pill');
+      pills.forEach((p, idx) => {
+        if (idx === stageNum - 1) p.classList.add('active');
+        else p.classList.remove('active');
+      });
+    }
+  </script>
+</body>
+</html>
