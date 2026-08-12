@@ -12,7 +12,7 @@ The purpose of this project is to plan, track, manage, and visually document the
 
 ### Key Objectives:
 - 🏗️ **Structural Open-Concept Overhaul**: Removing non-bearing walls and installing steel support beams (HEB 220) to create a unified 65 m² living and kitchen area.
-- ⚡ **Zero-Net Ready Energy Upgrade**: 200mm exterior Rockwool insulation, Shou Sugi Ban vertical timber cladding, standing seam metal roof with 12.8 kWp solar PV array.
+- ⚡ **Zero-Net Ready Energy Upgrade**: 200mm exterior Rockwool insulation, vertical timber cladding, standing seam metal roof with 12.8 kWp solar PV array.
 - ♨️ **Modern HVAC Systems**: NIBE Air-to-Water heat pump paired with hydronic floor heating across all levels and a high-efficiency heat recovery ventilation (HRV) unit.
 - 📱 **AI-Driven Project Planning**: Direct integration with Google **NotebookLM** ("m6 - renew") to synthesize contractor quotes, structural blueprints, and material specifications into actionable AI insights.
 

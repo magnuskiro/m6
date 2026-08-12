@@ -4,7 +4,7 @@
 const roomsData = {
   exterior: {
     title: 'Fasade & Utvendig Transformasjon',
-    details: 'Erstatning av slitt 1947-trekledning med Shou Sugi Ban brent tre, montering av trelags Schüco skyvedører, båndtekket metalltak og integrert varm arkitektonisk utebelysning.',
+    details: 'Erstatning av slitt 1947-kledning med stående vertikal trekledning, montering av NorDan sidehengslede 3-lags alukledde vinduer, båndtekket metalltak og integrert varm arkitektonisk utebelysning.',
     status: 'Klimaskall Fullført',
     statusClass: 'status-completed',
     beforeImg: 'assets/images/exterior_before.jpg',
