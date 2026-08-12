@@ -20,7 +20,7 @@ jobs:
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 issue_number: issue.number,
-                labels: ['M6 :house_with_garden:', 'm6']
+                labels: ['M6 :house_with_garden:']
               });
             }
 
