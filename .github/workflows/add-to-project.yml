@@ -1,14 +1,29 @@
-name: Auto Add Issues to Project Board
+name: Auto Add Issues & Labels to Project Board
 
 on:
   issues:
     types: [opened, labeled]
 
 jobs:
-  add-to-project:
-    name: Add issue to Project #1
+  auto-label-and-project:
+    name: Auto Label & Add to Project #1
     runs-on: ubuntu-latest
     steps:
+      - name: Auto Add M6 Label if Missing
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = context.payload.issue;
+            const labels = issue.labels ? issue.labels.map(l => l.name) : [];
+            if (!labels.includes('M6 :house_with_garden:')) {
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                labels: ['M6 :house_with_garden:', 'm6']
+              });
+            }
+
       - name: Add Issue to GitHub Project V2
         uses: actions/add-to-project@v1.0.2
         with:
