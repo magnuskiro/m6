@@ -1,35 +1,35 @@
-// M6 Renew - Multi-Page Application Logic
+// M6 Fornyelse - Interaktiv Applikasjonslogikk
 
-// Room Data Definitions
+// Romdata og Beskrivelser
 const roomsData = {
   exterior: {
-    title: 'Exterior & Facade Transformation',
-    details: 'Replacing degraded 1974 wooden siding with Shou Sugi Ban burned timber, installing triple-glazed Schüco floor-to-ceiling glass sliding walls, standing seam metal roofing, and integrated warm LED architectural cove lighting.',
-    status: 'Envelope Complete',
+    title: 'Fasade & Utvendig Transformasjon',
+    details: 'Erstatning av slitt 1974-trekledning med Shou Sugi Ban brent tre, montering av trelags Schüco skyvedører, båndtekket metalltak og integrert varm arkitektonisk utebelysning.',
+    status: 'Klimaskall Fullført',
     statusClass: 'status-completed',
     beforeImg: 'assets/images/exterior_before.jpg',
     afterImg: 'assets/images/exterior_after.jpg'
   },
   living: {
-    title: 'Open-Concept Living & Lounge Area',
-    details: 'Removal of partition walls to expand floor plan to 65 m², insertion of HEB 220 steel load-bearing support, continuous light natural oak flooring, concrete feature fireplace, and recessed acoustic ceiling LED cove.',
-    status: 'Finishes Pending',
+    title: 'Åpen Stue & Allrom (65 m²)',
+    details: 'Fjerning av 1974-stendervegger for å utvide stuearealet, montering av HEB 220 bærende ståldrager (R 60 brannbeskyttet), hvitoljet eikeparkett, betongpeis og innfelt LED-cove i himling.',
+    status: 'Gjenstår Overflater',
     statusClass: 'status-progress',
     beforeImg: 'assets/images/living_before.jpg',
     afterImg: 'assets/images/living_after.jpg'
   },
   kitchen: {
-    title: 'Modern Chef Kitchen & Waterfall Island',
-    details: 'Complete gutting of 1970s yellow laminate cabinets, replaced with dark matte handleless cabinetry, white oak accents, 3.2m marble waterfall island, integrated Gaggenau appliances, and induction downdraft cooktop.',
-    status: 'Cabinets Ordered',
+    title: 'Kjøkken & Marmorøy',
+    details: 'Utrensing av opprinnelige 1970-talls laminatskap, erstattet med mørke mattedører, hvit eikefinish, 3,2m marmorøy med nedfelling, Gaggenau hvitevarer og integrert benkevifte.',
+    status: 'Kjøkken Bestilt',
     statusClass: 'status-progress',
     beforeImg: 'assets/images/kitchen_before.jpg',
     afterImg: 'assets/images/kitchen_after.jpg'
   },
   bathroom: {
-    title: 'Master Spa Bathroom & Sauna',
-    details: 'Transforming original dated bath into a minimalist luxury spa with Italian large-format porcelain slabs, micro-cement walls, concealed thermostatic valves, walk-in rain shower, freestanding tub, and integrated cedar sauna.',
-    status: 'Plumbing Rough-In',
+    title: 'Hovedbad & Badstue',
+    details: 'Transformasjon av datert bad til minimalistisk spabad med italienske storformat porselensfliser, mikrosementvegger, innbygde armaturer, regndusj, frittstående kar og integrert sedertre-badstue.',
+    status: 'Rørlegger Pågår',
     statusClass: 'status-progress',
     beforeImg: 'assets/images/living_before.jpg',
     afterImg: 'assets/images/living_after.jpg'
@@ -39,7 +39,7 @@ const roomsData = {
 let currentRoom = 'exterior';
 let isDragging = false;
 
-// Initialize Visualizer Slider Drag Functionality
+// Skillelinje (Slider) Drag Logikk
 function initSlider() {
   const sliderContainer = document.getElementById('sliderContainer');
   const sliderHandle = document.getElementById('sliderHandle');
@@ -92,7 +92,7 @@ function initSlider() {
   imgBefore.style.width = `${rect.width}px`;
 }
 
-// Switch Selected Room
+// Bytte Valgt Rom
 function switchRoom(roomKey) {
   if (!roomsData[roomKey]) return;
   currentRoom = roomKey;
@@ -135,7 +135,7 @@ function switchRoom(roomKey) {
   }
 }
 
-// View Mode Toggle (Slider vs Side-by-Side)
+// Bytte Visningsmodus (Skillelinje vs Side-ved-side)
 function setViewMode(mode) {
   const sliderContainer = document.getElementById('sliderContainer');
   const sideContainer = document.getElementById('sideContainer');
@@ -160,34 +160,34 @@ function setViewMode(mode) {
   }
 }
 
-// Copy NotebookLM Source Text
+// Kopiere NotebookLM Kildeliste
 function copySourceContent(sourceId) {
   const sourceTexts = {
-    1: "M6 Rehabilitation - Project Overview\nLocation: Myrteveien 6, Tolvsrød (Gnr 140 / Bnr 371)\nGoal: Transform 1974 vintage building into zero-net ready Scandinavian home with TEK17 thermal specs.",
-    2: "M6 Technical Specs:\nWall insulation: 200mm Rockwool exterior + Shou Sugi Ban timber cladding.\nHeat Source: NIBE Air-to-Water inverter heat pump.\nWindows: Schüco triple-pane aluminum (Uw = 0.78 W/m²K).",
-    3: "M6 Budget Breakdown:\nTotal Allocated: €220,000 | Spent to date: €98,500\nKey Contractors: Nordic Build AS, Thermic Flow AS, Volta Tech AS.",
-    4: "M6 Master Timeline:\nPhase 1: Permits & Demolition (Done)\nPhase 2: Envelope & Roofing (Done)\nPhase 3: Technical & Floor Heating (In Progress)\nPhase 4: Interior & Kitchen (Planned)",
-    5: "M6 Recommended 9-Stage Building Sequence (Byggerekkefølge):\nStage 1: Permits & Rigging\nStage 2: Demolition & Utrensing\nStage 3: Foundation, Drainage & Radon\nStage 4: Structural Steel (HEB 220)\nStage 5: Building Envelope Weather-tightness\nStage 6: Technical Rough-In (Electrical, PEX, HRV)\nStage 7: Insulation, Vapor Barrier (INTELLO) & Boarding\nStage 8: Wet Rooms (BVN) & Oak Flooring\nStage 9: Commissioning & Occupancy Permit",
-    6: "M6 Tønsberg Municipal Plan & Zoning Dependencies:\nKommune: Tønsberg (Kommune-nr: 3905, Gnr 140 / Bnr 371)\nSite Limits: Max 25% BYA (M6 planned: 21.5% BYA)\nBuilding Height: Max 9.0m ridge height / 6.5m cornice height\nSetback: 4.0m boundary setback (PBL § 29-4)\nStormwater: Open local stormwater infiltration (LOD) required",
-    7: "M6 Tønsberg Visual Quality Guidelines (PBL § 29-2):\nMateriality: Shou Sugi Ban burned wood + Ruukki matte standing seam roof\nProportions: Recessed glass wall sections breaking up massing\nTerrain: No retaining walls > 1.0m, natural slope preservation\nLighting: Warm 2700K downward shielded LEDs (Dark Sky compliant)"
+    1: "M6 Fornyelse - Prosjektoversikt\nAdresse: Myrteveien 6, Tolvsrød (Gnr 140 / Bnr 371)\nMål: Transformere 1974-boligen til en modernisert skandinavisk arkitektbolig med TEK17 energispesifikasjoner.",
+    2: "M6 Tekniske Spesifikasjoner:\nVeggisolering: 200mm Rockwool utvendig + Shou Sugi Ban brent trekledning.\nVarmekilde: NIBE Luft-til-vann inverter varmepumpe.\nVinduer: Schüco 3-lags lavenergiglass (Uw = 0,78 W/m²K).",
+    3: "M6 Budsjettfordeling:\nAvsatt Budsjett: kr 2 500 000 | Påløpt til nå: kr 1 150 000\nHovedleverandører: Nordic Build AS, Thermic Flow AS, Volta Tech AS.",
+    4: "M6 Fremdriftsplan:\nFase 1: Byggesøknad & Riving (Fullført)\nFase 2: Båndtekking & Klimaskall (Fullført)\nFase 3: VVS, Varmepumpe & Gulvvarme (Pågår)\nFase 4: Innvendig Eikeparkett & Kjøkkenøy (Planlagt)",
+    5: "M6 Anbefalt 9-Trinns Byggerekkefølge:\nTrinn 1: Byggesøknad & Rigging\nTrinn 2: Utrensing & Riving\nTrinn 3: Kjeller, Drenering & Radon\nTrinn 4: Ståldrager HEB 220 (R 60)\nTrinn 5: Tett Bygg (EI 60)\nTrinn 6: Tekniske Føringer (Elektro, PEX, Varmepumpe)\nTrinn 7: Dampsperre & Gipsing (Q4)\nTrinn 8: Våtrom (BVN) & Eikeparkett\nTrinn 9: Innregulering & Ferdigattest",
+    6: "M6 Tønsberg Kommuneplan 2023-2035 Bestemmelser:\nPlanID: 3803 99010 (Vedtatt 03.04.2024)\n%BYA: Maks 25 % BYA (M6 planlagt: 21,5 % BYA inkl 18m² biloppstilling)\nHøydegrenser: Maks 9,0m møne / 6,5m gesims\nNabogrense: Min. 4,0m avstand (PBL § 29-4)\nOvervann: LOD 3-trinnsstrategi (Stenkiste/infiltrering)",
+    7: "M6 Tønsberg Arkitekturhåndbok (PBL § 29-2 Estetikk):\nMaterialitet: Shou Sugi Ban brent tre + Ruukki mattsvart båndtekket tak\nSolceller: Planmonterte solceller på tak fluktende med takflate tilfredsstiller automatiske visuelle krav\nUtendørs belysning: Avskjermede LED-spotter med varm fargetemperatur (2700K-3000K)"
   };
 
   const text = sourceTexts[sourceId] || "";
   navigator.clipboard.writeText(text).then(() => {
-    showToast(`Source 0${sourceId} text copied to clipboard!`);
+    showToast(`Kilde 0${sourceId} kopiert til utklippstavlen!`);
   });
 }
 
-// Copy NotebookLM Prompt
+// Kopiere Prompt
 function copyPrompt() {
   const promptEl = document.getElementById('promptText');
   if (!promptEl) return;
   navigator.clipboard.writeText(promptEl.innerText).then(() => {
-    showToast("NotebookLM prompt copied!");
+    showToast("NotebookLM prompt kopiert!");
   });
 }
 
-// Modal Controls
+// Modal Kontroller
 function openNotebookModal() {
   const modal = document.getElementById('notebookModal');
   if (modal) modal.classList.add('active');
@@ -198,7 +198,7 @@ function closeNotebookModal() {
   if (modal) modal.classList.remove('active');
 }
 
-// Toast Notifications
+// Varselmeldinger (Toasts)
 function showToast(message) {
   const toast = document.getElementById('toastNotification');
   if (!toast) return;
@@ -209,7 +209,7 @@ function showToast(message) {
   }, 3000);
 }
 
-// On Page Load
+// Ved Sidelasting
 document.addEventListener('DOMContentLoaded', () => {
   initSlider();
 });
