@@ -11,7 +11,7 @@
 - **Windows & Doors:** Schüco AWS/ADS 75 aluminum frames with triple-pane low-E glass (Ug = 0.5 W/m²K, total Uw = 0.78 W/m²K). Motorized zip screens.
 
 ## 3. HVAC & Energy Systems
-- **Heat Source:** NIBE F2120 Air-to-Water inverter heat pump paired with NIBE VVM S320 indoor module.
+- **Heat Source:** NIBE Air-to-Water heat pump (Installed in 2018, existing operational system serving as the connection point for Uponor hydronic floor heating loops).
 - **Floor Heating:** Uponor Minitec hydronic floor heating embedded in anhydrite screed on all 3 levels.
 - **Ventilation:** Systemair SAVE VTR 500 heat recovery ventilation (>88% heat recovery efficiency).
 - **Solar PV System:** 12.8 kWp rooftop Photovoltaic array with 32x 400W N-type TopCon panels + Huawei LUNA2000 10 kWh battery storage.
