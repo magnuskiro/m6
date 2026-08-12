@@ -6,7 +6,7 @@
 - **Property Boundary Wall Rating:** Any external wall section within 8.0m of neighbor structures meets **EI 60** fire resistance (TEK17 § 11-6).
 
 ## 2. Building Envelope & Thermal Insulation
-- **Wall Assembly:** Exterior vertical timber cladding, 30mm ventilated cavity, wind barrier membrane, 200mm continuous Rockwool exterior insulation, existing timber stud framing, 100mm interior cavity insulation, intelligent vapor variable membrane (Pro Clima INTELLO), 48mm installation batten, 13mm gypsum board.
+- **Wall Assembly:** Exterior horizontal timber cladding, 30mm ventilated cavity, wind barrier membrane, 200mm continuous Rockwool exterior insulation, existing timber stud framing, 100mm interior cavity insulation, intelligent vapor variable membrane (Pro Clima INTELLO), 48mm installation batten, 13mm gypsum board.
 - **Roof Assembly:** Standing seam Ruukki metal roof, 350mm blown cellulose/mineral insulation, roof underlayment membrane, airtight interior sealing (U-value: 0.11 W/m²K).
 - **Windows & Doors:** NorDan side-hung triple-pane aluminum-clad timber windows (Ug = 0.5 W/m²K, total Uw ≤ 0.80 W/m²K). Motorized zip screens.
 
