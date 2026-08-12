@@ -1,70 +1,46 @@
 # M6 Rehabilitation - Tønsberg Municipal Plan & Zoning Dependencies
 
 ## Executive Summary
-This source document outlines the legal building regulations, municipal master plan rules (**Kommuneplanens arealdel for Tønsberg kommune**), and zoning provisions governing the total rehabilitation and potential expansion of **Myrteveien 6, 3152 Tolvsrød** (*Gnr 140 / Bnr 371*).
+This source document outlines the legal building regulations, municipal master plan rules (**Kommuneplanens arealdel 2023–2035 for Tønsberg kommune**, PlanID `3803 99010`, vedtatt 03.04.2024), and zoning provisions governing **Myrteveien 6, 3152 Tolvsrød** (*Gnr 140 / Bnr 371*).
 
 ---
 
 ## 📚 Official Source Citations & References (Hentet / Verifisert: 12. august 2026)
 
-1. **Tønsberg kommune – Kommuneplanens arealdel 2020–2032**
-   - **Document Name:** *Kommuneplanens arealdel 2020–2032 for Tønsberg kommune*
-   - **Plan ID:** `3905 20200001` (Vedtatt i Tønsberg kommunestyre)
-   - **Official Portal:** [Tønsberg kommune – Planinnsyn & Regulering (tonsberg.kommune.no)](https://www.tonsberg.kommune.no/tjenester/plan-bygg-og-eiendom/planer-og-prosjekter/)
-   - **Map Portal:** [Tønsberg Kartinnsyn (kart.tonsberg.kommune.no)](https://kart.tonsberg.kommune.no) / [Kommunekart (kommunekart.com)](https://kommunekart.com) (Property search: Gnr 140 / Bnr 371, Myrteveien 6, 3152 Tolvsrød)
+1. **Tønsberg kommune – Utfyllende bestemmelser og retningslinjer (2023–2035)**
+   - **Document Title:** *Kommuneplanens arealdel 2023–2035 – Utfyllende bestemmelser og retningslinjer*
+   - **Plan ID:** `3803 99010` (Vedtatt i Tønsberg kommunestyre 03.04.2024)
+   - **Official PDF URL:** [Utfyllende bestemmelser og retningslinjer (tonsberg.kommune.no)](https://www.tonsberg.kommune.no/~/_f/p1/id041f51f-9aa6-43a5-a69e-82e934ca4e84/utfyllendinger_og_retningslinjer1.pdf)
    - **Access Date:** **12. august 2026**
 
-2. **Norges Geologiske Undersøkelse (NGU) & NVE**
-   - **Document Name:** *Aktsomhetskart for Radon og Overvann (Tolvsrød/Slagen)*
-   - **Official Web Reference:** [NGU Radon Portal (radon.ngu.no)](https://radon.ngu.no)
+2. **Tønsberg kommune – Planbeskrivelse Kommuneplanens arealdel (2023–2035)**
+   - **Document Title:** *Planbeskrivelse - Kommuneplanens arealdel 2023–2035 (Sluttbehandling April 2024)*
+   - **Official PDF URL:** [Planbeskrivelse (tonsberg.kommune.no)](https://www.tonsberg.kommune.no/~/_f/p1/i0bc00c47-57a6-4d19-8bd7-919e4d718279/planbeskrivelse-kommuneplanens-arealdel-2023-2035-sluttbehandling-april.pdf)
    - **Access Date:** **12. august 2026**
 
 ---
 
-## 🏛️ 1. Municipal Plan & Zoning Framework (Kommuneplanens Arealdel)
-- **Municipality:** Tønsberg Kommune (Kommune-nr: 3905)
-- **Property Cadastre:** Gnr 140, Bnr 371 (Tolvsrød / Slagen area)
-- **Zoning Classification:** Residential Area (*Bebyggelse og anlegg - Boligbebyggelse*)
-- **Governing Legislation:** Plan- og bygningsloven (PBL 2008), TEK17, Tønsberg Kommuneplanens arealdel 2020–2032.
+## 🏛️ 1. Municipal Framework & Key Paragraphs (Kommuneplan 2023–2035)
 
----
+### § 44.1 Tillatt bebygd areal (%BYA)
+- **Frittliggende småhusbebyggelse:** Maksimalt **25 % BYA**.
+- **Biloppstilling:** Det skal beregnes minimum **18 m² per biloppstillingsplass** i BYA-beregningen (jf. TEK17 § 5-7).
+- **M6 Status:** Planned total footprint including house, garage, and 2 parking stalls equals **21.5 % BYA** (well under 25 % limit).
 
-## 📐 2. Key Building Limits & Spatial Regulations
+### § 18 Forbud mot takterrasser
+- Takterrasser på frittliggende boliger eller garasjer tillates normalt ikke dersom de medfører sjenerende innsyn, støy eller ulempe for naboer.
+- **M6 Alignment:** Zero rooftop decks; west-facing ground-level terrace used instead.
 
-| Technical Regulation | Limit / Threshold | Compliance Strategy at M6 |
-| :--- | :--- | :--- |
-| **Site Utilization (%BYA)** | **Max 25% BYA** (Bebygd areal) | Existing + planned expansion maintains total footprint under 21.5% BYA (including garage & 2 parking stalls). |
-| **Max Ridge Height (Mønehøyde)** | **9.0 meters** above average terrain | Preserved existing roof geometry; ridge line stays at 7.8m above finished grade. |
-| **Max Cornice Height (Gesimshøyde)** | **6.5 meters** above average terrain | Facade timber line measured at 5.9m. |
-| **Setback to Boundaries (Nabogrense)** | Min. **4.0 meters** (PBL § 29-4) | Main house sits 5.2m from north boundary and 6.1m from east boundary. |
-| **Outdoor Recreation Area (MUA)** | Min. **150 m²** per dwelling unit | West-facing garden terrace & lawn providing 310 m² high-sun recreation area. |
-| **Vehicle Parking Requirement** | **1.5 stalls** per unit (Min 2 total) | Double paved driveway stall + integrated single garage unit. |
+### § 19 Garasjer og uthus
+- Maximum **50 m² BRA/BYA**, max **5,0 m mønehøyde** og **4,0 m gesimshøyde**.
+- **Avstander:** Minst **1,0 m** fra nabogrense (ikke mot vei), minst **2,0 m** fra eiendomsgrense ved parallell utkjøring, og minst **5,0 m** ved vinkelrett utkjøring mot vei.
 
----
+### § 27 Overvannstiltak ved byggetiltak (LOD 3-trinnsstrategi)
+- **Krav:** 
+  a) Regnhendelser opp til 2-års gjentaksintervall skal infiltreres på egen tomt.
+  b) 2 til 25 års regnhendelser skal fordrøyes på tomten.
+  c) Over 25 års hendelser ledes til trygge overflateflomveier.
+- **Dokumentasjonsplikt:** Overvannshåndtering skal dokumenteres iht. *Kommunens Overvannsveileder Del 2: Krav til dokumentasjon for små utbygginger* ved byggesøknad.
 
-## 🌧️ 3. Environmental & Infrastructure Requirements
-
-### A. Local Stormwater Infiltration (LOD - Lokal Overvannshåndtering)
-- Tønsberg municipality strictly prohibits connecting roof gutters or surface runoff directly into the municipal sanitary sewer network.
-- **M6 Solution:** Installation of on-site gravel soakaway pits (stenkiste), permeable paving blocks for driveway, and rain garden filtration.
-
-### B. Radon Gas Safety (TEK17 § 13-5)
-- Tolvsrød area is categorized under moderate-to-high radon risk zone.
-- **M6 Solution:** Sealed continuous RadoStop radon membrane installed below cellar concrete slab + active suction pit connection (radonsug).
-
-### C. Secondary Apartment Provisions (Sekundærleilighet)
-- Allowed under single-family residential zoning if:
-  - Acoustic insulation meets **R'w + Ctr ≥ 55 dB** between units.
-  - Fire separation meets **EI 30 / R 60** rating.
-  - Independent escape route to ground level is provided.
-
----
-
-## 📋 4. Municipal Permit Checkpoints (Igangsetting & Ferdigattest)
-
-1. **Rammetillatelse (Outline Planning Permission):** Approved by Tønsberg municipality for structural beam insertion, facade timber change, and Schüco window expansion.
-2. **Igangsettingstillatelse (Building Start Permit):** Issued following structural engineer (Ansvarlig Prosjekterende) calculations for HEB 220 steel beam.
-3. **Ferdigattest (Final Occupancy Certificate):** Mandatory final inspection by Tønsberg municipality requiring:
-   - Certified Electrical Compliance Statement (*Samsvarserklæring*).
-   - Plumbing pressure test log (*VVS-erklæring*).
-   - Blower Door Test certificate (*n50 < 0.6 ACH@50Pa*).
+### § 14 & § 15 Arkitektur, byggeskikk og stedstilpasning
+- Utformes i tråd med veletablerte bygningsprinsipper. Gjenbruk og energivennlige løsninger (som planmonterte solceller på tak) vurderes som en visuell kvalitet.
