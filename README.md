@@ -57,7 +57,7 @@ Open `http://localhost:8080` in your browser.
 
 ## 📁 Repository Structure
 ```
-m6-renew/
+m6/
 ├── index.html                   # Interactive Web Application
 ├── styles.css                   # Custom Glassmorphism & Dark Theme CSS
 ├── app.js                       # Slider Drag & Interactive JS Engine

@@ -1,7 +1,7 @@
 # M6 Rehabilitation - Project Overview
 
 ## 1. Executive Summary
-- **Project Name:** M6 Total House Rehabilitation & Modernization (`m6-renew`)
+- **Project Name:** M6 Total House Rehabilitation & Modernization (`m6`)
 - **Property Location:** M6 Residence
 - **Year Built:** 1974
 - **Original Floor Area:** 185 m² across 2 levels + basement
