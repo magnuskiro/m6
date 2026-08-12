@@ -40,7 +40,7 @@
       </div>
       <h1>M6 Total House Rehabilitation</h1>
       <p class="hero-subtitle">
-        Central planning & progress hub for transforming a 1974 vintage family home into a high-performance Scandinavian architectural residence. Powered by TEK17 engineering and Google NotebookLM AI synthesis.
+        Central planning & progress hub for transforming a 1974 vintage family home into a high-performance Scandinavian architectural residence. Fully compliant with Tønsberg Municipality zoning plans (Kommuneplanens Arealdel) & TEK17 engineering.
       </p>
 
       <div class="stats-grid">
@@ -49,8 +49,8 @@
           <div class="stat-label">Total Living Area</div>
         </div>
         <div class="stat-card">
-          <div class="stat-value">Stage 6</div>
-          <div class="stat-label">Technical Rough-In</div>
+          <div class="stat-value">21.5% BYA</div>
+          <div class="stat-label">Site Limit (Max 25%)</div>
         </div>
         <div class="stat-card">
           <div class="stat-value">€98.5k</div>
@@ -69,7 +69,7 @@
         </div>
       </div>
       <p style="font-size:0.88rem; color: var(--text-muted); margin-bottom: 1.2rem;">
-        Synchronized with 5 structured Markdown source documents covering U-values, NIBE heat pump, Schüco triple-glazing, radon barrier membranes, and contractor contracts.
+        Synchronized with 6 structured Markdown source documents covering U-values, NIBE heat pump, Schüco triple-glazing, radon barrier membranes, and Tønsberg municipal zoning limits.
       </p>
       <div style="display:flex; gap:0.75rem;">
         <button class="btn-sm" style="flex:1; justify-content:center; padding:0.6rem;" onclick="openNotebookModal()">
@@ -85,28 +85,36 @@
   <div class="container">
 
     <!-- Project Highlight Feature Grid -->
-    <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:1.5rem; margin-bottom:4rem;">
+    <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap:1.2rem; margin-bottom:4rem;">
       <div class="card">
         <div style="color:var(--accent-cyan); font-size:1.8rem; margin-bottom:0.5rem;"><i data-lucide="shield-check"></i></div>
-        <h3 style="font-size:1.2rem; margin-bottom:0.4rem;">Thermal Envelope Upgrade</h3>
-        <p style="font-size:0.88rem; color:var(--text-muted);">
-          200mm Rockwool exterior wall insulation + Shou Sugi Ban burned timber cladding + Ruukki metal roofing with 350mm ceiling fiber insulation (Ug ≤ 0.5 W/m²K).
+        <h3 style="font-size:1.15rem; margin-bottom:0.4rem;">Thermal Envelope</h3>
+        <p style="font-size:0.85rem; color:var(--text-muted);">
+          200mm Rockwool wall insulation + Shou Sugi Ban timber cladding + Ruukki metal roof (Ug ≤ 0.5 W/m²K).
         </p>
       </div>
 
       <div class="card">
         <div style="color:var(--accent-emerald); font-size:1.8rem; margin-bottom:0.5rem;"><i data-lucide="flame"></i></div>
-        <h3 style="font-size:1.2rem; margin-bottom:0.4rem;">HVAC & Hydronic Comfort</h3>
-        <p style="font-size:0.88rem; color:var(--text-muted);">
-          NIBE F2120 Air-to-Water heat pump with Uponor hydronic floor heating loops across all 3 levels & Systemair heat recovery ventilation (>88% efficiency).
+        <h3 style="font-size:1.15rem; margin-bottom:0.4rem;">HVAC & Heat Pump</h3>
+        <p style="font-size:0.85rem; color:var(--text-muted);">
+          NIBE Air-to-Water heat pump + Uponor hydronic floor heating loops & Systemair HRV (>88% efficiency).
         </p>
       </div>
 
       <div class="card">
         <div style="color:var(--accent-purple); font-size:1.8rem; margin-bottom:0.5rem;"><i data-lucide="layout"></i></div>
-        <h3 style="font-size:1.2rem; margin-bottom:0.4rem;">65 m² Open-Concept Zone</h3>
-        <p style="font-size:0.88rem; color:var(--text-muted);">
-          Insertion of HEB 220 structural steel beam replacing 1974 partition walls, integrating high ceiling acoustics, waterfall marble island, and fireplace.
+        <h3 style="font-size:1.15rem; margin-bottom:0.4rem;">65 m² Open Zone</h3>
+        <p style="font-size:0.85rem; color:var(--text-muted);">
+          HEB 220 structural steel beam replacing 1974 partition walls, integrating marble island & fireplace.
+        </p>
+      </div>
+
+      <div class="card">
+        <div style="color:var(--accent-amber); font-size:1.8rem; margin-bottom:0.5rem;"><i data-lucide="building-2"></i></div>
+        <h3 style="font-size:1.15rem; margin-bottom:0.4rem;">Tønsberg Zoning</h3>
+        <p style="font-size:0.85rem; color:var(--text-muted);">
+          Compliant with Tønsberg Kommuneplan (21.5% BYA vs 25% max, 4m boundary setback, LOD soakaway).
         </p>
       </div>
     </div>
@@ -120,7 +128,7 @@
           </div>
           <h2 style="font-size:2rem; margin-bottom:0.6rem;">Standard & Recommended Building Order (Byggerekkefølge)</h2>
           <p style="color:var(--text-muted); font-size:0.95rem;">
-            Explore the recommended 9-stage engineering sequence for total house rehabilitation. Learn critical dependencies, technical guidelines, and common out-of-order errors to prevent moisture entrapment and costly demolition rework.
+            Explore the recommended 9-stage engineering sequence for total house rehabilitation. Learn critical dependencies, technical guidelines, Tønsberg permit requirements, and common out-of-order errors.
           </p>
         </div>
         <div>
@@ -222,16 +230,20 @@
           <span>📄 04_RENOVATION_TIMELINE.md</span>
           <button class="btn-sm" onclick="copySourceContent(4)">Copy Text</button>
         </div>
-        <div class="source-item" style="grid-column: span 2;">
-          <span>📄 05_BUILDING_SEQUENCE.md (Standard 9-Stage Order)</span>
+        <div class="source-item">
+          <span>📄 05_BUILDING_SEQUENCE.md</span>
           <button class="btn-sm" onclick="copySourceContent(5)">Copy Text</button>
+        </div>
+        <div class="source-item">
+          <span>📄 06_MUNICIPAL_ZONING_TØNSBERG.md</span>
+          <button class="btn-sm" onclick="copySourceContent(6)">Copy Text</button>
         </div>
       </div>
 
       <div style="background: rgba(0,0,0,0.3); border:1px solid var(--border-glow); padding: 1.2rem; border-radius: var(--radius-md);">
         <h4 style="font-size:0.95rem; margin-bottom: 0.5rem; color:var(--accent-cyan);">💡 Suggested NotebookLM Prompt</h4>
         <p style="font-size:0.85rem; color:var(--text-muted); font-style:italic;" id="promptText">
-          "Analyze the M6 building sequence and explain why Stage 5 (Envelope & Weather-tightness) must be certified before starting Stage 6 (Hydronic floor heating & PEX plumbing)."
+          "How does the M6 rehabilitation proposal comply with Tønsberg municipality's 25% BYA site utilization limit and 4.0m boundary setback rule?"
         </p>
         <button class="btn-sm" style="margin-top:0.75rem; width:100%; justify-content:center;" onclick="copyPrompt()">
           <i data-lucide="copy" style="width:14px;"></i> Copy Prompt to Clipboard
@@ -329,7 +341,7 @@
       <ol style="padding-left: 1.2rem; font-size:0.9rem; color:var(--text-main); display:flex; flex-direction:column; gap:0.8rem; margin-bottom: 1.5rem;">
         <li>Open your NotebookLM project at <a href="https://notebooklm.google.com/" target="_blank">notebooklm.google.com</a>.</li>
         <li>Click <strong>+ Add Sources</strong> and choose text files or copy-paste content from <code>notebooklm/sources/</code>.</li>
-        <li>NotebookLM automatically ingests building specs, thermal calculations, and contractor contracts.</li>
+        <li>NotebookLM automatically ingests building specs, thermal calculations, Tønsberg zoning rules, and contractor contracts.</li>
         <li>Use NotebookLM's Audio Overview feature to generate a podcast-style discussion summarizing the rehabilitation plan!</li>
       </ol>
 
@@ -343,7 +355,7 @@
 
   <footer>
     <p>M6 Renew - Myrteveien 6 House Total Rehabilitation Project</p>
-    <p style="margin-top:0.5rem; font-size:0.8rem; opacity:0.6;">Repository: <a href="https://github.com/magnuskiro-visma/m6-renew" target="_blank">github.com/magnuskiro-visma/m6-renew</a> • NotebookLM Project: "m6 - renew"</p>
+    <p style="margin-top:0.5rem; font-size:0.8rem; opacity:0.6;">Repository: <a href="https://github.com/magnuskiro/m6-renew" target="_blank">github.com/magnuskiro/m6-renew</a> • NotebookLM Project: "m6 - renew"</p>
   </footer>
 
   <script src="app.js"></script>
