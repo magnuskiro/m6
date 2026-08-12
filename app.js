@@ -160,44 +160,6 @@ function setViewMode(mode) {
   }
 }
 
-// Kopiere NotebookLM Kildeliste
-function copySourceContent(sourceId) {
-  const sourceTexts = {
-    1: "M6 Fornyelse - Prosjektoversikt\nAdresse: Myrteveien 6, Tolvsrød (Gnr 140 / Bnr 371)\nMål: Transformere 1974-boligen til en modernisert skandinavisk arkitektbolig med TEK17 energispesifikasjoner.",
-    2: "M6 Tekniske Spesifikasjoner:\nVeggisolering: 200mm Rockwool utvendig + Shou Sugi Ban brent trekledning.\nVarmekilde: NIBE Luft-til-vann inverter varmepumpe.\nVinduer: Schüco 3-lags lavenergiglass (Uw = 0,78 W/m²K).",
-    3: "M6 Budsjettfordeling:\nAvsatt Budsjett: kr 2 500 000 | Påløpt til nå: kr 1 150 000\nHovedleverandører: Nordic Build AS, Thermic Flow AS, Volta Tech AS.",
-    4: "M6 Fremdriftsplan:\nFase 1: Byggesøknad & Riving (Fullført)\nFase 2: Båndtekking & Klimaskall (Fullført)\nFase 3: VVS, Varmepumpe & Gulvvarme (Pågår)\nFase 4: Innvendig Eikeparkett & Kjøkkenøy (Planlagt)",
-    5: "M6 Anbefalt 9-Trinns Byggerekkefølge:\nTrinn 1: Byggesøknad & Rigging\nTrinn 2: Utrensing & Riving\nTrinn 3: Kjeller, Drenering & Radon\nTrinn 4: Ståldrager HEB 220 (R 60)\nTrinn 5: Tett Bygg (EI 60)\nTrinn 6: Tekniske Føringer (Elektro, PEX, Varmepumpe)\nTrinn 7: Dampsperre & Gipsing (Q4)\nTrinn 8: Våtrom (BVN) & Eikeparkett\nTrinn 9: Innregulering & Ferdigattest",
-    6: "M6 Tønsberg Kommuneplan 2023-2035 Bestemmelser:\nPlanID: 3803 99010 (Vedtatt 03.04.2024)\n%BYA: Maks 25 % BYA (M6 planlagt: 21,5 % BYA inkl 18m² biloppstilling)\nHøydegrenser: Maks 9,0m møne / 6,5m gesims\nNabogrense: Min. 4,0m avstand (PBL § 29-4)\nOvervann: LOD 3-trinnsstrategi (Stenkiste/infiltrering)",
-    7: "M6 Tønsberg Arkitekturhåndbok (PBL § 29-2 Estetikk):\nMaterialitet: Shou Sugi Ban brent tre + Ruukki mattsvart båndtekket tak\nSolceller: Planmonterte solceller på tak fluktende med takflate tilfredsstiller automatiske visuelle krav\nUtendørs belysning: Avskjermede LED-spotter med varm fargetemperatur (2700K-3000K)"
-  };
-
-  const text = sourceTexts[sourceId] || "";
-  navigator.clipboard.writeText(text).then(() => {
-    showToast(`Kilde 0${sourceId} kopiert til utklippstavlen!`);
-  });
-}
-
-// Kopiere Prompt
-function copyPrompt() {
-  const promptEl = document.getElementById('promptText');
-  if (!promptEl) return;
-  navigator.clipboard.writeText(promptEl.innerText).then(() => {
-    showToast("NotebookLM prompt kopiert!");
-  });
-}
-
-// Modal Kontroller
-function openNotebookModal() {
-  const modal = document.getElementById('notebookModal');
-  if (modal) modal.classList.add('active');
-}
-
-function closeNotebookModal() {
-  const modal = document.getElementById('notebookModal');
-  if (modal) modal.classList.remove('active');
-}
-
 // Varselmeldinger (Toasts)
 function showToast(message) {
   const toast = document.getElementById('toastNotification');

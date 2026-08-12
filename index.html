@@ -23,12 +23,8 @@
         <a href="sequence.html" class="nav-link subpage-link">
           <i data-lucide="layers" style="width:14px; vertical-align:-1px;"></i> Byggerekkefølge
         </a>
-        <a href="#notebooklm" class="nav-link">NotebookLM KI</a>
         <a href="#budget" class="nav-link">Budsjettkontroll</a>
       </nav>
-      <a href="https://notebooklm.google.com/" target="_blank" rel="noopener noreferrer" class="notebooklm-btn">
-        <i data-lucide="sparkles"></i> Åpne NotebookLM Prosjekt
-      </a>
     </div>
   </header>
 
@@ -56,28 +52,6 @@
           <div class="stat-value">kr 1,15m</div>
           <div class="stat-label">Spent av kr 2,5m Budsjett</div>
         </div>
-      </div>
-    </div>
-    
-    <!-- Hero Project Summary Card -->
-    <div class="card notebooklm-card">
-      <div class="notebooklm-header">
-        <div class="notebook-icon"><i data-lucide="cpu"></i></div>
-        <div>
-          <h3>NotebookLM KI-Integrasjon</h3>
-          <p style="color:var(--text-muted); font-size:0.85rem;">Prosjekt: <strong>m6 - renew</strong></p>
-        </div>
-      </div>
-      <p style="font-size:0.88rem; color: var(--text-muted); margin-bottom: 1.2rem;">
-        Synkronisert med 7 strukturerte Markdown-kildedokumenter som dekker U-verdier, NIBE varmepumpe, Schüco lavenergiglass, radonmembran, Tønsberg kommuneplan og Tønsberg arkitekturhåndbok.
-      </p>
-      <div style="display:flex; gap:0.75rem;">
-        <button class="btn-sm" style="flex:1; justify-content:center; padding:0.6rem;" onclick="openNotebookModal()">
-          <i data-lucide="file-text" style="width:14px;"></i> Vis Kilder
-        </button>
-        <a href="sequence.html" class="btn-sm" style="flex:1; justify-content:center; padding:0.6rem; background:var(--gradient-brand); color:white; border:none; text-decoration:none;">
-          <i data-lucide="arrow-right" style="width:14px;"></i> Underside: Rekkefølge
-        </a>
       </div>
     </div>
   </section>
@@ -132,7 +106,7 @@
           </p>
         </div>
         <div>
-          <a href="sequence.html" class="notebooklm-btn" style="padding:0.8rem 1.8rem; font-size:1rem;">
+          <a href="sequence.html" class="nav-link subpage-link" style="padding:0.8rem 1.8rem; font-size:1rem; background:var(--gradient-brand); color:white; border-radius:30px; display:inline-flex; align-items:center; gap:0.5rem; text-decoration:none; font-weight:700;">
             <i data-lucide="layers"></i> Utforsk Byggerekkefølge →
           </a>
         </div>
@@ -200,58 +174,6 @@
         <div>
           <span class="status-badge status-completed" id="roomStatusBadge">Klimaskall Fullført</span>
         </div>
-      </div>
-    </section>
-
-    <!-- NotebookLM Panel & Source Export -->
-    <section id="notebooklm" class="card notebooklm-card" style="margin-bottom: 4rem;">
-      <div class="notebooklm-header">
-        <div class="notebook-icon"><i data-lucide="brain"></i></div>
-        <div>
-          <h3>NotebookLM Prosjektkilder ("m6 - renew")</h3>
-          <p style="font-size:0.85rem; color:var(--text-muted);">Strukturerte Markdown-kildedokumenter klare for KI-analyse</p>
-        </div>
-      </div>
-
-      <div class="sources-list" style="display:grid; grid-template-columns: repeat(2, 1fr); gap:1rem;">
-        <div class="source-item">
-          <span>📄 01_PROSJEKTOVERSIKT.md</span>
-          <button class="btn-sm" onclick="copySourceContent(1)">Kopier Tekst</button>
-        </div>
-        <div class="source-item">
-          <span>📄 02_TEKNISKE_SPESIFIKASJONER.md</span>
-          <button class="btn-sm" onclick="copySourceContent(2)">Kopier Tekst</button>
-        </div>
-        <div class="source-item">
-          <span>📄 03_BUDSJETT_ENTREPRENØRER.md</span>
-          <button class="btn-sm" onclick="copySourceContent(3)">Kopier Tekst</button>
-        </div>
-        <div class="source-item">
-          <span>📄 04_FREMFRIFTSPLAN.md</span>
-          <button class="btn-sm" onclick="copySourceContent(4)">Kopier Tekst</button>
-        </div>
-        <div class="source-item">
-          <span>📄 05_BYGGEREKKEFØLGE.md</span>
-          <button class="btn-sm" onclick="copySourceContent(5)">Kopier Tekst</button>
-        </div>
-        <div class="source-item">
-          <span>📄 06_KOMMUNEPLAN_TØNSBERG.md</span>
-          <button class="btn-sm" onclick="copySourceContent(6)">Kopier Tekst</button>
-        </div>
-        <div class="source-item" style="grid-column: span 2;">
-          <span>📄 07_ARKITEKTURHÅNDBOK_TØNSBERG.md (PBL § 29-2 Estetikk)</span>
-          <button class="btn-sm" onclick="copySourceContent(7)">Kopier Tekst</button>
-        </div>
-      </div>
-
-      <div style="background: rgba(0,0,0,0.3); border:1px solid var(--border-glow); padding: 1.2rem; border-radius: var(--radius-md);">
-        <h4 style="font-size:0.95rem; margin-bottom: 0.5rem; color:var(--accent-cyan);">💡 Anbefalt NotebookLM Prompt</h4>
-        <p style="font-size:0.85rem; color:var(--text-muted); font-style:italic;" id="promptText">
-          "Hvordan tilfredsstiller materialvalgene for M6 (Shou Sugi Ban brent tre og Ruukki båndtekking) kravene i Tønsberg kommunes Arkitekturhåndbok og PBL § 29-2?"
-        </p>
-        <button class="btn-sm" style="margin-top:0.75rem; width:100%; justify-content:center;" onclick="copyPrompt()">
-          <i data-lucide="copy" style="width:14px;"></i> Kopier Prompt til Utklippstavle
-        </button>
       </div>
     </section>
 
@@ -331,35 +253,11 @@
 
   </div>
 
-  <!-- NotebookLM Modal Dialog -->
-  <div class="modal-overlay" id="notebookModal">
-    <div class="modal-card">
-      <div class="modal-header">
-        <h3><i data-lucide="sparkles" style="color:var(--accent-cyan)"></i> NotebookLM Integrasjonsguide</h3>
-        <button class="close-modal" onclick="closeNotebookModal()">&times;</button>
-      </div>
-      <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom: 1.5rem;">
-        GitHub-repositoriet inneholder dedikerte kildedokumenter strukturt spesielt for NotebookLM. Slik holder du dem synkronisert med ditt <strong>m6 - renew</strong> prosjekt:
-      </p>
-
-      <ol style="padding-left: 1.2rem; font-size:0.9rem; color:var(--text-main); display:flex; flex-direction:column; gap:0.8rem; margin-bottom: 1.5rem;">
-        <li>Åpne ditt NotebookLM-prosjekt på <a href="https://notebooklm.google.com/" target="_blank">notebooklm.google.com</a>.</li>
-        <li>Klikk på <strong>+ Legg til kilder</strong> og lim inn innhold fra <code>notebooklm/sources/</code>.</li>
-        <li>NotebookLM analyserer automatisk byggetekniske spesifikasjoner, TEK17 U-verdier, Tønsberg kommuneplan og arkitekturretningslinjer.</li>
-        <li>Bruk NotebookLM sin Audio Overview-funksjon for å generere en podkast-oppsummering av renoveringsprosjektet!</li>
-      </ol>
-
-      <button class="btn-sm" style="width:100%; padding:0.8rem; background:var(--gradient-brand); color:white; border:none; border-radius:30px; font-weight:700; justify-content:center;" onclick="closeNotebookModal()">
-        Skjønt! Lukk Guide
-      </button>
-    </div>
-  </div>
-
   <div class="toast" id="toastNotification">Varsel</div>
 
   <footer>
     <p>M6 Fornyelse – Totalrehabilitering av Myrteveien 6</p>
-    <p style="margin-top:0.5rem; font-size:0.8rem; opacity:0.6;">Repositorium: <a href="https://github.com/magnuskiro/m6" target="_blank">github.com/magnuskiro/m6</a> • NotebookLM Prosjekt: "m6 - renew"</p>
+    <p style="margin-top:0.5rem; font-size:0.8rem; opacity:0.6;">Repositorium: <a href="https://github.com/magnuskiro/m6" target="_blank">github.com/magnuskiro/m6</a></p>
   </footer>
 
   <script src="app.js"></script>
