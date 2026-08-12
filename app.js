@@ -168,7 +168,8 @@ function copySourceContent(sourceId) {
     3: "M6 Budget Breakdown:\nTotal Allocated: €220,000 | Spent to date: €98,500\nKey Contractors: Nordic Build AS, Thermic Flow AS, Volta Tech AS.",
     4: "M6 Master Timeline:\nPhase 1: Permits & Demolition (Done)\nPhase 2: Envelope & Roofing (Done)\nPhase 3: Technical & Floor Heating (In Progress)\nPhase 4: Interior & Kitchen (Planned)",
     5: "M6 Recommended 9-Stage Building Sequence (Byggerekkefølge):\nStage 1: Permits & Rigging\nStage 2: Demolition & Utrensing\nStage 3: Foundation, Drainage & Radon\nStage 4: Structural Steel (HEB 220)\nStage 5: Building Envelope Weather-tightness\nStage 6: Technical Rough-In (Electrical, PEX, HRV)\nStage 7: Insulation, Vapor Barrier (INTELLO) & Boarding\nStage 8: Wet Rooms (BVN) & Oak Flooring\nStage 9: Commissioning & Occupancy Permit",
-    6: "M6 Tønsberg Municipal Plan & Zoning Dependencies:\nKommune: Tønsberg (Kommune-nr: 3905, Gnr 140 / Bnr 371)\nSite Limits: Max 25% BYA (M6 planned: 21.5% BYA)\nBuilding Height: Max 9.0m ridge height / 6.5m cornice height\nSetback: 4.0m boundary setback (PBL § 29-4)\nStormwater: Open local stormwater infiltration (LOD) required"
+    6: "M6 Tønsberg Municipal Plan & Zoning Dependencies:\nKommune: Tønsberg (Kommune-nr: 3905, Gnr 140 / Bnr 371)\nSite Limits: Max 25% BYA (M6 planned: 21.5% BYA)\nBuilding Height: Max 9.0m ridge height / 6.5m cornice height\nSetback: 4.0m boundary setback (PBL § 29-4)\nStormwater: Open local stormwater infiltration (LOD) required",
+    7: "M6 Tønsberg Visual Quality Guidelines (PBL § 29-2):\nMateriality: Shou Sugi Ban burned wood + Ruukki matte standing seam roof\nProportions: Recessed glass wall sections breaking up massing\nTerrain: No retaining walls > 1.0m, natural slope preservation\nLighting: Warm 2700K downward shielded LEDs (Dark Sky compliant)"
   };
 
   const text = sourceTexts[sourceId] || "";
