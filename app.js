@@ -4,7 +4,7 @@
 const roomsData = {
   exterior: {
     title: 'Fasade & Utvendig Transformasjon',
-    details: 'Erstatning av slitt 1974-trekledning med Shou Sugi Ban brent tre, montering av trelags Schüco skyvedører, båndtekket metalltak og integrert varm arkitektonisk utebelysning.',
+    details: 'Erstatning av slitt 1947-trekledning med Shou Sugi Ban brent tre, montering av trelags Schüco skyvedører, båndtekket metalltak og integrert varm arkitektonisk utebelysning.',
     status: 'Klimaskall Fullført',
     statusClass: 'status-completed',
     beforeImg: 'assets/images/exterior_before.jpg',
@@ -12,7 +12,7 @@ const roomsData = {
   },
   living: {
     title: 'Åpen Stue & Allrom (65 m²)',
-    details: 'Fjerning av 1974-stendervegger for å utvide stuearealet, montering av HEB 220 bærende ståldrager (R 60 brannbeskyttet), hvitoljet eikeparkett, betongpeis og innfelt LED-cove i himling.',
+    details: 'Fjerning av 1947-stendervegger for å utvide stuearealet, montering av HEB 220 bærende ståldrager (R 60 brannbeskyttet), hvitoljet eikeparkett, betongpeis og innfelt LED-cove i himling.',
     status: 'Gjenstår Overflater',
     statusClass: 'status-progress',
     beforeImg: 'assets/images/living_before.jpg',
@@ -20,7 +20,7 @@ const roomsData = {
   },
   kitchen: {
     title: 'Kjøkken & Marmorøy',
-    details: 'Utrensing av opprinnelige 1970-talls laminatskap, erstattet med mørke mattedører, hvit eikefinish, 3,2m marmorøy med nedfelling, Gaggenau hvitevarer og integrert benkevifte.',
+    details: 'Utrensing av opprinnelige laminatskap og innredning, erstattet med mørke mattedører, hvit eikefinish, 3,2m marmorøy med nedfelling, Gaggenau hvitevarer og integrert benkevifte.',
     status: 'Kjøkken Bestilt',
     statusClass: 'status-progress',
     beforeImg: 'assets/images/kitchen_before.jpg',

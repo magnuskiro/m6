@@ -3,10 +3,12 @@
 ## 1. Executive Summary
 - **Project Name:** M6 Total House Rehabilitation & Modernization (`m6`)
 - **Property Location:** M6 Residence
-- **Year Built:** 1974
+- **Year Designed / Built:** Designed in 1946, Built in 1947
+- **Location:** Myrteveien 6, 3152 Tolvsrød, Tønsberg Municipality, Norway (Gnr 140 / Bnr 371).
+- **Target Completion Date:** Q4 2026.
 - **Original Floor Area:** 185 m² across 2 levels + basement
 - **Target Living Area:** 220 m² post-expansion
-- **Primary Goal:** Transform an aging, energy-inefficient 1970s dwelling into an ultra-modern, zero-net-ready Scandinavian home featuring high energy efficiency, open-concept spaces, and sustainable materials.
+- **Primary Goal:** Transform an aging, energy-inefficient 1947 dwelling (designed in 1946) into an ultra-modern, zero-net-ready Scandinavian home featuring high energy efficiency, open-concept spaces, and sustainable materials.
 
 ## 2. Key Objectives
 1. **Thermal & Energy Overhaul:** Upgrade building envelope to meet modern TEK17 standards (Target U-value roof: 0.11 W/m²K, walls: 0.15 W/m²K, triple-glazed windows: 0.8 W/m²K).

@@ -8,7 +8,7 @@ Welcome to **M6 Renew**, the central repository and interactive planning hub for
 ---
 
 ## 📌 Project Overview & Purpose
-The purpose of this project is to plan, track, manage, and visually document the complete rehabilitation of an original 1974 residential house into a state-of-the-art, high-efficiency Scandinavian dwelling.
+The purpose of this project is to plan, track, manage, and visually document the complete rehabilitation of an original residential house (designed in 1946, built in 1947) into a state-of-the-art, high-efficiency Scandinavian dwelling.
 
 ### Key Objectives:
 - 🏗️ **Structural Open-Concept Overhaul**: Removing non-bearing walls and installing steel support beams (HEB 220) to create a unified 65 m² living and kitchen area.
@@ -20,7 +20,7 @@ The purpose of this project is to plan, track, manage, and visually document the
 
 ## 🌟 Interactive Before & After Web Application
 This repository includes a dynamic visual web application (`index.html`) featuring:
-1. **Split-Screen Interactive Image Slider**: Compare vintage 1974 before states with 2026 architectural target renders across multiple zones (Exterior facade, Living room, Kitchen, Master bathroom).
+1. **Split-Screen Interactive Image Slider**: Compare vintage 1947 before states with 2026 architectural target renders across multiple zones (Exterior facade, Living room, Kitchen, Master bathroom).
 2. **Master Renovation Roadmap**: Interactive phase timeline tracking completion from permits to final inspection.
 3. **NotebookLM Integration Panel**: Quick access to Markdown source exports, suggested prompts, and audio summary helpers.
 4. **Live Budget & Expense Tracker**: Category-by-category breakdown of allocated budget (€220,000) vs actual spending (€98,500).
