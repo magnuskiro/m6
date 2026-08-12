@@ -5,6 +5,22 @@ This source document outlines the legal building regulations, municipal master p
 
 ---
 
+## 📚 Official Source Citations & References (Hentet / Verifisert: 12. august 2026)
+
+1. **Tønsberg kommune – Kommuneplanens arealdel 2020–2032**
+   - **Document Name:** *Kommuneplanens arealdel 2020–2032 for Tønsberg kommune*
+   - **Plan ID:** `3905 20200001` (Vedtatt i Tønsberg kommunestyre)
+   - **Official Portal:** [Tønsberg kommune – Planinnsyn & Regulering (tonsberg.kommune.no)](https://www.tonsberg.kommune.no/tjenester/plan-bygg-og-eiendom/planer-og-prosjekter/)
+   - **Map Portal:** [Tønsberg Kartinnsyn (kart.tonsberg.kommune.no)](https://kart.tonsberg.kommune.no) / [Kommunekart (kommunekart.com)](https://kommunekart.com) (Property search: Gnr 140 / Bnr 371, Myrteveien 6, 3152 Tolvsrød)
+   - **Access Date:** **12. august 2026**
+
+2. **Norges Geologiske Undersøkelse (NGU) & NVE**
+   - **Document Name:** *Aktsomhetskart for Radon og Overvann (Tolvsrød/Slagen)*
+   - **Official Web Reference:** [NGU Radon Portal (radon.ngu.no)](https://radon.ngu.no)
+   - **Access Date:** **12. august 2026**
+
+---
+
 ## 🏛️ 1. Municipal Plan & Zoning Framework (Kommuneplanens Arealdel)
 - **Municipality:** Tønsberg Kommune (Kommune-nr: 3905)
 - **Property Cadastre:** Gnr 140, Bnr 371 (Tolvsrød / Slagen area)

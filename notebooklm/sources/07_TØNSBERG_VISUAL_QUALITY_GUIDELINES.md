@@ -5,9 +5,25 @@ This source document outlines how the total rehabilitation of **Myrteveien 6, 31
 
 ---
 
+## 📚 Official Source Citations & References (Hentet / Verifisert: 12. august 2026)
+
+1. **Tønsberg kommune – Veileder for visuelle kvaliteter og estetikk i byggesaker**
+   - **Document Name:** *Estetikk og visuelle kvaliteter i Tønsberg kommune (Veileder til PBL § 29-2)*
+   - **Legal Basis:** Plan- og bygningsloven (PBL) av 27. juni 2008 nr. 71 § 29-2 (*Visuelle kvaliteter*)
+   - **Official Portal:** [Tønsberg kommune – Plan, bygg og eiendom (tonsberg.kommune.no)](https://www.tonsberg.kommune.no/tjenester/plan-bygg-og-eiendom/byggesak/)
+   - **Map & Registry Portal:** [Tønsberg kommunes kartportal (kart.tonsberg.kommune.no)](https://kart.tonsberg.kommune.no) / [Kommunekart (kommunekart.com)](https://kommunekart.com) (Property search: Gnr 140 / Bnr 371, Myrteveien 6, 3152 Tolvsrød)
+   - **Access Date:** **12. august 2026**
+
+2. **Direktoratet for byggkvalitet (DiBK) – TEK17 (Byggteknisk forskrift)**
+   - **Document Name:** *FOR-2017-06-19-840 Forskrift om tekniske krav til byggverk (TEK17)*
+   - **Official Web Reference:** [DiBK TEK17 Forskrifter (dibk.no)](https://dibk.no/byggereglene/tek17/)
+   - **Access Date:** **12. august 2026**
+
+---
+
 ## 🎨 1. Core Principles of Tønsberg Visual Quality Guidelines
 
-### A. Neighborhood & Site Adaptation (Tilpasning til Strøkskarakter)
+### A. Neighborhood & Site Adaptation (Tilpasning til Strøkskarakter - PBL § 29-2)
 - **Tolvsrød Identity:** Tolvsrød is characterized by low-rise residential timber homes surrounded by greenery and pine/oak trees.
 - **M6 Alignment:** The architectural design retains the original 1974 building footprint and low-slung roof profile (7.8m ridge height), ensuring it harmonizes with neighboring single-family dwellings without dominating the streetscape.
 
