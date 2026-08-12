@@ -1,0 +1,16 @@
+name: Auto Add Issues to Project Board
+
+on:
+  issues:
+    types: [opened, labeled]
+
+jobs:
+  add-to-project:
+    name: Add issue to Project #1
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add Issue to GitHub Project V2
+        uses: actions/add-to-project@v1
+        with:
+          project-url: 'https://github.com/users/magnuskiro/projects/1'
+          github-token: ${{ secrets.ADD_TO_PROJECT_PAT || secrets.GITHUB_TOKEN }}
