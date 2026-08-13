@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anbefalt Byggerekkefølge & Faglig Sekvens | M6 Fornyelse</title>
-  <meta name="description" content="Anbefalt 9-trinns byggerekkefølge og faglig utførelsesrekkefølge for totalrehabilitering av Myrteveien 6.">
+  <title>Byggerekkefølge & Fasematrise | M6 Fornyelse</title>
+  <meta name="description" content="Strukturert fasematrise og standard byggerekkefølge fra start til slutt for totalrehabilitering av Myrteveien 6.">
   <link rel="stylesheet" href="styles.css">
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
@@ -15,7 +15,7 @@
     <div class="header-container">
       <div class="brand">
         <i data-lucide="home"></i> M6 FORNYELSE
-        <span class="brand-badge">UNDERSIDE</span>
+        <span class="brand-badge">TOLVSRØD</span>
       </div>
       <nav>
         <a href="index.html" class="nav-link">Hovedoversikt</a>
@@ -35,413 +35,314 @@
   <!-- Sub Page Hero Banner -->
   <section class="subpage-hero">
     <div style="display:inline-flex; align-items:center; gap:0.5rem; background:rgba(56,189,248,0.1); border:1px solid var(--border-glow); padding:0.3rem 0.8rem; border-radius:20px; font-size:0.85rem; color:var(--accent-cyan); margin-bottom:1rem;">
-      <i data-lucide="compass" style="width:14px;"></i> SINTEF Byggforsk, TEK17 (EI 60 Brannkrav) & Tønsberg Arbeidsflyt
+      <i data-lucide="compass" style="width:14px;"></i> SINTEF Byggforsk, TEK17, SAK10 & Tønsberg Arbeidsflyt
     </div>
-    <h1>Standard & Anbefalt Byggerekkefølge</h1>
+    <h1>Byggerekkefølge & Fasematrise</h1>
     <p>
-      Den definitive 9-trinns prosjektsekvensen for totalrehabilitering av boligen. Utarbeidet i samsvar med TEK17 EI 60 brannsmittevern, R 60 bærende stål og Tønsberg kommuneplan.
+      En totalrehabilitering (eller hovedombygging) av et hus følger vanligvis en strukturert prosess oppdelt i tydelige faser. Dette gjør man for å sikre god økonomisk styring, overholde myndighetskrav og unngå at fagfagene arbeider oppå hverandre.
     </p>
   </section>
 
   <div class="container">
 
-    <!-- Interactive Stage Stepper Navigation -->
+    <!-- Stepper Navigation (6 Fasers Prosess) -->
     <div class="sequence-stepper">
       <div class="step-pill active" onclick="scrollToStage(1)">
-        <span class="step-num">01</span>
-        <span class="step-name">Søknad & Rigging</span>
+        <span class="step-num">FASE 1</span>
+        <span class="step-name">Planlegging & Prosjektering</span>
       </div>
       <div class="step-pill" onclick="scrollToStage(2)">
-        <span class="step-num">02</span>
-        <span class="step-name">Utrensing & Riving</span>
+        <span class="step-num">FASE 2</span>
+        <span class="step-name">Riving & Klargjøring</span>
       </div>
       <div class="step-pill" onclick="scrollToStage(3)">
-        <span class="step-num">03</span>
-        <span class="step-name">Kjeller & Radon</span>
+        <span class="step-num">FASE 3</span>
+        <span class="step-name">Råbygg & Tett Bygg</span>
       </div>
       <div class="step-pill" onclick="scrollToStage(4)">
-        <span class="step-num">04</span>
-        <span class="step-name">Ståldrager (R 60)</span>
+        <span class="step-num">FASE 4</span>
+        <span class="step-name">Tekniske Installasjoner</span>
       </div>
       <div class="step-pill" onclick="scrollToStage(5)">
-        <span class="step-num">05</span>
-        <span class="step-name">Tett Bygg (EI 60)</span>
+        <span class="step-num">FASE 5</span>
+        <span class="step-name">Innvendig Finarbeid</span>
       </div>
       <div class="step-pill" onclick="scrollToStage(6)">
-        <span class="step-num">06</span>
-        <span class="step-name">Tekniske Føringer</span>
-      </div>
-      <div class="step-pill" onclick="scrollToStage(7)">
-        <span class="step-num">07</span>
-        <span class="step-name">Dampsperre & Gips</span>
-      </div>
-      <div class="step-pill" onclick="scrollToStage(8)">
-        <span class="step-num">08</span>
-        <span class="step-name">Våtrom & Parkett</span>
-      </div>
-      <div class="step-pill" onclick="scrollToStage(9)">
-        <span class="step-num">09</span>
-        <span class="step-name">Ferdigattest</span>
+        <span class="step-num">FASE 6</span>
+        <span class="step-name">Utomhus & Overtakelse</span>
       </div>
     </div>
 
-    <!-- 9-Stage Detailed Sequence Cards -->
+    <!-- 6 Detailed Phase Cards -->
     <div class="sequence-list">
 
-      <!-- Stage 1 -->
+      <!-- FASE 1 -->
       <article class="sequence-card" id="stage-1">
         <span class="sequence-card-number">01</span>
         <div class="sequence-card-header">
-          <span class="stage-badge">Trinn 1</span>
-          <h2 class="stage-title">Forundersøkelser, Tønsberg Byggesøknad & Rigging</h2>
+          <span class="stage-badge">Fase 1</span>
+          <h2 class="stage-title">Planlegging og Prosjektering (Før Bygging)</h2>
           <span class="status-badge status-completed" style="margin-left:auto;">Fullført</span>
         </div>
         <p style="color:var(--text-muted); font-size:0.95rem;">
-          <strong>Hovedmål:</strong> Sikre kommunal godkjenning fra Tønsberg kommune, avklare tomtegrenser og opprette sikker rigging.
+          <strong>Formål:</strong> Avklare teknisk tilstand, utarbeide prosjekteringsgrunnlag, innhente kommunal tillatelse og sikre finansiering.
         </p>
 
-        <div class="grid-3col">
-          <div class="subbox subbox-tasks">
-            <h4><i data-lucide="check-square"></i> Oppgaver</h4>
-            <ul class="subbox-list">
-              <li>Arkitektonisk 3D-skanning & innsending av byggesøknad (Søknad om tiltak).</li>
-              <li>Sjekk av eiendomsgrenser: Sikre min. 4,0m avstand til nabo (PBL § 29-4).</li>
-              <li>Kartlegging av miljøfarlig avfall (Asbestfliser, blyfarge, PCB-fuger).</li>
+        <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap:1.2rem; margin-top:1rem;">
+
+          <div style="background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.08); padding:1.2rem; border-radius:8px;">
+            <h4 style="color:var(--accent-cyan); margin:0 0 0.5rem 0; font-size:1.05rem;">1. Behovs- og Tilstandsanalyser</h4>
+            <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
+              <li>Kartlegging av eksisterende tilstand (bæring, fukt, elektrisk anlegg, rør, tak, drenering).</li>
+              <li>Utarbeidelse av romprogram og ønsker for ny løsning (Myrteveien 6).</li>
             </ul>
           </div>
-          <div class="subbox subbox-rules">
-            <h4><i data-lucide="file-check"></i> Tekniske Krav</h4>
-            <ul class="subbox-list">
-              <li>Tønsberg Kommuneplan %BYA grense ≤ 25 % (M6 planlagt: 21,5 %).</li>
-              <li>TEK17 RAM-tillatelse & HMS-rigging med byggeplassgjerde.</li>
-              <li>Statiker-godkjenning av bæreevne før riving.</li>
+
+          <div style="background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.08); padding:1.2rem; border-radius:8px;">
+            <h4 style="color:var(--accent-purple); margin:0 0 0.5rem 0; font-size:1.05rem;">2. Arkitekt- og Ingeniørarbeid</h4>
+            <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
+              <li>Tegning av nye planløsninger, snitt og fasader (Arkitekt A-901).</li>
+              <li>Beregning av bæring (HEB 220 ståldrager R 60) og energiløsninger (isolasjon, ventilasjon, oppvarming).</li>
             </ul>
           </div>
-          <div class="subbox subbox-warnings">
-            <h4><i data-lucide="alert-circle"></i> Kritiske Avhengigheter</h4>
-            <ul class="subbox-list">
-              <li>Ingen riving eller bærende inngrep tillates før rammetillatelse foreligger fra kommunen.</li>
+
+          <div style="background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.08); padding:1.2rem; border-radius:8px;">
+            <h4 style="color:var(--accent-emerald); margin:0 0 0.5rem 0; font-size:1.05rem;">3. Søknadsprosess (Byggesak Tønsberg)</h4>
+            <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
+              <li>Nabovarsling (DiBK 5154) til berørte naboer.</li>
+              <li>Innsending av byggesøknad jf. SAK10 § 5-4 for bruksendring, fasadeendring og endring i bæring.</li>
             </ul>
           </div>
+
+          <div style="background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.08); padding:1.2rem; border-radius:8px;">
+            <h4 style="color:var(--accent-amber); margin:0 0 0.5rem 0; font-size:1.05rem;">4. Anbud og Finansiering</h4>
+            <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
+              <li>Inntegning av detaljerte kravspesifikasjoner og anbudsinnhenting (Byggblankett 3426 / Bustadoppføringslova).</li>
+              <li>Etablering av byggelån med banken (DNB) inkl. 10 % uforutsett-reserver.</li>
+            </ul>
+          </div>
+
         </div>
       </article>
 
-      <!-- Stage 2 -->
+      <!-- FASE 2 -->
       <article class="sequence-card" id="stage-2">
         <span class="sequence-card-number">02</span>
         <div class="sequence-card-header">
-          <span class="stage-badge">Trinn 2</span>
-          <h2 class="stage-title">Selektiv Riving & Utrensing (Renrydding)</h2>
+          <span class="stage-badge">Fase 2</span>
+          <h2 class="stage-title">Riving og Klargjøring (Start på Byggeplass)</h2>
           <span class="status-badge status-completed" style="margin-left:auto;">Fullført</span>
         </div>
         <p style="color:var(--text-muted); font-size:0.95rem;">
-          <strong>Hovedmål:</strong> Strip innvendige rom ned til stenderverket uten å berøre bærende konstrukjonselementer.
+          <strong>Formål:</strong> Sikring av byggeplass og renrydding ned til det rene råbygget.
         </p>
 
-        <div class="grid-3col">
-          <div class="subbox subbox-tasks">
-            <h4><i data-lucide="check-square"></i> Oppgaver</h4>
-            <ul class="subbox-list">
-              <li>Systematisk fjerning av platekledning, takpuss og gammel glava.</li>
-              <li>Fjerning av opprinnelige 1947 støpejernsrør og elektrisk anlegg.</li>
-              <li>Riving av ikke-bærende lettvegger for å åpne stueløsningen.</li>
+        <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap:1.2rem; margin-top:1rem;">
+
+          <div style="background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.08); padding:1.2rem; border-radius:8px;">
+            <h4 style="color:var(--accent-cyan); margin:0 0 0.5rem 0; font-size:1.05rem;">1. Sikring og Klargjøring</h4>
+            <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
+              <li>Opprigging av byggeplass (avfallscontainere, byggestrøm, HMS/sikring).</li>
+              <li>Plassering av støvvegger og beskyttelse av konstruksjoner som skal bevares.</li>
             </ul>
           </div>
-          <div class="subbox subbox-rules">
-            <h4><i data-lucide="file-check"></i> Tekniske Krav</h4>
-            <ul class="subbox-list">
-              <li>NS 3467 Avfallssorteringsgrad > 90 %.</li>
-              <li>Støvvegger & HEPA luftrensere på byggeplass.</li>
+
+          <div style="background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.08); padding:1.2rem; border-radius:8px;">
+            <h4 style="color:var(--accent-purple); margin:0 0 0.5rem 0; font-size:1.05rem;">2. Innvendig og Utvendig Sanering / Riving</h4>
+            <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
+              <li>Riving helt ned til råbygget (stripping av kledning, plater, gips, 1947-isolering, gamle rør og elektro).</li>
+              <li>Kildesortering og bortkjøring av avfall jf. TEK17 § 9-4.</li>
             </ul>
           </div>
-          <div class="subbox subbox-warnings">
-            <h4><i data-lucide="alert-circle"></i> Kritiske Avhengigheter</h4>
-            <ul class="subbox-list">
-              <li>Merk alle bærende treinnlegg tydelig med rød farge før mannskap starter rivingen.</li>
-            </ul>
-          </div>
+
         </div>
       </article>
 
-      <!-- Stage 3 -->
+      <!-- FASE 3 -->
       <article class="sequence-card" id="stage-3">
         <span class="sequence-card-number">03</span>
         <div class="sequence-card-header">
-          <span class="stage-badge">Trinn 3</span>
-          <h2 class="stage-title">Kjeller, Drenering & Radonsikring</h2>
+          <span class="stage-badge">Fase 3</span>
+          <h2 class="stage-title">Råbygg, Grunnarbeid og Klimaskall (Tett Bygg)</h2>
           <span class="status-badge status-completed" style="margin-left:auto;">Fullført</span>
         </div>
         <p style="color:var(--text-muted); font-size:0.95rem;">
-          <strong>Hovedmål:</strong> Sikre varig fuktsikring av grunnmur, radongassisolering og sub-slab isolasjon.
+          <strong>Formål:</strong> Få huset helt tett og fuktsikkert før innvendig arbeider starter.
         </p>
 
-        <div class="grid-3col">
-          <div class="subbox subbox-tasks">
-            <h4><i data-lucide="check-square"></i> Oppgaver</h4>
-            <ul class="subbox-list">
-              <li>Utskrift rundt grunnmur; montering av Platon knottestøp & XPS isolasjon.</li>
-              <li>Nye drensrør ført til lokal overvannskum/stenkiste (LOD).</li>
-              <li>Legging av 200mm EPS understøp + RadoStop radonmembran + radonsug.</li>
+        <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:1.2rem; margin-top:1rem;">
+
+          <div style="background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.08); padding:1.2rem; border-radius:8px;">
+            <h4 style="color:var(--accent-cyan); margin:0 0 0.5rem 0; font-size:1.05rem;">1. Grunnarbeid & Drenering</h4>
+            <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
+              <li>Utgraving, ny utvendig drenering, isolering av grunnmur, overvannshåndtering (LOD stenkiste jf. § 27) og bunnledninger.</li>
+              <li>Utgraving av kjellergulv, støping av ny såle m/radonsperre og EPS-isolasjon.</li>
             </ul>
           </div>
-          <div class="subbox subbox-rules">
-            <h4><i data-lucide="file-check"></i> Tekniske Krav</h4>
-            <ul class="subbox-list">
-              <li>Radonkonsentrasjonsmål < 50 Bq/m³ (Tiltaksgrense 100 Bq/m³).</li>
-              <li>SINTEF Byggforsk 514.221 Dreneringsdetaljer.</li>
+
+          <div style="background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.08); padding:1.2rem; border-radius:8px;">
+            <h4 style="color:var(--accent-emerald); margin:0 0 0.5rem 0; font-size:1.05rem;">2. Tømrerarbeid & Bærekonstruksjon</h4>
+            <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
+              <li>Montering av HEB 220 ståldrager (branninnkledd R 60) for å åpne stueløsning.</li>
+              <li>Nytt taktekke med betongtakstein (vurdere skifer) og sløyfer/lekter.</li>
             </ul>
           </div>
-          <div class="subbox subbox-warnings">
-            <h4><i data-lucide="alert-circle"></i> Kritiske Avhengigheter</h4>
-            <ul class="subbox-list">
-              <li>Radonmembranen må trykktestes og klemres i rørgjennomføringer før betongstøp.</li>
+
+          <div style="background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.08); padding:1.2rem; border-radius:8px;">
+            <h4 style="color:var(--accent-purple); margin:0 0 0.5rem 0; font-size:1.05rem;">3. Klimaskall (Utvendig Ferdigstilling)</h4>
+            <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
+              <li>200mm utvendig Rockwool fasadeisolasjon, vindsperre, lektring og liggende trekledning.</li>
+              <li>Innsetting av NorDan sidehengslede 3-lags alukledde vinduer og ytterdører.</li>
+              <li><em>Huset er nå lukket og definert som "tett bygg".</em></li>
             </ul>
           </div>
+
         </div>
       </article>
 
-      <!-- Stage 4 -->
+      <!-- FASE 4 -->
       <article class="sequence-card" id="stage-4">
         <span class="sequence-card-number">04</span>
         <div class="sequence-card-header">
-          <span class="stage-badge">Trinn 4</span>
-          <h2 class="stage-title">Bærende Stålkonstruksjon & Branninnkledning (R 60)</h2>
-          <span class="status-badge status-completed" style="margin-left:auto;">Fullført</span>
-        </div>
-        <p style="color:var(--text-muted); font-size:0.95rem;">
-          <strong>Hovedmål:</strong> Trygg lastoverføring og monterings av HEB 220 ståldrager med R 60 brannmotstand for 65 m² åpent allrom.
-        </p>
-
-        <div class="grid-3col">
-          <div class="subbox subbox-tasks">
-            <h4><i data-lucide="check-square"></i> Oppgaver</h4>
-            <ul class="subbox-list">
-              <li>Oppsetting av midlertidige hydrauliske stempelstøtter i begge etasjer.</li>
-              <li>Montering av HEB 220 ståldrager & stålsøyler.</li>
-              <li>Innkledning av ståldrager med 2x 13mm Gyproc Protect F gips (R 60 brannkrav).</li>
-            </ul>
-          </div>
-          <div class="subbox subbox-rules">
-            <h4><i data-lucide="file-check"></i> Tekniske Krav</h4>
-            <ul class="subbox-list">
-              <li>TEK17 § 11-9 Bæreevne ved brann (R 60).</li>
-              <li>Eurocode 3 (NS-EN 1993) Stålkonstruksjoner & L/500 nedbøyningsgrense.</li>
-            </ul>
-          </div>
-          <div class="subbox subbox-warnings">
-            <h4><i data-lucide="alert-circle"></i> Kritiske Avhengigheter</h4>
-            <ul class="subbox-list">
-              <li>Hydrauliske stempelstøtter må ikke fjernes før bolteforbindelser og brannkledning er godkjent.</li>
-            </ul>
-          </div>
-        </div>
-      </article>
-
-      <!-- Stage 5 -->
-      <article class="sequence-card" id="stage-5">
-        <span class="sequence-card-number">05</span>
-        <div class="sequence-card-header">
-          <span class="stage-badge">Trinn 5</span>
-          <h2 class="stage-title">Klimaskall, Tett Bygg & EI 60 Fasade</h2>
-          <span class="status-badge status-completed" style="margin-left:auto;">Fullført</span>
-        </div>
-        <p style="color:var(--text-muted); font-size:0.95rem;">
-          <strong>Hovedmål:</strong> Oppnå 100 % regntett bygg i henhold til EI 60 brannsmitteavstander & Tønsberg LOD-bestemmelser.
-        </p>
-
-        <div class="grid-3col">
-          <div class="subbox subbox-tasks">
-            <h4><i data-lucide="check-square"></i> Oppgaver</h4>
-            <ul class="subbox-list">
-              <li>Tak: Betongtakstein (vurdere skifer) + 350mm Rockwool isolasjon i takhimling.</li>
-              <li>200mm utvendig Rockwool kontinuerlig fasadeisolasjonsplate.</li>
-              <li>NorDan sidehengslede 3-lags alukledde lavenergivinduer (Uw ≤ 0,8) + liggende trekledning.</li>
-              <li>EI 60 fasadevegg for alle veggflater nærmere enn 8,0m fra nabo.</li>
-            </ul>
-          </div>
-          <div class="subbox subbox-rules">
-            <h4><i data-lucide="file-check"></i> Tekniske Krav</h4>
-            <ul class="subbox-list">
-              <li>TEK17 § 11-6 Brannsmittevern mot nabogrense (EI 60).</li>
-              <li>TEK17 U-verdi vegg: 0,15 W/m²K, tak: 0,11 W/m²K.</li>
-              <li>Tønsberg / PBL § 29-4 høydegrenser: Møne ≤ 9,0m, Gesims ≤ 8,0m (Garasje § 19: max 4,0m gesims).</li>
-            </ul>
-          </div>
-          <div class="subbox subbox-warnings">
-            <h4><i data-lucide="alert-circle"></i> Kritiske Avhengigheter</h4>
-            <ul class="subbox-list">
-              <li>Bygget MÅ være 100 % vann- og vindtett før man starter innvendig isolering og kabeltrekking!</li>
-            </ul>
-          </div>
-        </div>
-      </article>
-
-      <!-- Stage 6 -->
-      <article class="sequence-card" id="stage-6">
-        <span class="sequence-card-number">06</span>
-        <div class="sequence-card-header">
-          <span class="stage-badge">Trinn 6</span>
-          <h2 class="stage-title">Tekniske Føringer (Elektro, VVS Rør-i-rør & Ventilasjon)</h2>
+          <span class="stage-badge">Fase 4</span>
+          <h2 class="stage-title">Tekniske Installasjoner og Oppbygging (Innvendig Grovarbeid)</h2>
           <span class="status-badge status-progress" style="margin-left:auto;">Pågår (75 %)</span>
         </div>
         <p style="color:var(--text-muted); font-size:0.95rem;">
-          <strong>Hovedmål:</strong> Trekke kjerneinfrastruktur i bjelkelag og vegger før dampsperring og platelapping.
+          <strong>Formål:</strong> Trekke skjult anlegg for rør, el og ventilasjon før vegger lukkes.
         </p>
 
-        <div class="grid-3col">
-          <div class="subbox subbox-tasks">
-            <h4><i data-lucide="check-square"></i> Oppgaver</h4>
-            <ul class="subbox-list">
-              <li>3-fase 63A hovedtavle, KNX automasjonsrør, Cat6a kablet nettverk.</li>
-              <li>PEX-i-PEX fordelingsstokk + Geberit Silent støydempede avløpsrør.</li>
-              <li>Systemair ventilasjonskanaler + Uponor gulvvarmerør (kobles til eksisterende NIBE varmepumpe fra 2018).</li>
+        <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:1.2rem; margin-top:1rem;">
+
+          <div style="background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.08); padding:1.2rem; border-radius:8px;">
+            <h4 style="color:var(--accent-cyan); margin:0 0 0.5rem 0; font-size:1.05rem;">1. Tekniske Fag (Skjult Anlegg)</h4>
+            <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
+              <li><strong>Rørlegger:</strong> PEX rør-i-rør system, avløp, Uponor gulvvarmerør koblet til NIBE 2018 varmepumpe.</li>
+              <li><strong>Elektriker:</strong> Rør og boksanlegg for stikk, brytere, DCL og sikringsskap.</li>
+              <li><strong>Ventilasjon:</strong> Kanalføring for balansert ventilasjon.</li>
             </ul>
           </div>
-          <div class="subbox subbox-rules">
-            <h4><i data-lucide="file-check"></i> Tekniske Krav</h4>
-            <ul class="subbox-list">
-              <li>NEK 400:2022 Elektriske lavspenningsinstallasjoner.</li>
-              <li>PEX trykktesting på 1,5x arbeidstrykk i 24 timer.</li>
+
+          <div style="background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.08); padding:1.2rem; border-radius:8px;">
+            <h4 style="color:var(--accent-emerald); margin:0 0 0.5rem 0; font-size:1.05rem;">2. Isolasjon & Dampsperre</h4>
+            <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
+              <li>Isolering av yttervegger, tak/loft (350mm Rockwool i takhimling) og etasjeskillere.</li>
+              <li>Montering av dampsperre (Pro Clima INTELLO) på varm side med nøye teiping.</li>
             </ul>
           </div>
-          <div class="subbox subbox-warnings">
-            <h4><i data-lucide="alert-circle"></i> Kritiske Avhengigheter</h4>
-            <ul class="subbox-list">
-              <li>Alle trykktester på rør og kontinuitetstester på elektro MÅ bestås før vegger lukkes med gips.</li>
+
+          <div style="background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.08); padding:1.2rem; border-radius:8px;">
+            <h4 style="color:var(--accent-amber); margin:0 0 0.5rem 0; font-size:1.05rem;">3. Gulv- og Veggkonstruksjon</h4>
+            <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
+              <li>Støp av gulv i våtrom/kjeller eller legging av avrettingsmasse.</li>
+              <li>Oppbygging av lettvegger, utlektet installasjonssjikt (48mm) og gipsing.</li>
             </ul>
           </div>
+
         </div>
       </article>
 
-      <!-- Stage 7 -->
-      <article class="sequence-card" id="stage-7">
-        <span class="sequence-card-number">07</span>
+      <!-- FASE 5 -->
+      <article class="sequence-card" id="stage-5">
+        <span class="sequence-card-number">05</span>
         <div class="sequence-card-header">
-          <span class="stage-badge">Trinn 7</span>
-          <h2 class="stage-title">Isolering, Pro Clima Dampsperre & Garasje EI 60 Gipsing</h2>
+          <span class="stage-badge">Fase 5</span>
+          <h2 class="stage-title">Innvendig Ferdigstilling (Finarbeid)</h2>
           <span class="status-badge status-planned" style="margin-left:auto;">Planlagt</span>
         </div>
         <p style="color:var(--text-muted); font-size:0.95rem;">
-          <strong>Hovedmål:</strong> Varmeisolering, støyisolering, lufttetting og garasje EI 60 branncelleinndeling.
+          <strong>Formål:</strong> Våtromsmembran, overflatebehandling, flislegging og synlig montering.
         </p>
 
-        <div class="grid-3col">
-          <div class="subbox subbox-tasks">
-            <h4><i data-lucide="check-square"></i> Oppgaver</h4>
-            <ul class="subbox-list">
-              <li>100mm hulromsisolering tilpasset uten skrukking eller gliper.</li>
-              <li>Pro Clima INTELLO variabel dampsperre med teipede klemleskjøter.</li>
-              <li>Garasje og teknisk rom vegg/himling platekledning i klasse EI 60 + EI₂ 60-Sa brantdør.</li>
-              <li>48mm utlektet installasjonssjikt + Gyproc gipsing og helsparkling.</li>
+        <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:1.2rem; margin-top:1rem;">
+
+          <div style="background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.08); padding:1.2rem; border-radius:8px;">
+            <h4 style="color:var(--accent-cyan); margin:0 0 0.5rem 0; font-size:1.05rem;">1. Våtrom / Bad</h4>
+            <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
+              <li>Oppbygging av fall til sluk jf. BVN-normen.</li>
+              <li>Smøremembran og mansjetter på våtrom, flislegging og fuging.</li>
             </ul>
           </div>
-          <div class="subbox subbox-rules">
-            <h4><i data-lucide="file-check"></i> Tekniske Krav</h4>
-            <ul class="subbox-list">
-              <li>TEK17 § 11-8 Brannceller & EI 60 (r-30) Skillevegg.</li>
-              <li>Lufttetthetsmål n50 < 0,6 ACH@50Pa & Q4 sparkling.</li>
+
+          <div style="background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.08); padding:1.2rem; border-radius:8px;">
+            <h4 style="color:var(--accent-purple); margin:0 0 0.5rem 0; font-size:1.05rem;">2. Overflatebehandling</h4>
+            <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
+              <li>Sparkling og maling av vegger og tak.</li>
+              <li>Legging av parkett/fliser i tørre rom (etter sjekk av restfukt < 2 % CM).</li>
+              <li>Montering av listverk (gulv, tak, vinduer) og innerdører.</li>
             </ul>
           </div>
-          <div class="subbox subbox-warnings">
-            <h4><i data-lucide="alert-circle"></i> Kritiske Avhengigheter</h4>
-            <ul class="subbox-list">
-              <li>Dampsperren må ALDRI punkteres av stikkontakter; benytt det 48mm utlektede installasjonssjiktet.</li>
+
+          <div style="background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.08); padding:1.2rem; border-radius:8px;">
+            <h4 style="color:var(--accent-emerald); margin:0 0 0.5rem 0; font-size:1.05rem;">3. Montering (Synlig Anlegg)</h4>
+            <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
+              <li>Montering av kjøkken- og baderomsinnredning.</li>
+              <li><strong>Elektriker:</strong> Montering av brytere, stikk, lamper, termostater og sikringsskap.</li>
+              <li><strong>Rørlegger:</strong> Armaturer, toalett, dusj, servant og varmepumpetilkobling.</li>
+              <li>Montering av ildsted/pipe (må fungere før ferdigattest!).</li>
             </ul>
           </div>
+
         </div>
       </article>
 
-      <!-- Stage 8 -->
-      <article class="sequence-card" id="stage-8">
-        <span class="sequence-card-number">08</span>
+      <!-- FASE 6 -->
+      <article class="sequence-card" id="stage-6">
+        <span class="sequence-card-number">06</span>
         <div class="sequence-card-header">
-          <span class="stage-badge">Trinn 8</span>
-          <h2 class="stage-title">Våtrom, Membran, Flislegging & Eikeparkett</h2>
+          <span class="stage-badge">Fase 6</span>
+          <h2 class="stage-title">Utomhus og Ferdigstillelse (Avslutning)</h2>
           <span class="status-badge status-planned" style="margin-left:auto;">Planlagt</span>
         </div>
         <p style="color:var(--text-muted); font-size:0.95rem;">
-          <strong>Hovedmål:</strong> Sertifisert våtromsmembran og eksklusive innvendige overflater.
+          <strong>Formål:</strong> Terreng, overtakelsesforretning, FDV-dokumentasjon og ferdigattest.
         </p>
 
-        <div class="grid-3col">
-          <div class="subbox subbox-tasks">
-            <h4><i data-lucide="check-square"></i> Oppgaver</h4>
-            <ul class="subbox-list">
-              <li>Smøremembran og stramme slukmansjetter iht. BVN-normen på bad.</li>
-              <li>Italienske storformat porselensfliser + hvitoljet eikeparkett.</li>
-              <li>Plassbygget kjøkkenøy, garderober, innerdører og fotlister.</li>
-            </ul>
-          </div>
-          <div class="subbox subbox-rules">
-            <h4><i data-lucide="file-check"></i> Tekniske Krav</h4>
-            <ul class="subbox-list">
-              <li>Byggebransjens Våtromsnorm (BVN) godkjent membran.</li>
-              <li>Restfukt i avrettingsstøp < 2 % CM før legging av eikeparkett.</li>
-            </ul>
-          </div>
-          <div class="subbox subbox-warnings">
-            <h4><i data-lucide="alert-circle"></i> Kritiske Avhengigheter</h4>
-            <ul class="subbox-list">
-              <li>Ikke legg parkett før CM-fuktmåling bekrefter at støpen er 100 % uttørket.</li>
-            </ul>
-          </div>
-        </div>
-      </article>
+        <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:1.2rem; margin-top:1rem;">
 
-      <!-- Stage 9 -->
-      <article class="sequence-card" id="stage-9">
-        <span class="sequence-card-number">09</span>
-        <div class="sequence-card-header">
-          <span class="stage-badge">Trinn 9</span>
-          <h2 class="stage-title">Innregulering, Sluttkontroll & Ferdigattest</h2>
-          <span class="status-badge status-planned" style="margin-left:auto;">Planlagt</span>
-        </div>
-        <p style="color:var(--text-muted); font-size:0.95rem;">
-          <strong>Hovedmål:</strong> Systemoppstart, smartboliginnstilling, trykktesting og kommunal ferdigattest.
-        </p>
+          <div style="background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.08); padding:1.2rem; border-radius:8px;">
+            <h4 style="color:var(--accent-cyan); margin:0 0 0.5rem 0; font-size:1.05rem;">1. Utomhus / Gårdsplass</h4>
+            <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
+              <li>Arrondering av terreng, opparbeiding av hage, markterrasse og biloppstilling/garasje.</li>
+            </ul>
+          </div>
 
-        <div class="grid-3col">
-          <div class="subbox subbox-tasks">
-            <h4><i data-lucide="check-square"></i> Oppgaver</h4>
-            <ul class="subbox-list">
-              <li>NIBE varmepumpeoppstart, innregulering av varme sløyfer & igangkjøring.</li>
-              <li>Systemair ventilasjonsinnregulering + KNX bryterprogrammering.</li>
-              <li>Blower Door trykktest + kommunal sluttkontroll for ferdigattest.</li>
+          <div style="background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.08); padding:1.2rem; border-radius:8px;">
+            <h4 style="color:var(--accent-amber); margin:0 0 0.5rem 0; font-size:1.05rem;">2. Rengjøring & Kontroll</h4>
+            <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
+              <li>Byggrengjøring og Blower Door trykktest (< 0,6 ACH).</li>
+              <li>Ferdigbefaring og mangelssjekk med entreprenør jf. Bustadoppføringslova § 14.</li>
             </ul>
           </div>
-          <div class="subbox subbox-rules">
-            <h4><i data-lucide="file-check"></i> Tekniske Krav</h4>
-            <ul class="subbox-list">
-              <li>Samsvarserklæring Elektro (NEK 400).</li>
-              <li>Tønsberg Kommunal Ferdigattest (DiBK 5162).</li>
+
+          <div style="background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.08); padding:1.2rem; border-radius:8px;">
+            <h4 style="color:var(--accent-emerald); margin:0 0 0.5rem 0; font-size:1.05rem;">3. Overtakelse & Dokumentasjon</h4>
+            <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
+              <li>Innhenting av samsvarserklæringer (elektro/rør) og FDV-mappe + energiattest.</li>
+              <li>Søknad om <strong>Ferdigattest</strong> (eller midlertidig brukstillatelse) til Tønsberg kommune.</li>
             </ul>
           </div>
-          <div class="subbox subbox-warnings">
-            <h4><i data-lucide="alert-circle"></i> Kritiske Avhengigheter</h4>
-            <ul class="subbox-list">
-              <li>Ferdigattest må være utstedt fra Tønsberg kommune før møbler flyttes inn og boligen tas i bruk.</li>
-            </ul>
-          </div>
+
         </div>
       </article>
 
     </div>
 
-    <!-- Out of Order Failures Section -->
+    <!-- Technical Warnings Section -->
     <section class="card" style="margin-top:4rem; border:1px solid rgba(244,63,94,0.3); background:rgba(20,27,41,0.95);">
       <h2 style="font-size:1.8rem; margin-bottom:1rem; color:var(--accent-rose);">
-        <i data-lucide="alert-triangle" style="vertical-align:-3px;"></i> Feil Rekkefølge og Tekniske Fallgruver
+        <i data-lucide="alert-triangle" style="vertical-align:-3px;"></i> Hvorfor Følge Faserekkefølgen?
       </h2>
       <p style="color:var(--text-muted); margin-bottom:1.5rem;">
-        Avvik fra den anbefalte byggerekkefølgen kan føre til alvorlige fukt- og konstruksjonsskader. Her er de 3 vanligste feilene som forhindres ved å følge vår 9-trinns sekvens:
+        Avvik fra faserekkefølgen kan føre til at fagene arbeider oppå hverandre og at det oppstår fukt- eller konstruksjonsskader.
       </p>
 
       <div class="warning-callout">
         <i data-lucide="droplet" style="color:var(--accent-rose); width:28px; height:28px; flex-shrink:0;"></i>
         <div>
-          <h4>Fallgruve 1: Isolere hulrom før tak og vinduer er 100 % regntette</h4>
+          <h4>Kritisk: Huset må være 100 % "Tett Bygg" (Fase 3) før innvendig isolering (Fase 4)</h4>
           <p>
-            Slagregn lekker inn i rå Rockwool-isolasjon. Innestengt fuktighet i veggene fører til råte og svartsopp i stenderverket i løpet av 3 uker. <strong>Fullfør alltid Trinn 5 før Trinn 7.</strong>
+            Dersom man isolerer før tak og vinduer er fuktsikret, vil regn og vann fukte opp isolasjonen, noe som fører til råte og sopp i stenderverket.
           </p>
         </div>
       </div>
@@ -449,19 +350,9 @@
       <div class="warning-callout" style="margin-top:1rem;">
         <i data-lucide="hammer" style="color:var(--accent-rose); width:28px; height:28px; flex-shrink:0;"></i>
         <div>
-          <h4>Fallgruve 2: Montere gipsplater før teknisk trykktesting</h4>
+          <h4>Kritisk: Trykktest rør og elektro (Fase 4) før platelapping (Fase 5)</h4>
           <p>
-            En glemt PEX-skjøtelekkasje eller manglende kabel krever at helt nye gipsplater må rives ned igjen, noe som koster tietusener i uønskede ekstraarbeider. <strong>Trykktest alltid Trinn 6 før platelapping i Trinn 7.</strong>
-          </p>
-        </div>
-      </div>
-
-      <div class="warning-callout" style="margin-top:1rem;">
-        <i data-lucide="slash" style="color:var(--accent-rose); width:28px; height:28px; flex-shrink:0;"></i>
-        <div>
-          <h4>Fallgruve 3: Legge eikeparkett over uherdet betongstøp</h4>
-          <p>
-            Restfuktighet som damper av fra fuktig støp trekker inn i eikeparketten. Dette fører til at tregulvet bulker seg og løsner fra underlaget. <strong>Mål restfukt (< 2 % CM) før Trinn 8.</strong>
+            Eventuelle lekkasjer i PEX-ledninger må avdekkes mens anlegget er åpent, slik at man slipper å rive gipsplater i etterkant.
           </p>
         </div>
       </div>
@@ -472,7 +363,7 @@
   <div class="toast" id="toastNotification">Varsel</div>
 
   <footer>
-    <p>M6 Fornyelse – Anbefalt Byggerekkefølge & Tekniske Trinn Underside</p>
+    <p>M6 Fornyelse – Byggerekkefølge & Fasematrise Underside</p>
     <p style="margin-top:0.5rem; font-size:0.8rem; opacity:0.6;">Repositorium: <a href="https://github.com/magnuskiro/m6" target="_blank">github.com/magnuskiro/m6</a></p>
   </footer>
 
