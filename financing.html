@@ -7,6 +7,77 @@
   <meta name="description" content="Steg-for-steg prosess for økonomi og byggefinansiering, bankens sjekkliste for kostnadsposter og krav jf. Bustadoppføringslova basert på DNB sin veileder.">
   <link rel="stylesheet" href="styles.css">
   <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .checklist-container {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+    }
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 1rem 1.2rem;
+      border-radius: 10px;
+      transition: var(--transition);
+    }
+    .checklist-item:hover {
+      border-color: var(--border-glow);
+      background: rgba(28, 37, 56, 0.85);
+    }
+    .checklist-item.done {
+      border-left: 4px solid var(--accent-emerald);
+    }
+    .checklist-item.pending {
+      border-left: 4px solid var(--accent-amber);
+    }
+    .checklist-cb {
+      width: 22px;
+      height: 22px;
+      margin-top: 2px;
+      accent-color: #10b981;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .checklist-text {
+      flex-grow: 1;
+    }
+    .checklist-title {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #ffffff;
+      margin-bottom: 0.2rem;
+    }
+    .checklist-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+    .filter-bar {
+      display: flex;
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 0.5rem 1.2rem;
+      border-radius: 20px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--gradient-brand);
+      color: #ffffff;
+      border-color: transparent;
+    }
+  </style>
 </head>
 <body>
 
@@ -40,10 +111,14 @@
       </div>
       <h1>Økonomi & Finansiering</h1>
       <p class="hero-subtitle">
-        Dedikert finansieringsside basert på DNB sin offisielle byggefinansieringsbrosjyre. Oversikt over finansieringsprosessen, bankens krav til dokumentasjon og fullstendig kostnadssjekkliste.
+        Dedikert finansieringsside basert på DNB sin offisielle byggefinansieringsbrosjyre. Oversikt over finansieringsprosessen, bankens krav til dokumentasjon og komplett sjekkliste for kostnadsposter.
       </p>
 
       <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value" id="statChecked">24 / 37 Fullført</div>
+          <div class="stat-label">Bankens Kostnadssjekkliste</div>
+        </div>
         <div class="stat-card">
           <div class="stat-value">Bustadoppføringslova</div>
           <div class="stat-label">Byggblankett 3426 / § 12</div>
@@ -51,10 +126,6 @@
         <div class="stat-card">
           <div class="stat-value">10 % Uforutsett</div>
           <div class="stat-label">Bankens Reserverammekrav</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-value">Forhåndstakst</div>
-          <div class="stat-label">Grunnlag for Byggelån</div>
         </div>
       </div>
     </div>
@@ -150,61 +221,363 @@
       </div>
     </section>
 
-    <!-- Section 2: Bankens Huskeliste for Kostnader (fra DNB Brosjyre) -->
+    <!-- Section 2: Interaktiv Sjekkliste for Bankens Kostnader (DNB Brosjyre) -->
     <section class="card" style="margin-bottom: 4rem; padding: 2.5rem;">
-      <div class="section-header" style="border:none; margin-bottom: 1.5rem;">
+      <div class="section-header" style="border:none; margin-bottom: 1rem;">
         <div>
           <span style="font-size:0.8rem; font-weight:700; color:var(--accent-purple); text-transform:uppercase; letter-spacing:0.1em;">
-            DNB BANKKRAV & KOSTNADSPOSTER
+            DNB BANKKRAV & KOSTNADSKONTROLL
           </span>
           <h2 class="section-title" style="font-size:2rem; margin-top:0.3rem;">Bankens Huskeliste for Kostnader</h2>
-          <p class="section-desc">Fullstendig sjekkliste over alle kostnadsposter som skal være dekket før byggelån innvilges.</p>
+          <p class="section-desc">Interaktiv sjekkliste over alle kostnadsposter fra bankens byggefinansieringsbrosjyre med status for Myrteveien 6.</p>
         </div>
       </div>
 
-      <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:1.5rem;">
+      <div class="filter-bar">
+        <button class="filter-btn active" onclick="filterChecklist('all')">Alle Punkter (37)</button>
+        <button class="filter-btn" onclick="filterChecklist('done')">✅ På plass / Fullført</button>
+        <button class="filter-btn" onclick="filterChecklist('pending')">⏳ Pågår / Planlagt</button>
+      </div>
 
-        <!-- Boks 1: Tomt, Prosjektering & Avgifter -->
-        <div style="background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.08); padding:1.5rem; border-radius:12px;">
-          <h3 style="font-size:1.1rem; color:var(--accent-cyan); margin-bottom:1rem;"><i data-lucide="file-text" style="vertical-align:-2px; width:16px;"></i> Prosjektering & Gebyrer</h3>
-          <ul style="list-style:none; padding:0; margin:0; font-size:0.88rem; color:var(--text-muted); line-height:1.8;">
-            <li>✓ Prosjektering & Arkitektkostnader</li>
-            <li>✓ Tilknytningsavgifter (Vann, Kloakk, Strøm)</li>
-            <li>✓ Byggesaksgebyrer & Oppmåling tomt</li>
-            <li>✓ Forhåndskonferanse & Rammetillatelse</li>
-            <li>✓ Tredjepartskontroll & Uavhengig kontroll</li>
-            <li>✓ Byggelånsrenter & bankprovisjoner i byggeperioden</li>
-          </ul>
+      <div class="checklist-container" id="checklistContainer">
+
+        <!-- 1. Tomt, Prosjektering & Avgifter -->
+        <div class="checklist-item done" data-status="done">
+          <input type="checkbox" class="checklist-cb" checked disabled>
+          <div class="checklist-text">
+            <div class="checklist-title">Tomtekjøp & Eiendomsavklaring</div>
+            <div class="checklist-desc">Myrteveien 6, 3152 Tolvsrød (Gnr 140 / Bnr 371) – Eiendom eies.</div>
+          </div>
+          <span class="status-badge status-completed">På plass</span>
         </div>
 
-        <!-- Boks 2: Grunn, Struktur & Klimaskall -->
-        <div style="background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.08); padding:1.5rem; border-radius:12px;">
-          <h3 style="font-size:1.1rem; color:var(--accent-emerald); margin-bottom:1rem;"><i data-lucide="hammer" style="vertical-align:-2px; width:16px;"></i> Grunn & Klimaskall</h3>
-          <ul style="list-style:none; padding:0; margin:0; font-size:0.88rem; color:var(--text-muted); line-height:1.8;">
-            <li>✓ Riving, Rydding & Klargjøring</li>
-            <li>✓ Graving, Sprenging & Sikring av grunnen</li>
-            <li>✓ Grunnmur, Stenkiste & Radonsperre</li>
-            <li>✓ Utvendig rør/bunnledning & Varmepumpe</li>
-            <li>✓ Tømrerarbeid, Liggende kledning & Belistning</li>
-            <li>✓ Betongtakstein (vurdere skifer) & Rockwool isolasjon</li>
-            <li>✓ NorDan 3-lags alukledde sidehengslede vinduer</li>
-          </ul>
+        <div class="checklist-item done" data-status="done">
+          <input type="checkbox" class="checklist-cb" checked disabled>
+          <div class="checklist-text">
+            <div class="checklist-title">Prosjektering & Arkitektkostnader</div>
+            <div class="checklist-desc">Tegninger (Arkitekt A-901 Perspektiver sørvest), snitt og fasadebeskrivelser.</div>
+          </div>
+          <span class="status-badge status-completed">På plass</span>
         </div>
 
-        <!-- Boks 3: Tekniske Fag, Innredning & Garanti -->
-        <div style="background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.08); padding:1.5rem; border-radius:12px;">
-          <h3 style="font-size:1.1rem; color:var(--accent-purple); margin-bottom:1rem;"><i data-lucide="check-circle-2" style="vertical-align:-2px; width:16px;"></i> Tekniske Fag & Garanti</h3>
-          <ul style="list-style:none; padding:0; margin:0; font-size:0.88rem; color:var(--text-muted); line-height:1.8;">
-            <li>✓ Rørlegger (Uponor vannbåren varme)</li>
-            <li>✓ Balansert ventilasjonsanlegg</li>
-            <li>✓ Elektriker & Telecom/internett (m/kabel)</li>
-            <li>✓ Peis/vedovn (Må fungere før ferdigattest!)</li>
-            <li>✓ Gulv, Fliser, Maling & Fast innredning</li>
-            <li>✓ Utendørs terreng, Innkjørsel & Garasje</li>
-            <li>⚠️ **10 % Reserve for uforutsette kostnader**</li>
-            <li>⚠️ **Entreprenørgaranti jf. Bustadoppføringslova § 12**</li>
-            <li>⚠️ **Byggeforsikring i byggeperioden**</li>
-          </ul>
+        <div class="checklist-item done" data-status="done">
+          <input type="checkbox" class="checklist-cb" checked disabled>
+          <div class="checklist-text">
+            <div class="checklist-title">Regulering & Utnyttingsgrad (%BYA)</div>
+            <div class="checklist-desc">Tønsberg kommuneplan maks 25 % BYA (§ 44.1). M6 planlagt BYA 21,5 %.</div>
+          </div>
+          <span class="status-badge status-completed">På plass</span>
+        </div>
+
+        <div class="checklist-item done" data-status="done">
+          <input type="checkbox" class="checklist-cb" checked disabled>
+          <div class="checklist-text">
+            <div class="checklist-title">Byggesaksgebyrer & Forhåndskonferanse</div>
+            <div class="checklist-desc">Sak #90 (Byggesøknad jf. SAK10 § 5-4, DiBK 5154 nabovarsel).</div>
+          </div>
+          <span class="status-badge status-completed">Avklart</span>
+        </div>
+
+        <div class="checklist-item done" data-status="done">
+          <input type="checkbox" class="checklist-cb" checked disabled>
+          <div class="checklist-text">
+            <div class="checklist-title">Tilknytningsavgifter (Vann, Kloakk, Strøm, Veg)</div>
+            <div class="checklist-desc">Kommunale avgifter og nettleie for tilkobling.</div>
+          </div>
+          <span class="status-badge status-completed">Avklart</span>
+        </div>
+
+        <div class="checklist-item pending" data-status="pending">
+          <input type="checkbox" class="checklist-cb" disabled>
+          <div class="checklist-text">
+            <div class="checklist-title">Tredjepartskontroll / Uavhengig Kontroll</div>
+            <div class="checklist-desc">Uavhengig kontroll av våtrom og lufttetthet jf. SAK10 kap. 14.</div>
+          </div>
+          <span class="status-badge status-planned">Planlagt</span>
+        </div>
+
+        <div class="checklist-item done" data-status="done">
+          <input type="checkbox" class="checklist-cb" checked disabled>
+          <div class="checklist-text">
+            <div class="checklist-title">Entreprenørgaranti jf. Bustadoppføringslova § 12</div>
+            <div class="checklist-desc">Bankgaranti for oppfylling av avtalen fra entreprenør før byggestart.</div>
+          </div>
+          <span class="status-badge status-completed">Krav i kontrakt</span>
+        </div>
+
+        <div class="checklist-item done" data-status="done">
+          <input type="checkbox" class="checklist-cb" checked disabled>
+          <div class="checklist-text">
+            <div class="checklist-title">Byggeforsikring i byggeperioden</div>
+            <div class="checklist-desc">Forsikringsbevis for hus under bygging innhentes før oppstart.</div>
+          </div>
+          <span class="status-badge status-completed">Avklart</span>
+        </div>
+
+        <!-- 2. Grunn & Utvendig Klimaskall -->
+        <div class="checklist-item done" data-status="done">
+          <input type="checkbox" class="checklist-cb" checked disabled>
+          <div class="checklist-text">
+            <div class="checklist-title">Rydding, riving & klargjøring</div>
+            <div class="checklist-desc">Utrensing helt ned til råbygget og kildesortering.</div>
+          </div>
+          <span class="status-badge status-completed">Fullført</span>
+        </div>
+
+        <div class="checklist-item done" data-status="done">
+          <input type="checkbox" class="checklist-cb" checked disabled>
+          <div class="checklist-text">
+            <div class="checklist-title">Graving, sprenging & grunnarbeid</div>
+            <div class="checklist-desc">Nye drensrør, utvendig grunnmursisolasjon og terrengekvalitet.</div>
+          </div>
+          <span class="status-badge status-completed">Fullført</span>
+        </div>
+
+        <div class="checklist-item done" data-status="done">
+          <input type="checkbox" class="checklist-cb" checked disabled>
+          <div class="checklist-text">
+            <div class="checklist-title">Radonsperre & utgraving av kjellergolv</div>
+            <div class="checklist-desc">RadoStop radonmembran + 200mm EPS understøp.</div>
+          </div>
+          <span class="status-badge status-completed">Fullført</span>
+        </div>
+
+        <div class="checklist-item done" data-status="done">
+          <input type="checkbox" class="checklist-cb" checked disabled>
+          <div class="checklist-text">
+            <div class="checklist-title">Utvendig rør / bunnledning</div>
+            <div class="checklist-desc">Nye bunnledninger for vann og spillvann ført ut fra såle.</div>
+          </div>
+          <span class="status-badge status-completed">Fullført</span>
+        </div>
+
+        <div class="checklist-item done" data-status="done">
+          <input type="checkbox" class="checklist-cb" checked disabled>
+          <div class="checklist-text">
+            <div class="checklist-title">Bærende stålkonstruksjon (HEB 220)</div>
+            <div class="checklist-desc">HEB 220 ståldrager med R 60 branninnkledning for åpent allrom.</div>
+          </div>
+          <span class="status-badge status-completed">Fullført</span>
+        </div>
+
+        <div class="checklist-item done" data-status="done">
+          <input type="checkbox" class="checklist-cb" checked disabled>
+          <div class="checklist-text">
+            <div class="checklist-title">Taktekking & loftsisolasjon</div>
+            <div class="checklist-desc">Betongtakstein (vurdere skifer) + 350mm Rockwool i takhimlingen.</div>
+          </div>
+          <span class="status-badge status-completed">Avklart</span>
+        </div>
+
+        <div class="checklist-item done" data-status="done">
+          <input type="checkbox" class="checklist-cb" checked disabled>
+          <div class="checklist-text">
+            <div class="checklist-title">Klimaskall & Utvendig kledning</div>
+            <div class="checklist-desc">200mm Rockwool fasadeisolasjon, vindsperre og liggende trekledning.</div>
+          </div>
+          <span class="status-badge status-completed">Avklart</span>
+        </div>
+
+        <div class="checklist-item done" data-status="done">
+          <input type="checkbox" class="checklist-cb" checked disabled>
+          <div class="checklist-text">
+            <div class="checklist-title">Vinduer & Ytterdører</div>
+            <div class="checklist-desc">NorDan sidehengslede 3-lags alukledde lavenergivinduer (Uw ≤ 0,8).</div>
+          </div>
+          <span class="status-badge status-completed">Avklart</span>
+        </div>
+
+        <!-- 3. VVS & Oppvarming -->
+        <div class="checklist-item done" data-status="done">
+          <input type="checkbox" class="checklist-cb" checked disabled>
+          <div class="checklist-text">
+            <div class="checklist-title">Varmekilde / Varmepumpe (Installert 2018)</div>
+            <div class="checklist-desc">NIBE Luft-til-vann varmepumpe installert i 2018 er operativ og benyttes som tilkobling.</div>
+          </div>
+          <span class="status-badge status-completed">På plass (2018)</span>
+        </div>
+
+        <div class="checklist-item done" data-status="done">
+          <input type="checkbox" class="checklist-cb" checked disabled>
+          <div class="checklist-text">
+            <div class="checklist-title">Vannbåren varme (Uponor sløyfer)</div>
+            <div class="checklist-desc">Uponor gulvvarmerør i alle etasjer tilkoblet 2018 NIBE varmepumpe.</div>
+          </div>
+          <span class="status-badge status-progress">Pågår</span>
+        </div>
+
+        <div class="checklist-item done" data-status="done">
+          <input type="checkbox" class="checklist-cb" checked disabled>
+          <div class="checklist-text">
+            <div class="checklist-title">Rørlegger (Sanitær & Rør-i-rør)</div>
+            <div class="checklist-desc">PEX-i-PEX fordelingsstokk og lyddempede avløpsrør.</div>
+          </div>
+          <span class="status-badge status-progress">Pågår</span>
+        </div>
+
+        <div class="checklist-item done" data-status="done">
+          <input type="checkbox" class="checklist-cb" checked disabled>
+          <div class="checklist-text">
+            <div class="checklist-title">Balansert ventilasjon</div>
+            <div class="checklist-desc">Systemair ventilasjonsanlegg med varmegjenvinning.</div>
+          </div>
+          <span class="status-badge status-progress">Pågår</span>
+        </div>
+
+        <div class="checklist-item pending" data-status="pending">
+          <input type="checkbox" class="checklist-cb" disabled>
+          <div class="checklist-text">
+            <div class="checklist-title">Peis / vedovn & brannmur</div>
+            <div class="checklist-desc">Ildsted monteres (Må være ferdig og virke før ferdigattest gis jf. bankkrav!).</div>
+          </div>
+          <span class="status-badge status-planned">Planlagt</span>
+        </div>
+
+        <!-- 4. Elektro & Telecom -->
+        <div class="checklist-item done" data-status="done">
+          <input type="checkbox" class="checklist-cb" checked disabled>
+          <div class="checklist-text">
+            <div class="checklist-title">Elektriker grovarbeid (Skjult anlegg)</div>
+            <div class="checklist-desc">3-fase 63A hovedtavle, kabling, rør og trekking.</div>
+          </div>
+          <span class="status-badge status-progress">Pågår</span>
+        </div>
+
+        <div class="checklist-item done" data-status="done">
+          <input type="checkbox" class="checklist-cb" checked disabled>
+          <div class="checklist-text">
+            <div class="checklist-title">El-bil lader / Opplegg til elbil</div>
+            <div class="checklist-desc">Dedikert kurs og ladestasjon for elbil.</div>
+          </div>
+          <span class="status-badge status-completed">Avklart</span>
+        </div>
+
+        <div class="checklist-item done" data-status="done">
+          <input type="checkbox" class="checklist-cb" checked disabled>
+          <div class="checklist-text">
+            <div class="checklist-title">Telefon / internett / fiber-kabel</div>
+            <div class="checklist-desc">Telenor/Transtema fiberkabel (ca. kr 10 000 avsatt i tilknytning).</div>
+          </div>
+          <span class="status-badge status-completed">Avklart</span>
+        </div>
+
+        <!-- 5. Innvendig Overflate & Innredning -->
+        <div class="checklist-item done" data-status="done">
+          <input type="checkbox" class="checklist-cb" checked disabled>
+          <div class="checklist-text">
+            <div class="checklist-title">Isolasjon i innvendige vegger & Pro Clima dampsperre</div>
+            <div class="checklist-desc">100mm Rockwool lydisolering + teipet variabel dampsperre.</div>
+          </div>
+          <span class="status-badge status-completed">Avklart</span>
+        </div>
+
+        <div class="checklist-item pending" data-status="pending">
+          <input type="checkbox" class="checklist-cb" disabled>
+          <div class="checklist-text">
+            <div class="checklist-title">Gipsing, belistning, innvendige dører & tak</div>
+            <div class="checklist-desc">Platekledning på utlektet 48mm sjikt og belistning.</div>
+          </div>
+          <span class="status-badge status-planned">Planlagt</span>
+        </div>
+
+        <div class="checklist-item pending" data-status="pending">
+          <input type="checkbox" class="checklist-cb" disabled>
+          <div class="checklist-text">
+            <div class="checklist-title">Maling og tapet innvendig</div>
+            <div class="checklist-desc">Helsparkling Q4 og miljøvennlig innvendig maling.</div>
+          </div>
+          <span class="status-badge status-planned">Planlagt</span>
+        </div>
+
+        <div class="checklist-item pending" data-status="pending">
+          <input type="checkbox" class="checklist-cb" disabled>
+          <div class="checklist-text">
+            <div class="checklist-title">Gulver, fliser, parkett (Fuktsjekk)</div>
+            <div class="checklist-desc">Restfuktmåling (< 2 % CM) før eikeparkett og flislegging.</div>
+          </div>
+          <span class="status-badge status-planned">Planlagt</span>
+        </div>
+
+        <div class="checklist-item pending" data-status="pending">
+          <input type="checkbox" class="checklist-cb" disabled>
+          <div class="checklist-text">
+            <div class="checklist-title">Kjøkkeninnredning & fast inventar</div>
+            <div class="checklist-desc">Montering og tilkobling av kjøkken.</div>
+          </div>
+          <span class="status-badge status-planned">Planlagt</span>
+        </div>
+
+        <div class="checklist-item pending" data-status="pending">
+          <input type="checkbox" class="checklist-cb" disabled>
+          <div class="checklist-text">
+            <div class="checklist-title">Baderomsinnredning & sanitærutstyr</div>
+            <div class="checklist-desc">Armaturer, toaletter og baderomsmøbler.</div>
+          </div>
+          <span class="status-badge status-planned">Planlagt</span>
+        </div>
+
+        <div class="checklist-item pending" data-status="pending">
+          <input type="checkbox" class="checklist-cb" disabled>
+          <div class="checklist-text">
+            <div class="checklist-title">Garderobeskap & innvendige trapper</div>
+            <div class="checklist-desc">Montering av trapp mellom etasjer og garderobeskap.</div>
+          </div>
+          <span class="status-badge status-planned">Planlagt</span>
+        </div>
+
+        <!-- 6. Utomhus & Avslutning -->
+        <div class="checklist-item done" data-status="done">
+          <input type="checkbox" class="checklist-cb" checked disabled>
+          <div class="checklist-text">
+            <div class="checklist-title">Lokal overvannshåndtering (LOD Stenkiste)</div>
+            <div class="checklist-desc">3-trinns infiltrering i stenkiste på egen tomt jf. Tønsberg kommuneplan § 27.</div>
+          </div>
+          <span class="status-badge status-completed">På plass</span>
+        </div>
+
+        <div class="checklist-item pending" data-status="pending">
+          <input type="checkbox" class="checklist-cb" disabled>
+          <div class="checklist-text">
+            <div class="checklist-title">Hage, utearbeider, terrasse & utelys</div>
+            <div class="checklist-desc">Grovplanering, innkjørsel, markterrasse og utelys (2700K).</div>
+          </div>
+          <span class="status-badge status-planned">Planlagt</span>
+        </div>
+
+        <div class="checklist-item pending" data-status="pending">
+          <input type="checkbox" class="checklist-cb" disabled>
+          <div class="checklist-text">
+            <div class="checklist-title">Utvendig maling av huset</div>
+            <div class="checklist-desc">Maling/beising av liggende trekledning.</div>
+          </div>
+          <span class="status-badge status-planned">Planlagt</span>
+        </div>
+
+        <div class="checklist-item done" data-status="done">
+          <input type="checkbox" class="checklist-cb" checked disabled>
+          <div class="checklist-text">
+            <div class="checklist-title">Reserve for uforutsette kostnader (10 %)</div>
+            <div class="checklist-desc">10 % uforutsett-reservert ramme innlagt i prosjektøkonomien jf. bankkrav.</div>
+          </div>
+          <span class="status-badge status-completed">Inkludert</span>
+        </div>
+
+        <div class="checklist-item done" data-status="done">
+          <input type="checkbox" class="checklist-cb" checked disabled>
+          <div class="checklist-text">
+            <div class="checklist-title">Byggelånsrenter & provisjoner</div>
+            <div class="checklist-desc">Beregnet rentekostnad i byggeperioden inkludert i lånerammen.</div>
+          </div>
+          <span class="status-badge status-completed">Inkludert</span>
+        </div>
+
+        <div class="checklist-item pending" data-status="pending">
+          <input type="checkbox" class="checklist-cb" disabled>
+          <div class="checklist-text">
+            <div class="checklist-title">Forhåndstakst, ferdigtakst & ferdigattest</div>
+            <div class="checklist-desc">Sluttkontroll, ferdigattest fra Tønsberg kommune og konvertering til boliglån.</div>
+          </div>
+          <span class="status-badge status-planned">Planlagt</span>
         </div>
 
       </div>
@@ -213,11 +586,29 @@
   </div>
 
   <footer>
-    <p>M6 Fornyelse – Totalrehabilitering av Myrteveien 6</p>
+    <p>M6 Fornyelse – Økonomi & Finansiering Underside</p>
     <p style="margin-top:0.5rem; font-size:0.8rem; opacity:0.6;">Repositorium: <a href="https://github.com/magnuskiro/m6" target="_blank">github.com/magnuskiro/m6</a></p>
   </footer>
 
   <script src="app.js"></script>
-  <script>lucide.createIcons();</script>
+  <script>
+    lucide.createIcons();
+    function filterChecklist(status) {
+      const items = document.querySelectorAll('.checklist-item');
+      const btns = document.querySelectorAll('.filter-btn');
+      btns.forEach(b => b.classList.remove('active'));
+      if (event && event.currentTarget) event.currentTarget.classList.add('active');
+
+      items.forEach(item => {
+        if (status === 'all') {
+          item.style.display = 'flex';
+        } else if (item.dataset.status === status) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
 </body>
 </html>
