@@ -190,11 +190,12 @@
 
       <!-- Category Filter Tabs -->
       <div class="drawings-category-tabs">
-        <button class="drawing-tab-btn active" onclick="filterDrawings('all')">Alle Tegninger & Perspektiver</button>
+        <button class="drawing-tab-btn active" onclick="filterDrawings('all')">Alle Tegninger & Dokumenter</button>
         <button class="drawing-tab-btn" onclick="filterDrawings('perspektiv')">🏢 3D Perspektiver</button>
         <button class="drawing-tab-btn" onclick="filterDrawings('plan')">🗺️ Nyeste Plantegninger (2026-04-21)</button>
         <button class="drawing-tab-btn" onclick="filterDrawings('malsatt')">📏 Målsatte Plantegninger</button>
-        <button class="drawing-tab-btn" onclick="filterDrawings('eksisterende')">🏛️ Eksisterende Arkivtegninger (1947)</button>
+        <button class="drawing-tab-btn" onclick="filterDrawings('kommune')">📜 Tønsberg Kommune Byggearkiv</button>
+        <button class="drawing-tab-btn" onclick="filterDrawings('eksisterende')">🏛️ Eksisterende Tegninger (1947)</button>
         <button class="drawing-tab-btn" onclick="filterDrawings('fasade')">📐 Fasader & Situasjon</button>
         <button class="drawing-tab-btn" onclick="filterDrawings('snitt')">✂️ Snittegninger</button>
       </div>
@@ -259,6 +260,54 @@
           <div class="drawing-body">
             <div class="drawing-title">Opprinnelig Tilstand (Før-bilde)</div>
             <div class="drawing-desc">Foto av opprinnelig bolig fra 1947 før igangsatt totalrehabilitering.</div>
+          </div>
+        </div>
+
+        <!-- Opprinnelig Byggesak Kart & Skisse 1946 -->
+        <div class="drawing-card" data-cat="kommune">
+          <div class="drawing-img-wrapper" onclick="openLightbox('assets/images/drawings/kart_skisse_1946.jpg', 'Tønsberg Kommune Arkiv (1946): Opprinnelig Kart & Skisse (Gnr 140 / Bnr 371)')">
+            <span class="drawing-badge" style="color:var(--accent-amber); border-color:var(--accent-amber);">Byggearkiv 1946</span>
+            <img src="assets/images/drawings/kart_skisse_1946.jpg" alt="Byggearkiv Kart og Skisse 1946" class="drawing-img">
+          </div>
+          <div class="drawing-body">
+            <div class="drawing-title">Opprinnelig Byggemelding & Kart (1946)</div>
+            <div class="drawing-desc">Historisk arkivdokument fra Tønsberg kommune med opprinnelig skisse og tomtekart fra 1946 (Gnr 140 / Bnr 371).</div>
+          </div>
+        </div>
+
+        <!-- Byggesak Kart & Skisse 1955 -->
+        <div class="drawing-card" data-cat="kommune">
+          <div class="drawing-img-wrapper" onclick="openLightbox('assets/images/drawings/kart_skisse_1955.jpg', 'Tønsberg Kommune Arkiv (1955): Byggesak Kart & Skisse')">
+            <span class="drawing-badge" style="color:var(--accent-amber); border-color:var(--accent-amber);">Byggearkiv 1955</span>
+            <img src="assets/images/drawings/kart_skisse_1955.jpg" alt="Byggearkiv Kart og Skisse 1955" class="drawing-img">
+          </div>
+          <div class="drawing-body">
+            <div class="drawing-title">Historisk Byggesak Kart & Skisse (1955)</div>
+            <div class="drawing-desc">Kommunalt arkivdokument fra 1955 med registrert kartskisse for Myrteveien 6.</div>
+          </div>
+        </div>
+
+        <!-- Byggesak Kart & Skisse 1965 -->
+        <div class="drawing-card" data-cat="kommune">
+          <div class="drawing-img-wrapper" onclick="openLightbox('assets/images/drawings/kart_skisse_1965.jpg', 'Tønsberg Kommune Arkiv (1965): Byggesak Kart & Skisse')">
+            <span class="drawing-badge" style="color:var(--accent-amber); border-color:var(--accent-amber);">Byggearkiv 1965</span>
+            <img src="assets/images/drawings/kart_skisse_1965.jpg" alt="Byggearkiv Kart og Skisse 1965" class="drawing-img">
+          </div>
+          <div class="drawing-body">
+            <div class="drawing-title">Historisk Byggesak Kart & Skisse (1965)</div>
+            <div class="drawing-desc">Kommunal arkivtegning fra 1965 med detaljert kart og skisse.</div>
+          </div>
+        </div>
+
+        <!-- Kommunalt Situasjonskart D1 -->
+        <div class="drawing-card" data-cat="kommune fasade">
+          <div class="drawing-img-wrapper" onclick="openLightbox('assets/images/drawings/situasjonskart_tbg.jpg', 'Tønsberg Kommune: Offisielt Situasjonskart D1 (Gnr 140 / Bnr 371)')">
+            <span class="drawing-badge" style="color:var(--accent-cyan); border-color:var(--accent-cyan);">Offisielt Kart D1</span>
+            <img src="assets/images/drawings/situasjonskart_tbg.jpg" alt="Tønsberg Kommune Situasjonskart D1" class="drawing-img">
+          </div>
+          <div class="drawing-body">
+            <div class="drawing-title">Offisielt Situasjonskart D1 (Tønsberg Kommune)</div>
+            <div class="drawing-desc">Kommunalt situasjonskart D1 for Gnr 140 Bnr 371 med eiendomsgrenser, naboer og hevdslinjer.</div>
           </div>
         </div>
 
