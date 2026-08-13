@@ -91,7 +91,62 @@ function showToast(message) {
   }, 3000);
 }
 
+// Tema Håndtering (Dark / Light mode som følger maskin/bruker innstilling)
+function initTheme() {
+  const savedTheme = localStorage.getItem('m6_theme');
+  if (savedTheme) {
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  }
+  updateThemeButtonUI();
+
+  // Lytt til maskinens/systemets endring i fargetema
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    if (!localStorage.getItem('m6_theme')) {
+      updateThemeButtonUI();
+    }
+  });
+}
+
+function toggleTheme() {
+  const current = document.documentElement.getAttribute('data-theme');
+  let newTheme = 'dark';
+
+  if (!current) {
+    const isSystemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    newTheme = isSystemDark ? 'light' : 'dark';
+  } else if (current === 'dark') {
+    newTheme = 'light';
+  } else {
+    newTheme = 'dark';
+  }
+
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('m6_theme', newTheme);
+  updateThemeButtonUI();
+}
+
+function updateThemeButtonUI() {
+  const btn = document.getElementById('themeToggleBtn');
+  if (!btn) return;
+
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const isSystemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const isDark = currentTheme === 'dark' || (!currentTheme && isSystemDark);
+
+  if (isDark) {
+    btn.innerHTML = `<i data-lucide="sun" style="width:14px; vertical-align:-1px;"></i> Lys Modus`;
+  } else {
+    btn.innerHTML = `<i data-lucide="moon" style="width:14px; vertical-align:-1px;"></i> Mørk Modus`;
+  }
+  if (window.lucide) lucide.createIcons();
+}
+
+// Kjøres umiddelbart for å forhindre blink ved lasting
+initTheme();
+
 // Ved Sidelasting
 document.addEventListener('DOMContentLoaded', () => {
   initSlider();
+  updateThemeButtonUI();
 });
+
