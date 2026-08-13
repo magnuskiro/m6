@@ -9,24 +9,25 @@
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     .subproject-budget-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      display: flex;
+      flex-direction: column;
       gap: 1.2rem;
       margin-top: 1.5rem;
     }
     .budget-card {
-      background: rgba(15, 23, 42, 0.65);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 1.4rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 1.5rem;
       border-radius: 12px;
       transition: var(--transition);
     }
     .budget-card:hover {
       border-color: var(--border-glow);
-      background: rgba(28, 37, 56, 0.85);
+      background: var(--bg-card-hover);
+      transform: translateX(4px);
     }
     .budget-tag {
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       font-weight: 700;
       color: var(--accent-cyan);
       text-transform: uppercase;
@@ -34,8 +35,8 @@
       margin-bottom: 0.3rem;
     }
     .budget-title {
-      font-size: 1.15rem;
-      color: #ffffff;
+      font-size: 1.2rem;
+      color: var(--text-heading);
       font-weight: 700;
       margin-bottom: 0.5rem;
     }
@@ -43,9 +44,9 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.4rem 0;
-      border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
-      font-size: 0.88rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px dashed var(--border-color);
+      font-size: 0.92rem;
     }
     .budget-row:last-child {
       border-bottom: none;
@@ -55,7 +56,7 @@
     }
     .budget-val {
       font-weight: 700;
-      color: #ffffff;
+      color: var(--text-heading);
     }
     .checklist-container {
       display: flex;
@@ -67,15 +68,15 @@
       display: flex;
       align-items: flex-start;
       gap: 1rem;
-      background: rgba(15, 23, 42, 0.65);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 1rem 1.2rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 1.1rem 1.4rem;
       border-radius: 10px;
       transition: var(--transition);
     }
     .checklist-item:hover {
       border-color: var(--border-glow);
-      background: rgba(28, 37, 56, 0.85);
+      background: var(--bg-card-hover);
     }
     .checklist-item.done {
       border-left: 4px solid var(--accent-emerald);
@@ -96,12 +97,12 @@
     }
     .checklist-title {
       font-weight: 700;
-      font-size: 1rem;
-      color: #ffffff;
+      font-size: 1.02rem;
+      color: var(--text-heading);
       margin-bottom: 0.2rem;
     }
     .checklist-desc {
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       color: var(--text-muted);
     }
     .filter-bar {

@@ -40,50 +40,126 @@
   :root:not([data-theme="dark"]) {
     --bg-primary: #f8fafc;
     --bg-secondary: #ffffff;
-    --bg-card: rgba(255, 255, 255, 0.95);
-    --bg-card-hover: rgba(241, 245, 249, 0.98);
-    --header-bg: rgba(255, 255, 255, 0.92);
-    --border-color: rgba(15, 23, 42, 0.12);
-    --border-glow: rgba(2, 132, 199, 0.3);
+    --bg-card: #ffffff;
+    --bg-card-hover: #f1f5f9;
+    --header-bg: rgba(255, 255, 255, 0.94);
+    --border-color: rgba(15, 23, 42, 0.14);
+    --border-glow: rgba(2, 132, 199, 0.35);
     
     --text-main: #0f172a;
     --text-heading: #0f172a;
-    --text-muted: #475569;
-    --text-dim: #64748b;
+    --text-muted: #334155;
+    --text-dim: #475569;
     
     --accent-cyan: #0284c7;
     --accent-blue: #2563eb;
-    --accent-emerald: #059669;
-    --accent-purple: #7c3aed;
-    --accent-amber: #d97706;
-    --accent-rose: #e11d48;
+    --accent-emerald: #047857;
+    --accent-purple: #6d28d9;
+    --accent-amber: #b45309;
+    --accent-rose: #be123c;
     
-    --shadow-main: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+    --shadow-main: 0 4px 20px rgba(0, 0, 0, 0.06);
+  }
+
+  body:not([data-theme="dark"]) .card,
+  body:not([data-theme="dark"]) .subproject-card,
+  body:not([data-theme="dark"]) .budget-card,
+  body:not([data-theme="dark"]) .sequence-card,
+  body:not([data-theme="dark"]) .checklist-item,
+  body:not([data-theme="dark"]) .stat-card,
+  body:not([data-theme="dark"]) .visualizer-section,
+  body:not([data-theme="dark"]) .drawing-card {
+    background: #ffffff !important;
+    border-color: rgba(15, 23, 42, 0.12) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+  }
+
+  body:not([data-theme="dark"]) h1,
+  body:not([data-theme="dark"]) h2,
+  body:not([data-theme="dark"]) h3,
+  body:not([data-theme="dark"]) h4,
+  body:not([data-theme="dark"]) .subproject-title,
+  body:not([data-theme="dark"]) .budget-title,
+  body:not([data-theme="dark"]) .stage-title,
+  body:not([data-theme="dark"]) .checklist-title,
+  body:not([data-theme="dark"]) .budget-val,
+  body:not([data-theme="dark"]) .drawing-title {
+    color: #0f172a !important;
+  }
+
+  body:not([data-theme="dark"]) p,
+  body:not([data-theme="dark"]) li,
+  body:not([data-theme="dark"]) .subproject-desc,
+  body:not([data-theme="dark"]) .checklist-desc,
+  body:not([data-theme="dark"]) .budget-label,
+  body:not([data-theme="dark"]) .section-desc,
+  body:not([data-theme="dark"]) .hero-subtitle,
+  body:not([data-theme="dark"]) .stat-label,
+  body:not([data-theme="dark"]) .drawing-desc {
+    color: #334155 !important;
   }
 }
 
 [data-theme="light"] {
   --bg-primary: #f8fafc;
   --bg-secondary: #ffffff;
-  --bg-card: rgba(255, 255, 255, 0.95);
-  --bg-card-hover: rgba(241, 245, 249, 0.98);
-  --header-bg: rgba(255, 255, 255, 0.92);
-  --border-color: rgba(15, 23, 42, 0.12);
-  --border-glow: rgba(2, 132, 199, 0.3);
+  --bg-card: #ffffff;
+  --bg-card-hover: #f1f5f9;
+  --header-bg: rgba(255, 255, 255, 0.94);
+  --border-color: rgba(15, 23, 42, 0.14);
+  --border-glow: rgba(2, 132, 199, 0.35);
   
   --text-main: #0f172a;
   --text-heading: #0f172a;
-  --text-muted: #475569;
-  --text-dim: #64748b;
+  --text-muted: #334155;
+  --text-dim: #475569;
   
   --accent-cyan: #0284c7;
   --accent-blue: #2563eb;
-  --accent-emerald: #059669;
-  --accent-purple: #7c3aed;
-  --accent-amber: #d97706;
-  --accent-rose: #e11d48;
+  --accent-emerald: #047857;
+  --accent-purple: #6d28d9;
+  --accent-amber: #b45309;
+  --accent-rose: #be123c;
   
-  --shadow-main: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+  --shadow-main: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .card,
+[data-theme="light"] .subproject-card,
+[data-theme="light"] .budget-card,
+[data-theme="light"] .sequence-card,
+[data-theme="light"] .checklist-item,
+[data-theme="light"] .stat-card,
+[data-theme="light"] .visualizer-section,
+[data-theme="light"] .drawing-card {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.12) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+}
+
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3,
+[data-theme="light"] h4,
+[data-theme="light"] .subproject-title,
+[data-theme="light"] .budget-title,
+[data-theme="light"] .stage-title,
+[data-theme="light"] .checklist-title,
+[data-theme="light"] .budget-val,
+[data-theme="light"] .drawing-title {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] p,
+[data-theme="light"] li,
+[data-theme="light"] .subproject-desc,
+[data-theme="light"] .checklist-desc,
+[data-theme="light"] .budget-label,
+[data-theme="light"] .section-desc,
+[data-theme="light"] .hero-subtitle,
+[data-theme="light"] .stat-label,
+[data-theme="light"] .drawing-desc {
+  color: #334155 !important;
 }
 
 * {
@@ -741,6 +817,50 @@ nav {
 .warning-callout p {
   font-size: 0.88rem;
   color: var(--text-muted);
+}
+
+/* Sub-projects Sequential Vertical Layout */
+.subproject-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.subproject-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  padding: 1.5rem 1.8rem;
+  border-radius: 12px;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.subproject-card:hover {
+  border-color: var(--border-glow);
+  transform: translateX(4px);
+}
+
+.subproject-tag {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.subproject-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-heading);
+}
+
+.subproject-desc {
+  font-size: 0.93rem;
+  color: var(--text-muted);
+  line-height: 1.6;
 }
 
 /* Status Badges */
