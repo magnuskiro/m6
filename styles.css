@@ -150,6 +150,14 @@ header {
   background: var(--gradient-brand);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.brand:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
 }
 
 .brand-badge {
