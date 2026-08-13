@@ -4,10 +4,59 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Økonomi & Byggefinansiering | M6 Fornyelse</title>
-  <meta name="description" content="Steg-for-steg prosess for økonomi og byggefinansiering, bankens sjekkliste for kostnadsposter og krav jf. Bustadoppføringslova basert på DNB sin veileder.">
+  <meta name="description" content="Budsjettmatrise per delprosjekt (Del A til J), steg-for-steg byggefinansiering og bankens sjekkliste for Myrteveien 6.">
   <link rel="stylesheet" href="styles.css">
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
+    .subproject-budget-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+      margin-top: 1.5rem;
+    }
+    .budget-card {
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 1.4rem;
+      border-radius: 12px;
+      transition: var(--transition);
+    }
+    .budget-card:hover {
+      border-color: var(--border-glow);
+      background: rgba(28, 37, 56, 0.85);
+    }
+    .budget-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.3rem;
+    }
+    .budget-title {
+      font-size: 1.15rem;
+      color: #ffffff;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .budget-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.4rem 0;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+      font-size: 0.88rem;
+    }
+    .budget-row:last-child {
+      border-bottom: none;
+    }
+    .budget-label {
+      color: var(--text-muted);
+    }
+    .budget-val {
+      font-weight: 700;
+      color: #ffffff;
+    }
     .checklist-container {
       display: flex;
       flex-direction: column;
@@ -109,19 +158,19 @@
       <div style="display:inline-flex; align-items:center; gap:0.5rem; background:rgba(56,189,248,0.1); border:1px solid var(--border-glow); padding:0.3rem 0.8rem; border-radius:20px; font-size:0.85rem; color:var(--accent-cyan); margin-bottom:1rem;">
         <i data-lucide="map-pin" style="width:14px;"></i> Myrteveien 6, 3152 Tolvsrød (Gnr 140 / Bnr 371)
       </div>
-      <h1>Økonomi & Finansiering</h1>
+      <h1>Økonomi & Prissetting</h1>
       <p class="hero-subtitle">
-        Dedikert finansieringsside basert på DNB sin offisielle byggefinansieringsbrosjyre. Oversikt over finansieringsprosessen, bankens krav til dokumentasjon og komplett sjekkliste for kostnadsposter.
+        Økonomisk oppfølging speilet mot de 10 delprosjektene fra teknisk spesifikasjon og plan, samt DNB bankens byggefinansieringskrav og sjekkliste.
       </p>
 
       <div class="stats-grid">
         <div class="stat-card">
-          <div class="stat-value" id="statChecked">9 / 38 Fullført</div>
-          <div class="stat-label">Bankens Kostnadssjekkliste</div>
+          <div class="stat-value">10 Delprosjekter</div>
+          <div class="stat-label">Budsjettmatrise A til J</div>
         </div>
         <div class="stat-card">
-          <div class="stat-value">Bustadoppføringslova</div>
-          <div class="stat-label">Byggblankett 3426 / § 12</div>
+          <div class="stat-value">38 Sjekkpunkter</div>
+          <div class="stat-label">Bankens Kostnadssjekkliste</div>
         </div>
         <div class="stat-card">
           <div class="stat-value">10 % Uforutsett</div>
@@ -133,7 +182,204 @@
 
   <div class="container">
 
-    <!-- Section 1: Steg-for-steg Byggefinansieringsprosess (fra DNB Brosjyre) -->
+    <!-- Section 1: Budsjettmatrise Speilet mot de 10 Delprosjektene -->
+    <section class="card" style="margin-bottom: 4rem; padding: 2.5rem;">
+      <div class="section-header" style="border:none; margin-bottom: 1rem;">
+        <div>
+          <span style="font-size:0.8rem; font-weight:700; color:var(--accent-cyan); text-transform:uppercase; letter-spacing:0.1em;">
+            DELPROSJEKT-ØKONOMI & PRISSETTING
+          </span>
+          <h2 class="section-title" style="font-size:2rem; margin-top:0.3rem;">Budsjettmatrise per Delprosjekt (Del A til J)</h2>
+          <p class="section-desc">Prissetting og økonomisk struktur speilet direkte mot delprosjektene i teknisk spesifikasjon og plan.</p>
+        </div>
+      </div>
+
+      <div class="subproject-budget-grid">
+
+        <!-- Delprosjekt A -->
+        <div class="budget-card">
+          <div class="budget-tag">DELPROSJEKT A</div>
+          <div class="budget-title">1. Grunnarbeider Utvendig & Overvann (LOD)</div>
+          <div class="budget-row">
+            <span class="budget-label">Kjerneomfang:</span>
+            <span class="budget-val">Utgraving, drenering, XPS, LOD stenkiste</span>
+          </div>
+          <div class="budget-row">
+            <span class="budget-label">Fagområder:</span>
+            <span class="budget-val">Geoteknikk, Landskaps-VA</span>
+          </div>
+          <div class="budget-row">
+            <span class="budget-label">Status:</span>
+            <span class="status-badge status-planned">Innhentes anbud</span>
+          </div>
+        </div>
+
+        <!-- Delprosjekt B -->
+        <div class="budget-card">
+          <div class="budget-tag">DELPROSJEKT B</div>
+          <div class="budget-title">2. Kjeller Innvendig Nord</div>
+          <div class="budget-row">
+            <span class="budget-label">Kjerneomfang:</span>
+            <span class="budget-val">Pigging, 200mm EPS, RadoStop radonmembran</span>
+          </div>
+          <div class="budget-row">
+            <span class="budget-label">Fagområder:</span>
+            <span class="budget-val">Byggeteknikk, Betong, Radon</span>
+          </div>
+          <div class="budget-row">
+            <span class="budget-label">Status:</span>
+            <span class="status-badge status-completed">Riving fullført</span>
+          </div>
+        </div>
+
+        <!-- Delprosjekt C -->
+        <div class="budget-card" style="border-color:var(--border-glow); background:rgba(56,189,248,0.06);">
+          <div class="budget-tag" style="color:var(--accent-emerald);">DELPROSJEKT C (SPESIALROM)</div>
+          <div class="budget-title">3. Ventilasjon & El-rom (Under ny trapp i kjeller)</div>
+          <div class="budget-row">
+            <span class="budget-label">Kjerneomfang:</span>
+            <span class="budget-val">3-fase 80A hovedtavle, Systemair ventilasjon</span>
+          </div>
+          <div class="budget-row">
+            <span class="budget-label">Fagområder:</span>
+            <span class="budget-val">Elektro (80A), Ventilasjon</span>
+          </div>
+          <div class="budget-row">
+            <span class="budget-label">Status:</span>
+            <span class="status-badge status-progress">Under spesifisering</span>
+          </div>
+        </div>
+
+        <!-- Delprosjekt D -->
+        <div class="budget-card">
+          <div class="budget-tag">DELPROSJEKT D</div>
+          <div class="budget-title">4. Varmeteknisk Rom & VVS (Kjeller)</div>
+          <div class="budget-row">
+            <span class="budget-label">Kjerneomfang:</span>
+            <span class="budget-val">2018 NIBE varmepumpe, Uponor fordelerskap</span>
+          </div>
+          <div class="budget-row">
+            <span class="budget-label">Fagområder:</span>
+            <span class="budget-val">VVS, Rørlegger, Varmepumpe</span>
+          </div>
+          <div class="budget-row">
+            <span class="budget-label">Status:</span>
+            <span class="status-badge status-completed">Varmepumpe på plass (2018)</span>
+          </div>
+        </div>
+
+        <!-- Delprosjekt E -->
+        <div class="budget-card">
+          <div class="budget-tag">DELPROSJEKT E</div>
+          <div class="budget-title">5. Tilbygg Kjeller Syd</div>
+          <div class="budget-row">
+            <span class="budget-label">Kjerneomfang:</span>
+            <span class="budget-val">Utgraving, såle/ringmur, bæring syd</span>
+          </div>
+          <div class="budget-row">
+            <span class="budget-label">Fagområder:</span>
+            <span class="budget-val">Betong, Tømrer, Konstruksjon</span>
+          </div>
+          <div class="budget-row">
+            <span class="budget-label">Status:</span>
+            <span class="status-badge status-planned">Innhentes anbud</span>
+          </div>
+        </div>
+
+        <!-- Delprosjekt F -->
+        <div class="budget-card">
+          <div class="budget-tag">DELPROSJEKT F</div>
+          <div class="budget-title">6. Hovedetasje (1. etasje) & Åpent Allrom</div>
+          <div class="budget-row">
+            <span class="budget-label">Kjerneomfang:</span>
+            <span class="budget-val">Bærende stål for 65m², NorDan vinduer, gulvvarme</span>
+          </div>
+          <div class="budget-row">
+            <span class="budget-label">Fagområder:</span>
+            <span class="budget-val">Stål, Tømrer, NorDan, Kjøkken</span>
+          </div>
+          <div class="budget-row">
+            <span class="budget-label">Status:</span>
+            <span class="status-badge status-planned">Innhentes anbud</span>
+          </div>
+        </div>
+
+        <!-- Delprosjekt G -->
+        <div class="budget-card">
+          <div class="budget-tag">DELPROSJEKT G</div>
+          <div class="budget-title">7. 2. etasje (Soverom & Bad)</div>
+          <div class="budget-row">
+            <span class="budget-label">Kjerneomfang:</span>
+            <span class="budget-val">Soverom, bad, flislegging, BVN smøremembran</span>
+          </div>
+          <div class="budget-row">
+            <span class="budget-label">Fagområder:</span>
+            <span class="budget-val">Våtrom, Flis, Tømrer, VVS</span>
+          </div>
+          <div class="budget-row">
+            <span class="budget-label">Status:</span>
+            <span class="status-badge status-planned">Innhentes anbud</span>
+          </div>
+        </div>
+
+        <!-- Delprosjekt H -->
+        <div class="budget-card">
+          <div class="budget-tag">DELPROSJEKT H</div>
+          <div class="budget-title">8. Yttertak & Takhimling</div>
+          <div class="budget-row">
+            <span class="budget-label">Kjerneomfang:</span>
+            <span class="budget-val">Betongtakstein/skifer + 350mm Rockwool isolasjon</span>
+          </div>
+          <div class="budget-row">
+            <span class="budget-label">Fagområder:</span>
+            <span class="budget-val">Takkonstruksjon, Bygningsfysikk</span>
+          </div>
+          <div class="budget-row">
+            <span class="budget-label">Status:</span>
+            <span class="status-badge status-planned">Innhentes anbud</span>
+          </div>
+        </div>
+
+        <!-- Delprosjekt I -->
+        <div class="budget-card">
+          <div class="budget-tag">DELPROSJEKT I</div>
+          <div class="budget-title">9. Garasje & Uthus (§ 19)</div>
+          <div class="budget-row">
+            <span class="budget-label">Kjerneomfang:</span>
+            <span class="budget-val">Max 50 m² BYA garasje/uthus</span>
+          </div>
+          <div class="budget-row">
+            <span class="budget-label">Fagområder:</span>
+            <span class="budget-val">Garasjebygg, Byggesak § 19</span>
+          </div>
+          <div class="budget-row">
+            <span class="budget-label">Status:</span>
+            <span class="status-badge status-planned">Planlagt</span>
+          </div>
+        </div>
+
+        <!-- Delprosjekt J -->
+        <div class="budget-card">
+          <div class="budget-tag">DELPROSJEKT J</div>
+          <div class="budget-title">10. Utomhus & Terreng</div>
+          <div class="budget-row">
+            <span class="budget-label">Kjerneomfang:</span>
+            <span class="budget-val">Planering, markterrasse, hage, innkjørsel</span>
+          </div>
+          <div class="budget-row">
+            <span class="budget-label">Fagområder:</span>
+            <span class="budget-val">Landskapsarkitektur, Grunn</span>
+          </div>
+          <div class="budget-row">
+            <span class="budget-label">Status:</span>
+            <span class="status-badge status-planned">Planlagt</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 2: Steg-for-steg Byggefinansieringsprosess (fra DNB Brosjyre) -->
     <section class="card" style="margin-bottom: 4rem; padding: 2.5rem;">
       <div class="section-header" style="border:none; margin-bottom: 1.5rem;">
         <div>
@@ -221,7 +467,7 @@
       </div>
     </section>
 
-    <!-- Section 2: Interaktiv Sjekkliste for Bankens Kostnader (DNB Brosjyre) -->
+    <!-- Section 3: Interaktiv Sjekkliste for Bankens Kostnader (DNB Brosjyre) -->
     <section class="card" style="margin-bottom: 4rem; padding: 2.5rem;">
       <div class="section-header" style="border:none; margin-bottom: 1rem;">
         <div>
@@ -229,7 +475,7 @@
             DNB BANKKRAV & KOSTNADSKONTROLL
           </span>
           <h2 class="section-title" style="font-size:2rem; margin-top:0.3rem;">Bankens Huskeliste for Kostnader</h2>
-          <p class="section-desc">Interaktiv sjekkliste over alle kostnadsposter fra bankens byggefinansieringsbrosjyre med oppdatert gjennomføringsstatus for Myrteveien 6.</p>
+          <p class="section-desc">Interaktiv sjekkliste over alle 38 kostnadsposter fra bankens byggefinansieringsbrosjyre.</p>
         </div>
       </div>
 
@@ -419,7 +665,7 @@
           <input type="checkbox" class="checklist-cb" disabled>
           <div class="checklist-text">
             <div class="checklist-title">20. Elektriker grovarbeid (Skjult anlegg)</div>
-            <div class="checklist-desc">3-fase 63A hovedtavle, kabling, rør og trekking.</div>
+            <div class="checklist-desc">3-fase 80A hovedtavle i eget rom under ny trapp, kabling og rør.</div>
           </div>
           <span class="status-badge status-planned">Ikke utført</span>
         </div>
