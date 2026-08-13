@@ -192,7 +192,8 @@
       <div class="drawings-category-tabs">
         <button class="drawing-tab-btn active" onclick="filterDrawings('all')">Alle Tegninger & Perspektiver</button>
         <button class="drawing-tab-btn" onclick="filterDrawings('perspektiv')">🏢 3D Perspektiver</button>
-        <button class="drawing-tab-btn" onclick="filterDrawings('plan')">🗺️ Plantegninger</button>
+        <button class="drawing-tab-btn" onclick="filterDrawings('plan')">🗺️ Nyeste Plantegninger (2026-04-21)</button>
+        <button class="drawing-tab-btn" onclick="filterDrawings('malsatt')">📏 Målsatte Plantegninger</button>
         <button class="drawing-tab-btn" onclick="filterDrawings('fasade')">📐 Fasader & Situasjon</button>
         <button class="drawing-tab-btn" onclick="filterDrawings('snitt')">✂️ Snittegninger</button>
       </div>
@@ -260,6 +261,18 @@
           </div>
         </div>
 
+        <!-- Målsatt Plantegning 1. Etasje A-11PS -->
+        <div class="drawing-card" data-cat="plan malsatt">
+          <div class="drawing-img-wrapper" onclick="openLightbox('assets/images/drawings/plan_1etasje_malsatt.jpg', 'Målsatt Tegning A-11PS: 1. Etasje Målsatt Plan med Målstreker')">
+            <span class="drawing-badge" style="color:var(--accent-purple); border-color:var(--accent-purple);">A-11PS (Målsatt)</span>
+            <img src="assets/images/drawings/plan_1etasje_malsatt.jpg" alt="Målsatt Plantegning 1. Etasje A-11PS" class="drawing-img">
+          </div>
+          <div class="drawing-body">
+            <div class="drawing-title">1. Etasje Målsatt Plan (A-11PS)</div>
+            <div class="drawing-desc">Detaljert målsatt plantegning for 1. etasje med eksakte rommål, vegglengder, dørbredder og ytterdimensjoner.</div>
+          </div>
+        </div>
+
         <!-- Plantegning 2. Etasje A-102PS -->
         <div class="drawing-card" data-cat="plan">
           <div class="drawing-img-wrapper" onclick="openLightbox('assets/images/drawings/plan_2etasje-1.jpg', 'Tegning A-102PS (2026-04-21): 2. Etasje Plan')">
@@ -272,6 +285,18 @@
           </div>
         </div>
 
+        <!-- Målsatt Plantegning 2. Etasje A-12PS -->
+        <div class="drawing-card" data-cat="plan malsatt">
+          <div class="drawing-img-wrapper" onclick="openLightbox('assets/images/drawings/plan_2etasje_malsatt.jpg', 'Målsatt Tegning A-12PS: 2. Etasje Målsatt Plan med Målstreker')">
+            <span class="drawing-badge" style="color:var(--accent-purple); border-color:var(--accent-purple);">A-12PS (Målsatt)</span>
+            <img src="assets/images/drawings/plan_2etasje_malsatt.jpg" alt="Målsatt Plantegning 2. Etasje A-12PS" class="drawing-img">
+          </div>
+          <div class="drawing-body">
+            <div class="drawing-title">2. Etasje Målsatt Plan (A-12PS)</div>
+            <div class="drawing-desc">Detaljert målsatt plantegning for 2. etasje med spesifiserte romdimensjoner for soverom og bad.</div>
+          </div>
+        </div>
+
         <!-- Plantegning Kjeller / U.Etg A-100PS -->
         <div class="drawing-card" data-cat="plan">
           <div class="drawing-img-wrapper" onclick="openLightbox('assets/images/drawings/plan_kjeller-1.jpg', 'Tegning A-100PS (2026-04-21): Underetasje / Kjeller Plan')">
@@ -281,6 +306,18 @@
           <div class="drawing-body">
             <div class="drawing-title">Plantegning Underetasje / Kjeller (A-100PS)</div>
             <div class="drawing-desc">Kjellerplan med spesifisert Ventilasjon & El-rom under ny trapp (Delprosjekt C, 3-fase 80A), varmeteknisk rom og kjellerstue.</div>
+          </div>
+        </div>
+
+        <!-- Målsatt Plantegning Kjeller A-10PS -->
+        <div class="drawing-card" data-cat="plan malsatt">
+          <div class="drawing-img-wrapper" onclick="openLightbox('assets/images/drawings/plan_kjeller_malsatt.jpg', 'Målsatt Tegning A-10PS: Underetasje / Kjeller Målsatt Plan med Målstreker')">
+            <span class="drawing-badge" style="color:var(--accent-purple); border-color:var(--accent-purple);">A-10PS (Målsatt)</span>
+            <img src="assets/images/drawings/plan_kjeller_malsatt.jpg" alt="Målsatt Plantegning Kjeller A-10PS" class="drawing-img">
+          </div>
+          <div class="drawing-body">
+            <div class="drawing-title">Underetasje / Kjeller Målsatt Plan (A-10PS)</div>
+            <div class="drawing-desc">Detaljert målsatt plantegning for kjeller med utvendige og innvendige målsettinger for utgraving og rominndeling.</div>
           </div>
         </div>
 
@@ -431,7 +468,7 @@
       cards.forEach(card => {
         if (cat === 'all') {
           card.style.display = 'flex';
-        } else if (card.dataset.cat === cat) {
+        } else if (card.dataset.cat && card.dataset.cat.includes(cat)) {
           card.style.display = 'flex';
         } else {
           card.style.display = 'none';
