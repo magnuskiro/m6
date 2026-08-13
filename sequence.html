@@ -3,10 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prosjektplan & Fasematrise | M6 Fornyelse</title>
-  <meta name="description" content="Strukturert fasematrise og prosjektplan fra start til slutt for totalrehabilitering av Myrteveien 6.">
+  <title>Prosjektplan & Delprosjekter | M6 Fornyelse</title>
+  <meta name="description" content="Strukturert fasematrise, 6 byggefaser og 10 delprosjekter fra start til slutt for totalrehabilitering av Myrteveien 6.">
   <link rel="stylesheet" href="styles.css">
   <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .subproject-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+      margin-top: 1.5rem;
+    }
+    .subproject-card {
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 1.4rem;
+      border-radius: 12px;
+      transition: var(--transition);
+    }
+    .subproject-card:hover {
+      border-color: var(--border-glow);
+      background: rgba(28, 37, 56, 0.85);
+    }
+    .subproject-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.3rem;
+    }
+    .subproject-title {
+      font-size: 1.15rem;
+      color: #ffffff;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .subproject-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+  </style>
 </head>
 <body>
 
@@ -37,15 +75,102 @@
     <div style="display:inline-flex; align-items:center; gap:0.5rem; background:rgba(56,189,248,0.1); border:1px solid var(--border-glow); padding:0.3rem 0.8rem; border-radius:20px; font-size:0.85rem; color:var(--accent-cyan); margin-bottom:1rem;">
       <i data-lucide="compass" style="width:14px;"></i> SINTEF Byggforsk, TEK17, SAK10 & Tønsberg Arbeidsflyt
     </div>
-    <h1>Prosjektplan & Fasematrise</h1>
+    <h1>Prosjektplan & Delprosjekter</h1>
     <p>
-      En totalrehabilitering (eller hovedombygging) av et hus følger vanligvis en strukturert prosess oppdelt i tydelige faser. Dette gjør man for å sikre god økonomisk styring, overholde myndighetskrav og unngå at fagfagene arbeider oppå hverandre.
+      En totalrehabilitering av Myrteveien 6 følger en strukturert prosess oppdelt i <strong>6 standard byggefaser</strong> fordelt på <strong>10 definerte delprosjekter</strong>. Dette sikrer god økonomisk styring, overholder myndighetskrav og hindrer faglig overlapping.
     </p>
   </section>
 
   <div class="container">
 
-    <!-- Stepper Navigation (6 Fasers Prosess) -->
+    <!-- Section 1: 10 Definerte Delprosjekter (Sub-projects) -->
+    <section class="card" style="margin-bottom: 4rem; padding: 2.5rem;">
+      <div class="section-header" style="border:none; margin-bottom: 1rem;">
+        <div>
+          <span style="font-size:0.8rem; font-weight:700; color:var(--accent-cyan); text-transform:uppercase; letter-spacing:0.1em;">
+            PROSJEKTSTRUKTUR & SONER
+          </span>
+          <h2 class="section-title" style="font-size:2rem; margin-top:0.3rem;">10 Definerte Delprosjekter (Del 1 til 10)</h2>
+          <p class="section-desc">Hvert delprosjekt gjennomføres systematisk gjennom de 6 byggefasene.</p>
+        </div>
+      </div>
+
+      <div class="subproject-grid">
+
+        <!-- Delprosjekt A -->
+        <div class="subproject-card">
+          <div class="subproject-tag">DELPROSJEKT A</div>
+          <div class="subproject-title">1. Grunnarbeider Utvendig & Overvann (LOD)</div>
+          <div class="subproject-desc">Utgraving rundt grunnmur, ny utvendig drenering, XPS-isolasjon, løsmasser og LOD 3-trinns infiltrering i stenkiste på egen tomt jf. § 27.</div>
+        </div>
+
+        <!-- Delprosjekt B -->
+        <div class="subproject-card">
+          <div class="subproject-tag">DELPROSJEKT B</div>
+          <div class="subproject-title">2. Kjeller Innvendig Nord</div>
+          <div class="subproject-desc">Pigging, utgraving av kjellergulv, 200mm EPS understøp, RadoStop radonmembran, rør/elektro og romoppbygging nord.</div>
+        </div>
+
+        <!-- Delprosjekt C -->
+        <div class="subproject-card" style="border-color:var(--border-glow); background:rgba(56,189,248,0.06);">
+          <div class="subproject-tag" style="color:var(--accent-emerald);">DELPROSJEKT C (SPESIALROM)</div>
+          <div class="subproject-title">3. Ventilasjon & El-rom (Under ny trapp i kjeller)</div>
+          <div class="subproject-desc">Eget dedikert rom i kjeller under ny trapp: Flytting av 3-fase 63A hovedsikringsskap, installasjon av Systemair ventilasjonsaggregat og hovedkanaler.</div>
+        </div>
+
+        <!-- Delprosjekt D -->
+        <div class="subproject-card">
+          <div class="subproject-tag">DELPROSJEKT D</div>
+          <div class="subproject-title">4. Varmeteknisk Rom & VVS (Kjeller)</div>
+          <div class="subproject-desc">Tilkobling til eksisterende NIBE 2018 Luft-til-vann varmepumpe, Uponor gulvvarmsfordeler og PEX rør-i-rør sanitærsentral.</div>
+        </div>
+
+        <!-- Delprosjekt E -->
+        <div class="subproject-card">
+          <div class="subproject-tag">DELPROSJEKT E</div>
+          <div class="subproject-title">5. Tilbygg Kjeller Syd</div>
+          <div class="subproject-desc">Nytt utgravd såle- og kjellerareal mot sør, støp av ringmur/såle, bæring og klimaskall for tilbygg.</div>
+        </div>
+
+        <!-- Delprosjekt F -->
+        <div class="subproject-card">
+          <div class="subproject-tag">DELPROSJEKT F</div>
+          <div class="subproject-title">6. Hovedetasje (1. etasje) & Åpent Allrom</div>
+          <div class="subproject-desc">Bærende stålkonstruksjon for 65m² allrom, NorDan vinduer, liggende trekledning, Uponor gulvvarme og kjøkken/stue.</div>
+        </div>
+
+        <!-- Delprosjekt G -->
+        <div class="subproject-card">
+          <div class="subproject-tag">DELPROSJEKT G</div>
+          <div class="subproject-title">7. 2. etasje (Soverom & Bad)</div>
+          <div class="subproject-desc">Rominndeling i 2. etasje, soverom, bad, flislegging, VVS og innvendig ferdigstilling.</div>
+        </div>
+
+        <!-- Delprosjekt H -->
+        <div class="subproject-card">
+          <div class="subproject-tag">DELPROSJEKT H</div>
+          <div class="subproject-title">8. Yttertak & Takhimling</div>
+          <div class="subproject-desc">Betongtakstein (vurdere skifer), undertak, sløyfer/lekter og 350mm Rockwool isolasjon i takhimlingen.</div>
+        </div>
+
+        <!-- Delprosjekt I -->
+        <div class="subproject-card">
+          <div class="subproject-tag">DELPROSJEKT I</div>
+          <div class="subproject-title">9. Garasje & Uthus (§ 19)</div>
+          <div class="subproject-desc">Ny garasje/uthus jf. § 19 (max 50 m² BYA, max 5,0m møne / 4,0m gesims).</div>
+        </div>
+
+        <!-- Delprosjekt J -->
+        <div class="subproject-card">
+          <div class="subproject-tag">DELPROSJEKT J</div>
+          <div class="subproject-title">10. Utomhus & Terreng</div>
+          <div class="subproject-desc">Grov- og finplanering av terreng, hage, markterrasse, innkjørsel og utelys.</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 2: Stepper Navigation for 6 Fasers Prosess -->
     <div class="sequence-stepper">
       <div class="step-pill active" onclick="scrollToStage(1)">
         <span class="step-num">FASE 1</span>
@@ -102,7 +227,7 @@
             <h4 style="color:var(--accent-purple); margin:0 0 0.5rem 0; font-size:1.05rem;">2. Arkitekt- og Ingeniørarbeid</h4>
             <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
               <li>Tegning av nye planløsninger, snitt og fasader (Arkitekt A-901).</li>
-              <li>Beregning av bæring (HEB 220 ståldrager R 60) og energiløsninger (isolasjon, ventilasjon, oppvarming).</li>
+              <li>Beregning av bæring og energiløsninger (isolasjon, ventilasjon, oppvarming).</li>
             </ul>
           </div>
 
@@ -183,7 +308,7 @@
           <div style="background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.08); padding:1.2rem; border-radius:8px;">
             <h4 style="color:var(--accent-emerald); margin:0 0 0.5rem 0; font-size:1.05rem;">2. Tømrerarbeid & Bærekonstruksjon</h4>
             <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
-              <li>Montering av HEB 220 ståldrager (branninnkledd R 60) for å åpne stueløsning.</li>
+              <li>Montering av bærende stålkonstruksjon (branninnkledd R 60) for å åpne stueløsning.</li>
               <li>Nytt taktekke med betongtakstein (vurdere skifer) og sløyfer/lekter.</li>
             </ul>
           </div>
@@ -268,8 +393,7 @@
             <h4 style="color:var(--accent-purple); margin:0 0 0.5rem 0; font-size:1.05rem;">2. Overflatebehandling</h4>
             <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
               <li>Sparkling og maling av vegger og tak.</li>
-              <li>Legging av parkett/fliser i tørre rom (etter sjekk av restfukt < 2 % CM).</li>
-              <li>Montering av listverk (gulv, tak, vinduer) og innerdører.</li>
+              <li>Legging av parkett/fliser i tørre rom (etter sjekk av restfukt < 2 % CM), listverk.</li>
             </ul>
           </div>
 
@@ -363,7 +487,7 @@
   <div class="toast" id="toastNotification">Varsel</div>
 
   <footer>
-    <p>M6 Fornyelse – Byggerekkefølge & Fasematrise Underside</p>
+    <p>M6 Fornyelse – Prosjektplan & Delprosjekter Underside</p>
     <p style="margin-top:0.5rem; font-size:0.8rem; opacity:0.6;">Repositorium: <a href="https://github.com/magnuskiro/m6" target="_blank">github.com/magnuskiro/m6</a></p>
   </footer>
 
