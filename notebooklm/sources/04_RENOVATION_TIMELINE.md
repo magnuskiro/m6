@@ -1,33 +1,13 @@
-# M6 Rehabilitation - Master Renovation Timeline
+# M6 Rehabilitation - Renovation Sequence & Status
 
-## Milestone Schedule
+## 1. Project Sequence Framework
+The renovation sequence for **Myrteveien 6** (*Gnr 140 / Bnr 371*) follows the standard technical sequence for Scandinavian residential rehabilitation:
 
-### Phase 1: Planning, Permits & Demolition (Months 1 - 2) [COMPLETED]
-- [x] Architectural drawings and structural calculations approved by municipality.
-- [x] Full interior gutting: wallpaper, old flooring, non-loadbearing walls removal.
-- [x] Temporary electrical and water connections established.
-- [x] Steel beam insertion (HEB 220) to open ground floor ceiling space.
+1. **Phase 1: Søknad & Prosjektering** – Building permit application jf. SAK10 § 5-4, architectural drawings, %BYA checks (§ 44.1).
+2. **Phase 2: Riving & Bærende Stål** – Interior clearance, structural support (HEB 220 steel beam installation R 60).
+3. **Phase 3: Klimaskall & Tetting** – 200mm Rockwool exterior insulation, liggende trekledning, NorDan 3-layer alu-clad side-hung windows, standing seam roof.
+4. **Phase 4: VVS & Tekniske Anlegg** – PEX pipe-in-pipe, Uponor hydronic floor heating loops connected to existing 2018 NIBE Air-to-Water heat pump, HRV ventilation.
+5. **Phase 5: Innvendige Overflater & Uteområde** – Interior surfaces, LOD 3-step stormwater infiltration (stenkiste § 27), final inspections.
 
-### Phase 2: Building Envelope, Insulation & Roofing (Months 3 - 4) [COMPLETED]
-- [x] Old roof tile removal, timber ceiling framing reinforced.
-- [x] Triple-glazed Schüco window frames and glass installation.
-- [x] Vapor barrier and 200mm exterior wall rockwool insulation setup.
-- [x] Standing seam metal roof installation with PV panel mounts.
-
-### Phase 3: Technical Installations & Systems (Months 5 - 6) [IN PROGRESS - 75%]
-- [x] Main 3-phase electrical panel and Cat6a cabling pull-through.
-- [x] Heat pump system placement & central manifold installation.
-- [/] Hydronic floor heating loops laying across all 3 levels.
-- [ ] Balanced HRV ductwork and ceiling registers installation.
-
-### Phase 4: Interior Finishes & Custom Joinery (Months 7 - 8) [PLANNED]
-- [ ] Gypsum board wall installation and Level 4 plaster finish.
-- [ ] Micro-cement application in bathrooms and focal fireplace wall.
-- [ ] Natural white oak flooring installation.
-- [ ] Custom kitchen island, pantry, and bedroom wardrobe fitting.
-
-### Phase 5: Final Detailing, Landscaping & Move-In (Months 9 - 10) [PLANNED]
-- [ ] Light fixtures, KNX smart switches, and bathroom sanitaryware hookup.
-- [ ] Outdoor timber deck and driveway paving.
-- [ ] Final air tightness blower door test target < 0.6 ACH@50Pa.
-- [ ] Handover inspection & final municipal occupancy certificate.
+## 2. Live Issue Status
+All active tasks and sub-components are tracked live on [GitHub Project Board #1](https://github.com/users/magnuskiro/projects/1/views/1).

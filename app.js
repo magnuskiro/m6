@@ -1,42 +1,5 @@
 // M6 Fornyelse - Interaktiv Applikasjonslogikk
 
-// Romdata og Beskrivelser
-const roomsData = {
-  exterior: {
-    title: 'Fasade & Utvendig Transformasjon',
-    details: 'Erstatning av slitt 1947-kledning med liggende trekledning, montering av NorDan sidehengslede 3-lags alukledde vinduer, båndtekket metalltak og integrert varm arkitektonisk utebelysning.',
-    status: 'Klimaskall Fullført',
-    statusClass: 'status-completed',
-    beforeImg: 'assets/images/exterior_before.jpg',
-    afterImg: 'assets/images/exterior_after.jpg'
-  },
-  living: {
-    title: 'Åpen Stue & Allrom (65 m²)',
-    details: 'Fjerning av 1947-stendervegger for å utvide stuearealet, montering av HEB 220 bærende ståldrager (R 60 brannbeskyttet), hvitoljet eikeparkett, betongpeis og innfelt LED-cove i himling.',
-    status: 'Gjenstår Overflater',
-    statusClass: 'status-progress',
-    beforeImg: 'assets/images/living_before.jpg',
-    afterImg: 'assets/images/living_after.jpg'
-  },
-  kitchen: {
-    title: 'Kjøkken & Marmorøy',
-    details: 'Utrensing av opprinnelige laminatskap og innredning, erstattet med mørke mattedører, hvit eikefinish, 3,2m marmorøy med nedfelling, Gaggenau hvitevarer og integrert benkevifte.',
-    status: 'Kjøkken Bestilt',
-    statusClass: 'status-progress',
-    beforeImg: 'assets/images/kitchen_before.jpg',
-    afterImg: 'assets/images/kitchen_after.jpg'
-  },
-  bathroom: {
-    title: 'Hovedbad & Badstue',
-    details: 'Transformasjon av datert bad til minimalistisk spabad med italienske storformat porselensfliser, mikrosementvegger, innbygde armaturer, regndusj, frittstående kar og integrert sedertre-badstue.',
-    status: 'Rørlegger Pågår',
-    statusClass: 'status-progress',
-    beforeImg: 'assets/images/living_before.jpg',
-    afterImg: 'assets/images/living_after.jpg'
-  }
-};
-
-let currentRoom = 'exterior';
 let isDragging = false;
 
 // Skillelinje (Slider) Drag Logikk
@@ -90,49 +53,6 @@ function initSlider() {
 
   const rect = sliderContainer.getBoundingClientRect();
   imgBefore.style.width = `${rect.width}px`;
-}
-
-// Bytte Valgt Rom
-function switchRoom(roomKey) {
-  if (!roomsData[roomKey]) return;
-  currentRoom = roomKey;
-  const data = roomsData[roomKey];
-
-  const imgBefore = document.getElementById('imgBefore');
-  const imgAfter = document.getElementById('imgAfter');
-  const sideImgBefore = document.getElementById('sideImgBefore');
-  const sideImgAfter = document.getElementById('sideImgAfter');
-  const beforeWrapper = document.getElementById('beforeWrapper');
-  const sliderHandle = document.getElementById('sliderHandle');
-  const sliderContainer = document.getElementById('sliderContainer');
-
-  const roomTitle = document.getElementById('roomTitle');
-  const roomDetails = document.getElementById('roomDetails');
-  const roomStatusBadge = document.getElementById('roomStatusBadge');
-
-  const buttons = document.querySelectorAll('.room-btn');
-  buttons.forEach(btn => btn.classList.remove('active'));
-  if (event && event.currentTarget) event.currentTarget.classList.add('active');
-
-  if (imgBefore) imgBefore.src = data.beforeImg;
-  if (imgAfter) imgAfter.src = data.afterImg;
-  if (sideImgBefore) sideImgBefore.src = data.beforeImg;
-  if (sideImgAfter) sideImgAfter.src = data.afterImg;
-
-  if (beforeWrapper) beforeWrapper.style.width = '50%';
-  if (sliderHandle) sliderHandle.style.left = '50%';
-
-  if (roomTitle) roomTitle.textContent = data.title;
-  if (roomDetails) roomDetails.textContent = data.details;
-  if (roomStatusBadge) {
-    roomStatusBadge.textContent = data.status;
-    roomStatusBadge.className = `status-badge ${data.statusClass}`;
-  }
-
-  if (sliderContainer && imgBefore) {
-    const rect = sliderContainer.getBoundingClientRect();
-    imgBefore.style.width = `${rect.width}px`;
-  }
 }
 
 // Bytte Visningsmodus (Skillelinje vs Side-ved-side)

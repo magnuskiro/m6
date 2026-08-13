@@ -41,16 +41,16 @@
 
       <div class="stats-grid">
         <div class="stat-card">
-          <div class="stat-value">220 m²</div>
-          <div class="stat-label">Samlet Bruksareal (BRA)</div>
+          <div class="stat-value">Gnr 140 / Bnr 371</div>
+          <div class="stat-label">Gårds- og Bruksnummer</div>
         </div>
         <div class="stat-card">
-          <div class="stat-value">21,5 % BYA</div>
-          <div class="stat-label">Utnytting (Maks 25 %)</div>
+          <div class="stat-value">Maks 25 % BYA</div>
+          <div class="stat-label">Utnytting (jf. § 44.1)</div>
         </div>
         <div class="stat-card">
-          <div class="stat-value">kr 1,15m</div>
-          <div class="stat-label">Spent av kr 2,5m Budsjett</div>
+          <div class="stat-value">1946 / 1947</div>
+          <div class="stat-label">Tegnet / Oppført</div>
         </div>
       </div>
     </div>
@@ -59,12 +59,12 @@
   <div class="container">
 
     <!-- Project Highlight Feature Grid -->
-    <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap:1.2rem; margin-bottom:4rem;">
+    <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:1.2rem; margin-bottom:4rem;">
       <div class="card">
         <div style="color:var(--accent-cyan); font-size:1.8rem; margin-bottom:0.5rem;"><i data-lucide="shield-check"></i></div>
-        <h3 style="font-size:1.15rem; margin-bottom:0.4rem;">Klimaskall & Tak</h3>
+        <h3 style="font-size:1.15rem; margin-bottom:0.4rem;">Klimaskall & Vinduer</h3>
         <p style="font-size:0.85rem; color:var(--text-muted);">
-          200mm Rockwool isolasjon + liggende trekledning + Ruukki båndtekking (Ug ≤ 0,5 W/m²K).
+          200mm Rockwool utvendig isolasjon, liggende trekledning, båndtekket tak og NorDan 3-lags alukledde sidehengslede vinduer.
         </p>
       </div>
 
@@ -72,23 +72,15 @@
         <div style="color:var(--accent-emerald); font-size:1.8rem; margin-bottom:0.5rem;"><i data-lucide="flame"></i></div>
         <h3 style="font-size:1.15rem; margin-bottom:0.4rem;">VVS & Gulvvarme</h3>
         <p style="font-size:0.85rem; color:var(--text-muted);">
-          Uponor vannbåren gulvvarme kobles på eksisterende NIBE varmepumpe (fra 2018) + Systemair ventilasjon.
+          Uponor vannbåren gulvvarme kobles på eksisterende NIBE Luft-til-vann varmepumpe (installert i 2018).
         </p>
       </div>
 
       <div class="card">
         <div style="color:var(--accent-purple); font-size:1.8rem; margin-bottom:0.5rem;"><i data-lucide="layout"></i></div>
-        <h3 style="font-size:1.15rem; margin-bottom:0.4rem;">65 m² Åpent Allrom</h3>
+        <h3 style="font-size:1.15rem; margin-bottom:0.4rem;">Bærende Stål (HEB 220)</h3>
         <p style="font-size:0.85rem; color:var(--text-muted);">
-          HEB 220 bærende ståldrager (R 60 branninnkledd) som erstatter opprinnelige 1947-vegger, integrert marmorøy & peis.
-        </p>
-      </div>
-
-      <div class="card">
-        <div style="color:var(--accent-amber); font-size:1.8rem; margin-bottom:0.5rem;"><i data-lucide="sparkles"></i></div>
-        <h3 style="font-size:1.15rem; margin-bottom:0.4rem;">Tønsberg Estetikk</h3>
-        <p style="font-size:0.85rem; color:var(--text-muted);">
-          Tilpasset PBL § 29-2 & Arkitekturhåndboken (brent tre, mattsvart tak, planmonterte solceller & 2700K spotter).
+          HEB 220 bærende ståldrager (R 60 branninnkledd) som erstatter opprinnelige 1947-vegger for å åpne stuearealet.
         </p>
       </div>
     </div>
@@ -102,7 +94,7 @@
           </div>
           <h2 style="font-size:2rem; margin-bottom:0.6rem;">Anbefalt Byggerekkefølge & Faglig Sekvens</h2>
           <p style="color:var(--text-muted); font-size:0.95rem;">
-            Utforsk den anbefalte 9-trinns byggetekniske sekvensen for totalrehabilitering. Lær om kritiske avhengigheter, EI 60 brannkrav, Tønsberg rammebetingelser og unngå kostbare fallgruver.
+            Utforsk den faglige sekvensen for totalrehabilitering. Lær om kritiske avhengigheter, EI 60 brannkrav og Tønsberg rammebetingelser (PBL / TEK17).
           </p>
         </div>
         <div>
@@ -114,11 +106,11 @@
     </section>
 
     <!-- Interactive Before & After Visualizer -->
-    <section id="visualizer" class="visualizer-section">
+    <section id="visualizer" class="visualizer-section" style="margin-bottom:4rem;">
       <div class="section-header">
         <div>
           <h2 class="section-title">Før & Etter Visning</h2>
-          <p class="section-desc">Dra den interaktive skillelinjen for å sammenligne opprinnelige 1947-forhold (tegnet 1946) med ferdig modernisert arkitektbolig.</p>
+          <p class="section-desc">Sammenlign opprinnelig tilstand (Google Photos) med arkitektens offisielle tegning A-901 Perspektiver sørvest (PS).</p>
         </div>
         <div class="view-controls">
           <button class="toggle-btn active" id="btnSliderView" onclick="setViewMode('slider')">
@@ -130,35 +122,27 @@
         </div>
       </div>
 
-      <!-- Room Selection Tabs -->
-      <div class="room-tabs" id="roomTabs">
-        <button class="room-btn active" onclick="switchRoom('exterior')">🏠 Utvendig Fasade</button>
-        <button class="room-btn" onclick="switchRoom('living')">🛋️ Åpen Stue & Allrom</button>
-        <button class="room-btn" onclick="switchRoom('kitchen')">🍳 Kjøkken & Marmorøy</button>
-        <button class="room-btn" onclick="switchRoom('bathroom')">🚿 Hovedbad & Badstue</button>
-      </div>
-
       <!-- Split Slider Container -->
       <div class="slider-wrapper" id="sliderContainer">
-        <img id="imgAfter" src="assets/images/exterior_after.jpg" alt="Etter rehabilitering" class="slider-img img-after">
+        <img id="imgAfter" src="assets/images/exterior_after.jpg" alt="Arkitekttegning A-901 Perspektiver sørvest" class="slider-img img-after">
         <div class="img-before-wrapper" id="beforeWrapper">
-          <img id="imgBefore" src="assets/images/exterior_before.jpg" alt="Før rehabilitering">
+          <img id="imgBefore" src="assets/images/exterior_before.jpg" alt="Opprinnelig tilstand Myrteveien 6">
         </div>
         <div class="slider-handle" id="sliderHandle">
           <div class="slider-handle-button">↔</div>
         </div>
-        <div class="badge-before">FØR (1947 Opprinnelig)</div>
-        <div class="badge-after">ETTER (2026 Mål)</div>
+        <div class="badge-before">FØR (Google Photos)</div>
+        <div class="badge-after">ETTER (Arkitekt A-901)</div>
       </div>
 
       <!-- Side-by-Side View -->
       <div class="side-by-side-wrapper" id="sideContainer">
         <div class="side-card">
-          <span class="badge-before">FØR</span>
+          <span class="badge-before">FØR (Google Photos)</span>
           <img id="sideImgBefore" src="assets/images/exterior_before.jpg" alt="Før">
         </div>
         <div class="side-card">
-          <span class="badge-after">ETTER</span>
+          <span class="badge-after">ETTER (Arkitekt A-901)</span>
           <img id="sideImgAfter" src="assets/images/exterior_after.jpg" alt="Etter">
         </div>
       </div>
@@ -166,89 +150,12 @@
       <!-- Room Info Details Bar -->
       <div class="room-info-bar">
         <div>
-          <h3 class="room-info-title" id="roomTitle">Fasade & Utvendig Transformasjon</h3>
-          <p class="room-info-details" id="roomDetails">
-            Erstatning av slitt 1947-kledning med liggende trekledning, montering av NorDan sidehengslede 3-lags alukledde vinduer, båndtekket metalltak og integrert varm arkitektonisk utebelysning.
+          <h3 class="room-info-title">Fasade & Utvendig Transformasjon</h3>
+          <p class="room-info-details">
+            Erstatning av slitt 1947-kledning med liggende trekledning, montering av NorDan sidehengslede 3-lags alukledde vinduer, båndtekket tak og utvendig isolering.
           </p>
         </div>
-        <div>
-          <span class="status-badge status-completed" id="roomStatusBadge">Klimaskall Fullført</span>
-        </div>
       </div>
-    </section>
-
-    <!-- Budget Tracker Section -->
-    <section id="budget" class="card" style="margin-bottom: 4rem;">
-      <div class="section-header" style="border:none; margin-bottom: 1rem;">
-        <div>
-          <h2 class="section-title">Rehabiliteringsbudsjett</h2>
-          <p class="section-desc">Oversikt over avsatt budsjett vs faktiske kostnader per fagområde.</p>
-        </div>
-        <div style="text-align: right;">
-          <div style="font-size:1.8rem; font-weight:800; color:var(--accent-cyan);">kr 1 150 000 / kr 2 500 000</div>
-          <div style="font-size:0.85rem; color:var(--text-muted);">Påløpt til nå (46,0 %)</div>
-        </div>
-      </div>
-
-      <div class="budget-progress-bar">
-        <div class="budget-progress-fill" id="budgetFill"></div>
-      </div>
-
-      <table class="budget-table">
-        <thead>
-          <tr>
-            <th>Kategori</th>
-            <th>Avsatt Budsjett</th>
-            <th>Faktisk Påløpt</th>
-            <th>Status</th>
-            <th>Entreprenør / Leverandør</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Riving & Bærende Stål (HEB 220)</strong></td>
-            <td>kr 320 000</td>
-            <td>kr 335 000</td>
-            <td><span class="status-badge status-completed">Fullført</span></td>
-            <td>Nordic Build AS</td>
-          </tr>
-          <tr>
-            <td><strong>Båndtekking, Isolasjon & NorDan Vinduer</strong></td>
-            <td>kr 550 000</td>
-            <td>kr 530 000</td>
-            <td><span class="status-badge status-completed">Fullført</span></td>
-            <td>NorDan / Ruukki</td>
-          </tr>
-          <tr>
-            <td><strong>VVS, Varmepumpe & Elektro</strong></td>
-            <td>kr 480 000</td>
-            <td>kr 355 000</td>
-            <td><span class="status-badge status-progress">Pågår</span></td>
-            <td>Thermic Flow AS / Volta Tech</td>
-          </tr>
-          <tr>
-            <td><strong>Liggende Trekledning</strong></td>
-            <td>kr 400 000</td>
-            <td>kr 140 000</td>
-            <td><span class="status-badge status-progress">Pågår</span></td>
-            <td>Trelast & Kledning AS</td>
-          </tr>
-          <tr>
-            <td><strong>Innvendig Eikeparkett & Kjøkkenøy</strong></td>
-            <td>kr 510 000</td>
-            <td>kr 125 000</td>
-            <td><span class="status-badge status-planned">Planlagt</span></td>
-            <td>Nordic Joinery & Marble</td>
-          </tr>
-          <tr>
-            <td><strong>Utendørs Terreng & Markterrasse</strong></td>
-            <td>kr 240 000</td>
-            <td>kr 0</td>
-            <td><span class="status-badge status-planned">Planlagt</span></td>
-            <td>GardenCraft AS</td>
-          </tr>
-        </tbody>
-      </table>
     </section>
 
   </div>
