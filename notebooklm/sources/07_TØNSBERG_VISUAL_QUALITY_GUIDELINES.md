@@ -20,7 +20,7 @@ This source document outlines how the total rehabilitation of **Myrteveien 6, 31
 
 ### A. Facade & Material Concept (PBL § 29-2)
 - **Kledning:** Liggende trekledning i avdempet skandinavisk fargetone.
-- **Tak:** Båndtekket metalltak med integrerte/fluktende solceller jf. Tønsberg kommuneplan § 14.
+- **Tak:** Betongtakstein (vurdere skifer) med integrerte/fluktende solceller jf. Tønsberg kommuneplan § 14.
 - **Vinduer:** NorDan sidehengslede 3-lags alukledde vinduer.
 
 ### B. Solceller på Tak (§ 14)
