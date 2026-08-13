@@ -144,9 +144,22 @@ function updateThemeButtonUI() {
 // Kjøres umiddelbart for å forhindre blink ved lasting
 initTheme();
 
+// Lightbox Fullskjerm Håndtering & ESC-tast
+function closeLightbox() {
+  const modal = document.getElementById('lightboxModal');
+  if (modal) modal.style.display = 'none';
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' || e.key === 'Esc') {
+    closeLightbox();
+  }
+});
+
 // Ved Sidelasting
 document.addEventListener('DOMContentLoaded', () => {
   initSlider();
   updateThemeButtonUI();
 });
+
 
