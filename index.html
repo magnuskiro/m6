@@ -3,10 +3,97 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>M6 Fornyelse – Totalrehabilitering av Myrteveien 6 | Tolvsrød</title>
-  <meta name="description" content="Offisiell prosjektoversikt og før/etter-visning for totalrehabiliteringen av Myrteveien 6 (M6) i Tolvsrød, Tønsberg kommune.">
+  <title>M6 Fornyelse | Arkitekttegninger & Hovedoversikt</title>
+  <meta name="description" content="Offisiell oversikt, plantegninger, 3D perspektiver og teknisk spesifikasjon for totalrehabilitering av Myrteveien 6.">
   <link rel="stylesheet" href="styles.css">
   <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .drawings-category-tabs {
+      display: flex;
+      gap: 0.8rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    .drawing-tab-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 0.6rem 1.4rem;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .drawing-tab-btn.active, .drawing-tab-btn:hover {
+      background: var(--gradient-brand);
+      color: #ffffff;
+      border-color: transparent;
+      box-shadow: var(--shadow-glow);
+    }
+    .drawings-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.8rem;
+    }
+    .drawing-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .drawing-card:hover {
+      border-color: var(--border-glow);
+      transform: translateY(-4px);
+    }
+    .drawing-img-wrapper {
+      position: relative;
+      width: 100%;
+      height: 380px;
+      background: #000;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .drawing-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: var(--transition);
+    }
+    .drawing-card:hover .drawing-img {
+      transform: scale(1.02);
+    }
+    .drawing-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(10, 13, 20, 0.85);
+      border: 1px solid var(--border-glow);
+      color: var(--accent-cyan);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.3rem 0.7rem;
+      border-radius: 20px;
+      backdrop-filter: blur(8px);
+    }
+    .drawing-body {
+      padding: 1.4rem;
+    }
+    .drawing-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      margin-bottom: 0.4rem;
+    }
+    .drawing-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+  </style>
 </head>
 <body>
 
@@ -19,7 +106,7 @@
       </div>
       <nav>
         <a href="index.html" class="nav-link active">Oversikt</a>
-        <a href="#visualizer" class="nav-link">Før & Etter</a>
+        <a href="#drawings" class="nav-link">Tegninger</a>
         <a href="sequence.html" class="nav-link subpage-link">
           <i data-lucide="layers" style="width:14px; vertical-align:-1px;"></i> Plan
         </a>
@@ -86,12 +173,146 @@
         <div style="color:var(--accent-purple); font-size:1.8rem; margin-bottom:0.5rem;"><i data-lucide="layout"></i></div>
         <h3 style="font-size:1.15rem; margin-bottom:0.4rem;">Bærende Stål (HEB 220)</h3>
         <p style="font-size:0.85rem; color:var(--text-muted);">
-          HEB 220 bærende ståldrager (R 60 branninnkledd) som erstatter opprinnelige 1947-vegger for å åpne stuearealet.
+          Bærende stålkonstruksjon (R 60 branninnkledd) som erstatter opprinnelige 1947-vegger for å åpne 65m² stue- og allromsareal.
         </p>
       </div>
     </div>
 
-    <!-- Subpage Callout Card: Standard & Recommended Building Order -->
+    <!-- Section: Arkitekttegninger, Plantegninger & Perspektiver -->
+    <section id="drawings" class="card" style="margin-bottom:4rem; padding:2.5rem;">
+      <div class="section-header" style="border:none; margin-bottom:1.5rem;">
+        <div>
+          <span style="font-size:0.8rem; font-weight:700; color:var(--accent-cyan); text-transform:uppercase; letter-spacing:0.1em;">
+            ARKITEKTUR & DOKUMENTASJON
+          </span>
+          <h2 class="section-title" style="font-size:2rem; margin-top:0.3rem;">Arkitekttegninger, Plantegninger & Perspektiver</h2>
+          <p class="section-desc">Offisielle arkitekttegninger for Myrteveien 6. Klikk på tegningene for å se i fullskjerm.</p>
+        </div>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="drawings-category-tabs">
+        <button class="drawing-tab-btn active" onclick="filterDrawings('all')">Alle Tegninger & Perspektiver</button>
+        <button class="drawing-tab-btn" onclick="filterDrawings('perspektiv')">🏢 3D Perspektiver</button>
+        <button class="drawing-tab-btn" onclick="filterDrawings('plan')">🗺️ Plantegninger</button>
+        <button class="drawing-tab-btn" onclick="filterDrawings('fasade')">📐 Fasader & Situasjon</button>
+      </div>
+
+      <!-- Drawings Grid -->
+      <div class="drawings-grid" id="drawingsGrid">
+
+        <!-- Perspektiv Sørvest A-901 -->
+        <div class="drawing-card" data-cat="perspektiv">
+          <div class="drawing-img-wrapper" onclick="openLightbox('assets/images/drawings/perspektiv_sorvest-1.jpg', 'Tegning A-901: Perspektiv Sørvest (PS)')">
+            <span class="drawing-badge">A-901</span>
+            <img src="assets/images/drawings/perspektiv_sorvest-1.jpg" alt="Perspektiv Sørvest A-901" class="drawing-img">
+          </div>
+          <div class="drawing-body">
+            <div class="drawing-title">Perspektiv Sørvest (A-901)</div>
+            <div class="drawing-desc">Hovedperspektiv fra sørvest med ny liggende trekledning, NorDan 3-lags alukledde vinduer og hevet terrene/markterrasse.</div>
+          </div>
+        </div>
+
+        <!-- Perspektiv Nordøst A-903 -->
+        <div class="drawing-card" data-cat="perspektiv">
+          <div class="drawing-img-wrapper" onclick="openLightbox('assets/images/drawings/perspektiv_nordost-1.jpg', 'Tegning A-903: Perspektiv Nordøst (PS)')">
+            <span class="drawing-badge">A-903</span>
+            <img src="assets/images/drawings/perspektiv_nordost-1.jpg" alt="Perspektiv Nordøst A-903" class="drawing-img">
+          </div>
+          <div class="drawing-body">
+            <div class="drawing-title">Perspektiv Nordøst (A-903)</div>
+            <div class="drawing-desc">3D-visning fra nordøst med inngangsparti, garasje/uthus og fasadelinje mot veien.</div>
+          </div>
+        </div>
+
+        <!-- Perspektiv Nordvest A-902 -->
+        <div class="drawing-card" data-cat="perspektiv">
+          <div class="drawing-img-wrapper" onclick="openLightbox('assets/images/drawings/perspektiv_nordvest-1.jpg', 'Tegning A-902: Perspektiv Nordvest (PS)')">
+            <span class="drawing-badge">A-902</span>
+            <img src="assets/images/drawings/perspektiv_nordvest-1.jpg" alt="Perspektiv Nordvest A-902" class="drawing-img">
+          </div>
+          <div class="drawing-body">
+            <div class="drawing-title">Perspektiv Nordvest (A-902)</div>
+            <div class="drawing-desc">Arkitektonisk utforming fra nordvest med hevede vindusflater og takkontur.</div>
+          </div>
+        </div>
+
+        <!-- Før-bilde (Google Photos) -->
+        <div class="drawing-card" data-cat="perspektiv">
+          <div class="drawing-img-wrapper" onclick="openLightbox('assets/images/exterior_before.jpg', 'Opprinnelig Tilstand Myrteveien 6 (Google Photos)')">
+            <span class="drawing-badge" style="color:var(--accent-amber);">Opprinnelig Foto</span>
+            <img src="assets/images/exterior_before.jpg" alt="Opprinnelig foto Myrteveien 6" class="drawing-img">
+          </div>
+          <div class="drawing-body">
+            <div class="drawing-title">Opprinnelig Tilstand (Før-bilde)</div>
+            <div class="drawing-desc">Foto av opprinnelig bolig fra 1947 før igangsatt totalrehabilitering.</div>
+          </div>
+        </div>
+
+        <!-- Plantegning 1. Etasje A-11PS -->
+        <div class="drawing-card" data-cat="plan">
+          <div class="drawing-img-wrapper" onclick="openLightbox('assets/images/drawings/plan_1etasje-1.jpg', 'Tegning A-11PS: 1. Etasje Plan')">
+            <span class="drawing-badge">A-11PS</span>
+            <img src="assets/images/drawings/plan_1etasje-1.jpg" alt="Plantegning 1. Etasje A-11PS" class="drawing-img">
+          </div>
+          <div class="drawing-body">
+            <div class="drawing-title">Plantegning 1. Etasje (A-11PS)</div>
+            <div class="drawing-desc">Planløsning for 1. etasje med åpent allrom (65 m² stue/kjøkken), bærende stålkonstruksjon og rominndeling.</div>
+          </div>
+        </div>
+
+        <!-- Plantegning 2. Etasje A-12PS -->
+        <div class="drawing-card" data-cat="plan">
+          <div class="drawing-img-wrapper" onclick="openLightbox('assets/images/drawings/plan_2etasje-1.jpg', 'Tegning A-12PS: 2. Etasje Plan')">
+            <span class="drawing-badge">A-12PS</span>
+            <img src="assets/images/drawings/plan_2etasje-1.jpg" alt="Plantegning 2. Etasje A-12PS" class="drawing-img">
+          </div>
+          <div class="drawing-body">
+            <div class="drawing-title">Plantegning 2. Etasje (A-12PS)</div>
+            <div class="drawing-desc">Planløsning for 2. etasje med soveromsfløy, baderom og oppholdsarealer.</div>
+          </div>
+        </div>
+
+        <!-- Plantegning Kjeller / U.Etg A-10PS -->
+        <div class="drawing-card" data-cat="plan">
+          <div class="drawing-img-wrapper" onclick="openLightbox('assets/images/drawings/plan_kjeller-1.jpg', 'Tegning A-10PS: Underetasje / Kjeller Plan')">
+            <span class="drawing-badge">A-10PS</span>
+            <img src="assets/images/drawings/plan_kjeller-1.jpg" alt="Plantegning Kjeller A-10PS" class="drawing-img">
+          </div>
+          <div class="drawing-body">
+            <div class="drawing-title">Plantegning Underetasje / Kjeller (A-10PS)</div>
+            <div class="drawing-desc">Kjellerplan med spesifisert Ventilasjon & El-rom under ny trapp (Delprosjekt C), varmeteknisk rom og kjellerarealer.</div>
+          </div>
+        </div>
+
+        <!-- Fasadetegninger A-301 -->
+        <div class="drawing-card" data-cat="fasade">
+          <div class="drawing-img-wrapper" onclick="openLightbox('assets/images/drawings/fasader-1.jpg', 'Tegning A-301: Fasadetegninger')">
+            <span class="drawing-badge">A-301</span>
+            <img src="assets/images/drawings/fasader-1.jpg" alt="Fasadetegninger A-301" class="drawing-img">
+          </div>
+          <div class="drawing-body">
+            <div class="drawing-title">Fasadetegninger (A-301)</div>
+            <div class="drawing-desc">Komplette fasadeoppriss for Nord, Sør, Øst og Vest med terrengkoter og kledningsdetaljer.</div>
+          </div>
+        </div>
+
+        <!-- Situasjonsplan A-001 -->
+        <div class="drawing-card" data-cat="fasade">
+          <div class="drawing-img-wrapper" onclick="openLightbox('assets/images/drawings/situasjonsplan-1.jpg', 'Tegning A-001: Situasjonsplan (PS)')">
+            <span class="drawing-badge">A-001</span>
+            <img src="assets/images/drawings/situasjonsplan-1.jpg" alt="Situasjonsplan A-001" class="drawing-img">
+          </div>
+          <div class="drawing-body">
+            <div class="drawing-title">Situasjonsplan (A-001)</div>
+            <div class="drawing-desc">Situasjonskart for Myrteveien 6 (Gnr 140 / Bnr 371) med avstand til naboer (PBL § 29-4) og %BYA-beregning.</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Subpage Callout Card: Plan & Sequence -->
     <section class="card" style="background: linear-gradient(135deg, rgba(20,27,41,0.95) 0%, rgba(30,41,59,0.95) 100%); border: 1px solid var(--border-glow); margin-bottom: 4rem; padding: 2.5rem;">
       <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.5rem;">
         <div style="max-width:750px;">
@@ -100,7 +321,7 @@
           </div>
           <h2 style="font-size:2rem; margin-bottom:0.6rem;">Prosjektets Fasematrise & Plan</h2>
           <p style="color:var(--text-muted); font-size:0.95rem;">
-            Utforsk den 6-fases byggeplanen for totalrehabilitering. Lær om kritiske avhengigheter, EI 60 brannkrav og Tønsberg rammebetingelser (PBL / TEK17).
+            Utforsk den 6-fases byggeplanen og de 10 delprosjektene. Lær om kritiske avhengigheter, EI 60 brannkrav og Tønsberg rammebetingelser (PBL / TEK17).
           </p>
         </div>
         <div>
@@ -111,62 +332,16 @@
       </div>
     </section>
 
-    <!-- Interactive Before & After Visualizer -->
-    <section id="visualizer" class="visualizer-section" style="margin-bottom:4rem;">
-      <div class="section-header">
-        <div>
-          <h2 class="section-title">Før & Etter Visning</h2>
-          <p class="section-desc">Sammenlign opprinnelig tilstand (Google Photos) med arkitektens offisielle tegning A-901 Perspektiver sørvest (PS).</p>
-        </div>
-        <div class="view-controls">
-          <button class="toggle-btn active" id="btnSliderView" onclick="setViewMode('slider')">
-            <i data-lucide="sliders" style="vertical-align:-2px; width:14px;"></i> Skillelinje
-          </button>
-          <button class="toggle-btn" id="btnSideView" onclick="setViewMode('side')">
-            <i data-lucide="columns" style="vertical-align:-2px; width:14px;"></i> Side-ved-side
-          </button>
-        </div>
-      </div>
-
-      <!-- Split Slider Container -->
-      <div class="slider-wrapper" id="sliderContainer">
-        <img id="imgAfter" src="assets/images/exterior_after.jpg" alt="Arkitekttegning A-901 Perspektiver sørvest" class="slider-img img-after">
-        <div class="img-before-wrapper" id="beforeWrapper">
-          <img id="imgBefore" src="assets/images/exterior_before.jpg" alt="Opprinnelig tilstand Myrteveien 6">
-        </div>
-        <div class="slider-handle" id="sliderHandle">
-          <div class="slider-handle-button">↔</div>
-        </div>
-        <div class="badge-before">FØR (Google Photos)</div>
-        <div class="badge-after">ETTER (Arkitekt A-901)</div>
-      </div>
-
-      <!-- Side-by-Side View -->
-      <div class="side-by-side-wrapper" id="sideContainer">
-        <div class="side-card">
-          <span class="badge-before">FØR (Google Photos)</span>
-          <img id="sideImgBefore" src="assets/images/exterior_before.jpg" alt="Før">
-        </div>
-        <div class="side-card">
-          <span class="badge-after">ETTER (Arkitekt A-901)</span>
-          <img id="sideImgAfter" src="assets/images/exterior_after.jpg" alt="Etter">
-        </div>
-      </div>
-
-      <!-- Room Info Details Bar -->
-      <div class="room-info-bar">
-        <div>
-          <h3 class="room-info-title">Fasade & Utvendig Transformasjon</h3>
-          <p class="room-info-details">
-            Erstatning av slitt 1947-kledning med liggende trekledning, montering av NorDan sidehengslede 3-lags alukledde vinduer, nytt tak med betongtakstein (vurdere skifer) og utvendig isolering.
-          </p>
-        </div>
-      </div>
-    </section>
-
   </div>
 
   <div class="toast" id="toastNotification">Varsel</div>
+
+  <!-- Lightbox Modal -->
+  <div id="lightboxModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.92); z-index:9999; justify-content:center; align-items:center; flex-direction:column; padding:2rem;" onclick="closeLightbox()">
+    <img id="lightboxImg" src="" style="max-width:92%; max-height:82vh; object-fit:contain; border-radius:8px; box-shadow:0 0 40px rgba(0,0,0,0.8);" onclick="event.stopPropagation()">
+    <div id="lightboxCaption" style="color:#ffffff; font-size:1.1rem; font-weight:600; margin-top:1rem; text-align:center;"></div>
+    <div style="color:var(--text-muted); font-size:0.85rem; margin-top:0.3rem;">Klikk hvor som helst for å lukke</div>
+  </div>
 
   <footer>
     <p>M6 Fornyelse – Totalrehabilitering av Myrteveien 6</p>
@@ -174,6 +349,39 @@
   </footer>
 
   <script src="app.js"></script>
-  <script>lucide.createIcons();</script>
+  <script>
+    lucide.createIcons();
+    function filterDrawings(cat) {
+      const cards = document.querySelectorAll('.drawing-card');
+      const btns = document.querySelectorAll('.drawing-tab-btn');
+      btns.forEach(b => b.classList.remove('active'));
+      if (event && event.currentTarget) event.currentTarget.classList.add('active');
+
+      cards.forEach(card => {
+        if (cat === 'all') {
+          card.style.display = 'flex';
+        } else if (card.dataset.cat === cat) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function openLightbox(src, caption) {
+      const modal = document.getElementById('lightboxModal');
+      const img = document.getElementById('lightboxImg');
+      const cap = document.getElementById('lightboxCaption');
+      if (!modal || !img || !cap) return;
+      img.src = src;
+      cap.textContent = caption;
+      modal.style.display = 'flex';
+    }
+
+    function closeLightbox() {
+      const modal = document.getElementById('lightboxModal');
+      if (modal) modal.style.display = 'none';
+    }
+  </script>
 </body>
 </html>
