@@ -7,7 +7,7 @@
 
 ## 2. Building Envelope & Thermal Insulation
 - **Wall Assembly:** Exterior horizontal timber cladding, 30mm ventilated cavity, wind barrier membrane, 200mm continuous Rockwool exterior insulation, existing timber stud framing, 100mm interior cavity insulation, intelligent vapor variable membrane (Pro Clima INTELLO), 48mm installation batten, 13mm gypsum board.
-- **Roof Assembly:** Concrete roof tiles (considering slate option), 350mm blown cellulose/mineral insulation, roof underlayment membrane, airtight interior sealing (U-value: 0.11 W/m²K).
+- **Roof Assembly:** Concrete roof tiles (considering slate option), 350mm Rockwool mineral wool insulation in ceiling, roof underlayment membrane, airtight interior sealing (U-value: 0.11 W/m²K).
 - **Windows & Doors:** NorDan side-hung triple-pane aluminum-clad timber windows (Ug = 0.5 W/m²K, total Uw ≤ 0.80 W/m²K). Motorized zip screens.
 
 ## 3. HVAC & Energy Systems
