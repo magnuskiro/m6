@@ -628,6 +628,7 @@
 
   <!-- Lightbox Modal -->
   <div id="lightboxModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.92); z-index:9999; justify-content:center; align-items:center; flex-direction:column; padding:2rem;" onclick="closeLightbox()">
+    <button class="lightbox-close-btn" onclick="closeLightbox()" aria-label="Lukk fullskjermsvisning">&times;</button>
     <img id="lightboxImg" src="" style="max-width:92%; max-height:82vh; object-fit:contain; border-radius:8px; box-shadow:0 0 40px rgba(0,0,0,0.8);" onclick="event.stopPropagation()">
     <div id="lightboxCaption" style="color:#ffffff; font-size:1.1rem; font-weight:600; margin-top:1rem; text-align:center;"></div>
     <div style="color:var(--text-muted); font-size:0.85rem; margin-top:0.3rem;">Trykk på <strong>ESC</strong> eller klikk hvor som helst for å lukke</div>
