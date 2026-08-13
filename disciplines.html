@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fagområder & Byggefinansiering | M6 Fornyelse</title>
+  <meta name="description" content="Oversikt over prosjekteringsfag for husdesign samt bankens huskeliste og prosess for byggefinansiering og byggelån.">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Sticky Header Nav -->
+  <header>
+    <div class="header-container">
+      <div class="brand">
+        <i data-lucide="home"></i> M6 FORNYELSE
+        <span class="brand-badge">TOLVSRØD</span>
+      </div>
+      <nav>
+        <a href="index.html" class="nav-link">Hovedoversikt</a>
+        <a href="sequence.html" class="nav-link subpage-link">
+          <i data-lucide="layers" style="width:14px; vertical-align:-1px;"></i> Byggerekkefølge
+        </a>
+        <a href="disciplines.html" class="nav-link active subpage-link">
+          <i data-lucide="clipboard-check" style="width:14px; vertical-align:-1px;"></i> Fagområder & Finansiering
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div style="display:inline-flex; align-items:center; gap:0.5rem; background:rgba(56,189,248,0.1); border:1px solid var(--border-glow); padding:0.3rem 0.8rem; border-radius:20px; font-size:0.85rem; color:var(--accent-cyan); margin-bottom:1rem;">
+        <i data-lucide="map-pin" style="width:14px;"></i> Myrteveien 6, 3152 Tolvsrød (Gnr 140 / Bnr 371)
+      </div>
+      <h1>Fagområder for Husdesign & Byggefinansiering</h1>
+      <p class="hero-subtitle">
+        En komplett oversikt over de faglige prosjekteringsområdene for boligdesign, samt bankens krav, huskeliste for kostnader og steg-for-steg prosess for byggefinansiering.
+      </p>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">11 Fagområder</div>
+          <div class="stat-label">Prosjektering & Design</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">Bustadoppføringslova</div>
+          <div class="stat-label">Byggblankett 3426 / § 12</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">10 % Uforutsett</div>
+          <div class="stat-label">Bankens Reserverammekrav</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <!-- Section 1: Fagområdene for Husdesign (Uten forkortelser) -->
+    <section class="card" style="margin-bottom: 4rem; padding: 2.5rem;">
+      <div class="section-header" style="border:none; margin-bottom: 1.5rem;">
+        <div>
+          <span style="font-size:0.8rem; font-weight:700; color:var(--accent-cyan); text-transform:uppercase; letter-spacing:0.1em;">
+            TEKNISK PROSJEKTERING JFR. TEK17 & PBL
+          </span>
+          <h2 class="section-title" style="font-size:2rem; margin-top:0.3rem;">11 Fagområder Man Må Designe Hus For</h2>
+          <p class="section-desc">Alle fagområder som kreves for at boligen skal være funksjonell, bærekraftig og godkjent jf. plan- og bygningsloven.</p>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap:1.5rem;">
+
+        <!-- 1. Arkitektur -->
+        <div class="card" style="background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.08); padding:1.5rem;">
+          <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.8rem;">
+            <div style="color:var(--accent-cyan); font-size:1.5rem;"><i data-lucide="compass"></i></div>
+            <h3 style="font-size:1.2rem; margin:0;">1. Arkitektur & Romlig Utforming</h3>
+          </div>
+          <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6;">
+            <strong>Hva designes:</strong> Planløsning, fasadeuttrykk, snittegninger, etasjehøyder, vindusplassering og dagslys.
+            <br><strong>Nøkkelkrav:</strong> Dagslyskrav (TEK17 § 13-7), utnyttingsgrad (%BYA ≤ 25 % jf. § 44.1) og visuelle kvaliteter (PBL § 29-2).
+          </p>
+        </div>
+
+        <!-- 2. Byggeteknikk -->
+        <div class="card" style="background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.08); padding:1.5rem;">
+          <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.8rem;">
+            <div style="color:var(--accent-purple); font-size:1.5rem;"><i data-lucide="box"></i></div>
+            <h3 style="font-size:1.2rem; margin:0;">2. Byggeteknikk & Bærende Konstruksjoner</h3>
+          </div>
+          <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6;">
+            <strong>Hva designes:</strong> Bæresystemer, bjelkelag, punktlaster, fundamentering og ståldragere (f.eks. HEB 220).
+            <br><strong>Nøkkelkrav:</strong> Dimensjonering for snø- og vindlaster, stivhet og mekanisk motstandsevne (TEK17 kap. 10).
+          </p>
+        </div>
+
+        <!-- 3. VVS -->
+        <div class="card" style="background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.08); padding:1.5rem;">
+          <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.8rem;">
+            <div style="color:var(--accent-emerald); font-size:1.5rem;"><i data-lucide="flame"></i></div>
+            <h3 style="font-size:1.2rem; margin:0;">3. Varme, Ventilasjon & Sanitær (VVS)</h3>
+          </div>
+          <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6;">
+            <strong>Hva designes:</strong> PEX rør-i-rør sanitæranlegg, Uponor vannbåren gulvvarme tilkoblet eksisterende 2018 NIBE varmepumpe, og balansert ventilasjon med varmegjenvinning.
+            <br><strong>Nøkkelkrav:</strong> Lekkasjesikring, skoldesikring og energikrav (TEK17 kap. 13 & 15).
+          </p>
+        </div>
+
+        <!-- 4. Elektro -->
+        <div class="card" style="background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.08); padding:1.5rem;">
+          <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.8rem;">
+            <div style="color:var(--accent-amber); font-size:1.5rem;"><i data-lucide="zap"></i></div>
+            <h3 style="font-size:1.2rem; margin:0;">4. Elektro, Belysning & Svakstrøm</h3>
+          </div>
+          <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6;">
+            <strong>Hva designes:</strong> Sikringsskap, kursfordeling, kabelføringer, stikkontakter (60–80+ punkter), belysningsplan, el-billader og planmonterte solceller på tak jf. § 14.
+            <br><strong>Nøkkelkrav:</strong> NEK 400 forskrifter og overspenningsvern.
+          </p>
+        </div>
+
+        <!-- 5. Bygningsfysikk -->
+        <div class="card" style="background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.08); padding:1.5rem;">
+          <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.8rem;">
+            <div style="color:var(--accent-cyan); font-size:1.5rem;"><i data-lucide="thermometer"></i></div>
+            <h3 style="font-size:1.2rem; margin:0;">5. Bygningsfysikk & Energirådgivning</h3>
+          </div>
+          <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6;">
+            <strong>Hva designes:</strong> U-verdiberegninger for yttervegg (0,15), tak (0,11) og vinduer (0,80), kuldebruer, dampsperre/dampbrems og lufttetting.
+            <br><strong>Nøkkelkrav:</strong> TEK17 energiramme og tetthetsmåling (< 0,6 ACH).
+          </p>
+        </div>
+
+        <!-- 6. Brann -->
+        <div class="card" style="background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.08); padding:1.5rem;">
+          <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.8rem;">
+            <div style="color:#ef4444; font-size:1.5rem;"><i data-lucide="shield-alert"></i></div>
+            <h3 style="font-size:1.2rem; margin:0;">6. Brannteknisk Prosjektering & Brannsmittevern</h3>
+          </div>
+          <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6;">
+            <strong>Hva designes:</strong> Brannsmittevern mot nabo (EI 60 fasadevegg dersom avstand < 8,0 m jf. TEK17 § 11-6), branninnkledning av stål (R 60), rømningsveier og røykdeteksjon.
+            <br><strong>Nøkkelkrav:</strong> Rømningsvei fra alle oppholdsrom.
+          </p>
+        </div>
+
+        <!-- 7. Overvann -->
+        <div class="card" style="background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.08); padding:1.5rem;">
+          <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.8rem;">
+            <div style="color:var(--accent-cyan); font-size:1.5rem;"><i data-lucide="droplet"></i></div>
+            <h3 style="font-size:1.2rem; margin:0;">7. Overvannstiltak & Landskaps-VA</h3>
+          </div>
+          <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6;">
+            <strong>Hva designes:</strong> Lokal overvannshåndtering (LOD 3-trinnsstrategi med infiltrering i stenkiste på egen tomt jf. Tønsberg kommuneplan § 27), drensrør og sandfang.
+            <br><strong>Nøkkelkrav:</strong> Hindre at overvann ledes mot grunnmur eller nabo ved 25-års regnskur.
+          </p>
+        </div>
+
+        <!-- 8. Geoteknikk -->
+        <div class="card" style="background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.08); padding:1.5rem;">
+          <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.8rem;">
+            <div style="color:var(--accent-emerald); font-size:1.5rem;"><i data-lucide="mountain"></i></div>
+            <h3 style="font-size:1.2rem; margin:0;">8. Geoteknikk & Grunnforhold</h3>
+          </div>
+          <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6;">
+            <strong>Hva designes:</strong> Vurdering av grunnforhold (fjell/leire/løsmasser), bæreevne under fundamenter, setningsfare, radonsikring (TEK17 § 13-5) og skredfare.
+            <br><strong>Nøkkelkrav:</strong> Sikkerhet mot naturpåkjenninger (TEK17 kap. 7).
+          </p>
+        </div>
+
+        <!-- 9. Akustikk -->
+        <div class="card" style="background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.08); padding:1.5rem;">
+          <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.8rem;">
+            <div style="color:var(--accent-purple); font-size:1.5rem;"><i data-lucide="volume-2"></i></div>
+            <h3 style="font-size:1.2rem; margin:0;">9. Bygningsakustikk & Lydisolering</h3>
+          </div>
+          <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6;">
+            <strong>Hva designes:</strong> Trinnlydsdemping mellom etasjer, romakustikk i store allrom og demping av vibrasjoner fra tekniske installasjoner (varmepumpe og ventilasjon).
+            <br><strong>Nøkkelkrav:</strong> Norsk Standard NS 8175 (lydforhold i boliger).
+          </p>
+        </div>
+
+        <!-- 10. Landskapsarkitektur -->
+        <div class="card" style="background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.08); padding:1.5rem;">
+          <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.8rem;">
+            <div style="color:var(--accent-emerald); font-size:1.5rem;"><i data-lucide="trees"></i></div>
+            <h3 style="font-size:1.2rem; margin:0;">10. Landskapsarkitektur & Terrengutforming</h3>
+          </div>
+          <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6;">
+            <strong>Hva designes:</strong> Terrengtilpasning, kotehøyder, støttemurer, utendørs oppholdsareal (MUA), markterrasse og innkjøring/biloppstilling.
+            <br><strong>Nøkkelkrav:</strong> Skånsomt terrenginngrep og overvannsflomveier.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- 11. Søknad og Ledelse Callout -->
+      <div style="margin-top:1.5rem; background:linear-gradient(135deg, rgba(56,189,248,0.1), rgba(168,85,247,0.1)); border:1px solid var(--border-glow); padding:1.5rem; border-radius:12px;">
+        <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.5rem;">
+          <div style="color:var(--accent-cyan); font-size:1.5rem;"><i data-lucide="file-check"></i></div>
+          <h3 style="font-size:1.2rem; margin:0;">11. Ansvarlig Søker & Prosjekteringsledelse</h3>
+        </div>
+        <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6; margin:0;">
+          <strong>Hva koordineres:</strong> Sammenstilling av erklæringer fra alle faglige prosjekterende (SAMSVAR), utarbeidelse av byggesøknad jf. SAK10 § 5-4, gjennomføringsplan (DiBK 5185), nabovarsling (DiBK 5154) og dialog med Tønsberg kommune.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 2: Steg-for-steg Byggefinansieringsprosess (fra DNB Brosjyre) -->
+    <section class="card" style="margin-bottom: 4rem; padding: 2.5rem;">
+      <div class="section-header" style="border:none; margin-bottom: 1.5rem;">
+        <div>
+          <span style="font-size:0.8rem; font-weight:700; color:var(--accent-emerald); text-transform:uppercase; letter-spacing:0.1em;">
+            FINANSIERINGSVEILEDER & BANKKRAV
+          </span>
+          <h2 class="section-title" style="font-size:2rem; margin-top:0.3rem;">Steg-for-Steg Byggefinansieringsprosess</h2>
+          <p class="section-desc">Inkorporerte trinn fra bankens offisielle byggefinansieringsbrosjyre (DNB) for et trygt prosjektforløp.</p>
+        </div>
+      </div>
+
+      <div class="timeline" style="margin-top:2rem;">
+
+        <div class="timeline-step">
+          <div class="step-badge">STEG 1</div>
+          <div class="step-content">
+            <h3>Økonomisk Kartlegging & Forhåndssamtale</h3>
+            <p>Gjennomgang av låneevne, egenkapital og økonomiske rammer sammen med banken før oppstart av prosjektering.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="step-badge">STEG 2</div>
+          <div class="step-content">
+            <h3>Inntegning, Spesifikasjon & Kontrakter</h3>
+            <p>Utarbeidelse av tegninger og innhenting av tilbud. Bruk av **Byggblankett 3426** (Bustadoppføringslova) ved avtaleinngåelse med entreprenør/håndverkere.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="step-badge">STEG 3</div>
+          <div class="step-content">
+            <h3>Forhåndstakst av Takstmann</h3>
+            <p>Sertifisert takstmann utarbeider en forhåndstakst av verdien på den ferdige boligen basert på tegninger, spesifikasjoner og prosjektbeskrivelse.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="step-badge">STEG 4</div>
+          <div class="step-content">
+            <h3>Sluttbehandling & Innvilgelse av Byggelån</h3>
+            <p>Banken sluttbehandler byggelånssøknaden når all usikkerhet er ryddet av veien. Dokumentasjon som må leveres:</p>
+            <ul style="margin-top:0.5rem; color:var(--text-muted); padding-left:1.2rem; font-size:0.9rem;">
+              <li>Forhåndstakst fra takstmann</li>
+              <li>Kontrakter eller fastprisanbud (jf. Bustadoppføringslova)</li>
+              <li>Budsjett og kostnadsoverslag (inkl. 10 % uforutsett + byggelånsrenter i byggeperioden)</li>
+              <li>Rammetillatelse & Igangsettingstillatelse fra kommunen</li>
+              <li>Entreprenørgaranti jf. Bustadoppføringslova § 12 & Byggeforsikringsbevis</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="step-badge">STEG 5</div>
+          <div class="step-content">
+            <h3>Byggesøknad & Kommunal Behandling</h3>
+            <p>Innsending av digital byggesøknad. Rammetillatelse behandles innen 12 uker; igangsettingstillatelse innen 3 uker etter komplett søknad. Eventuell forhåndskonferanse med kommunen avholdes innen 2 uker etter anmodning.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="step-badge">STEG 6</div>
+          <div class="step-content">
+            <h3>Byggestart, Fremdriftskontroll & Utbetalinger</h3>
+            <p>Befaringer gjennomføres løpende under byggetiden for å kontrollere at fremdrift og kvalitet samsvarer med kontrakten. Utbetalinger fra byggelånet skal kun skje i takt med den verdien som faktisk tilføres byggeplassen.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="step-badge">STEG 7</div>
+          <div class="step-content">
+            <h3>Sluttbefaring, Overtakelsesforretning & Konvertering</h3>
+            <p>Formell overtakelsesforretning avholdes jf. Bustadoppføringslova § 14. Feil og mangler protokollføres med utbedringsfrister. Etter mottatt **Ferdigattest** (eller midlertidig brukstillatelse) og **Ferdigtakst**, gjøres byggelånet om til et ordinært boliglån.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="step-badge">STEG 8</div>
+          <div class="step-content">
+            <h3>FDV-Mappe, Energiattest & Husforsikring</h3>
+            <p>Leverandør overleverer fullstendig FDV-dokumentasjon (Forvaltning, Drift og Vedlikehold) og boligens energiattest. Ordinær husforsikring aktiveres fra overtakelsesdato.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 3: Bankens Huskeliste for Kostnader (fra DNB Brosjyre) -->
+    <section class="card" style="margin-bottom: 4rem; padding: 2.5rem;">
+      <div class="section-header" style="border:none; margin-bottom: 1.5rem;">
+        <div>
+          <span style="font-size:0.8rem; font-weight:700; color:var(--accent-purple); text-transform:uppercase; letter-spacing:0.1em;">
+            DNB BANKKRAV & KOSTNADSPOSTER
+          </span>
+          <h2 class="section-title" style="font-size:2rem; margin-top:0.3rem;">Huskeliste for Kostnader & Bankkrav</h2>
+          <p class="section-desc">Fullstendig sjekkliste over alle kostnadsposter som skal være dekket før byggelån innvilges.</p>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:1.5rem;">
+
+        <!-- Boks 1: Tomt, Prosjektering & Avgifter -->
+        <div style="background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.08); padding:1.5rem; border-radius:12px;">
+          <h3 style="font-size:1.1rem; color:var(--accent-cyan); margin-bottom:1rem;"><i data-lucide="file-text" style="vertical-align:-2px; width:16px;"></i> Prosjektering & Gebyrer</h3>
+          <ul style="list-style:none; padding:0; margin:0; font-size:0.88rem; color:var(--text-muted); line-height:1.8;">
+            <li>✓ Prosjektering & Arkitektkostnader</li>
+            <li>✓ Tilknytningsavgifter (Vann, Kloakk, Strøm)</li>
+            <li>✓ Byggesaksgebyrer & Oppmåling tomt</li>
+            <li>✓ Forhåndskonferanse & Rammetillatelse</li>
+            <li>✓ Tredjepartskontroll & Uavhengig kontroll</li>
+            <li>✓ Byggelånsrenter & bankprovisjoner i byggeperioden</li>
+          </ul>
+        </div>
+
+        <!-- Boks 2: Grunn, Struktur & Klimaskall -->
+        <div style="background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.08); padding:1.5rem; border-radius:12px;">
+          <h3 style="font-size:1.1rem; color:var(--accent-emerald); margin-bottom:1rem;"><i data-lucide="hammer" style="vertical-align:-2px; width:16px;"></i> Grunn & Klimaskall</h3>
+          <ul style="list-style:none; padding:0; margin:0; font-size:0.88rem; color:var(--text-muted); line-height:1.8;">
+            <li>✓ Riving, Rydding & Klargjøring</li>
+            <li>✓ Graving, Sprenging & Sikring av grunnen</li>
+            <li>✓ Grunnmur, Stenkiste & Radonsperre</li>
+            <li>✓ Utvendig rør/bunnledning & Varmepumpe</li>
+            <li>✓ Tømrerarbeid, Liggende kledning & Belistning</li>
+            <li>✓ Betongtakstein (vurdere skifer) & Rockwool isolasjon</li>
+            <li>✓ NorDan 3-lags alukledde sidehengslede vinduer</li>
+          </ul>
+        </div>
+
+        <!-- Boks 3: Tekniske Fag, Innredning & Garanti -->
+        <div style="background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.08); padding:1.5rem; border-radius:12px;">
+          <h3 style="font-size:1.1rem; color:var(--accent-purple); margin-bottom:1rem;"><i data-lucide="check-circle-2" style="vertical-align:-2px; width:16px;"></i> Tekniske Fag & Garanti</h3>
+          <ul style="list-style:none; padding:0; margin:0; font-size:0.88rem; color:var(--text-muted); line-height:1.8;">
+            <li>✓ Rørlegger (Uponor vannbåren varme)</li>
+            <li>✓ Balansert ventilasjonsanlegg</li>
+            <li>✓ Elektriker & Telecom/internett (m/kabel)</li>
+            <li>✓ Peis/vedovn (Må fungere før ferdigattest!)</li>
+            <li>✓ Gulv, Fliser, Maling & Fast innredning</li>
+            <li>✓ Utendørs terreng, Innkjørsel & Garasje</li>
+            <li>⚠️ **10 % Reserve for uforutsette kostnader**</li>
+            <li>⚠️ **Entreprenørgaranti jf. Bustadoppføringslova § 12**</li>
+            <li>⚠️ **Byggeforsikring i byggeperioden**</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>M6 Fornyelse – Totalrehabilitering av Myrteveien 6</p>
+    <p style="margin-top:0.5rem; font-size:0.8rem; opacity:0.6;">Repositorium: <a href="https://github.com/magnuskiro/m6" target="_blank">github.com/magnuskiro/m6</a></p>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
