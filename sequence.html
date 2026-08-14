@@ -8,39 +8,92 @@
   <link rel="stylesheet" href="styles.css">
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
-    .subproject-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.2rem;
-      margin-top: 1.5rem;
+    /* Sequential List Layout for Subprojects */
+    .subproject-sequence-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-top: 2rem;
+      position: relative;
+      padding-left: 2.2rem;
     }
-    .subproject-card {
+    .subproject-sequence-flow::before {
+      content: '';
+      position: absolute;
+      left: 0.85rem;
+      top: 1rem;
+      bottom: 1rem;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--accent-cyan), var(--accent-emerald), var(--accent-cyan));
+      border-radius: 2px;
+      opacity: 0.6;
+    }
+    .subproject-seq-item {
+      position: relative;
       background: rgba(15, 23, 42, 0.65);
       border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 1.4rem;
       border-radius: 12px;
+      padding: 1.4rem 1.6rem;
       transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
     }
-    .subproject-card:hover {
+    .subproject-seq-item::before {
+      content: attr(data-step);
+      position: absolute;
+      left: -2.2rem;
+      top: 1.4rem;
+      transform: translateX(-50%);
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #0f172a;
+      border: 2px solid var(--accent-cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--accent-cyan);
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+      z-index: 2;
+    }
+    .subproject-seq-item:hover {
       border-color: var(--border-glow);
       background: rgba(28, 37, 56, 0.85);
+      transform: translateX(4px);
     }
-    .subproject-tag {
+    .subproject-seq-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .subproject-seq-tag {
       font-size: 0.75rem;
       font-weight: 700;
       color: var(--accent-cyan);
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      margin-bottom: 0.3rem;
     }
-    .subproject-title {
-      font-size: 1.15rem;
+    .subproject-seq-num {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.2rem 0.6rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .subproject-seq-title {
+      font-size: 1.2rem;
       color: #ffffff;
       font-weight: 700;
-      margin-bottom: 0.5rem;
     }
-    .subproject-desc {
-      font-size: 0.88rem;
+    .subproject-seq-desc {
+      font-size: 0.92rem;
       color: var(--text-muted);
       line-height: 1.6;
     }
@@ -90,81 +143,111 @@
           <span style="font-size:0.8rem; font-weight:700; color:var(--accent-cyan); text-transform:uppercase; letter-spacing:0.1em;">
             PROSJEKTSTRUKTUR & SONER
           </span>
-          <h2 class="section-title" style="font-size:2rem; margin-top:0.3rem;">10 Definerte Delprosjekter (Del 1 til 10)</h2>
-          <p class="section-desc">Hvert delprosjekt gjennomføres systematisk gjennom de 6 byggefasene.</p>
+          <h2 class="section-title" style="font-size:2rem; margin-top:0.3rem;">10 Definerte Delprosjekter (Sekvensiell Rekkefølge)</h2>
+          <p class="section-desc">Hvert delprosjekt gjennomføres i sekvensielt forløp fra del 1 til 10 gjennom byggefasene.</p>
         </div>
       </div>
 
-      <div class="subproject-grid">
+      <div class="subproject-sequence-flow">
 
         <!-- Delprosjekt A -->
-        <div class="subproject-card">
-          <div class="subproject-tag">DELPROSJEKT A</div>
-          <div class="subproject-title">1. Grunnarbeider Utvendig & Overvann (LOD)</div>
-          <div class="subproject-desc">Utgraving rundt grunnmur, ny utvendig drenering, XPS-isolasjon, løsmasser og LOD 3-trinns infiltrering i stenkiste på egen tomt jf. § 27.</div>
+        <div class="subproject-seq-item" data-step="1">
+          <div class="subproject-seq-header">
+            <span class="subproject-seq-tag">DELPROSJEKT A</span>
+            <span class="subproject-seq-num">Del 1 av 10</span>
+          </div>
+          <div class="subproject-seq-title">1. Grunnarbeider Utvendig & Overvann (LOD)</div>
+          <div class="subproject-seq-desc">Utgraving rundt grunnmur, ny utvendig drenering, XPS-isolasjon, løsmasser og LOD 3-trinns infiltrering i stenkiste på egen tomt jf. § 27.</div>
         </div>
 
         <!-- Delprosjekt B -->
-        <div class="subproject-card">
-          <div class="subproject-tag">DELPROSJEKT B</div>
-          <div class="subproject-title">2. Kjeller Innvendig Nord</div>
-          <div class="subproject-desc">Pigging, utgraving av kjellergulv, 200mm EPS understøp, RadoStop radonmembran, rør/elektro og romoppbygging nord.</div>
+        <div class="subproject-seq-item" data-step="2">
+          <div class="subproject-seq-header">
+            <span class="subproject-seq-tag">DELPROSJEKT B</span>
+            <span class="subproject-seq-num">Del 2 av 10</span>
+          </div>
+          <div class="subproject-seq-title">2. Kjeller Innvendig Nord</div>
+          <div class="subproject-seq-desc">Pigging, utgraving av kjellergulv, 200mm EPS understøp, RadoStop radonmembran, rør/elektro og romoppbygging nord.</div>
         </div>
 
         <!-- Delprosjekt C -->
-        <div class="subproject-card" style="border-color:var(--border-glow); background:rgba(56,189,248,0.06);">
-          <div class="subproject-tag" style="color:var(--accent-emerald);">DELPROSJEKT C (SPESIALROM)</div>
-          <div class="subproject-title">3. Ventilasjon & El-rom (Under ny trapp i kjeller)</div>
-          <div class="subproject-desc">Eget dedikert rom i kjeller under ny trapp: Flytting av 3-fase 63A hovedsikringsskap, installasjon av Systemair ventilasjonsaggregat og hovedkanaler.</div>
+        <div class="subproject-seq-item" data-step="3" style="border-color:var(--border-glow); background:rgba(56,189,248,0.06);">
+          <div class="subproject-seq-header">
+            <span class="subproject-seq-tag" style="color:var(--accent-emerald);">DELPROSJEKT C (SPESIALROM)</span>
+            <span class="subproject-seq-num" style="border-color:var(--accent-emerald); color:var(--accent-emerald);">Del 3 av 10</span>
+          </div>
+          <div class="subproject-seq-title">3. Ventilasjon & El-rom (Under ny trapp i kjeller)</div>
+          <div class="subproject-seq-desc">Eget dedikert rom i kjeller under ny trapp: Flytting av 3-fase 63A hovedsikringsskap, installasjon av Systemair ventilasjonsaggregat og hovedkanaler.</div>
         </div>
 
         <!-- Delprosjekt D -->
-        <div class="subproject-card">
-          <div class="subproject-tag">DELPROSJEKT D</div>
-          <div class="subproject-title">4. Varmeteknisk Rom & VVS (Kjeller)</div>
-          <div class="subproject-desc">Tilkobling til eksisterende NIBE 2018 Luft-til-vann varmepumpe, Uponor gulvvarmsfordeler og PEX rør-i-rør sanitærsentral.</div>
+        <div class="subproject-seq-item" data-step="4">
+          <div class="subproject-seq-header">
+            <span class="subproject-seq-tag">DELPROSJEKT D</span>
+            <span class="subproject-seq-num">Del 4 av 10</span>
+          </div>
+          <div class="subproject-seq-title">4. Varmeteknisk Rom & VVS (Kjeller)</div>
+          <div class="subproject-seq-desc">Tilkobling til eksisterende NIBE 2018 Luft-til-vann varmepumpe, Uponor gulvvarmsfordeler og PEX rør-i-rør sanitærsentral.</div>
         </div>
 
         <!-- Delprosjekt E -->
-        <div class="subproject-card">
-          <div class="subproject-tag">DELPROSJEKT E</div>
-          <div class="subproject-title">5. Tilbygg Kjeller Syd</div>
-          <div class="subproject-desc">Nytt utgravd såle- og kjellerareal mot sør, støp av ringmur/såle, bæring og klimaskall for tilbygg.</div>
+        <div class="subproject-seq-item" data-step="5">
+          <div class="subproject-seq-header">
+            <span class="subproject-seq-tag">DELPROSJEKT E</span>
+            <span class="subproject-seq-num">Del 5 av 10</span>
+          </div>
+          <div class="subproject-seq-title">5. Tilbygg Kjeller Syd</div>
+          <div class="subproject-seq-desc">Nytt utgravd såle- og kjellerareal mot sør, støp av ringmur/såle, bæring og klimaskall for tilbygg.</div>
         </div>
 
         <!-- Delprosjekt F -->
-        <div class="subproject-card">
-          <div class="subproject-tag">DELPROSJEKT F</div>
-          <div class="subproject-title">6. Hovedetasje (1. etasje) & Åpent Allrom</div>
-          <div class="subproject-desc">Bærende stålkonstruksjon for 65m² allrom, NorDan vinduer, liggende trekledning, Uponor gulvvarme og kjøkken/stue.</div>
+        <div class="subproject-seq-item" data-step="6">
+          <div class="subproject-seq-header">
+            <span class="subproject-seq-tag">DELPROSJEKT F</span>
+            <span class="subproject-seq-num">Del 6 av 10</span>
+          </div>
+          <div class="subproject-seq-title">6. Hovedetasje (1. etasje) & Åpent Allrom</div>
+          <div class="subproject-seq-desc">Bærende stålkonstruksjon for 65m² allrom, NorDan vinduer, liggende trekledning, Uponor gulvvarme og kjøkken/stue.</div>
         </div>
 
         <!-- Delprosjekt G -->
-        <div class="subproject-card">
-          <div class="subproject-tag">DELPROSJEKT G</div>
-          <div class="subproject-title">7. 2. etasje (Soverom & Bad)</div>
-          <div class="subproject-desc">Rominndeling i 2. etasje, soverom, bad, flislegging, VVS og innvendig ferdigstilling.</div>
+        <div class="subproject-seq-item" data-step="7">
+          <div class="subproject-seq-header">
+            <span class="subproject-seq-tag">DELPROSJEKT G</span>
+            <span class="subproject-seq-num">Del 7 av 10</span>
+          </div>
+          <div class="subproject-seq-title">7. 2. etasje (Soverom & Bad)</div>
+          <div class="subproject-seq-desc">Rominndeling i 2. etasje, soverom, bad, flislegging, VVS og innvendig ferdigstilling.</div>
         </div>
 
         <!-- Delprosjekt H -->
-        <div class="subproject-card">
-          <div class="subproject-tag">DELPROSJEKT H</div>
-          <div class="subproject-title">8. Yttertak & Takhimling</div>
-          <div class="subproject-desc">Betongtakstein (vurdere skifer), undertak, sløyfer/lekter og 350mm Rockwool isolasjon i takhimlingen.</div>
+        <div class="subproject-seq-item" data-step="8">
+          <div class="subproject-seq-header">
+            <span class="subproject-seq-tag">DELPROSJEKT H</span>
+            <span class="subproject-seq-num">Del 8 av 10</span>
+          </div>
+          <div class="subproject-seq-title">8. Yttertak & Takhimling</div>
+          <div class="subproject-seq-desc">Betongtakstein (vurdere skifer), undertak, sløyfer/lekter og 350mm Rockwool isolasjon i takhimlingen.</div>
         </div>
 
         <!-- Delprosjekt I -->
-        <div class="subproject-card">
-          <div class="subproject-tag">DELPROSJEKT I</div>
-          <div class="subproject-title">9. Garasje & Uthus (§ 19)</div>
-          <div class="subproject-desc">Ny garasje/uthus jf. § 19 (max 50 m² BYA, max 5,0m møne / 4,0m gesims).</div>
+        <div class="subproject-seq-item" data-step="9">
+          <div class="subproject-seq-header">
+            <span class="subproject-seq-tag">DELPROSJEKT I</span>
+            <span class="subproject-seq-num">Del 9 av 10</span>
+          </div>
+          <div class="subproject-seq-title">9. Garasje & Uthus (§ 19)</div>
+          <div class="subproject-seq-desc">Ny garasje/uthus jf. § 19 (max 50 m² BYA, max 5,0m møne / 4,0m gesims).</div>
         </div>
 
         <!-- Delprosjekt J -->
-        <div class="subproject-card">
-          <div class="subproject-tag">DELPROSJEKT J</div>
-          <div class="subproject-title">10. Utomhus & Terreng</div>
-          <div class="subproject-desc">Grov- og finplanering av terreng, hage, markterrasse, innkjørsel og utelys.</div>
+        <div class="subproject-seq-item" data-step="10">
+          <div class="subproject-seq-header">
+            <span class="subproject-seq-tag">DELPROSJEKT J</span>
+            <span class="subproject-seq-num">Del 10 av 10</span>
+          </div>
+          <div class="subproject-seq-title">10. Utomhus & Terreng</div>
+          <div class="subproject-seq-desc">Grov- og finplanering av terreng, hage, markterrasse, innkjørsel og utelys.</div>
         </div>
 
       </div>
