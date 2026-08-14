@@ -4,16 +4,120 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prosjektplan & Delprosjekter | M6 Fornyelse</title>
-  <meta name="description" content="Strukturert fasematrise, 6 byggefaser og 10 delprosjekter fra start til slutt for totalrehabilitering av Myrteveien 6.">
+  <meta name="description" content="Strukturert fasematrise, 6 byggefaser og 10 delprosjekter med fasebeskrivelse og framdriftsstatus for Myrteveien 6.">
   <link rel="stylesheet" href="styles.css">
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
+    /* Plan Top Menu & Navigation Bar */
+    .plan-nav-container {
+      position: sticky;
+      top: 72px;
+      z-index: 90;
+      background: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      margin-bottom: 2rem;
+      padding: 0.8rem 0;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+    .plan-nav-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    .plan-mode-tabs {
+      display: flex;
+      gap: 0.6rem;
+      overflow-x: auto;
+      padding-bottom: 0.2rem;
+    }
+    .plan-tab-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-muted);
+      padding: 0.55rem 1.1rem;
+      border-radius: 20px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .plan-tab-btn:hover {
+      background: rgba(56, 189, 248, 0.12);
+      color: #ffffff;
+      border-color: var(--border-glow);
+    }
+    .plan-tab-btn.active {
+      background: var(--accent-cyan);
+      color: #0f172a;
+      border-color: var(--accent-cyan);
+      font-weight: 700;
+      box-shadow: 0 0 16px rgba(56, 189, 248, 0.4);
+    }
+
+    /* Subproject Selector Pills */
+    .subproject-pills-bar {
+      display: flex;
+      gap: 0.4rem;
+      overflow-x: auto;
+      padding: 0.2rem 0;
+    }
+    .subproject-pill {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text-muted);
+      padding: 0.4rem 0.85rem;
+      border-radius: 14px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .subproject-pill:hover {
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+    }
+    .subproject-pill.active {
+      background: rgba(56, 189, 248, 0.15);
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+      font-weight: 700;
+    }
+
+    /* Progress Indicator Bar */
+    .subproject-progress-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .progress-bar-bg {
+      flex: 1;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      border-radius: 10px;
+      transition: width 0.6s ease;
+    }
+
     /* Sequential List Layout for Subprojects */
     .subproject-sequence-flow {
       display: flex;
       flex-direction: column;
       gap: 1.25rem;
-      margin-top: 2rem;
+      margin-top: 1.5rem;
       position: relative;
       padding-left: 2.2rem;
     }
@@ -24,7 +128,7 @@
       top: 1rem;
       bottom: 1rem;
       width: 2px;
-      background: linear-gradient(to bottom, var(--accent-cyan), var(--accent-emerald), var(--accent-cyan));
+      background: linear-gradient(to bottom, var(--accent-cyan), var(--accent-emerald), var(--accent-amber));
       border-radius: 2px;
       opacity: 0.6;
     }
@@ -37,7 +141,7 @@
       transition: var(--transition);
       display: flex;
       flex-direction: column;
-      gap: 0.4rem;
+      gap: 0.6rem;
     }
     .subproject-seq-item::before {
       content: attr(data-step);
@@ -97,6 +201,33 @@
       color: var(--text-muted);
       line-height: 1.6;
     }
+
+    /* Subproject Detailed Phase Explorer Grid */
+    .subproject-phase-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+      margin-top: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      .subproject-phase-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .phase-detail-card {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 1.4rem;
+    }
+    .phase-detail-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
   </style>
 </head>
 <body>
@@ -130,21 +261,53 @@
     </div>
     <h1>Prosjektplan & Delprosjekter</h1>
     <p>
-      En totalrehabilitering av Myrteveien 6 følger en strukturert prosess oppdelt i <strong>6 standard byggefaser</strong> fordelt på <strong>10 definerte delprosjekter</strong>. Dette sikrer god økonomisk styring, overholder myndighetskrav og hindrer faglig overlapping.
+      En totalrehabilitering av Myrteveien 6 følger en strukturert prosess oppdelt i <strong>6 standard byggefaser</strong> fordelt på <strong>10 definerte delprosjekter</strong>. Velg visning under for å utforske framdrift eller se fasebeskrivelsen for hvert enkelt delprosjekt.
     </p>
   </section>
 
+  <!-- Sticky Plan Navigation Menu & Subproject Picker Bar -->
+  <div class="plan-nav-container">
+    <div class="container plan-nav-inner">
+      <!-- Mode Tabs -->
+      <div class="plan-mode-tabs">
+        <button class="plan-tab-btn active" id="tabBtnFlow" onclick="setPlanView('flow')">
+          <i data-lucide="list-ordered" style="width:16px;"></i> 1. Sekvensielt Forløp & Status (Del 1–10)
+        </button>
+        <button class="plan-tab-btn" id="tabBtnDetails" onclick="setPlanView('details')">
+          <i data-lucide="search" style="width:16px;"></i> 2. Fasebeskrivelse per Delprosjekt
+        </button>
+        <button class="plan-tab-btn" id="tabBtnPhases" onclick="setPlanView('phases')">
+          <i data-lucide="layers" style="width:16px;"></i> 3. Totale Byggefaser (Fase 1–6)
+        </button>
+      </div>
+
+      <!-- Quick Subproject Selector Bar (Del A til J) -->
+      <div class="subproject-pills-bar" id="subprojectPillsBar">
+        <button class="subproject-pill active" onclick="selectSubproject('del-a')">Del A: Grunnarbeid</button>
+        <button class="subproject-pill" onclick="selectSubproject('del-b')">Del B: Kjeller Nord</button>
+        <button class="subproject-pill" onclick="selectSubproject('del-c')">Del C: El & Vent (Spesialrom)</button>
+        <button class="subproject-pill" onclick="selectSubproject('del-d')">Del D: Varmeteknisk/VVS</button>
+        <button class="subproject-pill" onclick="selectSubproject('del-e')">Del E: Tilbygg Syd</button>
+        <button class="subproject-pill" onclick="selectSubproject('del-f')">Del F: Hovedetasje</button>
+        <button class="subproject-pill" onclick="selectSubproject('del-g')">Del G: 2. etasje</button>
+        <button class="subproject-pill" onclick="selectSubproject('del-h')">Del H: Yttertak</button>
+        <button class="subproject-pill" onclick="selectSubproject('del-i')">Del I: Garasje</button>
+        <button class="subproject-pill" onclick="selectSubproject('del-j')">Del J: Utomhus</button>
+      </div>
+    </div>
+  </div>
+
   <div class="container">
 
-    <!-- Section 1: 10 Definerte Delprosjekter (Sub-projects) -->
-    <section class="card" style="margin-bottom: 4rem; padding: 2.5rem;">
+    <!-- VIEW 1: Sekvensielt Forløp & Framdriftsstatus (Del 1 til 10) -->
+    <section class="card" id="viewSectionFlow" style="margin-bottom: 4rem; padding: 2.5rem;">
       <div class="section-header" style="border:none; margin-bottom: 1rem;">
         <div>
           <span style="font-size:0.8rem; font-weight:700; color:var(--accent-cyan); text-transform:uppercase; letter-spacing:0.1em;">
-            PROSJEKTSTRUKTUR & SONER
+            PROSJEKTSTRUKTUR & FRAMDRIFT
           </span>
-          <h2 class="section-title" style="font-size:2rem; margin-top:0.3rem;">10 Definerte Delprosjekter (Sekvensiell Rekkefølge)</h2>
-          <p class="section-desc">Hvert delprosjekt gjennomføres i sekvensielt forløp fra del 1 til 10 gjennom byggefasene.</p>
+          <h2 class="section-title" style="font-size:2rem; margin-top:0.3rem;">10 Definerte Delprosjekter (Sekvensielt Forløp)</h2>
+          <p class="section-desc">Hvert delprosjekt gjennomføres systematisk. Klikk "Se fasebeskrivelse" for detaljert faseløp.</p>
         </div>
       </div>
 
@@ -154,385 +317,369 @@
         <div class="subproject-seq-item" data-step="1">
           <div class="subproject-seq-header">
             <span class="subproject-seq-tag">DELPROSJEKT A</span>
-            <span class="subproject-seq-num">Del 1 av 10</span>
+            <span class="status-badge status-completed">Fullført (100%)</span>
           </div>
           <div class="subproject-seq-title">1. Grunnarbeider Utvendig & Overvann (LOD)</div>
           <div class="subproject-seq-desc">Utgraving rundt grunnmur, ny utvendig drenering, XPS-isolasjon, løsmasser og LOD 3-trinns infiltrering i stenkiste på egen tomt jf. § 27.</div>
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-top:0.5rem;">
+            <div class="subproject-progress-wrap" style="flex:1; min-width:200px;">
+              <span style="font-size:0.78rem; color:var(--text-muted);">Framdrift:</span>
+              <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:100%; background:var(--accent-emerald);"></div></div>
+              <span style="font-size:0.8rem; font-weight:700; color:var(--accent-emerald);">100%</span>
+            </div>
+            <button class="btn btn-secondary" onclick="openSubprojectDetail('del-a')" style="padding:0.35rem 0.85rem; font-size:0.8rem;">
+              Se fasebeskrivelse <i data-lucide="arrow-right" style="width:12px;"></i>
+            </button>
+          </div>
         </div>
 
         <!-- Delprosjekt B -->
         <div class="subproject-seq-item" data-step="2">
           <div class="subproject-seq-header">
             <span class="subproject-seq-tag">DELPROSJEKT B</span>
-            <span class="subproject-seq-num">Del 2 av 10</span>
+            <span class="status-badge status-in-progress">Pågår (65%)</span>
           </div>
           <div class="subproject-seq-title">2. Kjeller Innvendig Nord</div>
           <div class="subproject-seq-desc">Pigging, utgraving av kjellergulv, 200mm EPS understøp, RadoStop radonmembran, rør/elektro og romoppbygging nord.</div>
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-top:0.5rem;">
+            <div class="subproject-progress-wrap" style="flex:1; min-width:200px;">
+              <span style="font-size:0.78rem; color:var(--text-muted);">Framdrift:</span>
+              <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:65%; background:var(--accent-cyan);"></div></div>
+              <span style="font-size:0.8rem; font-weight:700; color:var(--accent-cyan);">65%</span>
+            </div>
+            <button class="btn btn-secondary" onclick="openSubprojectDetail('del-b')" style="padding:0.35rem 0.85rem; font-size:0.8rem;">
+              Se fasebeskrivelse <i data-lucide="arrow-right" style="width:12px;"></i>
+            </button>
+          </div>
         </div>
 
         <!-- Delprosjekt C -->
         <div class="subproject-seq-item" data-step="3" style="border-color:var(--border-glow); background:rgba(56,189,248,0.06);">
           <div class="subproject-seq-header">
             <span class="subproject-seq-tag" style="color:var(--accent-emerald);">DELPROSJEKT C (SPESIALROM)</span>
-            <span class="subproject-seq-num" style="border-color:var(--accent-emerald); color:var(--accent-emerald);">Del 3 av 10</span>
+            <span class="status-badge status-in-progress">Pågår (50%)</span>
           </div>
           <div class="subproject-seq-title">3. Ventilasjon & El-rom (Under ny trapp i kjeller)</div>
           <div class="subproject-seq-desc">Eget dedikert rom i kjeller under ny trapp: Flytting av 3-fase 63A hovedsikringsskap, installasjon av Systemair ventilasjonsaggregat og hovedkanaler.</div>
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-top:0.5rem;">
+            <div class="subproject-progress-wrap" style="flex:1; min-width:200px;">
+              <span style="font-size:0.78rem; color:var(--text-muted);">Framdrift:</span>
+              <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:50%; background:var(--accent-cyan);"></div></div>
+              <span style="font-size:0.8rem; font-weight:700; color:var(--accent-cyan);">50%</span>
+            </div>
+            <button class="btn btn-primary" onclick="openSubprojectDetail('del-c')" style="padding:0.35rem 0.85rem; font-size:0.8rem;">
+              Se fasebeskrivelse <i data-lucide="arrow-right" style="width:12px;"></i>
+            </button>
+          </div>
         </div>
 
         <!-- Delprosjekt D -->
         <div class="subproject-seq-item" data-step="4">
           <div class="subproject-seq-header">
             <span class="subproject-seq-tag">DELPROSJEKT D</span>
-            <span class="subproject-seq-num">Del 4 av 10</span>
+            <span class="status-badge status-planned">Planlagt (30%)</span>
           </div>
           <div class="subproject-seq-title">4. Varmeteknisk Rom & VVS (Kjeller)</div>
           <div class="subproject-seq-desc">Tilkobling til eksisterende NIBE 2018 Luft-til-vann varmepumpe, Uponor gulvvarmsfordeler og PEX rør-i-rør sanitærsentral.</div>
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-top:0.5rem;">
+            <div class="subproject-progress-wrap" style="flex:1; min-width:200px;">
+              <span style="font-size:0.78rem; color:var(--text-muted);">Framdrift:</span>
+              <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:30%; background:var(--accent-amber);"></div></div>
+              <span style="font-size:0.8rem; font-weight:700; color:var(--accent-amber);">30%</span>
+            </div>
+            <button class="btn btn-secondary" onclick="openSubprojectDetail('del-d')" style="padding:0.35rem 0.85rem; font-size:0.8rem;">
+              Se fasebeskrivelse <i data-lucide="arrow-right" style="width:12px;"></i>
+            </button>
+          </div>
         </div>
 
         <!-- Delprosjekt E -->
         <div class="subproject-seq-item" data-step="5">
           <div class="subproject-seq-header">
             <span class="subproject-seq-tag">DELPROSJEKT E</span>
-            <span class="subproject-seq-num">Del 5 av 10</span>
+            <span class="status-badge status-planned">Planlagt (20%)</span>
           </div>
           <div class="subproject-seq-title">5. Tilbygg Kjeller Syd</div>
           <div class="subproject-seq-desc">Nytt utgravd såle- og kjellerareal mot sør, støp av ringmur/såle, bæring og klimaskall for tilbygg.</div>
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-top:0.5rem;">
+            <div class="subproject-progress-wrap" style="flex:1; min-width:200px;">
+              <span style="font-size:0.78rem; color:var(--text-muted);">Framdrift:</span>
+              <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:20%; background:var(--accent-amber);"></div></div>
+              <span style="font-size:0.8rem; font-weight:700; color:var(--accent-amber);">20%</span>
+            </div>
+            <button class="btn btn-secondary" onclick="openSubprojectDetail('del-e')" style="padding:0.35rem 0.85rem; font-size:0.8rem;">
+              Se fasebeskrivelse <i data-lucide="arrow-right" style="width:12px;"></i>
+            </button>
+          </div>
         </div>
 
         <!-- Delprosjekt F -->
         <div class="subproject-seq-item" data-step="6">
           <div class="subproject-seq-header">
             <span class="subproject-seq-tag">DELPROSJEKT F</span>
-            <span class="subproject-seq-num">Del 6 av 10</span>
+            <span class="status-badge status-planned">Planlagt (15%)</span>
           </div>
           <div class="subproject-seq-title">6. Hovedetasje (1. etasje) & Åpent Allrom</div>
           <div class="subproject-seq-desc">Bærende stålkonstruksjon for 65m² allrom, NorDan vinduer, liggende trekledning, Uponor gulvvarme og kjøkken/stue.</div>
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-top:0.5rem;">
+            <div class="subproject-progress-wrap" style="flex:1; min-width:200px;">
+              <span style="font-size:0.78rem; color:var(--text-muted);">Framdrift:</span>
+              <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:15%; background:var(--accent-amber);"></div></div>
+              <span style="font-size:0.8rem; font-weight:700; color:var(--accent-amber);">15%</span>
+            </div>
+            <button class="btn btn-secondary" onclick="openSubprojectDetail('del-f')" style="padding:0.35rem 0.85rem; font-size:0.8rem;">
+              Se fasebeskrivelse <i data-lucide="arrow-right" style="width:12px;"></i>
+            </button>
+          </div>
         </div>
 
         <!-- Delprosjekt G -->
         <div class="subproject-seq-item" data-step="7">
           <div class="subproject-seq-header">
             <span class="subproject-seq-tag">DELPROSJEKT G</span>
-            <span class="subproject-seq-num">Del 7 av 10</span>
+            <span class="status-badge status-planned">Planlagt (10%)</span>
           </div>
           <div class="subproject-seq-title">7. 2. etasje (Soverom & Bad)</div>
           <div class="subproject-seq-desc">Rominndeling i 2. etasje, soverom, bad, flislegging, VVS og innvendig ferdigstilling.</div>
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-top:0.5rem;">
+            <div class="subproject-progress-wrap" style="flex:1; min-width:200px;">
+              <span style="font-size:0.78rem; color:var(--text-muted);">Framdrift:</span>
+              <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:10%; background:var(--accent-amber);"></div></div>
+              <span style="font-size:0.8rem; font-weight:700; color:var(--accent-amber);">10%</span>
+            </div>
+            <button class="btn btn-secondary" onclick="openSubprojectDetail('del-g')" style="padding:0.35rem 0.85rem; font-size:0.8rem;">
+              Se fasebeskrivelse <i data-lucide="arrow-right" style="width:12px;"></i>
+            </button>
+          </div>
         </div>
 
         <!-- Delprosjekt H -->
         <div class="subproject-seq-item" data-step="8">
           <div class="subproject-seq-header">
             <span class="subproject-seq-tag">DELPROSJEKT H</span>
-            <span class="subproject-seq-num">Del 8 av 10</span>
+            <span class="status-badge status-planned">Planlagt (10%)</span>
           </div>
           <div class="subproject-seq-title">8. Yttertak & Takhimling</div>
           <div class="subproject-seq-desc">Betongtakstein (vurdere skifer), undertak, sløyfer/lekter og 350mm Rockwool isolasjon i takhimlingen.</div>
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-top:0.5rem;">
+            <div class="subproject-progress-wrap" style="flex:1; min-width:200px;">
+              <span style="font-size:0.78rem; color:var(--text-muted);">Framdrift:</span>
+              <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:10%; background:var(--accent-amber);"></div></div>
+              <span style="font-size:0.8rem; font-weight:700; color:var(--accent-amber);">10%</span>
+            </div>
+            <button class="btn btn-secondary" onclick="openSubprojectDetail('del-h')" style="padding:0.35rem 0.85rem; font-size:0.8rem;">
+              Se fasebeskrivelse <i data-lucide="arrow-right" style="width:12px;"></i>
+            </button>
+          </div>
         </div>
 
         <!-- Delprosjekt I -->
         <div class="subproject-seq-item" data-step="9">
           <div class="subproject-seq-header">
             <span class="subproject-seq-tag">DELPROSJEKT I</span>
-            <span class="subproject-seq-num">Del 9 av 10</span>
+            <span class="status-badge status-planned">Planlagt (0%)</span>
           </div>
           <div class="subproject-seq-title">9. Garasje & Uthus (§ 19)</div>
           <div class="subproject-seq-desc">Ny garasje/uthus jf. § 19 (max 50 m² BYA, max 5,0m møne / 4,0m gesims).</div>
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-top:0.5rem;">
+            <div class="subproject-progress-wrap" style="flex:1; min-width:200px;">
+              <span style="font-size:0.78rem; color:var(--text-muted);">Framdrift:</span>
+              <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%; background:var(--text-muted);"></div></div>
+              <span style="font-size:0.8rem; font-weight:700; color:var(--text-muted);">0%</span>
+            </div>
+            <button class="btn btn-secondary" onclick="openSubprojectDetail('del-i')" style="padding:0.35rem 0.85rem; font-size:0.8rem;">
+              Se fasebeskrivelse <i data-lucide="arrow-right" style="width:12px;"></i>
+            </button>
+          </div>
         </div>
 
         <!-- Delprosjekt J -->
         <div class="subproject-seq-item" data-step="10">
           <div class="subproject-seq-header">
             <span class="subproject-seq-tag">DELPROSJEKT J</span>
-            <span class="subproject-seq-num">Del 10 av 10</span>
+            <span class="status-badge status-planned">Planlagt (0%)</span>
           </div>
           <div class="subproject-seq-title">10. Utomhus & Terreng</div>
           <div class="subproject-seq-desc">Grov- og finplanering av terreng, hage, markterrasse, innkjørsel og utelys.</div>
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-top:0.5rem;">
+            <div class="subproject-progress-wrap" style="flex:1; min-width:200px;">
+              <span style="font-size:0.78rem; color:var(--text-muted);">Framdrift:</span>
+              <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%; background:var(--text-muted);"></div></div>
+              <span style="font-size:0.8rem; font-weight:700; color:var(--text-muted);">0%</span>
+            </div>
+            <button class="btn btn-secondary" onclick="openSubprojectDetail('del-j')" style="padding:0.35rem 0.85rem; font-size:0.8rem;">
+              Se fasebeskrivelse <i data-lucide="arrow-right" style="width:12px;"></i>
+            </button>
+          </div>
         </div>
 
       </div>
     </section>
 
-    <!-- Section 2: Stepper Navigation for 6 Fasers Prosess -->
-    <div class="sequence-stepper">
-      <div class="step-pill active" onclick="scrollToStage(1)">
-        <span class="step-num">FASE 1</span>
-        <span class="step-name">Planlegging & Prosjektering</span>
+    <!-- VIEW 2: Fasebeskrivelse Per Delprosjekt (Interactive Explorer) -->
+    <section class="card" id="viewSectionDetails" style="display:none; margin-bottom: 4rem; padding: 2.5rem;">
+      <div id="subprojectDetailContent">
+        <!-- Content populated dynamically by JS -->
       </div>
-      <div class="step-pill" onclick="scrollToStage(2)">
-        <span class="step-num">FASE 2</span>
-        <span class="step-name">Riving & Klargjøring</span>
+    </section>
+
+    <!-- VIEW 3: Totale Byggefaser (Fase 1 til 6 Master View) -->
+    <div id="viewSectionPhases" style="display:none;">
+      <div class="sequence-stepper">
+        <div class="step-pill active" onclick="scrollToStage(1)">
+          <span class="step-num">FASE 1</span>
+          <span class="step-name">Planlegging & Prosjektering</span>
+        </div>
+        <div class="step-pill" onclick="scrollToStage(2)">
+          <span class="step-num">FASE 2</span>
+          <span class="step-name">Riving & Klargjøring</span>
+        </div>
+        <div class="step-pill" onclick="scrollToStage(3)">
+          <span class="step-num">FASE 3</span>
+          <span class="step-name">Råbygg & Tett Bygg</span>
+        </div>
+        <div class="step-pill" onclick="scrollToStage(4)">
+          <span class="step-num">FASE 4</span>
+          <span class="step-name">Tekniske Installasjoner</span>
+        </div>
+        <div class="step-pill" onclick="scrollToStage(5)">
+          <span class="step-num">FASE 5</span>
+          <span class="step-name">Innvendig Finarbeid</span>
+        </div>
+        <div class="step-pill" onclick="scrollToStage(6)">
+          <span class="step-num">FASE 6</span>
+          <span class="step-name">Utomhus & Overtakelse</span>
+        </div>
       </div>
-      <div class="step-pill" onclick="scrollToStage(3)">
-        <span class="step-num">FASE 3</span>
-        <span class="step-name">Råbygg & Tett Bygg</span>
+
+      <!-- 6 Detailed Master Phase Cards -->
+      <div class="sequence-list">
+
+        <!-- FASE 1 -->
+        <article class="sequence-card" id="stage-1">
+          <span class="sequence-card-number">01</span>
+          <div class="sequence-card-header">
+            <span class="stage-badge">Fase 1</span>
+            <h2 class="stage-title">Planlegging og Prosjektering (Før Bygging)</h2>
+            <span class="status-badge status-completed" style="margin-left:auto;">Fullført</span>
+          </div>
+          <p style="color:var(--text-muted); font-size:0.95rem;">
+            <strong>Formål:</strong> Avklare teknisk tilstand, utarbeide prosjekteringsgrunnlag, innhente kommunal tillatelse og sikre finansiering.
+          </p>
+
+          <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap:1.2rem; margin-top:1rem;">
+            <div style="background:var(--bg-card); border:1px solid var(--border-color); padding:1.2rem; border-radius:8px;">
+              <h4 style="color:var(--accent-cyan); margin:0 0 0.5rem 0; font-size:1.05rem;">1. Behovs- og Tilstandsanalyser</h4>
+              <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
+                <li>Kartlegging av eksisterende tilstand (bæring, fukt, elektrisk anlegg, rør, tak, drenering).</li>
+                <li>Utarbeidelse av romprogram og ønsker for ny løsning (Myrteveien 6).</li>
+              </ul>
+            </div>
+            <div style="background:var(--bg-card); border:1px solid var(--border-color); padding:1.2rem; border-radius:8px;">
+              <h4 style="color:var(--accent-purple); margin:0 0 0.5rem 0; font-size:1.05rem;">2. Arkitekt- og Ingeniørarbeid</h4>
+              <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
+                <li>Tegning av nye planløsninger, snitt og fasader (Arkitekt A-901).</li>
+                <li>Beregning av bæring og energiløsninger (isolasjon, ventilasjon, oppvarming).</li>
+              </ul>
+            </div>
+            <div style="background:var(--bg-card); border:1px solid var(--border-color); padding:1.2rem; border-radius:8px;">
+              <h4 style="color:var(--accent-emerald); margin:0 0 0.5rem 0; font-size:1.05rem;">3. Søknadsprosess (Byggesak Tønsberg)</h4>
+              <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
+                <li>Nabovarsling (DiBK 5154) til berørte naboer.</li>
+                <li>Innsending av byggesøknad jf. SAK10 § 5-4 for bruksendring, fasadeendring og endring i bæring.</li>
+              </ul>
+            </div>
+            <div style="background:var(--bg-card); border:1px solid var(--border-color); padding:1.2rem; border-radius:8px;">
+              <h4 style="color:var(--accent-amber); margin:0 0 0.5rem 0; font-size:1.05rem;">4. Anbud og Finansiering</h4>
+              <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
+                <li>Inntegning av detaljerte kravspesifikasjoner og anbudsinnhenting (Byggblankett 3426 / Bustadoppføringslova).</li>
+                <li>Etablering av byggelån med banken (DNB) inkl. 10 % uforutsett-reserver.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- FASE 2 -->
+        <article class="sequence-card" id="stage-2">
+          <span class="sequence-card-number">02</span>
+          <div class="sequence-card-header">
+            <span class="stage-badge">Fase 2</span>
+            <h2 class="stage-title">Riving og Klargjøring (Start på Byggeplass)</h2>
+            <span class="status-badge status-completed" style="margin-left:auto;">Fullført</span>
+          </div>
+          <p style="color:var(--text-muted); font-size:0.95rem;">
+            <strong>Formål:</strong> Sikring av byggeplass og renrydding ned til det rene råbygget.
+          </p>
+
+          <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap:1.2rem; margin-top:1rem;">
+            <div style="background:var(--bg-card); border:1px solid var(--border-color); padding:1.2rem; border-radius:8px;">
+              <h4 style="color:var(--accent-rose); margin:0 0 0.5rem 0; font-size:1.05rem;">1. Rigging og Sikring</h4>
+              <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
+                <li>Oppstilling av avfallscontainer, støy- og støvskjerming og temporary byggstrøm (32A).</li>
+              </ul>
+            </div>
+            <div style="background:var(--bg-card); border:1px solid var(--border-color); padding:1.2rem; border-radius:8px;">
+              <h4 style="color:var(--accent-amber); margin:0 0 0.5rem 0; font-size:1.05rem;">2. Innvendig Sanering</h4>
+              <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
+                <li>Riving av gamle kledninger, stubbloftleire, morken isolasjon, gamle rør og elektro.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- FASE 3 -->
+        <article class="sequence-card" id="stage-3">
+          <span class="sequence-card-number">03</span>
+          <div class="sequence-card-header">
+            <span class="stage-badge">Fase 3</span>
+            <h2 class="stage-title">Råbygg og Tett Bygg (Klimaskall & Konstruksjon)</h2>
+            <span class="status-badge status-in-progress" style="margin-left:auto;">Pågår</span>
+          </div>
+          <p style="color:var(--text-muted); font-size:0.95rem;">
+            <strong>Formål:</strong> Etablere bærekonstruksjon og gjøre huset fukt- og vindsett ("Tett Bygg").
+          </p>
+        </article>
+
+        <!-- FASE 4 -->
+        <article class="sequence-card" id="stage-4">
+          <span class="sequence-card-number">04</span>
+          <div class="sequence-card-header">
+            <span class="stage-badge">Fase 4</span>
+            <h2 class="stage-title">Tekniske Installasjoner (Elektro, VVS, Varmepumpe & Vent)</h2>
+            <span class="status-badge status-planned" style="margin-left:auto;">Planlagt</span>
+          </div>
+          <p style="color:var(--text-muted); font-size:0.95rem;">
+            <strong>Formål:</strong> Legge skjult anlegg før platelapping.
+          </p>
+        </article>
+
+        <!-- FASE 5 -->
+        <article class="sequence-card" id="stage-5">
+          <span class="sequence-card-number">05</span>
+          <div class="sequence-card-header">
+            <span class="stage-badge">Fase 5</span>
+            <h2 class="stage-title">Innvendig Finarbeid og Overflater</h2>
+            <span class="status-badge status-planned" style="margin-left:auto;">Planlagt</span>
+          </div>
+          <p style="color:var(--text-muted); font-size:0.95rem;">
+            <strong>Formål:</strong> Platelapping, flislegging, maling, gulv og montering av fast innredning.
+          </p>
+        </article>
+
+        <!-- FASE 6 -->
+        <article class="sequence-card" id="stage-6">
+          <span class="sequence-card-number">06</span>
+          <div class="sequence-card-header">
+            <span class="stage-badge">Fase 6</span>
+            <h2 class="stage-title">Utomhus og Ferdigstillelse (Avslutning)</h2>
+            <span class="status-badge status-planned" style="margin-left:auto;">Planlagt</span>
+          </div>
+          <p style="color:var(--text-muted); font-size:0.95rem;">
+            <strong>Formål:</strong> Terreng, overtakelsesforretning, FDV-dokumentasjon og ferdigattest.
+          </p>
+        </article>
+
       </div>
-      <div class="step-pill" onclick="scrollToStage(4)">
-        <span class="step-num">FASE 4</span>
-        <span class="step-name">Tekniske Installasjoner</span>
-      </div>
-      <div class="step-pill" onclick="scrollToStage(5)">
-        <span class="step-num">FASE 5</span>
-        <span class="step-name">Innvendig Finarbeid</span>
-      </div>
-      <div class="step-pill" onclick="scrollToStage(6)">
-        <span class="step-num">FASE 6</span>
-        <span class="step-name">Utomhus & Overtakelse</span>
-      </div>
-    </div>
-
-    <!-- 6 Detailed Phase Cards -->
-    <div class="sequence-list">
-
-      <!-- FASE 1 -->
-      <article class="sequence-card" id="stage-1">
-        <span class="sequence-card-number">01</span>
-        <div class="sequence-card-header">
-          <span class="stage-badge">Fase 1</span>
-          <h2 class="stage-title">Planlegging og Prosjektering (Før Bygging)</h2>
-          <span class="status-badge status-completed" style="margin-left:auto;">Fullført</span>
-        </div>
-        <p style="color:var(--text-muted); font-size:0.95rem;">
-          <strong>Formål:</strong> Avklare teknisk tilstand, utarbeide prosjekteringsgrunnlag, innhente kommunal tillatelse og sikre finansiering.
-        </p>
-
-        <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap:1.2rem; margin-top:1rem;">
-
-          <div style="background:var(--bg-card); border:1px solid var(--border-color); padding:1.2rem; border-radius:8px;">
-            <h4 style="color:var(--accent-cyan); margin:0 0 0.5rem 0; font-size:1.05rem;">1. Behovs- og Tilstandsanalyser</h4>
-            <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
-              <li>Kartlegging av eksisterende tilstand (bæring, fukt, elektrisk anlegg, rør, tak, drenering).</li>
-              <li>Utarbeidelse av romprogram og ønsker for ny løsning (Myrteveien 6).</li>
-            </ul>
-          </div>
-
-          <div style="background:var(--bg-card); border:1px solid var(--border-color); padding:1.2rem; border-radius:8px;">
-            <h4 style="color:var(--accent-purple); margin:0 0 0.5rem 0; font-size:1.05rem;">2. Arkitekt- og Ingeniørarbeid</h4>
-            <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
-              <li>Tegning av nye planløsninger, snitt og fasader (Arkitekt A-901).</li>
-              <li>Beregning av bæring og energiløsninger (isolasjon, ventilasjon, oppvarming).</li>
-            </ul>
-          </div>
-
-          <div style="background:var(--bg-card); border:1px solid var(--border-color); padding:1.2rem; border-radius:8px;">
-            <h4 style="color:var(--accent-emerald); margin:0 0 0.5rem 0; font-size:1.05rem;">3. Søknadsprosess (Byggesak Tønsberg)</h4>
-            <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
-              <li>Nabovarsling (DiBK 5154) til berørte naboer.</li>
-              <li>Innsending av byggesøknad jf. SAK10 § 5-4 for bruksendring, fasadeendring og endring i bæring.</li>
-            </ul>
-          </div>
-
-          <div style="background:var(--bg-card); border:1px solid var(--border-color); padding:1.2rem; border-radius:8px;">
-            <h4 style="color:var(--accent-amber); margin:0 0 0.5rem 0; font-size:1.05rem;">4. Anbud og Finansiering</h4>
-            <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
-              <li>Inntegning av detaljerte kravspesifikasjoner og anbudsinnhenting (Byggblankett 3426 / Bustadoppføringslova).</li>
-              <li>Etablering av byggelån med banken (DNB) inkl. 10 % uforutsett-reserver.</li>
-            </ul>
-          </div>
-
-        </div>
-      </article>
-
-      <!-- FASE 2 -->
-      <article class="sequence-card" id="stage-2">
-        <span class="sequence-card-number">02</span>
-        <div class="sequence-card-header">
-          <span class="stage-badge">Fase 2</span>
-          <h2 class="stage-title">Riving og Klargjøring (Start på Byggeplass)</h2>
-          <span class="status-badge status-completed" style="margin-left:auto;">Fullført</span>
-        </div>
-        <p style="color:var(--text-muted); font-size:0.95rem;">
-          <strong>Formål:</strong> Sikring av byggeplass og renrydding ned til det rene råbygget.
-        </p>
-
-        <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap:1.2rem; margin-top:1rem;">
-
-          <div style="background:var(--bg-card); border:1px solid var(--border-color); padding:1.2rem; border-radius:8px;">
-            <h4 style="color:var(--accent-cyan); margin:0 0 0.5rem 0; font-size:1.05rem;">1. Sikring og Klargjøring</h4>
-            <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
-              <li>Opprigging av byggeplass (avfallscontainere, byggestrøm, HMS/sikring).</li>
-              <li>Plassering av støvvegger og beskyttelse av konstruksjoner som skal bevares.</li>
-            </ul>
-          </div>
-
-          <div style="background:var(--bg-card); border:1px solid var(--border-color); padding:1.2rem; border-radius:8px;">
-            <h4 style="color:var(--accent-purple); margin:0 0 0.5rem 0; font-size:1.05rem;">2. Innvendig og Utvendig Sanering / Riving</h4>
-            <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
-              <li>Riving helt ned til råbygget (stripping av kledning, plater, gips, 1947-isolering, gamle rør og elektro).</li>
-              <li>Kildesortering og bortkjøring av avfall jf. TEK17 § 9-4.</li>
-            </ul>
-          </div>
-
-        </div>
-      </article>
-
-      <!-- FASE 3 -->
-      <article class="sequence-card" id="stage-3">
-        <span class="sequence-card-number">03</span>
-        <div class="sequence-card-header">
-          <span class="stage-badge">Fase 3</span>
-          <h2 class="stage-title">Råbygg, Grunnarbeid og Klimaskall (Tett Bygg)</h2>
-          <span class="status-badge status-completed" style="margin-left:auto;">Fullført</span>
-        </div>
-        <p style="color:var(--text-muted); font-size:0.95rem;">
-          <strong>Formål:</strong> Få huset helt tett og fuktsikkert før innvendig arbeider starter.
-        </p>
-
-        <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:1.2rem; margin-top:1rem;">
-
-          <div style="background:var(--bg-card); border:1px solid var(--border-color); padding:1.2rem; border-radius:8px;">
-            <h4 style="color:var(--accent-cyan); margin:0 0 0.5rem 0; font-size:1.05rem;">1. Grunnarbeid & Drenering</h4>
-            <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
-              <li>Utgraving, ny utvendig drenering, isolering av grunnmur, overvannshåndtering (LOD stenkiste jf. § 27) og bunnledninger.</li>
-              <li>Utgraving av kjellergulv, støping av ny såle m/radonsperre og EPS-isolasjon.</li>
-            </ul>
-          </div>
-
-          <div style="background:var(--bg-card); border:1px solid var(--border-color); padding:1.2rem; border-radius:8px;">
-            <h4 style="color:var(--accent-emerald); margin:0 0 0.5rem 0; font-size:1.05rem;">2. Tømrerarbeid & Bærekonstruksjon</h4>
-            <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
-              <li>Montering av bærende stålkonstruksjon (branninnkledd R 60) for å åpne stueløsning.</li>
-              <li>Nytt taktekke med betongtakstein (vurdere skifer) og sløyfer/lekter.</li>
-            </ul>
-          </div>
-
-          <div style="background:var(--bg-card); border:1px solid var(--border-color); padding:1.2rem; border-radius:8px;">
-            <h4 style="color:var(--accent-purple); margin:0 0 0.5rem 0; font-size:1.05rem;">3. Klimaskall (Utvendig Ferdigstilling)</h4>
-            <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
-              <li>200mm utvendig Rockwool fasadeisolasjon, vindsperre, lektring og liggende trekledning.</li>
-              <li>Innsetting av NorDan sidehengslede 3-lags alukledde vinduer og ytterdører.</li>
-              <li><em>Huset er nå lukket og definert som "tett bygg".</em></li>
-            </ul>
-          </div>
-
-        </div>
-      </article>
-
-      <!-- FASE 4 -->
-      <article class="sequence-card" id="stage-4">
-        <span class="sequence-card-number">04</span>
-        <div class="sequence-card-header">
-          <span class="stage-badge">Fase 4</span>
-          <h2 class="stage-title">Tekniske Installasjoner og Oppbygging (Innvendig Grovarbeid)</h2>
-          <span class="status-badge status-progress" style="margin-left:auto;">Pågår (75 %)</span>
-        </div>
-        <p style="color:var(--text-muted); font-size:0.95rem;">
-          <strong>Formål:</strong> Trekke skjult anlegg for rør, el og ventilasjon før vegger lukkes.
-        </p>
-
-        <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:1.2rem; margin-top:1rem;">
-
-          <div style="background:var(--bg-card); border:1px solid var(--border-color); padding:1.2rem; border-radius:8px;">
-            <h4 style="color:var(--accent-cyan); margin:0 0 0.5rem 0; font-size:1.05rem;">1. Tekniske Fag (Skjult Anlegg)</h4>
-            <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
-              <li><strong>Rørlegger:</strong> PEX rør-i-rør system, avløp, Uponor gulvvarmerør koblet til NIBE 2018 varmepumpe.</li>
-              <li><strong>Elektriker:</strong> Rør og boksanlegg for stikk, brytere, DCL og sikringsskap.</li>
-              <li><strong>Ventilasjon:</strong> Kanalføring for balansert ventilasjon.</li>
-            </ul>
-          </div>
-
-          <div style="background:var(--bg-card); border:1px solid var(--border-color); padding:1.2rem; border-radius:8px;">
-            <h4 style="color:var(--accent-emerald); margin:0 0 0.5rem 0; font-size:1.05rem;">2. Isolasjon & Dampsperre</h4>
-            <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
-              <li>Isolering av yttervegger, tak/loft (350mm Rockwool i takhimling) og etasjeskillere.</li>
-              <li>Montering av dampsperre (Pro Clima INTELLO) på varm side med nøye teiping.</li>
-            </ul>
-          </div>
-
-          <div style="background:var(--bg-card); border:1px solid var(--border-color); padding:1.2rem; border-radius:8px;">
-            <h4 style="color:var(--accent-amber); margin:0 0 0.5rem 0; font-size:1.05rem;">3. Gulv- og Veggkonstruksjon</h4>
-            <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
-              <li>Støp av gulv i våtrom/kjeller eller legging av avrettingsmasse.</li>
-              <li>Oppbygging av lettvegger, utlektet installasjonssjikt (48mm) og gipsing.</li>
-            </ul>
-          </div>
-
-        </div>
-      </article>
-
-      <!-- FASE 5 -->
-      <article class="sequence-card" id="stage-5">
-        <span class="sequence-card-number">05</span>
-        <div class="sequence-card-header">
-          <span class="stage-badge">Fase 5</span>
-          <h2 class="stage-title">Innvendig Ferdigstilling (Finarbeid)</h2>
-          <span class="status-badge status-planned" style="margin-left:auto;">Planlagt</span>
-        </div>
-        <p style="color:var(--text-muted); font-size:0.95rem;">
-          <strong>Formål:</strong> Våtromsmembran, overflatebehandling, flislegging og synlig montering.
-        </p>
-
-        <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:1.2rem; margin-top:1rem;">
-
-          <div style="background:var(--bg-card); border:1px solid var(--border-color); padding:1.2rem; border-radius:8px;">
-            <h4 style="color:var(--accent-cyan); margin:0 0 0.5rem 0; font-size:1.05rem;">1. Våtrom / Bad</h4>
-            <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
-              <li>Oppbygging av fall til sluk jf. BVN-normen.</li>
-              <li>Smøremembran og mansjetter på våtrom, flislegging og fuging.</li>
-            </ul>
-          </div>
-
-          <div style="background:var(--bg-card); border:1px solid var(--border-color); padding:1.2rem; border-radius:8px;">
-            <h4 style="color:var(--accent-purple); margin:0 0 0.5rem 0; font-size:1.05rem;">2. Overflatebehandling</h4>
-            <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
-              <li>Sparkling og maling av vegger og tak.</li>
-              <li>Legging av parkett/fliser i tørre rom (etter sjekk av restfukt < 2 % CM), listverk.</li>
-            </ul>
-          </div>
-
-          <div style="background:var(--bg-card); border:1px solid var(--border-color); padding:1.2rem; border-radius:8px;">
-            <h4 style="color:var(--accent-emerald); margin:0 0 0.5rem 0; font-size:1.05rem;">3. Montering (Synlig Anlegg)</h4>
-            <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
-              <li>Montering av kjøkken- og baderomsinnredning.</li>
-              <li><strong>Elektriker:</strong> Montering av brytere, stikk, lamper, termostater og sikringsskap.</li>
-              <li><strong>Rørlegger:</strong> Armaturer, toalett, dusj, servant og varmepumpetilkobling.</li>
-              <li>Montering av ildsted/pipe (må fungere før ferdigattest!).</li>
-            </ul>
-          </div>
-
-        </div>
-      </article>
-
-      <!-- FASE 6 -->
-      <article class="sequence-card" id="stage-6">
-        <span class="sequence-card-number">06</span>
-        <div class="sequence-card-header">
-          <span class="stage-badge">Fase 6</span>
-          <h2 class="stage-title">Utomhus og Ferdigstillelse (Avslutning)</h2>
-          <span class="status-badge status-planned" style="margin-left:auto;">Planlagt</span>
-        </div>
-        <p style="color:var(--text-muted); font-size:0.95rem;">
-          <strong>Formål:</strong> Terreng, overtakelsesforretning, FDV-dokumentasjon og ferdigattest.
-        </p>
-
-        <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:1.2rem; margin-top:1rem;">
-
-          <div style="background:var(--bg-card); border:1px solid var(--border-color); padding:1.2rem; border-radius:8px;">
-            <h4 style="color:var(--accent-cyan); margin:0 0 0.5rem 0; font-size:1.05rem;">1. Utomhus / Gårdsplass</h4>
-            <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
-              <li>Arrondering av terreng, opparbeiding av hage, markterrasse og biloppstilling/garasje.</li>
-            </ul>
-          </div>
-
-          <div style="background:var(--bg-card); border:1px solid var(--border-color); padding:1.2rem; border-radius:8px;">
-            <h4 style="color:var(--accent-amber); margin:0 0 0.5rem 0; font-size:1.05rem;">2. Rengjøring & Kontroll</h4>
-            <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
-              <li>Byggrengjøring og Blower Door trykktest (< 0,6 ACH).</li>
-              <li>Ferdigbefaring og mangelssjekk med entreprenør jf. Bustadoppføringslova § 14.</li>
-            </ul>
-          </div>
-
-          <div style="background:var(--bg-card); border:1px solid var(--border-color); padding:1.2rem; border-radius:8px;">
-            <h4 style="color:var(--accent-emerald); margin:0 0 0.5rem 0; font-size:1.05rem;">3. Overtakelse & Dokumentasjon</h4>
-            <ul class="subbox-list" style="margin:0; padding-left:1.2rem; color:var(--text-muted); font-size:0.9rem;">
-              <li>Innhenting av samsvarserklæringer (elektro/rør) og FDV-mappe + energiattest.</li>
-              <li>Søknad om <strong>Ferdigattest</strong> (eller midlertidig brukstillatelse) til Tønsberg kommune.</li>
-            </ul>
-          </div>
-
-        </div>
-      </article>
-
     </div>
 
     <!-- Technical Warnings Section -->
@@ -543,24 +690,11 @@
       <p style="color:var(--text-muted); margin-bottom:1.5rem;">
         Avvik fra faserekkefølgen kan føre til at fagene arbeider oppå hverandre og at det oppstår fukt- eller konstruksjonsskader.
       </p>
-
       <div class="warning-callout">
         <i data-lucide="droplet" style="color:var(--accent-rose); width:28px; height:28px; flex-shrink:0;"></i>
         <div>
           <h4>Kritisk: Huset må være 100 % "Tett Bygg" (Fase 3) før innvendig isolering (Fase 4)</h4>
-          <p>
-            Dersom man isolerer før tak og vinduer er fuktsikret, vil regn og vann fukte opp isolasjonen, noe som fører til råte og sopp i stenderverket.
-          </p>
-        </div>
-      </div>
-
-      <div class="warning-callout" style="margin-top:1rem;">
-        <i data-lucide="hammer" style="color:var(--accent-rose); width:28px; height:28px; flex-shrink:0;"></i>
-        <div>
-          <h4>Kritisk: Trykktest rør og elektro (Fase 4) før platelapping (Fase 5)</h4>
-          <p>
-            Eventuelle lekkasjer i PEX-ledninger må avdekkes mens anlegget er åpent, slik at man slipper å rive gipsplater i etterkant.
-          </p>
+          <p>Dersom man isolerer før tak og vinduer er fuktsikret, vil regn fukte opp isolasjonen og føre til råte i stenderverket.</p>
         </div>
       </div>
     </section>
@@ -576,16 +710,298 @@
 
   <script src="app.js"></script>
   <script>
-    lucide.createIcons();
-    function scrollToStage(stageNum) {
-      const el = document.getElementById(`stage-${stageNum}`);
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      const pills = document.querySelectorAll('.step-pill');
-      pills.forEach((p, idx) => {
-        if (idx === stageNum - 1) p.classList.add('active');
+    // Subprojects Detailed 6-Phase Breakdown Database
+    const SUBPROJECT_DATABASE = {
+      'del-a': {
+        tag: 'DELPROSJEKT A',
+        title: '1. Grunnarbeider Utvendig & Overvann (LOD)',
+        status: 'Fullført',
+        statusClass: 'status-completed',
+        progress: 100,
+        contractor: 'Maskinentreprenør / Anlegg',
+        desc: 'Utgraving rundt grunnmur, ny utvendig drenering, XPS-isolasjon, løsmasser og LOD 3-trinns infiltrering i stenkiste på egen tomt jf. § 27.',
+        phases: [
+          { phase: 'Fase 1: Planlegging', title: 'Geoteknikk & LOD-Dimensjonering', desc: 'Geoteknisk rapport (NVE veileder), LOD 3-trinns infiltrering (stenkiste 15m³), tillatelse fra Tønsberg kommune § 27.' },
+          { phase: 'Fase 2: Riving & Klargjøring', title: 'Utgraving & Rengjøring av Grunnmur', desc: 'Skogrydding rundt huset, utgraving av 2m dybde rundt opprinnelig grunnmur, høytrykksspyling av betongvegg.' },
+          { phase: 'Fase 3: Råbygg & Drenering', title: 'Drensrør, Platon & XPS Isolasjon', desc: 'Legging av 110mm drensrør m/geotektstilduk, montering av Platon knotteplast og 100mm XPS-isolasjon utvendig.' },
+          { phase: 'Fase 4: Tekniske Installasjoner', title: 'LOD Stenkiste & Trekkrør', desc: 'Etablering av 3-trinns LOD stenkiste, montering av sandfangskum og trekkerør for utvendig vann/avfallsledninger.' },
+          { phase: 'Fase 5: Innvendig Finarbeid', title: 'Tilbakefylling & Komprimering', desc: 'Tilbakefylling m/vasket pukk 16/32, komprimering i 30cm lag, toppduk og grov arrondering av terreng.' },
+          { phase: 'Fase 6: Overtakelse & FDV', title: 'Sluttkontroll & As-Built Tegning', desc: 'As-built inntegning av dreneringsledninger i kart, sluttauditt og innlegging av FDV i Boligmappa.' }
+        ]
+      },
+      'del-b': {
+        tag: 'DELPROSJEKT B',
+        title: '2. Kjeller Innvendig Nord',
+        status: 'Pågår',
+        statusClass: 'status-in-progress',
+        progress: 65,
+        contractor: 'Betongentreprenør / Murer / Tømrer',
+        desc: 'Pigging, utgraving av kjellergulv, 200mm EPS understøp, RadoStop radonmembran, rør/elektro og romoppbygging nord.',
+        phases: [
+          { phase: 'Fase 1: Planlegging', title: 'Understøpningsstatikk & Romhøyde', desc: 'Dimensjonering for understøping av bæremur, fri takhøyde 2,40m, planløsning for vaskerom & kjellerstue.' },
+          { phase: 'Fase 2: Riving & Klargjøring', title: 'Pigging av Betonggulv & Masseutgraving', desc: 'Pigging av 8cm opprinnelig ubrennet kjellerdekke, utgraving av 40cm løsmasse, fjerning via transportbånd.' },
+          { phase: 'Fase 3: Råbygg & Støp', title: 'Pukk, EPS 80, Radonmembran & Støp', desc: '10cm avrettingspukk, 200mm EPS 80 isolasjon, RadoStop radonmembran klasse B, armeringsnett K131 & 10cm betongstøp.' },
+          { phase: 'Fase 4: Tekniske Installasjoner', title: 'Gulvvarme, Sanitær & Trekkrør', desc: 'Legging av Uponor 16mm PEX gulvvarmerør, Bunnledninger for vaskerom og sluk, trekkerør for elektro og lys.' },
+          { phase: 'Fase 5: Innvendig Finarbeid', title: 'Stenderverk, Gips & Flislegging', desc: 'Stål/tre-stenderverk utforet fra betongvegg m/luftespalte, gipsing, smøremembran og flislegging i vaskerom.' },
+          { phase: 'Fase 6: Overtakelse & FDV', title: 'Elektro-samsvar & Sluttkontroll', desc: 'Montering av stikkontakter, innreguleringsrapport vaskerom, FDV for våtromsmembran og radonmåling.' }
+        ]
+      },
+      'del-c': {
+        tag: 'DELPROSJEKT C (SPESIALROM)',
+        title: '3. Ventilasjon & El-rom (Under ny trapp i kjeller)',
+        status: 'Pågår',
+        statusClass: 'status-in-progress',
+        progress: 50,
+        contractor: 'Elektriker (EL-installatør) / Ventilasjonsmontør',
+        desc: 'Eget dedikert rom i kjeller under ny trapp: Flytting av 3-fase 63A hovedsikringsskap, installasjon av Systemair ventilasjonsaggregat og hovedkanaler.',
+        phases: [
+          { phase: 'Fase 1: Planlegging', title: 'EI 60 Branntegninger & Kanaltrasé', desc: 'Spesialprosjektering for brannskille EI 60 under trapp, plassering av 3-fase 63A tavle og Systemair VTR 500 aggregat.' },
+          { phase: 'Fase 2: Riving & Klargjøring', title: 'Sanering av Gammel El-tavle & Romrydding', desc: 'Frakobling og sanering av eksisterende skrusikringsskap, rydde og klargjøre romvolum under trapperom.' },
+          { phase: 'Fase 3: Råbygg & Brannskille', title: 'EI 60 Stenderverk & Branndør', desc: 'Oppbygging av branncelle EI 60 m/2x15mm gips på stålprofiler, lydisolering, montering av B30/35dB branndør.' },
+          { phase: 'Fase 4: Tekniske Installasjoner', title: 'Montering av Hovedtavle & Aggregat', desc: 'Flytting og montering av ny 3-fase 63A Eaton hovedtavle, montering av Systemair VTR 500 aggregat og lyddempere.' },
+          { phase: 'Fase 5: Innvendig Finarbeid', title: 'Kanalisolering & Maling', desc: 'Termisk isolering av inntaks/avkastkanaler (Armaflex), maling av rom, merking av kursfortegnelse.' },
+          { phase: 'Fase 6: Overtakelse & FDV', title: 'Innreguleringsprotokoll & El-samsvar', desc: 'Ventilasjonsinnregulering av luftmengder, termografering av sikringsskap, samsvarserklæring og FDV i Boligmappa.' }
+        ]
+      },
+      'del-d': {
+        tag: 'DELPROSJEKT D',
+        title: '4. Varmeteknisk Rom & VVS (Kjeller)',
+        status: 'Planlagt',
+        statusClass: 'status-planned',
+        progress: 30,
+        contractor: 'Rørlegger / VVS-installatør',
+        desc: 'Tilkobling til eksisterende NIBE 2018 Luft-til-vann varmepumpe, Uponor gulvvarmsfordeler og PEX rør-i-rør sanitærsentral.',
+        phases: [
+          { phase: 'Fase 1: Planlegging', title: 'Varmetapsberegning & Hydraulikk', desc: 'Dimensjonering av 12 gulvvarmekurser, Uponor Smatrix impulsstyring, NIBE VVM 320 innedel hydraulikkskjema.' },
+          { phase: 'Fase 2: Riving & Klargjøring', title: 'Demontering av Gammel Olje/El-kjele', desc: 'Frakobling og fjerning av utdatert kjeleanlegg, kapping av berederrør, rengjøring av gulv.' },
+          { phase: 'Fase 3: Råbygg & Sluk', title: 'Støp av Sokkel & Våtromsmembran', desc: 'Oppstøping av fundament for akkumulatortank, montering av sluk og smøremembran på teknisk rom.' },
+          { phase: 'Fase 4: Tekniske Installasjoner', title: 'Montering av NIBE Innedel & Rørfordeler', desc: 'Tilkobling av NIBE VVM 320, montering av Uponor 12-kurs rustfri manifoldsamleskinne & PEX sanitærfordeler.' },
+          { phase: 'Fase 5: Innvendig Finarbeid', title: 'Trykktesting & Termostatinnstilling', desc: 'Prøvetrykk med vann (6 bar), fylling av glykol/korrosjonshemmer, montering av trådløse Uponor romtermostater.' },
+          { phase: 'Fase 6: Overtakelse & FDV', title: 'Sluttkontroll VVS & Varmepumpe-protokoll', desc: 'Overlevering av hydraulisk innreguleringsrapport, NIBE garantibevis og VVS samsvarserklæring.' }
+        ]
+      },
+      'del-e': {
+        tag: 'DELPROSJEKT E',
+        title: '5. Tilbygg Kjeller Syd',
+        status: 'Planlagt',
+        statusClass: 'status-planned',
+        progress: 20,
+        contractor: 'Maskin & Betong / Tømrer',
+        desc: 'Nytt utgravd såle- og kjellerareal mot sør, støp av ringmur/såle, bæring og klimaskall for tilbygg.',
+        phases: [
+          { phase: 'Fase 1: Planlegging', title: 'Byggesøknad & Geoteknisk Prosjektering', desc: 'Prosjektering av nytt tilbygg mot sør (SAK10 rammetillatelse), beregning av bærekonstruksjon mot opprinnelig hus.' },
+          { phase: 'Fase 2: Riving & Klargjøring', title: 'Utgraving av Sålegrunn Syd', desc: 'Fjerning av eksisterende markterrasse, utgraving av 2,5m dybde for såle tilbygg syd, bortkjøring av masse.' },
+          { phase: 'Fase 3: Råbygg & Fundamenter', title: 'Støp av Såle, Ringmur & Klimaskall', desc: 'L-elementer, 200mm EPS isolasjon, støp av 12cm armert betongsåle, oppføring av ISO-blokk kjellermur.' },
+          { phase: 'Fase 4: Tekniske Installasjoner', title: 'Gjennomføringer for VVS & El', desc: 'Legging av gulvvarmerør i støpen, trekkerør for utvendige og innvendige lys/stikk, avløpsavgrening.' },
+          { phase: 'Fase 5: Innvendig Finarbeid', title: 'Utvendig Kledning & Innvendig Gips', desc: 'Montering av liggende malmfuru kledning utvendig, innvendig stenderverk, 150mm isolasjon og gipsplater.' },
+          { phase: 'Fase 6: Overtakelse & FDV', title: 'Tetting mot Eksisterende Fasade & Tilsyn', desc: 'Klimatetting i overgang eksisterende hus/tilbygg, ferdigbefaring for tilbyggsdel.' }
+        ]
+      },
+      'del-f': {
+        tag: 'DELPROSJEKT F',
+        title: '6. Hovedetasje (1. etasje) & Åpent Allrom',
+        status: 'Planlagt',
+        statusClass: 'status-planned',
+        progress: 15,
+        contractor: 'Stålentreprenør / Tømrer / Kjøkkenmontør',
+        desc: 'Bærende stålkonstruksjon for 65m² allrom, NorDan vinduer, liggende trekledning, Uponor gulvvarme og kjøkken/stue.',
+        phases: [
+          { phase: 'Fase 1: Planlegging', title: 'Statisk Stålberegning (HEB 220)', desc: 'Arkitekt & Ingeniør beregning for 65m² åpent allrom, dimensjonering av HEB 220 ståldrager og 100x100mm stålsøyler.' },
+          { phase: 'Fase 2: Riving & Klargjøring', title: 'Midlertidig Stempling & Riving av Bærevegg', desc: 'Oppmontering av tunge stålprops, rivning av opprinnelig tegl/tre bærevegg mellom stue og kjøkken.' },
+          { phase: 'Fase 3: Råbygg & Stålmontasje', title: 'Innheising av HEB 220 & Nye Vinduer', desc: 'Innheising og kraning av HEB 220 ståldrager, sveis/fastbolting, innsetting av NorDan 3-lags lavenergivinduer.' },
+          { phase: 'Fase 4: Tekniske Installasjoner', title: 'Gulvvarme, Kjøkken-VVS & El-anlegg', desc: 'Svalehaleplater m/20mm Uponor gulvvarme, 16mm PEX til kjøkkenøy, 30+ stikkontakter & DALI lysstyring.' },
+          { phase: 'Fase 5: Innvendig Finarbeid', title: 'Parkettlegging, Kjøkkenmontasje & Maling', desc: 'Legging av 1-stavs eikeparkett, montering av kjøkken m/integrerte hvitevarer, sparkling og maling i valgfri farge.' },
+          { phase: 'Fase 6: Overtakelse & FDV', title: 'Sluttbefaring Hovedetasje & Innflytting', desc: 'Sluttinspeksjon av bæring, garantikort for kjøkken/hvitevarer, overlevering av nøkler til ferdig allrom.' }
+        ]
+      },
+      'del-g': {
+        tag: 'DELPROSJEKT G',
+        title: '7. 2. etasje (Soverom & Bad)',
+        status: 'Planlagt',
+        statusClass: 'status-planned',
+        progress: 10,
+        contractor: 'Tømrer / Rørlegger / Flislegger',
+        desc: 'Rominndeling i 2. etasje, soverom, bad, flislegging, VVS og innvendig ferdigstilling.',
+        phases: [
+          { phase: 'Fase 1: Planlegging', title: 'Tegning av Master-Bad & 3 Soverom', desc: 'Detaljprosjektering for master-bad 8m², tre soverom og walk-in garderobe jf. TEK17 tilgjengelighetskrav.' },
+          { phase: 'Fase 2: Riving & Klargjøring', title: 'Riving av Gamle Kledninger & Bad', desc: 'Fjerning av opprinnelige lettvegger, sanering av gammelt 1970-talls bad, oppretting av skjeve bjelkelag.' },
+          { phase: 'Fase 3: Råbygg & Våtromsoppbygging', title: 'Stenderverk & Litex Våtromsplater', desc: 'Nytt stenderverk 48x98mm, Litex 20mm membranplater på bad, lyddempende trinnlydplater på gulv.' },
+          { phase: 'Fase 4: Tekniske Installasjoner', title: 'Rør-i-Rør Sanitær & Balansert Ventilasjonsavtrekk', desc: 'Trekke PEX rør til dusj/servant/toalett, montering av innbyggingssisterne, installere ventilasjonsventiler.' },
+          { phase: 'Fase 5: Innvendig Finarbeid', title: 'Flislegging, Sanitærmontasje & Parkett', desc: 'Legging av 60x60cm porcellanato fliser på bad, montering av dusjnisje, tregulv på soverom, skyvedørsgarderobe.' },
+          { phase: 'Fase 6: Overtakelse & FDV', title: 'Våtromssertifikat & Sluttattest', desc: 'Våtromsnorm-sertifikat godkjent fra rørlegger, trykktest av sanitæranlegg, overlevering soverom.' }
+        ]
+      },
+      'del-h': {
+        tag: 'DELPROSJEKT H',
+        title: '8. Yttertak & Takhimling',
+        status: 'Planlagt',
+        statusClass: 'status-planned',
+        progress: 10,
+        contractor: 'Taktetker / Tømrer',
+        desc: 'Betongtakstein (vurdere skifer), undertak, sløyfer/lekter og 350mm Rockwool isolasjon i takhimlingen.',
+        phases: [
+          { phase: 'Fase 1: Planlegging', title: 'Snølast- & Isolasjonsberegning', desc: 'Beregning av snølast (Tønsberg 3,5 kN/m²), 350mm isolasjonsklasse (U-verdi <= 0,11 W/m²K), taksteinsvalg.' },
+          { phase: 'Fase 2: Riving & Klargjøring', title: 'Aftaking av Gammel Takstein & Sløyfer', desc: 'Fjerning og kasting av gammel takstein, morkne lekter og opprinnelig tjærepapp ned til gavl/sperrer.' },
+          { phase: 'Fase 3: Råbygg & Taktetting', title: 'Nytt Undertak, Sløyfer & Takstein', desc: 'Montering av Sutak undertaksplater, D-papp, 23x48mm sløyfer/lekter og legge ny Zanda betongtakstein.' },
+          { phase: 'Fase 4: Tekniske Installasjoner', title: 'Takrenner, Beslag & Solcelle-forberedelse', desc: 'Sorte stål takrenner/nedløp, beslag rundt skorstein, uttak for solcellepanel føringsveier.' },
+          { phase: 'Fase 5: Innvendig Finarbeid', title: '350mm Rockwool Isolasjon & Dampsperre', desc: 'Innvendig kryssisolering 250+100mm Rockwool, montering av 0,20mm PE-dampsperre m/klemt og teipet skjøt.' },
+          { phase: 'Fase 6: Overtakelse & FDV', title: 'Feiergodkjenning & Takgaranti', desc: 'Inspeksjon av stige/snøfanger fra feiervesen, 30 års taksteinsgaranti innlagt i Boligmappa.' }
+        ]
+      },
+      'del-i': {
+        tag: 'DELPROSJEKT I',
+        title: '9. Garasje & Uthus (§ 19)',
+        status: 'Planlagt',
+        statusClass: 'status-planned',
+        progress: 0,
+        contractor: 'Tømrer / Portleverandør',
+        desc: 'Ny garasje/uthus jf. § 19 (max 50 m² BYA, max 5,0m møne / 4,0m gesims).',
+        phases: [
+          { phase: 'Fase 1: Planlegging', title: 'Situasjonsplan PBL § 19 & Nabovarsel', desc: 'Inntegning av garasje BYA 48m² jf. fritak fra søknadsplikt SAK10 § 4-1, avstand 1,0m fra nabogrense.' },
+          { phase: 'Fase 2: Riving & Klargjøring', title: 'Planering av Garasjetomt', desc: 'Fjerning av eksisterende klessnor/utestue, utgraving og pukkforsterkning for garasjesåle.' },
+          { phase: 'Fase 3: Råbygg & Port', title: 'Støp av Ringmur & Bindingsverk', desc: 'Støpe isolert ringmur, oppføring av 48x148mm bindingsverk, takstoler, montering av Hörmann isolert leddport.' },
+          { phase: 'Fase 4: Tekniske Installasjoner', title: '22kW Elbil-Lader & Utebelysning', desc: 'Trekke 3-fase 32A kabel fra hovedtavle (Del C), montering av Easee 22kW elbil-lader & fotocelle-utelys.' },
+          { phase: 'Fase 5: Innvendig Finarbeid', title: 'Kledning Lik Hovedhus & Innredning', desc: 'Montering av stående malmfuru kledning lik hovedhus, innvendig OSB-plater på vegger for verktøy.' },
+          { phase: 'Fase 6: Overtakelse & FDV', title: 'Ferdigmelding Garasje Tønsberg Kommune', desc: 'Innsending av melding om oppført bygning unntatt søknadsplikt til Tønsberg kommune m/kart.' }
+        ]
+      },
+      'del-j': {
+        tag: 'DELPROSJEKT J',
+        title: '10. Utomhus & Terreng',
+        status: 'Planlagt',
+        statusClass: 'status-planned',
+        progress: 0,
+        contractor: 'Anleggsgartner / Elektriker utendørs',
+        desc: 'Grov- og finplanering av terreng, hage, markterrasse, innkjørsel og utelys.',
+        phases: [
+          { phase: 'Fase 1: Planlegging', title: 'Landskapsplan & Markterrasse', desc: 'Prosjektering av 45m² markterrasse m/skjult innfesting, mur mot veivei, plassering av pullert-belysning.' },
+          { phase: 'Fase 2: Riving & Klargjøring', title: 'Grovplanering & Matjordlag', desc: 'Grovplanering av heletomten, påkjøring av 20cm sortert matjord for plen og bed.' },
+          { phase: 'Fase 3: Råbygg & Fundamenter', title: 'Støp av Terrassesøyler & Støttemur', desc: 'Nedgraving av støpesøyler til frostfritt dyp, oppsetning av Asak Herregård støttemur.' },
+          { phase: 'Fase 4: Tekniske Installasjoner', title: 'Frostsikker Utekran & Hagebelysning', desc: 'Legging av 12V SG LED pullerter i hage, installasjon av FM Mattsson frostfri utekran.' },
+          { phase: 'Fase 5: Innvendig Finarbeid', title: 'Legging av Markterrasse & Ferdigplen', desc: 'Montering av MøreRoyal terrassebordsdekke, rulling av ferdigplen, asfaltering/grusing av innkjørsel.' },
+          { phase: 'Fase 6: Overtakelse & FDV', title: 'Sluttkontroll Utomhus & Skjøtselsanvisning', desc: 'Sluttbefaring utomhusarealer, overlevering av skjøtselsplan for plen/terrasse i Boligmappa.' }
+        ]
+      }
+    };
+
+    // Mode Switching Logic
+    function setPlanView(mode) {
+      const flowSec = document.getElementById('viewSectionFlow');
+      const detailsSec = document.getElementById('viewSectionDetails');
+      const phasesSec = document.getElementById('viewSectionPhases');
+      const pillsBar = document.getElementById('subprojectPillsBar');
+
+      const btnFlow = document.getElementById('tabBtnFlow');
+      const btnDetails = document.getElementById('tabBtnDetails');
+      const btnPhases = document.getElementById('tabBtnPhases');
+
+      [btnFlow, btnDetails, btnPhases].forEach(b => b.classList.remove('active'));
+
+      if (mode === 'flow') {
+        flowSec.style.display = 'block';
+        detailsSec.style.display = 'none';
+        phasesSec.style.display = 'none';
+        pillsBar.style.display = 'flex';
+        btnFlow.classList.add('active');
+      } else if (mode === 'details') {
+        flowSec.style.display = 'none';
+        detailsSec.style.display = 'block';
+        phasesSec.style.display = 'none';
+        pillsBar.style.display = 'flex';
+        btnDetails.classList.add('active');
+        // Default to del-c if none selected
+        if (!window.activeSubprojectKey) selectSubproject('del-c');
+      } else if (mode === 'phases') {
+        flowSec.style.display = 'none';
+        detailsSec.style.display = 'none';
+        phasesSec.style.display = 'block';
+        pillsBar.style.display = 'none';
+        btnPhases.classList.add('active');
+      }
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function selectSubproject(key) {
+      window.activeSubprojectKey = key;
+      // Update pills UI
+      const pills = document.querySelectorAll('.subproject-pill');
+      pills.forEach(p => {
+        if (p.getAttribute('onclick').includes(`'${key}'`)) p.classList.add('active');
         else p.classList.remove('active');
       });
+
+      // Render details
+      renderSubprojectDetails(key);
+
+      // If in flow mode and user explicitly clicked a pill, switch to details view
+      const detailsSec = document.getElementById('viewSectionDetails');
+      if (detailsSec.style.display === 'none') {
+        setPlanView('details');
+      }
     }
+
+    function openSubprojectDetail(key) {
+      selectSubproject(key);
+      setPlanView('details');
+      const target = document.getElementById('viewSectionDetails');
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function renderSubprojectDetails(key) {
+      const data = SUBPROJECT_DATABASE[key];
+      const container = document.getElementById('subprojectDetailContent');
+      if (!data || !container) return;
+
+      let html = `
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:1.5rem; margin-bottom:2rem;">
+          <div>
+            <span style="font-size:0.8rem; font-weight:700; color:var(--accent-cyan); text-transform:uppercase; letter-spacing:0.1em;">${data.tag}</span>
+            <h2 style="font-size:2rem; margin:0.3rem 0; color:#fff;">${data.title}</h2>
+            <p style="color:var(--text-muted); font-size:0.95rem; max-width:700px;">${data.desc}</p>
+            <div style="display:flex; gap:1.5rem; margin-top:0.8rem; font-size:0.85rem; color:var(--text-muted);">
+              <span><i data-lucide="user-check" style="width:14px; vertical-align:-2px; color:var(--accent-cyan);"></i> Ansvarlig: <strong style="color:#fff;">${data.contractor}</strong></span>
+            </div>
+          </div>
+          <div style="text-align:right; display:flex; flex-direction:column; align-items:flex-end; gap:0.5rem;">
+            <span class="status-badge ${data.statusClass}" style="font-size:0.9rem; padding:0.4rem 0.9rem;">Status: ${data.status}</span>
+            <div style="display:flex; align-items:center; gap:0.6rem; margin-top:0.4rem;">
+              <span style="font-size:0.85rem; color:var(--text-muted);">Framdrift:</span>
+              <div class="progress-bar-bg" style="width:120px;"><div class="progress-bar-fill" style="width:${data.progress}%; background:var(--accent-cyan);"></div></div>
+              <span style="font-size:0.9rem; font-weight:800; color:var(--accent-cyan);">${data.progress}%</span>
+            </div>
+          </div>
+        </div>
+
+        <h3 style="font-size:1.4rem; color:var(--accent-cyan); margin-bottom:1.2rem; display:flex; align-items:center; gap:0.5rem;">
+          <i data-lucide="layers"></i> Fasebeskrivelse (Spesifikk for ${data.tag})
+        </h3>
+
+        <div class="subproject-phase-grid">
+      `;
+
+      data.phases.forEach((p, idx) => {
+        const colors = ['var(--accent-cyan)', 'var(--accent-amber)', 'var(--accent-emerald)', 'var(--accent-purple)', 'var(--accent-rose)', 'var(--accent-cyan)'];
+        const color = colors[idx % colors.length];
+        html += `
+          <div class="phase-detail-card" style="border-left:4px solid ${color};">
+            <div class="phase-detail-title" style="color:${color};">
+              <span style="font-size:0.75rem; background:rgba(255,255,255,0.06); padding:0.15rem 0.5rem; border-radius:10px; color:#fff;">${p.phase}</span>
+            </div>
+            <h4 style="font-size:1.1rem; color:#fff; margin:0.3rem 0 0.5rem 0;">${p.title}</h4>
+            <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.6; margin:0;">${p.desc}</p>
+          </div>
+        `;
+      });
+
+      html += `</div>`;
+      container.innerHTML = html;
+      if (window.lucide) lucide.createIcons();
+    }
+
+    // Auto Init on Page Load
+    document.addEventListener('DOMContentLoaded', () => {
+      setPlanView('flow');
+    });
   </script>
 </body>
 </html>
