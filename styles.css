@@ -36,8 +36,11 @@
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Light Mode Theme Definition & Specific Overrides */
+[data-theme="light"],
 @media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) {
+  :root:not([data-theme="dark"]),
+  html[data-theme="light"] {
     --bg-primary: #f8fafc;
     --bg-secondary: #ffffff;
     --bg-card: #ffffff;
@@ -60,54 +63,152 @@
     
     --shadow-main: 0 4px 20px rgba(0, 0, 0, 0.06);
   }
+}
 
-  body:not([data-theme="dark"]) .card,
-  body:not([data-theme="dark"]) .subproject-card,
-  body:not([data-theme="dark"]) .budget-card,
-  body:not([data-theme="dark"]) .sequence-card,
-  body:not([data-theme="dark"]) .checklist-item,
-  body:not([data-theme="dark"]) .stat-card,
-  body:not([data-theme="dark"]) .visualizer-section,
-  body:not([data-theme="dark"]) .drawing-card {
-    background: #ffffff !important;
-    border-color: rgba(15, 23, 42, 0.12) !important;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
-  }
+html[data-theme="light"] body,
+body[data-theme="light"] {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
 
-  body:not([data-theme="dark"]) h1,
-  body:not([data-theme="dark"]) h2,
-  body:not([data-theme="dark"]) h3,
-  body:not([data-theme="dark"]) h4,
-  body:not([data-theme="dark"]) .subproject-title,
-  body:not([data-theme="dark"]) .budget-title,
-  body:not([data-theme="dark"]) .stage-title,
-  body:not([data-theme="dark"]) .checklist-title,
-  body:not([data-theme="dark"]) .budget-val,
-  body:not([data-theme="dark"]) .drawing-title {
-    color: #0f172a !important;
-  }
+html[data-theme="light"] header,
+body[data-theme="light"] header {
+  background: rgba(255, 255, 255, 0.94) !important;
+  border-bottom-color: rgba(15, 23, 42, 0.14) !important;
+}
 
-  body:not([data-theme="dark"]) p,
-  body:not([data-theme="dark"]) li,
-  body:not([data-theme="dark"]) .subproject-desc,
-  body:not([data-theme="dark"]) .checklist-desc,
-  body:not([data-theme="dark"]) .budget-label,
-  body:not([data-theme="dark"]) .section-desc,
-  body:not([data-theme="dark"]) .hero-subtitle,
-  body:not([data-theme="dark"]) .stat-label,
-  body:not([data-theme="dark"]) .drawing-desc {
-    color: #334155 !important;
-  }
+html[data-theme="light"] .card,
+html[data-theme="light"] .subproject-card,
+html[data-theme="light"] .subproject-seq-item,
+html[data-theme="light"] .budget-card,
+html[data-theme="light"] .sequence-card,
+html[data-theme="light"] .checklist-item,
+html[data-theme="light"] .stat-card,
+html[data-theme="light"] .visualizer-section,
+html[data-theme="light"] .drawing-card,
+html[data-theme="light"] .phase-detail-card,
+html[data-theme="light"] .warning-callout,
+body:not([data-theme="dark"]) .card,
+body:not([data-theme="dark"]) .subproject-card,
+body:not([data-theme="dark"]) .subproject-seq-item,
+body:not([data-theme="dark"]) .budget-card,
+body:not([data-theme="dark"]) .sequence-card,
+body:not([data-theme="dark"]) .checklist-item,
+body:not([data-theme="dark"]) .stat-card,
+body:not([data-theme="dark"]) .visualizer-section,
+body:not([data-theme="dark"]) .drawing-card,
+body:not([data-theme="dark"]) .phase-detail-card,
+body:not([data-theme="dark"]) .warning-callout {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.12) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+}
 
-  body:not([data-theme="dark"]) .nav-link {
-    color: #334155 !important;
-  }
+html[data-theme="light"] .subproject-seq-item::before,
+body:not([data-theme="dark"]) .subproject-seq-item::before {
+  background: #ffffff !important;
+  border-color: var(--accent-cyan) !important;
+  color: var(--accent-cyan) !important;
+  box-shadow: 0 0 10px rgba(2, 132, 199, 0.2) !important;
+}
 
-  body:not([data-theme="dark"]) .nav-link:hover,
-  body:not([data-theme="dark"]) .nav-link.active {
-    color: #0f172a !important;
-    background: rgba(15, 23, 42, 0.08) !important;
-  }
+html[data-theme="light"] .plan-nav-container,
+body:not([data-theme="dark"]) .plan-nav-container {
+  background: rgba(255, 255, 255, 0.94) !important;
+  border-bottom-color: rgba(15, 23, 42, 0.12) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+}
+
+html[data-theme="light"] .plan-tab-btn,
+body:not([data-theme="dark"]) .plan-tab-btn {
+  background: #f1f5f9 !important;
+  border-color: rgba(15, 23, 42, 0.12) !important;
+  color: #334155 !important;
+}
+
+html[data-theme="light"] .plan-tab-btn.active,
+body:not([data-theme="dark"]) .plan-tab-btn.active {
+  background: var(--accent-cyan) !important;
+  color: #ffffff !important;
+  border-color: var(--accent-cyan) !important;
+}
+
+html[data-theme="light"] .subproject-pill,
+body:not([data-theme="dark"]) .subproject-pill {
+  background: #f1f5f9 !important;
+  border-color: rgba(15, 23, 42, 0.12) !important;
+  color: #334155 !important;
+}
+
+html[data-theme="light"] .subproject-pill.active,
+body:not([data-theme="dark"]) .subproject-pill.active {
+  background: rgba(2, 132, 199, 0.12) !important;
+  border-color: var(--accent-cyan) !important;
+  color: var(--accent-cyan) !important;
+}
+
+html[data-theme="light"] h1,
+html[data-theme="light"] h2,
+html[data-theme="light"] h3,
+html[data-theme="light"] h4,
+html[data-theme="light"] .section-title,
+html[data-theme="light"] .subproject-title,
+html[data-theme="light"] .subproject-seq-title,
+html[data-theme="light"] .budget-title,
+html[data-theme="light"] .stage-title,
+html[data-theme="light"] .checklist-title,
+html[data-theme="light"] .budget-val,
+html[data-theme="light"] .drawing-title,
+body:not([data-theme="dark"]) h1,
+body:not([data-theme="dark"]) h2,
+body:not([data-theme="dark"]) h3,
+body:not([data-theme="dark"]) h4,
+body:not([data-theme="dark"]) .section-title,
+body:not([data-theme="dark"]) .subproject-title,
+body:not([data-theme="dark"]) .subproject-seq-title,
+body:not([data-theme="dark"]) .budget-title,
+body:not([data-theme="dark"]) .stage-title,
+body:not([data-theme="dark"]) .checklist-title,
+body:not([data-theme="dark"]) .budget-val,
+body:not([data-theme="dark"]) .drawing-title {
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] p,
+html[data-theme="light"] li,
+html[data-theme="light"] .subproject-desc,
+html[data-theme="light"] .subproject-seq-desc,
+html[data-theme="light"] .checklist-desc,
+html[data-theme="light"] .budget-label,
+html[data-theme="light"] .section-desc,
+html[data-theme="light"] .hero-subtitle,
+html[data-theme="light"] .stat-label,
+html[data-theme="light"] .drawing-desc,
+body:not([data-theme="dark"]) p,
+body:not([data-theme="dark"]) li,
+body:not([data-theme="dark"]) .subproject-desc,
+body:not([data-theme="dark"]) .subproject-seq-desc,
+body:not([data-theme="dark"]) .checklist-desc,
+body:not([data-theme="dark"]) .budget-label,
+body:not([data-theme="dark"]) .section-desc,
+body:not([data-theme="dark"]) .hero-subtitle,
+body:not([data-theme="dark"]) .stat-label,
+body:not([data-theme="dark"]) .drawing-desc {
+  color: #334155 !important;
+}
+
+html[data-theme="light"] .nav-link,
+body:not([data-theme="dark"]) .nav-link {
+  color: #334155 !important;
+}
+
+html[data-theme="light"] .nav-link:hover,
+html[data-theme="light"] .nav-link.active,
+body:not([data-theme="dark"]) .nav-link:hover,
+body:not([data-theme="dark"]) .nav-link.active {
+  color: #0f172a !important;
+  background: rgba(15, 23, 42, 0.08) !important;
+}
 
   body:not([data-theme="dark"]) .nav-link.subpage-link {
     border: 1px dashed #0284c7 !important;
