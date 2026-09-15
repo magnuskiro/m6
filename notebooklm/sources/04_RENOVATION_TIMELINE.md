@@ -1,13 +1,21 @@
 # M6 Rehabilitation - Renovation Sequence & Status
 
-## 1. Project Sequence Framework
-The renovation sequence for **Myrteveien 6** (*Gnr 140 / Bnr 371*) follows the standard technical sequence for Scandinavian residential rehabilitation:
+## 1. M6 - Husbyggefaser (Master Project Sequence)
+The master sequence for **Myrteveien 6** (*Gnr 140 / Bnr 371*) is organized into 9 overarching construction phases:
 
-1. **Phase 1: Søknad & Prosjektering** – Building permit application jf. SAK10 § 5-4, architectural drawings, %BYA checks (§ 44.1).
-2. **Phase 2: Riving & Bærende Stål** – Interior clearance, structural support (HEB 220 steel beam installation R 60).
-3. **Phase 3: Klimaskall & Tetting** – 200mm Rockwool exterior insulation, liggende trekledning, NorDan 3-layer alu-clad side-hung windows, standing seam roof.
-4. **Phase 4: VVS & Tekniske Anlegg** – PEX pipe-in-pipe, Uponor hydronic floor heating loops connected to existing 2018 NIBE Air-to-Water heat pump, HRV ventilation.
-5. **Phase 5: Innvendige Overflater & Uteområde** – Interior surfaces, LOD 3-step stormwater infiltration (stenkiste § 27), final inspections.
+1. 🌲 **Site clearing / prep** ➔ *Sette i gang* (Tomterydding, fjerning av vegetasjon, tilrettelegging for anleggstrafikk mot Myrteveien).
+2. 🚜 **Building / site prep** (Rigging, brakker, byggestrøm, midlertidig vann, containerplassering, massesortering).
+3. 🏗️ **Foundations** (Utgraving, pukk, drensledninger, radonmembran, betongsåler, understøping, ny kjellermur).
+4. 🪵 **Framing (structural)** (Bærekonstruksjon, HEB 220 ståldragere, stålprops, stenderverk, bjelkelag).
+5. 🏠 **Roofing** (Takstoler, undertak, lekter, Ruukki båndtekking/takstein, gesimser og takrenner).
+6. 🪟 **Windows** (3-lags lavenergivinduer, heve-/skyvedører, brannglass EI 60 mot grenser, klemte tettelister).
+7. ⚡ **Technical** (Elektro 3-fase 63A, Uponor vannbåren gulvvarme, NIBE luft-til-vann varmepumpe, Systemair balansert ventilasjon, PEX rør-i-rør, avløp/soil).
+8. 🎨 **Interior** (Rockwool isolasjon, Pro Clima INTELLO dampsperre, 13mm gips, BVN våtromsmembran, flislegging, sparkling Q4).
+9. 🛋️ **Furnishing / Finish** (1-stavs eikeparkett, innerdører, listverk, kjøkken, sanitærarmatur, sluttkontroll og ferdigattest).
 
-## 2. Live Issue Status
-All active tasks and sub-components are tracked live on [GitHub Project Board #1](https://github.com/users/magnuskiro/projects/1/views/1).
+---
+
+## 2. Live Issue Tracking
+All active tasks, sub-projects and phases are tracked live on:
+- Main Tracking Issue: [#103: M6 - husbyggefaser](https://github.com/magnuskiro/m6/issues/103)
+- Master Kanban: [GitHub Project Board #1 (@magnuskiro's backlog)](https://github.com/users/magnuskiro/projects/1/views/1)

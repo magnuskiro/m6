@@ -5,7 +5,24 @@ This document defines the **Standard Recommended Building Sequence (Byggerekkef�
 
 ---
 
-## 🏗️ 9-Stage Master Rehabilitation Sequence
+## 🏗️ M6 - Husbyggefaser (Master Overview)
+Active tracking on GitHub: [#103: M6 - husbyggefaser](https://github.com/magnuskiro/m6/issues/103)
+
+| Nr | Fase | Nøkkelinnhold | Status |
+| :--- | :--- | :--- | :--- |
+| **1** | **Site clearing / prep** | Tomterydding, fjerning av vegetasjon, anleggstilkomst | ➔ **Sette i gang** |
+| **2** | **Building / site prep** | Rigging, brakker, byggestrøm, midlertidig vann, container | Venter på fase 1 |
+| **3** | **Foundations** | Utgraving, drensledninger, pukk, radonmembran, betongsåler | Pågår i kjeller |
+| **4** | **Framing (structural)** | Bærekonstruksjon, HEB 220 ståldragere, bjelkelag | Prosjektert |
+| **5** | **Roofing** | Takstoler, undertak, lekter, Ruukki båndtekking/takstein | Planlagt |
+| **6** | **Windows** | 3-lags lavenergivinduer, skyvedører, brannglass EI 60 | Spesifisert |
+| **7** | **Technical** | Elektro 63A, Uponor gulvvarme, NIBE VVM 320, Systemair HRV, PEX | Planlegges |
+| **8** | **Interior** | Rockwool isolasjon, INTELLO dampsperre, gipsing, våtromsmembran | Sekvensert |
+| **9** | **Furnishing / Finish** | Parkett, kjøkken, listverk, sanitærmontering, sluttkontroll & ferdigattest | Sluttfase |
+
+---
+
+## 🏗️ 9-Stage Master Technical Sequence Details
 
 ### Stage 1: Pre-Assessment, Permits & Site Setup (Forundersøkelser & Rigging)
 - **Primary Goal:** Legal compliance, risk mitigation, and site safety.
