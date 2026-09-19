@@ -58,7 +58,11 @@ This source document outlines the legal building regulations, municipal master p
     2. *Stigningsavvik:* Fallet fra Myrteveien ned til garasjen overskrider maksimalt tillatt stigning på 1:20 (5 %) for trilling av tunge dunker. I tillegg har Myrteveien uavklart helning/tverrfall ved bilstopp.
     3. *Mangler plant areal:* Tomten ved garasjeveggen mangler 1,5 m plant arbeidsareal foran dunkene.
     4. *Drifts- og HMS-risiko:* 14,5 m trillestrekning i motbakke krever feilfri snømåking/strøing før kl. 06:00, noe leieboere ikke ivaretar.
-  - **Valgt løsning (Trollheggveien):** Beholde og oppgradere eksisterende hentepunkt mot Trollheggveien som har 0–1 m trillestrekning på flatt terreng (0 % stigning), > 5 m brannavstand i åpent lende, og hvor renovatørbilen allerede stanser. Privatrettslig tillatelse formaliseres med veieier **Elisabeth Granøe** (Veglova kap. VII §§ 53–56), kombinert med et lukket, fuglesikkert og estetisk avfallsskur som fjerner nabosjenanse.
+  - **Valgt løsning (Trollheggveien):** Beholde og oppgradere eksisterende hentepunkt mot Trollheggveien som har 0–1 m trillestrekning på flatt terreng (0 % stigning), > 5 m brannavstand i åpent lende, og hvor renovatørbilen allerede stanser. Privatrettslig tillatelse formaliseres med veieier **Elisabeth Granøe** (Veglova kap. VII §§ 53–56). Fysisk etableres et **brannsikret, åpent avfallsskur med tak**:
+    - **Åpen front mot veien:** Dunkene kan trilles direkte ut i veien uten dørhindringer for renovatøren.
+    - **Spilevegger på sidene og bak:** Gir god visuell skjerming (PBL § 29-2) og god lufting.
+    - **Skråtak med fall innover mot tomta:** Hindrer at snø, is og takvann raser ut i veibanen/veiskulderen.
+    - **Plant betong- eller belegningssteindekke:** Gir et stabilt, plant og nivåfritt underlag på bakkenivå for trilling.
 
 ---
 
