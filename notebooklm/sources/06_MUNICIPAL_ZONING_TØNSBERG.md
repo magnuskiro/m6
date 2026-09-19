@@ -46,12 +46,16 @@ This source document outlines the legal building regulations, municipal master p
 - Utformes i tråd med veletablerte bygningsprinsipper. Gjenbruk og energivennlige løsninger (som planmonterte solceller på tak) vurderes som en visuell kvalitet.
 
 ### Renovasjon & Avfallsløsning (Vesar / Tønsberg Forskrift / Veglova)
-- **Tekniske retningslinjer for renovasjon (Vesar):**
-  - **Henteavstand:** Maksimalt **5,0 meter** trilleavstand fra kjørbar vei der renovasjonsbilen stanser (maks 15 m ved spesielt godkjent trillevei).
-  - **Stigning & Underlag:** Trillevei krever maks 1:20 (5 %) stigning for uanstrengt trilling på fast, plant underlag.
-  - **Brannkrav:** Minimum 2,5–5,0 m avstand til brennbar vegg/konstruksjon uten brannskille (EI 30).
-  - **Beholderbehov:** 4 standard fraksjoner (restavfall, papir/papp, matavfall, glass/metall) – krever ca. 2,60–2,80 m bredde på rekke eller 1,40 m × 1,80 m som 2×2.
-- **M6 Strategi & Alternativvurdering (se [#89](https://github.com/magnuskiro/m6/issues/89) og [#104](https://github.com/magnuskiro/m6/issues/104)):**
-  - **Dagens hentepunkt (Trollheggveien):** 0–1 m trillestrekning på flatt terreng. Renovatørbil stopper allerede for Trollheggveien 7 og Myrteveien 8A. Eliminerer driftsrisiko for manglende snømåking før kl. 06:00 fra leieboere, samt ivaretar brannavstand (> 5 m til fasader).
-  - **Vesars foreslåtte garasjeplassering (Myrteveien):** Medfører 14–14,5 m trilling i motbakke (overskrider 5 % stigning), kritisk driftsrisiko ved vinterføre i utleieforhold, samt brannkrav mot uklassifisert treverk på eksisterende garasje.
-  - **Valgt løsning:** Beholde og oppgradere hentepunktet mot Trollheggveien ved å formalisere privatrettslig avtale med veieier **Elisabeth Granøe** (jf. Veglova kap. VII §§ 53–56, mot løpende rydding/kantklipping), samt oppføre et lukket, fuglesikkert og estetisk avfallsskur som fjerner nabosjenanse.
+- **Kilde:** [Teknisk retningslinje for renovasjon – Vesar, Sandefjord, Larvik (April 2026)](https://vesar.no/media/c0hlcjlo/teknisk-retningslinje-vesar-sandefjord-larvik.pdf)
+- **Ufravikelige tekniske krav i retningslinjen:**
+  - **Brannkrav (§ 3.2.3 & Tabell 3.3, s. 13):** Sikker minsteavstand mellom bygning og mindre plastbeholdere (140/240/360 L) er fastsatt til **minimum 2,5 meter**. Reduksjon krever dokumentert fasade med brannmotstand **EI 30**. Beholdere må ikke settes under ubeskyttet tak/overbygg.
+  - **Stigningsforhold (§ 3.2, s. 12):** Transportveien (trilleveien) skal ha et stigningsforhold på **maksimalt 1:20 (5 %)**, være fri for terskler/hindringer og ha nivåfrie overganger.
+  - **Plant manøvreringsareal (§ 3.2, s. 12):** Foran beholderne kreves et plant areal på **minimum 1,5 m bredde** med minimalt fall for avrenning.
+  - **Transportveiens lengde (§ 3.5.2, s. 18):** Skal være **så kort som mulig** (maks 15 meter).
+- **M6 Strategi & Teknisk Avviksanalyse (se [#89](https://github.com/magnuskiro/m6/issues/89) og [#104](https://github.com/magnuskiro/m6/issues/104)):**
+  - **Vesars foreslåtte garasjeplassering (Myrteveien):** Avvises fordi den bryter Vesars egne retningslinjer:
+    1. *Brannavvik:* Garasjen er uisolert treverk uten brannklasse (krever min. 2,5 m avstand / EI 30).
+    2. *Stigningsavvik:* Fallet fra Myrteveien ned til garasjen overskrider maksimalt tillatt stigning på 1:20 (5 %) for trilling av tunge dunker. I tillegg har Myrteveien uavklart helning/tverrfall ved bilstopp.
+    3. *Mangler plant areal:* Tomten ved garasjeveggen mangler 1,5 m plant arbeidsareal foran dunkene.
+    4. *Drifts- og HMS-risiko:* 14,5 m trillestrekning i motbakke krever feilfri snømåking/strøing før kl. 06:00, noe leieboere ikke ivaretar.
+  - **Valgt løsning (Trollheggveien):** Beholde og oppgradere eksisterende hentepunkt mot Trollheggveien som har 0–1 m trillestrekning på flatt terreng (0 % stigning), > 5 m brannavstand i åpent lende, og hvor renovatørbilen allerede stanser. Privatrettslig tillatelse formaliseres med veieier **Elisabeth Granøe** (Veglova kap. VII §§ 53–56), kombinert med et lukket, fuglesikkert og estetisk avfallsskur som fjerner nabosjenanse.
