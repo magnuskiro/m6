@@ -45,9 +45,13 @@ This source document outlines the legal building regulations, municipal master p
 ### § 14 & § 15 Arkitektur, byggeskikk og stedstilpasning
 - Utformes i tråd med veletablerte bygningsprinsipper. Gjenbruk og energivennlige løsninger (som planmonterte solceller på tak) vurderes som en visuell kvalitet.
 
-### Renovasjon & Avfallsløsning (Vesar / Tønsberg Forskrift)
+### Renovasjon & Avfallsløsning (Vesar / Tønsberg Forskrift / Veglova)
 - **Tekniske retningslinjer for renovasjon (Vesar):**
-  - **Henteavstand:** Maksimalt **5,0 meter** trilleavstand fra offentlig kjørbar vei (Myrteveien) der renovasjonsbilen stanser.
-  - **Underlag:** Fast, plant og sklisikkert dekke på bakkenivå (betong/belegningsstein) uten trapper, terskler eller hindringer (maks 1:10 stigning).
-  - **Beholderbehov:** 4 kildesorteringsfraksjoner for enebolig (restavfall, papir/papp, matavfall, glass/metall). Krever minimum ca. **2,60–2,80 m bredde** og **0,90–1,00 m dybde** (eller 2×2 oppstilling på 1,40 m × 1,80 m).
-  - **M6 Plassering:** Flyttes permanent fra Trollheggveien (privat blindvei uten snuplass) til ny innkjøring mot **Myrteveien** (integrert i grunnarbeid [#92](https://github.com/magnuskiro/m6/issues/92) og situasjonsplan [#90](https://github.com/magnuskiro/m6/issues/90) / [#50](https://github.com/magnuskiro/m6/issues/50)), med estetisk spilevegg/skjerming iht. PBL § 29-2.
+  - **Henteavstand:** Maksimalt **5,0 meter** trilleavstand fra kjørbar vei der renovasjonsbilen stanser (maks 15 m ved spesielt godkjent trillevei).
+  - **Stigning & Underlag:** Trillevei krever maks 1:20 (5 %) stigning for uanstrengt trilling på fast, plant underlag.
+  - **Brannkrav:** Minimum 2,5–5,0 m avstand til brennbar vegg/konstruksjon uten brannskille (EI 30).
+  - **Beholderbehov:** 4 standard fraksjoner (restavfall, papir/papp, matavfall, glass/metall) – krever ca. 2,60–2,80 m bredde på rekke eller 1,40 m × 1,80 m som 2×2.
+- **M6 Strategi & Alternativvurdering (se [#89](https://github.com/magnuskiro/m6/issues/89) og [#104](https://github.com/magnuskiro/m6/issues/104)):**
+  - **Dagens hentepunkt (Trollheggveien):** 0–1 m trillestrekning på flatt terreng. Renovatørbil stopper allerede for Trollheggveien 7 og Myrteveien 8A. Eliminerer driftsrisiko for manglende snømåking før kl. 06:00 fra leieboere, samt ivaretar brannavstand (> 5 m til fasader).
+  - **Vesars foreslåtte garasjeplassering (Myrteveien):** Medfører 14–14,5 m trilling i motbakke (overskrider 5 % stigning), kritisk driftsrisiko ved vinterføre i utleieforhold, samt brannkrav mot uklassifisert treverk på eksisterende garasje.
+  - **Valgt løsning:** Beholde og oppgradere hentepunktet mot Trollheggveien ved å formalisere privatrettslig avtale med veieier **Elisabeth Granøe** (jf. Veglova kap. VII §§ 53–56, mot løpende rydding/kantklipping), samt oppføre et lukket, fuglesikkert og estetisk avfallsskur som fjerner nabosjenanse.
