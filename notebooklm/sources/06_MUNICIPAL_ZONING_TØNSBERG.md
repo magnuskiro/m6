@@ -52,17 +52,18 @@ This source document outlines the legal building regulations, municipal master p
   - **Stigningsforhold (§ 3.2, s. 12):** Transportveien (trilleveien) skal ha et stigningsforhold på **maksimalt 1:20 (5 %)**, være fri for terskler/hindringer og ha nivåfrie overganger.
   - **Plant manøvreringsareal (§ 3.2, s. 12):** Foran beholderne kreves et plant areal på **minimum 1,5 m bredde** med minimalt fall for avrenning.
   - **Transportveiens lengde (§ 3.5.2, s. 18):** Skal være **så kort som mulig** (maks 15 meter).
-- **M6 Strategi & Teknisk Avviksanalyse (se [#89](https://github.com/magnuskiro/m6/issues/89) og [#104](https://github.com/magnuskiro/m6/issues/104)):**
-  - **Vesars foreslåtte garasjeplassering (Myrteveien):** Avvises fordi den bryter Vesars egne retningslinjer:
-    1. *Brannavvik:* Garasjen er uisolert treverk uten brannklasse (krever min. 2,5 m avstand / EI 30).
-    2. *Stigningsavvik:* Fallet fra Myrteveien ned til garasjen overskrider maksimalt tillatt stigning på 1:20 (5 %) for trilling av tunge dunker. I tillegg har Myrteveien uavklart helning/tverrfall ved bilstopp.
-    3. *Mangler plant areal:* Tomten ved garasjeveggen mangler 1,5 m plant arbeidsareal foran dunkene.
-    4. *Drifts- og HMS-risiko:* 14,5 m trillestrekning i motbakke krever feilfri snømåking/strøing før kl. 06:00, noe leieboere ikke ivaretar.
-  - **Valgt løsning (Trollheggveien):** Beholde og oppgradere eksisterende hentepunkt mot Trollheggveien som har 0–1 m trillestrekning på flatt terreng (0 % stigning), > 5 m brannavstand i åpent lende, og hvor renovatørbilen allerede stanser. Privatrettslig tillatelse formaliseres med veieier **Elisabeth Granøe** (Veglova kap. VII §§ 53–56). Fysisk etableres et **brannsikret, åpent avfallsskur med tak**:
-    - **Åpen front mot veien:** Dunkene kan trilles direkte ut i veien uten dørhindringer for renovatøren.
-    - **Spilevegger på sidene og bak:** Gir god visuell skjerming (PBL § 29-2) og god lufting.
-    - **Skråtak med fall innover mot tomta:** Hindrer at snø, is og takvann raser ut i veibanen/veiskulderen.
-    - **Plant betong- eller belegningssteindekke:** Gir et stabilt, plant og nivåfritt underlag på bakkenivå for trilling.
+  - **M6 Strategi & Teknisk Avviksanalyse (se [#89](https://github.com/magnuskiro/m6/issues/89) og [#104](https://github.com/magnuskiro/m6/issues/104)):**
+    - **Reell kapasitet (7 beholdere):** M6 har en godkjent utleieenhet i tillegg til hoveddel, og er utstyrt med **7 store beholdere** (hovedsakelig 240L / 140L for restavfall, papir/papp, plast og mat). Dette tilsvarer over **1 600 liter brennbart avfallsvolum** og en bredde på minst **4,2–4,5 meter**.
+    - **Vesars foreslåtte garasjeplassering (Myrteveien):** Avvises fordi den bryter Vesars egne retningslinjer:
+      1. *Brannavvik:* Garasjen er uisolert treverk uten brannklasse (krever min. 2,5 m avstand / EI 30). Å plassere en 4,5 m lang rekke med 7 brennbare plastdunker inntil eller nær garasjen er en massiv brannfare (jf. TEK17 § 11-8).
+      2. *Stigningsavvik & HMS:* Fallet fra Myrteveien ned til garasjen overskrider maksimalt tillatt stigning på 1:20 (5 %). Med 7 beholdere må renovatøren trille én og én dunk tur/retur, noe som utgjør **14 enkeltstrekninger á 14,5 m = 203 meter manuell trilling i motbakke (11,2 % stigning i Myrteveien og > 5 % på gårdsplassen)**. Dette bryter direkte med Vesars formål om å *«redusere det manuelle arbeidet for renovatørene»* (§ 3.5.2) og Arbeidsmiljølovens krav.
+      3. *Mangler plant areal:* Tomten foran garasjeveggen mangler det påkrevde **4,5 m × 1,5 m = 6,75 m²** store plane arbeidsarealet på bakkenivå uten å sperre for garasjeport og biloppstilling.
+      4. *Drifts- og vinterrisiko:* 14,5 m trillestrekning i motbakke krever feilfri snømåking/strøing før kl. 06:00, noe leieboere ikke ivaretar pålitelig.
+    - **Valgt løsning (Trollheggveien):** Beholde og oppgradere eksisterende hentepunkt mot Trollheggveien som har 0–1 m trillestrekning på flatt terreng (0 % stigning), > 5 m brannavstand i åpent lende, og hvor renovasjonsbilen allerede stanser. Privatrettslig tillatelse formaliseres med veieier **Elisabeth Granøe** (Veglova kap. VII §§ 53–56). Fysisk etableres et **brannsikret, åpent avfallsskur med tak**:
+      - **Åpen front mot veien:** Dunkene kan trilles direkte ut i veien uten dørhindringer for renovatøren.
+      - **Spilevegger på sidene og bak:** Gir god visuell skjerming (PBL § 29-2) og god lufting.
+      - **Skråtak med fall innover mot tomta:** Hindrer at snø, is og takvann raser ut i veibanen/veiskulderen.
+      - **Plant betong- eller belegningssteindekke:** Gir et stabilt, plant og nivåfritt underlag på bakkenivå for trilling.
 
 ---
 
