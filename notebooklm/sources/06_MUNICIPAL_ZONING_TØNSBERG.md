@@ -59,3 +59,13 @@ This source document outlines the legal building regulations, municipal master p
     3. *Mangler plant areal:* Tomten ved garasjeveggen mangler 1,5 m plant arbeidsareal foran dunkene.
     4. *Drifts- og HMS-risiko:* 14,5 m trillestrekning i motbakke krever feilfri snømåking/strøing før kl. 06:00, noe leieboere ikke ivaretar.
   - **Valgt løsning (Trollheggveien):** Beholde og oppgradere eksisterende hentepunkt mot Trollheggveien som har 0–1 m trillestrekning på flatt terreng (0 % stigning), > 5 m brannavstand i åpent lende, og hvor renovatørbilen allerede stanser. Privatrettslig tillatelse formaliseres med veieier **Elisabeth Granøe** (Veglova kap. VII §§ 53–56), kombinert med et lukket, fuglesikkert og estetisk avfallsskur som fjerner nabosjenanse.
+
+---
+
+### 🛣️ 2. Status for Trollheggveien i Kommuneplan & Reguleringsplan (Avklaring for Veieier)
+- **Reguleringsstatus:** Trollheggveien og Myrteveien er **uregulert** på detaljplannivå. Området inngår i et eldre, etablert villastrøk på Tolvsrød/Slagen.
+- **Kommuneplanens arealdel 2023–2035 (PlanID 3803 99010):**
+  - **Arealformål:** Avsatt til **«Nåværende boligbebyggelse»** (jf. KPA § 3 nr. 2). Det er *ikke* avsatt til fremtidig samferdselsformål.
+  - **Hensynssoner & Båndlegging:** Det foreligger **ingen hensynssoner for samferdsel**, ingen båndleggingssoner for veiutvidelse (H710/H740, jf. § 86–§ 90), og ingen krav om felles planlegging (H810) som berører Trollheggveien.
+  - **Veistatus:** Trollheggveien er en **privat blindvei/stikkvei** underlagt Veglova kapittel VII (§§ 53–56). Kommunen har ingen planer, budsjetter, rekkefølgekrav eller hjemler for å kreve utvidelse eller kommunal overtakelse av veien.
+  - **Konklusjon overfor veieier (Elisabeth Granøe):** Veieiers bekymring for kommunal veiutvidelse er ubegrunnet. Kommunen stiller ingen krav eller båndlegginger på veigrunnen, og oppføring av et tilbaketrukket avfallsskur i veiskulderen forringer ikke veigrunnen på noen måte.
