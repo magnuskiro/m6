@@ -44,3 +44,10 @@ This source document outlines the legal building regulations, municipal master p
 
 ### § 14 & § 15 Arkitektur, byggeskikk og stedstilpasning
 - Utformes i tråd med veletablerte bygningsprinsipper. Gjenbruk og energivennlige løsninger (som planmonterte solceller på tak) vurderes som en visuell kvalitet.
+
+### Renovasjon & Avfallsløsning (Vesar / Tønsberg Forskrift)
+- **Tekniske retningslinjer for renovasjon (Vesar):**
+  - **Henteavstand:** Maksimalt **5,0 meter** trilleavstand fra offentlig kjørbar vei (Myrteveien) der renovasjonsbilen stanser.
+  - **Underlag:** Fast, plant og sklisikkert dekke på bakkenivå (betong/belegningsstein) uten trapper, terskler eller hindringer (maks 1:10 stigning).
+  - **Beholderbehov:** 4 kildesorteringsfraksjoner for enebolig (restavfall, papir/papp, matavfall, glass/metall). Krever minimum ca. **2,60–2,80 m bredde** og **0,90–1,00 m dybde** (eller 2×2 oppstilling på 1,40 m × 1,80 m).
+  - **M6 Plassering:** Flyttes permanent fra Trollheggveien (privat blindvei uten snuplass) til ny innkjøring mot **Myrteveien** (integrert i grunnarbeid [#92](https://github.com/magnuskiro/m6/issues/92) og situasjonsplan [#90](https://github.com/magnuskiro/m6/issues/90) / [#50](https://github.com/magnuskiro/m6/issues/50)), med estetisk spilevegg/skjerming iht. PBL § 29-2.
