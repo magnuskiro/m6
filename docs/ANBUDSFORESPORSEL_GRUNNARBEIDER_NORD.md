@@ -130,8 +130,10 @@ flowchart TD
   * 1 stk. Ø50 mm rør for snøsmelting / styring i innkjøring.
   * Trekkerør for fiber og reserve.
 * **Forsterket bærelag og utvidelse av innkjøring:**
-  * Innkjøringen følger eksisterende trasé i husets fulle bredde fra huset og ut mot veien, men vider seg ut mot Myrteveien østover helt bort til eksisterende lyktestolpe (jf. planskisse).
-  * Dette gir optimal svingeradius og adkomst for betongbiler, kran og fremtidig parkering.
+  * Innkjøringens vestgrense følger målelinjen på 27,7 m helt ut til Myrteveien.
+  * Ved husfasaden dekker innkjøringen husets fulle bredde (inkl. trapp og inngangsparti, ca. 9,5 m bredde).
+  * Mot Myrteveien vider innkjøringen seg ut østover til eksisterende lyktestolpe ca. midt på tomtegrensen mot nord (jf. planskisse).
+  * Samlet areal for opparbeidelse er ca. 200 m². Dette gir optimal svingeradius og bæreevne for betongbiler, mobilkran og fremtidig parkering.
   * Utlegging av fiberduk klasse N3 i bunn.
   * Oppfylling og komprimering med 30–40 cm samfengt pukk (0–63 mm / 20–120 mm) dimensjonert for tungtrafikk.
 * **Tilbakefylling og planering:**
@@ -162,7 +164,7 @@ Alle priser oppgis ekskl. mva.
 | **4.4** | Påkobling av rør fra kjeller (#96) og tilkobling mot kum/LOD | RS | 1 | | |
 | **5.1** | Grøft og legging av ny 32mm vannledning fra stoppekran (13,3m) til indre NV-hjørne | lm | ca. 15 | | |
 | **6.1** | Levering og trekking av DV-rør (110mm / 50mm) | lm | ca. 40 | | |
-| **6.2** | Bærelag innkjøring (fiberduk N3 + 0–63 mm pukk, utvidet østover til lyktestolpe) | m² | ca. 200 | | |
+| **6.2** | Bærelag innkjøring (fiberduk N3 + 0–63 mm pukk, vestgrense langs 27,7m, utvidet til lyktestolpe) | m² | ca. 200 | | |
 | **6.3** | Tilbakefylling m/drensmasser og planering nord-vest | timer/m³ | Anslått | | |
 | **SUM** | **TOTAL FASTPRIS EKSKL. MVA** | | | | **NOK ________** |
 

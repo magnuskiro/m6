@@ -238,45 +238,44 @@ ax.annotate(
 )
 
 # -------------------------------------------------------------
-# 5. INNKJØRING (HUSBREDDE HELT UT TIL VEIEN, VIDER SEG UT MOT LYKTESTOLPEN)
+# 5. INNKJØRING (VESTGRENSE LANGS 27,7M, VIDER SEG UT TIL LYKTESTOLPEN MIDT PÅ NORDGRENSEN)
 # -------------------------------------------------------------
 driveway_pts = np.array([
-    [885, 695],   # Vestkant inngangsplatting / husbredde ved fasade
-    [860, 480],   # Eksisterende vestkant innkjøring
-    [845, 318],   # Møter Myrteveien i vest
-    [892, 310],   # Eksisterende stolpe langs Myrteveien
-    [1050, 260],  # Langs Myrteveien mot øst
-    [1200, 215],  # Langs Myrteveien mot øst
-    [1275, 192],  # Vider seg ut til lyktestolpen ved Myrteveien i øst
-    [1180, 280],  # Myk kurve/trakt innover
-    [1100, 380],  # Kurve mot husbredde-korridor
-    [1050, 480],  # Møter østkant av husbredde-korridoren
-    [1040, 675]   # Østkant kjellertrapp / husets østhjørne
+    [885, 700],   # Vestkant ved inngangsplatting / fasade (møter 27,7m-linjen)
+    [795, 333],   # Vestgrense ved Myrteveien (langs 27,7m målelinjen)
+    [892, 310],   # Østgrense ved Myrteveien: Lyktestolpe ca. midt på tomtegrensen
+    [1035, 675]   # Østkant ved kjellertrapp / husets nordøsthjørne (husets fulle bredde)
 ])
 drive_poly = Polygon(driveway_pts, closed=True, facecolor="#94a3b8", edgecolor="#334155",
                      lw=2, alpha=0.45, hatch="..", zorder=3,
-                     label="5. Innkjøring (husbredde ut til vei, vider seg ut østover til lyktestolpen)")
+                     label="5. Innkjøring (vestgrense langs 27,7m, utvidet til lyktestolpe midt på grensen)")
 ax.add_patch(drive_poly)
 
-# Markering og annotering for lyktestolpe på Myrteveien
-ax.plot(1282, 188, marker="o", markersize=11, color="#2563eb", zorder=12)
-ax.plot(1282, 188, marker="*", markersize=7, color="#ffffff", zorder=13)
+# Marker vestgrensen spesifikt langs 27,7m målelinjen
+ax.plot([885, 795], [700, 333], color="#0284c7", lw=3.5, ls="-", zorder=6)
+
+# Markering og annotering for lyktestolpe ca. midt på tomtegrensen mot nord (892, 310)
+ax.plot(892, 310, marker="o", markersize=12, color="#2563eb", zorder=12)
+ax.plot(892, 310, marker="*", markersize=8, color="#ffffff", zorder=13)
 ax.annotate(
-    "LYKTESTOLPE (Veglys)\nInnkjøringen vider seg\nut hit mot øst",
-    xy=(1282, 188), xytext=(1160, 130),
+    "LYKTESTOLPE (Veglys)\n"
+    "Ca. midt på tomtegrensen mot nord\n"
+    "(Innkjøringen vider seg ut hit mot øst)",
+    xy=(892, 310), xytext=(960, 240),
     arrowprops=dict(arrowstyle="->", color="#1d4ed8", lw=2, connectionstyle="arc3,rad=-0.1"),
     fontsize=9, weight="bold", color="#1e40af",
-    bbox=dict(boxstyle="round,pad=0.35", fc="#eff6ff", ec="#2563eb", lw=1.5),
+    bbox=dict(boxstyle="round,pad=0.4", fc="#eff6ff", ec="#2563eb", lw=1.5),
     zorder=14
 )
 
-# Annotering for innkjøring
+# Annotering for innkjøring og vestgrense
 ax.annotate(
-    "5. INNKJØRING / BÆRELAG\n"
-    "• Følger husbredde fra huset og ut\n"
-    "• Vider seg ut mot Myrteveien østover til lyktestolpen\n"
-    "• Forsterket bærelag pukk 0-63 mm (betongbiler/kran)",
-    xy=(970, 380), xytext=(610, 430),
+    "5. INNKJØRING / FORSTERKET BÆRELAG (~200 m²)\n"
+    "• Vestgrense følger målelinjen på 27,7 m\n"
+    "• Åpning mot Myrteveien vider seg ut til lyktestolpen (892, 310)\n"
+    "• Dekker husets fulle bredde ved fasaden (~9,5 m)\n"
+    "• Forsterket bærelag pukk 0-63 mm (betongbiler/mobilkran)",
+    xy=(840, 480), xytext=(550, 430),
     arrowprops=dict(arrowstyle="->", color="#334155", lw=2, connectionstyle="arc3,rad=0.1"),
     fontsize=9.5, weight="bold", color="#0f172a",
     bbox=dict(boxstyle="round,pad=0.45", fc="#f8fafc", ec="#475569", lw=1.8),
