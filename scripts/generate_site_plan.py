@@ -1,19 +1,26 @@
+import os
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 from matplotlib.patches import Polygon
 from PIL import Image
 import numpy as np
 
+# Find repo root / assets dir
+script_dir = os.path.dirname(os.path.abspath(__file__))
+repo_root = os.path.dirname(script_dir) # m6 folder
+assets_dir = os.path.join(repo_root, "assets", "images")
+
 # Load original situasjonsplan
-im = Image.open('m6/assets/images/situasjonsplan_render.png')
+img_path = os.path.join(assets_dir, "situasjonsplan_render.png")
+im = Image.open(img_path)
 
 # Create figure
 fig, ax = plt.subplots(figsize=(18, 18), dpi=200)
 ax.imshow(im)
 
-# Focus on the work area
+# Focus on the work area (expand top to show Myrteveien, lyktestolpe and title banner fully)
 ax.set_xlim(520, 1420)
-ax.set_ylim(1120, 220)
+ax.set_ylim(1120, 90)
 
 # -------------------------------------------------------------
 # 1. KJELLERTRAPP (NØYAKTIG TILPASSET CAD-TEGNET TRAPP)
@@ -231,27 +238,49 @@ ax.annotate(
 )
 
 # -------------------------------------------------------------
-# 5. NY VINKLET INNKJØRING & BÆRELAG (PUKK 0-63)
+# 5. INNKJØRING (HUSBREDDE HELT UT TIL VEIEN, VIDER SEG UT MOT LYKTESTOLPEN)
 # -------------------------------------------------------------
 driveway_pts = np.array([
-    [885, 290],
-    [960, 280],
-    [970, 480],
-    [1010, 630],
-    [930, 650],
-    [870, 480]
+    [885, 695],   # Vestkant inngangsplatting / husbredde ved fasade
+    [860, 480],   # Eksisterende vestkant innkjøring
+    [845, 318],   # Møter Myrteveien i vest
+    [892, 310],   # Eksisterende stolpe langs Myrteveien
+    [1050, 260],  # Langs Myrteveien mot øst
+    [1200, 215],  # Langs Myrteveien mot øst
+    [1275, 192],  # Vider seg ut til lyktestolpen ved Myrteveien i øst
+    [1180, 280],  # Myk kurve/trakt innover
+    [1100, 380],  # Kurve mot husbredde-korridor
+    [1050, 480],  # Møter østkant av husbredde-korridoren
+    [1040, 675]   # Østkant kjellertrapp / husets østhjørne
 ])
-drive_poly = Polygon(driveway_pts, closed=True, facecolor="#94a3b8", edgecolor="#475569",
-                     lw=2, alpha=0.45, hatch="..", zorder=3, label="5. Ny innkjøring (Pukk 0-63 bærelag for betong/kranbil)")
+drive_poly = Polygon(driveway_pts, closed=True, facecolor="#94a3b8", edgecolor="#334155",
+                     lw=2, alpha=0.45, hatch="..", zorder=3,
+                     label="5. Innkjøring (husbredde ut til vei, vider seg ut østover til lyktestolpen)")
 ax.add_patch(drive_poly)
 
+# Markering og annotering for lyktestolpe på Myrteveien
+ax.plot(1282, 188, marker="o", markersize=11, color="#2563eb", zorder=12)
+ax.plot(1282, 188, marker="*", markersize=7, color="#ffffff", zorder=13)
 ax.annotate(
-    "5. NY INNKJØRING / ANLEGGSVEI\n(Forsterket bærelag pukk 0-63 mm\ndim. for betongbiler & kran)",
-    xy=(940, 450), xytext=(1040, 420),
-    arrowprops=dict(arrowstyle="->", color="#475569", lw=1.8),
-    fontsize=9.5, weight="bold", color="#1e293b",
-    bbox=dict(boxstyle="round,pad=0.4", fc="#f1f5f9", ec="#64748b", lw=1.5),
-    zorder=11
+    "LYKTESTOLPE (Veglys)\nInnkjøringen vider seg\nut hit mot øst",
+    xy=(1282, 188), xytext=(1160, 130),
+    arrowprops=dict(arrowstyle="->", color="#1d4ed8", lw=2, connectionstyle="arc3,rad=-0.1"),
+    fontsize=9, weight="bold", color="#1e40af",
+    bbox=dict(boxstyle="round,pad=0.35", fc="#eff6ff", ec="#2563eb", lw=1.5),
+    zorder=14
+)
+
+# Annotering for innkjøring
+ax.annotate(
+    "5. INNKJØRING / BÆRELAG\n"
+    "• Følger husbredde fra huset og ut\n"
+    "• Vider seg ut mot Myrteveien østover til lyktestolpen\n"
+    "• Forsterket bærelag pukk 0-63 mm (betongbiler/kran)",
+    xy=(970, 380), xytext=(610, 430),
+    arrowprops=dict(arrowstyle="->", color="#334155", lw=2, connectionstyle="arc3,rad=0.1"),
+    fontsize=9.5, weight="bold", color="#0f172a",
+    bbox=dict(boxstyle="round,pad=0.45", fc="#f8fafc", ec="#475569", lw=1.8),
+    zorder=12
 )
 
 # -------------------------------------------------------------
@@ -267,17 +296,17 @@ ax.plot([900, 840, 780], [665, 640, 600], color="#10b981", lw=3.5, ls="--", zord
 ax.plot(900, 600, marker="^", markersize=14, color="#eab308", zorder=8)
 ax.text(900, 585, "GRAVEMASKIN (8-15t)\nArbeidssone", fontsize=8.5, weight="bold", color="#854d0e", ha="center", zorder=10)
 
-# Massedeponi (mellomlagring rene steinmasser)
+# Massedeponi (mellomlagring rene steinmasser) - plassert i hagen øst for innkjøring
 deponi_pts = np.array([
-    [1010, 500],
-    [1130, 470],
-    [1150, 560],
-    [1030, 590]
+    [1160, 480],
+    [1270, 450],
+    [1290, 550],
+    [1180, 580]
 ])
 deponi_poly = Polygon(deponi_pts, closed=True, facecolor="#fef08a", edgecolor="#ca8a04",
                       lw=1.8, ls="--", alpha=0.6, zorder=3)
 ax.add_patch(deponi_poly)
-ax.text(1080, 530, "Mellomlagring\nrene steinmasser\n(Gjenbruk)", fontsize=9, weight="bold", color="#713f12", ha="center", zorder=4)
+ax.text(1225, 515, "Mellomlagring\nrene steinmasser\n(Gjenbruk)", fontsize=9, weight="bold", color="#713f12", ha="center", zorder=4)
 
 # Planering nord-vest
 planering_pts = np.array([
@@ -294,13 +323,13 @@ ax.text(690, 420, "Terrengplanering\nNord-Vest", fontsize=8.5, weight="bold", co
 # -------------------------------------------------------------
 # TITLE BANNER & LEGEND
 # -------------------------------------------------------------
-title_box = dict(boxstyle="square,pad=0.6", fc="#ffffff", ec="#0f172a", lw=2)
+title_box = dict(boxstyle="square,pad=0.5", fc="#ffffff", ec="#0f172a", lw=1.8)
 title_str = (
     "MYRTEVEIEN 6 — ANLEGGSOMRÅDE & PLANSKISSE FOR GRUNNARBEIDER NORD\n"
     "Prosjekt: M6 Totalrehabilitering | Tiltakshaver: Magnus Kirø | Gnr 140 / Bnr 371 | Tønsberg kommune\n"
     "Bakgrunn: Offisiell Situasjonsplan A-001 (KB Arkitekter AS) | Referanse: GitHub Issue #92"
 )
-ax.text(970, 255, title_str, fontsize=10.5, weight="bold", color="#0f172a", ha="center", bbox=title_box, zorder=12)
+ax.text(780, 125, title_str, fontsize=9.5, weight="bold", color="#0f172a", ha="center", bbox=title_box, zorder=15)
 
 # Custom Legend
 ax.legend(loc="lower left", bbox_to_anchor=(0.02, 0.02), fontsize=8.8, framealpha=0.96,
@@ -310,7 +339,7 @@ ax.axis("off")
 plt.tight_layout()
 
 # Save image
-out_path_repo = "m6/assets/images/planskisse_anleggsomraade_nord.png"
+out_path_repo = os.path.join(assets_dir, "planskisse_anleggsomraade_nord.png")
 out_path_brain = "C:/Users/magkir/.gemini/antigravity/brain/773222c6-8706-4aad-83b9-5ad2ac2dc3ae/planskisse_anleggsomraade_nord.png"
 
 plt.savefig(out_path_repo, dpi=200, bbox_inches='tight')
