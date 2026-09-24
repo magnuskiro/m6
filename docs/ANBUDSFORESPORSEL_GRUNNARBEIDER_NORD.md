@@ -30,6 +30,9 @@ Forespørselen bygger på følgende tegningsunderlag (utarbeidet av KB Arkitekte
 * **A-201PS Snitt B – Bolig:** Snitt gjennom terreng, ny kjellernedgang og etasjehøyder.
 * **A-300PS & A-301PS Fasader:** Fasadetegninger nordvest og nordøst med eksisterende og planlagt terreng.
 
+### 🗺️ Planskisse over Anleggsområdet & Tiltakene
+![Planskisse Anleggsområde Nord](file:///c:/Users/magkir/projects/hus/m6/assets/images/planskisse_anleggsomraade_nord.png)
+
 ### Kritiske kontrollmål (Referanse: Topp eksisterende grunnmur = 0,00 m)
 * **Terreng ved nordvegg i dag:** ca. -0,50 m til -0,90 m
 * **Dagens drensrør (topp):** -2,36 m *(for høyt)*
