@@ -12,8 +12,12 @@
 
 Eiendommen Myrteveien 6 gjennomgår en helhetlig totalrehabilitering. På nordsiden og i overgangen mot nord-vest skal det gjennomføres en samlet grunnarbeids- og betongpakke bestående av:
 1. **Re-drenering og fuktsikring av nordveggen:** Dagens drensrør ligger for høyt (topp på 236 cm under topp grunnmur). Nytt drensrør skal legges med bunn på ca. **265–275 cm** dybde (kote ~C+24,1) for å senke grunnvannet (målt på 253–255 cm) og sikre tørr kjellersåle.
-2. **Underbygget kjeller under nytt inngangsparti:** Det nye inngangspartiet i 1. etasje (ihht. tegning A-101PS) skal **underbygges med full kjeller**. Dette krever full utgraving ned til samme sålenivå som kjelleren for øvrig (dybde ca. 2,7 m), støping av såle og nye grunnmursvegger, full utvendig isolering/drenering, samt betongdekke/bæring for inngangspartiet over.
-3. **Ny utvendig kjellernedgang (iht. A-100PS & A-201PS):** Plasstøpt betongtrapp og vanger ned til kote **C+24,4** (kjellerdør) integrert med den nye underbygde kjelleren, inkludert trappesluk og vannbårne snøsmelterør i trinnene.
+2. **Ny inngangsplatting og overbygg på nordveggen (inntegnet omriss):** På nordveggen etableres ny utvendig inngangsplatting for 1. etasje. Denne plattingen danner overbygg/tak for den nye kjellernedgangen. Under dette taket (på kjellernivå kote C+24,4) etableres:
+   - Ny kjellerdør inn i kjellermuren
+   - Utebod
+   - Utvendig skap for strøminntak
+   - Støpt repos foran kjellerdør med trappesluk
+3. **Kjellertrapp (iht. A-100PS & A-201PS):** Plasstøpt betongtrapp og vanger ned langs nordveggen til kote **C+24,4** (repos under inngangsplattingen), inkludert trappesluk og vannbårne snøsmelterør (PEX) i trinnene.
 4. **Vannledning og teknisk inntak i indre nordvest-hjørne:** Eksisterende stikkledning fra Trollheggveien går inn langs 13,3 m-målelinjen med stoppekran ved tallet 13,3. Ny **32 mm PE-vannledning** kobles på denne stoppekranen og føres nordover til det **indre nordvest-hjørnet** (der hovedhusets vestvegg møter nordveggen på tverrfløyen), og tas inn i den nye underbygde kjelleren via vanntett Doyma-hylsegjennomføring.
 5. **Oppgradering og justering av innkjøring fra Myrteveien:** Innkjøringen flyttes/vinkles litt østover for direkte adkomst, og det etableres forsterket bærelag for tung anleggstrafikk (betong- og kranbiler).
 
@@ -71,26 +75,30 @@ flowchart TD
 
 ---
 
-### Post 2: Utgraving for Nordvegg, Underbygget Kjeller & Kjellernedgang
+### Post 2: Utgraving for Nordvegg, Platting/Overbygg & Kjellernedgang
 * **Nordvegg eksisterende hus:** Utgraving langs ca. 10–12 lm grunnmur ned til dybde 2,65–2,75 m (kote ~C+24,1).
-* **Underbygget kjeller under nytt inngangsparti:**
-  * Full utgraving for det nye fotavtrykket (ca. 2,5 m × 3,5 m = ca. 9 m² grunnflate) ned til samme dybde (~2,7 m) som øvrig kjeller.
+* **Område for ny inngangsplatting / overbygg på nordveggen:**
+  * Utgraving ned til kote C+24,4 (samt 20 cm for pukkpute / isolasjon) for arealet under plattingen der ny kjellerdør, utebod og el-skap etableres.
   * Sikring mot setninger i tilstøtende eksisterende murverk under graving.
-* **Kjellernedgang:** Utgraving for trappeløp og repos ned til kote C+24,4 pluss 20 cm for drenerende pukkpute.
+* **Kjellertrapp:** Utgraving for trappeløp langs nordveggen ned til repos foran kjellerdør (kote C+24,4).
 
 ---
 
-### Post 3: Fundamentering & Betongarbeid (Underbygget Kjeller & Trapp)
-* **Pukksåle:** Etablering av komprimert pukksåle (15–20 cm pukk 11–16 mm svøpt i fiberduk N2) under nye fundamenter.
-* **Betongsåle:** Støping av armert betongsåle (tykkelse 20 cm, bredde 40–50 cm) for den nye underbygde kjellermuren og trappevangene.
-* **Nye kjellermursvegger:**
-  * Støping av vanntette betongvegger (eller godkjent ISO-mur/Thermomur/Leca med armering og kjernebetong) for den underbygde kjelleren opp til bjelkelag/etasjeskille.
-  * Innstøping av **vanntett rørhylse (f.eks. Doyma / Ø110 mm)** i nordvest-hjørnet for inntak av kommunal vannledning i frostsikker dybde.
-* **Kjellernedgang:**
-  * Forskaling og støping av trappeløp og støttemurer i betong B35 M40.
+### Post 3: Fundamentering & Betongarbeid (Støpt Trapp, Repos & Understøttelse)
+* **Pukksåle:** Etablering av komprimert pukksåle (15–20 cm pukk 11–16 mm svøpt i fiberduk N2) under nye fundamenter, trapp og repos.
+* **Betongsåle & støttemurer:**
+  * Støping av armert betongsåle og støttemurer/vanger for kjellertrappen langs nordveggen.
+  * Støping av støttemur/ringmur og bærekonstruksjon for inngangsplattingen over.
+* **Kjellerinngang, Utebod & El-skap (under taket):**
+  * Støping av frostsikret, armert betongplate/repos på kote C+24,4 med integrert fall mot trappesluk.
+  * Tilrettelegging for montering av ny utvendig kjellerdør i eksisterende kjellermur.
+  * Romavdeling/innstøping for utvendig skap for strøminntak samt utebod under overbygget.
+* **Kjellertrapp:**
+  * Forskaling og støping av trappeløp og vangemur i betong B35 M40.
   * Montering av trappesluk / drensrenne i reposet foran kjellerdør med 110 mm tilkobling til drensledning.
   * Innstøping av 20 mm PEX-smelterør (tur/retur for vannbåren snøsmelting) i trinn og repos, med rørgjennomføring inn i kjeller.
-* **Dekke over underbygget kjeller:** Forskaling og støping av armert betongdekke (eller klargjøring for bærende bjelkelag) som danner undergulv for 1. etasje inngangsparti.
+* **Dekke/platting for inngangsparti (1. etg):**
+  * Etablering av bærende konstruksjon/dekke for inngangsplattingen (iht. fasade- og plantegning) som danner det tette taket over kjellernedgangen, uteboden og el-skapet.
 
 ---
 
@@ -136,13 +144,13 @@ Alle priser oppgis ekskl. mva.
 | :--- | :--- | :---: | :---: | :---: | :---: |
 | **1.0** | **Rigg, drift, kabelsikring og oppmåling** | RS | 1 | | |
 | **2.1** | Utgraving for nordvegg (dybde inntil 2,75 m) | m³ | ca. 45 | | |
-| **2.2** | Utgraving for underbygget kjeller & kjellernedgang | m³ | ca. 45 | | |
+| **2.2** | Utgraving for inngangsplatting, repos (kote C+24,4) & trapp | m³ | ca. 45 | | |
 | **2.3** | Laste og transportere overskuddsmasser til deponi | m³ / tonn | Anslått | | |
-| **3.1** | Pukksåle og komprimering under nye fundamenter | m² | ca. 20 | | |
-| **3.2** | Forskaling og støping av betongsåle for nytt tilbygg | lm | ca. 12 | | |
-| **3.3** | Støping/oppmuring av nye kjellermursvegger (inkl. NV-hylse) | m² | ca. 25 | | |
-| **3.4** | Forskaling, armering og støping av kjellertrapp & vanger | RS | 1 | | |
-| **3.5** | Støpt dekke over underbygget kjeller (undergulv inngang) | m² | ca. 9 | | |
+| **3.1** | Pukksåle og komprimering under nye fundamenter/trapp | m² | ca. 20 | | |
+| **3.2** | Forskaling og støping av såle og støttemurer for trapp og platting | lm | ca. 12 | | |
+| **3.3** | Støpt plate/repos for kjellerdør, utebod og el-skap (kote C+24,4) | m² | ca. 12 | | |
+| **3.4** | Forskaling, armering og støping av kjellertrapp & vanger langs nordmur | RS | 1 | | |
+| **3.5** | Etablering av bærekonstruksjon/dekke for inngangsplatting 1. etg | m² | ca. 9 | | |
 | **3.6** | Montering av trappesluk og 20mm PEX-smelterør | RS | 1 | | |
 | **4.1** | Rengjøring mur, montering av knotteplast & klemlister | m² | ca. 40 | | |
 | **4.2** | Montering av 100–150 mm XPS isolasjon | m² | ca. 40 | | |
