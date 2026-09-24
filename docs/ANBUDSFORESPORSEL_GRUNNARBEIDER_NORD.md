@@ -129,13 +129,15 @@ flowchart TD
   * 1 stk. Ø110 mm rør til fremtidig dobbelgarasje (strøm, elbillader, styring).
   * 1 stk. Ø50 mm rør for snøsmelting / styring i innkjøring.
   * Trekkerør for fiber og reserve.
-* **Forsterket bærelag og utvidelse av innkjøring:**
-  * Innkjøringens vestgrense følger målelinjen på 27,7 m helt ut til Myrteveien.
-  * Ved husfasaden dekker innkjøringen husets fulle bredde (inkl. trapp og inngangsparti, ca. 9,5 m bredde).
-  * Mot Myrteveien vider innkjøringen seg ut østover til eksisterende lyktestolpe ca. midt på tomtegrensen mot nord (jf. planskisse).
-  * Samlet areal for opparbeidelse er ca. 200 m². Dette gir optimal svingeradius og bæreevne for betongbiler, mobilkran og fremtidig parkering.
-  * Utlegging av fiberduk klasse N3 i bunn.
-  * Oppfylling og komprimering med 30–40 cm samfengt pukk (0–63 mm / 20–120 mm) dimensjonert for tungtrafikk.
+* **Post 6.2: Forsterket bærelag og utvidelse av innkjøring (Trinn 1 – Anleggsvei & riggplass):**
+  * **Trasé:** Innkjøringens vestgrense følger målelinjen på 27,7 m helt ut til Myrteveien. Ved husfasaden dekker den husets fulle bredde (inkl. trapp og inngangsparti, ca. 9,5 m bredde). Mot Myrteveien vider den seg ut østover til eksisterende lyktestolpe ca. midt på tomtegrensen mot nord (jf. planskisse).
+  * **Areal:** Ca. 200 m².
+  * **Foreslått oppbygging:** Avskraping av topplag/løsmasser, utlegging av robust geotekstil/fiberduk klasse N3, samt oppfylling og komprimering med 30–40 cm samfengt pukk (0–63 mm / 20–120 mm).
+  * **Faglig anbefaling og vurdering fra entreprenør etterspørres (Befaringspunkt):**
+    > **Tiltakshaver ber om entreprenørens faglige vurdering og anbefaling på følgende:**
+    > 1. **Faseinndeling (To-trinns opparbeidelse):** Er entreprenøren enig i at grovt bærelag bør etableres nå som anleggsvei/riggområde for å sikre at 32-tonns betongbiler, kraner og tippbiler kan ferdes uten å kjøre seg fast i leiren, mens toppdekke (asfalt/belegningsstein) utsettes til etter at alle tunge råbyggsarbeider er ferdige?
+    > 2. **Masseoppbygging & Bæreevne:** Hvilken oppbygging og massefraksjon anbefaler entreprenøren ut fra stedlige grunnforhold (f.eks. behov for grovere forsterkningslag 20–120 mm under 0–63 mm på bløt leire)?
+    > 3. **Gjenbruk vs. masseutskifting:** Kan deler av eksisterende masser under dagens innkjøring gjenbrukes, eller anbefales full masseutskifting og bortkjøring av topplaget?
 * **Tilbakefylling og planering:**
   * Tilbakefylling mot kjellermurer med drenerende pukk (11–32 mm) inntil 50 cm under terreng.
   * Terrengforming og arrondering mot nordvest jf. situasjonsplan A-001.
@@ -181,6 +183,7 @@ Alle priser oppgis ekskl. mva.
 2. **Gjennomføringstid:** Estimert til ca. 2–3 uker samlet anleggstid.
 3. **HMS & Ansvar:** Entreprenør har totalansvar for forskriftsmessig grøftesikring og sikring av eksisterende bygningskropp under utgraving.
 4. **Befaring:** Befaring på eiendommen avtales fortløpende med tiltakshaver.
+5. **Faglig dialog under befaring:** Det forventes at entreprenøren under befaring gir sin faglige anbefaling for faseinndeling av innkjøring/bærelag (Trinn 1 midlertidig anleggsvei/riggområde for 32t tungtrafikk vs. utsettelse til slutt) samt masseoppbygging på de lokale leiregrunnforholdene.
 
 ---
 *Vedlegg: Tegningssett KB Arkitekter AS (A-001, A-100PS, A-101PS, A-201PS, A-300PS, A-301PS).*
