@@ -75,8 +75,10 @@ flowchart TD
 
 ---
 
-### Post 2: Utgraving for Nordvegg, Platting/Overbygg & Kjellernedgang
-* **Nordvegg eksisterende hus:** Utgraving langs ca. 10–12 lm grunnmur ned til dybde 2,65–2,75 m (kote ~C+24,1).
+### Post 2: Utgraving for Drensgrøft (fra SV-hjørne Tverrfløy), Platting/Overbygg & Kjellernedgang
+* **Drensgrøft langs tverrfløy og nordvegg:**
+  * Utgraving fra **syd-vest hjørnet av tverrfløyen mot vest**, langs tverrfløyens vest- og nordvegg, og videre langs hele nordveggen på hovedhuset (totalt ca. 22–24 lm grøft langs bygningskroppen).
+  * Gravedybde ned til bunn drensgrøft på ca. 2,65–2,75 m (kote ~C+24,1) for å sikre fall og avrenning under nytt kjellergulvnivå.
 * **Område for ny inngangsplatting / overbygg på nordveggen:**
   * Utgraving ned til kote C+24,4 (samt 20 cm for pukkpute / isolasjon) for arealet under plattingen der ny kjellerdør, utebod og el-skap etableres.
   * Sikring mot setninger i tilstøtende eksisterende murverk under graving.
@@ -102,11 +104,11 @@ flowchart TD
 
 ---
 
-### Post 4: Drenering, Fuktsikring & Isolering (Nordvegg & Nytt Tilbygg)
-* Rengjøring og forberedelse av eksisterende og nye murflater.
-* Montering av **Platon knotteplast** med godkjente klemlister langs hele nordveggen og rundt de nye underbygde kjellerveggene.
+### Post 4: Drenering, Fuktsikring & Isolering (Tverrfløy, Nordvegg & Nytt Inngangsparti)
+* Rengjøring og forberedelse av eksisterende og nye murflater fra SV-hjørnet av tverrfløy og langs hele nordfasaden.
+* Montering av **Platon knotteplast** med godkjente klemlister langs tverrfløyens vest-/nordmur, hovedhusets nordmur og rundt nye underbygde kjellervegger.
 * Montering av **100–150 mm XPS-isolasjon** (f.eks. XPS 300) utenpå knotteplasten for fullverdig utvendig isolering.
-* Legging av **110 mm perforert drensrør** på 10 cm avrettet pukkpute (11–16 mm) rundt hele nordveggen og det nye tilbygget.
+* Legging av **110 mm perforert drensrør** på 10 cm avrettet pukkpute (11–16 mm) fra SV-hjørnet av tverrfløyen, forbi det nye inngangspartiet og kjellertrappen, og frem til overvannskum (totalt ca. 35 lm).
 * Innpakking av drensrør og pukkpute i **fiberduk klasse N2** (geotekstil).
 * **Påkobling av eksisterende kjellergjennomføring:** Skjøte og tilkoble det nye røret fra kjelleren (#96, topp 246 cm) inn på drensnettet. Røret kommer fra innvendig grøft (ca. 1,5 m fra nordvegg inne), er ført under grunnmur og under den nye kjellertrappen, og kobles til drensledningen like på utsiden av trappevangen.
 * **Overvannskum / Resipient:** Kontroll og tilkobling mot overvannskum/LOD. Det sikres kontinuerlig fall fra bunn drensrør (kote ~C+24,1) mot stenkiste på egen tomt.
@@ -143,7 +145,7 @@ Alle priser oppgis ekskl. mva.
 | Post | Beskrivelse | Enhet | Mengde | Enh.pris (NOK) | Sum (NOK) |
 | :--- | :--- | :---: | :---: | :---: | :---: |
 | **1.0** | **Rigg, drift, kabelsikring og oppmåling** | RS | 1 | | |
-| **2.1** | Utgraving for nordvegg (dybde inntil 2,75 m) | m³ | ca. 45 | | |
+| **2.1** | Utgraving drensgrøft fra SV-hjørne tverrfløy og langs nordvegg (dybde inntil 2,75 m) | m³ | ca. 65 | | |
 | **2.2** | Utgraving for inngangsplatting, repos (kote C+24,4) & trapp | m³ | ca. 45 | | |
 | **2.3** | Laste og transportere overskuddsmasser til deponi | m³ / tonn | Anslått | | |
 | **3.1** | Pukksåle og komprimering under nye fundamenter/trapp | m² | ca. 20 | | |
@@ -152,9 +154,9 @@ Alle priser oppgis ekskl. mva.
 | **3.4** | Forskaling, armering og støping av kjellertrapp & vanger langs nordmur | RS | 1 | | |
 | **3.5** | Etablering av bærekonstruksjon/dekke for inngangsplatting 1. etg | m² | ca. 9 | | |
 | **3.6** | Montering av trappesluk og 20mm PEX-smelterør | RS | 1 | | |
-| **4.1** | Rengjøring mur, montering av knotteplast & klemlister | m² | ca. 40 | | |
-| **4.2** | Montering av 100–150 mm XPS isolasjon | m² | ca. 40 | | |
-| **4.3** | 110 mm perforert drensrør m/pukk & fiberduk N2 | lm | ca. 22 | | |
+| **4.1** | Rengjøring mur, montering av knotteplast & klemlister (tverrfløy + nordvegg) | m² | ca. 65 | | |
+| **4.2** | Montering av 100–150 mm XPS isolasjon (tverrfløy + nordvegg) | m² | ca. 65 | | |
+| **4.3** | 110 mm perforert drensrør m/pukk & fiberduk N2 (fra SV-hjørne til kum) | lm | ca. 35 | | |
 | **4.4** | Påkobling av rør fra kjeller (#96) og tilkobling mot kum/LOD | RS | 1 | | |
 | **5.1** | Grøft og legging av ny 32mm vannledning fra stoppekran (13,3m) til indre NV-hjørne | lm | ca. 15 | | |
 | **6.1** | Levering og trekking av DV-rør (110mm / 50mm) | lm | ca. 40 | | |

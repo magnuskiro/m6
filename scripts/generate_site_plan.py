@@ -115,16 +115,44 @@ ax.annotate(
 )
 
 # -------------------------------------------------------------
-# 3. RE-DRENERING NORDVEGG (DYBDE 2.75M)
+# 3. RE-DRENERING FRA SYD-VEST HJØRNE AV TVERRFLØY TIL OVERVANNSKUM
 # -------------------------------------------------------------
-# Drenstrasé følger ytterkant av utgraving rundt platting og trapp
-dren_x = [885, 955, 1015, 1035, 1055]
-dren_y = [700, 668, 668, 678, 692]
+# Forlenget drenstrasé: starter i syd-vest hjørnet av tverrfløyen mot vest,
+# følger vestvegg og nordvegg på tverrfløy, vestvegg hovedhus, og rundt platting & trapp.
+dren_pts = [
+    [880, 882],   # 1. Syd-vest hjørne av tverrfløy mot vest
+    [858, 808],   # 2. Nord-vest hjørne av tverrfløy
+    [912, 793],   # 3. Indre hjørne tverrfløy / vestvegg
+    [898, 730],   # 4. Vestvegg mot inngangsplatting
+    [885, 694],   # 5. Ytterkant inngangsplatting NV
+    [955, 668],   # 6. Ytterkant inngangsplatting N
+    [1015, 668],  # 7. Utkant kjellertrapp
+    [1035, 678],  # 8. Nord-øst hjørne
+    [1055, 692]   # 9. Overvannskum
+]
+dren_x = [p[0] for p in dren_pts]
+dren_y = [p[1] for p in dren_pts]
 ax.plot(dren_x, dren_y, color="#dc2626", lw=5, solid_capstyle='round', zorder=8,
-        label="3. Ny drensledning (dybde 2.7m, 110mm drensrør i pukk/duk)")
+        label="3. Ny drensledning (dybde 2.7m, fra SV-hjørne tverrfløy til kum)")
 
-# Knotted membrane / XPS langs mur
-ax.plot([905, 1030], [726, 686], color="#f97316", lw=3, ls="--", zorder=5, label="Platon knotteplast + 100-150mm XPS")
+# Startpunkt i syd-vest hjørnet av tverrfløyen
+ax.plot(880, 882, marker="s", markersize=9, color="#b91c1c", zorder=10)
+ax.annotate(
+    "START DRENSLEDNING\n(Syd-vest hjørne tverrfløy)",
+    xy=(880, 882), xytext=(940, 915),
+    arrowprops=dict(arrowstyle="->", color="#b91c1c", lw=1.8),
+    fontsize=8.5, weight="bold", color="#7f1d1d",
+    bbox=dict(boxstyle="round,pad=0.3", fc="#fef2f2", ec="#dc2626", lw=1.2),
+    zorder=12
+)
+
+# Knotted membrane / XPS langs murer fra SV-hjørne rundt hele nordveggen
+membrane_pts = [
+    [888, 875], [864, 808], [918, 795], [905, 726], [1030, 686]
+]
+mem_x = [p[0] for p in membrane_pts]
+mem_y = [p[1] for p in membrane_pts]
+ax.plot(mem_x, mem_y, color="#f97316", lw=3, ls="--", zorder=5, label="Platon knotteplast + 100-150mm XPS")
 
 # Rørgjennomføring fra kjeller (#96)
 # Grøft i kjeller ca. 1,5m fra nordveggen, føres under grunnmur og under ny kjellertrapp
