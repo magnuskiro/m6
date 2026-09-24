@@ -14,7 +14,7 @@ Eiendommen Myrteveien 6 gjennomgår en helhetlig totalrehabilitering. På nordsi
 1. **Re-drenering og fuktsikring av nordveggen:** Dagens drensrør ligger for høyt (topp på 236 cm under topp grunnmur). Nytt drensrør skal legges med bunn på ca. **265–275 cm** dybde (kote ~C+24,1) for å senke grunnvannet (målt på 253–255 cm) og sikre tørr kjellersåle.
 2. **Underbygget kjeller under nytt inngangsparti:** Det nye inngangspartiet i 1. etasje (ihht. tegning A-101PS) skal **underbygges med full kjeller**. Dette krever full utgraving ned til samme sålenivå som kjelleren for øvrig (dybde ca. 2,7 m), støping av såle og nye grunnmursvegger, full utvendig isolering/drenering, samt betongdekke/bæring for inngangspartiet over.
 3. **Ny utvendig kjellernedgang (iht. A-100PS & A-201PS):** Plasstøpt betongtrapp og vanger ned til kote **C+24,4** (kjellerdør) integrert med den nye underbygde kjelleren, inkludert trappesluk og vannbårne snøsmelterør i trinnene.
-4. **Vannledning og teknisk inntak i nordvest-hjørnet:** Ny kommunal vannledning tas inn fra Myrteveien og føres inn i bygget i det nye **nordvest-hjørnet** via vanntett hylsegjennomføring i den nye underbygde kjellermuren.
+4. **Vannledning og teknisk inntak i indre nordvest-hjørne:** Eksisterende stikkledning fra Trollheggveien går inn langs 13,3 m-målelinjen med stoppekran ved tallet 13,3. Ny **32 mm PE-vannledning** kobles på denne stoppekranen og føres nordover til det **indre nordvest-hjørnet** (der hovedhusets vestvegg møter nordveggen på tverrfløyen), og tas inn i den nye underbygde kjelleren via vanntett Doyma-hylsegjennomføring.
 5. **Oppgradering og justering av innkjøring fra Myrteveien:** Innkjøringen flyttes/vinkles litt østover for direkte adkomst, og det etableres forsterket bærelag for tung anleggstrafikk (betong- og kranbiler).
 
 Det bes om fastpris / regulerbare enhetspriser per post basert på dette underlaget.
@@ -57,7 +57,7 @@ flowchart TD
     E --> G["7. Vanntett Rørhylse for Vannledning i NV-hjørne"]
     D --> H["8. Drenering & XPS rundt nytt NV-tilbygg"]
     H --> I["9. Tilkobling mot drensrør (#96) & Overvannskum/LOD"]
-    G --> J["10. Ny Vannledning fra Myrteveien til NV-hjørne"]
+    G --> J["10. Ny Vannledning fra Stoppekran (13,3m) til Indre NV-hjørne"]
     J --> K["11. Bærelag Innkjøring & Terrengplanering"]
 ```
 
@@ -105,11 +105,12 @@ flowchart TD
 
 ---
 
-### Post 5: Ny Kommunal Vannledning (Inntak i Nordvest-hjørnet)
-* Graving av VA-grøft fra tilknytningspunkt i Myrteveien frem til nordvest-hjørnet av det nye inngangspartiet (ca. 15–20 lm).
-* Levering og legging av **32 mm PE100 SDR11 vannledning** i varerør med fiberduk og markeringsbånd.
-* Innføring gjennom den vanntette rørhylsen i nordvest-veggen, klargjort med stoppekran/avstengning innvendig for videre rørføring til teknisk rom.
-* Frostsikring: Legges i frostsikker dybde (min. 1,6 m) eller isoleres med XPS og selvregulerende varmekabel.
+### Post 5: Ny Vannledning fra Stoppekran (Trollheggveien) til Indre NV-hjørne
+* Påkobling på eksisterende stikkledning/stoppekran ved 13,3 m-målelinjen (fra Trollheggveien, jf. situasjonsplan A-001).
+* Graving av VA-grøft fra stoppekranen og nordover til det indre nordvest-hjørnet der vestveggen møter nordveggen på tverrfløyen (ca. 14–16 lm).
+* Levering og legging av **32 mm PE100 SDR11 vannledning** i varerør med fiberduk, sandpute og markeringsbånd m/søketråd.
+* Innføring gjennom **vanntett Doyma-hylse** i ny underbygget kjellervegg i indre nordvest-hjørne, klargjort med innvendig hovedstoppekran for videre distribusjon.
+* Frostsikring: Legges i frostsikker dybde (min. 1,6 m) eller isoleres med 50 mm XPS og selvregulerende varmekabel dersom grunnforhold/fjell krever grunnere forlegning.
 
 ---
 
@@ -147,7 +148,7 @@ Alle priser oppgis ekskl. mva.
 | **4.2** | Montering av 100–150 mm XPS isolasjon | m² | ca. 40 | | |
 | **4.3** | 110 mm perforert drensrør m/pukk & fiberduk N2 | lm | ca. 22 | | |
 | **4.4** | Påkobling av rør fra kjeller (#96) og tilkobling mot kum/LOD | RS | 1 | | |
-| **5.1** | Grøft og legging av ny 32mm vannledning fra gate til NV-hjørne | lm | ca. 18 | | |
+| **5.1** | Grøft og legging av ny 32mm vannledning fra stoppekran (13,3m) til indre NV-hjørne | lm | ca. 15 | | |
 | **6.1** | Levering og trekking av DV-rør (110mm / 50mm) | lm | ca. 40 | | |
 | **6.2** | Bærelag innkjøring (fiberduk N3 + 0–63 mm komprimert pukk) | m² | ca. 80 | | |
 | **6.3** | Tilbakefylling m/drensmasser og planering nord-vest | timer/m³ | Anslått | | |

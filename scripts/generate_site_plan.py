@@ -20,20 +20,20 @@ ax.set_ylim(1120, 220)  # Inverted Y for image coordinates
 # -------------------------------------------------------------
 
 # 1. UNDERBYGGET KJELLER UNDER NYTT INNGANGSPARTI
-# Position around x=880-940, y=700-750 (NW of house)
+# The new addition fills between the tverrfløy and the north wall (approx x=870-938, y=705-793)
 inngang_pts = np.array([
     [885, 742],
     [938, 725],
-    [925, 688],
-    [872, 705]
+    [923, 793],  # Indre hjørne mot tverrfløy
+    [888, 804]   # Nordvest-hjørne på tverrfløy
 ])
 inngang_poly = Polygon(inngang_pts, closed=True, facecolor="#ea580c", edgecolor="#9a3412",
-                       lw=3, alpha=0.65, hatch="//", zorder=5, label="1. Underbygget kjeller (~9 m², dybde 2.7m)")
+                       lw=3, alpha=0.65, hatch="//", zorder=5, label="1. Underbygget kjeller (Inngangsparti ~9 m², dybde 2.7m)")
 ax.add_patch(inngang_poly)
 
 ax.annotate(
     "1. NYTT INNGANGSPARTI\n(Underbygget full kjeller\n~9 m², dybde 2.75 m)",
-    xy=(895, 715), xytext=(680, 770),
+    xy=(895, 760), xytext=(680, 770),
     arrowprops=dict(arrowstyle="->", color="#c2410c", lw=2, connectionstyle="arc3,rad=-0.15"),
     fontsize=9.5, weight="bold", color="#7c2d12",
     bbox=dict(boxstyle="round,pad=0.4", fc="#ffedd5", ec="#ea580c", lw=1.5),
@@ -41,7 +41,6 @@ ax.annotate(
 )
 
 # 2. NY UTVENDIG KJELLERNEDGANG
-# Runs along north wall from x=925, y=688 to x=985, y=668
 kjeller_trapp_pts = np.array([
     [925, 688],
     [985, 668],
@@ -71,9 +70,8 @@ ax.annotate(
 )
 
 # 3. RE-DRENERING NORDVEGG (DYBDE 2.75M)
-# From NW corner of new addition, past stairs, along north wall to NE corner and kum
-dren_x = [872, 885, 938, 1005, 1045]
-dren_y = [705, 742, 725, 703, 690]
+dren_x = [885, 938, 1005, 1045]
+dren_y = [742, 725, 703, 690]
 ax.plot(dren_x, dren_y, color="#dc2626", lw=5, solid_capstyle='round', zorder=6,
         label="3. Ny drensledning (dybde 2.7m, 110mm drensrør i pukk/duk)")
 
@@ -103,32 +101,51 @@ ax.annotate(
     zorder=10
 )
 
-# 4. NY KOMMUNAL VANNLEDNING (FRA MYRTEVEIEN TIL NV-HJØRNE)
-va_pts = [
-    [875, 290],   # Tilknytningspunkt Myrteveien
-    [860, 420],
-    [845, 570],
-    [855, 670],
-    [872, 705]    # NV-hjørne av nytt inngangsparti
-]
-va_x = [p[0] for p in va_pts]
-va_y = [p[1] for p in va_pts]
-ax.plot(va_x, va_y, color="#0284c7", lw=4, ls="-", zorder=7,
-        label="4. Ny 32mm kommunal vannledning (i varerør >1.6m dybde)")
+# -------------------------------------------------------------
+# 4. VANNFORSYNING: FRA TROLLHEGGVEIEN VIA STOPPEKRAN VED 13.3M
+# -------------------------------------------------------------
+# Eksisterende stikkledning fra Trollheggveien (langs 13,3m-målelinjen)
+ax.plot([680, 786], [945, 894], color="#0284c7", lw=3, ls=":", zorder=5)
+ax.text(710, 935, "Eksist. vann fra Trollheggveien", fontsize=8, color="#0369a1", rotation=-24, weight="bold")
 
-# Innvendig inntakspunkt i NV-hjørnet
-ax.plot(872, 705, marker="D", markersize=11, color="#0369a1", zorder=9)
+# Stoppekran ved 13,3 m-målet
+ax.plot(786, 894, marker="o", markersize=12, color="#0284c7", zorder=9)
+ax.plot(786, 894, marker="X", markersize=8, color="#ffffff", zorder=10)
+
 ax.annotate(
-    "4. INNVENDIG INNTAK I NV-HJØRNE\n(Vanntett innstøpt Doyma-hylse\ni ny underbygget kjellermur)",
-    xy=(872, 705), xytext=(570, 715),
+    "EKSISTERENDE STOPPEKRAN\n(Ved 13,3m-målelinjen)",
+    xy=(786, 894), xytext=(570, 890),
     arrowprops=dict(arrowstyle="->", color="#0284c7", lw=2),
     fontsize=9.5, weight="bold", color="#0c4a6e",
+    bbox=dict(boxstyle="round,pad=0.4", fc="#e0f2fe", ec="#0284c7", lw=1.5),
+    zorder=11
+)
+
+# Ny 32mm vannledning fra stoppekran nordover til indre hjørne nord-vest
+va_new_pts = [
+    [786, 894],   # Stoppekran ved 13,3m
+    [810, 860],
+    [840, 830],
+    [875, 812],
+    [923, 793]    # Indre hjørne NV der vestvegg møter nordvegg på tverrfløy
+]
+va_new_x = [p[0] for p in va_new_pts]
+va_new_y = [p[1] for p in va_new_pts]
+ax.plot(va_new_x, va_new_y, color="#0284c7", lw=4.5, ls="-", zorder=7,
+        label="4. Ny 32mm vannledning (fra stoppekran til indre hjørne NV)")
+
+# Inntakspunkt i indre hjørne
+ax.plot(923, 793, marker="D", markersize=11, color="#0369a1", zorder=9)
+ax.annotate(
+    "4. INNVENDIG VANNINNTAK\nIndre hjørne nord-vest\n(Vestvegg møter nordvegg på tverrfløy)\nInnstøpt vanntett Doyma-hylse",
+    xy=(923, 793), xytext=(620, 835),
+    arrowprops=dict(arrowstyle="->", color="#0284c7", lw=2, connectionstyle="arc3,rad=-0.1"),
+    fontsize=9.5, weight="bold", color="#0c4a6e",
     bbox=dict(boxstyle="round,pad=0.4", fc="#f0f9ff", ec="#0284c7", lw=1.5),
-    zorder=10
+    zorder=11
 )
 
 # 5. NY VINKLET INNKJØRING & BÆRELAG (PUKK 0-63)
-# Starting at Myrteveien, angled slightly east, covering the driveway zone
 driveway_pts = np.array([
     [885, 290],
     [960, 280],
@@ -181,7 +198,7 @@ planering_pts = np.array([
 planering_poly = Polygon(planering_pts, closed=True, facecolor="#bbf7d0", edgecolor="#22c55e",
                          lw=1.5, ls=":", alpha=0.5, zorder=2)
 ax.add_patch(planering_poly)
-ax.text(690, 420, "Terrengplanering\nNord-Vest", fontsize=8.5, weight="bold", color="#14532d", ha="center", zorder=4)
+ax.text(690, 420, "Terrengplanering\nNord-Vest", fontsize=8.5, weight="bold", color="#166534", ha="center", zorder=4)
 
 # -------------------------------------------------------------
 # TITLE BANNER & LEGEND
@@ -207,4 +224,4 @@ out_path_brain = "C:/Users/magkir/.gemini/antigravity/brain/773222c6-8706-4aad-8
 
 plt.savefig(out_path_repo, dpi=200, bbox_inches='tight')
 plt.savefig(out_path_brain, dpi=200, bbox_inches='tight')
-print("Successfully generated overlay directly on situasjonsplan!")
+print("Successfully generated refined overlay with updated water line!")
