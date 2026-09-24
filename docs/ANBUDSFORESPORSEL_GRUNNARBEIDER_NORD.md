@@ -1,22 +1,23 @@
-# 🚜 Anbudsforespørsel & Planskisse: Grunnarbeider Nord
+# 🚜 Anbudsforespørsel & Planskisse: Grunnarbeider Nord & Nytt Inngangsparti
 
 **Prosjekt:** M6 Totalrehabilitering – Myrteveien 6, 3152 Tolvsrød  
 **Gnr/Bnr:** 140 / 371, Tønsberg kommune  
 **Tiltakshaver:** Magnus Kirø  
-**Dato:** 24. september 2026  
+**Dato:** 24. september 2026 (Revidert: Inkl. underbygget inngangsparti & NV-vanninntak)  
 **Prosjektkode GitHub:** `magnuskiro/m6#92` (Del A: Grunnarbeider Nord)  
 
 ---
 
 ## 1. Innledning & Bakgrunn
 
-Eiendommen Myrteveien 6 gjennomgår en helhetlig totalrehabilitering. På nordfasaden skal det gjennomføres en samlet grunnarbeidspakke bestående av:
-1. **Re-drenering og fuktsikring av nordveggen:** Eksisterende drensrør ligger for høyt (topp på 236 cm under topp grunnmur). Nytt drensrør skal legges med bunn på ca. **260–270 cm** dybde for å sikre tørr kjellersåle og tømme grunnvann som i dag står på kote ~253–255 cm.
-2. **Etablering av ny utvendig kjellernedgang:** Plasstøpt betongtrapp og vanger ned til kote **C+24,4** (kjellerdør) iht. godkjente arkitekttegninger, inkludert trappesluk og vannbårne snøsmelterør i trinnene.
-3. **Oppgradering og justering av innkjøring fra Myrteveien:** Innkjøringen flyttes/vinkles litt østover for bedre adkomst, og det etableres forsterket bærelag for tung anleggstrafikk.
-4. **Teknisk grøftetrasé:** Ny kommunal vannledning inn til boligen, trekkerør for fremtidig dobbelgarasje, og innfelling av vannbårne smelterør.
+Eiendommen Myrteveien 6 gjennomgår en helhetlig totalrehabilitering. På nordsiden og i overgangen mot nord-vest skal det gjennomføres en samlet grunnarbeids- og betongpakke bestående av:
+1. **Re-drenering og fuktsikring av nordveggen:** Dagens drensrør ligger for høyt (topp på 236 cm under topp grunnmur). Nytt drensrør skal legges med bunn på ca. **265–275 cm** dybde (kote ~C+24,1) for å senke grunnvannet (målt på 253–255 cm) og sikre tørr kjellersåle.
+2. **Underbygget kjeller under nytt inngangsparti:** Det nye inngangspartiet i 1. etasje (ihht. tegning A-101PS) skal **underbygges med full kjeller**. Dette krever full utgraving ned til samme sålenivå som kjelleren for øvrig (dybde ca. 2,7 m), støping av såle og nye grunnmursvegger, full utvendig isolering/drenering, samt betongdekke/bæring for inngangspartiet over.
+3. **Ny utvendig kjellernedgang (iht. A-100PS & A-201PS):** Plasstøpt betongtrapp og vanger ned til kote **C+24,4** (kjellerdør) integrert med den nye underbygde kjelleren, inkludert trappesluk og vannbårne snøsmelterør i trinnene.
+4. **Vannledning og teknisk inntak i nordvest-hjørnet:** Ny kommunal vannledning tas inn fra Myrteveien og føres inn i bygget i det nye **nordvest-hjørnet** via vanntett hylsegjennomføring i den nye underbygde kjellermuren.
+5. **Oppgradering og justering av innkjøring fra Myrteveien:** Innkjøringen flyttes/vinkles litt østover for direkte adkomst, og det etableres forsterket bærelag for tung anleggstrafikk (betong- og kranbiler).
 
-Det bes om fastpris / regulerbare enhetspriser per post basert på dette grunnlaget.
+Det bes om fastpris / regulerbare enhetspriser per post basert på dette underlaget.
 
 ---
 
@@ -24,19 +25,20 @@ Det bes om fastpris / regulerbare enhetspriser per post basert på dette grunnla
 
 Forespørselen bygger på følgende tegningsunderlag (utarbeidet av KB Arkitekter AS):
 * **A-001 Situasjonsplan (PS):** Plassering av bolig, eksisterende/ny avkjørsel, terrenglinjer.
-* **A-100PS U. Etg plan:** Planløsning kjeller, plassering av ny utvendig kjellernedgang.
-* **A-201PS Snitt B – Bolig:** Snitt gjennom terreng, ny utvendig kjellernedgang og etasjehøyder.
+* **A-100PS U. Etg plan:** Planløsning kjeller, plassering av kjellernedgang og tilstøtende kjellerrom.
+* **A-101PS 1. Etg plan:** Nytt inngangsparti (1.07 Gang/garderobe ca. 14,7 m² brutto, fotavtrykk utstikk ca. 2,5 m × 3,5 m).
+* **A-201PS Snitt B – Bolig:** Snitt gjennom terreng, ny kjellernedgang og etasjehøyder.
 * **A-300PS & A-301PS Fasader:** Fasadetegninger nordvest og nordøst med eksisterende og planlagt terreng.
 
 ### Kritiske kontrollmål (Referanse: Topp eksisterende grunnmur = 0,00 m)
 * **Terreng ved nordvegg i dag:** ca. -0,50 m til -0,90 m
 * **Dagens drensrør (topp):** -2,36 m *(for høyt)*
-* **Målt vannspeil i terreng / utvendig kum:** -2,53 m
-* **Målt vannspeil i kjellergrøft:** -2,55 m
-* **Nytt gjennomføringsrør fra kjeller (topp):** -2,46 m *(stikker ut under grunnmur)*
-* **Underkant ny innvendig betongsåle:** -2,42 m til -2,45 m
+* **Målt vannspeil i kum og kjellergrøft:** -2,53 m til -2,55 m
+* **Nytt gjennomføringsrør fra eksisterende kjeller (topp):** -2,46 m *(stikker ut under eksisterende grunnmur)*
+* **Underkant ny kjellersåle:** -2,42 m til -2,45 m
 * **Prosjektert kjellerdør / platå i kjellernedgang:** Kote **C+24,4** (ca. -2,40 m under topp grunnmur)
-* **Ny bunn drensgrøft nordvegg:** ca. **-2,65 m til -2,75 m** (Kote ~C+24,1)
+* **Underkant ny såle for underbygget inngangsparti:** ca. **-2,50 m til -2,55 m**
+* **Ny bunn drensgrøft rundt hele nord- og nordvesthjørnet:** ca. **-2,65 m til -2,75 m** (Kote ~C+24,1)
 
 ---
 
@@ -44,107 +46,123 @@ Forespørselen bygger på følgende tegningsunderlag (utarbeidet av KB Arkitekte
 
 ```mermaid
 flowchart TD
-    A["1. Rigg & Fjerning av masser"] --> B["2. Utgraving Nordvegg (dybde 2,7 m)"]
-    B --> C["3. Utgraving Kjellernedgang (kote C+24,4)"]
-    B --> D["4. Re-drenering & XPS 100-150mm"]
-    C --> E["5. Forskaling & Støp Kjellertrapp"]
-    D --> F["6. Tilkoble rør fra kjeller (#96)"]
-    E --> G["7. Trappesluk & Smelterør"]
-    F --> H["8. Overvannskum / Stenkiste (LOD)"]
-    G --> H
-    H --> I["9. VA-grøft, Trekkerør & Bærelag Innkjøring"]
-    I --> J["10. Tilbakefylling & Planering Nordvest"]
+    A["1. Rigg & Fjerning av masser"] --> B["2. Full Utgraving Nordvegg (dybde 2,7 m)"]
+    A --> C["3. Utgraving Underbygget Inngang & Kjellernedgang"]
+    B --> D["4. Re-drenering Nordvegg & XPS 100-150mm"]
+    C --> E["5. Såle & Betongvegger for Underbygget Kjeller"]
+    E --> F["6. Støp av Kjellertrapp m/sluk & smelterør"]
+    E --> G["7. Vanntett Rørhylse for Vannledning i NV-hjørne"]
+    D --> H["8. Drenering & XPS rundt nytt NV-tilbygg"]
+    H --> I["9. Tilkobling mot drensrør (#96) & Overvannskum/LOD"]
+    G --> J["10. Ny Vannledning fra Myrteveien til NV-hjørne"]
+    J --> K["11. Bærelag Innkjøring & Terrengplanering"]
 ```
 
-### Post 1: Rigg, Drift & Sikring
-* Rigging av nødvendig maskinpark (anbefalt 8–15 tonns beltegraver med pusseskuffe og klype).
-* Sikring av eksisterende kabler og rør under graving:
+### Post 1: Rigg, Drift, Kabelsikring & Massetransport
+* Rigging av maskinpark (anbefalt 8–15 tonns beltegraver med tiltrotator og klype).
+* **Påvisning og sikring av eksisterende kabler/rør:**
   * Fiberkabler (Altibox og Telenor).
-  * Hovedstrømkabel (400V 3-fase) og eksisterende kabel til garasje.
+  * Hovedstrømkabel (400V 3-fase) og kabel til eksisterende garasje.
   * 2 par kollektorslanger til energibrønner (jordvarme).
-* Midlertidig avstiving / skråning av grøftekant mot ras i løsmasser.
+* Laste, transportere og deponere overskuddsleire og uegnede masser. Egnede steinmasser settes til side for gjenbruk.
 
 ---
 
-### Post 2: Utgraving & Massehåndtering
-* **Nordvegg:** Utgraving langs ca. 10–12 løpemeter grunnmur ned til fast grunn / kote ~C+24,1 (dybde 2,65–2,75 m fra topp grunnmur).
-* **Kjellernedgang:** Utgraving av sjakt for kjellertrapp og repos ned til kote C+24,4 + 20 cm for drenerende pukkpute.
-* **Innkjøring:** Avgraving av matjord/topplag og etablering av ny innkjøringstrasé mot øst.
-* **Massebalanse:** Egnede drenerende steinmasser legges til side for gjenbruk. Overskuddsleire og uegnede masser kjøres til godkjent deponi. Noe masser benyttes til planering mot nord-vest jf. situasjonsplan.
+### Post 2: Utgraving for Nordvegg, Underbygget Kjeller & Kjellernedgang
+* **Nordvegg eksisterende hus:** Utgraving langs ca. 10–12 lm grunnmur ned til dybde 2,65–2,75 m (kote ~C+24,1).
+* **Underbygget kjeller under nytt inngangsparti:**
+  * Full utgraving for det nye fotavtrykket (ca. 2,5 m × 3,5 m = ca. 9 m² grunnflate) ned til samme dybde (~2,7 m) som øvrig kjeller.
+  * Sikring mot setninger i tilstøtende eksisterende murverk under graving.
+* **Kjellernedgang:** Utgraving for trappeløp og repos ned til kote C+24,4 pluss 20 cm for drenerende pukkpute.
 
 ---
 
-### Post 3: Re-drenering & Fuktsikring Nordvegg
-* Rengjøring og høytrykksspyling av eksisterende betongmur.
-* Montering av **Platon grunnmursplast** (knotteplast) med godkjent klemlist og topplist i overkant terreng.
-* Montering av **100–150 mm XPS-isolasjon** (f.eks. XPS 300) utenpå knotteplasten for fullverdig utvendig isolering (SINTEF-anbefaling: min. 50 % av isolasjonen på utsiden av kjellermur).
-* Legging av **110 mm perforert drensrør** med slisser opp/sideveis på 10 cm avrettet pukkpute (11–16 mm).
-* Innpakking av hele drensrøret og pukkputen i **fiberduk klasse N2** (geotekstil).
-* **Påkobling av kjellerens drensrør:** Det nye gjennomføringsrøret (topp 246 cm) som stikker ut under grunnmuren skal skjøtes tett med bend og kobles sikkert inn på det nye drensnettet.
-* **Overvannskum / Resipient:** Kontroll og tilkobling mot drens-/overvannskum. Det må sikres at utløp fra kum har kontinuerlig fall mot stenkiste/LOD-infiltrasjon på egen tomt under kote C+24,1.
+### Post 3: Fundamentering & Betongarbeid (Underbygget Kjeller & Trapp)
+* **Pukksåle:** Etablering av komprimert pukksåle (15–20 cm pukk 11–16 mm svøpt i fiberduk N2) under nye fundamenter.
+* **Betongsåle:** Støping av armert betongsåle (tykkelse 20 cm, bredde 40–50 cm) for den nye underbygde kjellermuren og trappevangene.
+* **Nye kjellermursvegger:**
+  * Støping av vanntette betongvegger (eller godkjent ISO-mur/Thermomur/Leca med armering og kjernebetong) for den underbygde kjelleren opp til bjelkelag/etasjeskille.
+  * Innstøping av **vanntett rørhylse (f.eks. Doyma / Ø110 mm)** i nordvest-hjørnet for inntak av kommunal vannledning i frostsikker dybde.
+* **Kjellernedgang:**
+  * Forskaling og støping av trappeløp og støttemurer i betong B35 M40.
+  * Montering av trappesluk / drensrenne i reposet foran kjellerdør med 110 mm tilkobling til drensledning.
+  * Innstøping av 20 mm PEX-smelterør (tur/retur for vannbåren snøsmelting) i trinn og repos, med rørgjennomføring inn i kjeller.
+* **Dekke over underbygget kjeller:** Forskaling og støping av armert betongdekke (eller klargjøring for bærende bjelkelag) som danner undergulv for 1. etasje inngangsparti.
 
 ---
 
-### Post 4: Ny Utvendig Kjellernedgang (Støp & VA)
-* Etablering av komprimert pukksåle (15–20 cm pukk 11–16 mm) under trappeløp og repos.
-* **Forskaling og armering:** Forskaling av trappevanger/støttemurer og trinn jf. arkitektmål. Armering med kamstål Ø10/Ø12 og armeringsstoler.
-* **Betongstøp:** Støping av trapp og vanger i vanntett betongkvalitet B35 M40 / B30 SV40.
-* **Overvannshåndtering:** Montering av trappesluk / drensrenne i bunnen av trappen foran kjellerdør. Sluk kobles med 110 mm rør direkte til drensledningen.
-* **Snøsmelteanlegg:** Montering og klamring av 20 mm PEX-rør (tur/retur for vannbåren snøsmelting) i trinnene og reposet, med føring inn gjennom yttervegg til fremtidig teknisk rom før støping.
+### Post 4: Drenering, Fuktsikring & Isolering (Nordvegg & Nytt Tilbygg)
+* Rengjøring og forberedelse av eksisterende og nye murflater.
+* Montering av **Platon knotteplast** med godkjente klemlister langs hele nordveggen og rundt de nye underbygde kjellerveggene.
+* Montering av **100–150 mm XPS-isolasjon** (f.eks. XPS 300) utenpå knotteplasten for fullverdig utvendig isolering.
+* Legging av **110 mm perforert drensrør** på 10 cm avrettet pukkpute (11–16 mm) rundt hele nordveggen og det nye tilbygget.
+* Innpakking av drensrør og pukkpute i **fiberduk klasse N2** (geotekstil).
+* **Påkobling av eksisterende kjellergjennomføring:** Skjøte og tilkoble det nye røret fra kjelleren (#96, topp 246 cm) inn på drensnettet.
+* **Overvannskum / Resipient:** Kontroll og tilkobling mot overvannskum/LOD. Det sikres kontinuerlig fall fra bunn drensrør (kote ~C+24,1) mot stenkiste på egen tomt.
 
 ---
 
-### Post 5: Infrastruktur i Grøft, Innkjøring & Bærelag
-* **Ny kommunal vannledning:** Graving av VA-grøft fra tilknytningspunkt i Myrteveien og inn til bolig (nordvesthjørne eller teknisk rom). Legging av 32 mm PE-vannledning i varerør med fiberduk og isolasjon/varmekabel der frostfri dybde (1,6 m) ikke oppnås.
-* **Trekkerør (røde korrugerte kabelrør Ø110 mm / Ø50 mm):**
+### Post 5: Ny Kommunal Vannledning (Inntak i Nordvest-hjørnet)
+* Graving av VA-grøft fra tilknytningspunkt i Myrteveien frem til nordvest-hjørnet av det nye inngangspartiet (ca. 15–20 lm).
+* Levering og legging av **32 mm PE100 SDR11 vannledning** i varerør med fiberduk og markeringsbånd.
+* Innføring gjennom den vanntette rørhylsen i nordvest-veggen, klargjort med stoppekran/avstengning innvendig for videre rørføring til teknisk rom.
+* Frostsikring: Legges i frostsikker dybde (min. 1,6 m) eller isoleres med XPS og selvregulerende varmekabel.
+
+---
+
+### Post 6: Infrastruktur, Bærelag & Terrengplanering
+* **Trekkerør (røde korrugerte kabelrør):**
   * 1 stk. Ø110 mm rør til fremtidig dobbelgarasje (strøm, elbillader, styring).
   * 1 stk. Ø50 mm rør for snøsmelting / styring i innkjøring.
   * Trekkerør for fiber og reserve.
 * **Forsterket bærelag i innkjøring:**
-  * Utlegging av fiberduk klasse N3 i bunn av innkjøringstrasé.
-  * Oppfylling og komprimering med 30–40 cm samfengt pukk (f.eks. 0–63 mm / 20–120 mm) for å tåle tung anleggstrafikk (betongbiler, mobilkran).
-* **Tilbakefylling og planering nord-vest:**
-  * Tilbakefylling mot drensvegg med drenerende masser (grov singel/pukk 11–32 mm) inntil 50 cm under terreng.
-  * Planering og arrondering mot nabogrense og terreng nord-vest iht. situasjonsplan A-001.
+  * Utlegging av fiberduk klasse N3 i bunn av ny innkjøringstrasé (vinklet mot øst).
+  * Oppfylling og komprimering med 30–40 cm samfengt pukk (0–63 mm / 20–120 mm) dimensjonert for betongbiler og mobilkran.
+* **Tilbakefylling og planering:**
+  * Tilbakefylling mot kjellermurer med drenerende pukk (11–32 mm) inntil 50 cm under terreng.
+  * Terrengforming og arrondering mot nordvest jf. situasjonsplan A-001.
 
 ---
 
 ## 4. Prisskjema / Tilbudssammendrag
 
-Tilbyder bes fylle ut prisskjemaet nedenfor. Alle priser oppgis ekskl. mva.
+Alle priser oppgis ekskl. mva.
 
 | Post | Beskrivelse | Enhet | Mengde | Enh.pris (NOK) | Sum (NOK) |
 | :--- | :--- | :---: | :---: | :---: | :---: |
-| **1.0** | **Rigg, drift, oppmåling og kabelsikring** | RS | 1 | | |
-| **2.1** | Utgraving for nordvegg (dybde inntil 2,7 m) | m³ | ca. 45 | | |
-| **2.2** | Utgraving for kjellernedgang | m³ | ca. 20 | | |
-| **2.3** | Laste og transportere overskuddsmasser til deponi | tonn / m³ | Anslått | | |
-| **3.1** | Rengjøring mur, montering av knotteplast & kantlist | m² | ca. 25 | | |
-| **3.2** | Montering av 100–150 mm XPS isolasjon | m² | ca. 25 | | |
-| **3.3** | Levering og legging av 110 mm drensrør m/pukk & fiberduk N2 | lm | ca. 14 | | |
-| **3.4** | Påkobling av drensrør fra kjeller og kobling mot kum/LOD | RS | 1 | | |
-| **4.1** | Forskaling og armering av kjellertrapp og vanger | RS | 1 | | |
-| **4.2** | Betong B35 M40 inkl. pumping og glatting | m³ | ca. 3–4 | | |
-| **4.3** | Montering av trappesluk og innlegging av PEX-smelterør | RS | 1 | | |
-| **5.1** | Grøft og legging av ny vannledning inn til bolig | lm | ca. 15 | | |
-| **5.2** | Levering og trekking av DV-rør (110mm / 50mm) | lm | ca. 40 | | |
-| **5.3** | Bærelag innkjøring (fiberduk N3 + 0–63 mm komprimert pukk) | m² | ca. 80 | | |
-| **5.4** | Tilbakefylling m/drensmasser og planering nord-vest | timer/m³ | Anslått | | |
+| **1.0** | **Rigg, drift, kabelsikring og oppmåling** | RS | 1 | | |
+| **2.1** | Utgraving for nordvegg (dybde inntil 2,75 m) | m³ | ca. 45 | | |
+| **2.2** | Utgraving for underbygget kjeller & kjellernedgang | m³ | ca. 45 | | |
+| **2.3** | Laste og transportere overskuddsmasser til deponi | m³ / tonn | Anslått | | |
+| **3.1** | Pukksåle og komprimering under nye fundamenter | m² | ca. 20 | | |
+| **3.2** | Forskaling og støping av betongsåle for nytt tilbygg | lm | ca. 12 | | |
+| **3.3** | Støping/oppmuring av nye kjellermursvegger (inkl. NV-hylse) | m² | ca. 25 | | |
+| **3.4** | Forskaling, armering og støping av kjellertrapp & vanger | RS | 1 | | |
+| **3.5** | Støpt dekke over underbygget kjeller (undergulv inngang) | m² | ca. 9 | | |
+| **3.6** | Montering av trappesluk og 20mm PEX-smelterør | RS | 1 | | |
+| **4.1** | Rengjøring mur, montering av knotteplast & klemlister | m² | ca. 40 | | |
+| **4.2** | Montering av 100–150 mm XPS isolasjon | m² | ca. 40 | | |
+| **4.3** | 110 mm perforert drensrør m/pukk & fiberduk N2 | lm | ca. 22 | | |
+| **4.4** | Påkobling av rør fra kjeller (#96) og tilkobling mot kum/LOD | RS | 1 | | |
+| **5.1** | Grøft og legging av ny 32mm vannledning fra gate til NV-hjørne | lm | ca. 18 | | |
+| **6.1** | Levering og trekking av DV-rør (110mm / 50mm) | lm | ca. 40 | | |
+| **6.2** | Bærelag innkjøring (fiberduk N3 + 0–63 mm komprimert pukk) | m² | ca. 80 | | |
+| **6.3** | Tilbakefylling m/drensmasser og planering nord-vest | timer/m³ | Anslått | | |
 | **SUM** | **TOTAL FASTPRIS EKSKL. MVA** | | | | **NOK ________** |
 
 ### Regulerbare timepriser ved eventuelle tilleggsarbeider:
 * Gravemaskin (8–15 tonn) inkl. fører: **______ NOK/time**
 * Lastebil (3- eller 4-akslet tippbil): **______ NOK/time**
-* Grunnarbeider / fagarbeider betong: **______ NOK/time**
+* Fagarbeider grunnarbeid / betong: **______ NOK/time**
 
 ---
 
 ## 5. Fremdriftsplan & Forutsetninger
 
-1. **Oppstart:** Ønsket snarest mulig i Q4 2026 (koordinert med innvendig støping i kjeller).
-2. **Gjennomføringstid:** Estimert til ca. 1,5–2 uker effektiv anleggstid.
-3. **HMS & Ansvar:** Entreprenør er ansvarlig for forskriftsmessig sikring av åpen grøft og naboeiendom iht. gjeldende HMS-krav.
-4. **Befaring:** Befaring på eiendommen (Myrteveien 6) kan avtales fortløpende.
+1. **Oppstart:** Snarest mulig i Q4 2026 (koordinert med innvendig støpearbeid i kjeller).
+2. **Gjennomføringstid:** Estimert til ca. 2–3 uker samlet anleggstid.
+3. **HMS & Ansvar:** Entreprenør har totalansvar for forskriftsmessig grøftesikring og sikring av eksisterende bygningskropp under utgraving.
+4. **Befaring:** Befaring på eiendommen avtales fortløpende med tiltakshaver.
 
 ---
-*Vedlegg tilgjengelig på forespørsel: Tegningssett KB Arkitekter AS (A-001, A-100PS, A-201PS, A-300PS, A-301PS).*
+*Vedlegg: Tegningssett KB Arkitekter AS (A-001, A-100PS, A-101PS, A-201PS, A-300PS, A-301PS).*
