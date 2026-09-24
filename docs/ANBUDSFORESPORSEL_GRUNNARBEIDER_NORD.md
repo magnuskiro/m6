@@ -159,19 +159,17 @@ flowchart TD
 
 ---
 
-### Post 7: Infrastruktur, Buet Tun / Innkjøring & Avtrapping (~185 m²)
+### Post 7: Infrastruktur, Bærelag & Innkjøring fra Myrteveien (~200 m²)
 * **Trekkerør (røde korrugerte kabelrør):**
   * 1 stk. Ø110 mm rør til fremtidig dobbelgarasje (strøm, elbillader, styring).
   * 1 stk. Ø50 mm rør for snøsmelting / styring i innkjøring.
   * Trekkerør for fiber og reserve.
-* **Geometri for tun og innkjøring:**
-  * Rett adkomstvei fra Myrteveien (bredde ca. 7 m ved veien).
-  * Vider seg ut vestover syd for snitt C / eiketreet, og danner et romslig **buet tun / snuplass / biloppstillingsplass i syd-vest** foran huset og mot eksisterende garasje.
-  * Totalt areal: Ca. **185 m²**.
-  * Høydenivå tun: Kote **~C+25,0** (faller svakt mot Myrteveien C+24,8).
-* **Høydeforskjeller & Avtrapping:**
-  * **Mot inngangsplatting:** Trinn/avtrapping fra C+26,8 ned til C+25,0 (høydeforskjell 1,8 m).
-  * **Mot vestre hagekant:** Skråningsavtrapping eller lav støttekant langs vestre avgrensning av tunet der terrenget stiger til C+26,4.
+* **Geometri for innkjøring & riggområde:**
+  * **Vestgrense:** Følger målelinjen på 27,7 m helt ut til Myrteveien.
+  * **Utkjøring mot Myrteveien:** Ligger **vest for eksisterende lyktestolpe** (ca. midt på tomtegrensen mot nord, PX 892, 310).
+  * **Fasadebredde:** Dekker husets fulle bredde ved fasaden (~9,5 m inkludert ny kjellertrapp).
+  * **Areal:** Ca. **200 m²**.
+  * **Høydenivå:** Kote **~C+25,0** (med svakt fall ut mot Myrteveien C+24,8).
 * **Forsterket bærelag (Trinn 1 – Anleggsvei & riggplass):**
   * Avskraping av topplag/løsmasser, utlegging av robust geotekstil/fiberduk klasse N3, samt oppfylling og komprimering med 30–40 cm samfengt pukk (0–63 mm / 20–120 mm).
 * **Faglig anbefaling og vurdering fra entreprenør etterspørres (Befaringspunkt):**
@@ -210,7 +208,7 @@ Alle priser oppgis ekskl. mva.
 | **5.2** | Føring av vannledning innvendig i kjeller til Teknisk rom U.11 i senter av huset | lm | ca. 5 | | |
 | **6.1** | Opparbeidelse av gangvei/sti fra Trollheggveien til inngangsdør (kote C+26,4, fiberduk, pukk) | lm | ca. 25 | | |
 | **7.1** | Levering og trekking av DV-rør (110mm / 50mm) | lm | ca. 40 | | |
-| **7.2** | Bærelag innkjøring & buet tun i syd-vest (fiberduk N3 + 0–63 mm pukk, avtrapping mot vest) | m² | ca. 185 | | |
+| **7.2** | Bærelag innkjøring (fiberduk N3 + 0–63 mm pukk, vestgrense 27,7m, vest for lyktestolpe) | m² | ca. 200 | | |
 | **7.3** | Tilbakefylling m/drensmasser og planering nord-vest | timer/m³ | Anslått | | |
 | **SUM** | **TOTAL FASTPRIS EKSKL. MVA** | | | | **NOK ________** |
 
