@@ -46,35 +46,22 @@ for off in range(3):
     ax.plot([888 - off*4, 930 - off*4], [700 - off*5, 687 - off*5], color="#c2410c", lw=2.2, ls="-", zorder=6)
 
 # -------------------------------------------------------------
-# 3. LILLA SOLPLATTING M/BUE FRA HUSHJØRNE TVERRFLØY TIL HUSHJØRNE NORD-VEST
+# 3. UTEPLASS KVELDSSOL MED UNDERBYGD KJELLER (NV-KROK, 2,0 x 2,5 m)
 # -------------------------------------------------------------
-p_tverr = np.array([849, 811])   # Hushjørnet på tverrfløyen mot vest
-p_nw = np.array([894, 729])      # Hushjørnet nord-vest på hovedhuset
-p_inner = np.array([918, 796])   # Indre hjørne hvor fasadene møtes
+uteplass_pts = np.array([
+    [918, 796],   # Indre hjørne tverrfløy / vestvegg
+    [887, 805],   # 2,0m vest langs tverrfløy nordvegg
+    [875, 766],   # Ytre NV-hjørne uteplass / kjeller
+    [906, 757]    # 2,5m nord langs vestvegg
+])
+uteplass_poly = Polygon(uteplass_pts, closed=True, facecolor="#c084fc", edgecolor="#7e22ce",
+                        lw=2.5, alpha=0.6, zorder=5,
+                        label="3. Solplatting kveldssol m/underbygd kjeller (2,0x2,5m firkant, C+24,4 / C+26,8)")
+ax.add_patch(uteplass_poly)
 
-# Bue som buer ut mot nord-vest over hagen:
-chord_vec = p_nw - p_tverr
-chord_len = np.linalg.norm(chord_vec)
-normal = np.array([-chord_vec[1], chord_vec[0]]) / chord_len
-if normal[0] > 0:
-    normal = -normal
-
-bulge = 16.0
-ctrl = (p_tverr + p_nw) / 2.0 + normal * bulge * 1.8
-arc_pts = []
-for t in np.linspace(0, 1, 20):
-    pt = (1-t)**2 * p_tverr + 2*(1-t)*t * ctrl + t**2 * p_nw
-    arc_pts.append(pt)
-
-sol_poly_pts = [p_inner, p_tverr] + arc_pts + [p_nw]
-sol_poly = Polygon(sol_poly_pts, closed=True, facecolor="#c084fc", edgecolor="#7e22ce",
-                   lw=2.5, alpha=0.6, zorder=5, label="3. Solplatting kveldssol m/bue & underbygd kjeller (C+24,4 / C+26,8)")
-ax.add_patch(sol_poly)
-
-# Kryss (X) inne i plattingen
-apex_pt = arc_pts[len(arc_pts)//2]
-ax.plot([p_inner[0], apex_pt[0]], [p_inner[1], apex_pt[1]], color="#6b21a8", lw=2.2, zorder=6)
-ax.plot([p_tverr[0], p_nw[0]], [p_tverr[1], p_nw[1]], color="#6b21a8", lw=2.2, zorder=6)
+# Kryss (X) i uteplassen
+ax.plot([uteplass_pts[0,0], uteplass_pts[2,0]], [uteplass_pts[0,1], uteplass_pts[2,1]], color="#6b21a8", lw=2.2, zorder=6)
+ax.plot([uteplass_pts[1,0], uteplass_pts[3,0]], [uteplass_pts[1,1], uteplass_pts[3,1]], color="#6b21a8", lw=2.2, zorder=6)
 
 # -------------------------------------------------------------
 # 4. GANGVEI / STI FRA TROLLHEGGVEIEN
@@ -92,17 +79,31 @@ ax.plot(gangvei_pts[:,0], gangvei_pts[:,1], color="#fef3c7", lw=2.5, ls="--", zo
 ax.plot(540, 860, marker="s", markersize=9, color="#b45309", zorder=9)
 
 # -------------------------------------------------------------
-# 5. DRENERING (FRA SV-HJØRNE TVERRFLØY, RUNDT SOLPLATTINGENS BUE, TIL OVERVANNSKUM)
+# 5. DRENERING (FRA SV-HJØRNE TVERRFLØY, RUNDT 2x2.5m KJELLER, TIL OVERVANNSKUM)
 # -------------------------------------------------------------
-dren_arc = [pt + normal * 4.0 for pt in arc_pts]
-dren_pts = [[878, 882], p_tverr] + dren_arc + [p_nw, [885, 694], [955, 668], [1015, 668], [1035, 678], [1055, 692]]
+dren_pts = [
+    [878, 882],   # 1. Syd-vest hjørne av tverrfløy mot vest
+    [858, 808],   # 2. Nord-vest hjørne av tverrfløy
+    [882, 803],   # 3. Ytterkant tverrfløy mot ny underbygd kjeller
+    [870, 762],   # 4. Ytre NV-hjørne ny underbygd kjeller (2x2,5m)
+    [903, 753],   # 5. Møter vestvegg hovedhus
+    [898, 730],   # 6. Vestvegg mot inngangsplatting
+    [885, 694],   # 7. Ytterkant inngangsplatting NV
+    [955, 668],   # 8. Ytterkant inngangsplatting N
+    [1015, 668],  # 9. Utkant kjellertrapp
+    [1035, 678],  # 10. Nord-øst hjørne
+    [1055, 692]   # 11. Overvannskum
+]
 dx = [p[0] for p in dren_pts]
 dy = [p[1] for p in dren_pts]
-ax.plot(dx, dy, color="#dc2626", lw=4.5, solid_capstyle="round", zorder=8, label="5. Ny drensledning (dybde 2.7m, fra SV-hjørne rundt bue til kum)")
+ax.plot(dx, dy, color="#dc2626", lw=4.5, solid_capstyle="round", zorder=8,
+        label="5. Ny drensledning (dybde 2.7m, fra SV-hjørne rundt kjeller til kum)")
 ax.plot(878, 882, marker="s", markersize=9, color="#b91c1c", zorder=10)
 
 # Knotteplast langs murene
-membrane_pts = [[885, 875], p_tverr] + dren_arc + [p_nw, [905, 726], [1030, 686]]
+membrane_pts = [
+    [885, 875], [864, 808], [882, 803], [870, 762], [903, 753], [898, 730], [905, 726], [1030, 686]
+]
 ax.plot([p[0] for p in membrane_pts], [p[1] for p in membrane_pts], color="#f97316", lw=3, ls="--", zorder=5, label="Platon knotteplast + 100-150mm XPS")
 
 # Rør fra kjeller (#96)
@@ -201,16 +202,16 @@ ax.annotate(
     zorder=12
 )
 
-# 3. Solplatting m/bue
+# 3. Solplatting 2,0x2,5m firkant
 ax.annotate(
-    "3. LILLA SOLPLATTING M/BUE (KVELDSSOL)\n"
-    "Bue fra hushjørne tverrfløy til hushjørne NV\n"
+    "3. SOLPLATTING M/UNDERBYGD KJELLER\n"
+    "2,0 m x 2,5 m firkant (NV-krok)\n"
     "--------------------------------------------------\n"
     "• OVER: Solplatting for kveldssola (dekke C+26,8)\n"
     "• UNDER: Fullt underbygd kjeller (bunn C+24,4)\n"
     "• Støpt plate, armerte betongvegger & vanntett dekke\n"
     "• Innstøpt Doyma-hylse for nytt vanninntak",
-    xy=(860, 770), xytext=(490, 735),
+    xy=(875, 770), xytext=(490, 735),
     arrowprops=dict(arrowstyle="->", color="#7e22ce", lw=2, connectionstyle="arc3,rad=-0.08"),
     fontsize=9.2, weight="bold", color="#581c87",
     bbox=dict(boxstyle="round,pad=0.45", fc="#faf5ff", ec="#a855f7", lw=1.8),
@@ -313,7 +314,7 @@ title_box = dict(boxstyle="square,pad=0.5", fc="#ffffff", ec="#0f172a", lw=1.8)
 title_str = (
     "MYRTEVEIEN 6 — ANLEGGSOMRÅDE & PLANSKISSE FOR GRUNNARBEIDER NORD & VEST\n"
     "Prosjekt: M6 Totalrehabilitering | Tiltakshaver: Magnus Kirø | Gnr 140 / Bnr 371 | Tønsberg kommune\n"
-    "Oppdatert: Solplatting m/bue fra hushjørne tverrfløy til NV, utkjøring vest for lyktestolpe"
+    "Oppdatert: Solplatting 2,0x2,5m firkant (NV-krok), ren innkjøringskorridor vest for lyktestolpe"
 )
 ax.text(780, 125, title_str, fontsize=9.2, weight="bold", color="#0f172a", ha="center", bbox=title_box, zorder=15)
 
@@ -328,4 +329,4 @@ out_path_brain = "C:/Users/magkir/.gemini/antigravity/brain/773222c6-8706-4aad-8
 
 plt.savefig(out_path_repo, dpi=200, bbox_inches="tight")
 plt.savefig(out_path_brain, dpi=200, bbox_inches="tight")
-print("Successfully generated updated site plan with curved solplatting and clean driveway!")
+print("Successfully generated site plan with 2x2.5m box solplatting and clean driveway!")
