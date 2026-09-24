@@ -17,12 +17,12 @@ Eiendommen Myrteveien 6 gjennomgår en helhetlig totalrehabilitering. På nordsi
    - Utebod
    - Utvendig skap for strøminntak
    - Støpt repos foran kjellerdør med trappesluk
-   - Utvendig avtrapping (trinn) ned fra inngangsplattingen (kote C+26,8) til det lavere tunet/innkjøringen (kote C+25,0)
+   - Utvendig avtrapping (trinn) ned fra inngangsplattingen (kote C+26,8) til det lavere nivået for innkjøringen (kote C+25,0)
 3. **Kjellertrapp (iht. A-100PS, A-201PS & A-001):** Plasstøpt betongtrapp og vanger ned langs nordveggen til kote **C+24,4** (repos under inngangsplattingen), inkludert trappesluk og vannbårne snøsmelterør (PEX) i trinnene.
-4. **Solplass for kveldssola med underbygd kjeller (NV-krok):** I vinkelen mellom tverrfløyen og inngangsplattingen etableres en uteplass for kveldssola (ca. **2,0 m mot vest × 2,5 m mot nord = 5,0 m²** fotavtrykk) med fullt underbygd kjeller (markert med kryss `X` på planskisse).
+4. **Lilla solplatting for kveldssola m/bue og underbygd kjeller (NV-krok):** I vinkelen mellom tverrfløyen og hovedhuset etableres en solplatting med **utadgående bue som spenner fra hushjørnet på tverrfløyen over til hushjørnet nord-vest på hovedhuset** med fullt underbygd kjeller (markert med kryss `X` på planskisse).
    - Dette tiltaket erstatter og formaliserer dagens eksisterende inngangsparti (vedlikehold).
-   - Kjeller underbygges ned til kote **C+24,4** med komprimert pukksåle, støpt bunnplate, armerte betongvegger mot terreng (ca. 4,5 lm) og et vanntett, støpt betongdekke (gulv for uteplass over på kote ~C+26,8).
-   - Den nye drensledningen og knotteplast/XPS føres rundt ytterveggene på dette nye kjellerrommet.
+   - Kjeller underbygges ned til kote **C+24,4** med komprimert pukksåle, støpt bunnplate, armerte betongvegger mot terreng og et vanntett, støpt betongdekke (solplatting over på kote ~C+26,8).
+   - Den nye drensledningen og knotteplast/XPS føres i bue rundt ytterveggene på dette nye kjellerrommet.
 5. **Ny gangvei / sti fra Trollheggveien til ny inngangsdør:**
    - Etablering av ny gangsti (ca. 25 lm) fra vestre tomtegrense mot Trollheggveien, over hagearealet og frem til den nye inngangsdøren i 1. etg.
    - Stien etableres i det øvre, naturlige terrengnivået på kote **~C+26,4**.
@@ -31,10 +31,9 @@ Eiendommen Myrteveien 6 gjennomgår en helhetlig totalrehabilitering. På nordsi
    - Ny **32 mm PE-vannledning** kobles på denne stoppekranen og føres nordover til det indre nordvest-hjørnet (NV-krok).
    - Ledningen tas inn i den nye underbygde kjelleren via vanntett **Doyma-hylsegjennomføring**.
    - **Innvendig føring:** Ledningen føres videre innvendig i kjelleren gjennom underbygd kjellerrom (U.02) og rett inn til **Teknisk rom (U.11)** i senter av huset (kote C+24,4).
-7. **Justert innkjøring med buet tun i syd-vest (~185 m²):**
-   - Rett adkomstvei inn fra Myrteveien, som vider seg ut mot vest foran huset og danner et romslig, buet tun / snuplass / biloppstillingsplass i syd-vest mot eksisterende garasje.
-   - Nivå tun/parkering: Kote **~C+25,0** (med svakt fall ut mot Myrteveien C+24,8).
-   - Terrengavtrapping/skråning langs vestkanten av tunet mot den høyere hagen (C+26,4 ➔ C+25,0).
+7. **Innkjøring & riggområde fra Myrteveien (~200 m²):**
+   - **Trasé:** Vestgrensen følger målelinjen på 27,7 m helt ut til Myrteveien. Utkjøringen ved Myrteveien ligger **vest for eksisterende lyktestolpe** (ca. midt på tomtegrensen mot nord). Ved fasaden dekker innkjøringen husets fulle bredde (~9,5 m inkl. kjellertrapp).
+   - Nivå innkjøring: Kote **~C+25,0** (med svakt fall ut mot Myrteveien C+24,8).
    - Det etableres forsterket bærelag (fiberduk N3 + 0–63 mm pukk) for tung anleggstrafikk (betong- og kranbiler).
 
 Det bes om fastpris / regulerbare enhetspriser per post basert på dette underlaget.
