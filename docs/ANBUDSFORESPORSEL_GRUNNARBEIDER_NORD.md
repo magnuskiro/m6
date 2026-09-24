@@ -125,6 +125,16 @@ flowchart TD
 * **Dekke/platting for inngangsparti (1. etg):**
   * Etablering av bærende konstruksjon/dekke for inngangsplattingen på kote **C+26,8** som danner det tette taket over kjellernedgangen, uteboden og el-skapet.
   * Etablering av trinn/avtrapping fra plattingen ned til tunet (C+26,8 ➔ C+25,0).
+* **Tekniske rørføringer og grøfter under ny såle (Kritisk grensesnitt før støp):**
+  * Før utlegging av isolasjon og støping av såler (kote C+24,4) må alle tekniske føringer graves ned i beskyttende sandputer/pukk under sålenivå (ned mot kote ~C+23,9–24,1):
+    - **Vann:** 32 mm PE-vannledning inn gjennom vanntett Doyma-hylse og videre inn i kjeller.
+    - **Strøm:** Hovedstrømkabel (400V 3-fase) fra utvendig skap under overbygg, ført under såle/mur inn til hovedtavle i teknisk rom U.11.
+    - **Garasje:** Ø110 mm trekkerør for ny garasje (strøm, elbillader 22kW, styring) ført under sålen.
+    - **Snøsmelting:** 20 mm PEX-smelterør (tur/retur) fra trappetrinn og repos foran kjellerdør inn under mur til varmeanlegg i teknisk rom.
+    - **Innkjøring:** Ø50 mm trekkerør for styring/snøsmelte i innkjøringen.
+    - **Fiber/telecom:** Doble trekkerør for Altibox og Telenor inn under såle/grunnmur til mediasentral.
+    - **Avløp/overvann:** Rør fra trappesluk og tilkobling av det nye røret fra innvendig kjellergrøft (#96, topp -2,46 m).
+  * **Tverrfaglig koordinering:** Entreprenør må tilrettelegge grøfter og samordne med rørlegger og elektriker for nøyaktig plassering av oppstikk, rørgjennomføringer og Doyma-tettinger *før* armering og støping av såle og repos.
 
 ---
 
@@ -222,7 +232,8 @@ Alle priser oppgis ekskl. mva.
 ## 5. Fremdriftsplan & Forutsetninger
 
 1. **Oppstart:** Snarest mulig i Q4 2026 (koordinert med innvendig støpearbeid i kjeller).
-2. **Gjennomføringstid:** Estimert til ca. 2–3 uker samlet anleggstid.
+2. **Gjennomføringstid:** Estimert til ca. **3–4 uker (15–18 effektive arbeidsdager)** samlet anleggstid.
+   - Kalkylen tar høyde for nødvendig ekstra grøfting og sandavretting for alle tekniske rør og trekkerør under sålenivå, tverrfaglig koordinering med rørlegger og elektriker for innføringer før støp, samt nødvendige herdetider for betongkonstruksjonene.
 3. **HMS & Ansvar:** Entreprenør har totalansvar for forskriftsmessig grøftesikring og sikring av eksisterende bygningskropp under utgraving.
 4. **Befaring:** Befaring på eiendommen avtales fortløpende med tiltakshaver.
 5. **Faglig dialog under befaring:** Det forventes at entreprenøren under befaring gir sin faglige anbefaling for faseinndeling av innkjøring/bærelag (Trinn 1 midlertidig anleggsvei/riggområde for 32t tungtrafikk vs. utsettelse til slutt) samt masseoppbygging på de lokale leiregrunnforholdene.
