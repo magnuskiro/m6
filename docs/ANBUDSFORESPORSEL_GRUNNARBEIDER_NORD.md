@@ -108,7 +108,7 @@ flowchart TD
 * Montering av **100–150 mm XPS-isolasjon** (f.eks. XPS 300) utenpå knotteplasten for fullverdig utvendig isolering.
 * Legging av **110 mm perforert drensrør** på 10 cm avrettet pukkpute (11–16 mm) rundt hele nordveggen og det nye tilbygget.
 * Innpakking av drensrør og pukkpute i **fiberduk klasse N2** (geotekstil).
-* **Påkobling av eksisterende kjellergjennomføring:** Skjøte og tilkoble det nye røret fra kjelleren (#96, topp 246 cm) inn på drensnettet.
+* **Påkobling av eksisterende kjellergjennomføring:** Skjøte og tilkoble det nye røret fra kjelleren (#96, topp 246 cm) inn på drensnettet. Røret kommer fra innvendig grøft (ca. 1,5 m fra nordvegg inne), er ført under grunnmur og under den nye kjellertrappen, og kobles til drensledningen like på utsiden av trappevangen.
 * **Overvannskum / Resipient:** Kontroll og tilkobling mot overvannskum/LOD. Det sikres kontinuerlig fall fra bunn drensrør (kote ~C+24,1) mot stenkiste på egen tomt.
 
 ---

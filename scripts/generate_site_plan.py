@@ -127,11 +127,20 @@ ax.plot(dren_x, dren_y, color="#dc2626", lw=5, solid_capstyle='round', zorder=8,
 ax.plot([905, 1030], [726, 686], color="#f97316", lw=3, ls="--", zorder=5, label="Platon knotteplast + 100-150mm XPS")
 
 # Rørgjennomføring fra kjeller (#96)
-ax.plot([955, 955], [755, 715], color="#16a34a", lw=4, zorder=7)
-ax.plot(955, 715, marker="o", markersize=9, color="#16a34a", zorder=8)
+# Grøft i kjeller ca. 1,5m fra nordveggen, føres under grunnmur og under ny kjellertrapp
+ax.plot([960, 1015], [728, 710], color="#16a34a", lw=3.5, ls="-", zorder=7,
+        label="Rør i grøft i kjeller (#96, ca. 1,5m fra nordvegg)")
+ax.plot([992, 995], [717, 701], color="#16a34a", lw=4, zorder=7)
+ax.plot([995, 999], [701, 675], color="#16a34a", lw=4, ls="--", zorder=8)  # Under kjellertrapp
+ax.plot([999, 1000], [675, 668], color="#16a34a", lw=4, zorder=7)  # Tilkobling drensledning
+ax.plot(995, 701, marker="o", markersize=6, color="#15803d", zorder=9)
+ax.plot(1000, 668, marker="o", markersize=9, color="#16a34a", zorder=9)
 ax.annotate(
-    "RØR FRA KJELLER (#96)\n(Topp 246 cm kobles på drensnett)",
-    xy=(955, 715), xytext=(1040, 745),
+    "RØR FRA KJELLER (#96)\n"
+    "Grøft i kjeller ca. 1,5m fra nordvegg\n"
+    "Føres under ny kjellertrapp (topp 246 cm)\n"
+    "Kobles på drensnettet på utsiden",
+    xy=(998, 680), xytext=(1060, 745),
     arrowprops=dict(arrowstyle="->", color="#15803d", lw=2, connectionstyle="arc3,rad=0.15"),
     fontsize=9, weight="bold", color="#14532d",
     bbox=dict(boxstyle="round,pad=0.4", fc="#dcfce7", ec="#16a34a", lw=1.5),
