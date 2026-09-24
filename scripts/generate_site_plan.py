@@ -7,178 +7,199 @@ import numpy as np
 
 # Find repo root / assets dir
 script_dir = os.path.dirname(os.path.abspath(__file__))
-repo_root = os.path.dirname(script_dir) # m6 folder
+repo_root = os.path.dirname(script_dir)
 assets_dir = os.path.join(repo_root, "assets", "images")
 
 # Load original situasjonsplan
-img_path = os.path.join(assets_dir, "situasjonsplan_render.png")
-im = Image.open(img_path)
+im = Image.open(os.path.join(assets_dir, "situasjonsplan_render.png"))
 
-# Create figure
-fig, ax = plt.subplots(figsize=(18, 18), dpi=200)
+fig, ax = plt.subplots(figsize=(20, 20), dpi=200)
 ax.imshow(im)
-
-# Focus on the work area (expand top to show Myrteveien, lyktestolpe and title banner fully)
-ax.set_xlim(520, 1420)
-ax.set_ylim(1120, 90)
+ax.set_xlim(480, 1420)
+ax.set_ylim(1120, 80)
 
 # -------------------------------------------------------------
 # 1. KJELLERTRAPP (NØYAKTIG TILPASSET CAD-TEGNET TRAPP)
 # -------------------------------------------------------------
-# Trinnløp fra terreng (øst) ned til repos under platting (vest)
-stair_pts = np.array([
-    [966, 695],
-    [1015, 679],
-    [1019, 693],
-    [970, 709]
-])
-trapp_poly = Polygon(stair_pts, closed=True, facecolor="#38bdf8", edgecolor="#0284c7",
-                     lw=2, alpha=0.85, zorder=6, label="2. Kjellertrapp (støpt betong m/PEX-smelterør)")
-ax.add_patch(trapp_poly)
-
-# Støttemur / vangemur på utsiden av trappen
-vangemur_pts = np.array([
-    [965, 686],
-    [1014, 672],
-    [1015, 679],
-    [966, 695]
-])
-vange_poly = Polygon(vangemur_pts, closed=True, facecolor="#94a3b8", edgecolor="#475569",
-                     lw=1.5, alpha=0.85, zorder=6)
-ax.add_patch(vange_poly)
-
-# Trinnlinjer i trappen
+stair_pts = np.array([[966, 695], [1015, 679], [1019, 693], [970, 709]])
+ax.add_patch(Polygon(stair_pts, closed=True, facecolor="#38bdf8", edgecolor="#0284c7", lw=2, alpha=0.85, zorder=6, label="2. Kjellertrapp (støpt betong m/PEX-smelterør)"))
+vange_pts = np.array([[965, 686], [1014, 672], [1015, 679], [966, 695]])
+ax.add_patch(Polygon(vange_pts, closed=True, facecolor="#94a3b8", edgecolor="#475569", lw=1.5, alpha=0.85, zorder=6))
 for t in np.linspace(0.12, 0.88, 8):
     p1 = [966 + (1015 - 966) * t, 695 + (679 - 695) * t]
     p2 = [970 + (1019 - 970) * t, 709 + (693 - 709) * t]
     ax.plot([p1[0], p2[0]], [p1[1], p2[1]], color="#0369a1", lw=1.2, zorder=7)
 
 # -------------------------------------------------------------
-# 2. PLATTING FOR INNGANGSPARTI (PÅ NORDVEGGEN I INNTEGNET OMRISS)
+# 2. INNGANGSPLATTING & UNDERBYGD KJELLERNEDGANG (1. ETG, C+26,8)
 # -------------------------------------------------------------
-# Dekke 1. etasje som danner tak/overbygg over kjellerdør, utebod og el-skap
-platting_outer = np.array([
-    [891, 694],
-    [955, 673],
-    [965, 671],
-    [967, 695],
-    [970, 709],
-    [905, 726]
-])
-platting_poly = Polygon(platting_outer, closed=True, facecolor="#fdba74", edgecolor="#ea580c",
-                        lw=2.5, alpha=0.45, hatch="//", zorder=5,
-                        label="1. Ny platting inngangsparti 1. etg (overbygg/tak over kjellerdør & bod)")
-ax.add_patch(platting_poly)
-
-# Repos foran ny kjellerdør (under taket, kote C+24.4)
-repos_pts = np.array([
-    [936, 705],
-    [966, 695],
-    [970, 709],
-    [940, 719]
-])
-repos_poly = Polygon(repos_pts, closed=True, facecolor="#0284c7", edgecolor="#0369a1",
-                     lw=1.8, alpha=0.75, zorder=7, label="   ↳ Repos v/ny kjellerdør m/trappesluk (under tak)")
-ax.add_patch(repos_poly)
-
-# Trappesluk i repos
+platting_outer = np.array([[891, 694], [955, 673], [965, 671], [967, 695], [970, 709], [905, 726]])
+ax.add_patch(Polygon(platting_outer, closed=True, facecolor="#fdba74", edgecolor="#ea580c", lw=2.5, alpha=0.55, hatch="//", zorder=5, label="1. Ny platting inngangsparti 1. etg (overbygg tak over kjellerdør & bod)"))
+repos_pts = np.array([[936, 705], [966, 695], [970, 709], [940, 719]])
+ax.add_patch(Polygon(repos_pts, closed=True, facecolor="#0284c7", edgecolor="#0369a1", lw=1.8, alpha=0.75, zorder=7, label="   ↳ Repos v/ny kjellerdør m/trappesluk (under tak)"))
 ax.plot(952, 704, marker="s", markersize=7, color="#ffffff", markeredgecolor="#0284c7", markeredgewidth=2, zorder=9)
+bod_pts = np.array([[896, 708], [936, 705], [940, 719], [905, 726]])
+ax.add_patch(Polygon(bod_pts, closed=True, facecolor="#f59e0b", edgecolor="#b45309", lw=1.8, alpha=0.75, hatch="\\\\", zorder=7, label="   ↳ Utebod & skap for strøm-inntak (under tak)"))
 
-# Utebod og skap for strøm-inntak (under taket)
-bod_pts = np.array([
-    [896, 708],
-    [936, 705],
-    [940, 719],
-    [905, 726]
+# Avtrapping fra platting ned til innkjøring (C+26.8 -> C+25.0)
+for off in range(3):
+    ax.plot([888 - off*4, 930 - off*4], [700 - off*5, 687 - off*5], color="#c2410c", lw=2.2, ls="-", zorder=6)
+
+# -------------------------------------------------------------
+# 3. SOLPLASS M/UNDERBYGD KJELLER (NV-KROK) M/KRYSS (X)
+# -------------------------------------------------------------
+uteplass_pts = np.array([[918, 796], [887, 805], [875, 766], [906, 757]])
+ax.add_patch(Polygon(uteplass_pts, closed=True, facecolor="#c084fc", edgecolor="#7e22ce", lw=2.5, alpha=0.6, zorder=5, label="3. Solplass kveldssol m/underbygd kjeller (bunn C+24,4, dekke C+26,8)"))
+ax.plot([uteplass_pts[0,0], uteplass_pts[2,0]], [uteplass_pts[0,1], uteplass_pts[2,1]], color="#6b21a8", lw=2.2, zorder=6)
+ax.plot([uteplass_pts[1,0], uteplass_pts[3,0]], [uteplass_pts[1,1], uteplass_pts[3,1]], color="#6b21a8", lw=2.2, zorder=6)
+
+# -------------------------------------------------------------
+# 4. GANGVEI / STI FRA TROLLHEGGVEIEN
+# -------------------------------------------------------------
+gangvei_pts = np.array([
+    [540, 860],
+    [640, 845],
+    [750, 810],
+    [830, 765],
+    [870, 735],
+    [895, 715]
 ])
-bod_poly = Polygon(bod_pts, closed=True, facecolor="#f59e0b", edgecolor="#b45309",
-                   lw=1.8, alpha=0.75, hatch="\\\\", zorder=7, label="   ↳ Utebod & skap for strøm-inntak (under tak)")
-ax.add_patch(bod_poly)
+ax.plot(gangvei_pts[:,0], gangvei_pts[:,1], color="#b45309", lw=5, solid_capstyle="round", zorder=7, label="4. Gangvei/sti fra Trollheggveien til ny inngangsdør (kote C+26,4)")
+ax.plot(gangvei_pts[:,0], gangvei_pts[:,1], color="#fef3c7", lw=2.5, ls="--", zorder=8)
+ax.plot(540, 860, marker="s", markersize=9, color="#b45309", zorder=9)
 
-# Annotering 1: Platting og under taket
+# -------------------------------------------------------------
+# 5. DRENERING (FRA SV-HJØRNE TVERRFLØY TIL OVERVANNSKUM)
+# -------------------------------------------------------------
+dren_pts = [
+    [880, 882], [858, 808], [882, 803], [870, 762], [903, 753],
+    [898, 730], [885, 694], [955, 668], [1015, 668], [1035, 678], [1055, 692]
+]
+dx = [p[0] for p in dren_pts]
+dy = [p[1] for p in dren_pts]
+ax.plot(dx, dy, color="#dc2626", lw=4.5, solid_capstyle="round", zorder=8, label="5. Ny drensledning (dybde 2.7m, fra SV-hjørne tverrfløy til kum)")
+ax.plot(880, 882, marker="s", markersize=9, color="#b91c1c", zorder=10)
+membrane_pts = [[888, 875], [864, 808], [882, 803], [870, 762], [903, 753], [898, 730], [905, 726], [1030, 686]]
+ax.plot([p[0] for p in membrane_pts], [p[1] for p in membrane_pts], color="#f97316", lw=3, ls="--", zorder=5, label="Platon knotteplast + 100-150mm XPS")
+
+# Rør fra kjeller (#96)
+ax.plot([960, 1015], [728, 710], color="#16a34a", lw=3.5, zorder=7, label="Rør i grøft i kjeller (#96, ca. 1,5m fra nordvegg)")
+ax.plot([992, 995], [717, 701], color="#16a34a", lw=4, zorder=7)
+ax.plot([995, 999], [701, 675], color="#16a34a", lw=4, ls="--", zorder=8)
+ax.plot([999, 1000], [675, 668], color="#16a34a", lw=4, zorder=7)
+ax.plot(995, 701, marker="o", markersize=6, color="#15803d", zorder=9)
+ax.plot(1000, 668, marker="o", markersize=9, color="#16a34a", zorder=9)
+ax.plot(1055, 692, marker="o", markersize=13, color="#2563eb", zorder=8)
+
+# -------------------------------------------------------------
+# 6. VANNFORSYNING FRA TROLLHEGGVEIEN HELT TIL TEKNISK ROM
+# -------------------------------------------------------------
+ax.plot([680, 786], [945, 894], color="#0284c7", lw=3, ls=":", zorder=5)
+ax.plot(786, 894, marker="o", markersize=12, color="#0284c7", zorder=9)
+ax.plot(786, 894, marker="X", markersize=8, color="#ffffff", zorder=10)
+
+va_ext = np.array([[786, 894], [818, 860], [852, 830], [885, 810], [918, 796]])
+ax.plot(va_ext[:,0], va_ext[:,1], color="#0284c7", lw=4.5, ls="-", zorder=7, label="6. Ny 32mm vannledning (utvendig fra stoppekran)")
+ax.plot(918, 796, marker="D", markersize=11, color="#0369a1", zorder=9)
+
+va_int = np.array([[918, 796], [950, 788], [985, 795]])
+ax.plot(va_int[:,0], va_int[:,1], color="#0284c7", lw=4.5, ls="--", zorder=8, label="   ↳ Ført innvendig til teknisk rom U.11 i senter av huset")
+ax.plot(985, 795, marker="o", markersize=11, color="#1d4ed8", zorder=10)
+ax.plot(985, 795, marker="*", markersize=7, color="#ffffff", zorder=11)
+
+# -------------------------------------------------------------
+# 7. JUSTERT INNKJØRING M/BUET TUN I SYD-VEST
+# -------------------------------------------------------------
+driveway_pts = np.array([
+    [1040, 310],
+    [1035, 675],
+    [965, 675],
+    [885, 705],
+    [840, 680],
+    [835, 630],
+    [865, 570],
+    [920, 500],
+    [930, 320]
+])
+drive_poly = Polygon(driveway_pts, closed=True, facecolor="#94a3b8", edgecolor="#334155",
+                     lw=2.2, alpha=0.45, hatch="//", zorder=3, label="7. Justert innkjøring m/buet tun i syd-vest (~185 m²)")
+ax.add_patch(drive_poly)
+
+# Terrengavtrapping langs vestkant tun
+ax.plot([840, 835, 865, 920], [680, 630, 570, 500], color="#475569", lw=3.5, ls=":", zorder=4)
+
+# -------------------------------------------------------------
+# 8. TREKKERØR & INFRASTRUKTUR
+# -------------------------------------------------------------
+ax.plot([900, 840, 780], [665, 640, 600], color="#10b981", lw=3.5, ls="--", zorder=6, label="8. Trekkerør (Ø110mm garasje / Ø50mm snøsmelte)")
+
+# -------------------------------------------------------------
+# 9. RIGG & DEPONI
+# -------------------------------------------------------------
+ax.plot(900, 600, marker="^", markersize=14, color="#eab308", zorder=8)
+ax.text(900, 585, "GRAVEMASKIN (8-15t)\nArbeidssone", fontsize=8.5, weight="bold", color="#854d0e", ha="center", zorder=10)
+deponi_pts = np.array([[1160, 480], [1270, 450], [1290, 550], [1180, 580]])
+ax.add_patch(Polygon(deponi_pts, closed=True, facecolor="#fef08a", edgecolor="#ca8a04", lw=1.8, ls="--", alpha=0.6, zorder=3))
+ax.text(1225, 515, "Mellomlagring\nrene steinmasser\n(Gjenbruk)", fontsize=9, weight="bold", color="#713f12", ha="center", zorder=4)
+
+# ---------------- ANNOTASJONER ----------------
+# 1. Platting & avtrapping
 ax.annotate(
-    "1. NY PLATTING FOR INNGANGSPARTI (1. ETG)\n"
-    "Danner overbygg/tak for kjellernedgang\n"
+    "1. NY INNGANGSPLATTING (1. ETG, C+26,8)\n"
+    "Danner overbygg/tak over kjellernedgang\n"
     "--------------------------------------------------\n"
-    "UNDER TAKET (Kjellernivå C+24,4):\n"
-    "• Ny kjellerdør inn til kjeller\n"
-    "• Utebod & skap for strøm-inntak\n"
-    "• Støpt repos foran dør m/trappesluk",
-    xy=(930, 685), xytext=(630, 620),
+    "• AVTRAPPING: Trinn ned til innkjøring (C+26,8 ➔ C+25,0)\n"
+    "• UNDER TAKET (Kjellernivå C+24,4):\n"
+    "  - Ny kjellerdør inn til kjeller\n"
+    "  - Utebod & utvendig skap for strøm-inntak\n"
+    "  - Støpt repos foran dør m/trappesluk",
+    xy=(915, 690), xytext=(500, 630),
     arrowprops=dict(arrowstyle="->", color="#c2410c", lw=2, connectionstyle="arc3,rad=-0.1"),
-    fontsize=9.5, weight="bold", color="#7c2d12",
-    bbox=dict(boxstyle="round,pad=0.5", fc="#ffedd5", ec="#ea580c", lw=1.8),
+    fontsize=9.2, weight="bold", color="#7c2d12",
+    bbox=dict(boxstyle="round,pad=0.45", fc="#ffedd5", ec="#ea580c", lw=1.8),
     zorder=12
 )
 
-# Annotering 2: Kjellertrapp
+# 2. Kjellertrapp
 ax.annotate(
     "2. NY KJELLERTRAPP\n(Støpt trappeløp i inntegnet trasé\nm/PEX-smelterør i trinn ned til C+24,4)",
-    xy=(995, 686), xytext=(1040, 620),
+    xy=(995, 686), xytext=(1040, 615),
     arrowprops=dict(arrowstyle="->", color="#0284c7", lw=2, connectionstyle="arc3,rad=0.1"),
-    fontsize=9.5, weight="bold", color="#075985",
+    fontsize=9.2, weight="bold", color="#075985",
     bbox=dict(boxstyle="round,pad=0.4", fc="#e0f2fe", ec="#0284c7", lw=1.5),
     zorder=12
 )
 
-# -------------------------------------------------------------
-# 3. UTEPLASS KVELDSSOL MED UNDERBYGD KJELLER (NV-KROK)
-# -------------------------------------------------------------
-# Nook mellom tverrfløy og inngangsplatting: 2,0m mot vest x 2,5m mot nord
-# Erstatning/vedlikehold av eksisterende inngangsparti
-uteplass_pts = np.array([
-    [918, 796],   # Indre hjørne tverrfløy / vestvegg
-    [887, 805],   # 2,0m vest langs tverrfløy nordvegg
-    [875, 766],   # Ytre NV-hjørne uteplass / kjeller
-    [906, 757]    # 2,5m nord langs vestvegg
-])
-uteplass_poly = Polygon(uteplass_pts, closed=True, facecolor="#c084fc", edgecolor="#7e22ce",
-                        lw=2.5, alpha=0.6, hatch="//", zorder=5,
-                        label="3. Uteplass kveldssol m/underbygd kjeller (2,0x2,5m, vedlikehold inngang)")
-ax.add_patch(uteplass_poly)
-
-# Annotering 3: Uteplass & underbygd kjeller
+# 3. Solplass m/kryss
 ax.annotate(
-    "3. UTEPLASS KVELDSSOL M/UNDERBYGD KJELLER\n"
-    "Vedlikehold av nåværende inngangsparti (~5 m²)\n"
+    "3. SOLPLASS KVELDSSOL M/UNDERBYGD KJELLER\n"
+    "Vedlikehold av eksisterende inngangsparti (~5 m²)\n"
     "--------------------------------------------------\n"
-    "• OVER: Uteplass kveldssol (2,0m x 2,5m, dekke C+26,8)\n"
+    "• OVER: Uteplass for kveldssola (2,0x2,5m, dekke C+26,8)\n"
     "• UNDER: Utgravd underbygd kjeller (bunn C+24,4)\n"
     "• Støpt plate, armerte betongvegger & vanntett dekke\n"
-    "• Gjennomføring Doyma-hylse for nytt vanninntak",
-    xy=(880, 775), xytext=(560, 715),
+    "• Doyma-hylse for innføring av vannledning",
+    xy=(890, 780), xytext=(500, 735),
     arrowprops=dict(arrowstyle="->", color="#7e22ce", lw=2, connectionstyle="arc3,rad=-0.08"),
-    fontsize=9.5, weight="bold", color="#581c87",
+    fontsize=9.2, weight="bold", color="#581c87",
     bbox=dict(boxstyle="round,pad=0.45", fc="#faf5ff", ec="#a855f7", lw=1.8),
     zorder=12
 )
 
-# -------------------------------------------------------------
-# 4. RE-DRENERING FRA SYD-VEST HJØRNE AV TVERRFLØY TIL OVERVANNSKUM
-# -------------------------------------------------------------
-# Forlenget drenstrasé: starter i syd-vest hjørnet av tverrfløyen mot vest,
-# følger vestvegg og nordvegg på tverrfløy, rundt ny underbygd kjeller,
-# langs vestvegg hovedhus, og rundt inngangsplatting & kjellertrapp til kum.
-dren_pts = [
-    [880, 882],   # 1. Syd-vest hjørne av tverrfløy mot vest
-    [858, 808],   # 2. Nord-vest hjørne av tverrfløy
-    [882, 803],   # 3. Ytterkant tverrfløy mot ny underbygd kjeller
-    [870, 762],   # 4. Ytre NV-hjørne ny underbygd kjeller (2x2,5m)
-    [903, 753],   # 5. Møter vestvegg hovedhus
-    [898, 730],   # 6. Vestvegg mot inngangsplatting
-    [885, 694],   # 7. Ytterkant inngangsplatting NV
-    [955, 668],   # 8. Ytterkant inngangsplatting N
-    [1015, 668],  # 9. Utkant kjellertrapp
-    [1035, 678],  # 10. Nord-øst hjørne
-    [1055, 692]   # 11. Overvannskum
-]
-dren_x = [p[0] for p in dren_pts]
-dren_y = [p[1] for p in dren_pts]
-ax.plot(dren_x, dren_y, color="#dc2626", lw=5, solid_capstyle='round', zorder=8,
-        label="4. Ny drensledning (dybde 2.7m, fra SV-hjørne tverrfløy til kum)")
+# 4. Gangvei
+ax.annotate(
+    "4. GANGVEI / STI FRA TROLLHEGGVEIEN\n"
+    "• Ny adkomststi fra Trollheggveien til ny inngangsdør\n"
+    "• Etableres i flatt/høyt terrengnivå (kote ~C+26,4)\n"
+    "• Skifer/heller/grus over hagen frem til platting",
+    xy=(700, 825), xytext=(490, 845),
+    arrowprops=dict(arrowstyle="->", color="#b45309", lw=2, connectionstyle="arc3,rad=0.1"),
+    fontsize=9.2, weight="bold", color="#78350f",
+    bbox=dict(boxstyle="round,pad=0.45", fc="#fef3c7", ec="#d97706", lw=1.8),
+    zorder=12
+)
 
-# Startpunkt i syd-vest hjørnet av tverrfløyen
-ax.plot(880, 882, marker="s", markersize=9, color="#b91c1c", zorder=10)
+# 5. Dren start
 ax.annotate(
     "START DRENSLEDNING\n(Syd-vest hjørne tverrfløy)",
     xy=(880, 882), xytext=(940, 915),
@@ -188,23 +209,55 @@ ax.annotate(
     zorder=12
 )
 
-# Knotted membrane / XPS langs murer fra SV-hjørne rundt ny underbygd kjeller og hele nordveggen
-membrane_pts = [
-    [888, 875], [864, 808], [882, 803], [870, 762], [903, 753], [898, 730], [905, 726], [1030, 686]
-]
-mem_x = [p[0] for p in membrane_pts]
-mem_y = [p[1] for p in membrane_pts]
-ax.plot(mem_x, mem_y, color="#f97316", lw=3, ls="--", zorder=5, label="Platon knotteplast + 100-150mm XPS")
+# 6. Vannledning & Teknisk rom
+ax.annotate(
+    "6. VANNLEDNING TIL TEKNISK ROM (U.11)\n"
+    "• 32mm PE fra stoppekran (13,3m) til NV-krok\n"
+    "• Innføring via Doyma-hylse i ny underbygd kjeller\n"
+    "• FØRES INNVENDIG I KJELLEREN TIL TEKNISK ROM\n"
+    "  i senter av huset (U.11, kote C+24,4)",
+    xy=(985, 795), xytext=(1060, 825),
+    arrowprops=dict(arrowstyle="->", color="#0284c7", lw=2, connectionstyle="arc3,rad=-0.1"),
+    fontsize=9.2, weight="bold", color="#0c4a6e",
+    bbox=dict(boxstyle="round,pad=0.45", fc="#f0f9ff", ec="#0284c7", lw=1.8),
+    zorder=12
+)
 
-# Rørgjennomføring fra kjeller (#96)
-# Grøft i kjeller ca. 1,5m fra nordveggen, føres under grunnmur og under ny kjellertrapp
-ax.plot([960, 1015], [728, 710], color="#16a34a", lw=3.5, ls="-", zorder=7,
-        label="Rør i grøft i kjeller (#96, ca. 1,5m fra nordvegg)")
-ax.plot([992, 995], [717, 701], color="#16a34a", lw=4, zorder=7)
-ax.plot([995, 999], [701, 675], color="#16a34a", lw=4, ls="--", zorder=8)  # Under kjellertrapp
-ax.plot([999, 1000], [675, 668], color="#16a34a", lw=4, zorder=7)  # Tilkobling drensledning
-ax.plot(995, 701, marker="o", markersize=6, color="#15803d", zorder=9)
-ax.plot(1000, 668, marker="o", markersize=9, color="#16a34a", zorder=9)
+ax.annotate(
+    "EKSISTERENDE STOPPEKRAN\n(Ved 13,3m-målelinjen)",
+    xy=(786, 894), xytext=(560, 930),
+    arrowprops=dict(arrowstyle="->", color="#0284c7", lw=2),
+    fontsize=9, weight="bold", color="#0c4a6e",
+    bbox=dict(boxstyle="round,pad=0.4", fc="#e0f2fe", ec="#0284c7", lw=1.5),
+    zorder=12
+)
+
+# 7. Innkjøring m/buet tun
+ax.annotate(
+    "7. JUSTERT INNKJØRING M/BUET TUN I SYD-VEST (~185 m²)\n"
+    "• Rett innkjøring fra Myrteveien vider seg ut mot vest\n"
+    "• Buet tun/snuplass i syd-vest mot eksist. garasje\n"
+    "• Nivå tun/parkering: Kote ~C+25,0 (fall mot Myrteveien)\n"
+    "• Avtrapping mot vestre terrengkant (C+26,4 ➔ C+25,0)\n"
+    "• Forsterket bærelag pukk 0-63 mm (32t betong/mobilkran)",
+    xy=(860, 600), xytext=(490, 480),
+    arrowprops=dict(arrowstyle="->", color="#334155", lw=2, connectionstyle="arc3,rad=0.1"),
+    fontsize=9.2, weight="bold", color="#0f172a",
+    bbox=dict(boxstyle="round,pad=0.45", fc="#f8fafc", ec="#475569", lw=1.8),
+    zorder=12
+)
+
+# Overvannskum
+ax.annotate(
+    "OVERVANNSKUM\n(Vannstand 253cm / LOD)",
+    xy=(1055, 692), xytext=(1160, 680),
+    arrowprops=dict(arrowstyle="->", color="#1d4ed8", lw=2),
+    fontsize=9, weight="bold", color="#1e40af",
+    bbox=dict(boxstyle="round,pad=0.4", fc="#eff6ff", ec="#2563eb", lw=1.5),
+    zorder=12
+)
+
+# Rør fra kjeller
 ax.annotate(
     "RØR FRA KJELLER (#96)\n"
     "Grøft i kjeller ca. 1,5m fra nordvegg\n"
@@ -217,165 +270,31 @@ ax.annotate(
     zorder=12
 )
 
-# Overvannskum & stenkiste
-ax.plot(1055, 692, marker="o", markersize=13, color="#2563eb", zorder=8)
-ax.annotate(
-    "OVERVANNSKUM\n(Vannstand 253cm / tilkobling LOD)",
-    xy=(1055, 692), xytext=(1160, 680),
-    arrowprops=dict(arrowstyle="->", color="#1d4ed8", lw=2),
-    fontsize=9, weight="bold", color="#1e40af",
-    bbox=dict(boxstyle="round,pad=0.4", fc="#eff6ff", ec="#2563eb", lw=1.5),
-    zorder=12
-)
+# Høydenivå-merkelapper (Koter)
+kote_props = dict(boxstyle="square,pad=0.25", fc="#ffffff", ec="#334155", lw=1.2)
+ax.text(880, 725, "Kote C+26,8 (Platting)", fontsize=8, weight="bold", color="#c2410c", bbox=kote_props, zorder=14)
+ax.text(890, 660, "Kote C+25,0 (Tun/P)", fontsize=8, weight="bold", color="#1e293b", bbox=kote_props, zorder=14)
+ax.text(945, 815, "Kote C+24,4 (Kjeller)", fontsize=8, weight="bold", color="#0369a1", bbox=kote_props, zorder=14)
+ax.text(620, 830, "Kote C+26,4 (Gangvei)", fontsize=8, weight="bold", color="#92400e", bbox=kote_props, zorder=14)
 
-# -------------------------------------------------------------
-# 5. VANNFORSYNING: FRA TROLLHEGGVEIEN VIA STOPPEKRAN VED 13.3M
-# -------------------------------------------------------------
-# Eksisterende stikkledning fra Trollheggveien (langs 13,3m-målelinjen)
-ax.plot([680, 786], [945, 894], color="#0284c7", lw=3, ls=":", zorder=5)
-ax.text(710, 935, "Eksist. vann fra Trollheggveien", fontsize=8, color="#0369a1", rotation=-24, weight="bold")
-
-# Stoppekran ved 13,3 m-målet
-ax.plot(786, 894, marker="o", markersize=12, color="#0284c7", zorder=9)
-ax.plot(786, 894, marker="X", markersize=8, color="#ffffff", zorder=10)
-
-ax.annotate(
-    "EKSISTERENDE STOPPEKRAN\n(Ved 13,3m-målelinjen)",
-    xy=(786, 894), xytext=(570, 890),
-    arrowprops=dict(arrowstyle="->", color="#0284c7", lw=2),
-    fontsize=9.5, weight="bold", color="#0c4a6e",
-    bbox=dict(boxstyle="round,pad=0.4", fc="#e0f2fe", ec="#0284c7", lw=1.5),
-    zorder=12
-)
-
-# Ny 32mm vannledning fra stoppekran nordover til indre hjørne nord-vest
-va_new_pts = [
-    [786, 894],   # Stoppekran ved 13,3m
-    [810, 860],
-    [840, 830],
-    [875, 812],
-    [918, 795]    # Indre hjørne NV der vestvegg møter nordvegg på tverrfløy
-]
-va_new_x = [p[0] for p in va_new_pts]
-va_new_y = [p[1] for p in va_new_pts]
-ax.plot(va_new_x, va_new_y, color="#0284c7", lw=4.5, ls="-", zorder=7,
-        label="5. Ny 32mm vannledning (fra stoppekran til indre NV-inntak)")
-
-# Inntakspunkt i underbygd kjeller / indre hjørne
-ax.plot(918, 795, marker="D", markersize=11, color="#0369a1", zorder=9)
-ax.annotate(
-    "5. INNVENDIG VANNINNTAK\nUnderbygd kjeller / indre NV-hjørne\n(Vestvegg møter tverrfløy)\nInnstøpt vanntett Doyma-hylse",
-    xy=(918, 795), xytext=(610, 815),
-    arrowprops=dict(arrowstyle="->", color="#0284c7", lw=2, connectionstyle="arc3,rad=-0.1"),
-    fontsize=9.5, weight="bold", color="#0c4a6e",
-    bbox=dict(boxstyle="round,pad=0.4", fc="#f0f9ff", ec="#0284c7", lw=1.5),
-    zorder=12
-)
-
-# -------------------------------------------------------------
-# 6. INNKJØRING (VESTGRENSE LANGS 27,7M, VIDER SEG UT TIL LYKTESTOLPEN MIDT PÅ NORDGRENSEN)
-# -------------------------------------------------------------
-driveway_pts = np.array([
-    [885, 700],   # Vestkant ved inngangsplatting / fasade (møter 27,7m-linjen)
-    [795, 333],   # Vestgrense ved Myrteveien (langs 27,7m målelinjen)
-    [892, 310],   # Østgrense ved Myrteveien: Lyktestolpe ca. midt på tomtegrensen
-    [1035, 675]   # Østkant ved kjellertrapp / husets nordøsthjørne (husets fulle bredde)
-])
-drive_poly = Polygon(driveway_pts, closed=True, facecolor="#94a3b8", edgecolor="#334155",
-                     lw=2, alpha=0.45, hatch="..", zorder=3,
-                     label="6. Innkjøring (vestgrense langs 27,7m, utvidet til lyktestolpe midt på grensen)")
-ax.add_patch(drive_poly)
-
-# Marker vestgrensen spesifikt langs 27,7m målelinjen
-ax.plot([885, 795], [700, 333], color="#0284c7", lw=3.5, ls="-", zorder=6)
-
-# Markering og annotering for lyktestolpe ca. midt på tomtegrensen mot nord (892, 310)
-ax.plot(892, 310, marker="o", markersize=12, color="#2563eb", zorder=12)
-ax.plot(892, 310, marker="*", markersize=8, color="#ffffff", zorder=13)
-ax.annotate(
-    "LYKTESTOLPE (Veglys)\n"
-    "Ca. midt på tomtegrensen mot nord\n"
-    "(Innkjøringen vider seg ut hit mot øst)",
-    xy=(892, 310), xytext=(960, 240),
-    arrowprops=dict(arrowstyle="->", color="#1d4ed8", lw=2, connectionstyle="arc3,rad=-0.1"),
-    fontsize=9, weight="bold", color="#1e40af",
-    bbox=dict(boxstyle="round,pad=0.4", fc="#eff6ff", ec="#2563eb", lw=1.5),
-    zorder=14
-)
-
-# Annotering for innkjøring og vestgrense
-ax.annotate(
-    "6. INNKJØRING / FORSTERKET BÆRELAG (~200 m²)\n"
-    "• Vestgrense følger målelinjen på 27,7 m\n"
-    "• Åpning mot Myrteveien vider seg ut til lyktestolpen (892, 310)\n"
-    "• Dekker husets fulle bredde ved fasaden (~9,5 m)\n"
-    "• Forsterket bærelag pukk 0-63 mm (betongbiler/mobilkran)",
-    xy=(840, 480), xytext=(550, 430),
-    arrowprops=dict(arrowstyle="->", color="#334155", lw=2, connectionstyle="arc3,rad=0.1"),
-    fontsize=9.5, weight="bold", color="#0f172a",
-    bbox=dict(boxstyle="round,pad=0.45", fc="#f8fafc", ec="#475569", lw=1.8),
-    zorder=12
-)
-
-# -------------------------------------------------------------
-# 7. TREKKERØR & INFRASTRUKTUR I GRØFT
-# -------------------------------------------------------------
-ax.plot([900, 840, 780], [665, 640, 600], color="#10b981", lw=3.5, ls="--", zorder=6,
-        label="7. Trekkerør (Ø110mm ny garasje / Ø50mm snøsmelte)")
-
-# -------------------------------------------------------------
-# 8. RIGG & LOGISTIKK
-# -------------------------------------------------------------
-# Arbeidssone gravemaskin
-ax.plot(900, 600, marker="^", markersize=14, color="#eab308", zorder=8)
-ax.text(900, 585, "GRAVEMASKIN (8-15t)\nArbeidssone", fontsize=8.5, weight="bold", color="#854d0e", ha="center", zorder=10)
-
-# Massedeponi (mellomlagring rene steinmasser) - plassert i hagen øst for innkjøring
-deponi_pts = np.array([
-    [1160, 480],
-    [1270, 450],
-    [1290, 550],
-    [1180, 580]
-])
-deponi_poly = Polygon(deponi_pts, closed=True, facecolor="#fef08a", edgecolor="#ca8a04",
-                      lw=1.8, ls="--", alpha=0.6, zorder=3)
-ax.add_patch(deponi_poly)
-ax.text(1225, 515, "Mellomlagring\nrene steinmasser\n(Gjenbruk)", fontsize=9, weight="bold", color="#713f12", ha="center", zorder=4)
-
-# Planering nord-vest
-planering_pts = np.array([
-    [640, 480],
-    [760, 450],
-    [740, 360],
-    [620, 390]
-])
-planering_poly = Polygon(planering_pts, closed=True, facecolor="#bbf7d0", edgecolor="#22c55e",
-                         lw=1.5, ls=":", alpha=0.5, zorder=2)
-ax.add_patch(planering_poly)
-ax.text(690, 420, "Terrengplanering\nNord-Vest", fontsize=8.5, weight="bold", color="#166534", ha="center", zorder=4)
-
-# -------------------------------------------------------------
-# TITLE BANNER & LEGEND
-# -------------------------------------------------------------
+# Title banner
 title_box = dict(boxstyle="square,pad=0.5", fc="#ffffff", ec="#0f172a", lw=1.8)
 title_str = (
-    "MYRTEVEIEN 6 — ANLEGGSOMRÅDE & PLANSKISSE FOR GRUNNARBEIDER NORD\n"
+    "MYRTEVEIEN 6 — ANLEGGSOMRÅDE & PLANSKISSE FOR GRUNNARBEIDER NORD & VEST\n"
     "Prosjekt: M6 Totalrehabilitering | Tiltakshaver: Magnus Kirø | Gnr 140 / Bnr 371 | Tønsberg kommune\n"
-    "Bakgrunn: Offisiell Situasjonsplan A-001 (KB Arkitekter AS) | Referanse: GitHub Issue #92"
+    "Oppdatert iht. brukerskisse: Gangvei fra Trollheggveien, justert solplass, vann til teknisk rom & buet tun i syd-vest"
 )
-ax.text(780, 125, title_str, fontsize=9.5, weight="bold", color="#0f172a", ha="center", bbox=title_box, zorder=15)
+ax.text(780, 125, title_str, fontsize=9.2, weight="bold", color="#0f172a", ha="center", bbox=title_box, zorder=15)
 
-# Custom Legend
-ax.legend(loc="lower left", bbox_to_anchor=(0.02, 0.02), fontsize=8.8, framealpha=0.96,
+ax.legend(loc="lower left", bbox_to_anchor=(0.01, 0.01), fontsize=8.6, framealpha=0.96,
           facecolor="#ffffff", edgecolor="#0f172a", fancybox=False)
 
 ax.axis("off")
 plt.tight_layout()
 
-# Save image
 out_path_repo = os.path.join(assets_dir, "planskisse_anleggsomraade_nord.png")
 out_path_brain = "C:/Users/magkir/.gemini/antigravity/brain/773222c6-8706-4aad-83b9-5ad2ac2dc3ae/planskisse_anleggsomraade_nord.png"
 
-plt.savefig(out_path_repo, dpi=200, bbox_inches='tight')
-plt.savefig(out_path_brain, dpi=200, bbox_inches='tight')
-print("Successfully generated refined overlay matching CAD stair & platting!")
+plt.savefig(out_path_repo, dpi=200, bbox_inches="tight")
+plt.savefig(out_path_brain, dpi=200, bbox_inches="tight")
+print("Successfully generated comprehensive updated site plan!")
