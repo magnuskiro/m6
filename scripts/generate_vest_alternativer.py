@@ -186,19 +186,19 @@ class PlanBuilder:
         self.path(f"M {ax1:.1f} {ay1:.1f} L {ax2:.1f} {ay2:.1f} L {ax3:.1f} {ay3:.1f} L {ax4:.1f} {ay4:.1f}", stroke="#334155", sw=2.5)
         self.path(f"M {ax4 - 10:.1f} {ay4 - 12:.1f} L {ax4:.1f} {ay4:.1f} L {ax4 + 10:.1f} {ay4 - 12:.1f}", stroke="#334155", sw=2.5)
 
-    def chimney_and_fireplace(self, x=135, y=720, w=65, h=95, label_side="right"):
-        """Exact original chimney core (slanket) + 2/3-sided fireplace insert."""
-        # Main masonry chimney block
+    def chimney_and_fireplace(self, x=135, y=720, w=95, h=55, label_side="right"):
+        """Exact original chimney core (95 cm east-west x 55 cm north-south) + fireplace insert."""
+        # Main masonry chimney block (longest axis EAST-WEST!)
         self.rect(x, y, w, h, fill="#b45309", stroke="#78350f", sw=3)
-        # Two flues inside
-        self.rect(x + 10, y + 12, 20, 26, fill="#fef3c7", stroke="#78350f", sw=2)
-        self.rect(x + 10, y + 54, 20, 26, fill="#fef3c7", stroke="#78350f", sw=2)
-        # Fireplace glass hearth on west/south side
-        self.rect(x - 16, y + 18, 16, 58, fill="#fb923c", stroke="#9a3412", sw=2)
-        lx = x + w + 12 if label_side == "right" else x - 18
+        # Two flues side-by-side EAST-WEST
+        self.rect(x + 12, y + 12, 28, 31, fill="#fef3c7", stroke="#78350f", sw=2)
+        self.rect(x + 54, y + 12, 28, 31, fill="#fef3c7", stroke="#78350f", sw=2)
+        # Fireplace glass hearth on west end (facing living room)
+        self.rect(x - 18, y + 8, 18, h - 16, fill="#fb923c", stroke="#9a3412", sw=2)
+        lx = x + w + 12 if label_side == "right" else x - 22
         anc = "start" if label_side == "right" else "end"
-        self.text(lx, y + 40, "Orig. pipe", size=16, weight="700", fill="#9a3412", anchor=anc)
-        self.text(lx, y + 60, "(slanket + peis)", size=14, weight="600", fill="#b45309", anchor=anc)
+        self.text(lx, y + 10, "Orig. pipe (95×55 cm Ø–V)", size=15, weight="700", fill="#9a3412", anchor=anc)
+        self.text(lx, y + 28, "(slanket + peis mot vest/sør)", size=13, weight="600", fill="#b45309", anchor=anc)
 
     def double_bed(self, x, y, w=180, h=200, head="right"):
         self.rect(x, y, w, h, fill="#ffffff", stroke="#64748b", sw=2, rx=4)
@@ -395,7 +395,7 @@ def build_alt1_floor1(pb: PlanBuilder):
     pb.wall_h(464, 836, 756, 12)
     # Bearing beam line (dashed) from chimney to north/east
     pb.line(170, 434, 170, 720, stroke="#94a3b8", sw=2.5, dash="8,8")
-    pb.line(200, 756, 464, 756, stroke="#94a3b8", sw=2.5, dash="8,8")
+    pb.line(230, 756, 464, 756, stroke="#94a3b8", sw=2.5, dash="8,8")
 
     # Doors
     pb.door(330, 30, 100, "h_right_down", wall_t=30)  # Main north entrance
@@ -439,8 +439,8 @@ def build_alt1_floor1(pb: PlanBuilder):
     pb.sofa_l(-270, 650, w_horiz=280, h_vert=225, depth=92, corner="bl")
     pb.coffee_table(-145, 625, 130, 75)
     pb.armchair(32, 600, 76, 76)
-    # Original chimney (freestanding!)
-    pb.chimney_and_fireplace(135, 720, 65, 95, label_side="right")
+    # Original chimney (freestanding, 95 cm east-west x 55 cm north-south!)
+    pb.chimney_and_fireplace(135, 720, 95, 55, label_side="right")
 
     # Room labels
     pb.room_label(142, 138, "Trapp", "4,8 m²")
@@ -493,7 +493,7 @@ def build_alt1_floor2(pb: PlanBuilder):
     pb.wall_h(464, 836, 861, 12)  # sov 2 / sov 3
     # Bearing beam dashed lines
     pb.line(170, 434, 170, 720, stroke="#94a3b8", sw=2.5, dash="8,8")
-    pb.line(200, 756, 464, 756, stroke="#94a3b8", sw=2.5, dash="8,8")
+    pb.line(230, 756, 464, 756, stroke="#94a3b8", sw=2.5, dash="8,8")
 
     # Doors
     pb.door(256, 130, 85, "v_down_right", wall_t=12)  # From stairwell to hall
@@ -540,8 +540,8 @@ def build_alt1_floor2(pb: PlanBuilder):
     pb.sofa_l(-270, 650, w_horiz=280, h_vert=225, depth=92, corner="bl")
     pb.coffee_table(-145, 625, 130, 75)
     pb.dining_table(240, 1005, 200, 95, seats=6)
-    # Chimney
-    pb.chimney_and_fireplace(135, 720, 65, 95, label_side="right")
+    # Chimney (95 cm east-west x 55 cm north-south)
+    pb.chimney_and_fireplace(135, 720, 95, 55, label_side="right")
 
     # Labels
     pb.room_label(142, 138, "Trapp", "4,8 m²")
@@ -602,7 +602,7 @@ def build_alt2_floor1(pb: PlanBuilder):
     pb.wall_h(464, 836, 756, 12)
     # Structural beam line (dashed)
     pb.line(170, 383, 170, 720, stroke="#94a3b8", sw=2.5, dash="8,8")
-    pb.line(200, 756, 464, 756, stroke="#94a3b8", sw=2.5, dash="8,8")
+    pb.line(230, 756, 464, 756, stroke="#94a3b8", sw=2.5, dash="8,8")
 
     # Doors
     pb.door(330, 30, 100, "h_right_down", wall_t=30)  # Main north entrance
@@ -655,8 +655,8 @@ def build_alt2_floor1(pb: PlanBuilder):
     pb.coffee_table(-55, 530, 135, 75)
     pb.armchair(225, 515, 78, 78)
     pb.armchair(225, 615, 78, 78)
-    # Original chimney (freestanding divider between living & dining!)
-    pb.chimney_and_fireplace(135, 720, 65, 95, label_side="right")
+    # Original chimney (freestanding divider between living & dining, 95x55 cm east-west!)
+    pb.chimney_and_fireplace(135, 720, 95, 55, label_side="right")
 
     # Labels
     pb.room_label(142, 135, "Trapp", "4,7 m²")
@@ -709,7 +709,7 @@ def build_alt2_floor2(pb: PlanBuilder):
     pb.wall_h(464, 836, 591, 12)
     pb.wall_h(464, 836, 861, 12)
     pb.line(170, 383, 170, 720, stroke="#94a3b8", sw=2.5, dash="8,8")
-    pb.line(200, 756, 464, 756, stroke="#94a3b8", sw=2.5, dash="8,8")
+    pb.line(230, 756, 464, 756, stroke="#94a3b8", sw=2.5, dash="8,8")
 
     # Doors
     pb.door(256, 130, 85, "v_down_right", wall_t=12)
@@ -754,7 +754,7 @@ def build_alt2_floor2(pb: PlanBuilder):
     pb.sofa_l(-180, 540, w_horiz=285, h_vert=220, depth=92, corner="bl")
     pb.coffee_table(-55, 530, 135, 75)
     pb.dining_table(235, 975, 200, 95, seats=6)
-    pb.chimney_and_fireplace(135, 720, 65, 95, label_side="right")
+    pb.chimney_and_fireplace(135, 720, 95, 55, label_side="right")
 
     # Labels
     pb.room_label(142, 135, "Trapp", "4,7 m²")
