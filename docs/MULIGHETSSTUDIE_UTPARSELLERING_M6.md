@@ -73,12 +73,17 @@ Fjerner all avhengighet av privat veieier i Trollheggveien (`141/1`, Elisabeth G
 
 ---
 
-## 4. Sammenheng med pågående enkelt-fradeling i Nord-Øst (`#110`)
+## 4. Sammenheng med låst enkelt-fradeling i Nord-Øst (`#110` — Variant 1C, ca. 750 m²)
 
-Dersom du først sender inn enkel fradelingssøknad for **én tomt i nord-øst (`#110`)** nå, og vil holde døren åpen for senere utparsellering av resten av eiendommen:
-- **Pass på bredden på NØ-tomten (`#110`) og avkjørselen:** I Alternativ B starter den fremtidige felles stikkveien på `x = 28,5–32,5 m` (altså **`19,4 m` vest for østgrensen**).
-- Den tegnede NØ-parsellen i `#110` (`17,2 m` bred ved Myrteveien, parallell vestgrense `4,05 m` øst for Ny garasje) ligger **helt øst for** den fremtidige stikkveikorridoren — så en enkelt-fradeling i NØ nå **låser IKKE ned** muligheten for senere stikkvei og utparsellering av resten av tomten!
-- *(Eneste forbehold: Hvis du bygger Ny garasje nord på M6 først, vil den stå i veien for en fremtidig sentral stikkvei fra Myrteveien til de sørlige tomtene — da må adkomst enten gå via Trollheggveien [Alt. A] eller langs øst- eller vestkanten.)*
+![Sammenheng #110 (750 m²) integrert i mulighetsstudien #111](../assets/images/utparsellering_110_i_111_satellitt.png)
+
+Dersom du først sender inn enkel fradelingssøknad for **Variant 1C i nord-øst (`#110`, ca. 750 m² tomannsboligtomt)** nå, og vil holde døren åpen for senere utparsellering av resten av eiendommen (alene eller sammen med onkels tomt `140/1247`):
+
+- **Veikorridoren fra Myrteveien forblir helt åpen:** Variant 1C starter på `x = 32,0 m` ved Myrteveien (20,2 m bred) og gir hele **6,9 m** parallell klaring til eksisterende hovedhus (`x = 26,4–33,9 m`). Den sentrale 4 m stikkveien i **Spor 2 (100 % fra Myrteveien)** glir derfor rett langs vestgrensen av `#110` uten å berøre den nye tomten!
+- **Beholder 7 tomter (M6 + onkel) / 5 tomter (M6 alene):**
+  - På **M6 + onkel (4 839 m²)** gir `#110` (750 m²) + 6 balanserte tomter à ~545–640 m² fortsatt **7 tomter totalt** (både i Spor 1 m/Sør-tun fra Trollheggveien og i Spor 2 100 % fra Myrteveien + nærlekeplass) — **eller** 6 store tomannsbolig-tomter (`2×3` à ~730–760 m²) der `#110` er tomt nr. 1 av 6.
+  - Kun det tetteste **2×4 (8-tomters)** alternativet går ned fra **8 til 7 tomter** (fordi dybden på `#110`, `37,5–42,9 m`, slår sammen `T2` og halve `T4` i østre rekke — mot at du allerede i steg 1 får ut en fullverdig 750 m² 2-mannsboligtomt).
+- **Det reelle veivalget er timing på `Ny garasje` på M6:** Det er **ikke** `#110`-tomten, men planlagt **`Ny garasje` på M6** (`x = 25,4–31,8 m`, `y = 10,3–19,1 m`) som står midt i den fremtidige stikkveikorridoren fra Myrteveien. Bygges `Ny garasje` i portrommet nå, er **Spor 1 (Sør-tun fra Trollheggveien)** fullt mulig med både `#110` og `Ny garasje` 100 % urørt — mens **Spor 2 (100 % fra Myrteveien)** forutsetter at `Ny garasje` utsettes eller flyttes ved en eventuell fremtidig storutbygging.
 
 ---
 

@@ -1,0 +1,230 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2888 2110" width="2888" height="2110">
+  <rect x="0" y="0" width="2888" height="114" fill="#0f172a"/>
+  <rect x="0" y="1940" width="2888" height="170" fill="#0f172a"/>
+  <rect x="0" y="114" width="24" height="1826" fill="#0f172a"/>
+  <rect x="1428" y="114" width="32" height="1826" fill="#0f172a"/>
+  <rect x="2864" y="114" width="24" height="1826" fill="#0f172a"/>
+
+  <!-- Toppbanner -->
+  <text x="1444.0" y="38" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="22" fill="#ffffff">SAMMENHENG #110 + #111 — 750 m² TOMT (VAR. 1C) INTEGRERT I UTPARSELLERINGEN</text>
+  <text x="1444.0" y="66" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="14.2" fill="#fb923c">Myrteveien 6 (3 752 m²) + Onkels tomt 140/1247 (1 087 m²) = 4 839 m² • #110 (750 m²) passer sømløst inn uten å låse #111!</text>
+  <text x="1444.0" y="92" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="12.2" fill="#cbd5e1">Oransje = Låst #110 (Variant 1C, 750 m² tomannsbolig) • Gul/rød stiplet = Ny garasje M6 (≤ 50 m²) • Kartgrunnlag: Google Maps z=20 + Geonorge</text>
+
+  <!-- Panel A og B -->
+  <polygon points="897.1,314.6 1195.1,247.8 1330.5,740.5 1021.0,861.2 897.1,314.6" fill="none" stroke="#ffffff" stroke-opacity="0.38" stroke-width="1.3" stroke-dasharray="4,4"/>
+<polygon points="1496.5,992.8 1529.6,1049.4 1101.8,1216.9 1021.0,861.2 1330.5,740.5 1614.0,689.5 1626.5,730.3 1638.2,771.3 1649.1,812.5 1659.2,853.9 1668.6,895.6 1496.5,992.8" fill="none" stroke="#ffffff" stroke-opacity="0.38" stroke-width="1.3" stroke-dasharray="4,4"/>
+<polygon points="1588.9,1151.1 1440.2,1224.2 1575.9,1535.6 1354.7,1615.7 1217.5,1454.4 1133.6,1357.4 1101.8,1216.9 1529.6,1049.4 1562.4,1106.0 1710.7,1019.4 1740.3,1062.5 1588.9,1151.1" fill="none" stroke="#ffffff" stroke-opacity="0.38" stroke-width="1.3" stroke-dasharray="4,4"/>
+<polygon points="1484.2,1761.9 1208.3,1901.7 744.7,2136.3 732.1,2143.6 630.2,1799.4 1217.5,1454.4 1354.7,1615.7 1484.2,1761.9" fill="none" stroke="#ffffff" stroke-opacity="0.38" stroke-width="1.3" stroke-dasharray="4,4"/>
+<polygon points="234.4,467.2 547.3,395.2 614.9,688.9 320.4,756.8" fill="#10b981" fill-opacity="0.24" stroke="#34d399" stroke-width="2.4"/>
+<polygon points="643.1,373.1 897.1,314.6 1021.6,863.1 780.6,844.9" fill="#f97316" fill-opacity="0.38" stroke="#fb923c" stroke-width="4.2"/>
+<polygon points="547.3,395.2 643.1,373.1 780.6,844.9 788.2,944.9 402.7,1033.7 320.4,756.8 614.9,688.9" fill="#f59e0b" fill-opacity="0.24" stroke="#fbbf24" stroke-width="2.4"/>
+<polygon points="402.7,1033.7 788.2,944.9 842.6,1181.2 727.7,1207.7 733.6,1233.3 479.4,1291.8" fill="#8b5cf6" fill-opacity="0.24" stroke="#a78bfa" stroke-width="2.4"/>
+<polygon points="780.6,844.9 1021.6,863.1 1095.8,1190.2 857.4,1245.1 788.2,944.9" fill="#0ea5e9" fill-opacity="0.24" stroke="#38bdf8" stroke-width="2.4"/>
+<polygon points="494.4,1342.1 745.3,1284.4 836.1,1678.4 630.2,1799.4 536.7,1484.6" fill="#ec4899" fill-opacity="0.24" stroke="#f472b6" stroke-width="2.4"/>
+<polygon points="788.0,1469.6 883.8,1447.5 847.0,1287.8 866.2,1283.4 857.4,1245.1 1095.8,1190.2 1101.8,1216.9 1133.7,1357.4 1217.5,1454.4 836.1,1678.4" fill="#f43f5e" fill-opacity="0.24" stroke="#fb7185" stroke-width="2.4"/>
+<polygon points="479.4,1291.8 733.6,1233.3 727.7,1207.7 842.6,1181.2 866.2,1283.4 751.2,1309.9 745.3,1284.4 494.4,1342.1" fill="#e2e8f0" fill-opacity="0.62" stroke="#f8fafc" stroke-width="2.4"/>
+<polygon points="751.2,1309.9 847.0,1287.8 883.8,1447.5 788.0,1469.6" fill="#84cc16" fill-opacity="0.36" stroke="#bef264" stroke-width="2.2" stroke-dasharray="6,3"/>
+<polygon points="589.9,529.2 664.1,507.4 695.1,613.1 620.9,634.8" fill="#facc15" fill-opacity="0.38" stroke="#fde047" stroke-width="2.4" stroke-dasharray="5,3"/>
+<line x1="536.7" y1="1484.6" x2="1101.8" y2="1216.9" stroke="#fde047" stroke-width="2.2" stroke-dasharray="7,4"/>
+
+    <line x1="1107.8" y1="1216.9" x2="1248.0" y2="1216.9" stroke="#fde047" stroke-width="1.6" stroke-dasharray="4,3"/>
+    <g transform="translate(1248.0, 1200.9)">
+      <rect width="168" height="32" rx="5" fill="#0f172a" fill-opacity="0.90" stroke="#fde047" stroke-width="1.4"/>
+      <text x="84" y="13" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="8.6" fill="#fef08a">OPPR. GRENSE</text>
+      <text x="84" y="25" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="8.0" fill="#fde047">140/371 vs. 140/1247</text>
+    </g>
+
+    <line x1="202.0" y1="584.1" x2="598.9" y2="584.1" stroke="#eab308" stroke-width="2.0" stroke-dasharray="4,3"/>
+    <g transform="translate(36.0, 564.1)">
+      <rect width="166" height="40" rx="5" fill="#0f172a" fill-opacity="0.92" stroke="#eab308" stroke-width="1.6"/>
+      <text x="83" y="16" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="9.0" fill="#fde047">NY GARASJE M6</text>
+      <text x="83" y="31" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="8.4" fill="#e2e8f0">Står helt urørt i portrom!</text>
+    </g>
+
+        <g transform="translate(344.2, 527.0)">
+          <rect width="132" height="52" rx="6" fill="#0f172a" fill-opacity="0.92" stroke="#34d399" stroke-width="1.8"/>
+          <text x="66.0" y="16" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="10.0" fill="#34d399">T1 • Nord-Vest</text>
+          <text x="66.0" y="33" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="11.5" fill="#ffffff">ca. 547 m²</text>
+          <text x="66.0" y="47" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="8.4" fill="#cbd5e1">BYA 137 m² • Myrteveien</text>
+        </g>
+
+        <g transform="translate(757.3, 537.6)">
+          <rect width="148" height="60" rx="6" fill="#431407" fill-opacity="0.92" stroke="#fb923c" stroke-width="2.6"/>
+          <text x="74.0" y="16" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="11.2" fill="#fb923c">#110 • Var. 1C (NØ)</text>
+          <text x="74.0" y="33" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="12.8" fill="#ffffff">ca. 750 m²</text>
+          <text x="74.0" y="47" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="8.4" fill="#fed7aa">2-mannsbolig (låst)</text>
+        </g>
+
+        <g transform="translate(427.0, 882.2)">
+          <rect width="132" height="52" rx="6" fill="#0f172a" fill-opacity="0.92" stroke="#fbbf24" stroke-width="1.8"/>
+          <text x="66.0" y="16" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="10.0" fill="#fbbf24">T3 • Eksist. hus</text>
+          <text x="66.0" y="33" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="11.5" fill="#ffffff">ca. 882 m²</text>
+          <text x="66.0" y="47" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="8.4" fill="#cbd5e1">BYA 220 m² • M6 (bevart)</text>
+        </g>
+
+        <g transform="translate(530.1, 1082.8)">
+          <rect width="132" height="52" rx="6" fill="#0f172a" fill-opacity="0.92" stroke="#a78bfa" stroke-width="1.8"/>
+          <text x="66.0" y="16" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="10.0" fill="#a78bfa">T4 • Midt-SV</text>
+          <text x="66.0" y="33" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="11.5" fill="#ffffff">ca. 588 m²</text>
+          <text x="66.0" y="47" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="8.4" fill="#cbd5e1">BYA 147 m² • Tun Sør</text>
+        </g>
+
+        <g transform="translate(881.7, 1020.9)">
+          <rect width="132" height="52" rx="6" fill="#0f172a" fill-opacity="0.92" stroke="#38bdf8" stroke-width="1.8"/>
+          <text x="66.0" y="16" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="10.0" fill="#38bdf8">T5 • Sør-Øst</text>
+          <text x="66.0" y="33" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="11.5" fill="#ffffff">ca. 529 m²</text>
+          <text x="66.0" y="47" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="8.4" fill="#cbd5e1">BYA 132 m² • Tun Sør</text>
+        </g>
+
+        <g transform="translate(606.6, 1557.8)">
+          <rect width="132" height="52" rx="6" fill="#0f172a" fill-opacity="0.92" stroke="#f472b6" stroke-width="1.8"/>
+          <text x="66.0" y="16" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="10.0" fill="#f472b6">T6 • Onkel (SV)</text>
+          <text x="66.0" y="33" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="11.5" fill="#ffffff">ca. 625 m²</text>
+          <text x="66.0" y="47" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="8.4" fill="#cbd5e1">BYA 156 m² • Tun Sør</text>
+        </g>
+
+        <g transform="translate(986.1, 1432.7)">
+          <rect width="132" height="52" rx="6" fill="#0f172a" fill-opacity="0.92" stroke="#fb7185" stroke-width="1.8"/>
+          <text x="66.0" y="16" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="10.0" fill="#fb7185">T7 • Onkel (SØ)</text>
+          <text x="66.0" y="33" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="11.5" fill="#ffffff">ca. 662 m²</text>
+          <text x="66.0" y="47" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="8.4" fill="#cbd5e1">BYA 166 m² • Tun Sør</text>
+        </g>
+
+    <g transform="translate(769.5, 1364.7)">
+      <rect width="96" height="28" rx="5" fill="#1a2e05" fill-opacity="0.90" stroke="#a3e635" stroke-width="1.5"/>
+      <text x="48" y="12" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="8.5" fill="#bef264">LEKEPLASS</text>
+      <text x="48" y="23" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="8.5" fill="#ffffff">~94 m²</text>
+    </g>
+
+    <g transform="translate(426.6, 284.9)">
+      <rect width="210" height="24" rx="4" fill="#0f172a" fill-opacity="0.88" stroke="#38bdf8" stroke-width="1.2"/>
+      <text x="105" y="16" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="10.2" fill="#e0f2fe">MYRTEVEIEN (kommunal vei)</text>
+    </g>
+    <g transform="translate(273.4, 1103.9) rotate(-78)">
+      <rect x="-86" y="-11" width="172" height="22" rx="4" fill="#0f172a" fill-opacity="0.85" stroke="#fbbf24" stroke-width="1.1"/>
+      <text x="0" y="4" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="9.2" fill="#fef08a">TROLLHEGGVEIEN (privat 141/1)</text>
+    </g>
+  <polygon points="2333.1,314.6 2631.1,247.8 2766.5,740.5 2457.0,861.2 2333.1,314.6" fill="none" stroke="#ffffff" stroke-opacity="0.38" stroke-width="1.3" stroke-dasharray="4,4"/>
+<polygon points="2932.5,992.8 2965.6,1049.4 2537.8,1216.9 2457.0,861.2 2766.5,740.5 3050.0,689.5 3062.5,730.3 3074.2,771.3 3085.1,812.5 3095.2,853.9 3104.6,895.6 2932.5,992.8" fill="none" stroke="#ffffff" stroke-opacity="0.38" stroke-width="1.3" stroke-dasharray="4,4"/>
+<polygon points="3024.9,1151.1 2876.2,1224.2 3011.9,1535.6 2790.7,1615.7 2653.5,1454.4 2569.6,1357.4 2537.8,1216.9 2965.6,1049.4 2998.4,1106.0 3146.7,1019.4 3176.3,1062.5 3024.9,1151.1" fill="none" stroke="#ffffff" stroke-opacity="0.38" stroke-width="1.3" stroke-dasharray="4,4"/>
+<polygon points="2920.2,1761.9 2644.3,1901.7 2180.7,2136.3 2168.1,2143.6 2066.2,1799.4 2653.5,1454.4 2790.7,1615.7 2920.2,1761.9" fill="none" stroke="#ffffff" stroke-opacity="0.38" stroke-width="1.3" stroke-dasharray="4,4"/>
+<polygon points="1670.4,467.2 2028.0,384.9 2107.0,655.9 1750.8,737.9" fill="#10b981" fill-opacity="0.24" stroke="#34d399" stroke-width="2.4"/>
+<polygon points="2079.1,373.1 2333.1,314.6 2457.6,863.1 2216.6,844.9" fill="#f97316" fill-opacity="0.38" stroke="#fb923c" stroke-width="4.2"/>
+<polygon points="1750.8,737.9 2107.0,655.9 2165.6,856.6 2161.8,966.0 1840.6,1040.0" fill="#f59e0b" fill-opacity="0.24" stroke="#fbbf24" stroke-width="2.4"/>
+<polygon points="1840.6,1040.0 2161.8,966.0 2233.9,1279.0 1932.2,1348.4" fill="#8b5cf6" fill-opacity="0.24" stroke="#a78bfa" stroke-width="2.4"/>
+<polygon points="2216.6,844.9 2457.6,863.1 2524.5,1158.2 2273.2,1216.1 2212.9,954.3" fill="#0ea5e9" fill-opacity="0.24" stroke="#38bdf8" stroke-width="2.4"/>
+<polygon points="1932.2,1348.4 2176.4,1292.2 2266.2,1681.9 2066.2,1799.4 1972.7,1484.6" fill="#ec4899" fill-opacity="0.24" stroke="#f472b6" stroke-width="2.4"/>
+<polygon points="2273.2,1216.1 2524.5,1158.2 2537.8,1216.9 2569.7,1357.4 2653.5,1454.4 2360.9,1626.2 2297.7,1351.7 2323.3,1345.8 2304.1,1262.8 2285.0,1267.2" fill="#f43f5e" fill-opacity="0.24" stroke="#fb7185" stroke-width="2.4"/>
+<polygon points="2028.0,384.9 2079.1,373.1 2216.6,844.9 2212.9,954.3 2285.0,1267.2 2304.1,1262.8 2323.3,1345.8 2195.5,1375.2 2176.4,1292.2 2233.9,1279.0 2161.8,966.0 2165.6,856.6" fill="#e2e8f0" fill-opacity="0.62" stroke="#f8fafc" stroke-width="2.4"/>
+<polygon points="2195.5,1375.2 2297.7,1351.7 2360.9,1626.2 2266.2,1681.9" fill="#84cc16" fill-opacity="0.36" stroke="#bef264" stroke-width="2.2" stroke-dasharray="6,3"/>
+<polygon points="2025.9,529.2 2100.1,507.4 2131.1,613.1 2056.9,634.8" fill="#ef4444" fill-opacity="0.38" stroke="#ef4444" stroke-width="2.4" stroke-dasharray="5,3"/>
+<line x1="1972.7" y1="1484.6" x2="2537.8" y2="1216.9" stroke="#fde047" stroke-width="2.2" stroke-dasharray="7,4"/>
+
+    <line x1="2543.8" y1="1216.9" x2="2684.0" y2="1216.9" stroke="#fde047" stroke-width="1.6" stroke-dasharray="4,3"/>
+    <g transform="translate(2684.0, 1200.9)">
+      <rect width="168" height="32" rx="5" fill="#0f172a" fill-opacity="0.90" stroke="#fde047" stroke-width="1.4"/>
+      <text x="84" y="13" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="8.6" fill="#fef08a">OPPR. GRENSE</text>
+      <text x="84" y="25" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="8.0" fill="#fde047">140/371 vs. 140/1247</text>
+    </g>
+
+    <line x1="1638.0" y1="584.1" x2="2034.9" y2="584.1" stroke="#ef4444" stroke-width="2.0" stroke-dasharray="4,3"/>
+    <g transform="translate(1472.0, 564.1)">
+      <rect width="166" height="40" rx="5" fill="#0f172a" fill-opacity="0.92" stroke="#ef4444" stroke-width="1.6"/>
+      <text x="83" y="16" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="9.0" fill="#fca5a5">NY GARASJE M6</text>
+      <text x="83" y="31" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="8.4" fill="#e2e8f0">Stenger 100 % Myrtevn.-vei!</text>
+    </g>
+
+        <g transform="translate(1799.4, 520.6)">
+          <rect width="132" height="52" rx="6" fill="#0f172a" fill-opacity="0.92" stroke="#34d399" stroke-width="1.8"/>
+          <text x="66.0" y="16" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="10.0" fill="#34d399">T1 • Nord-Vest</text>
+          <text x="66.0" y="33" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="11.5" fill="#ffffff">ca. 601 m²</text>
+          <text x="66.0" y="47" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="8.4" fill="#cbd5e1">BYA 150 m² • Myrteveien</text>
+        </g>
+
+        <g transform="translate(2193.3, 537.6)">
+          <rect width="148" height="60" rx="6" fill="#431407" fill-opacity="0.92" stroke="#fb923c" stroke-width="2.6"/>
+          <text x="74.0" y="16" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="11.2" fill="#fb923c">#110 • Var. 1C (NØ)</text>
+          <text x="74.0" y="33" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="12.8" fill="#ffffff">ca. 750 m²</text>
+          <text x="74.0" y="47" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="8.4" fill="#fed7aa">2-mannsbolig (låst)</text>
+        </g>
+
+        <g transform="translate(1827.0, 865.3)">
+          <rect width="132" height="52" rx="6" fill="#0f172a" fill-opacity="0.92" stroke="#fbbf24" stroke-width="1.8"/>
+          <text x="66.0" y="16" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="10.0" fill="#fbbf24">T3 • Eksist. hus</text>
+          <text x="66.0" y="33" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="11.5" fill="#ffffff">ca. 657 m²</text>
+          <text x="66.0" y="47" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="8.4" fill="#cbd5e1">BYA 164 m² • Stikkvei</text>
+        </g>
+
+        <g transform="translate(1962.9, 1133.7)">
+          <rect width="132" height="52" rx="6" fill="#0f172a" fill-opacity="0.92" stroke="#a78bfa" stroke-width="1.8"/>
+          <text x="66.0" y="16" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="10.0" fill="#a78bfa">T4 • Midt-SV</text>
+          <text x="66.0" y="33" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="11.5" fill="#ffffff">ca. 597 m²</text>
+          <text x="66.0" y="47" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="8.4" fill="#cbd5e1">BYA 149 m² • Stikkvei/tun</text>
+        </g>
+
+        <g transform="translate(2298.7, 995.4)">
+          <rect width="132" height="52" rx="6" fill="#0f172a" fill-opacity="0.92" stroke="#38bdf8" stroke-width="1.8"/>
+          <text x="66.0" y="16" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="10.0" fill="#38bdf8">T5 • Midt-SØ</text>
+          <text x="66.0" y="33" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="11.5" fill="#ffffff">ca. 506 m²</text>
+          <text x="66.0" y="47" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="8.4" fill="#cbd5e1">BYA 127 m² • Stikkvei</text>
+        </g>
+
+        <g transform="translate(2037.6, 1549.4)">
+          <rect width="132" height="52" rx="6" fill="#0f172a" fill-opacity="0.92" stroke="#f472b6" stroke-width="1.8"/>
+          <text x="66.0" y="16" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="10.0" fill="#f472b6">T6 • Onkel (SV)</text>
+          <text x="66.0" y="33" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="11.5" fill="#ffffff">ca. 600 m²</text>
+          <text x="66.0" y="47" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="8.4" fill="#cbd5e1">BYA 150 m² • Snutun</text>
+        </g>
+
+        <g transform="translate(2413.4, 1390.9)">
+          <rect width="132" height="52" rx="6" fill="#0f172a" fill-opacity="0.92" stroke="#fb7185" stroke-width="1.8"/>
+          <text x="66.0" y="16" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="10.0" fill="#fb7185">T7 • Onkel (SØ)</text>
+          <text x="66.0" y="33" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="11.5" fill="#ffffff">ca. 589 m²</text>
+          <text x="66.0" y="47" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="8.4" fill="#cbd5e1">BYA 147 m² • Snutun</text>
+        </g>
+
+    <g transform="translate(2231.2, 1495.1)">
+      <rect width="96" height="28" rx="5" fill="#1a2e05" fill-opacity="0.90" stroke="#a3e635" stroke-width="1.5"/>
+      <text x="48" y="12" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="8.5" fill="#bef264">LEKEPLASS</text>
+      <text x="48" y="23" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="8.5" fill="#ffffff">~182 m²</text>
+    </g>
+
+    <g transform="translate(1862.6, 284.9)">
+      <rect width="210" height="24" rx="4" fill="#0f172a" fill-opacity="0.88" stroke="#38bdf8" stroke-width="1.2"/>
+      <text x="105" y="16" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="10.2" fill="#e0f2fe">MYRTEVEIEN (kommunal vei)</text>
+    </g>
+    <g transform="translate(1709.4, 1103.9) rotate(-78)">
+      <rect x="-86" y="-11" width="172" height="22" rx="4" fill="#0f172a" fill-opacity="0.85" stroke="#fbbf24" stroke-width="1.1"/>
+      <text x="0" y="4" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="9.2" fill="#fef08a">TROLLHEGGVEIEN (privat 141/1)</text>
+    </g>
+
+  <!-- Paneltitler i topp av hvert kart -->
+  <g transform="translate(36, 126)">
+    <rect width="1380" height="68" rx="7" fill="#0f172a" fill-opacity="0.91" stroke="#fb923c" stroke-width="2.0"/>
+    <text x="14" y="23" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="13.5" fill="#fb923c">SPOR 1: #110 (750 m²) + 6 TOMTER M/SØR-TUN FRA TROLLHEGGVEIEN (NY GARASJE URØRT!)</text>
+    <text x="14" y="42" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="11.0" fill="#ffffff">Totalt 7 balanserte tomter (#110 750 m² + 6 tomter på ~545–870 m²) • Portrom &amp; Ny garasje på M6 bevares 100 %</text>
+    <text x="14" y="59" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="10.2" fill="#fde68a">Forutsetning: Utvidet veirett i privat vei Trollheggveien (141/1) for Sør-tunet + detaljregulering</text>
+  </g>
+
+  <g transform="translate(1472, 126)">
+    <rect width="1380" height="68" rx="7" fill="#0f172a" fill-opacity="0.91" stroke="#34d399" stroke-width="2.0"/>
+    <text x="14" y="23" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="13.5" fill="#34d399">SPOR 2: #110 (750 m²) + 6 TOMTER — 100 % FRA MYRTEVEIEN (0 % AVHENGIG AV TROLLHEGGVN.!)</text>
+    <text x="14" y="42" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="11.0" fill="#ffffff">Sentral 4 m stikkvei følger vestgrensen av #110 rett gjennom 6,9 m-åpningen forbi huset (+ ~170 m² lekeplass)</text>
+    <text x="14" y="59" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="10.2" fill="#fca5a5">Viktig funn: #110 blokkerer IKKE veien — men Ny garasje på M6 står midt i veikorridoen (må utsettes/flyttes i Spor 2)</text>
+  </g>
+
+  <!-- Rammer rundt paneler -->
+  <rect x="24" y="114" width="1404" height="1826" fill="none" stroke="#334155" stroke-width="2.0"/>
+  <rect x="1460" y="114" width="1404" height="1826" fill="none" stroke="#334155" stroke-width="2.0"/>
+
+  <!-- Bunnfelt med oppsummering -->
+  <g transform="translate(24, 1954)">
+    <rect width="2840" height="144" rx="8" fill="#1e293b" stroke="#475569" stroke-width="1.6"/>
+    <text x="20" y="26" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="13.5" fill="#ffffff">HOVEDKONKLUSJON — HVORDAN #110 (750 m²) OG #111 SPILLER SAMMEN</text>
+    <text x="20" y="49" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="11.6" fill="#fed7aa">1. Trygt å kjøre #110 nå: Å fradele Variant 1C (750 m² tomannsboligtomt) nå ødelegger IKKE fremtidig utparsellering — du beholder 7 tomter totalt (M6 + onkel) eller 5 på M6 alene!</text>
+    <text x="20" y="70" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="11.6" fill="#a7f3d0">2. Veikorridoren fra Myrteveien forblir åpen: Vestgrensen på #110 (x=31,7 m) + 6,9 m klaring til huset gir eksakt plass til 4 m stikkvei sørover i Spor 2 (0 % avhengig av Trollheggveien).</text>
+    <text x="20" y="91" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="11.6" fill="#fca5a5">3. Eneste reelle veivalg for M6 er timing på Ny garasje: Bygges Ny garasje i portrommet nå, må fremtidig Sør-utvikling gå fra Trollheggveien (Spor 1) — eller garasjen må flyttes ved utbygging.</text>
+    <text x="20" y="112" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="11.6" fill="#e2e8f0">4. Kun 2x4 (8 tomter) mister 1 tomt: Dybden på #110 (37,5–42,9 m) slår sammen T2 og halve T4 (8 → 7 tomter), men til gjengjeld får du ut en fullverdig 750 m² 2-mannsboligtomt allerede i steg 1.</text>
+    <text x="20" y="132" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="10.0" fill="#94a3b8">Kartgrunnlag: Google Maps Satellite (z=20) &amp; Kartverket / Geonorge Matrikkel API (Tønsberg kommune 3905). Foreløpig strategisk mulighetsskisse.</text>
+  </g>
+</svg>
