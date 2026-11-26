@@ -113,3 +113,32 @@ Alene er `140/1247` (1 087 m²) skrå i både nord- og sørgrensen og litt knapp
 | *Lek* | *Felles nærlekeplass (solrik syd)* | *ca. 225 m²* | — | *Direkte ved snutun* |
 | *Vei* | *Felles 4 m stikkvei + snutun* | *ca. 354 m²* | — | *Fra kommunal vei Myrteveien* |
 
+---
+
+## 6. Alternativ C: 2×4 tomter med to gatetun + vurdering av 2-mannsboliger
+
+![2x4 Gatetun over Google Maps satellittkart — M6 + Onkels tomt](../assets/images/utparsellering_2x4_gatetun_satellitt.png)
+
+### 6.1 Hvorfor «2×4 med to gatetun» er svært effektivt
+Ved å samle tomtene i **to klynger på 4 + 4 tomter** som møtes i hvert sitt **gatetun** (`Gatetun Nord` og `Gatetun Sør`):
+- **Minimalt veiareal:** I **Alt. C1** (Nord-tun fra Myrteveien + Sør-tun fra Trollheggveien) går kun **295 m² (6,1 %)** med til både innkjørsel og to felles sosiale tun — ingen lang gjennomgående vei og ingen trafikk mellom klyngene! De 8 tomtene får **534–615 m²** (snitt **566 m²**).
+- **Også mulig 100 % fra Myrteveien (Alt. C2):** Kobles Nord-tun og Sør-tun med én rett 4 m stikkvei langs østsiden av eksisterende hus, blir samlet vei + 2 gatetun **392 m² (8,1 %)** — alle 8 tomter forblir over 500 m² (**507–620 m²**, snitt **554 m²**), helt uten avhengighet av Trollheggveien.
+- **Trafikksikkerhet & felleskvalitet:** Kun én avkjørsel mot Myrteveien (i stedet for 4–5 enkeltavkjørsler), og gatetunene kan utformes som bilfrie/saktegående møteplasser som delvis avlaster kravet til felles opphold/lek i detaljregulering.
+
+### 6.2 Kan man bygge 2-mannsboliger på 2×4-tomtene (~550–590 m²)?
+
+| Regel / Dimensjonerende krav (Tønsberg KPA 2023–2035) | Ved 25 % BYA *(standard frittliggende)* | Ved 30 % BYA *(regulert konsentrert småhus)* | Vurdering for ~565 m² tomt |
+| :--- | :---: | :---: | :--- |
+| **Veiledende tomtestørrelse (KPA)** | 750 m² for tomannsbolig *(uregulert)* | Fastsettes fritt i detaljregulering | ⚠️ Krever detaljregulering |
+| **Maks totalt BYA på 565 m² tomt** | **141 m²** | **170 m²** | — |
+| **Fratrekk parkering (3–4 plasser à 18 m²)** | −54 til −72 m² | −54 m² *(1,5 p/enhet + gjest i tun)* | 1,5 p/enhet krever god reguleringsbegrunnelse |
+| **Gjenstående fotavtrykk for hele 2-mannsboligen** | **69–87 m²** *(35–44 m²/enhet)* | **~112–116 m²** *(56–58 m²/enhet)* | ❌ For trangt ved 25 % • ✅ **Mulig ved 30 % BYA** (~110 m² BRA per enhet i 2 etg) |
+| **Uteoppholdsareal (MUA) for 2 boenheter** | 2 × 150 m² = **300 m²** | 2 × 100–125 m² = **200–250 m²** *(+ felles gatetun)* | ⚠️ Stramt på ~565 m²; krever god sør/vest-orientering og felles MUA i gatetunene |
+| **Totalt antall boenheter (7 nye tomter × 2 + eksist. hus)** | — | **15 boenheter** (~3,1 boliger/daa) | ⚠️ Utløser skjerpet krav til nær-/kvartalslekeplass, trafikkanalyse, NVE K4 og større nabomotstand |
+
+#### Konklusjon og tre konkrete strategivalg for 2-mannsbolig-økonomi
+1. **Alt. C (2×4 tomter med kompakte 2-mannsboliger ved 30 % BYA):** **Teknisk byggbart** (illustrert med hvite `~112 m²`-bokser på satellittkartet, dvs. to 3–4-roms enheter på ~105–115 m² BRA per tomt), men utfordrende politisk/nabomessig på Tolvsrød (15 boenheter, mye trafikk, stram MUA).
+2. **Anbefalt alternativ 1 — 2×4 tomter med enebolig + sekundærleilighet (utleiedel):** Samme suverene 2×4 gatetun-struktur (8 tomter), men reguleres som **eneboliger med godkjent utleiedel** (8 hovedboenheter i stedet for 15). Langt enklere politisk og på parkering/lekeplass, samtidig som utleie-/salgsverdien nærmer seg tomannsbolig!
+3. **Anbefalt alternativ 2 — 2×3 = 6 større tomter (~730–760 m²) rundt de samme to gatetunene:** Ved å lage **3 tomter rundt Gatetun Nord** (inkl. eksisterende 1947-hus) og **3 tomter rundt Gatetun Sør** får hver ny tomt **~730–760 m²** — da oppfylles Tønsbergs egen **750 m²-norm for 2-mannsboliger**, man klarer seg med **25 % BYA** (~185 m² BYA → 130 m² bygg + 3 p-plasser!), god MUA, og får **11–12 romslige og svært lettsolgte boenheter**!
+
+
