@@ -53,7 +53,8 @@ p_house_wall = np.array([0.32254 * 800.0 + 808.28, 800.0])
 
 # Variant 1C (750 m² tomannsbolig-tomt):
 # - Ny garasje blir stående i portrommet (ikke flyttet), med 1,05 m avstand til ny vestgrense
-#   (lovlig ved ≤ 50 m² jf. KPA § 19 og/eller positiv tinglyst avstandserklæring + EI 30/60 østvegg)
+#   (forutsettes ≤ 50 m² uten kjeller -> lovfestet rett etter SAK10 § 4-1 / KPA § 1.16.3 + EI 30 østvegg)
+# - Egen, uavhengig avkjørsel for ny tomt (felles utkjøring utgår)
 # - Østgrense følger eksisterende tomtemarkør mellom 140/1008 og 140/995 (42,9 m)
 # - SV-hjørne ved 37,5 m (fortsatt 5,2 m nord for SØ-markøren!) -> areal eksakt ca. 750 m²
 SETBACK_GAR_M = 1.05
@@ -306,8 +307,8 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{
     <text x="12" y="20" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="10.4" fill="#0f172a">NY GARASJE M6 (PORTROM BEVART)</text>
     <text x="12" y="36" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="9.4" fill="#334155">• Blir stående — bevarer portrom mot hus</text>
     <text x="12" y="51" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="9.4" fill="#334155">• 1,05 m til ny grense (parallell m/hus)</text>
-    <text x="12" y="66" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="9.3" fill="#334155">• Løses m/≤ 50 m² (KPA § 19) og/eller</text>
-    <text x="12" y="80" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="9.3" fill="#334155">  tinglyst avstandserklæring (+ EI 30/60)</text>
+    <text x="12" y="66" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="9.2" fill="#047857">• ≤ 50 m² uten kjeller (KPA § 1.16.3)</text>
+    <text x="12" y="80" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="9.2" fill="#334155">  → 1,0 m rettskrav (+ EI 30, uten skjønn)</text>
   </g>
 
   <!-- Callout V3: Gjenværende hovedtomt M6 (helt i venstre marg, vest for Trollheggveien) -->
