@@ -1,12 +1,22 @@
 """
 Genererer foreløpig situasjonsplan (SVG + PNG) for søknad om tomtefradeling
-(ca. 650 m² i nord-øst) på Myrteveien 6, Gnr 140 / Bnr 371, Tønsberg kommune.
+i nord-øst på Myrteveien 6, Gnr 140 / Bnr 371, Tønsberg kommune.
 
 Basert på KB Arkitekters situasjonsplan som inkluderer NY GARASJE (2026-04-21,
 assets/images/drawings/situasjonsplan-1.jpg, 1:400 i A3, 14,6994 px/m)
 og Kartverkets matrikkeldata (nordgrense 51,89 m, østgrense mot 140/1008 42,77 m).
+
+Geometriske prinsipper:
+- NØ-hjørne: Eksisterende hjørne mot Myrteveien og Myrteveien 2 (140/1008).
+- SØ-hjørne: Eksisterende tomtemarkør mellom naboeiendommene mot øst
+             (Myrteveien 2 [140/1008] og Øvre Bogenvei 31 [140/995], 42,8 m fra NØ).
+- Vestgrense: Matematisk parallell med eksisterende enebolig og planlagt Ny garasje
+              (dx/dy = 0,3227), plassert med full lovlig 4,05 m avstand øst for Ny garasje
+              (og 9,9 m øst for boligen).
+- SV-hjørne: Trukket nordover langs vestgrensen (34,0 m fra Myrteveien, ~8,7 m nord for
+             SØ-markøren) for å åpne hagen/solgangen øst for M6 -> areal ca. 605 m².
 Inkluderer også historisk avløpstrasé fra 1946-kart (septikk/synkekum) og antatt
-avløpsretning fra husets NØ-hjørne ned mot naboen (140/1008) for påvisning/VA-kontroll.
+selvfallsretning fra husets NØ-hjørne ned mot naboen (140/1008).
 """
 
 import math
@@ -19,65 +29,133 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 repo_root = os.path.dirname(script_dir)
 assets_dir = os.path.join(repo_root, "assets", "images")
 
-# Bruk situasjonsplanen som inkluderer NY GARASJE (9,9 x 5,9 m, ca. 20,74 m fra østgrense)
 bg_path = os.path.join(assets_dir, "drawings", "situasjonsplan-1.jpg")
 im = Image.open(bg_path).convert("RGBA")
 
-# Beskjær rundt Myrteveien 6, ny garasje og NØ-hjørnet (med god luft til toppbanner og bunn)
+# Beskjær rundt Myrteveien 6, ny garasje, NØ-hjørnet og øst-markøren (140/1008 vs 140/995)
 CROP_X0, CROP_Y0 = 460, 45
 CROP_X1, CROP_Y1 = 1720, 1185
 W = CROP_X1 - CROP_X0  # 1260
 H = CROP_Y1 - CROP_Y0  # 1140
 crop_im = im.crop((CROP_X0, CROP_Y0, CROP_X1, CROP_Y1))
 
-# Kalibrerte referansepunkter på situasjonsplan-1.jpg (verifisert mot 51,89 m nordgrense)
+# Kalibrerte referansepunkter i originalbildet (px)
 PX_PER_M = 14.6994
-NE = np.array([1293.17, 208.93])
-NW = np.array([554.70, 399.88])
+NE_ORIG = np.array([1293.17, 208.93])
+NW_ORIG = np.array([554.70, 399.88])
+# Eksisterende tomtemarkør mellom 140/1008 (Myrteveien 2) og 140/995 (Øvre Bogenvei 31)
+SE_MARKER_ORIG = np.array([1440.56, 822.33])
 
-u_west = (NW - NE) / np.linalg.norm(NW - NE)
-u_south = np.array([0.24028, 1.0]) / math.hypot(0.24028, 1.0)
+u_west = (NW_ORIG - NE_ORIG) / np.linalg.norm(NW_ORIG - NE_ORIG)
+u_east_edge = (SE_MARKER_ORIG - NE_ORIG) / np.linalg.norm(SE_MARKER_ORIG - NE_ORIG)
 
-# Foreslått tomt med full 4,0 m lovlig avstand fra NY GARASJE (58,4 m² > 50 m², 20,74 m fra østgrense):
-# 16,7 m (bredde langs Myrteveien) x 39,0 m (dybde langs 140/1008) = 651,2 m²
-W_M = 16.7
-D_M = 39.0
-sin_theta = abs(u_west[0] * u_south[1] - u_west[1] * u_south[0])
-ACTUAL_AREA = W_M * D_M * sin_theta
+# Eksakt bygningsakse (parallell med både eksisterende Enebolig og planlagt Ny garasje)
+# Målt på situasjonsplan-1.jpg: Enebolig dx/dy = 0.32254, Ny garasje dx/dy = 0.32277
+C_BLDG = 0.3227
+u_par = np.array([C_BLDG, 1.0]) / math.hypot(C_BLDG, 1.0)
+n_east = np.array([u_par[1], -u_par[0]])  # normal vinkelrett østover fra hus/garasje
+
+# Referansepunkter på østvegg til Ny garasje og Enebolig (originalbilde)
+p_gar_wall = np.array([0.32277 * 500.0 + 898.15, 500.0])
+p_house_wall = np.array([0.32254 * 800.0 + 808.28, 800.0])
+
+# Plasser ny vestgrense eksakt 4,05 m (vinkelrett) øst for Ny garasje (58,4 m² > 50 m²)
+SETBACK_GAR_M = 4.05
+L_WEST_M = 34.0  # SV-hjørne flyttet nordover (~8,7 m nord for SØ-markøren)
+
+p_w0 = p_gar_wall + (SETBACK_GAR_M * PX_PER_M) * n_east
+# Skjæringspunkt med nordgrense langs Myrteveien
+A_mat = np.column_stack([u_par, -u_west])
+t_nw, s_nw = np.linalg.solve(A_mat, NE_ORIG - p_w0)
+NW_NEW_ORIG = p_w0 + t_nw * u_par
+SW_NEW_ORIG = NW_NEW_ORIG + (L_WEST_M * PX_PER_M) * u_par
 
 
-def pt(west_m, south_m):
-    p = NE + (west_m * PX_PER_M) * u_west + (south_m * PX_PER_M) * u_south
+def to_crop(p):
     return np.array([p[0] - CROP_X0, p[1] - CROP_Y0])
+
+
+def pt_ne(west_m, south_m):
+    p = NE_ORIG + (west_m * PX_PER_M) * u_west + (south_m * PX_PER_M) * u_east_edge
+    return to_crop(p)
 
 
 def poly_str(pts):
     return " ".join(f"{p[0]:.1f},{p[1]:.1f}" for p in pts)
 
 
-# Geometrier
-parcel_pts = [pt(0.0, 0.0), pt(W_M, 0.0), pt(W_M, D_M), pt(0.0, D_M)]
-build_pts = [pt(4.0, 11.0), pt(W_M - 4.0, 11.0), pt(W_M - 4.0, D_M - 4.0), pt(4.0, D_M - 4.0)]
-road_line_pts = [pt(-1.5, 11.0), pt(W_M + 1.5, 11.0)]
-avkjorsel_pts = [pt(11.2, -1.2), pt(15.2, -1.2), pt(15.2, 8.0), pt(11.2, 8.0)]
+def inset_quad(pts, insets_m):
+    """Beregner dispensasjonsfritt byggefelt ved å forskyve hver av de 4 grensene innover."""
+    sa = sum(pts[i][0] * pts[(i + 1) % 4][1] - pts[(i + 1) % 4][0] * pts[i][1] for i in range(4))
+    sign = 1.0 if sa > 0 else -1.0
+    lines = []
+    for i in range(4):
+        p1, p2 = pts[i], pts[(i + 1) % 4]
+        d = p2 - p1
+        d = d / np.linalg.norm(d)
+        n_in = sign * np.array([-d[1], d[0]])
+        q = p1 + insets_m[i] * PX_PER_M * n_in
+        lines.append((q, d))
+    out = []
+    for i in range(4):
+        q1, d1 = lines[(i - 1) % 4]
+        q2, d2 = lines[i]
+        M = np.column_stack([d1, -d2])
+        t, _ = np.linalg.solve(M, q2 - q1)
+        out.append(q1 + t * d1)
+    return out
 
-# Nøkkelpunkter fra KB Arkitekters 2026-04-21 tegning (med ny garasje)
-gar_ne = pt(20.74, 10.01)
-gar_se = pt(20.74, 19.91)
-gar_mid_e = pt(20.74, 15.0)
-p_west_at_gar = pt(W_M, 15.0)
 
-m6_ne = pt(24.84, 26.5)
-p_west_at_m6 = pt(W_M, 26.5)
-overvannskum = pt(23.6, 27.9)
+# Hjørner i beskåret koordinatsystem: [NØ, NV_ny, SV_ny, SØ_markør]
+NE = to_crop(NE_ORIG)
+NW_NEW = to_crop(NW_NEW_ORIG)
+SW_NEW = to_crop(SW_NEW_ORIG)
+SE_MARKER = to_crop(SE_MARKER_ORIG)
+parcel_pts = [NE, NW_NEW, SW_NEW, SE_MARKER]
 
-# Historisk avløpstrasé fra 1946-kart (Sem bygn.råd J.nr. 814/1946):
-# Fra NØ-hjørnet av dagens hus diagonalt NØ til KLOAKK. SEPTIKK -> SYNKEKUM,
-# samt antatt videre selvfallsretning ned skråningen (1:13 øst) mot naboen (140/1008).
-sewer_house_ne = pt(24.84, 26.8)
-sewer_septik = pt(12.0, 18.0)       # 1946-kart: KLOAKK. SEPTIKK (~12 m NØ for husets NØ-hjørne)
-sewer_synkekum = pt(9.8, 10.2)      # 1946-kart: SYNKEKUM (nord for septikk)
-sewer_to_neighbor = pt(-2.2, 23.5)  # Antatt selvfallsretning ned mot nabo (Myrteveien 2, 140/1008)
+# Beregn eksakte mål og arealer
+ACTUAL_AREA = 0.5 * abs(sum(parcel_pts[i][0] * parcel_pts[(i + 1) % 4][1] - parcel_pts[(i + 1) % 4][0] * parcel_pts[i][1] for i in range(4))) / (PX_PER_M ** 2)
+FRONTAGE_M = np.linalg.norm(NW_NEW - NE) / PX_PER_M
+EAST_LEN_M = np.linalg.norm(SE_MARKER - NE) / PX_PER_M
+SOUTH_LEN_M = np.linalg.norm(SE_MARKER - SW_NEW) / PX_PER_M
+SETBACK_HOUSE_M = np.dot(p_w0 - p_house_wall, n_east) / PX_PER_M
+
+# Dispensasjonsfritt byggefelt (11,0 m fra Myrteveien = 15 m fra vegmidt; 4,0 m fra vest, sør, øst)
+build_pts = inset_quad(parcel_pts, [11.0, 4.0, 4.0, 4.0])
+BUILD_AREA = 0.5 * abs(sum(build_pts[i][0] * build_pts[(i + 1) % 4][1] - build_pts[(i + 1) % 4][0] * build_pts[i][1] for i in range(4))) / (PX_PER_M ** 2)
+BUILD_W_N = np.linalg.norm(build_pts[1] - build_pts[0]) / PX_PER_M
+BUILD_W_S = np.linalg.norm(build_pts[3] - build_pts[2]) / PX_PER_M
+
+# 15 m byggegrense fra vegmidt Myrteveien (~11,0 m vinkelrett inn fra nordgrense)
+n_south_road = np.array([-u_west[1], u_west[0]])
+if n_south_road[1] < 0:
+    n_south_road = -n_south_road
+road_line_pts = [
+    NE - 1.8 * PX_PER_M * u_west + 11.0 * PX_PER_M * n_south_road,
+    NW_NEW + 1.8 * PX_PER_M * u_west + 11.0 * PX_PER_M * n_south_road,
+]
+
+# Foreslått ny avkjørsel (ca. 4 m bredde i vestre del av ny tomt langs Myrteveien)
+avk_p1 = NW_NEW - 1.5 * PX_PER_M * u_west - 1.2 * PX_PER_M * n_south_road
+avk_p2 = NW_NEW - 5.5 * PX_PER_M * u_west - 1.2 * PX_PER_M * n_south_road
+avk_p3 = avk_p2 + 9.0 * PX_PER_M * u_par
+avk_p4 = avk_p1 + 9.0 * PX_PER_M * u_par
+avkjorsel_pts = [avk_p1, avk_p2, avk_p3, avk_p4]
+
+# Avstandslinjer vinkelrett fra Ny garasje og Enebolig til den nye parallelle vestgrensen
+gar_mid_e = to_crop(p_gar_wall)
+west_at_gar = gar_mid_e + (SETBACK_GAR_M * PX_PER_M) * n_east
+
+house_mid_e = to_crop(np.array([0.32254 * 735.0 + 808.28, 735.0]))
+west_at_house = house_mid_e + (SETBACK_HOUSE_M * PX_PER_M) * n_east
+
+overvannskum = pt_ne(23.6, 27.9)
+
+# Historisk avløpstrasé fra 1946-kart (Sem bygn.råd J.nr. 814/1946) + antatt føring ned mot nabo (140/1008)
+sewer_house_ne = pt_ne(24.84, 26.8)
+sewer_septik = pt_ne(11.8, 18.0)
+sewer_synkekum = pt_ne(9.6, 10.2)
+sewer_to_neighbor = pt_ne(-2.2, 23.5)
 
 
 def dim_svg(p1, p2, label, dx=0, dy=0, color="#047857", w_box=74, h_box=22, font_size=11.0):
@@ -92,9 +170,17 @@ def dim_svg(p1, p2, label, dx=0, dy=0, color="#047857", w_box=74, h_box=22, font
     '''
 
 
-center_parcel = pt(W_M / 2.0, 28.5)
-avk_target = pt(13.2, 2.5)
-road_target = pt(2.2, 11.0)
+# Norske formateringshjelpere (komma som desimalskilletegn og mellomrom som tusenskilletegn)
+def nf(val, dec=1):
+    return f"{val:.{dec}f}".replace(".", ",")
+
+
+# Plasser informasjonskort midt i nedre del av ny parsell
+center_parcel = (build_pts[0] + build_pts[1] + build_pts[2] + build_pts[3]) / 4.0 + np.array([10.0, 24.0])
+avk_target = (avk_p1 + avk_p2 + avk_p3 + avk_p4) / 4.0
+road_target = road_line_pts[0] + 0.25 * (road_line_pts[1] - road_line_pts[0])
+sewer_mid = 0.5 * (sewer_house_ne + sewer_to_neighbor) + np.array([65.0, -7.0])
+M6_REM_STR = f"{3752 - round(ACTUAL_AREA):,}".replace(",", " ")
 
 svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}">
   <defs>
@@ -116,12 +202,15 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{
     <marker id="arrow-9333ea" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
       <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#9333ea"/>
     </marker>
+    <marker id="arrow-059669" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#059669"/>
+    </marker>
   </defs>
 
-  <!-- 1. Foreslått ny parsell (16,7 x 39,0 m = ca. 651 m²) -->
+  <!-- 1. Foreslått ny parsell -->
   <polygon points="{poly_str(parcel_pts)}" fill="#10b981" fill-opacity="0.22" stroke="#047857" stroke-width="2.4"/>
 
-  <!-- 2. Dispensasjonsfritt byggefelt (8,7 x 24,0 m = 209 m²) -->
+  <!-- 2. Dispensasjonsfritt byggefelt -->
   <polygon points="{poly_str(build_pts)}" fill="#3b82f6" fill-opacity="0.16" stroke="#1d4ed8" stroke-width="2.0" stroke-dasharray="5,4"/>
   <polygon points="{poly_str(build_pts)}" fill="url(#dots-build)" stroke="none"/>
 
@@ -133,12 +222,17 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{
         x2="{road_line_pts[1][0]:.1f}" y2="{road_line_pts[1][1]:.1f}"
         stroke="#d97706" stroke-width="2.8" stroke-dasharray="10,4,2,4"/>
 
-  <!-- 5. Prosjekterte nye eiendomsgrenser (vest- og sørgrense) -->
-  <polyline points="{parcel_pts[1][0]:.1f},{parcel_pts[1][1]:.1f} {parcel_pts[2][0]:.1f},{parcel_pts[2][1]:.1f} {parcel_pts[3][0]:.1f},{parcel_pts[3][1]:.1f}"
+  <!-- 5. Prosjekterte nye eiendomsgrenser (vestgrense parallell m/hus & garasje + skrå sørgrense til øst-markør) -->
+  <polyline points="{NW_NEW[0]:.1f},{NW_NEW[1]:.1f} {SW_NEW[0]:.1f},{SW_NEW[1]:.1f} {SE_MARKER[0]:.1f},{SE_MARKER[1]:.1f}"
             fill="none" stroke="#dc2626" stroke-width="4.0" stroke-dasharray="10,5"/>
 
-  <!-- Grensepunkter ny parsell -->
-  {"".join(f'<circle cx="{p[0]:.1f}" cy="{p[1]:.1f}" r="5.5" fill="#dc2626" stroke="#ffffff" stroke-width="2"/>' for p in parcel_pts)}
+  <!-- Nye grensepunkter (røde) og eksisterende tomtemarkører (grønne ringer) -->
+  <circle cx="{NW_NEW[0]:.1f}" cy="{NW_NEW[1]:.1f}" r="5.5" fill="#dc2626" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="{SW_NEW[0]:.1f}" cy="{SW_NEW[1]:.1f}" r="5.5" fill="#dc2626" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="{NE[0]:.1f}" cy="{NE[1]:.1f}" r="6.5" fill="#059669" stroke="#ffffff" stroke-width="2.2"/>
+  <!-- Eksisterende tomtemarkør mellom 140/1008 og 140/995 fremhevet -->
+  <circle cx="{SE_MARKER[0]:.1f}" cy="{SE_MARKER[1]:.1f}" r="11" fill="none" stroke="#059669" stroke-width="2.6" stroke-dasharray="4,2"/>
+  <circle cx="{SE_MARKER[0]:.1f}" cy="{SE_MARKER[1]:.1f}" r="6.5" fill="#059669" stroke="#ffffff" stroke-width="2.2"/>
 
   <!-- 6. Historisk avløpstrasé (1946-kart: septikk & synkekum) + antatt trasé ned mot nabo (140/1008) -->
   <polyline points="{sewer_house_ne[0]:.1f},{sewer_house_ne[1]:.1f} {sewer_septik[0]:.1f},{sewer_septik[1]:.1f} {sewer_synkekum[0]:.1f},{sewer_synkekum[1]:.1f}"
@@ -147,7 +241,6 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{
         x2="{sewer_to_neighbor[0]:.1f}" y2="{sewer_to_neighbor[1]:.1f}"
         stroke="#9333ea" stroke-width="3.2" stroke-dasharray="3,5" marker-end="url(#arrow-9333ea)"/>
 
-  <!-- Symboler for 1946 septikk & synkekum + utløp ved husets NØ-hjørne -->
   <circle cx="{sewer_house_ne[0]:.1f}" cy="{sewer_house_ne[1]:.1f}" r="6.5" fill="#7e22ce" stroke="#ffffff" stroke-width="2"/>
   <rect x="{sewer_septik[0] - 8:.1f}" y="{sewer_septik[1] - 6:.1f}" width="16" height="12" rx="2"
         fill="#a855f7" stroke="#581c87" stroke-width="2"/>
@@ -156,29 +249,32 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{
   <!-- Overvannskum M6 -->
   <circle cx="{overvannskum[0]:.1f}" cy="{overvannskum[1]:.1f}" r="5.5" fill="#0284c7" stroke="#ffffff" stroke-width="1.8"/>
 
-  <!-- Mållinjer -->
-  {dim_svg(pt(0.0, -2.0), pt(W_M, -2.0), "16,7 m", dx=-4, dy=-17, color="#047857", w_box=64, h_box=22, font_size=12)}
-  {dim_svg(pt(-2.0, 0.0), pt(-2.0, D_M), "39,0 m", dx=38, dy=0, color="#047857", w_box=64, h_box=22, font_size=12)}
-  {dim_svg(gar_mid_e, p_west_at_gar, "4,04 m (≥ 4,0 m)", dx=0, dy=-22, color="#dc2626", w_box=112, h_box=21, font_size=10.2)}
-  {dim_svg(m6_ne, p_west_at_m6, "8,1 m til bolig", dx=-4, dy=-22, color="#1d4ed8", w_box=96, h_box=21, font_size=10.2)}
+  <!-- Mållinjer langs alle 4 sider + avstand til Ny garasje og Enebolig -->
+  {dim_svg(NE - 2.0 * PX_PER_M * n_south_road, NW_NEW - 2.0 * PX_PER_M * n_south_road, f"{nf(FRONTAGE_M)} m", dx=-4, dy=-17, color="#047857", w_box=64, h_box=22, font_size=11.8)}
+  {dim_svg(NE + 2.0 * PX_PER_M * (-u_west), SE_MARKER + 2.0 * PX_PER_M * (-u_west), f"{nf(EAST_LEN_M)} m (eksist.)", dx=56, dy=-26, color="#047857", w_box=102, h_box=22, font_size=10.8)}
+  {dim_svg(NW_NEW - 1.4 * PX_PER_M * n_east, SW_NEW - 1.4 * PX_PER_M * n_east, f"{nf(L_WEST_M)} m (parallell)", dx=-72, dy=48, color="#dc2626", w_box=114, h_box=21, font_size=10.2)}
+  {dim_svg(SW_NEW + 1.5 * PX_PER_M * u_par, SE_MARKER + 1.5 * PX_PER_M * u_par, f"{nf(SOUTH_LEN_M)} m", dx=-8, dy=18, color="#dc2626", w_box=62, h_box=21, font_size=10.8)}
+  {dim_svg(gar_mid_e, west_at_gar, f"{nf(SETBACK_GAR_M, 2)} m (≥ 4,0 m)", dx=4, dy=-22, color="#dc2626", w_box=112, h_box=21, font_size=10.0)}
+  {dim_svg(house_mid_e, west_at_house, f"{nf(SETBACK_HOUSE_M)} m til bolig", dx=-4, dy=-22, color="#1d4ed8", w_box=96, h_box=21, font_size=10.2)}
 
   <!-- Kort: Ny parsell -->
-  <g transform="translate({center_parcel[0] - 108:.1f}, {center_parcel[1] - 54:.1f})">
-    <rect width="216" height="108" rx="8" fill="#ecfdf5" fill-opacity="0.96" stroke="#059669" stroke-width="2.2"/>
-    <text x="108" y="21" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="11.5" fill="#064e3b">NY PARSELL (NORD-ØST)</text>
-    <text x="108" y="40" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="13" fill="#047857">ca. {ACTUAL_AREA:.0f} m² (16,7 × 39,0 m)</text>
-    <line x1="14" y1="49" x2="202" y2="49" stroke="#a7f3d0" stroke-width="1.2"/>
-    <text x="108" y="66" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="10.2" fill="#065f46">Byggefelt: 8,7 × 24,0 m (209 m²)</text>
-    <text x="108" y="82" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="10.2" fill="#065f46">Maks 25 % BYA = 162,8 m²</text>
-    <text x="108" y="98" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="10.2" fill="#065f46">Full 4,0 m avstand til Ny garasje</text>
+  <g transform="translate({center_parcel[0] - 122:.1f}, {center_parcel[1] - 58:.1f})">
+    <rect width="244" height="116" rx="8" fill="#ecfdf5" fill-opacity="0.96" stroke="#059669" stroke-width="2.2"/>
+    <text x="122" y="20" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="11.5" fill="#064e3b">NY PARSELL (NORD-ØST)</text>
+    <text x="122" y="38" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="13.5" fill="#047857">ca. {ACTUAL_AREA:.0f} m²</text>
+    <text x="122" y="53" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="9.6" fill="#065f46">Vest: {L_WEST_M:.0f} m (parallell) • Øst: {nf(EAST_LEN_M)} m</text>
+    <line x1="14" y1="61" x2="230" y2="61" stroke="#a7f3d0" stroke-width="1.2"/>
+    <text x="122" y="77" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="9.8" fill="#065f46">Byggefelt: {nf(BUILD_W_N)}–{nf(BUILD_W_S)} × 21–25 m ({BUILD_AREA:.0f} m²)</text>
+    <text x="122" y="93" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="10.0" fill="#065f46">Maks 25 % BYA = {ACTUAL_AREA * 0.25:.0f} m²</text>
+    <text x="122" y="108" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="10.0" fill="#065f46">Kun 2 nye grensemerker (NV &amp; SV)</text>
   </g>
 
   <!-- Kort: Gjenværende M6 -->
   <g transform="translate(345, 868)">
     <rect width="316" height="72" rx="8" fill="#f8fafc" fill-opacity="0.96" stroke="#334155" stroke-width="1.8"/>
     <text x="158" y="20" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="11.5" fill="#0f172a">GJENVÆRENDE HOVEDTOMT (M6)</text>
-    <text x="158" y="38" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="11.5" fill="#334155">Gnr 140 / Bnr 371 • ca. 3 101 m²</text>
-    <text x="158" y="56" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="9.8" fill="#475569">Inkl. Ny garasje (58,4 m²) • BYA &lt; 10 % • MUA &gt; 2 500 m²</text>
+    <text x="158" y="38" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="11.5" fill="#334155">Gnr 140 / Bnr 371 • ca. {M6_REM_STR} m²</text>
+    <text x="158" y="56" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="9.8" fill="#475569">Inkl. Ny garasje (58,4 m²) • BYA &lt; 10 % • Åpen østhage</text>
   </g>
 
   <!-- Callout: Ny avkjørsel -->
@@ -191,8 +287,8 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{
   </g>
 
   <!-- Callout: 15 m byggegrense -->
-  <line x1="980" y1="274" x2="{road_target[0]:.1f}" y2="{road_target[1]:.1f}" stroke="#b45309" stroke-width="2.2" marker-end="url(#arrow-b45309)"/>
-  <g transform="translate(980, 240)">
+  <line x1="980" y1="270" x2="{road_target[0]:.1f}" y2="{road_target[1]:.1f}" stroke="#b45309" stroke-width="2.2" marker-end="url(#arrow-b45309)"/>
+  <g transform="translate(980, 236)">
     <rect width="258" height="58" rx="6" fill="#fffbeb" fill-opacity="0.97" stroke="#d97706" stroke-width="1.6"/>
     <text x="10" y="18" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="10.5" fill="#92400e">15 m BYGGEGRENSE FRA VEGMIDT</text>
     <text x="10" y="34" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="9.5" fill="#78350f">Tilsv. ~11 m fra nordre tomtegrense</text>
@@ -200,8 +296,8 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{
   </g>
 
   <!-- Callout: 1946 Avløpsrør / Septikk / Selvfall mot naboen -->
-  <line x1="980" y1="535" x2="{sewer_to_neighbor[0] + 6:.1f}" y2="{sewer_to_neighbor[1] + 2:.1f}" stroke="#9333ea" stroke-width="2.2" marker-end="url(#arrow-9333ea)"/>
-  <g transform="translate(980, 488)">
+  <line x1="980" y1="538" x2="{sewer_mid[0]:.1f}" y2="{sewer_mid[1]:.1f}" stroke="#9333ea" stroke-width="2.2" marker-end="url(#arrow-9333ea)"/>
+  <g transform="translate(980, 490)">
     <rect width="260" height="86" rx="6" fill="#faf5ff" fill-opacity="0.97" stroke="#9333ea" stroke-width="1.8"/>
     <text x="10" y="18" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="10.2" fill="#581c87">AVLØPSRØR FRA NØ-HJØRNE (OBS!)</text>
     <text x="10" y="34" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="9.3" fill="#6b21a8">• 1946-kart: Kloakk → Septikk → Synkekum i NØ</text>
@@ -210,36 +306,45 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{
     <text x="10" y="78" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="9.2" fill="#7e22ce">• Krever ledningsrett eller omlegging v/deling</text>
   </g>
 
+  <!-- Callout: Eksisterende tomtemarkør mellom naboene mot øst -->
+  <line x1="1008" y1="848" x2="{SE_MARKER[0] + 10:.1f}" y2="{SE_MARKER[1] + 6:.1f}" stroke="#059669" stroke-width="2.2" marker-end="url(#arrow-059669)"/>
+  <g transform="translate(996, 848)">
+    <rect width="244" height="58" rx="6" fill="#ecfdf5" fill-opacity="0.97" stroke="#059669" stroke-width="1.8"/>
+    <text x="10" y="18" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="10.2" fill="#064e3b">EKSISTERENDE TOMTEMARKØR (SØ)</text>
+    <text x="10" y="34" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="9.3" fill="#065f46">Grensepunkt Myrteveien 2 (140/1008) /</text>
+    <text x="10" y="48" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="9.3" fill="#065f46">Øvre Bogenvei 31 (140/995) — gjenbrukes</text>
+  </g>
+
   <!-- Callout: Ny garasje-merknad -->
-  <line x1="398" y1="435" x2="{gar_ne[0] - 88:.1f}" y2="{gar_ne[1] + 55:.1f}" stroke="#334155" stroke-width="1.8"/>
+  <line x1="398" y1="435" x2="{gar_mid_e[0] - 88:.1f}" y2="{gar_mid_e[1] - 12:.1f}" stroke="#334155" stroke-width="1.8"/>
   <g transform="translate(150, 408)">
     <rect width="250" height="58" rx="6" fill="#f1f5f9" fill-opacity="0.97" stroke="#475569" stroke-width="1.5"/>
     <text x="10" y="18" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="10.2" fill="#0f172a">NY GARASJE M6 (9,9 × 5,9 m = 58,4 m²)</text>
-    <text x="10" y="34" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="9.3" fill="#334155">&gt; 50 m² ⇒ krever min. 4,0 m til ny grense</text>
-    <text x="10" y="48" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="9.3" fill="#334155">(Alt.: flytt vestover / ≤ 50 m² ⇒ bredere tomt)</text>
+    <text x="10" y="34" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="9.3" fill="#334155">Vestgrense lagt parallelt m/hus &amp; garasje</text>
+    <text x="10" y="48" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="9.3" fill="#334155">Full 4,05 m avstand (2,0 m gir 650 m²)</text>
   </g>
 
   <!-- Toppbanner -->
   <g transform="translate(20, 14)">
     <rect width="1220" height="72" rx="8" fill="#0f172a" fill-opacity="0.95" stroke="#334155" stroke-width="1.8"/>
-    <text x="610" y="24" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="15.5" fill="#ffffff">FORELØPIG SITUASJONSPLAN — TOMTEFRADELING NORD-ØST (ca. 650 m², INKL. NY GARASJE)</text>
-    <text x="610" y="44" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="11.5" fill="#38bdf8">Myrteveien 6 (Gnr 140 / Bnr 371, 3 752 m²) • Tønsberg kommune • Tiltakshaver: Magnus Kirø</text>
+    <text x="610" y="24" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="15.0" fill="#ffffff">FORELØPIG SITUASJONSPLAN — TOMTEFRADELING NORD-ØST (PARALLELL VESTGRENSE &amp; ØST-MARKØR)</text>
+    <text x="610" y="44" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="11.5" fill="#38bdf8">Myrteveien 6 (Gnr 140 / Bnr 371, 3 752 m²) • Tønsberg kommune • Ny parsell: ca. {ACTUAL_AREA:.0f} m²</text>
     <text x="610" y="61" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="10.2" fill="#cbd5e1">Delingstillatelse nå (PBL § 20-1 m) — Oppmålingsforretning ved byggesøknad / byggetillatelse (innen 3 år, PBL § 21-9)</text>
   </g>
 
   <!-- Tegnforklaring (Nederst til venstre) -->
   <g transform="translate(20, 946)">
-    <rect width="490" height="176" rx="8" fill="#ffffff" fill-opacity="0.97" stroke="#0f172a" stroke-width="1.8"/>
+    <rect width="510" height="176" rx="8" fill="#ffffff" fill-opacity="0.97" stroke="#0f172a" stroke-width="1.8"/>
     <text x="14" y="22" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="11.5" fill="#0f172a">TEGNFORKLARING</text>
 
     <rect x="14" y="34" width="24" height="14" fill="#10b981" fill-opacity="0.26" stroke="#047857" stroke-width="2"/>
-    <text x="48" y="45" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="10.2" fill="#1e293b">Foreslått fradelt boligtomt (ca. 651 m² — 16,7 × 39,0 m)</text>
+    <text x="48" y="45" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="10.2" fill="#1e293b">Foreslått fradelt boligtomt (ca. {ACTUAL_AREA:.0f} m² — følger øst-markør)</text>
 
     <line x1="14" y1="64" x2="38" y2="64" stroke="#dc2626" stroke-width="3.5" stroke-dasharray="6,3"/>
-    <text x="48" y="68" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="10.2" fill="#1e293b">Ny prosjektert eiendomsgrense (4,04 m fra Ny garasje)</text>
+    <text x="48" y="68" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="10.2" fill="#1e293b">Ny grense: vest parallell m/hus &amp; garasje (4,05 m), skrå mot SØ</text>
 
     <rect x="14" y="80" width="24" height="14" fill="#3b82f6" fill-opacity="0.20" stroke="#1d4ed8" stroke-width="1.8" stroke-dasharray="4,3"/>
-    <text x="48" y="91" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="10.2" fill="#1e293b">Dispensasjonsfritt byggefelt (8,7 × 24,0 m = 209 m²)</text>
+    <text x="48" y="91" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="10.2" fill="#1e293b">Dispensasjonsfritt byggefelt (~{nf(BUILD_W_N)}–{nf(BUILD_W_S)} m × 21–25 m = {BUILD_AREA:.0f} m²)</text>
 
     <line x1="14" y1="110" x2="38" y2="110" stroke="#d97706" stroke-width="2.5" stroke-dasharray="8,3,2,3"/>
     <text x="48" y="114" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="10.2" fill="#1e293b">15 m byggegrense fra vegmidt Myrteveien (~11 m fra grense)</text>
@@ -281,4 +386,4 @@ if ov_im.size != bg_up.size:
 composed = Image.alpha_composite(bg_up, ov_im).convert("RGB")
 composed.save(png_path, format="PNG", optimize=True)
 os.remove(overlay_png)
-print(f"Saved composed PNG: {png_path} ({composed.size[0]}x{composed.size[1]}, parcel area = {ACTUAL_AREA:.1f} m2)")
+print(f"Saved composed PNG: {png_path} ({composed.size[0]}x{composed.size[1]}, parcel area = {ACTUAL_AREA:.1f} m2, build area = {BUILD_AREA:.1f} m2)")
