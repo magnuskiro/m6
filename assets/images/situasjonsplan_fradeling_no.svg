@@ -27,27 +27,27 @@
   </defs>
 
   <!-- 1. Foreslått ny parsell (helt ren, ingen tekstbokser oppå flata) -->
-  <polygon points="1013.2,163.9 768.6,227.2 922.1,702.8 1160.6,777.3" fill="#10b981" fill-opacity="0.22" stroke="#047857" stroke-width="2.4"/>
+  <polygon points="1013.2,163.9 725.8,238.2 895.1,762.8 1160.6,777.3" fill="#10b981" fill-opacity="0.22" stroke="#047857" stroke-width="2.4"/>
 
   <!-- 2. Dispensasjonsfritt byggefelt (helt åpent og synlig) -->
-  <polygon points="994.0,335.9 875.3,366.6 968.7,655.8 1079.2,690.3" fill="#3b82f6" fill-opacity="0.16" stroke="#1d4ed8" stroke-width="2.0" stroke-dasharray="5,4"/>
-  <polygon points="994.0,335.9 875.3,366.6 968.7,655.8 1079.2,690.3" fill="url(#dots-build)" stroke="none"/>
+  <polygon points="994.0,335.9 832.6,377.6 938.6,706.3 1084.9,714.3" fill="#3b82f6" fill-opacity="0.16" stroke="#1d4ed8" stroke-width="2.0" stroke-dasharray="5,4"/>
+  <polygon points="994.0,335.9 832.6,377.6 938.6,706.3 1084.9,714.3" fill="url(#dots-build)" stroke="none"/>
 
   <!-- 3. Foreslått ny avkjørsel -->
-  <polygon points="785.5,204.6 842.4,189.9 883.1,315.8 826.1,330.5" fill="#f59e0b" fill-opacity="0.50" stroke="#b45309" stroke-width="2.2"/>
+  <polygon points="742.7,215.6 799.7,200.9 840.3,326.8 783.4,341.5" fill="#f59e0b" fill-opacity="0.50" stroke="#b45309" stroke-width="2.2"/>
 
   <!-- 4. 15 m byggegrense fra vegmidt Myrteveien -->
   <line x1="1079.3" y1="313.9"
-        x2="783.4" y2="390.3"
+        x2="740.7" y2="401.4"
         stroke="#d97706" stroke-width="2.8" stroke-dasharray="10,4,2,4"/>
 
   <!-- 5. Prosjekterte nye eiendomsgrenser -->
-  <polyline points="768.6,227.2 922.1,702.8 1160.6,777.3"
+  <polyline points="725.8,238.2 895.1,762.8 1160.6,777.3"
             fill="none" stroke="#dc2626" stroke-width="4.0" stroke-dasharray="10,5"/>
 
   <!-- Grensepunkter: røde (nye NV/SV) og grønne (eksisterende NØ/SØ-markør) -->
-  <circle cx="768.6" cy="227.2" r="5.5" fill="#dc2626" stroke="#ffffff" stroke-width="2"/>
-  <circle cx="922.1" cy="702.8" r="5.5" fill="#dc2626" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="725.8" cy="238.2" r="5.5" fill="#dc2626" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="895.1" cy="762.8" r="5.5" fill="#dc2626" stroke="#ffffff" stroke-width="2"/>
   <circle cx="1013.2" cy="163.9" r="6.5" fill="#059669" stroke="#ffffff" stroke-width="2.2"/>
   <circle cx="1160.6" cy="777.3" r="11" fill="none" stroke="#059669" stroke-width="2.6" stroke-dasharray="4,2"/>
   <circle cx="1160.6" cy="777.3" r="6.5" fill="#059669" stroke="#ffffff" stroke-width="2.2"/>
@@ -75,12 +75,12 @@
 
   <!-- Mållinjer (kompakte og trukket utenfor ny parsell og bygninger) -->
   
-    <line x1="1006.2" y1="136.9" x2="761.6" y2="200.1"
+    <line x1="1006.2" y1="136.9" x2="718.8" y2="211.2"
           stroke="#047857" stroke-width="2.1" marker-start="url(#arrow-047857)" marker-end="url(#arrow-047857)"/>
-    <rect x="849.9" y="142.0" width="60" height="21"
+    <rect x="828.5" y="147.5" width="60" height="21"
           rx="4" fill="#ffffff" fill-opacity="0.96" stroke="#047857" stroke-width="1.3"/>
-    <text x="879.9" y="156.3" text-anchor="middle"
-          font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="11.5" fill="#047857">17,2 m</text>
+    <text x="858.5" y="161.8" text-anchor="middle"
+          font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="11.5" fill="#047857">20,2 m</text>
     
   
     <line x1="1038.8" y1="157.3" x2="1186.2" y2="770.7"
@@ -91,42 +91,42 @@
           font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="10.5" fill="#047857">42,9 m (eksist.)</text>
     
   
-    <line x1="754.6" y1="231.7" x2="908.1" y2="707.3"
+    <line x1="711.8" y1="242.8" x2="881.1" y2="767.3"
           stroke="#dc2626" stroke-width="1.8" marker-start="url(#arrow-dc2626)" marker-end="url(#arrow-dc2626)"/>
-    <g transform="translate(844.6, 465.2) rotate(72.1)">
+    <g transform="translate(809.8, 500.7) rotate(72.1)">
       <rect x="-50" y="-9.5" width="100" height="19" rx="4" fill="#ffffff" fill-opacity="0.94" stroke="#dc2626" stroke-width="1.1"/>
-      <text x="0" y="3.5" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="9.8" fill="#dc2626">34,0 m (parallell)</text>
+      <text x="0" y="3.5" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="9.8" fill="#dc2626">37,5 m (parallell)</text>
     </g>
     
   
-    <line x1="929.3" y1="725.2" x2="1167.8" y2="799.7"
+    <line x1="902.3" y1="785.2" x2="1167.8" y2="799.7"
           stroke="#dc2626" stroke-width="2.1" marker-start="url(#arrow-dc2626)" marker-end="url(#arrow-dc2626)"/>
-    <rect x="1015.5" y="770.4" width="58" height="20"
+    <rect x="1002.0" y="800.5" width="58" height="20"
           rx="4" fill="#ffffff" fill-opacity="0.96" stroke="#dc2626" stroke-width="1.3"/>
-    <text x="1044.5" y="784.2" text-anchor="middle"
-          font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="10.5" fill="#dc2626">17,0 m</text>
+    <text x="1031.0" y="814.3" text-anchor="middle"
+          font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="10.5" fill="#dc2626">18,1 m</text>
     
   
-    <line x1="757.6" y1="387.0" x2="814.2" y2="368.7"
+    <line x1="757.6" y1="387.0" x2="772.3" y2="382.3"
           stroke="#dc2626" stroke-width="2.1" marker-start="url(#arrow-dc2626)" marker-end="url(#arrow-dc2626)"/>
-    <rect x="760.9" y="350.4" width="54" height="19"
+    <rect x="739.9" y="357.1" width="54" height="19"
           rx="4" fill="#ffffff" fill-opacity="0.96" stroke="#dc2626" stroke-width="1.3"/>
-    <text x="787.9" y="363.7" text-anchor="middle"
-          font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="9.8" fill="#dc2626">4,05 m</text>
+    <text x="766.9" y="370.4" text-anchor="middle"
+          font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="9.8" fill="#dc2626">1,05 m</text>
     
   
-    <line x1="784.7" y1="750.0" x2="922.9" y2="705.4"
+    <line x1="784.7" y1="750.0" x2="880.9" y2="718.9"
           stroke="#1d4ed8" stroke-width="2.1" marker-start="url(#arrow-1d4ed8)" marker-end="url(#arrow-1d4ed8)"/>
-    <rect x="831.8" y="735.2" width="48" height="19"
+    <rect x="810.8" y="742.0" width="48" height="19"
           rx="4" fill="#ffffff" fill-opacity="0.96" stroke="#1d4ed8" stroke-width="1.3"/>
-    <text x="855.8" y="748.5" text-anchor="middle"
-          font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="9.8" fill="#1d4ed8">9,9 m</text>
+    <text x="834.8" y="755.3" text-anchor="middle"
+          font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="9.8" fill="#1d4ed8">6,9 m</text>
     
 
   <!-- ===================== VENSTRE MARG (UTENFOR 140/371) ===================== -->
 
   <!-- Callout V1: Ny avkjørsel (over Myrteveien, utenfor tomtene) -->
-  <line x1="600" y1="138" x2="834.3" y2="260.2" stroke="#b45309" stroke-width="2.2" marker-end="url(#arrow-b45309)"/>
+  <line x1="600" y1="138" x2="791.5" y2="271.2" stroke="#b45309" stroke-width="2.2" marker-end="url(#arrow-b45309)"/>
   <g transform="translate(362, 104)">
     <rect width="240" height="58" rx="6" fill="#fef3c7" fill-opacity="0.97" stroke="#d97706" stroke-width="1.6"/>
     <text x="12" y="18" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="10.5" fill="#78350f">NY AVKJØRSEL (MYRTEVEIEN)</text>
@@ -136,13 +136,13 @@
 
   <!-- Callout V2: Ny garasje M6 (helt i venstre marg, vest for Trollheggveien) -->
   <polyline points="292,438 415,438 689.0,481.6" fill="none" stroke="#334155" stroke-width="2.0" marker-end="url(#arrow-334155)"/>
-  <g transform="translate(20, 396)">
-    <rect width="274" height="84" rx="7" fill="#f1f5f9" fill-opacity="0.97" stroke="#475569" stroke-width="1.6"/>
-    <text x="12" y="20" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="10.5" fill="#0f172a">NY GARASJE M6 (9,9 × 5,9 m)</text>
-    <text x="12" y="36" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="9.5" fill="#334155">• 58,4 m² BYA (&gt; 50 m² ⇒ min. 4,0 m)</text>
-    <text x="12" y="51" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="9.5" fill="#334155">• Vestgrense parallell m/hus &amp; garasje</text>
-    <text x="12" y="66" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="9.5" fill="#334155">• Full 4,05 m avstand (ingen dispensasjon)</text>
-    <text x="12" y="79" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="9.0" fill="#64748b">(Alt.: 2,0 m / ≤ 50 m² garasje gir 650 m²)</text>
+  <g transform="translate(20, 392)">
+    <rect width="274" height="94" rx="7" fill="#f1f5f9" fill-opacity="0.97" stroke="#475569" stroke-width="1.6"/>
+    <text x="12" y="20" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="10.4" fill="#0f172a">NY GARASJE M6 (PORTROM BEVART)</text>
+    <text x="12" y="36" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="9.4" fill="#334155">• Blir stående — bevarer portrom mot hus</text>
+    <text x="12" y="51" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="9.4" fill="#334155">• 1,05 m til ny grense (parallell m/hus)</text>
+    <text x="12" y="66" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="9.3" fill="#334155">• Løses m/≤ 50 m² (KPA § 19) og/eller</text>
+    <text x="12" y="80" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="9.3" fill="#334155">  tinglyst avstandserklæring (+ EI 30/60)</text>
   </g>
 
   <!-- Callout V3: Gjenværende hovedtomt M6 (helt i venstre marg, vest for Trollheggveien) -->
@@ -150,16 +150,16 @@
   <g transform="translate(20, 588)">
     <rect width="274" height="86" rx="7" fill="#f8fafc" fill-opacity="0.97" stroke="#334155" stroke-width="1.8"/>
     <text x="12" y="20" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="10.8" fill="#0f172a">GJENVÆRENDE HOVEDTOMT (M6)</text>
-    <text x="12" y="38" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="11.0" fill="#334155">Gnr 140 / Bnr 371 • ca. 3 147 m²</text>
-    <text x="12" y="55" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="9.5" fill="#475569">• Inkl. bolig + Ny garasje (BYA &lt; 10 %)</text>
-    <text x="12" y="70" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="9.5" fill="#475569">• 9,9 m fra bolig til ny vestgrense</text>
-    <text x="12" y="81" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="9.2" fill="#475569">• SV-hjørne trukket nord ⇒ åpen østhage</text>
+    <text x="12" y="38" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="11.0" fill="#334155">Gnr 140 / Bnr 371 • ca. 3 002 m²</text>
+    <text x="12" y="55" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="9.5" fill="#475569">• Inkl. bolig + Ny garasje (BYA &lt; 11 %)</text>
+    <text x="12" y="70" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="9.5" fill="#475569">• 6,9 m fra bolig til ny vestgrense (&gt; 4 m)</text>
+    <text x="12" y="81" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="9.2" fill="#475569">• SV-hjørne 5,2 m nord for SØ-markør</text>
   </g>
 
   <!-- ===================== HØYRE MARG (UTENFOR 140/371 & NY PARSELL) ===================== -->
 
   <!-- Callout H1: 15 m byggegrense -->
-  <polyline points="1272,216 1160,216 1026.0,327.6" fill="none" stroke="#b45309" stroke-width="2.1" marker-end="url(#arrow-b45309)"/>
+  <polyline points="1272,216 1160,216 1018.3,329.6" fill="none" stroke="#b45309" stroke-width="2.1" marker-end="url(#arrow-b45309)"/>
   <g transform="translate(1272, 184)">
     <rect width="328" height="62" rx="7" fill="#fffbeb" fill-opacity="0.97" stroke="#d97706" stroke-width="1.6"/>
     <text x="12" y="20" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="10.5" fill="#92400e">15 m BYGGEGRENSE FRA VEGMIDT</text>
@@ -169,16 +169,17 @@
 
   <!-- Callout H2: NY PARSELL hovedkort (i høyre marg, helt utenfor parsellen!) -->
   <polyline points="1272,368 1185,368 1060.6,438.3" fill="none" stroke="#059669" stroke-width="2.4" marker-end="url(#arrow-059669)"/>
-  <g transform="translate(1272, 294)">
-    <rect width="328" height="146" rx="8" fill="#ecfdf5" fill-opacity="0.98" stroke="#059669" stroke-width="2.2"/>
-    <text x="164" y="22" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="12.0" fill="#064e3b">NY PARSELL (NORD-ØST)</text>
-    <text x="164" y="42" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="14.5" fill="#047857">ca. 605 m²</text>
+  <g transform="translate(1272, 286)">
+    <rect width="328" height="162" rx="8" fill="#ecfdf5" fill-opacity="0.98" stroke="#059669" stroke-width="2.2"/>
+    <text x="164" y="22" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="11.8" fill="#064e3b">NY PARSELL — TOMANNSBOLIG (VAR. 1C)</text>
+    <text x="164" y="42" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="14.5" fill="#047857">ca. 750 m² (≥ 750 m² KPA-norm)</text>
     <line x1="16" y1="52" x2="312" y2="52" stroke="#a7f3d0" stroke-width="1.4"/>
-    <text x="16" y="70" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="9.8" fill="#065f46">• Nord: 17,2 m • Øst: 42,9 m (eksist.)</text>
-    <text x="16" y="86" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="9.8" fill="#065f46">• Vest: 34,0 m (parallell) • Sør: 17,0 m (skrå)</text>
-    <text x="16" y="103" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="9.8" fill="#065f46">• Byggefelt: 8,3–7,9 × 21–25 m (170 m²)</text>
-    <text x="16" y="119" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="9.8" fill="#065f46">• Maks 25 % BYA = 151 m² • MUA ≥ 150 m²</text>
-    <text x="16" y="135" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="9.8" fill="#047857">• Kun 2 nye grensemerker (NV &amp; SV)</text>
+    <text x="16" y="70" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="9.7" fill="#065f46">• Nord: 20,2 m • Øst: 42,9 m (eksist. markør)</text>
+    <text x="16" y="86" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="9.7" fill="#065f46">• Vest: 37,5 m (parallell) • Sør: 18,1 m (skrå)</text>
+    <text x="16" y="103" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="9.7" fill="#065f46">• Byggefelt: 11,3–10,0 × 24–27 m (259 m²)</text>
+    <text x="16" y="119" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="9.7" fill="#065f46">• 25 % BYA = 187,5 m² (~116 m² hus + 4 p-pl.)</text>
+    <text x="16" y="135" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="9.7" fill="#065f46">• MUA: ~562 m² ubebygd (krav ≤ 300 m²)</text>
+    <text x="16" y="151" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="9.5" fill="#047857">• Enkel fradeling (≤ 2 boenh.) + dekkes av K3!</text>
   </g>
 
   <!-- Callout H3: 2014 kommunal soil + overvann, VA-kum ca. 3 m fra østgrense & tinglyste retter -->
@@ -206,9 +207,9 @@
   <!-- Toppbanner -->
   <g transform="translate(20, 14)">
     <rect width="1580" height="72" rx="8" fill="#0f172a" fill-opacity="0.95" stroke="#334155" stroke-width="1.8"/>
-    <text x="790" y="24" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="16.0" fill="#ffffff">FORELØPIG SITUASJONSPLAN — TOMTEFRADELING NORD-ØST (PARALLELL VESTGRENSE &amp; ØST-MARKØR)</text>
-    <text x="790" y="44" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="11.8" fill="#38bdf8">Myrteveien 6 (Gnr 140 / Bnr 371, 3 752 m²) • Tønsberg kommune • Ny parsell: ca. 605 m²</text>
-    <text x="790" y="61" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="10.4" fill="#cbd5e1">Delingstillatelse nå (PBL § 20-1 m) — Oppmålingsforretning ved byggesøknad / byggetillatelse (innen 3 år, PBL § 21-9)</text>
+    <text x="790" y="24" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="16.0" fill="#ffffff">FORELØPIG SITUASJONSPLAN — TOMTEFRADELING NORD-ØST (VARIANT 1C: ca. 750 m² TOMANNSBOLIG)</text>
+    <text x="790" y="44" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="11.8" fill="#38bdf8">Myrteveien 6 (Gnr 140 / Bnr 371, 3 752 m²) • Tønsberg kommune • Ny parsell: ca. 750 m² • Portrom M6 bevart</text>
+    <text x="790" y="61" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="10.4" fill="#cbd5e1">Delingstillatelse nå (PBL § 20-1 m, ingen reguleringsplan for ≤ 2 boenheter) — Oppmåling ved byggesøknad / byggetillatelse (innen 3 år, PBL § 21-9)</text>
   </g>
 
   <!-- Tegnforklaring (Nederst til venstre — helt utenfor 140/371) -->
@@ -217,13 +218,13 @@
     <text x="14" y="22" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="11.5" fill="#0f172a">TEGNFORKLARING</text>
 
     <rect x="14" y="34" width="24" height="14" fill="#10b981" fill-opacity="0.26" stroke="#047857" stroke-width="2"/>
-    <text x="48" y="45" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="10.0" fill="#1e293b">Foreslått fradelt boligtomt (ca. 605 m² — følger øst-markør)</text>
+    <text x="48" y="45" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="10.0" fill="#1e293b">Foreslått fradelt tomt for tomannsbolig (ca. 750 m² — Var. 1C)</text>
 
     <line x1="14" y1="64" x2="38" y2="64" stroke="#dc2626" stroke-width="3.5" stroke-dasharray="6,3"/>
-    <text x="48" y="68" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="10.0" fill="#1e293b">Ny grense: vest parallell m/hus &amp; garasje (4,05 m), skrå mot SØ</text>
+    <text x="48" y="68" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="10.0" fill="#1e293b">Ny grense: vest parallell m/hus &amp; garasje (1,05 m), skrå mot SØ</text>
 
     <rect x="14" y="80" width="24" height="14" fill="#3b82f6" fill-opacity="0.20" stroke="#1d4ed8" stroke-width="1.8" stroke-dasharray="4,3"/>
-    <text x="48" y="91" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="10.0" fill="#1e293b">Dispensasjonsfritt byggefelt (8,3–7,9 × 21–25 m = 170 m²)</text>
+    <text x="48" y="91" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="10.0" fill="#1e293b">Dispensasjonsfritt byggefelt (11,3–10,0 × 24–27 m = 259 m²)</text>
 
     <line x1="14" y1="110" x2="38" y2="110" stroke="#d97706" stroke-width="2.5" stroke-dasharray="8,3,2,3"/>
     <text x="48" y="114" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="10.0" fill="#1e293b">15 m byggegrense fra vegmidt Myrteveien (~11 m fra grense)</text>
