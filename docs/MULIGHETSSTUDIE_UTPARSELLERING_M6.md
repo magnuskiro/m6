@@ -79,3 +79,37 @@ Dersom du først sender inn enkel fradelingssøknad for **én tomt i nord-øst (
 - **Pass på bredden på NØ-tomten (`#110`) og avkjørselen:** I Alternativ B starter den fremtidige felles stikkveien på `x = 28,5–32,5 m` (altså **`19,4 m` vest for østgrensen**).
 - Den tegnede NØ-parsellen i `#110` (`17,2 m` bred ved Myrteveien, parallell vestgrense `4,05 m` øst for Ny garasje) ligger **helt øst for** den fremtidige stikkveikorridoren — så en enkelt-fradeling i NØ nå **låser IKKE ned** muligheten for senere stikkvei og utparsellering av resten av tomten!
 - *(Eneste forbehold: Hvis du bygger Ny garasje nord på M6 først, vil den stå i veien for en fremtidig sentral stikkvei fra Myrteveien til de sørlige tomtene — da må adkomst enten gå via Trollheggveien [Alt. A] eller langs øst- eller vestkanten.)*
+
+---
+
+## 5. Utvidet mulighetsstudie: Felles utparsellering med onkels tomt i sydenden (`140/1247`)
+
+![Felles utparsellering over Google Maps satellittkart — M6 + Onkels tomt](../assets/images/utparsellering_m6_og_onkel_satellitt.png)
+
+### 5.1 Matrikkelgrunnlag (Kartverket / Geonorge API)
+- **Myrteveien 6 (`140/371`):** Offisielt **3 752 m²** (Geonorge-polygon: 3 740 m²)
+- **Onkels tomt i sydenden — Trollheggveien 8 (`140/1247`):** Geonorge-polygon viser **1 087 m²** *(ca. 1,1 mål — verdt å dobbeltsjekke mot grunnboken om de omtalte «1,4 mål» skyldes eldre målebrev, medregnet veigrunn, eller et tilstøtende bnr.)*.
+- **Samlet sammenhengende utviklingsområde:** **ca. 4 839 m²** (**~4,84 mål**, nesten et rent rektangel på **~52 m × 98 m** langs hele Trollheggveien og Myrteveien!).
+- **Eierbrøk etter matrikkelareal:** **77,5 % M6 (`140/371`) / 22,5 % onkel (`140/1247`)**.
+
+### 5.2 Hvorfor felles regulering gir massiv synergi
+Alene er `140/1247` (1 087 m²) skrå i både nord- og sørgrensen og litt knapp for to fullverdige 600 m²-tomter. Når `140/371` og `140/1247` reguleres og deles **samlet**, elimineres den skrå skillelinjen tvers over feltet — og begge parter får ut vesentlig bedre tomter og felles vei/VA:
+
+| Alternativ (M6 + Onkel samlet, ~4 839 m²) | Antall tomter (inkl. eksist. hus) | Størrelser per tomt | Felles vei / lekeplass | Avhengig av Trollheggveien (`141/1`)? | Fordeling (veiledende) |
+| :--- | :---: | :---: | :--- | :---: | :--- |
+| **Alt. A — Maks antall (8 tomter)** | **8 tomter** *(1 eksist. + 7 nye)* | **525–611 m²** *(snitt 576 m²)* | 214 m² kort 4 m L-stikkvei | **JA** *(utvidet veirett i `141/1`)* | ~6 tomter M6 / ~2 tomter onkel *(justeres med vederlag etter 77,5 / 22,5 %)* |
+| **Alt. B — Anbefalt & mest reguleringssikker (7 tomter + lekeplass)** | **7 tomter** *(1 eksist. + 6 nye)* | **592–614 m²** *(alle ~605 m²!)* | 354 m² sentral vei + snutun + **225 m² nærlekeplass** | **NEI** *(100 % fra kommunal vei Myrteveien!)* | ~5 tomter M6 / ~2 tomter onkel *(eller oppgjør etter eksakt arealnøkkel)* |
+
+### 5.3 Detaljert oversikt — Alternativ B (7 balanserte tomter à ~605 m², 100 % fra Myrteveien)
+| Tomt | Plassering | Areal | Maks 25 % BYA | Atkomst |
+| :--- | :--- | :---: | :---: | :--- |
+| **T1** | Nord-Vest | **ca. 614 m²** | 154 m² | Direkte fra Myrteveien |
+| **T2** | Nord-Øst | **ca. 605 m²** | 151 m² | Direkte fra Myrteveien |
+| **T3** | **Midt-Vest (Eksisterende 1947-hus)** | **ca. 608 m²** | 152 m² | Felles stikkvei (beholder huset urørt!) |
+| **T4** | Midt-Øst | **ca. 592 m²** | 148 m² | Felles stikkvei |
+| **T5** | Midt-Sørvest | **ca. 608 m²** | 152 m² | Felles stikkvei / snutun |
+| **T6** | **Sør-Øst (Onkels område)** | **ca. 607 m²** | 152 m² | Felles stikkvei / snutun |
+| **T7** | **Sør-Vest (Onkels område)** | **ca. 614 m²** | 154 m² | Felles stikkvei / snutun |
+| *Lek* | *Felles nærlekeplass (solrik syd)* | *ca. 225 m²* | — | *Direkte ved snutun* |
+| *Vei* | *Felles 4 m stikkvei + snutun* | *ca. 354 m²* | — | *Fra kommunal vei Myrteveien* |
+
