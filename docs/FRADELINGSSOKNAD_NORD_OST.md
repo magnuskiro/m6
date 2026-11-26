@@ -42,26 +42,44 @@ En fradeling i norsk rett består av **to adskilte trinn** etter to ulike lover:
 - **Arealformål:** *Nåværende boligbebyggelse* (jf. KPA § 3 nr. 2). Ingen hensynssoner for veiutvidelse, landbruk eller båndlegging berører parsellen.
 - **Plankrav:** Oppretting av én ny boligtomt med direkte avkjørsel til eksisterende kommunal vei (Myrteveien) utløser **ikke** krav om detaljregulering (plankrav i uregulert boligområde inntrer først ved mer enn 2 boenheter eller krav om ny adkomstvei/vesentlig veiutbedring).
 
-### 2.2 Anbefalt tomtegeometri (20,0 m × 32,5 m = ca. 650 m²)
-Kalibrert direkte mot Kartverkets matrikkeldata (`140/371`: 3 752 m², nordgrense 51,89 m, østgrense mot `140/1008` 42,77 m) og KB Arkitekters situasjonsplan (27.04.2026):
+### 2.2 Anbefalt tomtegeometri inkl. Ny garasje (`16,7 m × 39,0 m = ca. 651 m²`)
+Kalibrert direkte mot Kartverkets matrikkeldata (`140/371`: 3 752 m², nordgrense 51,89 m, østgrense mot `140/1008` 42,77 m) og KB Arkitekters situasjonsplan **med Ny garasje** (`2026-04-21`, `assets/images/drawings/situasjonsplan-1.jpg`):
+
+- **Ny garasje på M6 (`A-105PS`):** `9,9 m × 5,9 m` = **58,4 m² BYA** (`51,2 m² BRA`: 34,7 m² garasje + 16,5 m² bod), plassert **ca. 20,74 m** fra østgrensen mot `140/1008` og **ca. 10,01 m** fra Myrteveien.
+- Fordi garasjen er **over 50 m²**, utløser den hovedregelen om **min. 4,0 m avstand til ny nabogrense** (PBL § 29-4). Ved å sette bredden på den nye parsellen til **16,7 m** langs Myrteveien og dybden til **39,0 m** langs østgrensen mot `140/1008` får man **4,04 m** lovlig avstand fra Ny garasje uten å flytte eller redusere garasjen!
 
 | Parameter | Foreslått ny parsell (NØ) | Gjenværende M6 (140/371) | Regelverk / Grense | Status |
 | :--- | :---: | :---: | :--- | :---: |
-| **Tomteareal** | **ca. 650 m²** (20,0 × 32,5 m) | **ca. 3 102 m²** | Veiledende min. 500 m² (enebolig) / 750 m² (tomannsbolig) | ✅ OK for enebolig *(se OBS 2.3)* |
-| **Avstand M6 bolig → ny grense** | — | **4,64 m** (fra østvegg) | Min. 4,0 m (PBL § 29-4 / TEK17 § 11-6) | ✅ OK (ingen dispensasjon) |
-| **Avstand M6 innkjøring / lyktestolpe** | — | **~8,0 m** buffersone | Ingen konflikt med `#92` innkjøring | ✅ OK |
-| **Avstand M6 overvannskum → ny grense** | — | **~3,6 m** inne på M6 | Blir liggende på M6 | ✅ OK |
-| **Dispensasjonsfritt byggefelt (ny tomt)** | **12,0 × 17,5 m = 210 m²** | Rikelig | 4,0 m til nabogrenser + 15 m fra vegmidt Myrteveien (~11 m fra nordgrense) | ✅ OK (ingen dispensasjon) |
-| **Tillatt maks %BYA (25 %, KPA § 44.1)** | **162,5 m²** (f.eks. 126,5 m² bygg + 36 m² for 2 p-plasser) | **775,5 m²** (planlagt M6 + garasje + p-plasser ≈ 250–300 m² = **< 10 %**) | Maks 25 % BYA inkl. 18 m² per p-plass | ✅ OK på begge tomter |
-| **Minste uteoppholdsareal (MUA)** | **~487 m²** ubebygd (godt over 150 m²) | **> 2 500 m²** ubebygd | Min. 150 m² per boenhet (enebolig) | ✅ OK på begge tomter |
+| **Tomteareal** | **ca. 651 m²** (16,7 × 39,0 m) | **ca. 3 101 m²** | Veiledende min. 500 m² (enebolig) / 750 m² (tomannsbolig) | ✅ OK for enebolig *(se OBS 2.4)* |
+| **Avstand Ny garasje (58,4 m²) → ny grense** | — | **4,04 m** (fra østvegg garasje) | Min. 4,0 m for bygg > 50 m² (PBL § 29-4) | ✅ OK (ingen dispensasjon) |
+| **Avstand M6 bolig → ny grense** | — | **8,1 m** (fra østvegg bolig) | Min. 4,0 m (PBL § 29-4 / TEK17 § 11-6) | ✅ OK (god margin) |
+| **Avstand M6 overvannskum → ny grense** | — | **~6,9 m** inne på M6 | Blir liggende på M6 | ✅ OK |
+| **Østgrense mot `140/1008` (Myrteveien 2)** | **39,0 m** (av 42,77 m) | Beholder søndre grense | Treffer kun `140/1008` (ikke `140/995`) | ✅ Rent grenseforløp |
+| **Dispensasjonsfritt byggefelt (ny tomt)** | **8,7 × 24,0 m = 209 m²** | Rikelig | 4,0 m til nabogrenser + 15 m fra vegmidt Myrteveien (~11 m fra nordgrense) | ✅ OK (ingen dispensasjon) |
+| **Tillatt maks %BYA (25 %, KPA § 44.1)** | **162,8 m²** (f.eks. 126 m² bygg + 36 m² for 2 p-plasser) | **775,3 m²** (bolig + 58,4 m² garasje + p-plasser ≈ 260–310 m² = **< 10 %**) | Maks 25 % BYA inkl. 18 m² per p-plass | ✅ OK på begge tomter |
+| **Minste uteoppholdsareal (MUA)** | **~488 m²** ubebygd (godt over 150 m²) | **> 2 500 m²** ubebygd | Min. 150 m² per boenhet (enebolig) | ✅ OK på begge tomter |
 | **Atkomst / Avkjørsel (PBL § 27-4)** | Direkte til kommunal vei (**Myrteveien**, 141/288) | Beholder egen avkjørsel mot Myrteveien | Siktsoner & bredde iht. Tønsberg veinormal | ⚠️ Avklares mot vegmyndighet |
-| **Vann, avløp & overvann (PBL §§ 27-1, 27-2)** | Tilkobling kommunalt VA i Myrteveien + LOD (KPA § 27) | Eksisterende / oppgradert VA fra Trollheggveien + LOD | Ledningskart / VA-uttalelse | ⚠️ Bestille VA-kart |
+| **Vann, avløp & overvann (PBL §§ 27-1, 27-2)** | Tilkobling kommunalt VA (Myrteveien el. øst/felles) + LOD | **OBS: Eksisterende avløpsrør fra NØ-hjørne mot nabo!** | Ledningskart, påvisning & ev. tinglyst ledningsrett / omlegging | ⚠️ **KRITISK — se punkt 2.3** |
 | **Sikker byggegrunn (PBL § 28-1)** | Grunt til fjell (0,2–1,5 m), K3 OK | Grunt til fjell, K3 OK | GrunnTeknikk notat `10220n1` (04.05.2026) | ⚠️ Rette skrivefeil s. 9 + utvide scope |
 
-> **Hvorfor akkurat 20,0 × 32,5 m (og ikke f.eks. 25 × 26 m)?**  
-> M6s østvegg ligger **24,64 m** fra østgrensen mot Myrteveien 2 (`140/1008`), og nordøsthjørnet av M6 ligger **26,45 m** sør for Myrteveien. Dersom ny parsell gjøres bredere enn ca. **20,6 m** øst–vest og samtidig strekker seg forbi nordøsthjørnet av M6, vil eksisterende bolig på M6 havne nærmere enn **4,0 m** fra den nye nabogrensen (ulovlig etter PBL § 26-1 / § 29-4 uten dispensasjon og EI 60-brannsikring). Ved **20,0 m bredde × 32,5 m dybde** oppnår man både **4,64 m** lovlig avstand til M6, **8,0 m** klaring til lyktestolpen/innkjøringen, og et romslig **12,0 × 17,5 m** byggefelt innenfor 15 m byggegrense fra Myrteveien!
+> **Alternativ bredere tomt (opsjon dersom Ny garasje justeres):**  
+> Dersom du ønsker bredere tomt enn 16,7 m (f.eks. **19,5 × 33,3 m** eller **20,0 × 32,5 m = 650 m²**, som gir 11,5–12,0 m bredde på byggefeltet), kan dette oppnås på én av tre måter:
+> 1. **Forskyve Ny garasje ~3,3 m vestover** (den er ennå ikke bygget og ligger i dag hele 24,63 m fra Trollheggveien — fullt 4,0 m-krav beholdes).
+> 2. **Redusere Ny garasje til ≤ 50 m² BYA/BRA** (KPA § 19 tillater da inntil **1,0 m** til nabogrense → opptil ~19,7 m bredde).
+> 3. **Tinglyst nabosamtykke** (du eier begge tomtene selv ved deling, men vær obs på brannavstand 8 m mot fremtidig ny bolig / ev. EI 30/60 på garasjevegg).
 
-### 2.3 Kritiske avklaringspunkter før innsending
+### 2.3 Kritisk funn: Eksisterende avløpsrør fra nordøst-hjørnet av dagens hus ned mot naboen
+Ved gjennomgang av kommunalt saksarkiv i repoet er det funnet dokumentasjon på det opprinnelige avløpsanlegget:
+- **Kilde:** `arkitekt/kommunale_byggesaker/1946_Kart_og_skisse_Gnr140_Bnr371.pdf` (Sem bygn.råd J.nr. 814/1946, datert 26. juni 1946 — *merk at kartet er tegnet med nord ned og østgrensen mot dagens Myrteveien 2 `140/1008` til venstre*).
+- **Funn på 1946-kartet:** En blå avløpsledning går rett ut fra **nordøst-hjørnet av dagens hus**, diagonalt mot nord-øst inn i det området som nå ønskes fradelt, til **`KLOAKK. SEPTIKK`** (ca. 11–13 m NØ for husets NØ-hjørne) og videre nordover til **`SYNKEKUM`**.
+- **Dagens spillvannsledning ned mot naboen (`140/1008`):** Terrenget på Myrteveien 6 faller jevnt **ca. 1:13 østover** ned mot Myrteveien 2 (`140/1008`) og Øvre Bogenvei (jf. GrunnTeknikk `10220n1` s. 4). Det ligger foreløpig **ikke** noe moderne kommunalt VA-ledningskart i repoet som viser eksakt dagens trasé etter senere kommunal kloakktilkobling.
+- **Konsekvenser som MÅ avklares før endelig grensefesting og innsending:**
+  1. **Innhente offisielt VA-ledningskart + kabel-/rørpåvisning (ev. kamerakjøring / søkesonde):** Fastslå nøyaktig hvor aktiv spillvannsledning fra M6s NØ-hjørne går over parsellen og inn på naboeiendom (`140/1008` / `140/995`), samt om gammel septiktank/synkekum fra 1946 er sanert eller fortsatt ligger i grunnen.
+  2. **Byggeforbud over aktiv ledning:** Ny bolig på 650 m²-tomten kan ikke plasseres over en aktiv avløpsledning (krav om typisk 2–4 m avstand eller omlegging). Med `16,7 × 39,0 m`-tomten er byggefeltet hele **24,0 m dypt**, slik at ny bolig likevel kan plasseres klart nord eller sør for ledningen — eller ledningen legges om langs den nye sørgrensen/vestgrensen.
+  3. **Tinglyst ledningsrett (PBL § 27-2):** Dersom M6s avløpsledning fortsatt skal krysse den nye parsellen (og nabotomten), krever kommunen **tinglyst rett til å ha liggende og vedlikeholde avløpsledning** over den nye parsellen ved matrikulering/fradeling (og avklaring av eksisterende rett over `140/1008`).
+  4. **Mulig bonus for ny tomt:** Dersom det ikke er selvfall fra den nye parsellen nordover til kommunal ledning i Myrteveien, kan en oppgradert felles stikkledning i dagens trasé (med selvfall østover) være nøkkelen for avløpsløsning også for den nye tomten — forutsatt dokumentert rettighet og kapasitet videre ned mot kommunalt nett.
+
+### 2.4 Øvrige avklaringspunkter før innsending
 1. **Enebolig (650 m²) vs. Tomannsbolig (750 m²):**
    - I tidligere arkitektnotat (`2024-01-09`) ble det nevnt *«Skille ut tomt mot nor-øst, tegne 2-mannsbolig der»*.
    - Tønsberg kommunes veiledende retningslinjer for tomtestørrelse ved fradeling er **minst 500 m² for enebolig** og **minst 750 m² for tomannsbolig**.
@@ -89,10 +107,11 @@ Søknaden sendes digitalt via **DiBKs søknadsløsning (eByggesøk / ByggSøk)**
 - [ ] **1. Søknadsskjema:** *Søknad om tillatelse til tiltak uten ansvarsrett* (DiBK 5153 / digitalt skjema — kryss av for *«Oppretting av ny grunneiendom»* / deling). *(Ingen ansvarsretter kreves.)*
 - [ ] **2. Redegjørelse / Søknadsbrev** (utkast i del 4 nedenfor) — inkl. eksplisitt presisering av at oppmålingsforretning **ikke** rekvireres nå, men ettersendes innen 3 år (PBL § 21-9 fjerde ledd) ved byggesøknad/byggetillatelse.
 - [ ] **3. Offisielt situasjonskart (1:500 eller 1:1000)** hentet fra Tønsberg kommunes kartportal / Ambita Infoland, påtegnet:
-  - [ ] Prosjekterte nye eiendomsgrenser med lengder (20,0 m × 32,5 m) og areal (ca. 650 m²).
-  - [ ] Minsteavstand til eksisterende/planlagt bolig på M6 (**4,6 m**) og nabogrenser.
+  - [ ] Prosjekterte nye eiendomsgrenser med lengder (16,7 m × 39,0 m) og areal (ca. 651 m²).
+  - [ ] Minsteavstand til planlagt Ny garasje på M6 (**4,04 m**), eksisterende bolig (**8,1 m**) og nabogrenser.
   - [ ] Foreslått plassering av ny avkjørsel fra Myrteveien + frisikttrekanter.
-  - [ ] Illustrativt byggefelt (12,0 × 17,5 m) som dokumenterer egnethet (PBL § 26-1), %BYA, parkering og MUA.
+  - [ ] Illustrativt byggefelt (8,7 × 24,0 m = 209 m²) som dokumenterer egnethet (PBL § 26-1), %BYA, parkering og MUA.
+  - [ ] Innhentet og påvist trasé for eksisterende avløpsrør fra M6s NØ-hjørne mot naboen (`140/1008`) samt plan for tinglyst ledningsrett eller omlegging.
 - [ ] **4. Nabovarsling (PBL § 21-3, min. 14 dagers frist):**
   - [ ] Offisiell naboliste bestilt via eTorg / Infoland (kontrollert mot del 5 nedenfor).
   - [ ] *Nabovarsel* (DiBK 5154) sendt til alle direkte grensenaboer og gjenboere.
@@ -128,8 +147,8 @@ Undertegnede er hjemmelshaver til eiendommen Myrteveien 6, Gnr 140 / Bnr 371 i T
 
 Det søkes med dette om **delingstillatelse etter plan- og bygningsloven (PBL) § 20-1 første ledd bokstav m**, jf. § 20-4, for fradeling av én ny, ubebygd boligtomt i eiendommens nordøstlige hjørne mot Myrteveien:
 
-- **Ny parsell (nord-øst):** Ca. **650 m²** (ca. 20,0 m bredde langs Myrteveien × ca. 32,5 m dybde langs eksisterende østgrense mot Gnr 140 / Bnr 1008). Formål: Frittliggende enebolig.
-- **Gjenværende hovedeiendom (Gnr 140 / Bnr 371):** Ca. **3 102 m²**, med eksisterende enebolig, uthus/garasje og hageareal.
+- **Ny parsell (nord-øst):** Ca. **651 m²** (ca. 16,7 m bredde langs Myrteveien × ca. 39,0 m dybde langs eksisterende østgrense mot Gnr 140 / Bnr 1008). Formål: Frittliggende enebolig.
+- **Gjenværende hovedeiendom (Gnr 140 / Bnr 371):** Ca. **3 101 m²**, med eksisterende enebolig, planlagt ny garasje (58,4 m²) og hageareal.
 
 ### 2. Særskilt merknad om tidspunkt for oppmålingsforretning (PBL § 21-9 fjerde ledd)
 Det gjøres uttrykkelig oppmerksom på at det i denne omgang **kun søkes om tillatelse til deling etter plan- og bygningsloven**. *Rekvisisjon av oppmålingsforretning og krav om matrikkelføring* etter matrikkellova vedlegges **ikke** nå.
@@ -142,17 +161,17 @@ Eiendommen ligger i et uregulert, etablert småhusområde på Tolvsrød og er i 
 Tiltaket er i full overensstemmelse med kommuneplanens bestemmelser og krever ingen dispensasjoner:
 - **Tomtestørrelse:** Ca. 650 m² overstiger kommunens veiledende minstekrav på 500 m² for frittliggende enebolig.
 - **Utnyttingsgrad (KPA § 44.1, maks 25 % BYA):**
-  - *Ny parsell (ca. 650 m²):* Maks tillatt BYA utgjør **162,5 m²**, noe som gir god plass til en frittliggende enebolig (f.eks. 110–125 m² fotavtrykk) samt 2 biloppstillingsplasser på terreng (36 m²).
-  - *Gjenværende eiendom (ca. 3 102 m²):* Maks tillatt BYA utgjør **775,5 m²**. Eksisterende og planlagt bebyggelse inkl. garasje og parkering utgjør under 10 % BYA.
+  - *Ny parsell (ca. 651 m²):* Maks tillatt BYA utgjør **162,8 m²**, noe som gir god plass til en frittliggende enebolig (f.eks. 110–125 m² fotavtrykk) samt 2 biloppstillingsplasser på terreng (36 m²).
+  - *Gjenværende eiendom (ca. 3 101 m²):* Maks tillatt BYA utgjør **775,3 m²**. Eksisterende og planlagt bebyggelse inkl. ny garasje (58,4 m²) og parkering utgjør under 10 % BYA.
 - **Plassering og avstander (PBL § 29-4 & Veglova § 29):**
-  - Ny vestgrense trekkes **4,6 m** øst for eksisterende/planlagt yttervegg på Myrteveien 6, slik at lovens minsteavstand på 4,0 m er oppfylt med god margin uten dispensasjon.
-  - Innenfor ny parsell oppstår et helt dispensasjonsfritt byggefelt på **12,0 m × 17,5 m (210 m²)** som respekterer både 4,0 m avstand til alle nabogrenser og 15,0 m byggegrense målt fra senterlinje kommunal vei (Myrteveien).
+  - Ny vestgrense trekkes **4,04 m** øst for planlagt ny garasje (58,4 m²) og **8,1 m** øst for eksisterende/planlagt bolig på Myrteveien 6, slik at lovens minsteavstand på 4,0 m er oppfylt uten dispensasjon.
+  - Innenfor ny parsell oppstår et helt dispensasjonsfritt byggefelt på **8,7 m × 24,0 m (209 m²)** som respekterer både 4,0 m avstand til alle nabogrenser og 15,0 m byggegrense målt fra senterlinje kommunal vei (Myrteveien).
 - **Uteoppholdsareal (MUA):** Ny parsell har et flatt til svakt skrånende, solrikt og skjermet uteareal mot sør/sørvest som med god margin overstiger kravet på min. 150 m² MUA per boenhet. Gjenværende tomt beholder over 2 500 m² hage- og uteareal.
 - **Tilpasning til strøkskarakter (PBL § 29-2):** Omkringliggende bebyggelse langs Myrteveien (bl.a. Myrteveien 1, 2, 3 og 5) består av frittliggende eneboliger på sammenlignbare tomter. Fradeling av én ny tomt i det ubebygde nordøstlige hjørnet utgjør en skånsom og naturlig fortetting som viderefører strøkets struktur.
 
 ### 4. Atkomst, vann, avløp og overvann (PBL §§ 27-1, 27-2 og 27-4)
 - **Atkomst / avkjørsel:** Ny parsell har ca. 20 m grense direkte mot kommunal vei (**Myrteveien**, Gnr 141/288). Det søkes om én ny avkjørsel i parsellens vestre del mot Myrteveien, plassert i god avstand (~8 m) øst for eksisterende veglys og hovedeiendommens egen innkjøring, med oversiktlige siktforhold i begge retninger iht. Tønsberg kommunes veinormal.
-- **Vann og avløp:** Ny parsell forutsettes tilkoblet offentlig vann- og avløpsnett i Myrteveien (jf. vedlagt VA-kart / forhåndsuttalelse). Tilkobling skjer direkte fra offentlig ledning til ny parsell uten behov for rettigheter over tredjemanns eiendom.
+- **Vann og avløp:** Ny parsell tilkobles offentlig vann- og avløpsnett (jf. vedlagt VA-ledningskart / forhåndsuttalelse fra Tønsberg kommune VA). Eksisterende spillvannsledning fra Myrteveien 6s nordøstre hjørne er påvist/kartlagt *[fylles inn etter VA-kart og påvisning: sikres enten med tinglyst ledningsrett over ny parsell eller omlegges/samordnes som felles stikkledning utenfor byggefeltet]*.
 - **Overvann (KPA § 27 — LOD):** Overvann fra fremtidig bebyggelse og tette flater skal håndteres lokalt på egen tomt etter kommunens 3-trinnsstrategi (infiltrasjon/fordrøyning i stenkiste/regnbed og trygg flomvei). Eksisterende overvannskum for Myrteveien 6 blir liggende på gjenværende hovedtomt.
 
 ### 5. Sikker byggegrunn og geoteknikk (PBL § 28-1, TEK17 § 7-3)
@@ -182,7 +201,7 @@ Basert på offisiell matrikkeloversikt fra `#90` (`assets/images/nabokart_m6.png
 ### 5.1 Naboer og gjenboere som skal varsles
 | Kategori | Gnr / Bnr | Adresse / Eiendom | Relasjon til tiltaket |
 | :--- | :---: | :--- | :--- |
-| **Direkte grensenabo** | **140/1008** | Myrteveien 2 | Deler hele østgrensen (32,5 m) med den nye parsellen *(viktigste nabo!)* |
+| **Direkte grensenabo** | **140/1008** | Myrteveien 2 | Deler hele østgrensen (39,0 m) med den nye parsellen *(viktigste nabo — også ift. ev. eksisterende avløpstrasé!)* |
 | **Direkte grensenabo** | **140/995** | Øvre Bogenvei 31 | Direkte grensenabo til 140/371 mot sørøst |
 | **Direkte grensenabo** | **140/1014** | Øvre Bogenvei 33B | Direkte grensenabo til 140/371 mot sør |
 | **Direkte grensenabo** | **140/1247** | Trollheggveien 8 (tomt) | Direkte grensenabo til 140/371 mot sør |
@@ -198,7 +217,7 @@ Basert på offisiell matrikkeloversikt fra `#90` (`assets/images/nabokart_m6.png
 
 ### 5.2 Utkast til beskrivelse i nabovarselet (DiBK 5154)
 > **Beskrivelse av tiltaket:**  
-> Det søkes om delingstillatelse (fradeling av ubebygd boligtomt) fra eiendommen Myrteveien 6, Gnr 140 / Bnr 371 (totalt 3 752 m²). Den nye tomten plasseres i eiendommens nordøstlige hjørne mot Myrteveien og Myrteveien 2 (Gnr 140 / Bnr 1008), med et areal på ca. **650 m²** (ca. 20,0 m × 32,5 m). Gjenværende hovedeiendom blir ca. 3 102 m².  
+> Det søkes om delingstillatelse (fradeling av ubebygd boligtomt) fra eiendommen Myrteveien 6, Gnr 140 / Bnr 371 (totalt 3 752 m²). Den nye tomten plasseres i eiendommens nordøstlige hjørne mot Myrteveien og Myrteveien 2 (Gnr 140 / Bnr 1008), med et areal på ca. **651 m²** (ca. 16,7 m × 39,0 m). Gjenværende hovedeiendom blir ca. 3 101 m².  
 >  
 > Fradelingen er i tråd med Tønsberg kommunes kommuneplan (nåværende boligbebyggelse) og krever **ingen dispensasjoner**. Ny tomt får egen avkjørsel direkte fra Myrteveien. Det søkes i denne omgang kun om selve delingstillatelsen; oppmåling og eventuell fremtidig byggesøknad på den nye tomten vil bli varslet og behandlet særskilt på et senere tidspunkt.  
 >  
