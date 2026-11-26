@@ -1,0 +1,181 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2572 1685" width="2572" height="1685">
+  <!-- Bakgrunn for marger -->
+  <rect x="0" y="0" width="2572" height="112" fill="#0f172a"/>
+  <rect x="0" y="1537" width="2572" height="148" fill="#0f172a"/>
+  <rect x="0" y="112" width="28" height="1425" fill="#0f172a"/>
+  <rect x="1268" y="112" width="36" height="1425" fill="#0f172a"/>
+  <rect x="2544" y="112" width="28" height="1425" fill="#0f172a"/>
+
+  <!-- Hovedbanner -->
+  <text x="1286.0" y="42" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="28" fill="#ffffff">MULIGHETSSTUDIE — MAKSIMAL UTPARSELLERING AV MYRTEVEIEN 6 (3 752 m²)</text>
+  <text x="1286.0" y="74" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="17" fill="#38bdf8">Gnr 140 / Bnr 371 • Tønsberg kommune • Flest mulig fornuftige ~600 m²-tomter mens eksisterende 1947-hus beholdes</text>
+  <text x="1286.0" y="99" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="13.5" fill="#cbd5e1">Merk: Oppdeling i 3+ nye boligtomter eller felles adkomstvei utløser krav om detaljregulering (KPA Tønsberg 2023–2035, ref. sak #86)</text>
+
+  <!-- Panel A & B rammer (bakgrunnsbilder komposittes under av PIL) -->
+  <rect x="28" y="112" width="1240" height="1425" fill="none" stroke="#38bdf8" stroke-width="3"/>
+  <rect x="1304" y="112" width="1240" height="1425" fill="none" stroke="#10b981" stroke-width="3"/>
+
+  <!-- Panel A innhold -->
+  <polygon points="156.8,387.7 529.6,293.3 613.9,625.9 262.1,715.0" fill="#10b981" fill-opacity="0.24" stroke="#047857" stroke-width="3.2"/>
+
+        <g transform="translate(302.1, 469.9)">
+          <rect width="176" height="68" rx="8" fill="#ffffff" fill-opacity="0.93" stroke="#047857" stroke-width="2.2"/>
+          <text x="88" y="21" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="14" fill="#047857">T1 — Nord-Vest</text>
+          <text x="88" y="40" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="15.5" fill="#0f172a">ca. 586 m²</text>
+          <text x="88" y="57" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="10.5" fill="#475569">BYA ≤ 147 m² • Myrteveien</text>
+        </g>
+        
+<polygon points="529.6,293.3 900.8,199.2 984.2,532.1 613.9,625.9" fill="#06b6d4" fill-opacity="0.24" stroke="#0e7490" stroke-width="3.2"/>
+
+        <g transform="translate(669.1, 378.5)">
+          <rect width="176" height="68" rx="8" fill="#ffffff" fill-opacity="0.93" stroke="#0e7490" stroke-width="2.2"/>
+          <text x="88" y="21" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="14" fill="#0e7490">T2 — Nord-Øst</text>
+          <text x="88" y="40" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="15.5" fill="#0f172a">ca. 600 m²</text>
+          <text x="88" y="57" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="10.5" fill="#475569">BYA ≤ 150 m² • Myrteveien</text>
+        </g>
+        
+<polygon points="262.1,715.0 682.7,608.5 757.5,903.8 355.6,1005.6" fill="#f59e0b" fill-opacity="0.24" stroke="#b45309" stroke-width="3.2"/>
+
+        <g transform="translate(333.0, 796.7)">
+          <rect width="176" height="68" rx="8" fill="#ffffff" fill-opacity="0.93" stroke="#b45309" stroke-width="2.2"/>
+          <text x="88" y="21" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="14" fill="#b45309">T3 — Eksist. hus</text>
+          <text x="88" y="40" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="15.5" fill="#0f172a">ca. 591 m²</text>
+          <text x="88" y="57" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="10.5" fill="#475569">BYA ≤ 148 m² • Trollheggvn.</text>
+        </g>
+        
+<polygon points="682.7,608.5 984.2,532.1 1085.6,936.6 785.1,1012.8" fill="#3b82f6" fill-opacity="0.24" stroke="#1d4ed8" stroke-width="3.2"/>
+
+        <g transform="translate(796.4, 738.4)">
+          <rect width="176" height="68" rx="8" fill="#ffffff" fill-opacity="0.93" stroke="#1d4ed8" stroke-width="2.2"/>
+          <text x="88" y="21" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="14" fill="#1d4ed8">T4 — Midt-Øst</text>
+          <text x="88" y="40" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="15.5" fill="#0f172a">ca. 592 m²</text>
+          <text x="88" y="57" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="10.5" fill="#475569">BYA ≤ 148 m² • Stikkvei</text>
+        </g>
+        
+<polygon points="373.8,1062.1 674.5,985.9 779.0,1398.2 523.2,1526.3" fill="#8b5cf6" fill-opacity="0.24" stroke="#6d28d9" stroke-width="3.2"/>
+
+        <g transform="translate(502.6, 1235.4)">
+          <rect width="176" height="68" rx="8" fill="#ffffff" fill-opacity="0.93" stroke="#6d28d9" stroke-width="2.2"/>
+          <text x="88" y="21" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="14" fill="#6d28d9">T5 — Sør-Vest</text>
+          <text x="88" y="40" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="15.5" fill="#0f172a">ca. 617 m²</text>
+          <text x="88" y="57" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="10.5" fill="#475569">BYA ≤ 154 m² • Trollheggvn.</text>
+        </g>
+        
+<polygon points="674.5,985.9 772.0,961.2 785.1,1012.8 1085.6,936.6 1154.2,1210.2 779.0,1398.2" fill="#ec4899" fill-opacity="0.24" stroke="#be185d" stroke-width="3.2"/>
+
+        <g transform="translate(849.5, 1125.2)">
+          <rect width="176" height="68" rx="8" fill="#ffffff" fill-opacity="0.93" stroke="#be185d" stroke-width="2.2"/>
+          <text x="88" y="21" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="14" fill="#be185d">T6 — Sør-Øst</text>
+          <text x="88" y="40" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="15.5" fill="#0f172a">ca. 638 m²</text>
+          <text x="88" y="57" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="10.5" fill="#475569">BYA ≤ 159 m² • Stikkvei</text>
+        </g>
+        
+<polygon points="355.6,1005.6 757.5,903.8 772.0,961.2 373.8,1062.1" fill="#64748b" fill-opacity="0.45" stroke="#1e293b" stroke-width="2.6" stroke-dasharray="6,4"/>
+
+        <g transform="translate(476.7, 970.1)">
+          <rect width="176" height="26" rx="5" fill="#0f172a" fill-opacity="0.92"/>
+          <text x="88" y="17" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="11.5" fill="#f8fafc">Stikkvei 4 m (112 m²)</text>
+        </g>
+        
+<polygon points="477.6,723.6 639.1,682.7 682.5,854.2 521.1,895.1" fill="#f59e0b" fill-opacity="0.32" stroke="#92400e" stroke-width="3.2"/>
+
+    <g transform="translate(522.3, 775.5)">
+      <rect width="116" height="26" rx="5" fill="#78350f" fill-opacity="0.94" stroke="#fef3c7" stroke-width="1.4"/>
+      <text x="58" y="17" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="11" fill="#ffffff">EKSIST. HUS</text>
+    </g>
+    
+
+  <!-- Panel B innhold -->
+  <polygon points="1432.8,387.7 1841.4,284.2 1923.2,606.8 1534.9,705.1" fill="#10b981" fill-opacity="0.24" stroke="#047857" stroke-width="3.2"/>
+
+        <g transform="translate(1594.7, 460.6)">
+          <rect width="176" height="68" rx="8" fill="#ffffff" fill-opacity="0.93" stroke="#047857" stroke-width="2.2"/>
+          <text x="88" y="21" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="14" fill="#047857">T1 — Nord-Vest</text>
+          <text x="88" y="40" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="15.5" fill="#0f172a">ca. 625 m²</text>
+          <text x="88" y="57" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="10.5" fill="#475569">BYA ≤ 156 m² • Myrteveien</text>
+        </g>
+        
+<polygon points="1898.8,269.6 2176.8,199.2 2293.7,665.5 2016.8,735.6" fill="#06b6d4" fill-opacity="0.24" stroke="#0e7490" stroke-width="3.2"/>
+
+        <g transform="translate(2008.5, 433.3)">
+          <rect width="176" height="68" rx="8" fill="#ffffff" fill-opacity="0.93" stroke="#0e7490" stroke-width="2.2"/>
+          <text x="88" y="21" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="14" fill="#0e7490">T2 — Nord-Øst</text>
+          <text x="88" y="40" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="15.5" fill="#0f172a">ca. 629 m²</text>
+          <text x="88" y="57" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="10.5" fill="#475569">BYA ≤ 157 m² • Myrteveien</text>
+        </g>
+        
+<polygon points="1534.9,705.1 1923.2,606.8 2017.6,979.6 1653.0,1071.9" fill="#f59e0b" fill-opacity="0.24" stroke="#b45309" stroke-width="3.2"/>
+
+        <g transform="translate(1627.6, 905.6)">
+          <rect width="176" height="68" rx="8" fill="#ffffff" fill-opacity="0.93" stroke="#b45309" stroke-width="2.2"/>
+          <text x="88" y="21" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="14" fill="#b45309">T3 — Eksist. hus</text>
+          <text x="88" y="40" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="15.5" fill="#0f172a">ca. 683 m²</text>
+          <text x="88" y="57" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="10.5" fill="#475569">BYA ≤ 171 m² • Stikkvei</text>
+        </g>
+        
+<polygon points="2016.8,735.6 2293.7,665.5 2430.2,1210.2 2224.3,1313.4 2141.4,986.3 2084.0,1000.9" fill="#3b82f6" fill-opacity="0.24" stroke="#1d4ed8" stroke-width="3.2"/>
+
+        <g transform="translate(2168.4, 925.6)">
+          <rect width="176" height="68" rx="8" fill="#ffffff" fill-opacity="0.93" stroke="#1d4ed8" stroke-width="2.2"/>
+          <text x="88" y="21" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="14" fill="#1d4ed8">T4 — Sør-Øst</text>
+          <text x="88" y="40" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="15.5" fill="#0f172a">ca. 679 m²</text>
+          <text x="88" y="57" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="10.5" fill="#475569">BYA ≤ 170 m² • Stikkvei/tun</text>
+        </g>
+        
+<polygon points="1653.0,1071.9 2017.6,979.6 2026.7,1015.4 1969.3,1029.9 1991.1,1116.0 2041.3,1103.2 2109.2,1371.0 1799.2,1526.3" fill="#8b5cf6" fill-opacity="0.24" stroke="#6d28d9" stroke-width="3.2"/>
+
+        <g transform="translate(1785.3, 1255.9)">
+          <rect width="176" height="68" rx="8" fill="#ffffff" fill-opacity="0.93" stroke="#6d28d9" stroke-width="2.2"/>
+          <text x="88" y="21" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="14" fill="#6d28d9">T5 — Sør-Vest</text>
+          <text x="88" y="40" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="15.5" fill="#0f172a">ca. 693 m²</text>
+          <text x="88" y="57" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="10.5" fill="#475569">BYA ≤ 173 m² • Stikkvei/tun</text>
+        </g>
+        
+<polygon points="1841.4,284.2 1898.8,269.6 2084.0,1000.9 2141.4,986.3 2163.2,1072.4 1991.1,1116.0 1969.3,1029.9 2026.7,1015.4" fill="#64748b" fill-opacity="0.45" stroke="#1e293b" stroke-width="2.6" stroke-dasharray="6,4"/>
+
+        <g transform="translate(1982.3, 1037.1)">
+          <rect width="168" height="28" rx="5" fill="#0f172a" fill-opacity="0.93"/>
+          <text x="84" y="18" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="11.5" fill="#f8fafc">Vei + snutun (276 m²)</text>
+        </g>
+        
+<polygon points="2041.3,1103.2 2163.2,1072.4 2224.3,1313.4 2109.2,1371.0" fill="#84cc16" fill-opacity="0.38" stroke="#3f6212" stroke-width="2.8" stroke-dasharray="5,3"/>
+
+        <g transform="translate(2067.4, 1191.4)">
+          <rect width="132" height="48" rx="7" fill="#f7fee7" fill-opacity="0.95" stroke="#4d7c0f" stroke-width="2.0"/>
+          <text x="66" y="19" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="11.5" fill="#365314">NÆRLEKEPLASS</text>
+          <text x="66" y="37" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="13" fill="#3f6212">ca. 151 m²</text>
+        </g>
+        
+<polygon points="1753.6,723.6 1915.1,682.7 1958.5,854.2 1797.1,895.1" fill="#f59e0b" fill-opacity="0.32" stroke="#92400e" stroke-width="3.2"/>
+
+    <g transform="translate(1798.3, 775.5)">
+      <rect width="116" height="26" rx="5" fill="#78350f" fill-opacity="0.94" stroke="#fef3c7" stroke-width="1.4"/>
+      <text x="58" y="17" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="11" fill="#ffffff">EKSIST. HUS</text>
+    </g>
+    
+
+  <!-- Panel A toppkort -->
+  <g transform="translate(46, 128)">
+    <rect width="650" height="78" rx="10" fill="#0f172a" fill-opacity="0.93" stroke="#38bdf8" stroke-width="2.2"/>
+    <text x="18" y="30" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="19" fill="#38bdf8">ALTERNATIV A: 6 TOMTER à ~600 m² (1 eksist. + 5 nye)</text>
+    <text x="18" y="53" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="13.5" fill="#ffffff">Snitt 604 m² (586–638 m²) • Kun 112 m² stikkvei • ≥ 4,0 m rundt eksisterende hus</text>
+    <text x="18" y="70" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="12" fill="#fbbf24">Forutsetning: Utvidet veirett i privat vei Trollheggveien (141/1) + detaljregulering</text>
+  </g>
+
+  <!-- Panel B toppkort -->
+  <g transform="translate(1322, 128)">
+    <rect width="748" height="78" rx="10" fill="#0f172a" fill-opacity="0.93" stroke="#10b981" stroke-width="2.2"/>
+    <text x="18" y="30" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="19" fill="#34d399">ALTERNATIV B: 5 TOMTER + LEKEPLASS (100 % fra Myrteveien)</text>
+    <text x="18" y="53" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="13.5" fill="#ffffff">Romslige tomter 625–696 m² + 150 m² nærlekeplass + snutun (276 m²)</text>
+    <text x="18" y="70" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="12" fill="#a7f3d0">Største fordel: 0 % avhengig av privat veieier i Trollheggveien • Mest reguleringssikker!</text>
+  </g>
+
+  <!-- Bunnpanel: Nøkkeltall og planvurdering -->
+  <g transform="translate(28, 1553)">
+    <rect width="2516" height="116" rx="10" fill="#1e293b" stroke="#475569" stroke-width="1.8"/>
+    <text x="24" y="30" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="16" fill="#ffffff">VIKTIGSTE KONKLUSJONER FOR UTPARSELLERING (DETALJREGULERING, KPA TØNSBERG 2023–2035)</text>
+    <text x="24" y="56" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="13.5" fill="#e2e8f0">1. Maks fornuftig antall: 6 eneboligtomter (~585–640 m² med Trollheggveien, eller ~550–610 m² kun fra Myrteveien uten lekeplass). 5 tomter + nærlekeplass (Alt. B) er lettest å få regulert.</text>
+    <text x="24" y="80" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="13.5" fill="#e2e8f0">2. Eksisterende 1947-hus beholdes på ~590–680 m² (BYA ca. 21–24 % inkl. 2 p-plasser — under 25 %-grensen). Gammel tre-garasje i NV rives for å frigjøre T1.</text>
+    <text x="24" y="104" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="13.5" fill="#93c5fd">3. Reguleringsfordel: Ved detaljregulering kan byggegrense mot Myrteveien settes etter strøkslinje (~8–10 m som Myrteveien 2) i stedet for 15 m fra vegmidt — gir romslige byggefelt på T1 &amp; T2.</text>
+  </g>
+</svg>
