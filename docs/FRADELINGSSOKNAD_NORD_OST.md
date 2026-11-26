@@ -69,18 +69,51 @@ Kalibrert direkte mot Kartverkets matrikkeldata (`140/371`: 3 752 m², nordgrens
 | **Mellomvariant** | **4,05 m** | 17,2 m | 37,5 m (~5,2 m nord) | **629 m²** | 184 m² | Ingen dispensasjon, Ny garasje urørt (58,4 m²) |
 | **Eksakt 650 m² + SV lenger nord** | **2,00 m** | 19,2 m | 29,8 m (~12,9 m nord) | **650 m²** | 195 m² | Ny garasje reduseres til ≤ 50 m² (KPA § 19), flyttes 2 m vest, eller tinglyst nabosamtykke |
 
-### 2.3 Kritisk funn: Eksisterende avløpsrør fra nordøst-hjørnet av dagens hus ned mot naboen
-Ved gjennomgang av kommunalt saksarkiv i repoet er det funnet dokumentasjon på det opprinnelige avløpsanlegget:
-- **Kilde:** `arkitekt/kommunale_byggesaker/1946_Kart_og_skisse_Gnr140_Bnr371.pdf` (Sem bygn.råd J.nr. 814/1946, datert 26. juni 1946 — *merk at kartet er tegnet med nord ned og østgrensen mot dagens Myrteveien 2 `140/1008` til venstre*).
-- **Funn på 1946-kartet:** En blå avløpsledning går rett ut fra **nordøst-hjørnet av dagens hus**, diagonalt mot nord-øst inn i det området som nå ønskes fradelt, til **`KLOAKK. SEPTIKK`** (ca. 11–13 m NØ for husets NØ-hjørne) og videre nordover til **`SYNKEKUM`**.
-- **Dagens spillvannsledning ned mot naboen (`140/1008`):** Terrenget på Myrteveien 6 faller jevnt **ca. 1:13 østover** ned mot Myrteveien 2 (`140/1008`) og Øvre Bogenvei (jf. GrunnTeknikk `10220n1` s. 4). Det ligger foreløpig **ikke** noe moderne kommunalt VA-ledningskart i repoet som viser eksakt dagens trasé etter senere kommunal kloakktilkobling.
-- **Konsekvenser som MÅ avklares før endelig grensefesting og innsending:**
-  1. **Innhente offisielt VA-ledningskart + kabel-/rørpåvisning (ev. kamerakjøring / søkesonde):** Fastslå nøyaktig hvor aktiv spillvannsledning fra M6s NØ-hjørne går over parsellen og inn på naboeiendom (`140/1008` / `140/995`), samt om gammel septiktank/synkekum fra 1946 er sanert eller fortsatt ligger i grunnen.
-  2. **Byggeforbud over aktiv ledning:** Ny bolig på 650 m²-tomten kan ikke plasseres over en aktiv avløpsledning (krav om typisk 2–4 m avstand eller omlegging). Med `16,7 × 39,0 m`-tomten er byggefeltet hele **24,0 m dypt**, slik at ny bolig likevel kan plasseres klart nord eller sør for ledningen — eller ledningen legges om langs den nye sørgrensen/vestgrensen.
-  3. **Tinglyst ledningsrett (PBL § 27-2):** Dersom M6s avløpsledning fortsatt skal krysse den nye parsellen (og nabotomten), krever kommunen **tinglyst rett til å ha liggende og vedlikeholde avløpsledning** over den nye parsellen ved matrikulering/fradeling (og avklaring av eksisterende rett over `140/1008`).
-  4. **Mulig bonus for ny tomt:** Dersom det ikke er selvfall fra den nye parsellen nordover til kommunal ledning i Myrteveien, kan en oppgradert felles stikkledning i dagens trasé (med selvfall østover) være nøkkelen for avløpsløsning også for den nye tomten — forutsatt dokumentert rettighet og kapasitet videre ned mot kommunalt nett.
+### 2.3 Eksisterende VA-infrastruktur fra NØ-hjørnet (2014 kommunal soil & overvann)
+- **2014-oppgradering (bekreftet av hjemmelshaver):** I **2014** ble det gravd frem **ny kommunal soilledning (spillvann) og overvannsledning** helt frem til huset etter pålegg fra Tønsberg kommune.
+- **1946-anlegg:** Den gamle septiktanken (`KLOAKK. SEPTIKK` på 1946-kartet `J.nr. 814/1946`) er **fjernet**. Status for gammel **`SYNKEKUM`** fra 1946 er ukjent (kan være sanert i 2014 eller fortsatt ligge i bakken i nordøst-hjørnet — bør sjekkes mot 2014-dokumentasjon / ved graving).
+- **Konkrete avklaringer før innsending:**
+  1. **Innhente 2014-ferdigmelding & offisielt VA-ledningskart** fra Tønsberg kommune VA (og ev. Boligmappa / tidligere entreprenør) for å få eksakte koordinater og dybder på 2014-ledningene (soil + overvann) over den nye parsellen og ned mot kommunalt nett / nabogrense (`140/1008`).
+  2. **Påkoblingsmulighet for ny tomt:** Siden det allerede ligger ny, dimensjonert kommunal soil- og overvannsledning fra 2014 med selvfall østover/nordøstover gjennom eller inntil parsellen, bør Tønsberg kommune VA avklare om den nye parsellen kan koble seg på samme trasé (felles stikkledning / påkoblingspunkt) eller mot ledning i Myrteveien.
+  3. **Byggeavstand & sikring:** Sikre at fremtidig bolig på ny parsell holder nødvendig avstand til aktiv 2014-ledning (typisk 2–4 m), eller gir rett til omlegging (se tinglyst rettighetspakke i del 3).
 
-### 2.4 Øvrige avklaringspunkter før innsending
+### 2.4 Planlagte tinglyste rettigheter og servitutter (Strøm, vann, avløp, vei + anbefalte tillegg)
+
+> **Viktig om tidspunkt for tinglysing (koordinert med utsatt oppmåling):**  
+> Servitutter mellom hovedeiendommen (`140/371`) og den nye parsellen kan først tinglyses hos Kartverket **når den nye parsellen har fått eget bruksnummer** (ved matrikulering / oppmålingsforretning).  
+> - I delingssøknaden **nå** vedlegges/beskrives innholdet i rettighetspakken slik at kommunen ser at PBL §§ 27-1, 27-2 og 27-4 blir ivaretatt (kommunen setter da typisk vilkår om tinglysing ved matrikulering).  
+> - Alle rettigheter samles i **én felles «Erklæring om rettigheter i fast eiendom»** (Kartverkets skjema) slik at man kun betaler **ett tinglysingsgebyr** (~540 kr) — og erklæringen tinglyses **før** eventuelt salg eller pantsettelse av ny tomt!
+
+#### A. Kjerne-rettigheter (skal tinglyses)
+1. **Vann og avløp (spillvann + overvann / drensvann):**
+   - Gjensidig rett til å ha liggende, inspisere, vedlikeholde, reparere og fornye vann-, spillvanns- og overvannsledninger (herunder 2014-ledningene fra M6s NØ-hjørne) over den andre eiendommen.
+   - Rett til tilkobling på felles stikkledning/kum der dette er hensiktsmessig, med kostnadsdeling etter antall tilkoblede boenheter for felles strekk.
+   - Forbud mot å oppføre byggverk/varige konstruksjoner eller plante trær med kraftig rotsystem nærmere enn **2,0–3,0 m** fra ledningsgrøft uten skriftlig samtykke, samt full istandsettingsplikt ved graving.
+2. **Strøm (og trekkerør / nett-infrastruktur):**
+   - Gjensidig rett til å legge, ha liggende, vedlikeholde og oppgradere jordkabler, trekkerør og ev. inntaksskap for elektrisk kraft (inkl. nettselskapets kabler fra Lede AS) langs avtalt trasé/grensebelte, med istandsettingsplikt.
+3. **Vei / Atkomst & midlertidig anleggsadkomst:**
+   - Avklaring av eventuell gjensidig rett til vei/atkomst (dersom felles innkjørsel eller kjøreadkomst benyttes) samt tidsbegrenset rett til nødvendig **anleggsadkomst / vedlikeholdsadkomst** nær felles grense (mot opprydding og full istandsetting).
+
+#### B. Anbefalte tilleggsrettigheter og verne-servitutter (beskytter verdi, sol og fleksibilitet på M6!)
+4. **Fiber / ekom / telekommunikasjon:**
+   - Tas inn i samme punkt som strøm — sikrer fri fremføring og oppgradering av fiber (Altibox/Telenor) uten senere tvister.
+5. **Omleggingsklausul for 2014-ledningene (høy verdi for begge tomter!):**
+   - Gir eier av den nye parsellen rett til å **legge om M6s eksisterende 2014-ledninger** til ny trasé (f.eks. langs grensen utenfor byggefeltet) **for egen regning**, forutsatt uendret/bedre teknisk standard og fall, forhåndsgodkjenning fra M6, og tinglysing av ny trasé. Dette gjør den nye tomten vesentlig mer attraktiv og fleksibel uten kostnad eller risiko for M6.
+6. **Frisiktsone mot Myrteveien (Veglova / Tønsberg veinormal):**
+   - Gjensidig plikt til å holde hekk, gjerde og vegetasjon under 0,5 m dersom pålagt frisikttrekant for den ene eiendommens avkjørsel krysser felles grense mot Myrteveien.
+7. **Lokal overvannshåndtering & terrengendring (KPA § 27 / beskyttelse av M6s kjeller):**
+   - Gjensidig plikt til å håndtere tak- og overflatevann på egen tomt (LOD) — forbud mot å lede overvann eller fylle opp terreng mot felles grense på en måte som belaster naboens drenering eller skaper vannsig.
+8. **Høyde-, takterrasse- og innsynsbegrensning (negativ servitutt til fordel for M6):**
+   - *Anbefales sterkt dersom ny tomt selges eksternt!* Kan fastsette:
+     - **Maksimal gesims-/mønehøyde eller kote** på ny bolig for å beskytte morgensol og sjøutsikt fra M6 (2. etg / loft).
+     - **Forbud mot takterrasse** og større uskjermede balkonger vendt mot vest/sørvest inn mot M6s hage og fasade.
+     - **Skjerpet grenseavstand:** Byggverk/tilbygg/terrasse på ny tomt må holde min. 4,0 m til felles grense mot M6 (ingen dispensasjon uten M6s skriftlige samtykke — jf. erfaring fra `#75`).
+9. **Positiv avstandserklæring for M6s Ny garasje (opsjon):**
+   - Dersom det senere blir aktuelt å velge 650 m²-varianten (2,0 m til Ny garasje) eller sette opp mindre uthus/bod nær grensen på M6, kan en positiv avstandserklæring til fordel for M6 tas rett inn i samme tinglysingsdokument før overskjøting.
+10. **Rett til vedlikehold fra nabogrunn & felles grensehekk/gjerde:**
+    - Gjensidig rett til kortvarig tilgang for vedlikehold (stillas/maling/drenering) av byggverk nær grensen mot forhåndsvarsel og full opprydding.
+
+### 2.5 Øvrige avklaringspunkter før innsending
 1. **Enebolig (650 m²) vs. Tomannsbolig (750 m²):**
    - I tidligere arkitektnotat (`2024-01-09`) ble det nevnt *«Skille ut tomt mot nor-øst, tegne 2-mannsbolig der»*.
    - Tønsberg kommunes veiledende retningslinjer for tomtestørrelse ved fradeling er **minst 500 m² for enebolig** og **minst 750 m² for tomannsbolig**.
@@ -172,7 +205,8 @@ Tiltaket er i full overensstemmelse med kommuneplanens bestemmelser og krever in
 
 ### 4. Atkomst, vann, avløp og overvann (PBL §§ 27-1, 27-2 og 27-4)
 - **Atkomst / avkjørsel:** Ny parsell har ca. 20 m grense direkte mot kommunal vei (**Myrteveien**, Gnr 141/288). Det søkes om én ny avkjørsel i parsellens vestre del mot Myrteveien, plassert i god avstand (~8 m) øst for eksisterende veglys og hovedeiendommens egen innkjøring, med oversiktlige siktforhold i begge retninger iht. Tønsberg kommunes veinormal.
-- **Vann og avløp:** Ny parsell tilkobles offentlig vann- og avløpsnett (jf. vedlagt VA-ledningskart / forhåndsuttalelse fra Tønsberg kommune VA). Eksisterende spillvannsledning fra Myrteveien 6s nordøstre hjørne er påvist/kartlagt *[fylles inn etter VA-kart og påvisning: sikres enten med tinglyst ledningsrett over ny parsell eller omlegges/samordnes som felles stikkledning utenfor byggefeltet]*.
+- **Vann og avløp:** Ny parsell tilkobles offentlig vann- og avløpsnett (jf. vedlagt VA-ledningskart / forhåndsuttalelse fra Tønsberg kommune VA). Ny kommunal spillvanns- og overvannsledning (soil + OV) ble gravd frem til eksisterende bolig i 2014 etter pålegg fra kommunen (gammel septiktank fra 1946 er fjernet). Eksakt trasé fremgår av 2014-innmåling / VA-kart.
+- **Tinglyste rettigheter (servitutter):** I forbindelse med matrikulering av ny parsell vil det bli tinglyst en samlet erklæring om gjensidige rettigheter til **strøm, fiber/ekom, vann, avløp (inkl. omleggingsrett), overvann/LOD og vei/atkomst (inkl. frisikt)** mellom Gnr 140 / Bnr 371 og den nye parsellen, jf. PBL §§ 27-1, 27-2 og 27-4.
 - **Overvann (KPA § 27 — LOD):** Overvann fra fremtidig bebyggelse og tette flater skal håndteres lokalt på egen tomt etter kommunens 3-trinnsstrategi (infiltrasjon/fordrøyning i stenkiste/regnbed og trygg flomvei). Eksisterende overvannskum for Myrteveien 6 blir liggende på gjenværende hovedtomt.
 
 ### 5. Sikker byggegrunn og geoteknikk (PBL § 28-1, TEK17 § 7-3)
@@ -237,4 +271,28 @@ Basert på offisiell matrikkeloversikt fra `#90` (`assets/images/nabokart_m6.png
 3. **Nabovarsling (Uke 2–4):** Sende digitalt nabovarsel via eByggesøk / Altinn (14 dagers lovpålagt frist).
 4. **Innsending av delingssøknad (Uke 4–5):** Sende komplett søknad om delingstillatelse (uten rekvisisjon av oppmålingsforretning) til Tønsberg kommune.
 5. **Kommunal saksbehandling (Inntil 12 uker):** Vedtak om delingstillatelse.
-6. **Senere — innen 3 år fra vedtak (PBL § 21-9):** Sende inn *Rekvisisjon av oppmålingsforretning og matrikkelføring* samtidig med byggesøknad eller når byggetillatelse foreligger.
+6. **Senere — innen 3 år fra vedtak (PBL § 21-9):** Sende inn *Rekvisisjon av oppmålingsforretning og matrikkelføring* samtidig med byggesøknad eller når byggetillatelse foreligger, og samtidig tinglyse den samlede rettighetserklæringen (del 7) når ny parsell har fått eget bruksnummer.
+
+---
+
+## 7. Utkast til samlet erklæring om rettigheter i fast eiendom (til tinglysing ved matrikulering)
+
+> *Arbeidsutkast basert på Kartverkets skjema «Erklæring om rettigheter i fast eiendom». Samles i ett dokument (ett tinglysingsgebyr) og tinglyses mellom **Gnr 140 / Bnr 371 (Hovedeiendom)** og **Gnr 140 / Bnr [NY] (Fradelt parsell)** umiddelbart etter matrikulering, før eventuelt salg eller pantsettelse.*
+
+1. **Vann, spillvann og overvann (PBL §§ 27-1 & 27-2):**  
+   Gnr 140 / Bnr 371 har evigvarende rett til å ha liggende, inspisere, vedlikeholde, reparere og fornye eksisterende og fremtidige vann-, spillvanns- og overvannsledninger (herunder kommunal soil- og overvannsledning etablert i 2014) over Gnr 140 / Bnr [NY], og tilsvarende har Gnr 140 / Bnr [NY] gjensidig rett til tilkobling/fremføring etter avtalt trasé. Byggverk, varige konstruksjoner eller trær med kraftig rotsystem må ikke plasseres nærmere enn 2,5 m fra aktiv ledningsgrøft uten skriftlig samtykke. Ved graving plikter rettighetshaver å varsle i rimelig tid og sette terrenget i stand til minst tidligere standard. Kostnader til vedlikehold av felles ledningsstrekk deles likt per tilkoblede boenhet.
+2. **Rett til omlegging av ledninger:**  
+   Eier av tjenende eiendom (Gnr 140 / Bnr [NY]) har rett til, for egen regning, å legge om ledninger omfattet av pkt. 1 til ny trasé (f.eks. langs eiendomsgrense) dersom dette er nødvendig for hensiktsmessig utbygging, forutsatt uendret eller forbedret teknisk standard og fallforhold, forhåndsgodkjenning fra eier av Gnr 140 / Bnr 371 (som ikke kan nektes uten saklig grunn), godkjent rørleggerutførelse og tinglysing av ny innmålt trasé.
+3. **Strøm, fiber og ekom:**  
+   Eiendommene har gjensidig rett til å legge, ha liggende, vedlikeholde og oppgradere jordkabler, trekkerør og eventuelle kabelskap for elektrisk kraft (inkl. nettselskapets anlegg) og fiber/telekommunikasjon langs avtalt trasé/grensebelte, med tilsvarende varslings- og istandsettingsplikt.
+4. **Vei, frisikt og anleggsadkomst (PBL § 27-4):**  
+   *[Velges/tilpasses ved endelig løsning:]* Eiendommene gis gjensidig rett til nødvendig frisiktsone mot Myrteveien (vegetasjon/innretninger holdes under 0,5 m innenfor pålagt frisikttrekant) samt rett til midlertidig anleggs- og vedlikeholdsadkomst nær felles eiendomsgrense (inkl. stillas og graving for vedlikehold av bygg/drenering) mot forhåndsvarsel og full istandsetting. *(Dersom felles innkjørsel velges, inntas også permanent kjørerett og kostnadsdeling for brøyting/vedlikehold.)*
+5. **Overvannshåndtering (LOD) og terreng ved grense:**  
+   Hver eiendom plikter å håndtere eget tak- og overflatevann lokalt på egen grunn iht. kommunens krav (LOD). Ingen av eiendommene kan foreta terrengendringer eller oppfyllinger mot felles grense som leder overflatevann inn på eller belaster dreneringen til naboeiendommen.
+6. **Byggehøyde, innsyn og avstand til felles grense *(anbefalt tillegg ved eksternt salg)*:**  
+   - Ny bebyggelse på Gnr 140 / Bnr [NY] skal ikke ha takterrasse eller uavskjermet balkong vendt mot vest/sørvest mot Gnr 140 / Bnr 371, og skal holde min. 4,0 m avstand til felles grense uten skriftlig samtykke fra eier av Gnr 140 / Bnr 371.  
+   - *[Opsjon:]* Maksimal mønehøyde / gesimshøyde begrenses til kote [C+XX,X] for å bevare sol- og utsiktsforhold for Gnr 140 / Bnr 371.  
+   - *[Opsjon dersom Ny garasje på M6 plasseres < 4,0 m fra grensen:]* Gnr 140 / Bnr 371 har rett til å oppføre og ha stående frittliggende garasje/uthus inntil [1,0 / 2,0] m fra felles grense i samsvar med TEK17 brannkrav.
+7. **Sletting / endring:**  
+   Erklæringen kan kun slettes eller endres med skriftlig samtykke fra hjemmelshaver til den berettigede eiendommen (og Tønsberg kommune for så vidt gjelder rettigheter som er stilt som vilkår etter plan- og bygningsloven).
+

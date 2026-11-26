@@ -151,10 +151,10 @@ m6_lawn_target = to_crop(np.array([750.0, 620.0]))
 
 overvannskum = pt_ne(23.6, 27.9)
 
-# Historisk avløpstrasé fra 1946-kart (Sem bygn.råd J.nr. 814/1946) + antatt føring ned mot nabo (140/1008)
+# Avløps- og overvannstrasé fra husets NØ-hjørne (ny kommunal soil + overvann gravd i 2014 etter pålegg;
+# 1946 septiktank er fjernet, ev. gammel synkekum ukjent — nøyaktig 2014-trasé hentes fra kommunalt VA-kart)
 sewer_house_ne = pt_ne(24.84, 26.8)
-sewer_septik = pt_ne(11.8, 18.0)
-sewer_synkekum = pt_ne(9.6, 10.2)
+sewer_synkekum_ukjent = pt_ne(9.6, 10.2)
 sewer_to_neighbor = pt_ne(-2.2, 23.5)
 
 
@@ -253,17 +253,17 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{
   <circle cx="{SE_MARKER[0]:.1f}" cy="{SE_MARKER[1]:.1f}" r="11" fill="none" stroke="#059669" stroke-width="2.6" stroke-dasharray="4,2"/>
   <circle cx="{SE_MARKER[0]:.1f}" cy="{SE_MARKER[1]:.1f}" r="6.5" fill="#059669" stroke="#ffffff" stroke-width="2.2"/>
 
-  <!-- 6. Historisk avløpstrasé (1946-kart: septikk & synkekum) + antatt trasé ned mot nabo (140/1008) -->
-  <polyline points="{sewer_house_ne[0]:.1f},{sewer_house_ne[1]:.1f} {sewer_septik[0]:.1f},{sewer_septik[1]:.1f} {sewer_synkekum[0]:.1f},{sewer_synkekum[1]:.1f}"
-            fill="none" stroke="#9333ea" stroke-width="3.6" stroke-dasharray="7,4"/>
+  <!-- 6. 2014 kommunal soil + overvann fra husets NØ-hjørne ned mot naboen (140/1008) + ev. gammel synkekum (?) -->
   <line x1="{sewer_house_ne[0]:.1f}" y1="{sewer_house_ne[1]:.1f}"
         x2="{sewer_to_neighbor[0]:.1f}" y2="{sewer_to_neighbor[1]:.1f}"
-        stroke="#9333ea" stroke-width="3.2" stroke-dasharray="3,5" marker-end="url(#arrow-9333ea)"/>
+        stroke="#9333ea" stroke-width="3.6" stroke-dasharray="8,4" marker-end="url(#arrow-9333ea)"/>
+  <line x1="{sewer_house_ne[0]:.1f}" y1="{sewer_house_ne[1]:.1f}"
+        x2="{sewer_synkekum_ukjent[0]:.1f}" y2="{sewer_synkekum_ukjent[1]:.1f}"
+        stroke="#c084fc" stroke-width="2.0" stroke-dasharray="3,5"/>
 
   <circle cx="{sewer_house_ne[0]:.1f}" cy="{sewer_house_ne[1]:.1f}" r="6.5" fill="#7e22ce" stroke="#ffffff" stroke-width="2"/>
-  <rect x="{sewer_septik[0] - 8:.1f}" y="{sewer_septik[1] - 6:.1f}" width="16" height="12" rx="2"
-        fill="#a855f7" stroke="#581c87" stroke-width="2"/>
-  <circle cx="{sewer_synkekum[0]:.1f}" cy="{sewer_synkekum[1]:.1f}" r="6" fill="#c084fc" stroke="#581c87" stroke-width="2"/>
+  <circle cx="{sewer_synkekum_ukjent[0]:.1f}" cy="{sewer_synkekum_ukjent[1]:.1f}" r="6.5" fill="#f3e8ff" stroke="#7e22ce" stroke-width="1.8" stroke-dasharray="3,2"/>
+  <text x="{sewer_synkekum_ukjent[0]:.1f}" y="{sewer_synkekum_ukjent[1] + 3.5:.1f}" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="9.5" fill="#581c87">?</text>
 
   <!-- Overvannskum M6 -->
   <circle cx="{overvannskum[0]:.1f}" cy="{overvannskum[1]:.1f}" r="5.5" fill="#0284c7" stroke="#ffffff" stroke-width="1.8"/>
@@ -334,15 +334,16 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{
     <text x="16" y="135" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="9.8" fill="#047857">• Kun 2 nye grensemerker (NV &amp; SV)</text>
   </g>
 
-  <!-- Callout H3: 1946 Avløpsrør / Septikk / Selvfall mot naboen -->
-  <polyline points="1272,535 1190,535 {sewer_east_target[0]:.1f},{sewer_east_target[1]:.1f}" fill="none" stroke="#9333ea" stroke-width="2.2" marker-end="url(#arrow-9333ea)"/>
+  <!-- Callout H3: 2014 kommunal soil + overvann & tinglyste retter -->
+  <polyline points="1272,542 1190,542 {sewer_east_target[0]:.1f},{sewer_east_target[1]:.1f}" fill="none" stroke="#9333ea" stroke-width="2.2" marker-end="url(#arrow-9333ea)"/>
   <g transform="translate(1272, 488)">
-    <rect width="328" height="96" rx="7" fill="#faf5ff" fill-opacity="0.98" stroke="#9333ea" stroke-width="1.8"/>
-    <text x="12" y="20" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="10.5" fill="#581c87">AVLØPSRØR FRA NØ-HJØRNE (OBS!)</text>
-    <text x="12" y="37" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="9.5" fill="#6b21a8">• 1946-kart: Kloakk → Septikk → Synkekum i NØ</text>
-    <text x="12" y="53" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="9.5" fill="#6b21a8">• Terrengfall 1:13 øst ned mot nabo (140/1008)</text>
-    <text x="12" y="69" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="9.5" fill="#7e22ce">• MÅ bekreftes med VA-kart og rørpåvisning</text>
-    <text x="12" y="85" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="9.5" fill="#7e22ce">• Krever tinglyst ledningsrett eller omlegging</text>
+    <rect width="328" height="110" rx="7" fill="#faf5ff" fill-opacity="0.98" stroke="#9333ea" stroke-width="1.8"/>
+    <text x="12" y="20" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" font-size="10.4" fill="#581c87">KOMMUNAL SOIL &amp; OVERVANN (2014)</text>
+    <text x="12" y="37" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="9.4" fill="#6b21a8">• Ny soil + overvann gravd til hus i 2014 (pålegg)</text>
+    <text x="12" y="53" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="9.4" fill="#6b21a8">• 1946 septiktank fjernet; ev. synkekum (?) ukjent</text>
+    <text x="12" y="69" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="9.4" fill="#7e22ce">• Innhente 2014-innmåling / VA-kart fra kommunen</text>
+    <text x="12" y="85" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="9.4" fill="#581c87">• Tinglyses: strøm, vann, avløp, vei (+ omlegging)</text>
+    <text x="12" y="100" font-family="DejaVu Sans, Arial, sans-serif" font-weight="500" font-size="9.0" fill="#7e22ce">(Samlet erklæring tinglyses ved matrikulering)</text>
   </g>
 
   <!-- Callout H4: Eksisterende tomtemarkør mellom naboene mot øst -->
@@ -383,7 +384,7 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{
     <text x="48" y="137" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="10.0" fill="#1e293b">Foreslått ny avkjørsel fra Myrteveien (kommunal vei)</text>
 
     <line x1="14" y1="156" x2="38" y2="156" stroke="#9333ea" stroke-width="3.4" stroke-dasharray="5,3"/>
-    <text x="48" y="160" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="10.0" fill="#581c87">Avløpstrasé: 1946 septikk/synkekum + antatt føring mot nabo</text>
+    <text x="48" y="160" font-family="DejaVu Sans, Arial, sans-serif" font-weight="600" font-size="10.0" fill="#581c87">2014 kommunal soil + overvann (antatt retning) • (?) ev. synkekum</text>
   </g>
 
   <!-- Stempel (Nederst til høyre) -->
