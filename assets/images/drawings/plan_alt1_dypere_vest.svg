@@ -312,9 +312,6 @@
 <rect x="2100.0" y="520.0" width="125.0" height="30.0" fill="#ffffff" stroke="#334155" stroke-width="2"/>
 <line x1="2100.0" y1="530.0" x2="2225.0" y2="530.0" stroke="#0284c7" stroke-width="3.5"/>
 <line x1="2100.0" y1="540.0" x2="2225.0" y2="540.0" stroke="#0284c7" stroke-width="3.5"/>
-<rect x="2635.0" y="520.0" width="130.0" height="30.0" fill="#ffffff" stroke="#334155" stroke-width="2"/>
-<line x1="2635.0" y1="530.0" x2="2765.0" y2="530.0" stroke="#0284c7" stroke-width="3.5"/>
-<line x1="2635.0" y1="540.0" x2="2765.0" y2="540.0" stroke="#0284c7" stroke-width="3.5"/>
 <rect x="2625.0" y="562.0" width="180.0" height="200.0" fill="#ffffff" stroke="#64748b" stroke-width="2" rx="4"/>
 <rect x="2639.0" y="572.0" width="68.0" height="32.0" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5" rx="4"/>
 <rect x="2723.0" y="572.0" width="68.0" height="32.0" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5" rx="4"/>

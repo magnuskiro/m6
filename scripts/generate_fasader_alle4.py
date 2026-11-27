@@ -125,15 +125,18 @@ def draw_west(d: ElevDraw):
     d.rect(-260, 0, 1520, 42, fill="#dcfce7", opacity=0.8)
     d.line(-260, 0, 1260, 0, stroke="#15803d", sw=3)
 
-    # 1-story north extension + covered NW entry porch (left, y=-210..0)
-    d.rect(-210, -295, 210, 295, fill="#f8fafc", stroke="#334155", sw=2)
-    d.siding(-210, -295, 210, 255)
+    # 1-story north extension + covered NW entry porch (left, y=-210..0) with SALTAK (pitched gable facing north!)
+    d.rect(-210, -290, 210, 290, fill="#f8fafc", stroke="#334155", sw=2)
+    d.siding(-210, -290, 210, 250)
     d.rect(-210, -40, 210, 40, fill="#64748b", stroke="#334155", sw=1.5)
-    # Porch columns & covered entry door 140/210
-    d.rect(-185, -265, 16, 225, fill="#ffffff", stroke="#334155", sw=1.6)
-    d.rect(-50, -265, 16, 225, fill="#ffffff", stroke="#334155", sw=1.6)
-    d.poly([(-225, -288), (-105, -395), (0, -295)], fill="#1e293b", stroke="#0f172a", sw=2)
-    d.text(-118, -140, "Inngang", size=12, fill="#475569")
+    # Porch column + visible 140/210 entrance door inside covered NW corner
+    d.rect(-195, -285, 16, 245, fill="#ffffff", stroke="#334155", sw=1.6)
+    d.solid_door(-135, -248, 105, 208, glass_top=True)
+    # Saltak roof side slope (eaves -285, ridge -405 running N-S!)
+    d.poly([(-228, -285), (0, -285), (0, -405), (-228, -405)], fill="#1e293b", stroke="#0f172a", sw=2)
+    for ry in range(-385, -285, 26):
+        d.line(-225, ry, -2, ry, stroke="#334155", sw=1)
+    d.text(-85, -262, "Inngang 140/210", size=11, weight="700", fill="#475569")
 
     # Main wall (0..1166)
     d.rect(0, -610, 1166, 610, fill="#ffffff", stroke="#1e293b", sw=2.5)
@@ -232,17 +235,19 @@ def draw_east(d: ElevDraw):
         d.text(cx, -75, lbl1, size=11, weight="700", fill="#64748b")
         d.text(cx, -355, lbl2, size=11, weight="700", fill="#64748b")
 
-    # 1-story NORTH EXTENSION on the right (x=1166..1376 = 2.10 m north!)
-    d.rect(1166, -295, 210, 295, fill="#ffffff", stroke="#0f172a", sw=2.5)
-    d.siding(1166, -295, 210, 255)
+    # 1-story NORTH EXTENSION on the right (x=1166..1376 = 2.10 m north!) with SALTAK (ridge running N-S!)
+    d.rect(1166, -290, 210, 290, fill="#ffffff", stroke="#0f172a", sw=2.5)
+    d.siding(1166, -290, 210, 250)
     d.rect(1166, -40, 210, 40, fill="#475569", stroke="#1e293b", sw=1.5)
     # 110/210 external basement stair door + Utebod door on east face of north extension!
     d.solid_door(1182, -245, 82, 205, glass_top=True)   # Kjellernedgang 110/210
     d.solid_door(1280, -245, 76, 205, glass_top=False)  # Utebod
     d.text(1223, -260, "Kjeller", size=11, weight="700", fill="#475569")
     d.text(1318, -260, "Bod", size=11, weight="700", fill="#475569")
-    # Sloped/gabled roof over 1-story north extension
-    d.poly([(1166, -295), (1395, -295), (1395, -312), (1166, -405)], fill="#1e293b", stroke="#0f172a", sw=2)
+    # Saltak roof side slope (eaves -285, ridge -405)
+    d.poly([(1166, -285), (1395, -285), (1395, -405), (1166, -405)], fill="#1e293b", stroke="#0f172a", sw=2)
+    for ry in range(-385, -285, 26):
+        d.line(1168, ry, 1392, ry, stroke="#334155", sw=1)
 
     d.dim_h(0, 1166, 70, "11,66 m (eksisterende lengde)", bold=True)
     d.dim_h(1166, 1376, 70, "2,10 m nord", color="#ea580c", bold=True)
@@ -321,37 +326,40 @@ def draw_north(d: ElevDraw):
     d.rect(0, -40, 866, 40, fill="#64748b", stroke="#334155", sw=1.5)
     d.poly([(-35, -588), (433, -906), (901, -588), (885, -578), (433, -885), (-19, -578)], fill="#1e293b", stroke="#0f172a", sw=2)
 
-    # Main north gable 2. etg (symmetric 3-window rhythm inspired by fasader_bolig_300.jpg!) + loft window
-    d.kors_win(115, -528, 130, 145, single=False)   # Hovedsoverom 2. etg
-    d.kors_win(395, -528, 76, 145, single=True)     # Hall 2. etg
+    # Main north gable 2. etg: NO window in Hovedsoverom (left/east)! Only Hall (center) + Trapp (right) + Loft!
+    d.kors_win(395, -535, 76, 135, single=True)     # Hall 2. etg
     d.kors_win(645, -528, 130, 145, single=False)   # Trapp 2. etg
     d.kors_win(375, -768, 116, 115, single=False)   # Loft gavl
 
-    # 1-STORY NORTH EXTENSION in foreground (x_plot = 0..616 = Utebod + Vindfang; x_plot = 616..866 = Overbygd inngangsparti!)
-    # Slight shadow behind
-    d.rect(0, -305, 616, 305, fill="#ffffff", stroke="#0f172a", sw=2.8)
-    d.siding(0, -305, 616, 265)
+    # 1-STORY NORTH EXTENSION in foreground with SALTAK (gable facing NORTH!)
+    d.rect(0, -290, 616, 290, fill="#ffffff", stroke="#0f172a", sw=2.8)
+    d.siding(0, -290, 616, 250)
     d.rect(0, -40, 616, 40, fill="#475569", stroke="#1e293b", sw=1.5)
-    # Vindfang kors-sprosse window on north wall (real x=340..470 -> x_plot=396..526)
-    d.kors_win(398, -242, 125, 135, single=False)
-    d.text(460, -72, "Vindfang", size=12, weight="700", fill="#475569")
-    d.text(165, -165, "Utebod / Kjellernedg.", size=13, weight="700", fill="#64748b")
-    # Covered NW entry porch (x_plot=616..866) with classic white columns & 140/210 entrance behind
-    d.rect(616, -40, 250, 40, fill="#94a3b8", stroke="#334155", sw=1.5)  # Porch step/landing
-    d.rect(840, -295, 18, 255, fill="#ffffff", stroke="#334155", sw=1.8)  # Corner column
-    d.rect(616, -295, 250, 18, fill="#ffffff", stroke="#334155", sw=1.6)  # Porch beam
-    d.text(742, -165, "Overbygd", size=13, weight="700", fill="#475569")
-    d.text(742, -144, "inngangsparti", size=13, weight="700", fill="#475569")
-    # Roof over 1-story north extension + porch (low-slope hip/shed roof across full 8.66 m!)
-    d.poly([(-25, -295), (891, -295), (866, -395), (0, -395)], fill="#1e293b", stroke="#0f172a", sw=2.2)
-    for ry in range(-375, -295, 26):
-        d.line(-10, ry, 875, ry, stroke="#334155", sw=1)
+    # Vindfang kors-sprosse window on north wall
+    d.kors_win(398, -238, 125, 135, single=False)
+    d.text(460, -70, "Vindfang", size=12, weight="700", fill="#475569")
+    d.text(165, -162, "Utebod / Kjellernedg.", size=13, weight="700", fill="#64748b")
+    # Covered NW entry porch (x_plot=616..866)
+    d.rect(616, -40, 250, 40, fill="#94a3b8", stroke="#334155", sw=1.5)
+    d.rect(840, -285, 18, 245, fill="#ffffff", stroke="#334155", sw=1.8)
+    d.rect(616, -285, 250, 18, fill="#ffffff", stroke="#334155", sw=1.6)
+    d.text(742, -162, "Overbygd", size=13, weight="700", fill="#475569")
+    d.text(742, -141, "inngangsparti", size=13, weight="700", fill="#475569")
+    # SALTAK gable triangle facing NORTH (spanning full 8.66m, low-pitched ~16-18° -> peak -405 right under Hall window!)
+    d.poly([(0, -285), (433, -405), (866, -285)], fill="#ffffff", stroke="#0f172a", sw=2.5)
+    for sy in [-312, -340, -368]:
+        frac = (-sy - 285) / 120.0
+        hw = 433 * (1.0 - frac) - 12
+        if hw > 25:
+            d.line(433 - hw, sy, 433 + hw, sy, stroke="#e2e8f0", sw=0.9)
+    # Thick matte black gable roof verge over north extension
+    d.poly([(-28, -278), (433, -418), (894, -278), (880, -270), (433, -400), (-14, -270)], fill="#1e293b", stroke="#0f172a", sw=2)
 
     d.dim_h(0, 616, 70, "6,16 m (Utebod + Vindfang)", color="#ea580c", bold=True)
     d.dim_h(616, 866, 70, "2,50 m (Portico)", color="#475569")
     d.dim_h(866, 1186, 70, "3,20 m vest", color="#0284c7", bold=True)
-    d.text(560, -1065, "FASADE NORD (Nordgavl + 1-etg Nord-tilbygg)", size=23, weight="800", fill="#0f172a")
-    d.text(560, -1032, "Symmetrisk 2. etg + loft (inspirert av KB fasade nordvest) • Overbygd inngangsparti & vindfang i 1. etg", size=14, weight="600", fill="#ea580c")
+    d.text(560, -1065, "FASADE NORD (Nordgavl + 1-etg Nord-tilbygg m/ saltak)", size=23, weight="800", fill="#0f172a")
+    d.text(560, -1032, "Saltak på nord-tilbygg • Ingen nordvindu på Hovedsoverom 2. etg • Overbygd inngangsparti i NV", size=14, weight="600", fill="#ea580c")
 
 
 def main():

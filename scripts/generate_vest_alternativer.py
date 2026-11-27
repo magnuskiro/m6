@@ -515,9 +515,8 @@ def draw_shared_east_floor2(pb: PlanBuilder):
     pb.window_v(851, 433, 557, 30)   # Axis 3: Bad east
     pb.window_v(851, 648, 772, 30)   # Axis 2: Sov 2 east
     pb.window_v(851, 928, 1052, 30)  # Axis 1: Sov 3 east
-    pb.window_h(360, 440, 15, 30)    # Hall north (symmetric center)
-    pb.window_h(80, 205, 15, 30)     # Trapp north (symmetric west)
-    pb.window_h(615, 745, 15, 30)    # Master north (symmetric east)
+    pb.window_h(360, 440, 15, 30)    # Hall north (center)
+    pb.window_h(80, 205, 15, 30)     # Trapp north (west) — NO north window in Master bedroom!
 
     # Fixtures — Master (north headboard, matching Magnus's 2. etg sketch!)
     pb.double_bed(605, 42, 180, 200, head="top")
