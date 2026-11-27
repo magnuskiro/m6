@@ -118,9 +118,9 @@ class ElevDraw:
         self.text(x + dx, (y1 + y2) / 2, label, size=14, weight="700" if bold else "600", fill=color, rotate=-90)
 
 
-def draw_west(d: ElevDraw):
+def draw_west(d: ElevDraw, alt: int = 1):
     """FASADE VEST (Left = Nord y=0, Right = Sør y=1166).
-    Original chimney sits ON THE WEST ROOF SLOPE at y=720..775, x_roof=135..230 -> roof intersection at -697..-758, top at -865 (BELOW ridge -890!)."""
+    Original chimney sits ON THE WEST ROOF SLOPE at y=720..775, x_roof=135..230."""
     d.rect(-260, -1020, 1520, 1020, fill="#f0f9ff", opacity=0.45)
     d.rect(-260, 0, 1520, 42, fill="#dcfce7", opacity=0.8)
     d.line(-260, 0, 1260, 0, stroke="#15803d", sw=3)
@@ -129,10 +129,8 @@ def draw_west(d: ElevDraw):
     d.rect(-210, -290, 210, 290, fill="#f8fafc", stroke="#334155", sw=2)
     d.siding(-210, -290, 210, 250)
     d.rect(-210, -40, 210, 40, fill="#64748b", stroke="#334155", sw=1.5)
-    # Porch column + railing + visible 140/210 entrance door inside covered NW porch
     d.rect(-198, -285, 16, 245, fill="#ffffff", stroke="#334155", sw=1.6)
     d.solid_door(-138, -248, 105, 208, glass_top=True)
-    # Parallel 32.7° saltak west roof slope (eaves -285, ridge -494 running N-S!)
     d.poly([(-228, -285), (0, -285), (0, -494), (-228, -494)], fill="#1e293b", stroke="#0f172a", sw=2)
     for ry in range(-470, -285, 30):
         d.line(-225, ry, -2, ry, stroke="#334155", sw=1)
@@ -148,50 +146,84 @@ def draw_west(d: ElevDraw):
     for ry in range(-860, -600, 34):
         d.line(-32, ry, 1198, ry, stroke="#334155", sw=1)
     # 2 skylights on west slope
-    d.rect(145, -825, 110, 135, fill="#93c5fd", stroke="#0f172a", sw=2.2)
-    d.rect(975, -825, 110, 135, fill="#93c5fd", stroke="#0f172a", sw=2.2)
+    if alt == 1:
+        d.rect(145, -825, 110, 135, fill="#93c5fd", stroke="#0f172a", sw=2.2)
+        d.rect(975, -825, 110, 135, fill="#93c5fd", stroke="#0f172a", sw=2.2)
+    else:
+        d.rect(122, -825, 110, 135, fill="#93c5fd", stroke="#0f172a", sw=2.2)
+        d.rect(934, -825, 110, 135, fill="#93c5fd", stroke="#0f172a", sw=2.2)
 
-    # ORIGINAL CHIMNEY — CORRECTLY ON WEST ROOF SLOPE (y=720..775, base at slope ~-730, top ~-880, right near ridge level, NOT sitting on ridge!)
+    # ORIGINAL CHIMNEY — CORRECTLY ON WEST ROOF SLOPE (y=720..775)
     d.rect(720, -895, 55, 185, fill="#7c2d12", stroke="#431407", sw=2.2)
     d.rect(714, -905, 67, 12, fill="#475569", stroke="#0f172a", sw=1.4)
     d.text(748, -922, "Orig. pipe (på vestflate)", size=13, weight="700", fill="#9a3412")
 
-    # Main wall kors-sprosse windows (aligned with floor plan!)
-    # Trapp (y=30..250 -> center 140), Vask/Bod (y=262..410 -> center 335), Spisestue (y=930..1166 -> center 1048)
-    d.kors_win(90, -248, 105, 140, single=False)   # Trapp 1. etg
-    d.kors_win(90, -528, 105, 140, single=False)   # Trapp 2. etg
-    d.kors_win(285, -248, 72, 130, single=True)    # Vask 1. etg
-    d.kors_win(285, -528, 72, 130, single=True)    # Bod/Vask 2. etg
-    d.kors_win(992, -248, 115, 145, single=False)  # Spis 1. etg
-    d.kors_win(992, -528, 115, 145, single=False)  # Spis 2. etg
+    if alt == 1:
+        # Alt 1: Main wall flanking windows (Trapp, Vask, Spisestue) + 5.20m wing (410..930, 20° gable)
+        d.kors_win(90, -248, 105, 140, single=False)
+        d.kors_win(90, -528, 105, 140, single=False)
+        d.kors_win(285, -248, 72, 130, single=True)
+        d.kors_win(285, -528, 72, 130, single=True)
+        d.kors_win(992, -248, 115, 145, single=False)
+        d.kors_win(992, -528, 115, 145, single=False)
 
-    # Enclosed 2-story WEST EXTENSION (y=410..930 = 5.20 m wide, 20° gable!)
-    d.rect(930, -605, 22, 605, fill="#94a3b8", opacity=0.35)
-    d.rect(410, -610, 520, 610, fill="#ffffff", stroke="#0f172a", sw=3)
-    d.siding(410, -610, 520, 570)
-    d.rect(410, -40, 520, 40, fill="#475569", stroke="#1e293b", sw=1.5)
+        d.rect(930, -605, 22, 605, fill="#94a3b8", opacity=0.35)
+        d.rect(410, -610, 520, 610, fill="#ffffff", stroke="#0f172a", sw=3)
+        d.siding(410, -610, 520, 570)
+        d.rect(410, -40, 520, 40, fill="#475569", stroke="#1e293b", sw=1.5)
 
-    # Two paired classic kors-sprosse windows on 1st and 2nd floor (symmetrical in 5.20m wing)
-    d.kors_win(475, -255, 165, 155, single=False)
-    d.kors_win(700, -255, 165, 155, single=False)
-    d.kors_win(475, -530, 165, 150, single=False)
-    d.kors_win(700, -530, 165, 150, single=False)
+        d.kors_win(475, -255, 165, 155, single=False)
+        d.kors_win(700, -255, 165, 155, single=False)
+        d.kors_win(475, -530, 165, 150, single=False)
+        d.kors_win(700, -530, 165, 150, single=False)
 
-    # 20° low-pitched gable roof (peak -708 -> 182 cm below main ridge -890!)
-    d.poly([(385, -600), (670, -708), (955, -600)], fill="#ffffff", stroke="#0f172a", sw=3)
-    for sy in [-625, -650, -675]:
-        frac = (-sy - 600) / 108.0
-        hw = 285 * (1.0 - frac) - 10
-        if hw > 20:
-            d.line(670 - hw, sy, 670 + hw, sy, stroke="#e2e8f0", sw=0.9)
-    d.poly([(375, -595), (670, -722), (965, -595), (950, -588), (670, -704), (390, -588)], fill="#1e293b", stroke="#0f172a", sw=2)
+        d.poly([(385, -600), (670, -708), (955, -600)], fill="#ffffff", stroke="#0f172a", sw=3)
+        for sy in [-625, -650, -675]:
+            frac = (-sy - 600) / 108.0
+            hw = 285 * (1.0 - frac) - 10
+            if hw > 20:
+                d.line(670 - hw, sy, 670 + hw, sy, stroke="#e2e8f0", sw=0.9)
+        d.poly([(375, -595), (670, -722), (965, -595), (950, -588), (670, -704), (390, -588)], fill="#1e293b", stroke="#0f172a", sw=2)
 
-    d.dim_h(0, 410, 70, "4,10 m", color="#475569")
-    d.dim_h(410, 930, 70, "5,20 m (vest-tilbygg)", color="#0284c7", bold=True)
-    d.dim_h(930, 1166, 70, "2,36 m", color="#475569")
-    d.dim_v(-285, -890, 0, "8,9 m møne", bold=True, dx=-20)
-    d.text(490, -1065, "FASADE VEST (Sørvest)", size=23, weight="800", fill="#0f172a")
-    d.text(490, -1032, "Kors-sprosser • 20° slak saltak-gavl • Orig. pipe på vest-takflate (28 cm klar av gradrenne)", size=14, weight="600", fill="#0284c7")
+        d.dim_h(0, 410, 70, "4,10 m", color="#475569")
+        d.dim_h(410, 930, 70, "5,20 m (vest-tilbygg)", color="#0284c7", bold=True)
+        d.dim_h(930, 1166, 70, "2,36 m", color="#475569")
+        d.dim_v(-285, -890, 0, "8,9 m møne", bold=True, dx=-20)
+        d.text(490, -1065, "FASADE VEST (Sørvest)", size=23, weight="800", fill="#0f172a")
+        d.text(490, -1032, "Kors-sprosser • 20° slak saltak-gavl • Orig. pipe på vest-takflate (28 cm klar av gradrenne)", size=14, weight="600", fill="#0284c7")
+    else:
+        # Alt 2: 100% SYMMETRIC 4.60m wing (353..813, flanks 3.53m | 4.60m | 3.53m) + PARALLEL 32.7° SALTAK (peak -758, clears chimney by 42 cm!)
+        d.kors_win(112, -248, 130, 145, single=False)  # Trapp 1. etg (mirror symmetric!)
+        d.kors_win(112, -528, 130, 145, single=False)  # Trapp 2. etg
+        d.kors_win(924, -248, 130, 145, single=False)  # Spis 1. etg (mirror symmetric!)
+        d.kors_win(924, -528, 130, 145, single=False)  # Spis 2. etg
+
+        d.rect(813, -605, 18, 605, fill="#94a3b8", opacity=0.35)
+        d.rect(353, -610, 460, 610, fill="#ffffff", stroke="#0f172a", sw=3)
+        d.siding(353, -610, 460, 570)
+        d.rect(353, -40, 460, 40, fill="#475569", stroke="#1e293b", sw=1.5)
+
+        # Two symmetrical paired kors-sprosse windows in 4.60m wing (center 583)
+        d.kors_win(413, -255, 145, 155, single=False)
+        d.kors_win(608, -255, 145, 155, single=False)
+        d.kors_win(413, -530, 145, 150, single=False)
+        d.kors_win(608, -530, 145, 150, single=False)
+
+        # PARALLEL 32.7° SALTAK GABLE (half_w=230 -> peak = -610 - 230*0.642 = -758!)
+        d.poly([(328, -600), (583, -758), (838, -600)], fill="#ffffff", stroke="#0f172a", sw=3)
+        for sy in [-625, -650, -675, -700, -725]:
+            frac = (-sy - 600) / 158.0
+            hw = 255 * (1.0 - frac) - 10
+            if hw > 20:
+                d.line(583 - hw, sy, 583 + hw, sy, stroke="#e2e8f0", sw=0.9)
+        d.poly([(318, -594), (583, -772), (848, -594), (833, -585), (583, -752), (333, -585)], fill="#1e293b", stroke="#0f172a", sw=2)
+
+        d.dim_h(0, 353, 70, "3,53 m (symm.)", color="#059669", bold=True)
+        d.dim_h(353, 813, 70, "4,60 m (vest-tilbygg)", color="#059669", bold=True)
+        d.dim_h(813, 1166, 70, "3,53 m (symm.)", color="#059669", bold=True)
+        d.dim_v(-285, -890, 0, "8,9 m møne", bold=True, dx=-20)
+        d.text(490, -1065, "FASADE VEST — 100 % SYMMETRISK (Alt 2)", size=23, weight="800", fill="#0f172a")
+        d.text(490, -1032, "3,53 | 4,60 | 3,53 m • Parallelt 32,7° saltak (samme vinkel som hovedtak & nord-tilbygg — 42 cm klar av pipe!)", size=13, weight="600", fill="#059669")
 
 
 def draw_east(d: ElevDraw):
@@ -253,22 +285,27 @@ def draw_east(d: ElevDraw):
     d.text(650, -1032, "4 stramme kors-sprosse-akser • 4 takvinduer linjert over vinduene • 1 sentrert kjeller-/boddør i nord-tilbygg", size=14, weight="600", fill="#059669")
 
 
-def draw_south(d: ElevDraw):
-    """FASADE SØR (Left = Vest x=-320..0, Right = Main x=0..866).
+def draw_south(d: ElevDraw, alt: int = 1):
+    """FASADE SØR (Left = Vest x=-west_d..0, Right = Main x=0..866).
     Original chimney at x=135..230 (95 cm wide EAST-WEST!) rising on the WEST roof slope!"""
+    west_d = 320 if alt == 1 else 230
     d.rect(-400, -1020, 1380, 1020, fill="#f0f9ff", opacity=0.45)
     d.rect(-400, 0, 1380, 42, fill="#dcfce7", opacity=0.8)
     d.line(-400, 0, 980, 0, stroke="#15803d", sw=3)
 
-    # West extension side wall (x=-320..0) — symmetric double kors-sprosse windows 1st & 2nd floor (veranda door moved to NORTH wall!)
-    d.rect(-320, -610, 320, 610, fill="#f8fafc", stroke="#1e293b", sw=2.5)
-    d.siding(-320, -610, 320, 570)
-    d.rect(-320, -40, 320, 40, fill="#64748b", stroke="#334155", sw=1.5)
-    d.kors_win(-225, -248, 130, 145, single=False)  # Stue 1. etg (symmetrisk under 2. etg!)
-    d.kors_win(-225, -528, 130, 145, single=False)  # Loftstue 2. etg
+    # West extension side wall (x=-west_d..0) — symmetric double kors-sprosse windows 1st & 2nd floor
+    d.rect(-west_d, -610, west_d, 610, fill="#f8fafc", stroke="#1e293b", sw=2.5)
+    d.siding(-west_d, -610, west_d, 570)
+    d.rect(-west_d, -40, west_d, 40, fill="#64748b", stroke="#334155", sw=1.5)
+    win_w = 130 if alt == 1 else 120
+    wx = -west_d / 2 - win_w / 2
+    d.kors_win(wx, -248, win_w, 145, single=False)  # Stue 1. etg
+    d.kors_win(wx, -528, win_w, 145, single=False)  # Loftstue 2. etg
 
-    # 20° gable roof of west wing in side profile (eaves -600, ridge -708, meets main slope at x=147)
-    d.poly([(-345, -600), (-345, -708), (147, -708), (0, -600)], fill="#1e293b", stroke="#0f172a", sw=2.2)
+    # West wing roof profile: Alt 1 = 20° saltak (-708, x_stop=147); Alt 2 = 32.7° parallel saltak (-758, x_stop=230)
+    z_wr = -708 if alt == 1 else -758
+    x_st = 147 if alt == 1 else 230
+    d.poly([(-west_d - 25, -600), (-west_d - 25, z_wr), (x_st, z_wr), (0, -600)], fill="#1e293b", stroke="#0f172a", sw=2.2)
 
     # ORIGINAL CHIMNEY (x=135..230 = 95 cm wide EAST-WEST, rising cleanly from WEST roof slope!)
     # Roof height at x=135 is -697, at x=230 is -758; top rises to ~-895 (just ~0.5-1m above slope / near ridge level!)
@@ -304,36 +341,37 @@ def draw_south(d: ElevDraw):
     d.rect(-15, -24, 905, 24, fill="#d97706", opacity=0.4, stroke="#92400e", sw=1.8)
     d.text(433, -7, "Markterrasse sør (fra sentrert verandadør 1. etg)", size=12, weight="700", fill="#78350f")
 
-    d.dim_h(-320, 0, 70, "3,20 m vest", color="#0284c7", bold=True)
+    d.dim_h(-west_d, 0, 70, "3,20 m vest" if alt == 1 else "2,30 m (eksist. mur)", color="#0284c7" if alt == 1 else "#059669", bold=True)
     d.dim_h(0, 866, 70, "8,66 m (eksist. bredde)", bold=True)
     d.text(275, -1065, "FASADE SØR (Sørgavl — uten syd-tilbygg)", size=23, weight="800", fill="#0f172a")
-    d.text(275, -1032, "Orig. pipe plassert riktig på vestre takflate (x=1,35–2,30 m, IKKE på mønet!) • Kors-sprosser", size=14, weight="600", fill="#9a3412")
+    d.text(275, -1032, "Orig. pipe plassert riktig på vestre takflate (x=1,35–2,30 m, IKKE på mønet!) • Sentrerte eksist. verandadører", size=14, weight="600", fill="#9a3412")
 
 
-def draw_north(d: ElevDraw):
+def draw_north(d: ElevDraw, alt: int = 1):
     """FASADE NORD — Exact match to Magnus's hand sketch!
-    Left = Øst (x_plot=0), Right = Vest (x_plot=866), Far Right = West extension (x_plot=866..1196, 3.30 m!).
-    - 1-story north extension (x_plot=0..635) with PARALLEL 32.7° SALTAK (peak at x=317, Z=494 cm!),
-      narrow window (Utebod) + double kors-sprosse window (Vindfang) + covered portico with railing (x=485..635).
-    - Right of north extension on main north wall (x=635..866): narrow single 1st-floor window + double 2nd-floor kors-sprosse window.
-    - NO window on left/east 2nd floor (Hovedsoverom); centered loft gable window.
-    - West extension north face (x=866..1196): double kors-sprosse window in BOTH 1st and 2nd floor!
-    """
+    Left = Øst (x_plot=0), Right = Vest (x_plot=866), Far Right = West extension (3.30 m in Alt 1, 2.30 m in Alt 2)."""
+    west_d = 330 if alt == 1 else 230
     d.rect(-100, -1020, 1410, 1020, fill="#f0f9ff", opacity=0.45)
     d.rect(-100, 0, 1410, 42, fill="#dcfce7", opacity=0.8)
     d.line(-100, 0, 1310, 0, stroke="#15803d", sw=3)
 
-    # West extension on the RIGHT (x_plot=866..1196 = 3.30 m deep!)
-    d.rect(866, -610, 330, 610, fill="#f8fafc", stroke="#1e293b", sw=2.5)
-    d.siding(866, -610, 330, 570)
-    d.rect(866, -40, 330, 40, fill="#64748b", stroke="#334155", sw=1.5)
-    # 1st floor DOUBLE VERANDA DOOR + 2nd floor double kors-sprosse window on NORTH face of west extension!
-    d.french_door_kors(958, -250, 150, 210)         # Verandadør nord ut fra vest-tverrfløy (1. etg -> NW-hage/kveldssol!)
-    d.kors_win(965, -528, 135, 145, single=False)   # Loftstue 2. etg nord
-    d.rect(925, -22, 245, 22, fill="#d97706", opacity=0.38, stroke="#92400e", sw=1.5)
-    d.text(1048, -6, "Uteplass NV (verandadør)", size=11, weight="700", fill="#78350f")
-    # West wing roof profile: solid 20° saltak (-708, clears chimney!) + dashed line showing 32.7° height (-778)
-    d.poly([(719, -708), (1221, -708), (1221, -600), (866, -600)], fill="#1e293b", stroke="#0f172a", sw=2.2)
+    # West extension on the RIGHT (x_plot=866..866+west_d)
+    d.rect(866, -610, west_d, 610, fill="#f8fafc", stroke="#1e293b", sw=2.5)
+    d.siding(866, -610, west_d, 570)
+    d.rect(866, -40, west_d, 40, fill="#64748b", stroke="#334155", sw=1.5)
+    if alt == 1:
+        # 1st floor DOUBLE VERANDA DOOR + 2nd floor double kors-sprosse window on NORTH face of west extension!
+        d.french_door_kors(958, -250, 150, 210)
+        d.kors_win(965, -528, 135, 145, single=False)
+        d.rect(925, -22, 245, 22, fill="#d97706", opacity=0.38, stroke="#92400e", sw=1.5)
+        d.text(1048, -6, "Uteplass NV (verandadør)", size=11, weight="700", fill="#78350f")
+        d.poly([(719, -708), (866 + west_d + 25, -708), (866 + west_d + 25, -600), (866, -600)], fill="#1e293b", stroke="#0f172a", sw=2.2)
+    else:
+        # Alt 2 (2.30 m deep): centered 120 cm double kors-sprosse windows in 1st & 2nd floor + parallel 32.7° saltak (-758)!
+        wx = 866 + west_d / 2 - 60
+        d.kors_win(wx, -248, 120, 145, single=False)
+        d.kors_win(wx, -528, 120, 145, single=False)
+        d.poly([(636, -758), (866 + west_d + 25, -758), (866 + west_d + 25, -600), (866, -600)], fill="#1e293b", stroke="#0f172a", sw=2.2)
 
     # Original chimney on west slope (x_plot = 866 - 230..135 = 636..731, right/west side of main ridge!)
     d.rect(636, -895, 95, 200, fill="#7c2d12", stroke="#431407", sw=2.2)
@@ -385,26 +423,42 @@ def draw_north(d: ElevDraw):
     d.dim_h(0, 485, 70, "4,85 m (Bod + Vindfang)", color="#ea580c", bold=True)
     d.dim_h(485, 635, 70, "1,50 m", color="#475569")
     d.dim_h(635, 866, 70, "2,31 m", color="#475569")
-    d.dim_h(866, 1196, 70, "3,30 m vest", color="#0284c7", bold=True)
+    d.dim_h(866, 866 + west_d, 70, "3,30 m vest" if alt == 1 else "2,30 m vest", color="#0284c7" if alt == 1 else "#059669", bold=True)
     d.text(560, -1065, "FASADE NORD (Synkronisert med nordfasade-skissen!)", size=23, weight="800", fill="#0f172a")
-    d.text(560, -1032, "Parallelt 32,7° saltak på nord-tilbygg • Rekkverk i inngangsparti • Ingen nordvindu på Hovedsov • Dobbeltvindu på vest-tilbygg", size=13, weight="600", fill="#ea580c")
+    sub_n = (
+        "Parallelt 32,7° saltak på nord-tilbygg • Rekkverk i inngangsparti • Ingen nordvindu på Hovedsov • Verandadør nord på vest-tilbygg"
+        if alt == 1
+        else "Parallelt 32,7° saltak på BÅDE nord-tilbygg og vest-tilbygg • Rekkverk i inngangsparti • Ingen nordvindu på Hovedsov"
+    )
+    d.text(560, -1032, sub_n, size=13, weight="600", fill="#ea580c")
 
 
-def main():
+def build_sheet(alt: int):
     W, H = 2660, 2000
+    accent = "#0284c7" if alt == 1 else "#059669"
+    title = (
+        "M6 (#50) — Alle 4 fasader (Alternativ 1: 5,20×3,20 m vest + Nord-tilbygg)"
+        if alt == 1
+        else "M6 (#50) — Alle 4 fasader (Alternativ 2: 100 % symmetrisk 4,60×2,30 m vest + Nord-tilbygg)"
+    )
+    subtitle = (
+        "Korrigert pipeplassering (på vest-takflate, IKKE på mønet) • Norske kors-sprossevinduer • Romjustert mot 1:50-plantegning"
+        if alt == 1
+        else "100 % symmetrisk vestfasade (3,53 | 4,60 | 3,53 m) • Parallelt 32,7° saltak over hele huset (42 cm klar av pipe) • Rett på eksisterende 2,3 m mur"
+    )
     svg = [
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" '
         f'style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;">',
         f'<rect width="{W}" height="{H}" fill="#faf9f6"/>',
         f'<rect x="0" y="0" width="{W}" height="135" fill="#0f172a"/>',
-        f'<rect x="0" y="129" width="{W}" height="6" fill="#0284c7"/>',
-        f'<text x="60" y="60" font-size="38" font-weight="800" fill="#ffffff">M6 (#50) — Alle 4 fasader (Alternativ 1: 5,20×3,20 m vest + Nord-tilbygg)</text>',
-        f'<text x="60" y="102" font-size="22" font-weight="500" fill="#cbd5e1">Korrigert pipeplassering (på vest-takflate, IKKE på mønet) • Norske kors-sprossevinduer • Romjustert mot 1:50-plantegning</text>',
+        f'<rect x="0" y="129" width="{W}" height="6" fill="{accent}"/>',
+        f'<text x="60" y="60" font-size="38" font-weight="800" fill="#ffffff">{esc(title)}</text>',
+        f'<text x="60" y="102" font-size="22" font-weight="500" fill="#cbd5e1">{esc(subtitle)}</text>',
     ]
 
     # Top-left: Fasade Vest
     d1 = ElevDraw(ox=285, oy=955, scale=0.68)
-    draw_west(d1)
+    draw_west(d1, alt=alt)
     svg.extend(d1.els)
 
     # Top-right: Fasade Øst
@@ -414,19 +468,24 @@ def main():
 
     # Bottom-left: Fasade Sør
     d3 = ElevDraw(ox=375, oy=1885, scale=0.68)
-    draw_south(d3)
+    draw_south(d3, alt=alt)
     svg.extend(d3.els)
 
     # Bottom-right: Fasade Nord
     d4 = ElevDraw(ox=1540, oy=1885, scale=0.68)
-    draw_north(d4)
+    draw_north(d4, alt=alt)
     svg.extend(d4.els)
 
     svg.append("</svg>")
-    out = os.path.join(OUT_DIR, "fasader_alt1_alle4.svg")
+    out = os.path.join(OUT_DIR, f"fasader_alt{alt}_alle4.svg")
     with open(out, "w", encoding="utf-8") as f:
         f.write("\n".join(svg))
     print(f"Wrote {out}")
+
+
+def main():
+    build_sheet(alt=1)
+    build_sheet(alt=2)
 
 
 if __name__ == "__main__":

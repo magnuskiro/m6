@@ -503,7 +503,7 @@
 <line x1="963.9" y1="1925.8" x2="963.9" y2="1939.4" stroke="#334155" stroke-width="1.8"/>
 <text x="669.4" y="1925.8" font-size="14" font-weight="700" fill="#334155" text-anchor="middle">8,66 m (eksist. bredde)</text>
 <text x="562.0" y="1160.8" font-size="23" font-weight="800" fill="#0f172a" text-anchor="middle">FASADE SØR (Sørgavl — uten syd-tilbygg)</text>
-<text x="562.0" y="1183.2" font-size="14" font-weight="600" fill="#9a3412" text-anchor="middle">Orig. pipe plassert riktig på vestre takflate (x=1,35–2,30 m, IKKE på mønet!) • Kors-sprosser</text>
+<text x="562.0" y="1183.2" font-size="14" font-weight="600" fill="#9a3412" text-anchor="middle">Orig. pipe plassert riktig på vestre takflate (x=1,35–2,30 m, IKKE på mønet!) • Sentrerte eksist. verandadører</text>
 <rect x="1472.0" y="1191.4" width="958.8" height="693.6" fill="#f0f9ff" stroke="none" stroke-width="1.5" opacity="0.45"/>
 <rect x="1472.0" y="1885.0" width="958.8" height="28.6" fill="#dcfce7" stroke="none" stroke-width="1.5" opacity="0.8"/>
 <line x1="1472.0" y1="1885.0" x2="2430.8" y2="1885.0" stroke="#15803d" stroke-width="3"/>
@@ -667,5 +667,5 @@
 <line x1="2353.3" y1="1925.8" x2="2353.3" y2="1939.4" stroke="#0284c7" stroke-width="1.8"/>
 <text x="2241.1" y="1925.8" font-size="14" font-weight="700" fill="#0284c7" text-anchor="middle">3,30 m vest</text>
 <text x="1920.8" y="1160.8" font-size="23" font-weight="800" fill="#0f172a" text-anchor="middle">FASADE NORD (Synkronisert med nordfasade-skissen!)</text>
-<text x="1920.8" y="1183.2" font-size="13" font-weight="600" fill="#ea580c" text-anchor="middle">Parallelt 32,7° saltak på nord-tilbygg • Rekkverk i inngangsparti • Ingen nordvindu på Hovedsov • Dobbeltvindu på vest-tilbygg</text>
+<text x="1920.8" y="1183.2" font-size="13" font-weight="600" fill="#ea580c" text-anchor="middle">Parallelt 32,7° saltak på nord-tilbygg • Rekkverk i inngangsparti • Ingen nordvindu på Hovedsov • Verandadør nord på vest-tilbygg</text>
 </svg>
