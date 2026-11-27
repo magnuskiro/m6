@@ -585,10 +585,10 @@ def draw_shared_east_floor1(pb: PlanBuilder, north_vaskerom: bool = False):
         pb.text(921, 260, "repos", size=11, weight="700", fill="#475569")
         pb.text(921, 278, "(-1,95 m)", size=10, weight="600", fill="#0284c7")
         pb.rect(970, -60, 12, 12, fill="#334155")   # Nordre søyle
-        pb.rect(970, 120, 12, 12, fill="#334155")   # Midtsøyle
-        pb.rect(970, 294, 12, 12, fill="#334155")   # Søndre søyle
+        pb.rect(970, 140, 12, 12, fill="#334155")   # Midtsøyle (nord for badvindu!)
+        pb.rect(970, 294, 12, 12, fill="#334155")   # Søndre søyle (sør for badvindu!)
         pb.text(924, -74, "Kjellertrapp", size=12, weight="700", fill="#059669")
-        pb.text(924, 322, "3,65 m (skråtak)", size=11, weight="700", fill="#059669")
+        pb.text(924, 322, "3,65 m (32,7° øst)", size=11, weight="700", fill="#059669")
         # 1,50 m setback dimension on east side from north facade (y=-210) to stair roof (y=-60)
         pb.dim_v(1005, -210, -60, "1,50 m", color="#059669", bold=True, text_offset=20)
         pb.dim_v(1005, -60, 306, "3,65 m (11 trinn + repos)", color="#0284c7", bold=False, text_offset=20)

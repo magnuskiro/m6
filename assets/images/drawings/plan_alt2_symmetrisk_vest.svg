@@ -142,10 +142,10 @@
 <text x="1401.0" y="780.0" font-size="11" font-weight="700" fill="#475569" text-anchor="middle">repos</text>
 <text x="1401.0" y="798.0" font-size="10" font-weight="600" fill="#0284c7" text-anchor="middle">(-1,95 m)</text>
 <rect x="1450.0" y="460.0" width="12.0" height="12.0" fill="#334155" stroke="none" stroke-width="1"/>
-<rect x="1450.0" y="640.0" width="12.0" height="12.0" fill="#334155" stroke="none" stroke-width="1"/>
+<rect x="1450.0" y="660.0" width="12.0" height="12.0" fill="#334155" stroke="none" stroke-width="1"/>
 <rect x="1450.0" y="814.0" width="12.0" height="12.0" fill="#334155" stroke="none" stroke-width="1"/>
 <text x="1404.0" y="446.0" font-size="12" font-weight="700" fill="#059669" text-anchor="middle">Kjellertrapp</text>
-<text x="1404.0" y="842.0" font-size="11" font-weight="700" fill="#059669" text-anchor="middle">3,65 m (skråtak)</text>
+<text x="1404.0" y="842.0" font-size="11" font-weight="700" fill="#059669" text-anchor="middle">3,65 m (32,7° øst)</text>
 <line x1="1485.0" y1="310.0" x2="1485.0" y2="460.0" stroke="#059669" stroke-width="2"/>
 <line x1="1471.0" y1="310.0" x2="1499.0" y2="310.0" stroke="#059669" stroke-width="2"/>
 <line x1="1471.0" y1="460.0" x2="1499.0" y2="460.0" stroke="#059669" stroke-width="2"/>
