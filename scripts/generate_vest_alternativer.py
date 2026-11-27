@@ -804,7 +804,16 @@ def build_alt1_floor2(pb: PlanBuilder):
     pb.window_h(-234, -99, 425, 30)   # Dobbeltvindu nord på vest-tilbygg (2. etg)
     pb.window_h(105, 235, 1151, 30)   # Flanking south window west (Opphold 2. etg)
     pb.double_terrace_door_h(433, 1151, 160, wall_t=30, swing_down=False)  # Eksist. sentrert verandadør 2. etg sør!
-    pb.window_h(631, 761, 1151, 30)   # Flanking south window east (Sov 3)
+    pb.window_h(631, 761, 1151, 30)
+    # Existing cantilevered 2nd-floor south balcony (3,20 × 1,60 m = 5,1 m²) centered on veranda door!
+    pb.rect(273, 1166, 320, 160, fill="#fef3c7", stroke="#334155", sw=2.6, opacity=0.72)
+    for bx in range(293, 593, 20):
+        pb.line(bx, 1168, bx, 1324, stroke="#d97706", sw=0.8, opacity=0.45)
+    pb.rect(277, 1170, 312, 152, fill="none", stroke="#0f172a", sw=1.4, dash="6,4")
+    pb.els.append(f'<circle cx="{pb.ox + 433:.1f}" cy="{pb.oy + 1258:.1f}" r="30" fill="#ffffff" stroke="#475569" stroke-width="1.6"/>')
+    pb.rect(342, 1236, 46, 44, fill="#e0f2fe", stroke="#0284c7", sw=1.4, rx=5)
+    pb.rect(478, 1236, 46, 44, fill="#e0f2fe", stroke="#0284c7", sw=1.4, rx=5)
+    pb.text(433, 1206, "Balkong 5,1 m² (3,20 × 1,60 m)", size=14, weight="700", fill="#78350f")   # Flanking south window east (Sov 3)
     pb.window_v(15, 90, 195, 30)      # Trapp vest
     pb.window_v(15, 285, 357, 30)     # Bod/Vask vest
     pb.window_v(15, 992, 1107, 30)    # Spis/opphold vest
@@ -956,6 +965,15 @@ def build_alt2_floor2(pb: PlanBuilder, west_d: int = 230):
     pb.window_h(105, 235, 1151, 30)
     pb.double_terrace_door_h(433, 1151, 160, wall_t=30, swing_down=False)  # Eksist. sentrert verandadør 2. etg sør!
     pb.window_h(631, 761, 1151, 30)
+    # Existing cantilevered 2nd-floor south balcony (3,20 × 1,60 m = 5,1 m²) centered on veranda door!
+    pb.rect(273, 1166, 320, 160, fill="#fef3c7", stroke="#334155", sw=2.6, opacity=0.72)
+    for bx in range(293, 593, 20):
+        pb.line(bx, 1168, bx, 1324, stroke="#d97706", sw=0.8, opacity=0.45)
+    pb.rect(277, 1170, 312, 152, fill="none", stroke="#0f172a", sw=1.4, dash="6,4")
+    pb.els.append(f'<circle cx="{pb.ox + 433:.1f}" cy="{pb.oy + 1258:.1f}" r="30" fill="#ffffff" stroke="#475569" stroke-width="1.6"/>')
+    pb.rect(342, 1236, 46, 44, fill="#e0f2fe", stroke="#0284c7", sw=1.4, rx=5)
+    pb.rect(478, 1236, 46, 44, fill="#e0f2fe", stroke="#0284c7", sw=1.4, rx=5)
+    pb.text(433, 1206, "Balkong 5,1 m² (3,20 × 1,60 m)", size=14, weight="700", fill="#78350f")
     pb.window_v(15, 929, 1059, 30)
     pb.window_v(15, 95, 225, 30)
 
@@ -994,7 +1012,7 @@ def build_alt2_floor2(pb: PlanBuilder, west_d: int = 230):
 
 
 def make_sheet(filename: str, title: str, subtitle: str, accent: str, fn1, fn2, highlights: list[str]):
-    W, H = 3160, 1940
+    W, H = 3160, 2060
     svg = [
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" '
         f'style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;">',
@@ -1016,18 +1034,18 @@ def make_sheet(filename: str, title: str, subtitle: str, accent: str, fn1, fn2, 
         "</g>",
         f'<text x="780" y="196" font-size="28" font-weight="800" fill="#0f172a" text-anchor="middle">1. ETASJE (inkl. 1-etg nord-tilbygg)</text>',
         f'<text x="2340" y="196" font-size="28" font-weight="800" fill="#0f172a" text-anchor="middle">2. ETASJE (Soverom + Stue / Utleie-opsjon)</text>',
-        f'<line x1="1575" y1="185" x2="1575" y2="1745" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="10,8"/>',
+        f'<line x1="1575" y1="185" x2="1575" y2="1870" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="10,8"/>',
     ]
 
-    pb1 = PlanBuilder(ox=480, oy=540)
+    pb1 = PlanBuilder(ox=480, oy=525)
     fn1(pb1)
     svg.extend(pb1.els)
 
-    pb2 = PlanBuilder(ox=2020, oy=540)
+    pb2 = PlanBuilder(ox=2020, oy=525)
     fn2(pb2)
     svg.extend(pb2.els)
 
-    fy = 1785
+    fy = 1900
     svg.append(f'<rect x="50" y="{fy}" width="{W - 100}" height="125" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" rx="12"/>')
     svg.append(f'<line x1="90" y1="{fy + 38}" x2="155" y2="{fy + 38}" stroke="#ea580c" stroke-width="4" stroke-dasharray="12,8"/>')
     svg.append(f'<text x="170" y="{fy + 45}" font-size="19" font-weight="600" fill="#334155">Eksisterende yttervegg / vest-utbygg (2,28 × 4,07 m)</text>')
