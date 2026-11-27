@@ -517,8 +517,8 @@ def draw_shared_east_floor1(pb: PlanBuilder):
     pb.door(474, 206, 72, "h_right_down", wall_t=12)
     # Bad 85/210 door (swings into Bad between WC y=200 and sink cabinet y=304 -> ZERO cabinet collision!)
     pb.door(556, 214, 82, "v_down_right", wall_t=12)
-    # Sov 85/210 door (from gang, swings cleanly into Sov)
-    pb.door(464, 376, 85, "v_down_right", wall_t=12)
+    # Sov 85/210 door on NORTH wall (y=360) -> entered directly from GANG (not from Stue!), matching 1:50 sketch!
+    pb.door(470, 360, 82, "h_right_down", wall_t=12)
     # South terrace double door — EXISTING centered opening (x=353..513, center=433)!
     pb.double_terrace_door_h(433, 1151, 160, wall_t=30, swing_down=True)
 
@@ -561,9 +561,9 @@ def draw_shared_east_floor1(pb: PlanBuilder):
     pb.rect(572, 695, 34, 42, fill="#f8fafc", stroke="#94a3b8", sw=1.4)  # Nattbord vest
     pb.rect(794, 695, 34, 42, fill="#f8fafc", stroke="#94a3b8", sw=1.4)  # Nattbord øst
     pb.wardrobe(474, 490, 60, 256, "Skyvedørskap")
-    pb.rect(412, 95, 44, 96, fill="#f8fafc", stroke="#64748b", sw=1.5)  # Kommode langs WC-vegg (klar av alle dører!)
-    pb.text(434, 146, "Kom.", size=11, fill="#64748b", rotate=-90)
-    pb.room_label(610, 478, "Sov / Kontor", "13,5 m²")
+    pb.rect(414, 368, 44, 92, fill="#f8fafc", stroke="#64748b", sw=1.5)  # Kommode mot tett Sov-vestvegg (som på 1:50-skisse!)
+    pb.text(436, 417, "Kom.", size=11, fill="#64748b", rotate=-90)
+    pb.room_label(610, 488, "Sov / Kontor", "13,5 m²")
 
     # Kitchen
     pb.kitchen_block(836, 764, 1132, 470)

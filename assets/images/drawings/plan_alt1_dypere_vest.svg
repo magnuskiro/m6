@@ -72,9 +72,9 @@
 <rect x="1029.0" y="734.0" width="14.0" height="82.0" fill="#ffffff" stroke="none" stroke-width="1"/>
 <line x1="1036.0" y1="734.0" x2="1118.0" y2="734.0" stroke="#334155" stroke-width="3.5"/>
 <path d="M 1118.0 734.0 A 82 82 0 0 1 1036.0 816.0" fill="none" stroke="#64748b" stroke-width="2" stroke-linejoin="miter" stroke-dasharray="6,5"/>
-<rect x="937.0" y="896.0" width="14.0" height="85.0" fill="#ffffff" stroke="none" stroke-width="1"/>
-<line x1="944.0" y1="896.0" x2="1029.0" y2="896.0" stroke="#334155" stroke-width="3.5"/>
-<path d="M 1029.0 896.0 A 85 85 0 0 1 944.0 981.0" fill="none" stroke="#64748b" stroke-width="2" stroke-linejoin="miter" stroke-dasharray="6,5"/>
+<rect x="950.0" y="873.0" width="82.0" height="14.0" fill="#ffffff" stroke="none" stroke-width="1"/>
+<line x1="950.0" y1="880.0" x2="950.0" y2="962.0" stroke="#334155" stroke-width="3.5"/>
+<path d="M 950.0 962.0 A 82 82 0 0 0 1032.0 880.0" fill="none" stroke="#64748b" stroke-width="2" stroke-linejoin="miter" stroke-dasharray="6,5"/>
 <rect x="833.0" y="1656.0" width="160.0" height="30.0" fill="#ffffff" stroke="#334155" stroke-width="2"/>
 <line x1="833.0" y1="1671.0" x2="993.0" y2="1671.0" stroke="#0284c7" stroke-width="3"/>
 <line x1="833.0" y1="1671.0" x2="833.0" y2="1751.0" stroke="#334155" stroke-width="3"/>
@@ -157,10 +157,10 @@
 <line x1="954.0" y1="1010.0" x2="1014.0" y2="1266.0" stroke="#cbd5e1" stroke-width="1.2"/>
 <line x1="1014.0" y1="1010.0" x2="954.0" y2="1266.0" stroke="#cbd5e1" stroke-width="1.2"/>
 <text x="984.0" y="1143.0" font-size="13" font-weight="600" fill="#475569" text-anchor="middle" transform="rotate(-90 984.0 1143.0)">Skyvedørskap</text>
-<rect x="892.0" y="615.0" width="44.0" height="96.0" fill="#f8fafc" stroke="#64748b" stroke-width="1.5"/>
-<text x="914.0" y="666.0" font-size="11" font-weight="normal" fill="#64748b" text-anchor="middle" transform="rotate(-90 914.0 666.0)">Kom.</text>
-<text x="1090.0" y="994.0" font-size="22" font-weight="700" fill="#1e293b" text-anchor="middle">Sov / Kontor</text>
-<text x="1090.0" y="1018.0" font-size="18" font-weight="600" fill="#475569" text-anchor="middle">13,5 m²</text>
+<rect x="894.0" y="888.0" width="44.0" height="92.0" fill="#f8fafc" stroke="#64748b" stroke-width="1.5"/>
+<text x="916.0" y="937.0" font-size="11" font-weight="normal" fill="#64748b" text-anchor="middle" transform="rotate(-90 916.0 937.0)">Kom.</text>
+<text x="1090.0" y="1004.0" font-size="22" font-weight="700" fill="#1e293b" text-anchor="middle">Sov / Kontor</text>
+<text x="1090.0" y="1028.0" font-size="18" font-weight="600" fill="#475569" text-anchor="middle">13,5 m²</text>
 <rect x="965.0" y="1284.0" width="291.0" height="60.0" fill="#f1f5f9" stroke="#475569" stroke-width="2"/>
 <text x="1110.5" y="1320.0" font-size="14" font-weight="normal" fill="#475569" text-anchor="middle">Høyskap (kjøl/ovn)</text>
 <rect x="1256.0" y="1284.0" width="60.0" height="358.0" fill="#f8fafc" stroke="#475569" stroke-width="2"/>
