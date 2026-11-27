@@ -171,6 +171,38 @@ class Scene3D:
             self.add_line((x1, y_wall - 0.5, z), (x2, y_wall - 0.5, z), stroke="#cbd5e1", sw=0.65, layer=layer, depth_bias=-2.0, opacity=0.65)
             z += step
 
+    def add_south_balcony(self, x1=273.0, x2=593.0, depth=160.0, z_floor=322.0, slab_t=18.0, rail_h=102.0, layer=5):
+        """Existing 2nd-floor cantilevered south balcony (~3,20 x 1,60 m = 5,2 m²) centered on veranda door."""
+        y0, y1 = 0.0, -depth
+        z0 = z_floor - slab_t
+        zr = z_floor + rail_h
+        # Underside soffit + deck top
+        self.add_poly([(x1, y1, z0), (x2, y1, z0), (x2, y0, z0), (x1, y0, z0)], "#cbd5e1", stroke="#475569", sw=1.1, layer=layer)
+        self.add_poly([(x1, y1, z_floor), (x2, y1, z_floor), (x2, y0, z_floor), (x1, y0, z_floor)], "#d6b084", stroke="#78350f", sw=1.1, layer=layer, ambient=0.78)
+        # Clean white fascia edges (south, west, east)
+        self.add_poly([(x1, y1, z0), (x2, y1, z0), (x2, y1, z_floor), (x1, y1, z_floor)], "#ffffff", stroke="#1e293b", sw=1.5, layer=layer)
+        self.add_poly([(x1, y1, z0), (x1, y0, z0), (x1, y0, z_floor), (x1, y1, z_floor)], "#f1f5f9", stroke="#1e293b", sw=1.4, layer=layer)
+        self.add_poly([(x2, y1, z0), (x2, y0, z0), (x2, y0, z_floor), (x2, y1, z_floor)], "#f1f5f9", stroke="#1e293b", sw=1.4, layer=layer)
+        # Matte-black metal balustrade railing (TEK17 height ~102 cm) along west, south, east edges
+        # Top & bottom rails
+        for z_bar, sw_bar in [(zr, 2.6), (z_floor + 8.0, 1.8)]:
+            self.add_line((x1 + 4, y0, z_bar), (x1 + 4, y1 + 4, z_bar), stroke="#0f172a", sw=sw_bar, layer=layer + 1)
+            self.add_line((x1 + 4, y1 + 4, z_bar), (x2 - 4, y1 + 4, z_bar), stroke="#0f172a", sw=sw_bar, layer=layer + 1)
+            self.add_line((x2 - 4, y1 + 4, z_bar), (x2 - 4, y0, z_bar), stroke="#0f172a", sw=sw_bar, layer=layer + 1)
+        # Corner posts
+        for px, py in [(x1 + 4, y1 + 4), (x2 - 4, y1 + 4), (x1 + 4, y0 - 2), (x2 - 4, y0 - 2)]:
+            self.add_line((px, py, z_floor), (px, py, zr), stroke="#0f172a", sw=2.4, layer=layer + 1)
+        # Vertical balusters (south front + west & east sides)
+        rx = x1 + 24.0
+        while rx < x2 - 12.0:
+            self.add_line((rx, y1 + 4, z_floor + 8.0), (rx, y1 + 4, zr), stroke="#1e293b", sw=1.2, layer=layer + 1)
+            rx += 22.0
+        ry = y1 + 24.0
+        while ry < y0 - 10.0:
+            self.add_line((x1 + 4, ry, z_floor + 8.0), (x1 + 4, ry, zr), stroke="#1e293b", sw=1.1, layer=layer + 1)
+            self.add_line((x2 - 4, ry, z_floor + 8.0), (x2 - 4, ry, zr), stroke="#1e293b", sw=1.1, layer=layer + 1)
+            ry += 22.0
+
     def render(self):
         # Sort by (layer ascending, depth descending = painter's algorithm)
         self.items.sort(key=lambda item: (item[0], -item[1]))
@@ -238,11 +270,8 @@ def build_house_3d(cam: Camera3D, west_d: float, y_s: float, y_n: float, wing_de
     sc.add_kors_window_south(0, 631, 761, 105, 250, layer=2)                # Kitchen 1st (right)
     sc.add_kors_window_south(0, 105, 235, 385, 530, layer=2)                # Opphold 2nd (left)
     sc.add_kors_window_south(0, 353, 513, 322, 532, is_door=True, layer=2)  # EXISTING centered veranda door 2nd!
-    # Subtle matte-black French balcony railing on centered 2nd-floor south veranda door
-    sc.add_line((346, -6, 425), (520, -6, 425), stroke="#0f172a", sw=2.6, layer=3, depth_bias=-12.0)
-    sc.add_line((346, -6, 326), (520, -6, 326), stroke="#0f172a", sw=2.0, layer=3, depth_bias=-12.0)
-    for rx in range(356, 516, 22):
-        sc.add_line((rx, -6, 326), (rx, -6, 425), stroke="#1e293b", sw=1.4, layer=3, depth_bias=-12.0)
+    # Existing cantilevered 2nd-floor south balcony (3,20 x 1,60 m = ~5,2 m²) centered on veranda door!
+    sc.add_south_balcony(273.0, 593.0, depth=160.0, z_floor=322.0, layer=4)
     sc.add_kors_window_south(0, 631, 761, 385, 530, layer=2)                # Sov 3 2nd (right, 3.1m wide)
     sc.add_kors_window_south(0, 375, 491, 655, 770, layer=2)                # Loft gable (centered!)
 

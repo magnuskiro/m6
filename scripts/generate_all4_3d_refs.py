@@ -177,10 +177,7 @@ def build_se_ref():
     sc.add_kors_window_south(0, 631, 761, 105, 250, layer=4)
     sc.add_kors_window_south(0, 105, 235, 385, 530, layer=4)
     sc.add_kors_window_south(0, 353, 513, 322, 532, is_door=True, layer=4)
-    sc.add_line((346, -6, 425), (520, -6, 425), stroke="#0f172a", sw=2.4, layer=5, depth_bias=-12.0)
-    sc.add_line((346, -6, 326), (520, -6, 326), stroke="#0f172a", sw=1.8, layer=5, depth_bias=-12.0)
-    for rx in range(356, 516, 24):
-        sc.add_line((rx, -6, 326), (rx, -6, 425), stroke="#1e293b", sw=1.3, layer=5, depth_bias=-12.0)
+    sc.add_south_balcony(273.0, 593.0, depth=160.0, z_floor=322.0, layer=5)
     sc.add_kors_window_south(0, 631, 761, 385, 530, layer=4)
     sc.add_kors_window_south(0, 375, 491, 655, 770, layer=4)
 
