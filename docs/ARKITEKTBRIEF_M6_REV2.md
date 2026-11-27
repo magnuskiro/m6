@@ -60,8 +60,8 @@ Eksisterende vest-utbygg (`2,28 × 4,07 m`) **rives helt** for enkel tilgang til
 ### Peistest (kompakt H2O-innsats `56 × 78 cm` + `30 cm` ildfast plate + `100 cm` brannsone)
 | Alternativ vest-tilbygg | Fri sone mot sofa / opphold | Fasadesymmetri vest | Tak & original 2-løps pipe (#38) |
 | :--- | :--- | :--- | :--- |
-| **Alt 1: `3,20–3,30 × 5,20 m`** *(dypere tverrfløy)* | **`~25,4 m²` netto stue** *(ekskl. `110 cm` gangpassasje; `19,2 m²` vest for pipe)* — `1,09 m` klaring til full `2,4 × 2,4 m` L-sofa | `4,10 \| 5,20 \| 2,36 m` | **`20°` slakt saltak** (`28 cm` fri klaring nord for pipe) eller **`10°` pulttak** (`35 cm` vest, 0 gradrenner). *NB: `32,7°` saltak krasjer i pipa!* |
-| **Alt 2: `3,00 × 5,02 m`** *(parallelt `32,7°` saltak)* | **`~26,8 m²` netto stue** (`4,42 × 6,18 m`, ekskl. `110 cm` gangpassasje) — plass til stor `2,55×2,50 m` L-sofa og H2O-peis (nord eller vest på pipa!) | **`3,20 \| 5,02 \| 3,44 m`** *(beholder eksist. sørvegg, +0,7 m mur vest)* | **Parallelt `32,7°` saltak** (samme takvinkel som hovedtak og nord-tilbygg!) — **`33 cm` fri klaring** nord for pipa uten takkonflikt! |
+| **Alt 1: `3,20–3,30 × 5,20 m`** *(dypere tverrfløy)* | **`~24,0 m²` netto stue** *(1. etg ekskl. `30 cm` bokhylle + `120 cm` gangpassasje; `~25,0 m²` loftstue; `19,2 m²` vest for pipe)* | `4,10 \| 5,20 \| 2,36 m` | **`20°` slakt saltak** (`28 cm` fri klaring nord for pipe) eller **`10°` pulttak** (`35 cm` vest, 0 gradrenner). *NB: `32,7°` saltak krasjer i pipa!* |
+| **Alt 2: `3,00 × 5,02 m`** *(parallelt `32,7°` saltak)* | **`~25,0 m²` netto stue** (`4,42 × 5,78 m`, 1. etg ekskl. `30 cm` bokhylle + `120 cm` gangpassasje; `~26,4 m²` loftstue) — stor L-sofa & H2O-peis | **`3,20 \| 5,02 \| 3,44 m`** *(beholder eksist. sørvegg, +0,7 m mur vest)* | **Parallelt `32,7°` saltak** (samme takvinkel som hovedtak og nord-tilbygg!) — **`33 cm` fri klaring** nord for pipa uten takkonflikt! |
 
 ---
 
@@ -79,9 +79,9 @@ Eksisterende vest-utbygg (`2,28 × 4,07 m`) **rives helt** for enkel tilgang til
 
 ## 5. Vedlagte tegninger, 3D-projeksjoner & renders i repoet
 
-* **Plantegninger 1. & 2. etg (1 px = 1 cm, ekskl. `110 cm` gangpassasje):**
-  * [Alternativ 1 (`3,20 × 5,20 m` vest, `~25,4 m²` netto stue + `2,10 m` nord-tilbygg)](../assets/images/drawings/plan_alt1_dypere_vest.png)
-  * [Alternativ 2 (`3,00 × 5,02 m` vest, `~26,8 m²` netto stue + `2,50 m` nord-tilbygg m/ `6 m² Vaskerom` & `U.04` øst-kjellertrapp)](../assets/images/drawings/plan_alt2_symmetrisk_vest.png)
+* **Plantegninger 1. & 2. etg (1 px = 1 cm, ekskl. `30 cm` bokhylle + `120 cm` gangpassasje):**
+  * [Alternativ 1 (`3,20 × 5,20 m` vest, `~24,0 m²` netto stue + `2,10 m` nord-tilbygg)](../assets/images/drawings/plan_alt1_dypere_vest.png)
+  * [Alternativ 2 (`3,00 × 5,02 m` vest, `~25,0 m²` netto stue + `2,50 m` nord-tilbygg m/ `6 m² Vaskerom` & `U.04` øst-kjellertrapp)](../assets/images/drawings/plan_alt2_symmetrisk_vest.png)
 * **Peistest (rett vest på original pipe):**
   * [Sammenligning `2,30 m` vs `2,80 m` vs `3,20 m`](../assets/images/drawings/test_peis_vest_sammenligning.png)
 * **Tekniske fasader & 3D-takplan:**

@@ -626,8 +626,11 @@ def draw_shared_east_floor1(pb: PlanBuilder, north_vaskerom: bool = False, north
     pb.rect(572, 695, 34, 42, fill="#f8fafc", stroke="#94a3b8", sw=1.4)  # Nattbord vest
     pb.rect(794, 695, 34, 42, fill="#f8fafc", stroke="#94a3b8", sw=1.4)  # Nattbord øst
     pb.wardrobe(474, 490, 60, 256, "Skyvedørskap")
-    pb.rect(414, 368, 44, 92, fill="#f8fafc", stroke="#64748b", sw=1.5)  # Kommode mot tett Sov-vestvegg (som på 1:50-skisse!)
-    pb.text(436, 417, "Kom.", size=11, fill="#64748b", rotate=-90)
+    # 30 cm built-in bookcase along the full solid Sov/Kontor west wall (x=428..458, y=368..748 = 3,80 m long!)
+    pb.rect(428, 368, 30, 380, fill="#fef3c7", stroke="#92400e", sw=1.6)
+    for by in range(444, 748, 76):
+        pb.line(428, by, 458, by, stroke="#b45309", sw=0.9, opacity=0.6)
+    pb.text(443, 558, "Bokhylle 30 cm", size=11, weight="700", fill="#92400e", rotate=-90)
     pb.room_label(610, 488, "Sov / Kontor", "13,5 m²")
 
     # Kitchen
@@ -698,15 +701,15 @@ def build_alt1_floor1(pb: PlanBuilder):
     west_d, wy1, wy2 = 320, 410, 930
     draw_outer_shell(pb, west_d, wy1, wy2, north_ext=True)
 
-    # Social & hall tints — strictly EXCLUDE 110 cm Gangpassasje (x=348..458) from Stue area!
-    pb.rect(-290, 440, 290 + 348, 352, fill="#fffbeb", opacity=0.85)   # Stue (vest for 110 cm gangpassasje, 25,4 m² netto)
+    # Social & hall tints — strictly EXCLUDE 30 cm Bokhylle (x=428..458) + 120 cm Gangpassasje (x=308..428) from Stue!
+    pb.rect(-290, 440, 290 + 308, 352, fill="#fffbeb", opacity=0.85)   # Netto Stue vest for gangpassasje (~24,0 m²)
     pb.rect(-290, 792, 320, 108, fill="#fffbeb", opacity=0.85)         # Vestfløy sør-del (y=792..900)
-    pb.rect(348, 440, 110, 352, fill="#f1f5f9", opacity=0.9)           # Gangpassasje 110 cm (ekskludert fra stue!)
-    pb.line(348, 440, 348, 792, stroke="#94a3b8", sw=2.0, dash="6,6")
-    pb.text(403, 625, "Gangpassasje 110 cm", size=13, weight="700", fill="#64748b", rotate=-90)
+    pb.rect(308, 440, 120, 352, fill="#f1f5f9", opacity=0.92)          # Gangpassasje 120 cm (vest for 30 cm bokhylle!)
+    pb.line(308, 440, 308, 792, stroke="#94a3b8", sw=2.0, dash="6,6")
+    pb.text(368, 625, "Gangpassasje 120 cm", size=13, weight="700", fill="#64748b", rotate=-90)
     pb.rect(30, 792, 428, 344, fill="#fefce8", opacity=0.75)           # Spisestue
     pb.rect(-286, 444, 418, 452, fill="none", stroke="#0284c7", sw=3, dash="12,8")
-    pb.rect(132, 444, 212, 272, fill="none", stroke="#0284c7", sw=2.2, dash="8,6")
+    pb.rect(132, 444, 172, 272, fill="none", stroke="#0284c7", sw=2.2, dash="8,6")
     pb.rect(30, 256, 220, 178, fill="#eff6ff", opacity=0.85)  # Vask
     pb.rect(256, 30, 202, 410, fill="#f8fafc", opacity=0.85)  # Gang
 
@@ -750,8 +753,8 @@ def build_alt1_floor1(pb: PlanBuilder):
     pb.room_label(106, 142, "Trapp", "4,8 m²")
     pb.room_label(110, 382, "Vask", "3,9 m²")
     pb.text(362, 295, "Gang", size=20, weight="700", fill="#475569")
-    pb.text(-140, 535, "STUE ~25,4 m²", size=22, weight="800", fill="#0369a1")
-    pb.text(-140, 561, "(netto ekskl. 110 cm gang)", size=14, weight="700", fill="#0284c7")
+    pb.text(-140, 535, "STUE ~24,0 m²", size=22, weight="800", fill="#0369a1")
+    pb.text(-140, 561, "(ekskl. bokhylle + 120 gang)", size=13, weight="700", fill="#0284c7")
     pb.text(205, 882, "SPISESTUE ~11 m²", size=19, weight="700", fill="#854d0e")
 
     # Dimensions
@@ -769,14 +772,14 @@ def build_alt1_floor2(pb: PlanBuilder):
     west_d, wy1, wy2 = 320, 410, 930
     draw_outer_shell(pb, west_d, wy1, wy2, north_ext=False)
 
-    pb.rect(-290, 440, 290 + 348, 352, fill="#fffbeb", opacity=0.85)
+    pb.rect(-290, 440, 290 + 338, 352, fill="#fffbeb", opacity=0.85)
     pb.rect(-290, 792, 320, 108, fill="#fffbeb", opacity=0.85)
-    pb.rect(348, 440, 110, 402, fill="#f1f5f9", opacity=0.9)           # Gangpassasje 110 cm (ekskludert fra stue!)
-    pb.line(348, 440, 348, 842, stroke="#94a3b8", sw=2.0, dash="6,6")
-    pb.text(403, 640, "Gangpassasje 110 cm", size=13, weight="700", fill="#64748b", rotate=-90)
+    pb.rect(338, 440, 120, 402, fill="#f1f5f9", opacity=0.92)          # Gangpassasje 120 cm langs bad/sov-dører!
+    pb.line(338, 440, 338, 842, stroke="#94a3b8", sw=2.0, dash="6,6")
+    pb.text(398, 640, "Gangpassasje 120 cm", size=13, weight="700", fill="#64748b", rotate=-90)
     pb.rect(30, 792, 428, 344, fill="#fefce8", opacity=0.75)
     pb.rect(-286, 444, 418, 452, fill="none", stroke="#0284c7", sw=3, dash="12,8")
-    pb.rect(132, 444, 212, 272, fill="none", stroke="#0284c7", sw=2.2, dash="8,6")
+    pb.rect(132, 444, 202, 272, fill="none", stroke="#0284c7", sw=2.2, dash="8,6")
     pb.rect(30, 256, 220, 178, fill="#eff6ff", opacity=0.8)
     pb.rect(256, 30, 202, 226, fill="#f8fafc", opacity=0.9)
     pb.rect(256, 256, 202, 184, fill="#f8fafc", opacity=0.7)
@@ -819,8 +822,8 @@ def build_alt1_floor2(pb: PlanBuilder):
     pb.room_label(103, 142, "Trapp", "4,8 m²")
     pb.room_label(112, 352, "Bod / Vask", "3,6 m²")
     pb.room_label(362, 102, "Hall", "4,5 m²", "(2-mannsbolig)")
-    pb.text(-140, 535, "LOFTSTUE ~25,4 m²", size=20, weight="800", fill="#0369a1")
-    pb.text(-140, 561, "(netto ekskl. 110 cm gang)", size=14, weight="700", fill="#0284c7")
+    pb.text(-140, 535, "LOFTSTUE ~25,0 m²", size=20, weight="800", fill="#0369a1")
+    pb.text(-140, 561, "(netto ekskl. 120 cm gang)", size=14, weight="700", fill="#0284c7")
 
     pb.dim_h(0, 866, -265, "8,66 m", bold=True)
     pb.dim_h(-320, 0, -265, "3,20 m (innbygd 2. etg)", color="#0284c7", bold=True)
@@ -838,14 +841,14 @@ def build_alt2_floor1(pb: PlanBuilder, west_d: int = 230):
     dx_w = west_d - 230  # 0 for Alt 2, 70 for Alt 2.5
     draw_outer_shell(pb, west_d, wy1, wy2, north_ext=True, north_depth=250)
 
-    # Social & hall tints — strictly EXCLUDE 110 cm Gangpassasje (x=348..458) from Stue area!
-    pb.rect(-west_d + 30, 350, (west_d - 30) + 348, 442, fill="#fffbeb", opacity=0.85)  # Netto Stue vest for 110 cm gangpassasje!
-    pb.rect(348, 350, 110, 442, fill="#f1f5f9", opacity=0.92)                           # Gangpassasje 110 cm (ekskludert!)
-    pb.line(348, 350, 348, 792, stroke="#94a3b8", sw=2.0, dash="6,6")
-    pb.text(403, 600, "Gangpassasje 110 cm", size=13, weight="700", fill="#64748b", rotate=-90)
+    # Social & hall tints — strictly EXCLUDE 30 cm Bokhylle (x=428..458) + 120 cm Gangpassasje (x=308..428) from Stue!
+    pb.rect(-west_d + 30, 350, (west_d - 30) + 308, 442, fill="#fffbeb", opacity=0.85)  # Netto Stue vest for gangpassasje (~25,0 m²)
+    pb.rect(308, 350, 120, 442, fill="#f1f5f9", opacity=0.92)                           # Gangpassasje 120 cm (vest for 30 cm bokhylle!)
+    pb.line(308, 350, 308, 792, stroke="#94a3b8", sw=2.0, dash="6,6")
+    pb.text(368, 600, "Gangpassasje 120 cm", size=13, weight="700", fill="#64748b", rotate=-90)
     pb.rect(30, 792, 428, 344, fill="#fefce8", opacity=0.75)
-    # Dashed net living zone stops cleanly at x=344 (STRICTLY excluding 110 cm Gangpassasje x=348..458!)
-    pb.rect(-west_d + 34, 354, (west_d - 34) + 344, 362, fill="none", stroke="#059669", sw=3.2, dash="12,8")
+    # Dashed net living zone stops cleanly at x=304 (STRICTLY excluding 30 cm bokhylle + 120 cm gangpassasje!)
+    pb.rect(-west_d + 34, 354, (west_d - 34) + 304, 362, fill="none", stroke="#059669", sw=3.2, dash="12,8")
     pb.rect(-west_d + 34, 716, (west_d - 34) + 122, 72, fill="none", stroke="#059669", sw=2.5, dash="8,6")
     pb.rect(30, 244, 220, 100, fill="#eff6ff", opacity=0.85)  # Garderobe / Bod (2,2 m²)
     pb.rect(256, 30, 202, 320, fill="#f8fafc", opacity=0.85)  # Gang
@@ -884,11 +887,11 @@ def build_alt2_floor1(pb: PlanBuilder, west_d: int = 230):
     if is_25:
         pb.sofa_l(-255, 520, w_horiz=255, h_vert=250, depth=95, corner="bl")  # Romslig 2,55×2,50 m L-sofa!
         pb.coffee_table(-125, 540, 130, 75)
-        pb.armchair(255, 495, 76, 76)
+        pb.armchair(218, 495, 76, 76)                                         # 14 cm klar vest for 120 cm gangpassasje!
     else:
-        pb.sofa_l(-185, 540, w_horiz=225, h_vert=230, depth=92, corner="bl")  # 103 cm klar til vestglass på H2O-peis!
+        pb.sofa_l(-185, 540, w_horiz=225, h_vert=230, depth=92, corner="bl")
         pb.coffee_table(-65, 545, 120, 70)
-        pb.armchair(255, 495, 76, 76)
+        pb.armchair(218, 495, 76, 76)
     pb.chimney_and_fireplace(135, 720, 95, 55, mode="north_insert")
 
     # Labels
@@ -896,11 +899,11 @@ def build_alt2_floor1(pb: PlanBuilder, west_d: int = 230):
     pb.text(122, 278, "Gard. / Bod 2,2 m²", size=14, weight="700", fill="#1e293b")
     pb.text(365, 285, "Gang", size=20, weight="700", fill="#475569")
     if is_25:
-        pb.text(40, 434, "STUE ~26,8 m² (4,42 × 6,18 m)", size=21, weight="800", fill="#047857")
-        pb.text(40, 460, "Netto ekskl. 110 cm gangpassasje • 3,00 m vest-fløy", size=14, weight="700", fill="#059669")
+        pb.text(20, 434, "STUE ~25,0 m² (4,42 × 5,78 m)", size=20, weight="800", fill="#047857")
+        pb.text(20, 460, "Netto ekskl. 30 cm bokhylle + 120 cm gang", size=13, weight="700", fill="#059669")
     else:
-        pb.text(65, 434, "STUE ~23,7 m² (4,42 × 5,48 m)", size=21, weight="800", fill="#047857")
-        pb.text(65, 460, "Netto ekskl. 110 cm gangpassasje • Eksist. sørvegg vest", size=14, weight="700", fill="#059669")
+        pb.text(45, 434, "STUE ~21,9 m² (4,42 × 5,08 m)", size=20, weight="800", fill="#047857")
+        pb.text(45, 460, "Netto ekskl. 30 cm bokhylle + 120 cm gang", size=13, weight="700", fill="#059669")
     pb.text(205, 882, "SPISESTUE ~12,5 m²", size=19, weight="700", fill="#854d0e")
 
     # Dimensions
@@ -920,12 +923,12 @@ def build_alt2_floor2(pb: PlanBuilder, west_d: int = 230):
     dx_w = west_d - 230
     draw_outer_shell(pb, west_d, wy1, wy2, north_ext=False, north_depth=250)
 
-    pb.rect(-west_d + 30, 350, (west_d - 30) + 348, 442, fill="#fffbeb", opacity=0.85)
-    pb.rect(348, 350, 110, 492, fill="#f1f5f9", opacity=0.92)
-    pb.line(348, 350, 348, 842, stroke="#94a3b8", sw=2.0, dash="6,6")
-    pb.text(403, 600, "Gangpassasje 110 cm", size=13, weight="700", fill="#64748b", rotate=-90)
+    pb.rect(-west_d + 30, 350, (west_d - 30) + 338, 442, fill="#fffbeb", opacity=0.85)
+    pb.rect(338, 350, 120, 492, fill="#f1f5f9", opacity=0.92)
+    pb.line(338, 350, 338, 842, stroke="#94a3b8", sw=2.0, dash="6,6")
+    pb.text(398, 600, "Gangpassasje 120 cm", size=13, weight="700", fill="#64748b", rotate=-90)
     pb.rect(30, 792, 428, 344, fill="#fefce8", opacity=0.75)
-    pb.rect(-west_d + 34, 354, (west_d - 34) + 344, 362, fill="none", stroke="#059669", sw=3.2, dash="12,8")
+    pb.rect(-west_d + 34, 354, (west_d - 34) + 334, 362, fill="none", stroke="#059669", sw=3.2, dash="12,8")
     pb.rect(-west_d + 34, 716, (west_d - 34) + 122, 72, fill="none", stroke="#059669", sw=2.5, dash="8,6")
     pb.rect(30, 244, 220, 100, fill="#eff6ff", opacity=0.85)
     pb.rect(256, 30, 202, 212, fill="#f8fafc", opacity=0.9)
@@ -963,11 +966,11 @@ def build_alt2_floor2(pb: PlanBuilder, west_d: int = 230):
     if is_25:
         pb.sofa_l(-255, 520, w_horiz=255, h_vert=250, depth=95, corner="bl")
         pb.coffee_table(-125, 540, 130, 75)
-        pb.armchair(255, 495, 76, 76)
+        pb.armchair(245, 495, 76, 76)
     else:
         pb.sofa_l(-185, 540, w_horiz=225, h_vert=230, depth=92, corner="bl")
         pb.coffee_table(-65, 545, 120, 70)
-        pb.armchair(255, 495, 76, 76)
+        pb.armchair(245, 495, 76, 76)
     pb.dining_table(200, 985, 180, 90, seats=6)
     pb.chimney_and_fireplace(135, 720, 95, 55, mode="north_stove")
 
@@ -976,11 +979,11 @@ def build_alt2_floor2(pb: PlanBuilder, west_d: int = 230):
     pb.text(210, 314, "2,2 m²", size=13, weight="600", fill="#475569")
     pb.room_label(362, 98, "Hall", "4,3 m²", "(2-mannsbolig)")
     if is_25:
-        pb.text(40, 434, "LOFTSTUE ~26,8 m² (4,42 × 6,18 m)", size=19, weight="800", fill="#047857")
-        pb.text(40, 460, "(netto ekskl. 110 cm gang + 12,5 m² spis)", size=14, weight="700", fill="#059669")
+        pb.text(35, 434, "LOFTSTUE ~26,4 m² (4,42 × 6,08 m)", size=19, weight="800", fill="#047857")
+        pb.text(35, 460, "(netto ekskl. 120 cm gang + 12,5 m² spis)", size=14, weight="700", fill="#059669")
     else:
-        pb.text(65, 434, "LOFTSTUE ~23,7 m² (4,42 × 5,48 m)", size=19, weight="800", fill="#047857")
-        pb.text(65, 460, "(netto ekskl. 110 cm gang + 12,5 m² spis)", size=14, weight="700", fill="#059669")
+        pb.text(60, 434, "LOFTSTUE ~23,3 m² (4,42 × 5,38 m)", size=19, weight="800", fill="#047857")
+        pb.text(60, 460, "(netto ekskl. 120 cm gang + 12,5 m² spis)", size=14, weight="700", fill="#059669")
 
     pb.dim_h(0, 866, -280, "8,66 m", bold=True)
     pb.dim_h(-west_d, 0, -280, "3,00 m (innbygd 2. etg)" if is_25 else "2,30 m (innbygd 2. etg)", color="#059669", bold=True)
@@ -1058,7 +1061,7 @@ if __name__ == "__main__":
         build_alt1_floor1,
         build_alt1_floor2,
         [
-            "Netto Stue ~25,4 m² (ekskl. 110 cm gangpassasje; 19,2 m² vest for pipe)",
+            "Netto Stue ~24,0 m² (ekskl. 30 cm bokhylle + 120 cm gang; 19,2 m² vest for pipe)",
             "Nord-tilbygg (Vindfang 5,4 m², Kjellernedg., Utebod) + 8,7 m² Bad",
             "Krever ~0,9 m nytt fundament vest + 20° saltak (28 cm klar av 2-løps pipe)",
         ],
@@ -1066,12 +1069,12 @@ if __name__ == "__main__":
     make_sheet(
         "plan_alt2_symmetrisk_vest.svg",
         "M6 — ALTERNATIV 2: 3,00 × 5,02 m vest + 2,50 m nord-tilbygg (6 m² Vindfang + 6 m² Vaskerom)",
-        "Catrines 3,20 | 5,02 | 3,44 m oppsett (3,00 m vest) • Netto Stue ~26,8 m² (ekskl. 110 cm gang) • Parallelt 32,7° saltak (33 cm pipeklaring)",
+        "Catrines 3,20 | 5,02 | 3,44 m oppsett (3,00 m vest) • Netto Stue ~25,0 m² (ekskl. 30 cm bokhylle + 120 cm gang) • Parallelt 32,7° saltak",
         "#059669",
         lambda pb: build_alt2_floor1(pb, west_d=300),
         lambda pb: build_alt2_floor2(pb, west_d=300),
         [
-            "Netto Stue ~26,8 m² (4,42 × 6,18 m ekskl. 110 cm gangpassasje!)",
+            "Netto Stue ~25,0 m² (4,42 × 5,78 m ekskl. 30 cm bokhylle + 120 cm gang!)",
             "6 m² Vindfang + 6 m² Vaskerom (2,5 m nord) + overbygd øst-kjellertrapp (U.04)",
             "Parallelt 32,7° saltak over hele huset — 33 cm klar av original 2-løps pipe!",
         ],
