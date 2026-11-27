@@ -570,9 +570,10 @@ def build_alt1_floor1(pb: PlanBuilder):
     pb.line(170, 434, 170, 720, stroke="#94a3b8", sw=2.5, dash="8,8")
     pb.line(230, 756, 468, 756, stroke="#94a3b8", sw=2.5, dash="8,8")
 
-    # West & south windows
+    # West & south windows + veranda door on south wall of west wing!
     pb.window_v(-305, 510, 840, 30)
-    pb.window_h(-220, -60, 915, 30)
+    pb.double_terrace_door_h(-150, 915, 150, wall_t=30, swing_down=True)  # Verandadør fra vest-tverrfløy!
+    pb.window_h(-220, -85, 425, 30)  # Dobbeltvindu nord på vest-tilbygg (som i nordfasade-skissen)
     pb.window_h(110, 290, 1151, 30)
     pb.window_v(15, 95, 195, 30)
 
@@ -632,7 +633,8 @@ def build_alt1_floor2(pb: PlanBuilder):
 
     pb.window_v(-305, 510, 840, 30)
     pb.window_h(-220, -60, 915, 30)
-    pb.window_h(120, 320, 1151, 30)
+    pb.window_h(-220, -85, 425, 30)  # Dobbeltvindu nord på vest-tilbygg (2. etg)
+    pb.double_terrace_door_h(215, 1151, 150, wall_t=30, swing_down=False)  # Eksist. verandadør 2. etg sør (fransk balkong / evt. syd-balkong!)
     pb.window_v(15, 95, 195, 30)
 
     pb.stairs_u(36, 36, 212, 212)

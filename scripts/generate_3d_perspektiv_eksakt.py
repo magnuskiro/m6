@@ -190,12 +190,14 @@ def build_house_3d(cam: Camera3D, west_d: float, y_s: float, y_n: float, wing_de
     # Gravel driveway north-west
     sc.add_poly([(-700, 1180, 1), (1050, 1180, 1), (1050, 1750, 1), (-700, 1750, 1)],
                 "#d6d3d1", stroke="#a8a29e", sw=1, layer=0, auto_shade=False)
-    # South timber terrace deck (Z = 22)
-    sc.add_poly([(320, -240, 22), (910, -240, 22), (910, 0, 22), (320, 0, 22)],
+    # South timber terrace deck (Z = 22), wrapping around SW corner to meet west-wing veranda door!
+    sc.add_poly([(-310, -240, 22), (910, -240, 22), (910, 0, 22), (-310, 0, 22)],
                 "#d6b084", stroke="#92400e", sw=1.3, layer=1, auto_shade=True, ambient=0.75)
-    sc.add_poly([(320, -240, 0), (910, -240, 0), (910, -240, 22), (320, -240, 22)],
+    sc.add_poly([(-310, 0, 22), (0, 0, 22), (0, y_s, 22), (-310, y_s, 22)],
+                "#d6b084", stroke="#92400e", sw=1.2, layer=1, auto_shade=True, ambient=0.75)
+    sc.add_poly([(-310, -240, 0), (910, -240, 0), (910, -240, 22), (-310, -240, 22)],
                 "#a88358", stroke="#78350f", sw=1.1, layer=1, auto_shade=True)
-    sc.add_poly([(320, -240, 0), (320, 0, 0), (320, 0, 22), (320, -240, 22)],
+    sc.add_poly([(-310, -240, 0), (-310, y_s, 0), (-310, y_s, 22), (-310, -240, 22)],
                 "#b48f64", stroke="#78350f", sw=1.1, layer=1, auto_shade=True)
 
     # --- 1-STORY NORTH EXTENSION (Y=1166..1376, X=0..866, saltak facing north) ---
@@ -232,12 +234,17 @@ def build_house_3d(cam: Camera3D, west_d: float, y_s: float, y_n: float, wing_de
         sc.add_kors_window_west(0, 805, 875, 115, 245, single=True, layer=2)  # Vask 1st
         sc.add_kors_window_west(0, 805, 875, 395, 525, single=True, layer=2)  # Bod 2nd
 
-    # Main South Gable windows & French terrace door
-    sc.add_kors_window_south(0, 130, 275, 105, 250, layer=2)             # Dining 1st
-    sc.add_kors_window_south(0, 465, 625, 42, 252, is_door=True, layer=2)  # Terrace door 1st
-    sc.add_kors_window_south(0, 130, 275, 385, 530, layer=2)             # Living 2nd
-    sc.add_kors_window_south(0, 575, 720, 385, 530, layer=2)             # Sov 3 2nd
-    sc.add_kors_window_south(0, 375, 491, 655, 770, layer=2)             # Loft gable
+    # Main South Gable windows & veranda doors (1st terrace door + 2nd existing veranda door w/ French railing!)
+    sc.add_kors_window_south(0, 130, 275, 105, 250, layer=2)                # Dining 1st
+    sc.add_kors_window_south(0, 465, 625, 42, 252, is_door=True, layer=2)   # Terrace door 1st
+    sc.add_kors_window_south(0, 130, 280, 322, 532, is_door=True, layer=2)  # 2nd floor veranda door (Opphold)!
+    # Subtle matte-black French balcony railing on 2nd floor south veranda door (ready for future south balcony)
+    sc.add_line((124, -6, 425), (286, -6, 425), stroke="#0f172a", sw=2.6, layer=3, depth_bias=-12.0)
+    sc.add_line((124, -6, 326), (286, -6, 326), stroke="#0f172a", sw=2.0, layer=3, depth_bias=-12.0)
+    for rx in range(134, 282, 22):
+        sc.add_line((rx, -6, 326), (rx, -6, 425), stroke="#1e293b", sw=1.4, layer=3, depth_bias=-12.0)
+    sc.add_kors_window_south(0, 575, 720, 385, 530, layer=2)                # Sov 3 2nd
+    sc.add_kors_window_south(0, 375, 491, 655, 770, layer=2)                # Loft gable
 
     # --- MAIN WEST ROOF SLOPE (with 35 cm overhang) ---
     ov_x = -35.0
@@ -303,11 +310,11 @@ def build_house_3d(cam: Camera3D, west_d: float, y_s: float, y_n: float, wing_de
     sc.add_kors_window_west(-west_d, y_mid - gap / 2 - win_w, y_mid - gap / 2, 380, 530, layer=7)
     sc.add_kors_window_west(-west_d, y_mid + gap / 2, y_mid + gap / 2 + win_w, 380, 530, layer=7)
 
-    # South side wall of west wing — FULL double kors-sprosse window centered in west_d!
-    sw_w = 135.0 if west_d >= 300 else 118.0
+    # South side wall of west wing — 1st floor DOUBLE VERANDA DOOR onto SW terrace + 2nd floor double kors-sprosse!
+    sw_w = 148.0 if west_d >= 300 else 132.0
     xc_s = -west_d / 2.0
-    sc.add_kors_window_south(y_s, xc_s - sw_w / 2, xc_s + sw_w / 2, 105, 250, layer=7)
-    sc.add_kors_window_south(y_s, xc_s - sw_w / 2, xc_s + sw_w / 2, 385, 530, layer=7)
+    sc.add_kors_window_south(y_s, xc_s - sw_w / 2, xc_s + sw_w / 2, 42, 252, is_door=True, layer=7)
+    sc.add_kors_window_south(y_s, xc_s - 68, xc_s + 68, 385, 530, layer=7)
 
     # West wing ROOF (South slope + North slope meeting main roof cleanly at exact 3D valley!)
     ov_w = 30.0

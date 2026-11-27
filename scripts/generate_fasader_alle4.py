@@ -260,11 +260,11 @@ def draw_south(d: ElevDraw):
     d.rect(-400, 0, 1380, 42, fill="#dcfce7", opacity=0.8)
     d.line(-400, 0, 980, 0, stroke="#15803d", sw=3)
 
-    # West extension side wall (x=-320..0)
+    # West extension side wall (x=-320..0) — 1st floor DOUBLE VERANDA DOOR onto sheltered SW terrace!
     d.rect(-320, -610, 320, 610, fill="#f8fafc", stroke="#1e293b", sw=2.5)
     d.siding(-320, -610, 320, 570)
     d.rect(-320, -40, 320, 40, fill="#64748b", stroke="#334155", sw=1.5)
-    d.kors_win(-225, -248, 130, 145, single=False)  # Stue 1. etg
+    d.french_door_kors(-235, -250, 150, 210)        # Verandadør ut fra vest-tverrfløy (1. etg)
     d.kors_win(-225, -528, 130, 145, single=False)  # Loftstue 2. etg
 
     # 20° gable roof of west wing in side profile (eaves -600, ridge -708, meets main slope at x=147)
@@ -283,16 +283,23 @@ def draw_south(d: ElevDraw):
     d.rect(0, -40, 866, 40, fill="#64748b", stroke="#334155", sw=1.5)
     d.poly([(-35, -588), (433, -906), (901, -588), (885, -578), (433, -885), (-19, -578)], fill="#1e293b", stroke="#0f172a", sw=2)
 
-    # South gable windows & terrace door (kors-sprosser!)
+    # South gable windows & veranda doors (kors-sprosser!)
     d.kors_win(135, -248, 145, 145, single=False)   # Spisestue 1. etg
-    d.french_door_kors(465, -250, 160, 210)         # Terrassedør fra kjøkken/allrom
-    d.kors_win(135, -528, 145, 145, single=False)   # Opphold 2. etg
+    d.french_door_kors(465, -250, 160, 210)         # Terrassedør fra kjøkken/allrom 1. etg
+    # 2. etg existing south veranda door (in Opphold 2. etg) w/ French balcony railing (ready for future balcony!)
+    d.french_door_kors(135, -530, 150, 208)
+    # Subtle matte-black wrought-iron French balcony railing (TEK17 fall protection until balcony is added)
+    d.rect(128, -422, 164, 6, fill="#1e293b")
+    d.rect(128, -326, 164, 5, fill="#1e293b")
+    for rx in range(138, 288, 16):
+        d.line(rx, -416, rx, -326, stroke="#1e293b", sw=1.8)
+    d.text(210, -545, "Verandadør 2.etg (fransk rekkv. / evt. balkong)", size=10, weight="700", fill="#475569")
     d.kors_win(575, -528, 145, 145, single=False)   # Sov 3 (2. etg)
     d.kors_win(375, -768, 116, 115, single=False)   # Loft gavl (220 cm takhøyde)
 
-    # Timber terrace deck
-    d.rect(360, -24, 540, 24, fill="#d97706", opacity=0.4, stroke="#92400e", sw=1.8)
-    d.text(630, -7, "Markterrasse syd", size=12, weight="700", fill="#78350f")
+    # Timber terrace deck extending around SW corner to west-wing veranda door!
+    d.rect(-280, -24, 1180, 24, fill="#d97706", opacity=0.4, stroke="#92400e", sw=1.8)
+    d.text(320, -7, "Markterrasse sør & sørvest (kobler kjøkken + vest-tverrfløy)", size=12, weight="700", fill="#78350f")
 
     d.dim_h(-320, 0, 70, "3,20 m vest", color="#0284c7", bold=True)
     d.dim_h(0, 866, 70, "8,66 m (eksist. bredde)", bold=True)

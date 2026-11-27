@@ -169,9 +169,15 @@
 <rect x="160.0" y="1030.0" width="30.0" height="330.0" fill="#ffffff" stroke="#334155" stroke-width="2"/>
 <line x1="170.0" y1="1030.0" x2="170.0" y2="1360.0" stroke="#0284c7" stroke-width="3.5"/>
 <line x1="180.0" y1="1030.0" x2="180.0" y2="1360.0" stroke="#0284c7" stroke-width="3.5"/>
-<rect x="260.0" y="1420.0" width="160.0" height="30.0" fill="#ffffff" stroke="#334155" stroke-width="2"/>
-<line x1="260.0" y1="1430.0" x2="420.0" y2="1430.0" stroke="#0284c7" stroke-width="3.5"/>
-<line x1="260.0" y1="1440.0" x2="420.0" y2="1440.0" stroke="#0284c7" stroke-width="3.5"/>
+<rect x="255.0" y="1420.0" width="150.0" height="30.0" fill="#ffffff" stroke="#334155" stroke-width="2"/>
+<line x1="255.0" y1="1435.0" x2="405.0" y2="1435.0" stroke="#0284c7" stroke-width="3"/>
+<line x1="255.0" y1="1435.0" x2="255.0" y2="1510.0" stroke="#334155" stroke-width="3"/>
+<line x1="405.0" y1="1435.0" x2="405.0" y2="1510.0" stroke="#334155" stroke-width="3"/>
+<path d="M 255.0 1510.0 A 75.0 75.0 0 0 0 330.0 1435.0" fill="none" stroke="#64748b" stroke-width="1.8" stroke-linejoin="miter" stroke-dasharray="5,4"/>
+<path d="M 405.0 1510.0 A 75.0 75.0 0 0 1 330.0 1435.0" fill="none" stroke="#64748b" stroke-width="1.8" stroke-linejoin="miter" stroke-dasharray="5,4"/>
+<rect x="260.0" y="930.0" width="135.0" height="30.0" fill="#ffffff" stroke="#334155" stroke-width="2"/>
+<line x1="260.0" y1="940.0" x2="395.0" y2="940.0" stroke="#0284c7" stroke-width="3.5"/>
+<line x1="260.0" y1="950.0" x2="395.0" y2="950.0" stroke="#0284c7" stroke-width="3.5"/>
 <rect x="590.0" y="1656.0" width="180.0" height="30.0" fill="#ffffff" stroke="#334155" stroke-width="2"/>
 <line x1="590.0" y1="1666.0" x2="770.0" y2="1666.0" stroke="#0284c7" stroke-width="3.5"/>
 <line x1="590.0" y1="1676.0" x2="770.0" y2="1676.0" stroke="#0284c7" stroke-width="3.5"/>
@@ -378,9 +384,13 @@
 <rect x="1800.0" y="1420.0" width="160.0" height="30.0" fill="#ffffff" stroke="#334155" stroke-width="2"/>
 <line x1="1800.0" y1="1430.0" x2="1960.0" y2="1430.0" stroke="#0284c7" stroke-width="3.5"/>
 <line x1="1800.0" y1="1440.0" x2="1960.0" y2="1440.0" stroke="#0284c7" stroke-width="3.5"/>
-<rect x="2140.0" y="1656.0" width="200.0" height="30.0" fill="#ffffff" stroke="#334155" stroke-width="2"/>
-<line x1="2140.0" y1="1666.0" x2="2340.0" y2="1666.0" stroke="#0284c7" stroke-width="3.5"/>
-<line x1="2140.0" y1="1676.0" x2="2340.0" y2="1676.0" stroke="#0284c7" stroke-width="3.5"/>
+<rect x="1800.0" y="930.0" width="135.0" height="30.0" fill="#ffffff" stroke="#334155" stroke-width="2"/>
+<line x1="1800.0" y1="940.0" x2="1935.0" y2="940.0" stroke="#0284c7" stroke-width="3.5"/>
+<line x1="1800.0" y1="950.0" x2="1935.0" y2="950.0" stroke="#0284c7" stroke-width="3.5"/>
+<rect x="2160.0" y="1656.0" width="150.0" height="30.0" fill="#ffffff" stroke="#334155" stroke-width="2"/>
+<line x1="2160.0" y1="1671.0" x2="2310.0" y2="1671.0" stroke="#0284c7" stroke-width="3"/>
+<line x1="2160.0" y1="1671.0" x2="2160.0" y2="1596.0" stroke="#334155" stroke-width="3"/>
+<line x1="2310.0" y1="1671.0" x2="2310.0" y2="1596.0" stroke="#334155" stroke-width="3"/>
 <rect x="2020.0" y="615.0" width="30.0" height="100.0" fill="#ffffff" stroke="#334155" stroke-width="2"/>
 <line x1="2030.0" y1="615.0" x2="2030.0" y2="715.0" stroke="#0284c7" stroke-width="3.5"/>
 <line x1="2040.0" y1="615.0" x2="2040.0" y2="715.0" stroke="#0284c7" stroke-width="3.5"/>
