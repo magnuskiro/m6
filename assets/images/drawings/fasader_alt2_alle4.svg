@@ -240,6 +240,7 @@
 <line x1="1597.5" y1="819.9" x2="1681.8" y2="819.9" stroke="#475569" stroke-width="1.1"/>
 <line x1="1639.7" y1="786.4" x2="1639.7" y2="885.0" stroke="#ffffff" stroke-width="4.2"/>
 <line x1="1639.7" y1="786.4" x2="1639.7" y2="885.0" stroke="#475569" stroke-width="1.1"/>
+<text x="1639.7" y="904.0" font-size="11" font-weight="700" fill="#64748b" text-anchor="middle">Kjøkken</text>
 <rect x="1592.8" y="591.2" width="93.8" height="108.1" fill="#ffffff" stroke="#475569" stroke-width="1.4"/>
 <rect x="1590.0" y="587.8" width="99.3" height="4.1" fill="#f1f5f9" stroke="#334155" stroke-width="1.2"/>
 <rect x="1597.5" y="596.0" width="84.3" height="98.6" fill="#cbd5e1" stroke="#1e293b" stroke-width="1.8"/>
@@ -248,7 +249,6 @@
 <line x1="1597.5" y1="629.5" x2="1681.8" y2="629.5" stroke="#475569" stroke-width="1.1"/>
 <line x1="1639.7" y1="596.0" x2="1639.7" y2="694.6" stroke="#ffffff" stroke-width="4.2"/>
 <line x1="1639.7" y1="596.0" x2="1639.7" y2="694.6" stroke="#475569" stroke-width="1.1"/>
-<text x="1639.7" y="904.0" font-size="11" font-weight="700" fill="#64748b" text-anchor="middle">Kjøkken</text>
 <text x="1639.7" y="713.6" font-size="11" font-weight="700" fill="#64748b" text-anchor="middle">Sov 3</text>
 <rect x="1783.2" y="781.6" width="93.8" height="108.1" fill="#ffffff" stroke="#475569" stroke-width="1.4"/>
 <rect x="1780.4" y="778.2" width="99.3" height="4.1" fill="#f1f5f9" stroke="#334155" stroke-width="1.2"/>
@@ -258,6 +258,7 @@
 <line x1="1787.9" y1="819.9" x2="1872.2" y2="819.9" stroke="#475569" stroke-width="1.1"/>
 <line x1="1830.1" y1="786.4" x2="1830.1" y2="885.0" stroke="#ffffff" stroke-width="4.2"/>
 <line x1="1830.1" y1="786.4" x2="1830.1" y2="885.0" stroke="#475569" stroke-width="1.1"/>
+<text x="1830.1" y="904.0" font-size="11" font-weight="700" fill="#64748b" text-anchor="middle">Sov (1.etg)</text>
 <rect x="1783.2" y="591.2" width="93.8" height="108.1" fill="#ffffff" stroke="#475569" stroke-width="1.4"/>
 <rect x="1780.4" y="587.8" width="99.3" height="4.1" fill="#f1f5f9" stroke="#334155" stroke-width="1.2"/>
 <rect x="1787.9" y="596.0" width="84.3" height="98.6" fill="#cbd5e1" stroke="#1e293b" stroke-width="1.8"/>
@@ -266,7 +267,6 @@
 <line x1="1787.9" y1="629.5" x2="1872.2" y2="629.5" stroke="#475569" stroke-width="1.1"/>
 <line x1="1830.1" y1="596.0" x2="1830.1" y2="694.6" stroke="#ffffff" stroke-width="4.2"/>
 <line x1="1830.1" y1="596.0" x2="1830.1" y2="694.6" stroke="#475569" stroke-width="1.1"/>
-<text x="1830.1" y="904.0" font-size="11" font-weight="700" fill="#64748b" text-anchor="middle">Sov (1.etg)</text>
 <text x="1830.1" y="713.6" font-size="11" font-weight="700" fill="#64748b" text-anchor="middle">Sov 2</text>
 <rect x="1929.4" y="781.6" width="93.8" height="108.1" fill="#ffffff" stroke="#475569" stroke-width="1.4"/>
 <rect x="1926.6" y="778.2" width="99.3" height="4.1" fill="#f1f5f9" stroke="#334155" stroke-width="1.2"/>
@@ -276,6 +276,7 @@
 <line x1="1934.1" y1="819.9" x2="2018.4" y2="819.9" stroke="#475569" stroke-width="1.1"/>
 <line x1="1976.3" y1="786.4" x2="1976.3" y2="885.0" stroke="#ffffff" stroke-width="4.2"/>
 <line x1="1976.3" y1="786.4" x2="1976.3" y2="885.0" stroke="#475569" stroke-width="1.1"/>
+<text x="1976.3" y="904.0" font-size="11" font-weight="700" fill="#64748b" text-anchor="middle">Sov/Pult</text>
 <rect x="1929.4" y="591.2" width="93.8" height="108.1" fill="#ffffff" stroke="#475569" stroke-width="1.4"/>
 <rect x="1926.6" y="587.8" width="99.3" height="4.1" fill="#f1f5f9" stroke="#334155" stroke-width="1.2"/>
 <rect x="1934.1" y="596.0" width="84.3" height="98.6" fill="#cbd5e1" stroke="#1e293b" stroke-width="1.8"/>
@@ -284,16 +285,16 @@
 <line x1="1934.1" y1="629.5" x2="2018.4" y2="629.5" stroke="#475569" stroke-width="1.1"/>
 <line x1="1976.3" y1="596.0" x2="1976.3" y2="694.6" stroke="#ffffff" stroke-width="4.2"/>
 <line x1="1976.3" y1="596.0" x2="1976.3" y2="694.6" stroke="#475569" stroke-width="1.1"/>
-<text x="1976.3" y="904.0" font-size="11" font-weight="700" fill="#64748b" text-anchor="middle">Sov/Pult</text>
 <text x="1976.3" y="713.6" font-size="11" font-weight="700" fill="#64748b" text-anchor="middle">Bad 2.etg</text>
-<rect x="2116.4" y="781.6" width="93.8" height="108.1" fill="#ffffff" stroke="#475569" stroke-width="1.4"/>
+<rect x="2116.4" y="781.6" width="93.8" height="58.5" fill="#ffffff" stroke="#475569" stroke-width="1.4"/>
 <rect x="2113.6" y="778.2" width="99.3" height="4.1" fill="#f1f5f9" stroke="#334155" stroke-width="1.2"/>
-<rect x="2121.1" y="786.4" width="84.3" height="98.6" fill="#cbd5e1" stroke="#1e293b" stroke-width="1.8"/>
-<rect x="2122.5" y="787.7" width="81.6" height="95.9" fill="#dbeafe" stroke="none" stroke-width="1.5" opacity="0.75"/>
-<line x1="2121.1" y1="819.9" x2="2205.4" y2="819.9" stroke="#ffffff" stroke-width="4.2"/>
-<line x1="2121.1" y1="819.9" x2="2205.4" y2="819.9" stroke="#475569" stroke-width="1.1"/>
-<line x1="2163.3" y1="786.4" x2="2163.3" y2="885.0" stroke="#ffffff" stroke-width="4.2"/>
-<line x1="2163.3" y1="786.4" x2="2163.3" y2="885.0" stroke="#475569" stroke-width="1.1"/>
+<rect x="2121.1" y="786.4" width="84.3" height="49.0" fill="#cbd5e1" stroke="#1e293b" stroke-width="1.8"/>
+<rect x="2122.5" y="787.7" width="81.6" height="46.2" fill="#dbeafe" stroke="none" stroke-width="1.5" opacity="0.75"/>
+<line x1="2121.1" y1="803.0" x2="2205.4" y2="803.0" stroke="#ffffff" stroke-width="4.2"/>
+<line x1="2121.1" y1="803.0" x2="2205.4" y2="803.0" stroke="#475569" stroke-width="1.1"/>
+<line x1="2163.3" y1="786.4" x2="2163.3" y2="835.3" stroke="#ffffff" stroke-width="4.2"/>
+<line x1="2163.3" y1="786.4" x2="2163.3" y2="835.3" stroke="#475569" stroke-width="1.1"/>
+<text x="2163.3" y="775.5" font-size="10" font-weight="700" fill="#059669" text-anchor="middle">Bad (høyt vindu)</text>
 <rect x="2116.4" y="591.2" width="93.8" height="108.1" fill="#ffffff" stroke="#475569" stroke-width="1.4"/>
 <rect x="2113.6" y="587.8" width="99.3" height="4.1" fill="#f1f5f9" stroke="#334155" stroke-width="1.2"/>
 <rect x="2121.1" y="596.0" width="84.3" height="98.6" fill="#cbd5e1" stroke="#1e293b" stroke-width="1.8"/>
@@ -302,7 +303,6 @@
 <line x1="2121.1" y1="629.5" x2="2205.4" y2="629.5" stroke="#475569" stroke-width="1.1"/>
 <line x1="2163.3" y1="596.0" x2="2163.3" y2="694.6" stroke="#ffffff" stroke-width="4.2"/>
 <line x1="2163.3" y1="596.0" x2="2163.3" y2="694.6" stroke="#475569" stroke-width="1.1"/>
-<text x="2163.3" y="904.0" font-size="11" font-weight="700" fill="#64748b" text-anchor="middle">Bad 1.etg</text>
 <text x="2163.3" y="713.6" font-size="11" font-weight="700" fill="#64748b" text-anchor="middle">Hovedsov</text>
 <rect x="2312.9" y="757.8" width="142.8" height="197.2" fill="#ffffff" stroke="#0f172a" stroke-width="2.5"/>
 <line x1="2312.9" y1="774.1" x2="2455.7" y2="774.1" stroke="#e2e8f0" stroke-width="0.9"/>
@@ -327,12 +327,11 @@
 <polygon points="2104.8,955.0 2353.7,955.0 2353.7,907.4 2104.8,907.4" fill="#cbd5e1" stroke="#334155" stroke-width="1.6" stroke-linejoin="miter"/>
 <polygon points="2104.8,955.0 2353.7,955.0 2353.7,965.2 2176.9,1087.6 2104.8,1087.6" fill="#94a3b8" stroke="#64748b" stroke-width="1.3" stroke-linejoin="miter" stroke-dasharray="5,4" opacity="0.22"/>
 <text x="2142.2" y="1033.2" font-size="10" font-weight="700" fill="#475569" text-anchor="middle">Kjellergulv (-1,95 m)</text>
-<rect x="2209.5" y="814.9" width="8.2" height="140.1" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
-<rect x="2345.5" y="814.9" width="8.2" height="140.1" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
-<polygon points="2204.1,816.3 2359.1,816.3 2359.1,790.4 2204.1,790.4" fill="#1e293b" stroke="#0f172a" stroke-width="2.0" stroke-linejoin="miter"/>
-<line x1="2205.4" y1="804.0" x2="2357.8" y2="804.0" stroke="#334155" stroke-width="1"/>
-<polygon points="2102.1,907.4 2209.5,907.4 2209.5,893.8 2102.1,893.8" fill="#334155" stroke="#0f172a" stroke-width="1.6" stroke-linejoin="miter"/>
-<text x="2281.6" y="780.9" font-size="11" font-weight="700" fill="#059669" text-anchor="middle">Takoverbygg (avtrappet under badvindu)</text>
+<rect x="2345.5" y="805.4" width="8.2" height="149.6" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+<rect x="2225.8" y="842.1" width="8.2" height="112.9" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+<rect x="2107.5" y="878.8" width="8.2" height="76.2" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+<polygon points="2100.7,881.6 2359.1,805.4 2359.1,793.2 2100.7,869.3" fill="#1e293b" stroke="#0f172a" stroke-width="2.0" stroke-linejoin="miter"/>
+<text x="2298.6" y="783.6" font-size="11" font-weight="700" fill="#059669" text-anchor="middle">Skrått takoverbygg</text>
 <line x1="2353.7" y1="870.0" x2="2455.7" y2="870.0" stroke="#059669" stroke-width="1.8"/>
 <line x1="2353.7" y1="863.2" x2="2353.7" y2="876.8" stroke="#059669" stroke-width="1.8"/>
 <line x1="2455.7" y1="863.2" x2="2455.7" y2="876.8" stroke="#059669" stroke-width="1.8"/>
@@ -620,24 +619,22 @@
 <line x1="1540.0" y1="1834.7" x2="1869.8" y2="1834.7" stroke="#e2e8f0" stroke-width="0.9"/>
 <line x1="1540.0" y1="1851.0" x2="1869.8" y2="1851.0" stroke="#e2e8f0" stroke-width="0.9"/>
 <rect x="1540.0" y="1857.8" width="329.8" height="27.2" fill="#475569" stroke="#1e293b" stroke-width="1.5"/>
-<rect x="1579.4" y="1715.7" width="91.1" height="104.7" fill="#ffffff" stroke="#475569" stroke-width="1.4"/>
-<rect x="1576.7" y="1712.3" width="96.6" height="4.1" fill="#f1f5f9" stroke="#334155" stroke-width="1.2"/>
-<rect x="1584.2" y="1720.4" width="81.6" height="95.2" fill="#cbd5e1" stroke="#1e293b" stroke-width="1.8"/>
-<rect x="1585.6" y="1721.8" width="78.9" height="92.5" fill="#dbeafe" stroke="none" stroke-width="1.5" opacity="0.75"/>
-<line x1="1584.2" y1="1752.8" x2="1665.8" y2="1752.8" stroke="#ffffff" stroke-width="4.2"/>
-<line x1="1584.2" y1="1752.8" x2="1665.8" y2="1752.8" stroke="#475569" stroke-width="1.1"/>
-<line x1="1625.0" y1="1720.4" x2="1625.0" y2="1815.6" stroke="#ffffff" stroke-width="4.2"/>
-<line x1="1625.0" y1="1720.4" x2="1625.0" y2="1815.6" stroke="#475569" stroke-width="1.1"/>
-<rect x="1701.8" y="1715.7" width="101.3" height="104.7" fill="#ffffff" stroke="#475569" stroke-width="1.4"/>
-<rect x="1699.1" y="1712.3" width="106.8" height="4.1" fill="#f1f5f9" stroke="#334155" stroke-width="1.2"/>
-<rect x="1706.6" y="1720.4" width="91.8" height="95.2" fill="#cbd5e1" stroke="#1e293b" stroke-width="1.8"/>
-<rect x="1708.0" y="1721.8" width="89.1" height="92.5" fill="#dbeafe" stroke="none" stroke-width="1.5" opacity="0.75"/>
-<line x1="1706.6" y1="1752.8" x2="1798.4" y2="1752.8" stroke="#ffffff" stroke-width="4.2"/>
-<line x1="1706.6" y1="1752.8" x2="1798.4" y2="1752.8" stroke="#475569" stroke-width="1.1"/>
-<line x1="1752.5" y1="1720.4" x2="1752.5" y2="1815.6" stroke="#ffffff" stroke-width="4.2"/>
-<line x1="1752.5" y1="1720.4" x2="1752.5" y2="1815.6" stroke="#475569" stroke-width="1.1"/>
-<text x="1625.0" y="1836.0" font-size="12" font-weight="700" fill="#059669" text-anchor="middle">Vaskerom</text>
-<text x="1752.2" y="1836.0" font-size="12" font-weight="700" fill="#475569" text-anchor="middle">Vindfang</text>
+<rect x="1593.0" y="1718.4" width="58.5" height="99.3" fill="#ffffff" stroke="#475569" stroke-width="1.4"/>
+<rect x="1590.3" y="1715.0" width="63.9" height="4.1" fill="#f1f5f9" stroke="#334155" stroke-width="1.2"/>
+<rect x="1597.8" y="1723.2" width="49.0" height="89.8" fill="#cbd5e1" stroke="#1e293b" stroke-width="1.8"/>
+<rect x="1599.2" y="1724.5" width="46.2" height="87.0" fill="#dbeafe" stroke="none" stroke-width="1.5" opacity="0.75"/>
+<line x1="1597.8" y1="1753.7" x2="1646.8" y2="1753.7" stroke="#ffffff" stroke-width="4.2"/>
+<line x1="1597.8" y1="1753.7" x2="1646.8" y2="1753.7" stroke="#475569" stroke-width="1.1"/>
+<rect x="1698.4" y="1715.7" width="101.3" height="104.7" fill="#ffffff" stroke="#475569" stroke-width="1.4"/>
+<rect x="1695.7" y="1712.3" width="106.8" height="4.1" fill="#f1f5f9" stroke="#334155" stroke-width="1.2"/>
+<rect x="1703.2" y="1720.4" width="91.8" height="95.2" fill="#cbd5e1" stroke="#1e293b" stroke-width="1.8"/>
+<rect x="1704.6" y="1721.8" width="89.1" height="92.5" fill="#dbeafe" stroke="none" stroke-width="1.5" opacity="0.75"/>
+<line x1="1703.2" y1="1752.8" x2="1795.0" y2="1752.8" stroke="#ffffff" stroke-width="4.2"/>
+<line x1="1703.2" y1="1752.8" x2="1795.0" y2="1752.8" stroke="#475569" stroke-width="1.1"/>
+<line x1="1749.1" y1="1720.4" x2="1749.1" y2="1815.6" stroke="#ffffff" stroke-width="4.2"/>
+<line x1="1749.1" y1="1720.4" x2="1749.1" y2="1815.6" stroke="#475569" stroke-width="1.1"/>
+<text x="1622.3" y="1836.0" font-size="12" font-weight="700" fill="#059669" text-anchor="middle">Vaskerom</text>
+<text x="1749.4" y="1836.0" font-size="12" font-weight="700" fill="#475569" text-anchor="middle">Vindfang</text>
 <rect x="1869.8" y="1857.8" width="102.0" height="27.2" fill="#94a3b8" stroke="#334155" stroke-width="1.5"/>
 <rect x="1960.2" y="1691.2" width="10.9" height="166.6" fill="#ffffff" stroke="#334155" stroke-width="1.8"/>
 <rect x="1869.8" y="1793.2" width="92.5" height="6.8" fill="#ffffff" stroke="#334155" stroke-width="1.4"/>

@@ -552,9 +552,9 @@ def draw_shared_east_floor1(pb: PlanBuilder, north_vaskerom: bool = False):
 
     # Windows on north & east walls (100% synced with Fasade Nord & Fasade Øst!)
     pb.window_h(92, 166, 15, 30)      # Trapp narrow north window (matches Fasade Nord!)
-    pb.window_h(340, 470, -195, 30)   # Vindfang double north window
+    pb.window_h(340, 470, -195, 30)   # Vindfang helt dobbeltvindu nord
     if north_vaskerom:
-        pb.window_h(640, 760, -195, 30)  # Vaskerom double north window (matches Fasade Nord Alt 2!)
+        pb.window_h(708, 780, -195, 30)  # Vaskerom halvt vindu nord (mot øst, som nordfasade-skissen!)
     else:
         pb.window_h(620, 692, -195, 30)  # Utebod narrow north window (matches Fasade Nord Alt 1!)
     pb.window_v(851, 158, 282, 30)    # Axis 4: Bad 1. etg
@@ -576,10 +576,8 @@ def draw_shared_east_floor1(pb: PlanBuilder, north_vaskerom: bool = False):
         pb.wardrobe(658, -46, 172, 42, "Høyskap / Tørk")
         pb.room_label(728, -82, "Vaskerom", "5,0 m²")
         # NEW external covered basement stair along EAST wall, set back 1,50 m from north facade (y=-210 -> -60)!
-        # Full TEK17-length stair for ΔH ~1,95-2,00 m: 2,60 m stair run (11 risers, y=-60..+200) + 1,05 m bottom landing (y=+200..+305) = 3,65 m!
-        # Upper roof (y=-60..+154) clears Bad window; lower roof (y=+154..+305) steps down cleanly BELOW Bad window sill (2,45-2,80 m headroom below grade)!
-        pb.rect(866, -60, 116, 214, fill="#f1f5f9", stroke="#475569", sw=2.0, dash="8,5", opacity=0.85)  # Høyt takoverbygg (nord for badvindu)
-        pb.rect(866, 154, 116, 152, fill="#e0f2fe", stroke="#0284c7", sw=1.8, dash="6,4", opacity=0.55)  # Lavt overbygg under badvindu (Z=+0,85m)
+        # Full 3,65 m stair (11 risers + 1,05 m bottom landing) with ONE continuous sloped roof clearing adjusted high-sill Bad window!
+        pb.rect(866, -60, 116, 366, fill="#f1f5f9", stroke="#475569", sw=2.0, dash="8,5", opacity=0.82)  # Sammenhengende skrått takoverbygg
         pb.basement_stairs_v(872, -54, 98, 254, steps=11)
         # Bottom landing (bunn-repos, -1,95 m under terreng) + kjellerdør inn under Bad
         pb.rect(872, 200, 98, 102, fill="#f8fafc", stroke="#64748b", sw=1.6)
@@ -587,9 +585,10 @@ def draw_shared_east_floor1(pb: PlanBuilder, north_vaskerom: bool = False):
         pb.text(921, 260, "repos", size=11, weight="700", fill="#475569")
         pb.text(921, 278, "(-1,95 m)", size=10, weight="600", fill="#0284c7")
         pb.rect(970, -60, 12, 12, fill="#334155")   # Nordre søyle
-        pb.rect(970, 142, 12, 12, fill="#334155")   # Midtsøyle (overgang til lavt tak)
+        pb.rect(970, 120, 12, 12, fill="#334155")   # Midtsøyle
+        pb.rect(970, 294, 12, 12, fill="#334155")   # Søndre søyle
         pb.text(924, -74, "Kjellertrapp", size=12, weight="700", fill="#059669")
-        pb.text(924, 322, "3,65 m totalt", size=11, weight="700", fill="#059669")
+        pb.text(924, 322, "3,65 m (skråtak)", size=11, weight="700", fill="#059669")
         # 1,50 m setback dimension on east side from north facade (y=-210) to stair roof (y=-60)
         pb.dim_v(1005, -210, -60, "1,50 m", color="#059669", bold=True, text_offset=20)
         pb.dim_v(1005, -60, 306, "3,65 m (11 trinn + repos)", color="#0284c7", bold=False, text_offset=20)
