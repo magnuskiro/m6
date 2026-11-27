@@ -170,22 +170,28 @@ class PlanBuilder:
         self.line(x - 14, y2, x + 14, y2, stroke=color, sw=2)
         self.text(x + text_offset, (y1 + y2) / 2, label, size=20, weight="700" if bold else "600", fill=color, rotate=-90)
 
-    def stairs_u(self, x, y, w, h):
+    def stairs_u(self, x, y, w, h, floor=1):
+        """Clean horizontal U-stair (west landing, enter SE in 1.etg, arrive NE in 2.etg -> doors open into Gang/Hall, never over steps!)."""
         self.rect(x, y, w, h, fill="#e2e8f0", stroke="#64748b", sw=2)
-        mid_x = x + w / 2
+        land_w = 84
+        mid_y = y + h / 2
         steps = 7
-        step_h = (h - 75) / steps
+        step_w = (w - land_w) / steps
         for i in range(steps):
-            sy = y + 75 + i * step_h
-            self.line(x, sy, mid_x - 8, sy, stroke="#64748b", sw=1.5)
-            self.line(mid_x + 8, sy, x + w, sy, stroke="#64748b", sw=1.5)
-        self.rect(mid_x - 8, y + 75, 16, h - 75, fill="#94a3b8")
-        ax1, ay1 = self.p(x + w * 0.25, y + h - 20)
-        ax2, ay2 = self.p(x + w * 0.25, y + 38)
-        ax3, ay3 = self.p(x + w * 0.75, y + 38)
-        ax4, ay4 = self.p(x + w * 0.75, y + h - 25)
-        self.path(f"M {ax1:.1f} {ay1:.1f} L {ax2:.1f} {ay2:.1f} L {ax3:.1f} {ay3:.1f} L {ax4:.1f} {ay4:.1f}", stroke="#334155", sw=2.5)
-        self.path(f"M {ax4 - 10:.1f} {ay4 - 12:.1f} L {ax4:.1f} {ay4:.1f} L {ax4 + 10:.1f} {ay4 - 12:.1f}", stroke="#334155", sw=2.5)
+            sx = x + land_w + i * step_w
+            self.line(sx, y, sx, mid_y - 7, stroke="#64748b", sw=1.4)
+            self.line(sx, mid_y + 7, sx, y + h, stroke="#64748b", sw=1.4)
+        # Center handrail/stringer
+        self.rect(x + land_w, mid_y - 7, w - land_w, 14, fill="#94a3b8")
+        # Direction arrow: enter SE (1.etg) -> go west -> turn on west landing -> go east to NE (2.etg)
+        ax1, ay1 = self.p(x + w - 16, y + h * 0.76)
+        ax2, ay2 = self.p(x + land_w * 0.5, y + h * 0.76)
+        ax3, ay3 = self.p(x + land_w * 0.5, y + h * 0.24)
+        ax4, ay4 = self.p(x + w - 18, y + h * 0.24)
+        self.path(f"M {ax1:.1f} {ay1:.1f} L {ax2:.1f} {ay2:.1f} L {ax3:.1f} {ay3:.1f} L {ax4:.1f} {ay4:.1f}", stroke="#334155", sw=2.4)
+        self.path(f"M {ax4 - 11:.1f} {ay4 - 9:.1f} L {ax4:.1f} {ay4:.1f} L {ax4 - 11:.1f} {ay4 + 9:.1f}", stroke="#334155", sw=2.4)
+        # Clean pill behind label
+        self.rect(x + 12, mid_y - 26, 118, 52, fill="#ffffff", stroke="#cbd5e1", sw=1.2, rx=6, opacity=0.92)
 
     def basement_stairs_h(self, x, y, w, h):
         """External basement stair descending from east (right) to west (left)."""
@@ -438,16 +444,22 @@ def draw_outer_shell(pb: PlanBuilder, west_depth: float, wy1: float, wy2: float,
     pb.poly(inner_pts, fill="#ffffff", stroke="#334155", sw=2)
 
     if north_ext:
-        # Covered entry porch (uteplass) in NW recess (x=0..250, y=-210..0)
-        pb.rect(0, -210, 250, 210, fill="#f1f5f9", stroke="#94a3b8", sw=2, dash="10,6", opacity=0.7)
-        pb.text(125, -110, "Overbygd", size=17, weight="600", fill="#64748b")
-        pb.text(125, -86, "inngangsparti", size=17, weight="600", fill="#64748b")
-        # Show existing north wall line at y=0 (dashed orange)
-        pb.line(250, 0, 866, 0, stroke="#ea580c", sw=3.5, dash="14,10")
+        # Covered entry portico (1.50m wide next to Vindfang: x=100..250, y=-210..0, matching Fasade Nord!)
+        pb.rect(100, -210, 150, 210, fill="#f1f5f9", stroke="#94a3b8", sw=2, dash="10,6", opacity=0.8)
+        # Entry steps on west side of portico (x=55..100, y=-150..-30)
+        pb.rect(58, -155, 42, 125, fill="#e2e8f0", stroke="#64748b", sw=1.5)
+        pb.line(79, -155, 79, -30, stroke="#64748b", sw=1.3)
+        # Portico corner post & north railing line
+        pb.rect(100, -210, 14, 14, fill="#334155")
+        pb.line(114, -203, 250, -203, stroke="#475569", sw=3)
+        pb.text(175, -172, "Overbygd", size=15, weight="600", fill="#475569")
+        pb.text(175, -152, "inngang", size=15, weight="600", fill="#475569")
+        # Show existing north wall outer line at y=0 (dashed orange)
+        pb.line(250, 0, 866, 0, stroke="#ea580c", sw=3, dash="14,10")
     else:
         # Show 1-story north extension roof outline (dashed gray) in 2. etg
-        pb.rect(250, -210, 616, 210, fill="#f1f5f9", stroke="#94a3b8", sw=2, dash="10,6", opacity=0.55)
-        pb.text(558, -100, "Tak over 1-etg nord-tilbygg (vindfang / kjellernedgang / utebod)", size=16, weight="600", fill="#64748b")
+        pb.rect(100, -210, 766, 210, fill="#f1f5f9", stroke="#94a3b8", sw=2, dash="10,6", opacity=0.55)
+        pb.text(483, -100, "Tak over 1-etg nord-tilbygg (portico / vindfang / kjellernedgang / utebod)", size=16, weight="600", fill="#64748b")
 
     # Existing west bump-out reference dashed line (2.28m deep, y=415..822)
     ex_pts = [(0, 415), (-228, 415), (-228, 822), (0, 822)]
@@ -462,93 +474,95 @@ def draw_shared_east_floor1(pb: PlanBuilder):
     - Mid-east Sov (~13.5 m², y=365..750) w/ Pult north, south-headboard bed, Skyvedørskap west, Kommode niche
     - SE Kitchen (14.5 m²) w/ tall cabinets, east counter, island & south terrace doors
     """
-    # North extension interior (y=-180..30, x=280..836)
-    pb.rect(280, -180, 274, 210, fill="#f8fafc", opacity=0.95)  # Vindfang
-    pb.rect(566, -180, 270, 92, fill="#f1f5f9", opacity=0.95)  # Utebod
-    pb.rect(566, -82, 270, 100, fill="#e2e8f0", opacity=0.95)  # Kjellernedgang
+    # North extension interior (y=-180..0, x=280..836) — aligned cleanly with existing 30 cm north wall at y=0..30!
+    pb.rect(280, -180, 274, 180, fill="#f8fafc", opacity=0.95)  # Vindfang
+    pb.rect(566, -180, 270, 82, fill="#f1f5f9", opacity=0.95)   # Utebod (~2.3 m²)
+    pb.rect(566, -92, 270, 92, fill="#e2e8f0", opacity=0.95)    # Kjellernedgang + øst-repos
 
-    # Main 1. etg NE & East zones
-    pb.rect(558, 30, 278, 328, fill="#eff6ff", opacity=0.85)  # Bad 8.7 m²
-    pb.rect(456, 30, 102, 198, fill="#eff6ff", opacity=0.85)  # WC
-    pb.rect(472, 366, 364, 386, fill="#f0fdf4", opacity=0.72)  # Sov 13.5 m²
-    pb.rect(470, 760, 366, 376, fill="#fef3c7", opacity=0.55)  # Kitchen 14.5 m²
+    # Main 1. etg NE & East zones — aligned cleanly on ONE continuous vertical wall axis x=464!
+    pb.rect(558, 30, 278, 328, fill="#eff6ff", opacity=0.85)    # Bad 8.7 m²
+    pb.rect(468, 30, 86, 174, fill="#eff6ff", opacity=0.85)     # WC (compact, clean)
+    pb.rect(470, 366, 366, 386, fill="#f0fdf4", opacity=0.72)   # Sov 13.5 m²
+    pb.rect(470, 760, 366, 376, fill="#fef3c7", opacity=0.55)   # Kitchen 14.5 m²
 
-    # Walls in north extension
-    pb.wall_v(560, -180, 30, 12)  # Vindfang / Utebod-Kjeller wall
-    pb.wall_h(560, 836, -85, 12)  # Utebod / Kjellernedgang wall
-    pb.wall_h(456, 836, 24, 18, fill="#334155")  # Existing north wall (load-bearing) between kjellernedgang & bad/wc!
-    # Wall between Vindfang & Hall/gang (with door)
-    pb.wall_h(280, 456, 24, 12)
+    # Walls in north extension + clean 30 cm existing load-bearing north wall at y=0..30!
+    pb.wall_v(560, -180, 0, 12)                  # Vindfang / Utebod-Kjeller wall
+    pb.wall_h(560, 836, -94, 12)                 # Utebod / Kjellernedgang wall
+    pb.wall_h(280, 836, 15, 30, fill="#334155")  # Existing 30 cm north wall (flush across full width!)
 
-    # Bad (8.7 m²) & WC walls
-    pb.wall_v(556, 30, 360, 12)  # Bad west wall (against WC & gang)
-    pb.wall_v(456, 30, 230, 12)  # WC west wall
-    pb.wall_h(456, 556, 228, 12)  # WC south wall
-    pb.wall_h(556, 836, 360, 12)  # Bad south wall (against Sov)
+    # Bad (8.7 m²), WC & Sov walls — ALL aligned cleanly on x=464 (matches 2. etg directly above!)
+    pb.wall_v(556, 30, 360, 12)  # Bad west wall (against WC & bad-nisje)
+    pb.wall_v(464, 30, 208, 12)  # WC west wall (aligned on x=464!)
+    pb.wall_h(464, 556, 206, 12) # WC south wall
+    pb.wall_h(464, 836, 360, 12) # Bad south wall -> closed cleanly all the way to x=464!
 
     # Sov (13.5 m²) walls
-    pb.wall_v(468, 360, 756, 12)  # Sov west wall (skyvedørskap inside)
-    pb.wall_h(468, 836, 756, 12)  # Sov / Kitchen wall
+    pb.wall_v(464, 360, 756, 12)  # Sov west wall (continuous x=464 axis!)
+    pb.wall_h(464, 836, 756, 12)  # Sov / Kitchen wall
 
-    # Doors (matching Magnus's sketch!)
-    # 140/210 main entrance from WEST into Vindfang
-    pb.rect(250 - 1, -130, 32, 125, fill="#ffffff")
-    pb.door(265, -120, 95, "v_down_right", wall_t=30)
-    pb.text(200, -45, "140/210", size=14, weight="700", fill="#475569")
-    # Inner door Vindfang -> Hall/gang
-    pb.door(325, 24, 90, "h_right_down", wall_t=12)
-    # 110/210 single external door into Kjellernedgang (east) — Utebod accessed internally from landing!
-    pb.door(851, -80, 90, "v_down_right", wall_t=30)
-    pb.text(900, -30, "110/210", size=14, weight="700", fill="#475569")
-    # Internal door from top of kjellernedgang landing into Utebod
-    pb.door(745, -85, 75, "h_right_up", wall_t=12)
-    # WC door (from gang, south side as sketched)
-    pb.door(468, 228, 75, "h_right_down", wall_t=12)
-    # Bad 90/210 door (from gang)
-    pb.door(556, 258, 85, "v_down_right", wall_t=12)
-    # Sov 90/210 door (from gang, north-west of Sov)
-    pb.door(468, 378, 85, "v_down_right", wall_t=12)
+    # Doors — ZERO collisions with walls, stairs, or cabinets!
+    # 140/210 main entrance from WEST into Vindfang (centered in y=-180..0, clear of corners & inner door!)
+    pb.rect(250 - 1, -155, 32, 130, fill="#ffffff")
+    pb.door(265, -148, 92, "v_down_right", wall_t=30)
+    pb.rect(258, -54, 14, 28, fill="#bae6fd", stroke="#334155", sw=1.4)  # Glass sidefelt
+    pb.text(182, -78, "140/210", size=14, weight="700", fill="#475569")
+    # Inner door Vindfang -> Gang (through 30 cm existing north wall, swings cleanly into Gang!)
+    pb.door(325, 15, 90, "h_right_down", wall_t=30)
+    # 100/210 SINGLE external door on EAST wall of north extension into flat landing (y=-90..-4 -> clear of y=0..30 wall!)
+    pb.door(851, -88, 84, "v_down_right", wall_t=30)
+    pb.text(918, -42, "100/210", size=14, weight="700", fill="#475569")
+    # Internal door from flat east landing (x=746..836) NORTH into Utebod (zero stair collision!)
+    pb.door(752, -94, 74, "h_right_up", wall_t=12)
+    # WC door (from gang alcove, swings cleanly south)
+    pb.door(474, 206, 72, "h_right_down", wall_t=12)
+    # Bad 85/210 door (swings into Bad between WC y=200 and sink cabinet y=304 -> ZERO cabinet collision!)
+    pb.door(556, 214, 82, "v_down_right", wall_t=12)
+    # Sov 85/210 door (from gang, swings cleanly into Sov)
+    pb.door(464, 376, 85, "v_down_right", wall_t=12)
     # South terrace double door — EXISTING centered opening (x=353..513, center=433)!
     pb.double_terrace_door_h(433, 1151, 160, wall_t=30, swing_down=True)
 
-    # Windows on east wall & north wall (4 vertical axes matching Fasade Øst!)
-    pb.window_h(340, 470, -195, 30)  # Vindfang north window
-    pb.window_v(851, 158, 282, 30)   # Axis 4: Bad 1. etg (aligned under Hovedsoverom!)
-    pb.window_v(851, 433, 557, 30)   # Axis 3: Sov/Pult 1. etg (aligned under Bad 2. etg!)
-    pb.window_v(851, 635, 745, 30)   # Axis 2: Sov sør 1. etg (aligned under Sov 2!)
-    pb.window_v(851, 928, 1052, 30)  # Axis 1: Kitchen east (aligned under Sov 3!)
-    pb.window_h(631, 761, 1151, 30)  # Kitchen south window (symmetrisk øst for sør-verandadør)
+    # Windows on north & east walls (100% synced with Fasade Nord & Fasade Øst!)
+    pb.window_h(92, 166, 15, 30)      # Trapp narrow north window (matches Fasade Nord!)
+    pb.window_h(340, 470, -195, 30)   # Vindfang double north window
+    pb.window_h(620, 692, -195, 30)   # Utebod narrow north window (matches Fasade Nord!)
+    pb.window_v(851, 158, 282, 30)    # Axis 4: Bad 1. etg
+    pb.window_v(851, 433, 557, 30)    # Axis 3: Sov/Pult 1. etg
+    pb.window_v(851, 635, 745, 30)    # Axis 2: Sov sør 1. etg
+    pb.window_v(851, 928, 1052, 30)   # Axis 1: Kitchen east
+    pb.window_h(631, 761, 1151, 30)   # Kitchen south window
 
-    # Fixtures — North extension
-    pb.wardrobe(498, -172, 54, 185, "Gard.")
-    pb.basement_stairs_h(572, -76, 258, 90)
-    pb.text(700, -125, "Utebod (~2,6 m²)", size=17, weight="700", fill="#334155")
-    pb.text(700, -25, "Kjellernedgang (utv.)", size=15, weight="700", fill="#1e293b")
-    pb.room_label(422, -92, "Vindfang", "5,4 m²")
+    # Fixtures — North extension (flat east landing x=746..836 + basement stairs descending WEST x=568..744!)
+    pb.wardrobe(498, -172, 54, 164, "Gard.")
+    pb.rect(746, -88, 88, 86, fill="#f8fafc", stroke="#94a3b8", sw=1.4)  # Flat landing (Repos)
+    pb.text(790, -40, "Repos", size=12, weight="700", fill="#475569")
+    pb.basement_stairs_h(568, -86, 176, 82)
+    pb.text(650, -132, "Utebod (~2,3 m²)", size=16, weight="700", fill="#334155")
+    pb.text(656, -40, "Kjellertrapp", size=13, weight="700", fill="#1e293b")
+    pb.room_label(422, -92, "Vindfang", "5,0 m²")
 
     # Fixtures — Bad 1. etg (8.7 m², exact match to Magnus's sketch!)
     pb.shower(568, 38, 92, 92)  # Dusj i NV
     pb.tub(750, 42, 78, 175)  # Badekar langs østvegg
-    pb.wc(568, 160, rot=270)  # WC mot vestvegg
+    pb.wc(568, 152, rot=270)  # WC mot vestvegg (clear of Bad door at y=214!)
     pb.sink(642, 304, 120, 48)  # Bred servant langs sørvegg
     pb.rect(570, 304, 68, 48, fill="#f1f5f9", stroke="#64748b", sw=1.6)  # Skap venstre for servant
     pb.rect(766, 304, 62, 48, fill="#f1f5f9", stroke="#64748b", sw=1.6)  # Skap høyre for servant
-    pb.room_label(690, 250, "Bad", "8,7 m²")
+    pb.room_label(695, 250, "Bad", "8,7 m²")
 
     # Fixtures — Separate WC (west of bad)
-    pb.wc(466, 48, rot=270)
-    pb.sink(466, 138, 48, 65)
-    pb.text(508, 118, "WC", size=17, weight="700", fill="#1e293b")
+    pb.wc(474, 42, rot=270)
+    pb.sink(474, 122, 46, 62)
+    pb.text(516, 108, "WC", size=16, weight="700", fill="#1e293b")
 
     # Fixtures — Sov 1. etg (~13.5 m², exact match to Magnus's sketch!)
     pb.desk(645, 372, 145, 58)  # Pult mot badvegg!
-    # Dobbeltseng med hodegavl mot SØR (rygg mot kjøkkenet!)
     pb.double_bed(610, 540, 180, 200, head="bottom")
     pb.rect(572, 695, 34, 42, fill="#f8fafc", stroke="#94a3b8", sw=1.4)  # Nattbord vest
     pb.rect(794, 695, 34, 42, fill="#f8fafc", stroke="#94a3b8", sw=1.4)  # Nattbord øst
-    pb.wardrobe(478, 490, 60, 256, "Skyvedørskap")
-    pb.rect(410, 405, 50, 88, fill="#f8fafc", stroke="#64748b", sw=1.5)  # Kommode i gangnisje!
-    pb.text(435, 452, "Kom.", size=11, fill="#64748b", rotate=-90)
+    pb.wardrobe(474, 490, 60, 256, "Skyvedørskap")
+    pb.rect(412, 95, 44, 96, fill="#f8fafc", stroke="#64748b", sw=1.5)  # Kommode langs WC-vegg (klar av alle dører!)
+    pb.text(434, 146, "Kom.", size=11, fill="#64748b", rotate=-90)
     pb.room_label(610, 478, "Sov / Kontor", "13,5 m²")
 
     # Kitchen
@@ -575,19 +589,19 @@ def draw_shared_east_floor2(pb: PlanBuilder):
     pb.wall_h(464, 836, 598, 12)  # Bad / Sov 2 (2.00 m -> ~7.1 m²)
     pb.wall_h(464, 836, 842, 12)  # Sov 2 / Sov 3 (~2.94 m -> 9.2 m²)
 
-    # Doors
+    # Doors — ZERO collisions with toilets or cabinets!
     pb.door(464, 285, 85, "v_down_right", wall_t=12)  # Master
-    pb.door(464, 465, 80, "v_down_right", wall_t=12)  # Bad
+    pb.door(464, 492, 80, "v_down_right", wall_t=12)  # Bad (clear of WC y=466 & Skap x=585!)
     pb.door(464, 635, 85, "v_down_right", wall_t=12)  # Sov 2
     pb.door(524, 875, 85, "v_down_right", wall_t=12)  # Sov 3
 
-    # East & north windows (4 clean vertical axes matching 1. etg & Fasade Øst!)
+    # East & north windows (4 clean vertical axes matching 1. etg & Fasade Øst/Nord!)
     pb.window_v(851, 158, 282, 30)   # Axis 4: Master east
     pb.window_v(851, 433, 557, 30)   # Axis 3: Bad east
     pb.window_v(851, 648, 772, 30)   # Axis 2: Sov 2 east
     pb.window_v(851, 928, 1052, 30)  # Axis 1: Sov 3 east
-    pb.window_h(360, 440, 15, 30)    # Hall north (center)
-    pb.window_h(80, 205, 15, 30)     # Trapp north (west) — NO north window in Master bedroom!
+    pb.window_h(305, 425, 15, 30)    # Hall north double window (matches Fasade Nord!)
+    pb.window_h(92, 166, 15, 30)     # Trapp north window (aligned directly above 1. etg Trapp!) — NO north window in Master!
 
     # Fixtures — Master (north headboard, matching Magnus's 2. etg sketch!)
     pb.double_bed(605, 42, 180, 200, head="top")
@@ -630,12 +644,12 @@ def build_alt1_floor1(pb: PlanBuilder):
     # Shared east side + north extension (100% match to Magnus's sketch!)
     draw_shared_east_floor1(pb)
 
-    # NW stairwell + Vask
+    # NW stairwell + Vask (stairwell door swings OUT into Gang -> never over stair steps!)
     pb.wall_v(256, 30, 440, 12)
     pb.wall_h(30, 256, 256, 12)
     pb.wall_h(30, 256, 434, 14)  # TV wall north of living!
-    pb.door(256, 145, 85, "v_down_left", wall_t=12)  # Into stairwell
-    pb.door(256, 315, 80, "v_down_left", wall_t=12)  # Into Vask
+    pb.door(256, 152, 85, "v_down_right", wall_t=12)  # Trapp (swings cleanly into Gang!)
+    pb.door(256, 332, 80, "v_down_left", wall_t=12)   # Vask (20 cm clear of sink y=270..315!)
 
     # Bearing beam dashed lines
     pb.line(170, 434, 170, 720, stroke="#94a3b8", sw=2.5, dash="8,8")
@@ -663,9 +677,9 @@ def build_alt1_floor1(pb: PlanBuilder):
     pb.chimney_and_fireplace(135, 720, 95, 55, mode="west_insert")
 
     # Labels
-    pb.room_label(142, 138, "Trapp", "4,8 m²")
-    pb.room_label(125, 375, "Vask", "3,9 m²")
-    pb.text(355, 265, "Gang", size=20, weight="700", fill="#475569")
+    pb.room_label(106, 142, "Trapp", "4,8 m²")
+    pb.room_label(110, 382, "Vask", "3,9 m²")
+    pb.text(362, 295, "Gang", size=20, weight="700", fill="#475569")
     pb.text(-165, 535, "STUE ~24 m²", size=23, weight="800", fill="#0369a1")
     pb.text(-165, 561, "(fri utgang nord)", size=15, weight="700", fill="#0284c7")
     pb.text(205, 882, "SPISESTUE ~11 m²", size=19, weight="700", fill="#854d0e")
@@ -701,9 +715,9 @@ def build_alt1_floor2(pb: PlanBuilder):
     pb.line(170, 434, 170, 720, stroke="#94a3b8", sw=2.5, dash="8,8")
     pb.line(230, 756, 464, 756, stroke="#94a3b8", sw=2.5, dash="8,8")
 
-    pb.door(256, 130, 85, "v_down_right", wall_t=12)
-    pb.door(310, 256, 90, "h_right_down", wall_t=12)
-    pb.door(256, 315, 80, "v_down_left", wall_t=12)
+    pb.door(256, 44, 85, "v_down_right", wall_t=12)   # Trapp arrival NE (swings cleanly into Hall, never over steps!)
+    pb.door(310, 256, 90, "h_right_down", wall_t=12)  # 2-mannsbolig / leilighetsdør
+    pb.door(256, 332, 80, "v_down_left", wall_t=12)   # Bod / Vask (clear of Skap ending at x=165!)
 
     # South windows + EXISTING centered veranda door (x=353..513) in 2. etg (matching all 4 facades!)
     pb.window_v(-305, 475, 640, 30)   # Vestfløy vindu nord
@@ -719,7 +733,7 @@ def build_alt1_floor2(pb: PlanBuilder):
 
     pb.stairs_u(36, 36, 212, 212)
     pb.washer_dryer(42, 270, count=2, vertical=False)
-    pb.wardrobe(42, 375, 195, 48)
+    pb.wardrobe(42, 376, 122, 46, "Skap")
     pb.tv_bench(-55, 444, 190, 42)    # På 100% tett nordvegg (klar av nordvindu!)
     pb.sofa_l(-270, 635, w_horiz=240, h_vert=240, depth=92, corner="bl")
     pb.coffee_table(-142, 668, 120, 70)
@@ -727,9 +741,9 @@ def build_alt1_floor2(pb: PlanBuilder):
     pb.dining_table(200, 985, 180, 90, seats=6)  # Helt klar av innadslående sør-verandadør!
     pb.chimney_and_fireplace(135, 720, 95, 55, mode="west_stove")
 
-    pb.room_label(142, 138, "Trapp", "4,8 m²")
-    pb.room_label(118, 352, "Bod / Vask", "3,6 m²")
-    pb.room_label(362, 100, "Hall", "4,5 m²", "(2-mannsbolig)")
+    pb.room_label(106, 142, "Trapp", "4,8 m²")
+    pb.room_label(112, 352, "Bod / Vask", "3,6 m²")
+    pb.room_label(375, 178, "Hall", "4,5 m²", "(2-mannsbolig)")
     pb.text(-165, 535, "LOFTSTUE / HAGESTUE", size=20, weight="800", fill="#0369a1")
     pb.text(-165, 561, "~24 m² + 11 m² spis (innbygd)", size=15, weight="700", fill="#0284c7")
 
@@ -757,12 +771,12 @@ def build_alt2_floor1(pb: PlanBuilder):
     # Shared east side + north extension (100% match to Magnus's sketch!)
     draw_shared_east_floor1(pb)
 
-    # NW stairwell + compact Vask/Bod
+    # NW stairwell + compact Vask/Bod (doors swing OUT into Gang -> zero stair or appliance collision!)
     pb.wall_v(256, 30, 383, 12)
     pb.wall_h(30, 256, 248, 12)
     pb.wall_h(30, 256, 380, 14)  # TV wall north of living!
-    pb.door(256, 140, 85, "v_down_left", wall_t=12)  # Stairwell
-    pb.door(256, 275, 80, "v_down_left", wall_t=12)  # Kompakt Vask/Bod
+    pb.door(256, 150, 82, "v_down_right", wall_t=12)  # Stairwell (swings into Gang!)
+    pb.door(256, 278, 76, "v_down_right", wall_t=12)  # Kompakt Vask/Bod (swings into Gang -> maximizes interior!)
 
     # Structural beam dashed lines
     pb.line(170, 383, 170, 720, stroke="#94a3b8", sw=2.5, dash="8,8")
@@ -788,9 +802,9 @@ def build_alt2_floor1(pb: PlanBuilder):
     pb.chimney_and_fireplace(135, 720, 95, 55, mode="north_insert")
 
     # Labels
-    pb.room_label(142, 135, "Trapp", "4,7 m²")
+    pb.room_label(106, 139, "Trapp", "4,7 m²")
     pb.room_label(162, 315, "Vask / Bod", "2,7 m²")
-    pb.text(355, 250, "Gang", size=20, weight="700", fill="#475569")
+    pb.text(365, 290, "Gang", size=20, weight="700", fill="#475569")
     pb.text(80, 462, "STUE 23,6 m² (4,00 × 5,90 m)", size=22, weight="800", fill="#047857")
     pb.text(80, 488, "H2O-peis vendt mot sofakrok (nord/vest)!", size=16, weight="700", fill="#059669")
     pb.text(205, 882, "SPISESTUE ~12,8 m²", size=19, weight="700", fill="#854d0e")
@@ -827,9 +841,9 @@ def build_alt2_floor2(pb: PlanBuilder):
     pb.line(170, 383, 170, 720, stroke="#94a3b8", sw=2.5, dash="8,8")
     pb.line(230, 756, 464, 756, stroke="#94a3b8", sw=2.5, dash="8,8")
 
-    pb.door(256, 130, 85, "v_down_right", wall_t=12)
-    pb.door(310, 248, 90, "h_right_down", wall_t=12)
-    pb.door(256, 275, 80, "v_down_left", wall_t=12)
+    pb.door(256, 42, 82, "v_down_right", wall_t=12)   # Stairwell arrival NE (swings cleanly into Hall!)
+    pb.door(310, 248, 90, "h_right_down", wall_t=12)  # 2-mannsbolig / leilighetsdør
+    pb.door(256, 278, 76, "v_down_right", wall_t=12)  # Bod / Vask (swings into corridor -> maximizes interior!)
 
     pb.window_v(-215, 435, 735, 30)
     pb.window_h(-165, -45, 798, 30)
@@ -850,9 +864,9 @@ def build_alt2_floor2(pb: PlanBuilder):
     pb.dining_table(200, 985, 180, 90, seats=6)
     pb.chimney_and_fireplace(135, 720, 95, 55, mode="north_stove")
 
-    pb.room_label(142, 135, "Trapp", "4,7 m²")
+    pb.room_label(106, 139, "Trapp", "4,7 m²")
     pb.room_label(162, 315, "Bod / Vask", "2,7 m²")
-    pb.room_label(362, 100, "Hall", "4,4 m²", "(2-mannsbolig)")
+    pb.room_label(375, 175, "Hall", "4,4 m²", "(2-mannsbolig)")
     pb.text(80, 462, "LOFTSTUE / HAGESTUE 23,6 m²", size=20, weight="800", fill="#047857")
     pb.text(80, 488, "(peis vendt mot stue + 12,8 m² sørvest)", size=16, weight="700", fill="#059669")
 
