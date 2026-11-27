@@ -26,7 +26,8 @@
 
 ## 2. Romprogram (synkronisert med 1:50-skisser)
 
-### 1-etasjes Nord-tilbygg (`2,10 m` i Alt 1 / `2,50 m` i Alt 2, `6,35 m` bredt)
+### 1-etasjes Nord-tilbygg (`2,10 m` i Alt 1 / `2,50 m` i Alt 2, `6,35 m` bredt — **flukter 100 % med eksisterende østvegg**)
+* **Plassering øst:** Østveggen på nord-tilbygget **flukter eksakt i plan med eksisterende østvegg** på hovedhuset (`X = 8,66 m`) — én sammenhengende, rett østfasade uten verken utstikk eller inntrekking.
 * **Takform:** **Parallelt `32,7°` saltak** (samme takvinkel som hovedtaket, møne under den tette nordveggen til hovedsoverommet i 2. etg; høyre takflate klarer 2. etasjes nordvindu med god margin).
 * **Innhold:**
   * **Vindfang (`5,4 m²` i Alt 1 / `6,0 m²` i Alt 2):** Romslig garderobevegg mot øst (`60 × 120 cm` skap + lang sitte-/skobenk i Alt 2), dobbelt kors-sprossevindu mot nord, inngangsdør `140/210` vendt vestover inn i overbygd inngangsparti.
@@ -68,7 +69,7 @@ Eksisterende vest-utbygg (`2,28 × 4,07 m`) **rives helt** for enkel tilgang til
 ## 4. Fasader & Visuelt uttrykk
 
 * **Materialer:** Hvit liggende trekledning, mattsvart takstein (ev. båndtekking på pulttak), mørk grå grunnmur, sorte takrenner/nedløp.
-* **Vinduer:** Gjennomgående **ekte norske 4-ruts kors-sprossevinduer** (krysspost) på alle fasader.
+* **Vinduer:** Gjennomgående **ekte norske 4-ruts `+` kors-sprossevinduer** (krysspost: 1 midtpost + 1 øvre tverrpost = 4 ruter totalt, **ingen mikro-oppdeling / 6-ruts rutenett** i øvre felt — referanse: `render_4hjorner_sorost.jpg`) på alle fire fasader. Smale halvbreddevinduer (`Bad 2. etg`, `Vaskerom/Bod` nord) får 2-ruts vertikal oppdeling (1 øvre tverrpost).
 * **Østfasade:** 4 stramme, symmetriske vertikale vindusakser (`Bad/Hovedsov`, `Sov Pult/Bad`, `Sov sør/Sov 2`, `Kjøkken/Sov 3`) + **4 takvinduer linjert rett over fasadevinduene**. `Bad 2. etg` (akse 3 fra sør / nr. 2 fra nord) får **smalt halvbreddevindu (`62 × 145 cm`) linjert med sørkanten** av vinduet under (`Sov/Pult`), slik at `90 × 90 cm` dusjnisje får full veggplass i nordenden av badet. I **Alt 2** får `Bad 1. etg` et høytliggende overlys-vindu (øvre tredjedel, `124 × 50 cm`, `Z = 1,98–2,48 m`) som sitter helt fritt over det lave `12°` trappetaket.
 * **Nordfasade & Vest-tverrfløy (nordvegg):** Parallelt `32,7°` saltak på nord-tilbygg (smalt bodvindu + dobbelt vindfangvindu + portico m/ rekkverk), smalt trappevindu 1. etg + dobbelt 2. etg vindu til høyre, ingen nordvindu på hovedsoverom, sentrert loftsvindu, samt **dobbel sprosset verandadør i 1. etg** (ut mot nordvest-hage/kveldssol, som frigjør hele sørvest-hjørnet i stua til en lun hjørnesofa rett mot nett `56 × 78 cm` vannkappepeis!) og dobbelt kors-sprossevindu i 2. etg på nordsiden av vest-tilbygget.
 * **Sørgavl (verandadører):**
