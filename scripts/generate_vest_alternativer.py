@@ -171,9 +171,11 @@ class PlanBuilder:
         self.text(x + text_offset, (y1 + y2) / 2, label, size=20, weight="700" if bold else "600", fill=color, rotate=-90)
 
     def stairs_u(self, x, y, w, h, floor=1):
-        """Clean horizontal U-stair (west landing, enter SE in 1.etg, arrive NE in 2.etg -> doors open into Gang/Hall, never over steps!)."""
+        """Stacked 3-story U-stair matching 1:50 sketch:
+        - Enter NE (1.etg) -> go west along north flight -> turn on west landing -> go east along south flight UP to SE (2.etg).
+        - In 1.etg: basement door (lengst syd, SE) sits cleanly under the high end of the rising south flight!"""
         self.rect(x, y, w, h, fill="#e2e8f0", stroke="#64748b", sw=2)
-        land_w = 84
+        land_w = 82
         mid_y = y + h / 2
         steps = 7
         step_w = (w - land_w) / steps
@@ -183,15 +185,20 @@ class PlanBuilder:
             self.line(sx, mid_y + 7, sx, y + h, stroke="#64748b", sw=1.4)
         # Center handrail/stringer
         self.rect(x + land_w, mid_y - 7, w - land_w, 14, fill="#94a3b8")
-        # Direction arrow: enter SE (1.etg) -> go west -> turn on west landing -> go east to NE (2.etg)
-        ax1, ay1 = self.p(x + w - 16, y + h * 0.76)
-        ax2, ay2 = self.p(x + land_w * 0.5, y + h * 0.76)
-        ax3, ay3 = self.p(x + land_w * 0.5, y + h * 0.24)
-        ax4, ay4 = self.p(x + w - 18, y + h * 0.24)
+        # Direction arrow (UP): NE -> west -> west landing -> east to SE (exact match to 1:50 sketch!)
+        ax1, ay1 = self.p(x + w - 16, y + h * 0.24)
+        ax2, ay2 = self.p(x + land_w * 0.5, y + h * 0.24)
+        ax3, ay3 = self.p(x + land_w * 0.5, y + h * 0.76)
+        ax4, ay4 = self.p(x + w - 18, y + h * 0.76)
         self.path(f"M {ax1:.1f} {ay1:.1f} L {ax2:.1f} {ay2:.1f} L {ax3:.1f} {ay3:.1f} L {ax4:.1f} {ay4:.1f}", stroke="#334155", sw=2.4)
         self.path(f"M {ax4 - 11:.1f} {ay4 - 9:.1f} L {ax4:.1f} {ay4:.1f} L {ax4 - 11:.1f} {ay4 + 9:.1f}", stroke="#334155", sw=2.4)
+        if floor == 1:
+            # Diagonal break line on rising south flight indicating basement stair door underneath (lengst syd)
+            self.line(x + land_w + 26, y + h, x + w - 30, mid_y + 7, stroke="#0f172a", sw=2.2, dash="5,4")
+            self.text(x + w - 42, y + 20, "OPP 2.etg", size=11, weight="700", fill="#0369a1")
+            self.text(x + w - 46, y + h - 8, "NED KJELLER", size=10, weight="800", fill="#b45309")
         # Clean pill behind label
-        self.rect(x + 12, mid_y - 26, 118, 52, fill="#ffffff", stroke="#cbd5e1", sw=1.2, rx=6, opacity=0.92)
+        self.rect(x + 10, mid_y - 25, 114, 50, fill="#ffffff", stroke="#cbd5e1", sw=1.2, rx=6, opacity=0.93)
 
     def basement_stairs_h(self, x, y, w, h):
         """External basement stair descending from east (right) to west (left)."""
@@ -644,11 +651,12 @@ def build_alt1_floor1(pb: PlanBuilder):
     # Shared east side + north extension (100% match to Magnus's sketch!)
     draw_shared_east_floor1(pb)
 
-    # NW stairwell + Vask (stairwell door swings OUT into Gang -> never over stair steps!)
+    # NW stairwell + Vask: open entry NE (up to 2. etg) + basement door lengst syd (SE, under rising south flight!)
     pb.wall_v(256, 30, 440, 12)
     pb.wall_h(30, 256, 256, 12)
     pb.wall_h(30, 256, 434, 14)  # TV wall north of living!
-    pb.door(256, 152, 85, "v_down_right", wall_t=12)  # Trapp (swings cleanly into Gang!)
+    pb.rect(249, 40, 14, 92, fill="#ffffff")          # Åpen oppgang nordøst (opp til 2. etg)
+    pb.door(256, 162, 82, "v_down_right", wall_t=12)  # Dør ned til kjeller (lengst syd i trappen, slår ut i Gang!)
     pb.door(256, 332, 80, "v_down_left", wall_t=12)   # Vask (20 cm clear of sink y=270..315!)
 
     # Bearing beam dashed lines
@@ -715,7 +723,7 @@ def build_alt1_floor2(pb: PlanBuilder):
     pb.line(170, 434, 170, 720, stroke="#94a3b8", sw=2.5, dash="8,8")
     pb.line(230, 756, 464, 756, stroke="#94a3b8", sw=2.5, dash="8,8")
 
-    pb.door(256, 44, 85, "v_down_right", wall_t=12)   # Trapp arrival NE (swings cleanly into Hall, never over steps!)
+    pb.door(256, 158, 82, "v_down_right", wall_t=12)  # Trapp arrival SE (swings cleanly into Hall!)
     pb.door(310, 256, 90, "h_right_down", wall_t=12)  # 2-mannsbolig / leilighetsdør
     pb.door(256, 332, 80, "v_down_left", wall_t=12)   # Bod / Vask (clear of Skap ending at x=165!)
 
@@ -731,7 +739,7 @@ def build_alt1_floor2(pb: PlanBuilder):
     pb.window_v(15, 285, 357, 30)     # Bod/Vask vest
     pb.window_v(15, 992, 1107, 30)    # Spis/opphold vest
 
-    pb.stairs_u(36, 36, 212, 212)
+    pb.stairs_u(36, 36, 212, 212, floor=2)
     pb.washer_dryer(42, 270, count=2, vertical=False)
     pb.wardrobe(42, 376, 122, 46, "Skap")
     pb.tv_bench(-55, 444, 190, 42)    # På 100% tett nordvegg (klar av nordvindu!)
@@ -741,9 +749,9 @@ def build_alt1_floor2(pb: PlanBuilder):
     pb.dining_table(200, 985, 180, 90, seats=6)  # Helt klar av innadslående sør-verandadør!
     pb.chimney_and_fireplace(135, 720, 95, 55, mode="west_stove")
 
-    pb.room_label(106, 142, "Trapp", "4,8 m²")
+    pb.room_label(103, 142, "Trapp", "4,8 m²")
     pb.room_label(112, 352, "Bod / Vask", "3,6 m²")
-    pb.room_label(375, 178, "Hall", "4,5 m²", "(2-mannsbolig)")
+    pb.room_label(362, 102, "Hall", "4,5 m²", "(2-mannsbolig)")
     pb.text(-165, 535, "LOFTSTUE / HAGESTUE", size=20, weight="800", fill="#0369a1")
     pb.text(-165, 561, "~24 m² + 11 m² spis (innbygd)", size=15, weight="700", fill="#0284c7")
 
@@ -771,11 +779,12 @@ def build_alt2_floor1(pb: PlanBuilder):
     # Shared east side + north extension (100% match to Magnus's sketch!)
     draw_shared_east_floor1(pb)
 
-    # NW stairwell + compact Vask/Bod (doors swing OUT into Gang -> zero stair or appliance collision!)
+    # NW stairwell + compact Vask/Bod: open entry NE (up) + basement door lengst syd (SE)!
     pb.wall_v(256, 30, 383, 12)
     pb.wall_h(30, 256, 248, 12)
     pb.wall_h(30, 256, 380, 14)  # TV wall north of living!
-    pb.door(256, 150, 82, "v_down_right", wall_t=12)  # Stairwell (swings into Gang!)
+    pb.rect(249, 40, 14, 90, fill="#ffffff")          # Åpen oppgang nordøst (opp til 2. etg)
+    pb.door(256, 156, 82, "v_down_right", wall_t=12)  # Dør ned til kjeller (lengst syd i trappen!)
     pb.door(256, 278, 76, "v_down_right", wall_t=12)  # Kompakt Vask/Bod (swings into Gang -> maximizes interior!)
 
     # Structural beam dashed lines
@@ -841,7 +850,7 @@ def build_alt2_floor2(pb: PlanBuilder):
     pb.line(170, 383, 170, 720, stroke="#94a3b8", sw=2.5, dash="8,8")
     pb.line(230, 756, 464, 756, stroke="#94a3b8", sw=2.5, dash="8,8")
 
-    pb.door(256, 42, 82, "v_down_right", wall_t=12)   # Stairwell arrival NE (swings cleanly into Hall!)
+    pb.door(256, 154, 82, "v_down_right", wall_t=12)  # Stairwell arrival SE (swings cleanly into Hall!)
     pb.door(310, 248, 90, "h_right_down", wall_t=12)  # 2-mannsbolig / leilighetsdør
     pb.door(256, 278, 76, "v_down_right", wall_t=12)  # Bod / Vask (swings into corridor -> maximizes interior!)
 
@@ -854,7 +863,7 @@ def build_alt2_floor2(pb: PlanBuilder):
     pb.window_v(15, 900, 1050, 30)
     pb.window_v(15, 85, 190, 30)
 
-    pb.stairs_u(36, 36, 212, 206)
+    pb.stairs_u(36, 36, 212, 206, floor=2)
     pb.washer_dryer(40, 262, count=1, vertical=False)
     pb.rect(40, 326, 62, 42, fill="#f1f5f9", stroke="#64748b", sw=1.5)
     pb.tv_bench(38, 388, 200, 42)
@@ -864,9 +873,9 @@ def build_alt2_floor2(pb: PlanBuilder):
     pb.dining_table(200, 985, 180, 90, seats=6)
     pb.chimney_and_fireplace(135, 720, 95, 55, mode="north_stove")
 
-    pb.room_label(106, 139, "Trapp", "4,7 m²")
+    pb.room_label(103, 139, "Trapp", "4,7 m²")
     pb.room_label(162, 315, "Bod / Vask", "2,7 m²")
-    pb.room_label(375, 175, "Hall", "4,4 m²", "(2-mannsbolig)")
+    pb.room_label(362, 102, "Hall", "4,4 m²", "(2-mannsbolig)")
     pb.text(80, 462, "LOFTSTUE / HAGESTUE 23,6 m²", size=20, weight="800", fill="#047857")
     pb.text(80, 488, "(peis vendt mot stue + 12,8 m² sørvest)", size=16, weight="700", fill="#059669")
 
