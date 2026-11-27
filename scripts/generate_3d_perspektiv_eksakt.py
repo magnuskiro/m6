@@ -310,10 +310,11 @@ def build_house_3d(cam: Camera3D, west_d: float, y_s: float, y_n: float, wing_de
     sc.add_kors_window_west(-west_d, y_mid - gap / 2 - win_w, y_mid - gap / 2, 380, 530, layer=7)
     sc.add_kors_window_west(-west_d, y_mid + gap / 2, y_mid + gap / 2 + win_w, 380, 530, layer=7)
 
-    # South side wall of west wing — symmetric double kors-sprosse windows in BOTH 1st & 2nd floor (veranda door is on NORTH wall!)
+    # South side wall of west wing — symmetric double kors-sprosse windows in BOTH 1st & 2nd floor
     xc_s = -west_d / 2.0
-    sc.add_kors_window_south(y_s, xc_s - 68, xc_s + 68, 105, 250, layer=7)
-    sc.add_kors_window_south(y_s, xc_s - 68, xc_s + 68, 385, 530, layer=7)
+    hw_s = 68.0 if west_d >= 260 else 60.0
+    sc.add_kors_window_south(y_s, xc_s - hw_s, xc_s + hw_s, 105, 250, layer=7)
+    sc.add_kors_window_south(y_s, xc_s - hw_s, xc_s + hw_s, 385, 530, layer=7)
 
     # West wing ROOF (South slope + North slope meeting main roof cleanly at exact 3D valley!)
     ov_w = 30.0
@@ -325,13 +326,13 @@ def build_house_3d(cam: Camera3D, west_d: float, y_s: float, y_n: float, wing_de
         (x_stop, y_mid, z_wing_ridge),
         (-west_d - 30, y_mid, z_wing_ridge),
     ], "#1e293b", stroke="#0f172a", sw=2.0, layer=8, ambient=0.52)
-    # North roof slope (visible slightly at peak)
+    # North roof slope (behind west gable wall -> layer=5 so it never overlaps the front gable triangle!)
     sc.add_poly([
         (-west_d - 30, y_mid, z_wing_ridge),
         (x_stop, y_mid, z_wing_ridge),
         (0, y_n + ov_w, z_w_ov),
         (-west_d - 30, y_n + ov_w, z_w_ov),
-    ], "#334155", stroke="#0f172a", sw=1.8, layer=8, ambient=0.60)
+    ], "#334155", stroke="#0f172a", sw=1.8, layer=5, ambient=0.60)
     # White gable bargeboard on west wing
     sc.add_poly([(-west_d - 30, y_s - ov_w, z_w_ov), (-west_d - 30, y_mid, z_wing_ridge), (-west_d - 30, y_mid, z_wing_ridge + 14), (-west_d - 30, y_s - ov_w, z_w_ov + 14)],
                 "#ffffff", stroke="#1e293b", sw=1.2, layer=9)
@@ -379,8 +380,8 @@ def main():
         # Header
         f'<rect x="0" y="0" width="{W}" height="130" fill="#0f172a"/>',
         f'<rect x="0" y="124" width="{W}" height="6" fill="#0284c7"/>',
-        f'<text x="60" y="56" font-size="36" font-weight="800" fill="#ffffff">M6 (#50) — Eksakt 3D-perspektiv (null AI-forvrengning): Reell dybde på vest-tverrfløy</text>',
-        f'<text x="60" y="96" font-size="21" font-weight="500" fill="#cbd5e1">Matematisk 3D-projeksjon fra eksakt samme sørvest-kamera • Viser reell proporsjon på 3,30 m × 5,20 m (Alt 1) vs. 2,80 m × 4,60 m symmetrisk (Alt 2B)</text>',
+        f'<text x="60" y="56" font-size="36" font-weight="800" fill="#ffffff">M6 (#50) — Eksakt 3D-sammenligning (null AI-forvrengning): Alt 1 vs. Alt 2 (Catrine)</text>',
+        f'<text x="60" y="96" font-size="21" font-weight="500" fill="#cbd5e1">Matematisk 3D-projeksjon fra eksakt samme sørvest-kamera • Alt 1 (3,30 × 5,20 m, 20° tak) vs. Alt 2 (2,30 × 5,02 m, 32,7° parallelt saltak)</text>',
         # Left panel backdrop
         f'<rect x="40" y="160" width="1260" height="980" fill="url(#sky)" stroke="#cbd5e1" stroke-width="2" rx="12"/>',
         # Right panel backdrop
@@ -402,22 +403,22 @@ def main():
     svg.append("</g>")
 
     svg.append('<g clip-path="url(#clipR)">')
-    svg.extend(build_house_3d(camR, west_d=280.0, y_s=353.0, y_n=813.0, wing_deg=24.0, label_wing="2,80 m UT MOT VEST"))
+    svg.extend(build_house_3d(camR, west_d=230.0, y_s=344.0, y_n=846.0, wing_deg=32.7, label_wing="2,30 m (EKSIST. MUR)"))
     svg.append("</g>")
 
     # Panel banners
-    svg.append('<rect x="65" y="180" width="740" height="72" fill="#ffffff" opacity="0.94" stroke="#0284c7" stroke-width="2" rx="10"/>')
+    svg.append('<rect x="65" y="180" width="760" height="72" fill="#ffffff" opacity="0.94" stroke="#0284c7" stroke-width="2" rx="10"/>')
     svg.append('<text x="90" y="212" font-size="22" font-weight="800" fill="#0f172a">ALTERNATIV 1: 3,30 m dyp × 5,20 m bred (20° saltak)</text>')
-    svg.append('<text x="90" y="238" font-size="16" font-weight="600" fill="#0284c7">Tverrfløyen er 38 % av husbredden — fullt dobbeltvindu på sørveggen!</text>')
+    svg.append('<text x="90" y="238" font-size="16" font-weight="600" fill="#0284c7">Tverrfløy 38 % av husbredden • Verandadør nord • +1 m nytt fundament vest</text>')
 
-    svg.append('<rect x="1365" y="180" width="770" height="72" fill="#ffffff" opacity="0.94" stroke="#059669" stroke-width="2" rx="10"/>')
-    svg.append('<text x="1390" y="212" font-size="22" font-weight="800" fill="#0f172a">ALTERNATIV 2B: 2,80 m dyp × 4,60 m symmetrisk (24° saltak)</text>')
-    svg.append('<text x="1390" y="238" font-size="16" font-weight="600" fill="#059669">100 % symmetrisk vestfasade (3,53 | 4,60 | 3,53 m) • Mer kompakt volum</text>')
+    svg.append('<rect x="1365" y="180" width="820" height="72" fill="#ffffff" opacity="0.94" stroke="#059669" stroke-width="2" rx="10"/>')
+    svg.append('<text x="1390" y="212" font-size="22" font-weight="800" fill="#0f172a">ALTERNATIV 2 (Catrine): 2,30 × 5,02 m (32,7° parallelt saltak)</text>')
+    svg.append('<text x="1390" y="238" font-size="16" font-weight="600" fill="#059669">3,20 m nord + eksist. sørvegg (3,44 m) • Samme takvinkel som hovedtak • 33 cm klar av pipe</text>')
 
     # Footer
     svg.append(f'<rect x="40" y="1165" width="{W - 80}" height="88" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" rx="10"/>')
-    svg.append('<text x="75" y="1200" font-size="19" font-weight="700" fill="#0f172a">Hvorfor AI-renderen så grunnere ut enn 3,30 m:</text>')
-    svg.append('<text x="75" y="1230" font-size="18" font-weight="500" fill="#334155">I AI-renderen ble utstikket bare ~1,7 m dypt (plass til ett smalt vindu). Her ser dere den REELLE 3D-proporsjonen på 3,30 m vs. 2,80 m — begge med eksakt 20°/24° møne, kors-sprosser og original pipe på vestre takflate.</text>')
+    svg.append('<text x="75" y="1200" font-size="19" font-weight="700" fill="#0f172a">Direkte volum- og taksammenligning (eksakt 3D-projeksjon):</text>')
+    svg.append('<text x="75" y="1230" font-size="18" font-weight="500" fill="#334155">Venstre: Alt 1 (3,30 m dyp, 20° slakere tak for å klare pipa). Høyre: Catrines Alt 2 (2,30 m rett på eksist. mur + 3,20 m nord -> parallelt 32,7° saltak som hovedtaket, 33 cm klar av pipa!).</text>')
     svg.append("</svg>")
 
     out = os.path.join(OUT_DIR, "perspektiv_3d_eksakt_dybde.svg")
