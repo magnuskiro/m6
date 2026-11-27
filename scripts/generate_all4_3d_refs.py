@@ -82,9 +82,9 @@ def build_ne_ref():
     # Main NORTH gable (Y=1166, X=0..866)
     sc.add_poly([(0, 1166, 0), (866, 1166, 0), (866, 1166, 40), (0, 1166, 40)], "#64748b", layer=2)
     sc.add_poly([(0, 1166, 40), (866, 1166, 40), (866, 1166, z_eaves), (433, 1166, z_ridge), (0, 1166, z_eaves)], "#ffffff", stroke="#1e293b", sw=1.8, layer=2)
-    # NO north bedroom window on east/left! Only right 1st narrow + 2nd double + attic centered!
-    add_kors_north(sc, 1166, 92, 166, 108, 245, single=True, layer=3)
-    add_kors_north(sc, 1166, 146, 281, 385, 530, single=False, layer=3)
+    # NO north bedroom window on east/left! 1.etg half 62 cm (128..190) flush w/ west edge & center mullion of 2.etg full 124 cm (128..252) + attic centered!
+    add_kors_north(sc, 1166, 128, 190, 103, 248, single=True, layer=3)
+    add_kors_north(sc, 1166, 128, 252, 383, 528, single=False, layer=3)
     add_kors_north(sc, 1166, 375, 491, 655, 770, single=False, layer=3)
 
     # Main EAST roof slope (with 4 skylights aligned directly over the 4 vertical east window axes!)

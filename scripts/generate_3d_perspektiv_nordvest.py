@@ -138,9 +138,9 @@ def build_nw_scene(cam: Camera3D, alt: int = 1):
                 "#ffffff", stroke="#1e293b", sw=1.8, layer=2)
     add_siding_north(sc, 1166, 0, 866, 40, z_eaves, layer=2)
 
-    # Main North Gable windows (identical on both Alt 1 & Alt 2 — NO north window in Hovedsoverom!)
-    add_kors_north(sc, 1166, 92, 166, 108, 245, single=True, layer=3)
-    add_kors_north(sc, 1166, 146, 281, 385, 530, single=False, layer=3)
+    # Main North Gable windows (1.etg half 62 cm at X=128..190 flush w/ west edge & center mullion of 2.etg full 124 cm at X=128..252; clear of stair mid-landing X=36..126!)
+    add_kors_north(sc, 1166, 128, 190, 103, 248, single=True, layer=3)
+    add_kors_north(sc, 1166, 128, 252, 383, 528, single=False, layer=3)
     add_kors_north(sc, 1166, 375, 491, 655, 770, single=False, layer=3)
 
     # --- MAIN WEST ROOF SLOPE + CHIMNEY + WEST WING NORTH ROOF SLOPE ---

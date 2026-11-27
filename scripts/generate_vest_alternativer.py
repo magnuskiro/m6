@@ -552,7 +552,7 @@ def draw_shared_east_floor1(pb: PlanBuilder, north_vaskerom: bool = False, north
     pb.double_terrace_door_h(433, 1151, 160, wall_t=30, swing_down=True)
 
     # Windows on north & east walls (100% synced with Fasade Nord & Fasade Øst!)
-    pb.window_h(92, 166, 15, 30)          # Trapp narrow north window (matches Fasade Nord!)
+    pb.window_h(128, 190, 15, 30)         # Trapp narrow 62 cm north window (flush w/ west edge & center mullion of 2.etg 128..252, clear of mid-landing 36..126!)
     pb.window_h(340, 470, -nd + 15, 30)   # Vindfang helt dobbeltvindu nord
     if north_vaskerom:
         pb.window_h(708, 780, -nd + 15, 30)  # Vaskerom halvt vindu nord (mot øst, som nordfasade-skissen!)
@@ -665,8 +665,7 @@ def draw_shared_east_floor2(pb: PlanBuilder):
     pb.window_v(851, 495, 557, 30)   # Axis 3: Bad 2.etg east — smalt 62 cm vindu, sydkant y=557 flukter med 1.etg & klar sør for dusjnisje!
     pb.window_v(851, 648, 772, 30)   # Axis 2: Sov 2 east
     pb.window_v(851, 928, 1052, 30)  # Axis 1: Sov 3 east
-    pb.window_h(305, 425, 15, 30)    # Hall north double window (matches Fasade Nord!)
-    pb.window_h(92, 166, 15, 30)     # Trapp north window (aligned directly above 1. etg Trapp!) — NO north window in Master!
+    pb.window_h(128, 252, 15, 30)    # Trapp north full 124 cm window (flush w/ west edge of 1.etg 128..190, clear of mid-landing 36..126 & 80 cm above north-ext roof!) — NO north window in Master!
 
     # Fixtures — Master (north headboard, matching Magnus's 2. etg sketch!)
     pb.double_bed(605, 42, 180, 200, head="top")

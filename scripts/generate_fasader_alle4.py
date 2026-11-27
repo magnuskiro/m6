@@ -430,10 +430,10 @@ def draw_north(d: ElevDraw, alt: int = 1):
     d.rect(0, -40, 866, 40, fill="#64748b", stroke="#334155", sw=1.5)
     d.poly([(-35, -588), (433, -906), (901, -588), (885, -578), (433, -885), (-19, -578)], fill="#1e293b", stroke="#0f172a", sw=2)
 
-    # Main north gable windows (EXACTLY as sketched by Magnus!):
+    # Main north gable windows (aligned flush on west edge X=128 -> x_plot=738, clear of stair mid-landing X=36..126!):
     # NO window on left/east 2. etg (Hovedsoverom)!
-    d.kors_win(700, -245, 74, 138, single=True)     # 1. etg narrow single window right of entry porch (Trapp)
-    d.kors_win(585, -528, 135, 145, single=False)   # 2. etg double kors-sprosse window right of north gable peak
+    d.kors_win(676, -248, 62, 145, single=True)     # 1. etg half 62 cm window in Trapp (X=128..190 -> flush w/ west edge & center mullion of 2.etg!)
+    d.kors_win(614, -528, 124, 145, single=False)   # 2. etg full 124 cm window in Trapp (X=128..252 -> 80 cm clear above 32,7° north-ext roof!)
     d.kors_win(375, -768, 116, 115, single=False)   # Centered loft gable window
 
     # 1-STORY NORTH EXTENSION (x_plot = 0..635 = 6.35 m wide, PARALLEL 32.7° SALTAK!)
