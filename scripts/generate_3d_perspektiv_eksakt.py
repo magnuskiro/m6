@@ -234,17 +234,19 @@ def build_house_3d(cam: Camera3D, west_d: float, y_s: float, y_n: float, wing_de
         sc.add_kors_window_west(0, 805, 875, 115, 245, single=True, layer=2)  # Vask 1st
         sc.add_kors_window_west(0, 805, 875, 395, 525, single=True, layer=2)  # Bod 2nd
 
-    # Main South Gable windows & veranda doors (1st terrace door + 2nd existing veranda door w/ French railing!)
-    sc.add_kors_window_south(0, 130, 275, 105, 250, layer=2)                # Dining 1st
-    sc.add_kors_window_south(0, 465, 625, 42, 252, is_door=True, layer=2)   # Terrace door 1st
-    sc.add_kors_window_south(0, 130, 280, 322, 532, is_door=True, layer=2)  # 2nd floor veranda door (Opphold)!
-    # Subtle matte-black French balcony railing on 2nd floor south veranda door (ready for future south balcony)
-    sc.add_line((124, -6, 425), (286, -6, 425), stroke="#0f172a", sw=2.6, layer=3, depth_bias=-12.0)
-    sc.add_line((124, -6, 326), (286, -6, 326), stroke="#0f172a", sw=2.0, layer=3, depth_bias=-12.0)
-    for rx in range(134, 282, 22):
+    # Main South Gable — 100% SYMMETRIC around EXISTING centered veranda doors (x=353..513 in BOTH 1st & 2nd floor!)
+    sc.add_kors_window_south(0, 105, 235, 105, 250, layer=2)                # Dining 1st (left)
+    sc.add_kors_window_south(0, 353, 513, 42, 252, is_door=True, layer=2)   # EXISTING centered veranda door 1st!
+    sc.add_kors_window_south(0, 631, 761, 105, 250, layer=2)                # Kitchen 1st (right)
+    sc.add_kors_window_south(0, 105, 235, 385, 530, layer=2)                # Opphold 2nd (left)
+    sc.add_kors_window_south(0, 353, 513, 322, 532, is_door=True, layer=2)  # EXISTING centered veranda door 2nd!
+    # Subtle matte-black French balcony railing on centered 2nd-floor south veranda door
+    sc.add_line((346, -6, 425), (520, -6, 425), stroke="#0f172a", sw=2.6, layer=3, depth_bias=-12.0)
+    sc.add_line((346, -6, 326), (520, -6, 326), stroke="#0f172a", sw=2.0, layer=3, depth_bias=-12.0)
+    for rx in range(356, 516, 22):
         sc.add_line((rx, -6, 326), (rx, -6, 425), stroke="#1e293b", sw=1.4, layer=3, depth_bias=-12.0)
-    sc.add_kors_window_south(0, 575, 720, 385, 530, layer=2)                # Sov 3 2nd
-    sc.add_kors_window_south(0, 375, 491, 655, 770, layer=2)                # Loft gable
+    sc.add_kors_window_south(0, 631, 761, 385, 530, layer=2)                # Sov 3 2nd (right, 3.1m wide)
+    sc.add_kors_window_south(0, 375, 491, 655, 770, layer=2)                # Loft gable (centered!)
 
     # --- MAIN WEST ROOF SLOPE (with 35 cm overhang) ---
     ov_x = -35.0

@@ -161,17 +161,19 @@ def build_se_ref():
     sc.add_poly([(548.5, 1166, nz_ridge), (548.5, 1396, nz_ridge), (892, 1396, nz_eaves - 26 * t_main), (892, 1166, nz_eaves - 26 * t_main)],
                 "#1e293b", stroke="#0f172a", sw=1.8, layer=3)
 
-    # Main SOUTH GABLE (Y=0, X=0..866) w/ 1st floor terrace door + 2nd floor veranda door (French railing)
+    # Main SOUTH GABLE (Y=0, X=0..866) — 100% SYMMETRIC around EXISTING centered veranda doors (x=353..513 in 1st & 2nd)!
     sc.add_poly([(0, 0, 0), (866, 0, 0), (866, 0, 40), (0, 0, 40)], "#64748b", layer=3)
     sc.add_poly([(0, 0, 40), (866, 0, 40), (866, 0, z_eaves), (433, 0, z_ridge), (0, 0, z_eaves)], "#ffffff", stroke="#1e293b", sw=2.0, layer=3)
-    sc.add_kors_window_south(0, 130, 275, 105, 250, layer=4)
-    sc.add_kors_window_south(0, 465, 625, 42, 252, is_door=True, layer=4)
-    sc.add_kors_window_south(0, 130, 280, 322, 532, is_door=True, layer=4)
-    sc.add_line((124, -6, 425), (286, -6, 425), stroke="#0f172a", sw=2.4, layer=5, depth_bias=-12.0)
-    sc.add_line((124, -6, 326), (286, -6, 326), stroke="#0f172a", sw=1.8, layer=5, depth_bias=-12.0)
-    for rx in range(134, 282, 24):
+    sc.add_kors_window_south(0, 105, 235, 105, 250, layer=4)
+    sc.add_kors_window_south(0, 353, 513, 42, 252, is_door=True, layer=4)
+    sc.add_kors_window_south(0, 631, 761, 105, 250, layer=4)
+    sc.add_kors_window_south(0, 105, 235, 385, 530, layer=4)
+    sc.add_kors_window_south(0, 353, 513, 322, 532, is_door=True, layer=4)
+    sc.add_line((346, -6, 425), (520, -6, 425), stroke="#0f172a", sw=2.4, layer=5, depth_bias=-12.0)
+    sc.add_line((346, -6, 326), (520, -6, 326), stroke="#0f172a", sw=1.8, layer=5, depth_bias=-12.0)
+    for rx in range(356, 516, 24):
         sc.add_line((rx, -6, 326), (rx, -6, 425), stroke="#1e293b", sw=1.3, layer=5, depth_bias=-12.0)
-    sc.add_kors_window_south(0, 575, 720, 385, 530, layer=4)
+    sc.add_kors_window_south(0, 631, 761, 385, 530, layer=4)
     sc.add_kors_window_south(0, 375, 491, 655, 770, layer=4)
 
     # Main EAST WALL (X=866, Y=0..1166)

@@ -283,19 +283,22 @@ def draw_south(d: ElevDraw):
     d.rect(0, -40, 866, 40, fill="#64748b", stroke="#334155", sw=1.5)
     d.poly([(-35, -588), (433, -906), (901, -588), (885, -578), (433, -885), (-19, -578)], fill="#1e293b", stroke="#0f172a", sw=2)
 
-    # South gable windows & veranda doors (kors-sprosser!)
-    d.kors_win(135, -248, 145, 145, single=False)   # Spisestue 1. etg
-    d.french_door_kors(465, -250, 160, 210)         # Terrassedør fra kjøkken/allrom 1. etg
-    # 2. etg existing south veranda door (in Opphold 2. etg) w/ French balcony railing (ready for future balcony!)
-    d.french_door_kors(135, -530, 150, 208)
+    # South gable — 100% SYMMETRIC around EXISTING centered veranda door openings (x=353..513, center=433)!
+    # 1. etg: flanking kors-sprosse (Spisestue) + EXISTING centered veranda door + flanking kors-sprosse (Kjøkken)
+    d.kors_win(105, -248, 130, 145, single=False)   # Spisestue 1. etg (symmetrisk venstre)
+    d.french_door_kors(353, -250, 160, 210)         # Eksist. sentrert terrassedør 1. etg (x=353..513)
+    d.kors_win(631, -248, 130, 145, single=False)   # Kjøkken 1. etg (symmetrisk høyre)
+    # 2. etg: flanking kors-sprosse + EXISTING centered veranda door (Opphold 2.etg, vest for Sov 3 ved x=526!) + flanking kors-sprosse (Sov 3)
+    d.kors_win(105, -528, 130, 145, single=False)   # Opphold 2. etg (symmetrisk venstre)
+    d.french_door_kors(353, -530, 160, 208)         # Eksist. sentrert verandadør 2. etg (rett over 1. etg!)
     # Subtle matte-black wrought-iron French balcony railing (TEK17 fall protection until balcony is added)
-    d.rect(128, -422, 164, 6, fill="#1e293b")
-    d.rect(128, -326, 164, 5, fill="#1e293b")
-    for rx in range(138, 288, 16):
+    d.rect(346, -422, 174, 6, fill="#1e293b")
+    d.rect(346, -326, 174, 5, fill="#1e293b")
+    for rx in range(356, 516, 16):
         d.line(rx, -416, rx, -326, stroke="#1e293b", sw=1.8)
-    d.text(210, -545, "Verandadør 2.etg (fransk rekkv. / evt. balkong)", size=10, weight="700", fill="#475569")
-    d.kors_win(575, -528, 145, 145, single=False)   # Sov 3 (2. etg)
-    d.kors_win(375, -768, 116, 115, single=False)   # Loft gavl (220 cm takhøyde)
+    d.text(433, -545, "Eksist. verandadør 2.etg (fransk rekkv. / evt. balkong)", size=10, weight="700", fill="#475569")
+    d.kors_win(631, -528, 130, 145, single=False)   # Sov 3 (2. etg, bredde 3,1 m)
+    d.kors_win(375, -768, 116, 115, single=False)   # Loft gavl (sentrert rett over dørene!)
 
     # Timber terrace deck extending around SW corner to west-wing veranda door!
     d.rect(-280, -24, 1180, 24, fill="#d97706", opacity=0.4, stroke="#92400e", sw=1.8)

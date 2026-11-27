@@ -439,8 +439,8 @@ def draw_shared_east_floor1(pb: PlanBuilder):
     pb.door(556, 258, 85, "v_down_right", wall_t=12)
     # Sov 90/210 door (from gang, north-west of Sov)
     pb.door(468, 378, 85, "v_down_right", wall_t=12)
-    # South terrace double door
-    pb.double_terrace_door_h(530, 1151, 160, wall_t=30, swing_down=True)
+    # South terrace double door — EXISTING centered opening (x=353..513, center=433)!
+    pb.double_terrace_door_h(433, 1151, 160, wall_t=30, swing_down=True)
 
     # Windows on east wall & north wall (4 vertical axes matching Fasade Øst!)
     pb.window_h(340, 470, -195, 30)  # Vindfang north window
@@ -496,19 +496,20 @@ def draw_shared_east_floor2(pb: PlanBuilder):
     pb.rect(470, 30, 366, 360, fill="#f0fdf4", opacity=0.75)  # Master 13.3 m²
     pb.rect(470, 396, 366, 198, fill="#eff6ff", opacity=0.85)  # Bad 6.8 m²
     pb.rect(470, 604, 366, 258, fill="#f0fdf4", opacity=0.75)  # Sov 2 (9.0 m²)
-    pb.rect(470, 872, 366, 264, fill="#f0fdf4", opacity=0.75)  # Sov 3 (9.2 m²)
+    pb.rect(526, 842, 310, 294, fill="#f0fdf4", opacity=0.75)  # Sov 3 (9.2 m² = 3.10m x 2.94m, clears centered veranda door!)
 
     # East rooms walls
-    pb.wall_v(464, 30, 1136, 12)
+    pb.wall_v(464, 30, 842, 12)
+    pb.wall_v(524, 842, 1136, 12)  # Sov 3 west wall at x=524 (3.10 m wide as sketched -> frees centered x=353..513 door!)
     pb.wall_h(464, 836, 392, 12)  # Master / Bad (3.62 m -> 13.3 m²)
     pb.wall_h(464, 836, 598, 12)  # Bad / Sov 2 (2.00 m -> ~7.1 m²)
-    pb.wall_h(464, 836, 866, 12)  # Sov 2 / Sov 3 (~2.62 m -> ~9.2 m²)
+    pb.wall_h(464, 836, 842, 12)  # Sov 2 / Sov 3 (~2.94 m -> 9.2 m²)
 
     # Doors
     pb.door(464, 285, 85, "v_down_right", wall_t=12)  # Master
     pb.door(464, 465, 80, "v_down_right", wall_t=12)  # Bad
     pb.door(464, 635, 85, "v_down_right", wall_t=12)  # Sov 2
-    pb.door(464, 900, 85, "v_down_right", wall_t=12)  # Sov 3
+    pb.door(524, 875, 85, "v_down_right", wall_t=12)  # Sov 3
 
     # East & north windows (4 clean vertical axes matching 1. etg & Fasade Øst!)
     pb.window_v(851, 158, 282, 30)   # Axis 4: Master east
@@ -631,10 +632,13 @@ def build_alt1_floor2(pb: PlanBuilder):
     pb.door(310, 256, 90, "h_right_down", wall_t=12)
     pb.door(256, 315, 80, "v_down_left", wall_t=12)
 
+    # South windows + EXISTING centered veranda door (x=353..513) in 2. etg!
     pb.window_v(-305, 510, 840, 30)
     pb.window_h(-220, -60, 915, 30)
     pb.window_h(-220, -85, 425, 30)  # Dobbeltvindu nord på vest-tilbygg (2. etg)
-    pb.double_terrace_door_h(215, 1151, 150, wall_t=30, swing_down=False)  # Eksist. verandadør 2. etg sør (fransk balkong / evt. syd-balkong!)
+    pb.window_h(105, 235, 1151, 30)  # Flanking south window west (Opphold 2. etg)
+    pb.double_terrace_door_h(433, 1151, 160, wall_t=30, swing_down=False)  # Eksist. sentrert verandadør 2. etg sør!
+    pb.window_h(631, 761, 1151, 30)  # Flanking south window east (Sov 3)
     pb.window_v(15, 95, 195, 30)
 
     pb.stairs_u(36, 36, 212, 212)

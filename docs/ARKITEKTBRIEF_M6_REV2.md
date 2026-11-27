@@ -70,8 +70,8 @@ Eksisterende vest-utbygg (`2,28 × 4,07 m`) **rives helt** for enkel tilgang til
 * **Østfasade:** 4 stramme, symmetriske vertikale vindusakser (`Bad/Hovedsov`, `Sov Pult/Bad`, `Sov sør/Sov 2`, `Kjøkken/Sov 3`) + **4 takvinduer linjert rett over fasadevinduene**.
 * **Nordfasade:** Parallelt `32,7°` saltak på nord-tilbygg (smalt bodvindu + dobbelt vindfangvindu + portico m/ rekkverk), smalt trappevindu 1. etg + dobbelt 2. etg vindu til høyre, ingen nordvindu på hovedsoverom, sentrert loftsvindu, samt 1. og 2. etg dobbeltvinduer på nordsiden av vest-tilbygget.
 * **Sørgavl & Vest-tverrfløy (verandadører):**
-  * **1. etg:** Dobbel sprosset terrassedør på sørgavlen fra kjøkken/allrom **+ dobbel sprosset verandadør på sørveggen av vest-tverrfløyen** (bevarer fri vestvegg til L-sofa inne og åpner rett ut til en lun, vindskjermet L-formet markterrasse rundt sørvest-hjørnet).
-  * **2. etg:** Eksisterende **verandadør på sørgavlen** beholdes (plassert i oppholdsrommet på sørvestsiden med fransk balkongrekkverk i fase 1, klargjort for eventuell senere syd-balkong). Sentrert loftsvindu i gavlspissen.
+  * **1. etg:** Eksisterende **sentrerte verandadør-åpning midt på sørgavlen (`x = 3,53–5,13 m`)** beholdes mellom spisestue og kjøkken **+ dobbel sprosset verandadør på sørveggen av vest-tverrfløyen (Alternativ B)** ut til en lun, L-formet markterrasse rundt sørvest-hjørnet.
+  * **2. etg:** Eksisterende **sentrerte verandadør midt på sørgavlen** beholdes rett over 1. etg (med sort fransk balkongrekkverk i fase 1, klargjort for eventuell senere syd-balkong) — `Soverom 3` er `3,10 × 2,94 m` (`9,2 m²` som på 1:50-skissen), slik at hele senteraksen ligger fritt i `Opphold 2. etg`! Symmetriske kors-sprosse flankevinduer på begge sider + sentrert loftsvindu.
 
 ---
 
