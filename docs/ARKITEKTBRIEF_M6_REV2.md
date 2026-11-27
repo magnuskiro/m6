@@ -60,9 +60,9 @@ Eksisterende vest-utbygg (`2,28 × 4,07 m`) **rives helt** for enkel tilgang til
 ### Peistest (kompakt H2O-innsats `56 × 78 cm` + `30 cm` ildfast plate + `100 cm` brannsone)
 | Alternativ vest-tilbygg | Fri sone mot sofa / opphold | Fasadesymmetri vest | Tak & original 2-løps pipe (#38) |
 | :--- | :--- | :--- | :--- |
-| **Alt 1: `3,20–3,30 × 5,20 m`** *(dypere tverrfløy)* | **`1,09 m` klaring** fra `100 cm` brannsone til full `2,4 × 2,4 m` L-sofa (peis vest på pipe, verandadør flyttet til nordvegg av vest-fløy) | `4,10 \| 5,20 \| 2,36 m` | **`20°` slakt saltak** (`28 cm` fri klaring nord for pipe) eller **`10°` pulttak** (`35 cm` vest, 0 gradrenner). *NB: `32,7°` saltak krasjer i pipa!* |
-| **Alt 2 (Catrine): `2,30 × 5,02 m`** *(på eksist. kjellermur)* | **`1,03 m` klaring** til L-sofa med kompakt H2O-peis på **nordside av pipe** (innsyn nord+vest rett mot sofakrok i `~26 m²` stue) | **`3,20 \| 5,02 \| 3,44 m`** *(nær 100 % symmetrisk, beholder eksist. sørvegg + mur!)* | **Parallelt `32,7°` saltak** (samme takvinkel som hovedtak!) — **`33 cm` fri klaring** nord for pipa uten takkonflikt! |
-| **Alt 2B: `2,80 × 4,60 m`** *(symmetrisk kompromiss)* | **`2,20 m`** fri sone vest for brannsone | **100 % symmetrisk (`3,53 \| 4,60 \| 3,53 m`)** | **`24°` saltak** — 0 pipekonflikt på tak |
+| **Alt 1: `3,20–3,30 × 5,20 m`** *(dypere tverrfløy)* | **`~25,4 m²` netto stue** *(ekskl. `110 cm` gangpassasje; `19,2 m²` vest for pipe)* — `1,09 m` klaring til full `2,4 × 2,4 m` L-sofa | `4,10 \| 5,20 \| 2,36 m` | **`20°` slakt saltak** (`28 cm` fri klaring nord for pipe) eller **`10°` pulttak** (`35 cm` vest, 0 gradrenner). *NB: `32,7°` saltak krasjer i pipa!* |
+| **Alt 2 (Catrine): `2,30 × 5,02 m`** *(på eksist. kjellermur)* | **`~23,7 m²` netto stue** (`4,42 × 5,48 m`, ekskl. `110 cm` gangpassasje) — `1,03 m` klaring til L-sofa med H2O-peis nord på pipa | **`3,20 \| 5,02 \| 3,44 m`** *(beholder eksist. sørvegg + mur!)* | **Parallelt `32,7°` saltak** (samme takvinkel som hovedtak!) — **`33 cm` fri klaring** nord for pipa uten takkonflikt! |
+| **Alt 2.5: `3,00 × 5,02 m`** *(+0,70 m dypere Alt 2)* | **`~26,8 m²` netto stue** (`4,42 × 6,18 m`, ekskl. `110 cm` gangpassasje) — størst netto stue, plass til stor `2,55×2,50 m` L-sofa! | **`3,20 \| 5,02 \| 3,44 m`** *(beholder eksist. sørvegg, +0,7 m mur vest)* | **Parallelt `32,7°` saltak** — **uendret `33 cm` fri klaring** nord for pipa! |
 
 ---
 
@@ -83,7 +83,7 @@ Eksisterende vest-utbygg (`2,28 × 4,07 m`) **rives helt** for enkel tilgang til
 * **Plantegninger 1. & 2. etg (1 px = 1 cm):**
   * [Alternativ 1 (`3,20 × 5,20 m` vest + `2,10 m` nord-tilbygg)](../assets/images/drawings/plan_alt1_dypere_vest.png)
   * [Alternativ 2 — Catrine/Magnus (`2,30 × 5,02 m` på eksist. mur + `2,50 m` nord-tilbygg m/ `6 m² Vaskerom` & `U.04` øst-kjellertrapp)](../assets/images/drawings/plan_alt2_symmetrisk_vest.png)
-  * [**Alternativ 2.5 (`3,00 × 5,02 m` vest, `~30 m²` stue + `2,50 m` nord-tilbygg, parallelt `32,7°` saltak m/ `33 cm` pipeklaring)**](../assets/images/drawings/plan_alt25_3m_vest.png)
+  * [**Alternativ 2.5 (`3,00 × 5,02 m` vest, `~26,8 m²` netto stue + `2,50 m` nord-tilbygg, parallelt `32,7°` saltak m/ `33 cm` pipeklaring)**](../assets/images/drawings/plan_alt25_3m_vest.png)
 * **Peistest (rett vest på original pipe):**
   * [Sammenligning `2,30 m` vs `2,80 m` vs `3,20 m`](../assets/images/drawings/test_peis_vest_sammenligning.png)
 * **Tekniske fasader & 3D-takplan:**

@@ -29,11 +29,16 @@
 <text x="655.0" y="388.0" font-size="15" font-weight="600" fill="#475569" text-anchor="middle">inngang</text>
 <line x1="730.0" y1="540.0" x2="1346.0" y2="540.0" stroke="#ea580c" stroke-width="3" stroke-dasharray="14,10"/>
 <path d="M 480.0 955.0 L 252.0 955.0 L 252.0 1362.0 L 480.0 1362.0" fill="none" stroke="#ea580c" stroke-width="3.5" stroke-linejoin="miter" stroke-dasharray="14,10"/>
-<rect x="190.0" y="980.0" width="730.0" height="460.0" fill="#fffbeb" stroke="none" stroke-width="1" opacity="0.8"/>
-<rect x="510.0" y="1360.0" width="440.0" height="316.0" fill="#fefce8" stroke="none" stroke-width="1" opacity="0.75"/>
+<rect x="190.0" y="980.0" width="638.0" height="352.0" fill="#fffbeb" stroke="none" stroke-width="1" opacity="0.85"/>
+<rect x="190.0" y="1332.0" width="320.0" height="108.0" fill="#fffbeb" stroke="none" stroke-width="1" opacity="0.85"/>
+<rect x="828.0" y="980.0" width="110.0" height="352.0" fill="#f1f5f9" stroke="none" stroke-width="1" opacity="0.9"/>
+<line x1="828.0" y1="980.0" x2="828.0" y2="1332.0" stroke="#94a3b8" stroke-width="2.0" stroke-dasharray="6,6"/>
+<text x="883.0" y="1165.0" font-size="13" font-weight="700" fill="#64748b" text-anchor="middle" transform="rotate(-90 883.0 1165.0)">Gangpassasje 110 cm</text>
+<rect x="510.0" y="1332.0" width="428.0" height="344.0" fill="#fefce8" stroke="none" stroke-width="1" opacity="0.75"/>
 <rect x="194.0" y="984.0" width="418.0" height="452.0" fill="none" stroke="#0284c7" stroke-width="3" stroke-dasharray="12,8"/>
+<rect x="612.0" y="984.0" width="212.0" height="272.0" fill="none" stroke="#0284c7" stroke-width="2.2" stroke-dasharray="8,6"/>
 <rect x="510.0" y="796.0" width="220.0" height="178.0" fill="#eff6ff" stroke="none" stroke-width="1" opacity="0.85"/>
-<rect x="736.0" y="570.0" width="200.0" height="410.0" fill="#f8fafc" stroke="none" stroke-width="1" opacity="0.85"/>
+<rect x="736.0" y="570.0" width="202.0" height="410.0" fill="#f8fafc" stroke="none" stroke-width="1" opacity="0.85"/>
 <rect x="760.0" y="360.0" width="274.0" height="180.0" fill="#f8fafc" stroke="none" stroke-width="1" opacity="0.95"/>
 <rect x="1046.0" y="360.0" width="270.0" height="82.0" fill="#f1f5f9" stroke="none" stroke-width="1" opacity="0.95"/>
 <rect x="1046.0" y="448.0" width="270.0" height="92.0" fill="#e2e8f0" stroke="none" stroke-width="1" opacity="0.95"/>
@@ -277,8 +282,8 @@
 <text x="590.0" y="918.0" font-size="22" font-weight="700" fill="#1e293b" text-anchor="middle">Vask</text>
 <text x="590.0" y="942.0" font-size="18" font-weight="600" fill="#475569" text-anchor="middle">3,9 m²</text>
 <text x="842.0" y="835.0" font-size="20" font-weight="700" fill="#475569" text-anchor="middle">Gang</text>
-<text x="315.0" y="1075.0" font-size="23" font-weight="800" fill="#0369a1" text-anchor="middle">STUE ~24 m²</text>
-<text x="315.0" y="1101.0" font-size="15" font-weight="700" fill="#0284c7" text-anchor="middle">(fri utgang nord)</text>
+<text x="340.0" y="1075.0" font-size="22" font-weight="800" fill="#0369a1" text-anchor="middle">STUE ~25,4 m²</text>
+<text x="340.0" y="1101.0" font-size="14" font-weight="700" fill="#0284c7" text-anchor="middle">(netto ekskl. 110 cm gang)</text>
 <text x="685.0" y="1422.0" font-size="19" font-weight="700" fill="#854d0e" text-anchor="middle">SPISESTUE ~11 m²</text>
 <line x1="480.0" y1="275.0" x2="1346.0" y2="275.0" stroke="#334155" stroke-width="2"/>
 <line x1="480.0" y1="261.0" x2="480.0" y2="289.0" stroke="#334155" stroke-width="2"/>
@@ -313,12 +318,17 @@
 <rect x="2120.0" y="330.0" width="766.0" height="210.0" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2" stroke-dasharray="10,6" opacity="0.55"/>
 <text x="2503.0" y="435.0" font-size="16" font-weight="600" fill="#64748b" text-anchor="middle">Tak over 1-etg nord-tilbygg (portico / vindfang / vaskerom el. bod)</text>
 <path d="M 2020.0 955.0 L 1792.0 955.0 L 1792.0 1362.0 L 2020.0 1362.0" fill="none" stroke="#ea580c" stroke-width="3.5" stroke-linejoin="miter" stroke-dasharray="14,10"/>
-<rect x="1730.0" y="980.0" width="730.0" height="460.0" fill="#fffbeb" stroke="none" stroke-width="1" opacity="0.8"/>
-<rect x="2050.0" y="1360.0" width="440.0" height="316.0" fill="#fefce8" stroke="none" stroke-width="1" opacity="0.75"/>
+<rect x="1730.0" y="980.0" width="638.0" height="352.0" fill="#fffbeb" stroke="none" stroke-width="1" opacity="0.85"/>
+<rect x="1730.0" y="1332.0" width="320.0" height="108.0" fill="#fffbeb" stroke="none" stroke-width="1" opacity="0.85"/>
+<rect x="2368.0" y="980.0" width="110.0" height="402.0" fill="#f1f5f9" stroke="none" stroke-width="1" opacity="0.9"/>
+<line x1="2368.0" y1="980.0" x2="2368.0" y2="1382.0" stroke="#94a3b8" stroke-width="2.0" stroke-dasharray="6,6"/>
+<text x="2423.0" y="1180.0" font-size="13" font-weight="700" fill="#64748b" text-anchor="middle" transform="rotate(-90 2423.0 1180.0)">Gangpassasje 110 cm</text>
+<rect x="2050.0" y="1332.0" width="428.0" height="344.0" fill="#fefce8" stroke="none" stroke-width="1" opacity="0.75"/>
 <rect x="1734.0" y="984.0" width="418.0" height="452.0" fill="none" stroke="#0284c7" stroke-width="3" stroke-dasharray="12,8"/>
+<rect x="2152.0" y="984.0" width="212.0" height="272.0" fill="none" stroke="#0284c7" stroke-width="2.2" stroke-dasharray="8,6"/>
 <rect x="2050.0" y="796.0" width="220.0" height="178.0" fill="#eff6ff" stroke="none" stroke-width="1" opacity="0.8"/>
-<rect x="2276.0" y="570.0" width="210.0" height="226.0" fill="#f8fafc" stroke="none" stroke-width="1" opacity="0.9"/>
-<rect x="2276.0" y="796.0" width="210.0" height="184.0" fill="#f8fafc" stroke="none" stroke-width="1" opacity="0.7"/>
+<rect x="2276.0" y="570.0" width="202.0" height="226.0" fill="#f8fafc" stroke="none" stroke-width="1" opacity="0.9"/>
+<rect x="2276.0" y="796.0" width="202.0" height="184.0" fill="#f8fafc" stroke="none" stroke-width="1" opacity="0.7"/>
 <rect x="2490.0" y="570.0" width="366.0" height="360.0" fill="#f0fdf4" stroke="none" stroke-width="1" opacity="0.75"/>
 <rect x="2490.0" y="936.0" width="366.0" height="198.0" fill="#eff6ff" stroke="none" stroke-width="1" opacity="0.85"/>
 <rect x="2490.0" y="1144.0" width="366.0" height="258.0" fill="#f0fdf4" stroke="none" stroke-width="1" opacity="0.75"/>
@@ -508,8 +518,8 @@
 <text x="2382.0" y="632.0" font-size="22" font-weight="700" fill="#1e293b" text-anchor="middle">Hall</text>
 <text x="2382.0" y="657.0" font-size="18" font-weight="600" fill="#475569" text-anchor="middle">4,5 m²</text>
 <text x="2382.0" y="679.0" font-size="14" font-weight="500" fill="#64748b" text-anchor="middle">(2-mannsbolig)</text>
-<text x="1855.0" y="1075.0" font-size="20" font-weight="800" fill="#0369a1" text-anchor="middle">LOFTSTUE / HAGESTUE</text>
-<text x="1855.0" y="1101.0" font-size="15" font-weight="700" fill="#0284c7" text-anchor="middle">~24 m² + 11 m² spis (innbygd)</text>
+<text x="1880.0" y="1075.0" font-size="20" font-weight="800" fill="#0369a1" text-anchor="middle">LOFTSTUE ~25,4 m²</text>
+<text x="1880.0" y="1101.0" font-size="14" font-weight="700" fill="#0284c7" text-anchor="middle">(netto ekskl. 110 cm gang)</text>
 <line x1="2020.0" y1="275.0" x2="2886.0" y2="275.0" stroke="#334155" stroke-width="2"/>
 <line x1="2020.0" y1="261.0" x2="2020.0" y2="289.0" stroke="#334155" stroke-width="2"/>
 <line x1="2886.0" y1="261.0" x2="2886.0" y2="289.0" stroke="#334155" stroke-width="2"/>
@@ -546,7 +556,7 @@
 <line x1="2710" y1="1819" x2="2710" y2="1835" stroke="#0f172a" stroke-width="2"/>
 <line x1="2810" y1="1815" x2="2810" y2="1839" stroke="#0f172a" stroke-width="3"/>
 <text x="2710" y="1863" font-size="19" font-weight="700" fill="#0f172a" text-anchor="middle">Målestokk: 2 meter (1 px = 1 cm)</text>
-<text x="90" y="1881" font-size="20" font-weight="700" fill="#0f172a">• Stue ~24 m² (4,25 × 4,60 m vest for pipe)</text>
+<text x="90" y="1881" font-size="20" font-weight="700" fill="#0f172a">• Netto Stue ~25,4 m² (ekskl. 110 cm gangpassasje; 19,2 m² vest for pipe)</text>
 <text x="920" y="1881" font-size="20" font-weight="700" fill="#0f172a">• Nord-tilbygg (Vindfang 5,4 m², Kjellernedg., Utebod) + 8,7 m² Bad</text>
 <text x="1750" y="1881" font-size="20" font-weight="700" fill="#0f172a">• Krever ~0,9 m nytt fundament vest + 20° saltak (28 cm klar av 2-løps pipe)</text>
 </svg>

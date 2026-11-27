@@ -9,7 +9,7 @@
 <rect x="0" y="0" width="3160" height="150" fill="#0f172a"/>
 <rect x="0" y="144" width="3160" height="6" fill="#059669"/>
 <text x="70" y="68" font-size="40" font-weight="800" fill="#ffffff">M6 — ALTERNATIV 2: 2,30 × 5,02 m vest + 2,50 m nord-tilbygg (6 m² Vindfang + 6 m² Vaskerom)</text>
-<text x="70" y="114" font-size="24" font-weight="500" fill="#cbd5e1">Catrines oppsett (3,20 | 5,02 | 3,44 m) • Romslig 6,0 m² Vindfang &amp; 6,0 m² Vaskerom • Overbygd kjellertrapp øst (1,50 m fra nordfasade)</text>
+<text x="70" y="114" font-size="24" font-weight="500" fill="#cbd5e1">Catrines oppsett (3,20 | 5,02 | 3,44 m) • Netto Stue ~23,7 m² (ekskl. 110 cm gang) • 6 m² Vindfang &amp; 6 m² Vaskerom</text>
 <g transform="translate(3020, 75)">
   <circle cx="0" cy="0" r="44" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
   <polygon points="0,-34 -14,14 0,4 14,14" fill="#f8fafc"/>
@@ -29,12 +29,15 @@
 <text x="655.0" y="348.0" font-size="15" font-weight="600" fill="#475569" text-anchor="middle">inngang</text>
 <line x1="730.0" y1="540.0" x2="1346.0" y2="540.0" stroke="#ea580c" stroke-width="3" stroke-dasharray="14,10"/>
 <path d="M 480.0 955.0 L 252.0 955.0 L 252.0 1362.0 L 480.0 1362.0" fill="none" stroke="#ea580c" stroke-width="3.5" stroke-linejoin="miter" stroke-dasharray="14,10"/>
-<rect x="280.0" y="890.0" width="668.0" height="442.0" fill="#fffbeb" stroke="none" stroke-width="1" opacity="0.85"/>
-<rect x="510.0" y="1332.0" width="440.0" height="344.0" fill="#fefce8" stroke="none" stroke-width="1" opacity="0.75"/>
-<rect x="284.0" y="894.0" width="586.0" height="362.0" fill="none" stroke="#059669" stroke-width="3.2" stroke-dasharray="12,8"/>
+<rect x="280.0" y="890.0" width="548.0" height="442.0" fill="#fffbeb" stroke="none" stroke-width="1" opacity="0.85"/>
+<rect x="828.0" y="890.0" width="110.0" height="442.0" fill="#f1f5f9" stroke="none" stroke-width="1" opacity="0.92"/>
+<line x1="828.0" y1="890.0" x2="828.0" y2="1332.0" stroke="#94a3b8" stroke-width="2.0" stroke-dasharray="6,6"/>
+<text x="883.0" y="1140.0" font-size="13" font-weight="700" fill="#64748b" text-anchor="middle" transform="rotate(-90 883.0 1140.0)">Gangpassasje 110 cm</text>
+<rect x="510.0" y="1332.0" width="428.0" height="344.0" fill="#fefce8" stroke="none" stroke-width="1" opacity="0.75"/>
+<rect x="284.0" y="894.0" width="540.0" height="362.0" fill="none" stroke="#059669" stroke-width="3.2" stroke-dasharray="12,8"/>
 <rect x="284.0" y="1256.0" width="318.0" height="72.0" fill="none" stroke="#059669" stroke-width="2.5" stroke-dasharray="8,6"/>
 <rect x="510.0" y="784.0" width="220.0" height="100.0" fill="#eff6ff" stroke="none" stroke-width="1" opacity="0.85"/>
-<rect x="736.0" y="570.0" width="200.0" height="320.0" fill="#f8fafc" stroke="none" stroke-width="1" opacity="0.85"/>
+<rect x="736.0" y="570.0" width="202.0" height="320.0" fill="#f8fafc" stroke="none" stroke-width="1" opacity="0.85"/>
 <rect x="760.0" y="320.0" width="274.0" height="220.0" fill="#f8fafc" stroke="none" stroke-width="1" opacity="0.95"/>
 <rect x="1046.0" y="320.0" width="270.0" height="220.0" fill="#eff6ff" stroke="none" stroke-width="1" opacity="0.95"/>
 <rect x="1038.0" y="570.0" width="278.0" height="328.0" fill="#eff6ff" stroke="none" stroke-width="1" opacity="0.85"/>
@@ -289,8 +292,8 @@
 <text x="583.0" y="696.0" font-size="18" font-weight="600" fill="#475569" text-anchor="middle">4,6 m²</text>
 <text x="602.0" y="818.0" font-size="14" font-weight="700" fill="#1e293b" text-anchor="middle">Gard. / Bod 2,2 m²</text>
 <text x="845.0" y="825.0" font-size="20" font-weight="700" fill="#475569" text-anchor="middle">Gang</text>
-<text x="560.0" y="974.0" font-size="22" font-weight="800" fill="#047857" text-anchor="middle">STUE ~26 m² (4,42 × 5,90 m)</text>
-<text x="560.0" y="1000.0" font-size="15" font-weight="700" fill="#059669" text-anchor="middle">H2O-peis mot sofakrok • Utnytter eksist. sørvegg vest</text>
+<text x="545.0" y="974.0" font-size="21" font-weight="800" fill="#047857" text-anchor="middle">STUE ~23,7 m² (4,42 × 5,48 m)</text>
+<text x="545.0" y="1000.0" font-size="14" font-weight="700" fill="#059669" text-anchor="middle">Netto ekskl. 110 cm gangpassasje • Eksist. sørvegg vest</text>
 <text x="685.0" y="1422.0" font-size="19" font-weight="700" fill="#854d0e" text-anchor="middle">SPISESTUE ~12,5 m²</text>
 <line x1="480.0" y1="260.0" x2="1346.0" y2="260.0" stroke="#334155" stroke-width="2"/>
 <line x1="480.0" y1="246.0" x2="480.0" y2="274.0" stroke="#334155" stroke-width="2"/>
@@ -325,13 +328,16 @@
 <rect x="2120.0" y="290.0" width="766.0" height="250.0" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2" stroke-dasharray="10,6" opacity="0.55"/>
 <text x="2503.0" y="415.0" font-size="16" font-weight="600" fill="#64748b" text-anchor="middle">Tak over 1-etg nord-tilbygg (portico / vindfang / vaskerom el. bod)</text>
 <path d="M 2020.0 955.0 L 1792.0 955.0 L 1792.0 1362.0 L 2020.0 1362.0" fill="none" stroke="#ea580c" stroke-width="3.5" stroke-linejoin="miter" stroke-dasharray="14,10"/>
-<rect x="1820.0" y="890.0" width="668.0" height="442.0" fill="#fffbeb" stroke="none" stroke-width="1" opacity="0.85"/>
-<rect x="2050.0" y="1332.0" width="440.0" height="344.0" fill="#fefce8" stroke="none" stroke-width="1" opacity="0.75"/>
-<rect x="1824.0" y="894.0" width="586.0" height="362.0" fill="none" stroke="#059669" stroke-width="3.2" stroke-dasharray="12,8"/>
+<rect x="1820.0" y="890.0" width="548.0" height="442.0" fill="#fffbeb" stroke="none" stroke-width="1" opacity="0.85"/>
+<rect x="2368.0" y="890.0" width="110.0" height="492.0" fill="#f1f5f9" stroke="none" stroke-width="1" opacity="0.92"/>
+<line x1="2368.0" y1="890.0" x2="2368.0" y2="1382.0" stroke="#94a3b8" stroke-width="2.0" stroke-dasharray="6,6"/>
+<text x="2423.0" y="1140.0" font-size="13" font-weight="700" fill="#64748b" text-anchor="middle" transform="rotate(-90 2423.0 1140.0)">Gangpassasje 110 cm</text>
+<rect x="2050.0" y="1332.0" width="428.0" height="344.0" fill="#fefce8" stroke="none" stroke-width="1" opacity="0.75"/>
+<rect x="1824.0" y="894.0" width="540.0" height="362.0" fill="none" stroke="#059669" stroke-width="3.2" stroke-dasharray="12,8"/>
 <rect x="1824.0" y="1256.0" width="318.0" height="72.0" fill="none" stroke="#059669" stroke-width="2.5" stroke-dasharray="8,6"/>
 <rect x="2050.0" y="784.0" width="220.0" height="100.0" fill="#eff6ff" stroke="none" stroke-width="1" opacity="0.85"/>
-<rect x="2276.0" y="570.0" width="210.0" height="212.0" fill="#f8fafc" stroke="none" stroke-width="1" opacity="0.9"/>
-<rect x="2276.0" y="782.0" width="210.0" height="108.0" fill="#f8fafc" stroke="none" stroke-width="1" opacity="0.7"/>
+<rect x="2276.0" y="570.0" width="202.0" height="212.0" fill="#f8fafc" stroke="none" stroke-width="1" opacity="0.9"/>
+<rect x="2276.0" y="782.0" width="202.0" height="108.0" fill="#f8fafc" stroke="none" stroke-width="1" opacity="0.7"/>
 <rect x="2490.0" y="570.0" width="366.0" height="360.0" fill="#f0fdf4" stroke="none" stroke-width="1" opacity="0.75"/>
 <rect x="2490.0" y="936.0" width="366.0" height="198.0" fill="#eff6ff" stroke="none" stroke-width="1" opacity="0.85"/>
 <rect x="2490.0" y="1144.0" width="366.0" height="258.0" fill="#f0fdf4" stroke="none" stroke-width="1" opacity="0.75"/>
@@ -514,8 +520,8 @@
 <text x="2382.0" y="628.0" font-size="22" font-weight="700" fill="#1e293b" text-anchor="middle">Hall</text>
 <text x="2382.0" y="653.0" font-size="18" font-weight="600" fill="#475569" text-anchor="middle">4,3 m²</text>
 <text x="2382.0" y="675.0" font-size="14" font-weight="500" fill="#64748b" text-anchor="middle">(2-mannsbolig)</text>
-<text x="2100.0" y="974.0" font-size="20" font-weight="800" fill="#047857" text-anchor="middle">LOFTSTUE / HAGESTUE ~26 m²</text>
-<text x="2100.0" y="1000.0" font-size="16" font-weight="700" fill="#059669" text-anchor="middle">(4,42 × 5,90 m + 12,5 m² sørvest)</text>
+<text x="2085.0" y="974.0" font-size="19" font-weight="800" fill="#047857" text-anchor="middle">LOFTSTUE ~23,7 m² (4,42 × 5,48 m)</text>
+<text x="2085.0" y="1000.0" font-size="14" font-weight="700" fill="#059669" text-anchor="middle">(netto ekskl. 110 cm gang + 12,5 m² spis)</text>
 <line x1="2020.0" y1="260.0" x2="2886.0" y2="260.0" stroke="#334155" stroke-width="2"/>
 <line x1="2020.0" y1="246.0" x2="2020.0" y2="274.0" stroke="#334155" stroke-width="2"/>
 <line x1="2886.0" y1="246.0" x2="2886.0" y2="274.0" stroke="#334155" stroke-width="2"/>
@@ -552,7 +558,7 @@
 <line x1="2710" y1="1819" x2="2710" y2="1835" stroke="#0f172a" stroke-width="2"/>
 <line x1="2810" y1="1815" x2="2810" y2="1839" stroke="#0f172a" stroke-width="3"/>
 <text x="2710" y="1863" font-size="19" font-weight="700" fill="#0f172a" text-anchor="middle">Målestokk: 2 meter (1 px = 1 cm)</text>
-<text x="90" y="1881" font-size="20" font-weight="700" fill="#0f172a">• Stue ~26 m² + H2O-peis • 6 m² Vindfang + 6 m² Vaskerom (2,5 m nord)</text>
-<text x="920" y="1881" font-size="20" font-weight="700" fill="#0f172a">• Kjellertrapp øst: 3 åpne trinn + lavt horisontalt tak under badvindu</text>
+<text x="90" y="1881" font-size="20" font-weight="700" fill="#0f172a">• Netto Stue ~23,7 m² (4,42 × 5,48 m ekskl. 110 cm gangpassasje)</text>
+<text x="920" y="1881" font-size="20" font-weight="700" fill="#0f172a">• 6 m² Vindfang + 6 m² Vaskerom (2,5 m nord) + overbygd øst-kjellertrapp (U.04)</text>
 <text x="1750" y="1881" font-size="20" font-weight="700" fill="#0f172a">• Parallelt 32,7° saltak over hele huset — 33 cm klar av 2-løps pipe!</text>
 </svg>
