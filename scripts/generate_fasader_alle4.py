@@ -257,18 +257,18 @@ def draw_east(d: ElevDraw, alt: int = 1):
     d.poly([(-35, -600), (1201, -600), (1201, -890), (-35, -890)], fill="#1e293b", stroke="#0f172a", sw=2.5)
     for ry in range(-860, -600, 34):
         d.line(-32, ry, 1198, ry, stroke="#334155", sw=1)
-    for cx in [176, 456, 633, 946]:
+    for cx in [176, 456, 671, 946]:
         d.rect(cx - 55, -825, 110, 135, fill="#93c5fd", stroke="#0f172a", sw=2.2)
 
     # FOUR CLEAN VERTICAL KORS-SPROSSE WINDOW AXES matching exact room layout:
     # Axis 1 (Sørøst, y=990 -> x=176): 1.etg Kjøkken / 2.etg Sov 3
     # Axis 2 (Midt-sør, y=710 -> x=456): 1.etg Sov/Kontor (sør) / 2.etg Sov 2
-    # Axis 3 (Midt-nord, y=533 -> x=633): 1.etg Sov/Pult / 2.etg Bad (smalt 64 cm vindu, 100% klar sør for dusjnisje!)
+    # Axis 3 (Midt-nord, y=495 -> x=671): 1.etg Sov/Pult (609..733) / 2.etg Bad (smalt 62 cm: 609..671 -> flukter m/ sydkant & midtpost!)
     # Axis 4 (Nordøst, y=220 -> x=946): 1.etg Bad / 2.etg Hovedsoverom
     axes = [
         (176, "Kjøkken", "Sov 3"),
         (456, "Sov (1.etg)", "Sov 2"),
-        (633, "Sov/Pult", "Bad 2.etg"),
+        (671, "Sov/Pult", "Bad 2.etg"),
         (946, "Bad 1.etg", "Hovedsov"),
     ]
     for cx, lbl1, lbl2 in axes:
@@ -279,12 +279,13 @@ def draw_east(d: ElevDraw, alt: int = 1):
         else:
             d.kors_win(cx - 62, -248, 124, 145, single=False)
             d.text(cx, -75, lbl1, size=11, weight="700", fill="#64748b")
-        if cx == 633:
-            # Bad 2.etg: half-width single kors-sprosse window (64 x 145 cm, centered on Axis 3, clear of dusjnisje!)
-            d.kors_win(cx - 32, -528, 64, 145, single=True)
+        if cx == 671:
+            # Bad 2.etg: half-width single kors-sprosse (62 x 145 cm, x=609..671 -> flush w/ SOUTH edge & center mullion of 1.etg window!)
+            d.kors_win(cx - 62, -528, 62, 145, single=True)
+            d.text(cx - 31, -355, lbl2, size=11, weight="700", fill="#64748b")
         else:
             d.kors_win(cx - 62, -528, 124, 145, single=False)
-        d.text(cx, -355, lbl2, size=11, weight="700", fill="#64748b")
+            d.text(cx, -355, lbl2, size=11, weight="700", fill="#64748b")
 
     # 1-story NORTH EXTENSION on the right (x=1166..1376 = 2.10 m north!) with SALTAK (ridge running N-S!)
     d.rect(1166, -290, 210, 290, fill="#ffffff", stroke="#0f172a", sw=2.5)
