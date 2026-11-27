@@ -84,11 +84,11 @@ def build_ne_ref():
     add_kors_north(sc, 1166, 146, 281, 385, 530, single=False, layer=3)
     add_kors_north(sc, 1166, 375, 491, 655, 770, single=False, layer=3)
 
-    # Main EAST roof slope (with 3 skylights!)
+    # Main EAST roof slope (with 4 skylights aligned directly over the 4 vertical east window axes!)
     ov_x = 866.0 + 35.0
     z_ov = z_eaves - 35.0 * t_main
     sc.add_poly([(433, -35, z_ridge), (433, 1201, z_ridge), (ov_x, 1201, z_ov), (ov_x, -35, z_ov)], "#1e293b", stroke="#0f172a", sw=2.0, layer=4)
-    for sy in [220, 583, 946]:
+    for sy in [176, 456, 671, 946]:
         xa, xb = 530.0, 645.0
         za = z_ridge - (xa - 433.0) * t_main + 3.0
         zb = z_ridge - (xb - 433.0) * t_main + 3.0
@@ -177,11 +177,11 @@ def build_se_ref():
         add_kors_east(sc, 866, cy - 62, cy + 62, 105, 250, layer=4)
         add_kors_east(sc, 866, cy - 62, cy + 62, 385, 530, layer=4)
 
-    # Main EAST roof slope (with 3 skylights)
+    # Main EAST roof slope (with 4 skylights aligned directly over the 4 vertical east window axes!)
     ov_x = 866.0 + 35.0
     z_ov = z_eaves - 35.0 * t_main
     sc.add_poly([(433, -35, z_ridge), (433, 1201, z_ridge), (ov_x, 1201, z_ov), (ov_x, -35, z_ov)], "#1e293b", stroke="#0f172a", sw=2.0, layer=5)
-    for sy in [220, 583, 946]:
+    for sy in [176, 456, 671, 946]:
         xa, xb = 530.0, 645.0
         za = z_ridge - (xa - 433.0) * t_main + 3.0
         zb = z_ridge - (xb - 433.0) * t_main + 3.0

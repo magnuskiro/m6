@@ -211,12 +211,12 @@ def draw_east(d: ElevDraw):
     d.siding(0, -610, 1166, 570)
     d.rect(0, -40, 1166, 40, fill="#64748b", stroke="#334155", sw=1.5)
 
-    # Main roof (32.7°) with 3 symmetrical skylights (as in architect's fasader-1.jpg!)
+    # Main roof (32.7°) with 4 skylights aligned directly over the 4 vertical east window axes!
     d.poly([(-35, -600), (1201, -600), (1201, -890), (-35, -890)], fill="#1e293b", stroke="#0f172a", sw=2.5)
     for ry in range(-860, -600, 34):
         d.line(-32, ry, 1198, ry, stroke="#334155", sw=1)
-    for sx in [165, 528, 890]:
-        d.rect(sx, -825, 110, 135, fill="#93c5fd", stroke="#0f172a", sw=2.2)
+    for cx in [176, 456, 671, 946]:
+        d.rect(cx - 55, -825, 110, 135, fill="#93c5fd", stroke="#0f172a", sw=2.2)
 
     # FOUR CLEAN VERTICAL KORS-SPROSSE WINDOW AXES matching exact room layout:
     # Axis 1 (Sørøst, y=990 -> x=176): 1.etg Kjøkken / 2.etg Sov 3
@@ -250,7 +250,7 @@ def draw_east(d: ElevDraw):
     d.dim_h(0, 1166, 70, "11,66 m (eksisterende lengde)", bold=True)
     d.dim_h(1166, 1376, 70, "2,10 m nord", color="#ea580c", bold=True)
     d.text(650, -1065, "FASADE ØST (Nordøst)", size=23, weight="800", fill="#0f172a")
-    d.text(650, -1032, "4 stramme kors-sprosse-akser (romjustert!) • 3 takvinduer • Kjellernedgang + Utebod i nord-tilbygg", size=14, weight="600", fill="#059669")
+    d.text(650, -1032, "4 stramme kors-sprosse-akser • 4 takvinduer linjert over vinduene • 1 sentrert kjeller-/boddør i nord-tilbygg", size=14, weight="600", fill="#059669")
 
 
 def draw_south(d: ElevDraw):

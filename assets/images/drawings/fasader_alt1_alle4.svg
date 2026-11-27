@@ -237,9 +237,10 @@
 <line x1="1498.2" y1="485.8" x2="2334.6" y2="485.8" stroke="#334155" stroke-width="1"/>
 <line x1="1498.2" y1="508.9" x2="2334.6" y2="508.9" stroke="#334155" stroke-width="1"/>
 <line x1="1498.2" y1="532.0" x2="2334.6" y2="532.0" stroke="#334155" stroke-width="1"/>
-<rect x="1632.2" y="394.0" width="74.8" height="91.8" fill="#93c5fd" stroke="#0f172a" stroke-width="2.2"/>
-<rect x="1879.0" y="394.0" width="74.8" height="91.8" fill="#93c5fd" stroke="#0f172a" stroke-width="2.2"/>
-<rect x="2125.2" y="394.0" width="74.8" height="91.8" fill="#93c5fd" stroke="#0f172a" stroke-width="2.2"/>
+<rect x="1602.3" y="394.0" width="74.8" height="91.8" fill="#93c5fd" stroke="#0f172a" stroke-width="2.2"/>
+<rect x="1792.7" y="394.0" width="74.8" height="91.8" fill="#93c5fd" stroke="#0f172a" stroke-width="2.2"/>
+<rect x="1938.9" y="394.0" width="74.8" height="91.8" fill="#93c5fd" stroke="#0f172a" stroke-width="2.2"/>
+<rect x="2125.9" y="394.0" width="74.8" height="91.8" fill="#93c5fd" stroke="#0f172a" stroke-width="2.2"/>
 <rect x="1592.8" y="781.6" width="93.8" height="108.1" fill="#ffffff" stroke="#475569" stroke-width="1.4"/>
 <rect x="1590.0" y="778.2" width="99.3" height="4.1" fill="#f1f5f9" stroke="#334155" stroke-width="1.2"/>
 <rect x="1597.5" y="786.4" width="84.3" height="98.6" fill="#cbd5e1" stroke="#1e293b" stroke-width="1.8"/>
@@ -346,7 +347,7 @@
 <line x1="2455.7" y1="995.8" x2="2455.7" y2="1009.4" stroke="#ea580c" stroke-width="1.8"/>
 <text x="2384.3" y="995.8" font-size="14" font-weight="700" fill="#ea580c" text-anchor="middle">2,10 m nord</text>
 <text x="1962.0" y="230.8" font-size="23" font-weight="800" fill="#0f172a" text-anchor="middle">FASADE ØST (Nordøst)</text>
-<text x="1962.0" y="253.2" font-size="14" font-weight="600" fill="#059669" text-anchor="middle">4 stramme kors-sprosse-akser (romjustert!) • 3 takvinduer • Kjellernedgang + Utebod i nord-tilbygg</text>
+<text x="1962.0" y="253.2" font-size="14" font-weight="600" fill="#059669" text-anchor="middle">4 stramme kors-sprosse-akser • 4 takvinduer linjert over vinduene • 1 sentrert kjeller-/boddør i nord-tilbygg</text>
 <rect x="103.0" y="1191.4" width="938.4" height="693.6" fill="#f0f9ff" stroke="none" stroke-width="1.5" opacity="0.45"/>
 <rect x="103.0" y="1885.0" width="938.4" height="28.6" fill="#dcfce7" stroke="none" stroke-width="1.5" opacity="0.8"/>
 <line x1="103.0" y1="1885.0" x2="1041.4" y2="1885.0" stroke="#15803d" stroke-width="3"/>
