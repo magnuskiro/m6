@@ -200,14 +200,13 @@ class PlanBuilder:
         # Clean pill behind label
         self.rect(x + 10, mid_y - 25, 114, 50, fill="#ffffff", stroke="#cbd5e1", sw=1.2, rx=6, opacity=0.93)
 
-    def basement_stairs_v(self, x, y, w, h):
+    def basement_stairs_v(self, x, y, w, h, steps=11):
         """External basement stair along east wall descending south (top -> bottom)."""
         self.rect(x, y, w, h, fill="#e2e8f0", stroke="#64748b", sw=1.8)
-        steps = 10
         sh = h / steps
         for i in range(1, steps):
             self.line(x, y + i * sh, x + w, y + i * sh, stroke="#64748b", sw=1.3)
-        ax, ay1 = self.p(x + w / 2, y + 16)
+        ax, ay1 = self.p(x + w / 2, y + 18)
         _, ay2 = self.p(x + w / 2, y + h - 18)
         self.path(f"M {ax:.1f} {ay1:.1f} L {ax:.1f} {ay2:.1f}", stroke="#334155", sw=2.4)
         self.path(f"M {ax - 9:.1f} {ay2 - 11:.1f} L {ax:.1f} {ay2:.1f} L {ax + 9:.1f} {ay2 - 11:.1f}", stroke="#334155", sw=2.4)
@@ -577,15 +576,23 @@ def draw_shared_east_floor1(pb: PlanBuilder, north_vaskerom: bool = False):
         pb.wardrobe(658, -46, 172, 42, "Høyskap / Tørk")
         pb.room_label(728, -82, "Vaskerom", "5,0 m²")
         # NEW external covered basement stair along EAST wall, set back 1,50 m from north facade (y=-210 -> -60)!
-        # Stops at y=+154 (clear of Bad 1.etg east window at y=158..282!)
-        pb.rect(866, -60, 116, 214, fill="#f1f5f9", stroke="#475569", sw=2.0, dash="8,5", opacity=0.85)  # Takoverbygg
-        pb.basement_stairs_v(872, -52, 98, 198)
+        # Full TEK17-length stair for ΔH ~1,95-2,00 m: 2,60 m stair run (11 risers, y=-60..+200) + 1,05 m bottom landing (y=+200..+305) = 3,65 m!
+        # Upper roof (y=-60..+154) clears Bad window; lower roof (y=+154..+305) steps down cleanly BELOW Bad window sill (2,45-2,80 m headroom below grade)!
+        pb.rect(866, -60, 116, 214, fill="#f1f5f9", stroke="#475569", sw=2.0, dash="8,5", opacity=0.85)  # Høyt takoverbygg (nord for badvindu)
+        pb.rect(866, 154, 116, 152, fill="#e0f2fe", stroke="#0284c7", sw=1.8, dash="6,4", opacity=0.55)  # Lavt overbygg under badvindu (Z=+0,85m)
+        pb.basement_stairs_v(872, -54, 98, 254, steps=11)
+        # Bottom landing (bunn-repos, -1,95 m under terreng) + kjellerdør inn under Bad
+        pb.rect(872, 200, 98, 102, fill="#f8fafc", stroke="#64748b", sw=1.6)
+        pb.text(921, 246, "Bunn-", size=11, weight="700", fill="#475569")
+        pb.text(921, 260, "repos", size=11, weight="700", fill="#475569")
+        pb.text(921, 278, "(-1,95 m)", size=10, weight="600", fill="#0284c7")
         pb.rect(970, -60, 12, 12, fill="#334155")   # Nordre søyle
-        pb.rect(970, 142, 12, 12, fill="#334155")   # Søndre søyle
+        pb.rect(970, 142, 12, 12, fill="#334155")   # Midtsøyle (overgang til lavt tak)
         pb.text(924, -74, "Kjellertrapp", size=12, weight="700", fill="#059669")
-        pb.text(924, 174, "(takoverbygg)", size=11, weight="600", fill="#475569")
+        pb.text(924, 322, "3,65 m totalt", size=11, weight="700", fill="#059669")
         # 1,50 m setback dimension on east side from north facade (y=-210) to stair roof (y=-60)
         pb.dim_v(1005, -210, -60, "1,50 m", color="#059669", bold=True, text_offset=20)
+        pb.dim_v(1005, -60, 306, "3,65 m (11 trinn + repos)", color="#0284c7", bold=False, text_offset=20)
     else:
         pb.wardrobe(498, -172, 54, 164, "Gard.")
         pb.rect(746, -88, 88, 86, fill="#f8fafc", stroke="#94a3b8", sw=1.4)  # Flat landing (Repos)
@@ -865,11 +872,11 @@ def build_alt2_floor1(pb: PlanBuilder):
     pb.text(80, 460, "H2O-peis mot sofakrok • Utnytter eksist. sørvegg vest", size=15, weight="700", fill="#059669")
     pb.text(205, 882, "SPISESTUE ~12,5 m²", size=19, weight="700", fill="#854d0e")
 
-    # Dimensions (east vertical dims shifted clear of east-wall covered basement stair!)
+    # Dimensions (east vertical dims shifted clear of east-wall covered basement stair + 3,65 m dim!)
     pb.dim_h(0, 866, -265, "8,66 m (eksisterende bredde)", bold=True)
     pb.dim_h(-230, 0, -265, "2,30 m (eksist. mur!)", color="#059669", bold=True)
-    pb.dim_v(1055, -210, 0, "2,10 m nord", color="#ea580c", bold=True, text_offset=26)
-    pb.dim_v(1055, 0, 1166, "11,66 m (eksisterende lengde — INGEN syd-tilbygg)", bold=True, text_offset=26)
+    pb.dim_v(1085, -210, 0, "2,10 m nord", color="#ea580c", bold=True, text_offset=26)
+    pb.dim_v(1085, 0, 1166, "11,66 m (eksisterende lengde — INGEN syd-tilbygg)", bold=True, text_offset=26)
     pb.dim_v(-295, 0, 320, "3,20 m (nord)", color="#059669", bold=True)
     pb.dim_v(-295, 320, 822, "5,02 m (vest-tilbygg)", color="#059669", bold=True)
     pb.dim_v(-295, 822, 1166, "3,44 m (eksist. sørvegg)", color="#059669", bold=True)

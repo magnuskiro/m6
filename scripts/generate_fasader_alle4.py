@@ -281,18 +281,26 @@ def draw_east(d: ElevDraw, alt: int = 1):
         d.line(1168, ry, 1392, ry, stroke="#334155", sw=1)
 
     if alt == 2:
-        # Alt 2: External covered basement stair along EAST wall, set back 1,50 m from north facade (x_plot = 1376 - 150 = 1226!)
-        # Runs south to x_plot = 1012 (y=+154 -> 100% clear of Bad 1.etg window at x_plot=884..1008!)
-        # Concrete stair side parapet & steps descending left (south)
-        d.poly([(1012, 0), (1226, 0), (1226, -75), (1012, -75)], fill="#cbd5e1", stroke="#334155", sw=1.6)
-        d.line(1020, -68, 1218, -10, stroke="#64748b", sw=1.5, dash="6,4")  # Stair slope inside parapet
-        # Support columns & clean matte-black lean-to roof overhang (Z = -238 wall -> -204 eave)
+        # Alt 2: Full-length 3,65 m external covered basement stair along EAST wall (ΔH ~1,95-2,00 m = 11 risers + 1,05 m bottom landing!)
+        # Set back 1,50 m from north facade (x_plot = 1376 - 150 = 1226) running south to x_plot = 860 (y = +306):
+        # - Upper section (x_plot = 1012..1226, y = -60..+154): standard roof overhang (Z = -242..-204), stops NORTH of Bad window (884..1008)!
+        # - Lower section (x_plot = 860..1012, y = +154..+306): stair is already 1,65-1,95 m below grade -> sleek stepped-down glass/metal roof
+        #   at Z = -88..-70 cleanly BELOW Bad window sill (Z = -103), still giving 2,45-2,80 m headroom down at the basement door!
+        # Concrete stair parapet above ground (x_plot = 860..1226)
+        d.poly([(860, 0), (1226, 0), (1226, -70), (860, -70)], fill="#cbd5e1", stroke="#334155", sw=1.6)
+        # Dashed underground stair profile showing full descent to -1,95 m below grade!
+        d.poly([(860, 0), (1226, 0), (1226, 15), (966, 195), (860, 195)], fill="#94a3b8", opacity=0.22, stroke="#64748b", sw=1.3, dash="5,4")
+        d.text(915, 115, "Kjellergulv (-1,95 m)", size=10, weight="700", fill="#475569")
+        # Upper roof overhang (north of Bad window)
         d.rect(1014, -206, 12, 206, fill="#ffffff", stroke="#334155", sw=1.5)
         d.rect(1214, -206, 12, 206, fill="#ffffff", stroke="#334155", sw=1.5)
         d.poly([(1006, -204), (1234, -204), (1234, -242), (1006, -242)], fill="#1e293b", stroke="#0f172a", sw=2.0)
         d.line(1008, -222, 1232, -222, stroke="#334155", sw=1)
-        d.text(1120, -256, "Takoverbygg kjellertrapp", size=11, weight="700", fill="#059669")
+        # Lower stepped-down roof cleanly BELOW Bad 1.etg window sill (-103)!
+        d.poly([(856, -70), (1014, -70), (1014, -90), (856, -90)], fill="#334155", stroke="#0f172a", sw=1.6)
+        d.text(1120, -256, "Takoverbygg (avtrappet under badvindu)", size=11, weight="700", fill="#059669")
         d.dim_h(1226, 1376, -125, "1,50 m", color="#059669", bold=True, dy=-8)
+        d.dim_h(860, 1226, 225, "3,65 m kjellertrapp (11 trinn + bunn-repos)", color="#0284c7", bold=True, dy=18)
 
     d.dim_h(0, 1166, 70, "11,66 m (eksisterende lengde)", bold=True)
     d.dim_h(1166, 1376, 70, "2,10 m nord", color="#ea580c", bold=True)
