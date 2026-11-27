@@ -91,6 +91,7 @@ Eksisterende vest-utbygg (`2,28 × 4,07 m`) **rives helt** for enkel tilgang til
   * [3D-takplan & pipeklaring (`20°` saltak vs `10°` pulttak)](../assets/images/drawings/fasader_alt1_takalternativer.png)
 * **Matematisk eksakte 3D-perspektiver (null AI-forvrengning):**
   * [Sørvest — direkte sammenligning Alt 1 (`3,30×5,20 m, 20°`) vs. Catrines Alt 2 (`2,30×5,02 m, 32,7°`)](../assets/images/drawings/perspektiv_3d_eksakt_dybde.png)
+  * [Sørvest — Alt 2 (`2,30×5,02 m`) vs. **Alt 2.5 (`3,00×5,02 m`, parallelt `32,7°` saltak, uendret `33 cm` pipeklaring!)**](../assets/images/drawings/perspektiv_3d_alt25_sorvest.png)
   * [Nordvest — direkte sammenligning Alt 1 vs. Alt 2 (`32,7°` nord-tilbygg, fluktende nord-trappevinduer & vest-tverrfløy)](../assets/images/drawings/perspektiv_3d_nordvest_eksakt.png)
   * [Nordøst & Sørøst — Alternativ 2 (`100 %` fluktende østvegg, `2,50 m` nord-tilbygg, 3 åpne kjellertrinn + lavt `12°` trappetak under overlys `Bad 1.etg`)](../assets/images/drawings/perspektiv_3d_nordost_alt2_eksakt.png)
 * **Fotorealistiske 3D-renders (oppdatert kors-sprosse-serie):**
