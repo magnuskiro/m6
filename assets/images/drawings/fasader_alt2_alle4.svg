@@ -316,11 +316,6 @@
 <line x1="2312.9" y1="904.7" x2="2455.7" y2="904.7" stroke="#e2e8f0" stroke-width="0.9"/>
 <line x1="2312.9" y1="921.0" x2="2455.7" y2="921.0" stroke="#e2e8f0" stroke-width="0.9"/>
 <rect x="2312.9" y="927.8" width="142.8" height="27.2" fill="#475569" stroke="#1e293b" stroke-width="1.5"/>
-<rect x="2348.2" y="784.3" width="73.4" height="143.5" fill="#ffffff" stroke="#475569" stroke-width="1.4"/>
-<rect x="2352.3" y="788.4" width="65.3" height="139.4" fill="#f8fafc" stroke="#1e293b" stroke-width="1.8"/>
-<rect x="2361.8" y="800.6" width="46.2" height="44.2" fill="#dbeafe" stroke="#475569" stroke-width="1.3"/>
-<rect x="2361.8" y="856.4" width="46.2" height="55.8" fill="none" stroke="#94a3b8" stroke-width="1.2"/>
-<text x="2385.0" y="778.2" font-size="11" font-weight="700" fill="#475569" text-anchor="middle">Kjeller / Bod (110/210)</text>
 <polygon points="2312.9,761.2 2468.6,761.2 2468.6,619.1 2312.9,619.1" fill="#1e293b" stroke="#0f172a" stroke-width="2" stroke-linejoin="miter"/>
 <line x1="2314.2" y1="635.4" x2="2466.6" y2="635.4" stroke="#334155" stroke-width="1"/>
 <line x1="2314.2" y1="655.8" x2="2466.6" y2="655.8" stroke="#334155" stroke-width="1"/>
@@ -329,6 +324,17 @@
 <line x1="2314.2" y1="717.0" x2="2466.6" y2="717.0" stroke="#334155" stroke-width="1"/>
 <line x1="2314.2" y1="737.4" x2="2466.6" y2="737.4" stroke="#334155" stroke-width="1"/>
 <line x1="2314.2" y1="757.8" x2="2466.6" y2="757.8" stroke="#334155" stroke-width="1"/>
+<polygon points="2208.2,955.0 2353.7,955.0 2353.7,904.0 2208.2,904.0" fill="#cbd5e1" stroke="#334155" stroke-width="1.6" stroke-linejoin="miter"/>
+<line x1="2213.6" y1="908.8" x2="2348.2" y2="948.2" stroke="#64748b" stroke-width="1.5" stroke-dasharray="6,4"/>
+<rect x="2209.5" y="814.9" width="8.2" height="140.1" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+<rect x="2345.5" y="814.9" width="8.2" height="140.1" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+<polygon points="2204.1,816.3 2359.1,816.3 2359.1,790.4 2204.1,790.4" fill="#1e293b" stroke="#0f172a" stroke-width="2.0" stroke-linejoin="miter"/>
+<line x1="2205.4" y1="804.0" x2="2357.8" y2="804.0" stroke="#334155" stroke-width="1"/>
+<text x="2281.6" y="780.9" font-size="11" font-weight="700" fill="#059669" text-anchor="middle">Takoverbygg kjellertrapp</text>
+<line x1="2353.7" y1="870.0" x2="2455.7" y2="870.0" stroke="#059669" stroke-width="1.8"/>
+<line x1="2353.7" y1="863.2" x2="2353.7" y2="876.8" stroke="#059669" stroke-width="1.8"/>
+<line x1="2455.7" y1="863.2" x2="2455.7" y2="876.8" stroke="#059669" stroke-width="1.8"/>
+<text x="2404.7" y="864.6" font-size="14" font-weight="700" fill="#059669" text-anchor="middle">1,50 m</text>
 <line x1="1520.0" y1="1002.6" x2="2312.9" y2="1002.6" stroke="#334155" stroke-width="1.8"/>
 <line x1="1520.0" y1="995.8" x2="1520.0" y2="1009.4" stroke="#334155" stroke-width="1.8"/>
 <line x1="2312.9" y1="995.8" x2="2312.9" y2="1009.4" stroke="#334155" stroke-width="1.8"/>
@@ -338,7 +344,7 @@
 <line x1="2455.7" y1="995.8" x2="2455.7" y2="1009.4" stroke="#ea580c" stroke-width="1.8"/>
 <text x="2384.3" y="995.8" font-size="14" font-weight="700" fill="#ea580c" text-anchor="middle">2,10 m nord</text>
 <text x="1962.0" y="230.8" font-size="23" font-weight="800" fill="#0f172a" text-anchor="middle">FASADE ØST (Nordøst)</text>
-<text x="1962.0" y="253.2" font-size="14" font-weight="600" fill="#059669" text-anchor="middle">4 stramme kors-sprosse-akser • 4 takvinduer linjert over vinduene • 1 sentrert kjeller-/boddør i nord-tilbygg</text>
+<text x="1962.0" y="253.2" font-size="13" font-weight="600" fill="#059669" text-anchor="middle">4 stramme kors-sprosse-akser • 4 takvinduer • Overbygd kjellertrapp trukket 1,50 m tilbake fra nordfasade (klar av badvindu!)</text>
 <rect x="103.0" y="1191.4" width="938.4" height="693.6" fill="#f0f9ff" stroke="none" stroke-width="1.5" opacity="0.45"/>
 <rect x="103.0" y="1885.0" width="938.4" height="28.6" fill="#dcfce7" stroke="none" stroke-width="1.5" opacity="0.8"/>
 <line x1="103.0" y1="1885.0" x2="1041.4" y2="1885.0" stroke="#15803d" stroke-width="3"/>
@@ -591,6 +597,11 @@
 <line x1="1795.0" y1="1389.3" x2="1873.9" y2="1389.3" stroke="#475569" stroke-width="1.1"/>
 <line x1="1834.4" y1="1362.8" x2="1834.4" y2="1441.0" stroke="#ffffff" stroke-width="4.2"/>
 <line x1="1834.4" y1="1362.8" x2="1834.4" y2="1441.0" stroke="#475569" stroke-width="1.1"/>
+<rect x="1463.8" y="1834.0" width="76.2" height="51.0" fill="#cbd5e1" stroke="#475569" stroke-width="1.4" opacity="0.85"/>
+<rect x="1466.6" y="1744.9" width="8.2" height="89.1" fill="#f8fafc" stroke="#475569" stroke-width="1.3"/>
+<polygon points="1457.0,1747.6 1540.0,1720.4 1540.0,1728.6 1457.0,1754.4" fill="#334155" stroke="#0f172a" stroke-width="1.6" stroke-linejoin="miter"/>
+<text x="1501.9" y="1713.6" font-size="10" font-weight="700" fill="#059669" text-anchor="middle">Kjellertrapp</text>
+<text x="1501.9" y="1723.2" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">(1,5 m bak)</text>
 <rect x="1540.0" y="1687.8" width="329.8" height="197.2" fill="#ffffff" stroke="#0f172a" stroke-width="2.8"/>
 <line x1="1540.0" y1="1704.1" x2="1869.8" y2="1704.1" stroke="#e2e8f0" stroke-width="0.9"/>
 <line x1="1540.0" y1="1720.4" x2="1869.8" y2="1720.4" stroke="#e2e8f0" stroke-width="0.9"/>
@@ -603,22 +614,24 @@
 <line x1="1540.0" y1="1834.7" x2="1869.8" y2="1834.7" stroke="#e2e8f0" stroke-width="0.9"/>
 <line x1="1540.0" y1="1851.0" x2="1869.8" y2="1851.0" stroke="#e2e8f0" stroke-width="0.9"/>
 <rect x="1540.0" y="1857.8" width="329.8" height="27.2" fill="#475569" stroke="#1e293b" stroke-width="1.5"/>
-<rect x="1593.0" y="1718.4" width="58.5" height="99.3" fill="#ffffff" stroke="#475569" stroke-width="1.4"/>
-<rect x="1590.3" y="1715.0" width="63.9" height="4.1" fill="#f1f5f9" stroke="#334155" stroke-width="1.2"/>
-<rect x="1597.8" y="1723.2" width="49.0" height="89.8" fill="#cbd5e1" stroke="#1e293b" stroke-width="1.8"/>
-<rect x="1599.2" y="1724.5" width="46.2" height="87.0" fill="#dbeafe" stroke="none" stroke-width="1.5" opacity="0.75"/>
-<line x1="1597.8" y1="1753.7" x2="1646.8" y2="1753.7" stroke="#ffffff" stroke-width="4.2"/>
-<line x1="1597.8" y1="1753.7" x2="1646.8" y2="1753.7" stroke="#475569" stroke-width="1.1"/>
-<rect x="1698.4" y="1715.7" width="101.3" height="104.7" fill="#ffffff" stroke="#475569" stroke-width="1.4"/>
-<rect x="1695.7" y="1712.3" width="106.8" height="4.1" fill="#f1f5f9" stroke="#334155" stroke-width="1.2"/>
-<rect x="1703.2" y="1720.4" width="91.8" height="95.2" fill="#cbd5e1" stroke="#1e293b" stroke-width="1.8"/>
-<rect x="1704.6" y="1721.8" width="89.1" height="92.5" fill="#dbeafe" stroke="none" stroke-width="1.5" opacity="0.75"/>
-<line x1="1703.2" y1="1752.8" x2="1795.0" y2="1752.8" stroke="#ffffff" stroke-width="4.2"/>
-<line x1="1703.2" y1="1752.8" x2="1795.0" y2="1752.8" stroke="#475569" stroke-width="1.1"/>
-<line x1="1749.1" y1="1720.4" x2="1749.1" y2="1815.6" stroke="#ffffff" stroke-width="4.2"/>
-<line x1="1749.1" y1="1720.4" x2="1749.1" y2="1815.6" stroke="#475569" stroke-width="1.1"/>
-<text x="1622.3" y="1836.0" font-size="12" font-weight="700" fill="#64748b" text-anchor="middle">Bod</text>
-<text x="1749.4" y="1836.0" font-size="12" font-weight="700" fill="#475569" text-anchor="middle">Vindfang</text>
+<rect x="1579.4" y="1715.7" width="91.1" height="104.7" fill="#ffffff" stroke="#475569" stroke-width="1.4"/>
+<rect x="1576.7" y="1712.3" width="96.6" height="4.1" fill="#f1f5f9" stroke="#334155" stroke-width="1.2"/>
+<rect x="1584.2" y="1720.4" width="81.6" height="95.2" fill="#cbd5e1" stroke="#1e293b" stroke-width="1.8"/>
+<rect x="1585.6" y="1721.8" width="78.9" height="92.5" fill="#dbeafe" stroke="none" stroke-width="1.5" opacity="0.75"/>
+<line x1="1584.2" y1="1752.8" x2="1665.8" y2="1752.8" stroke="#ffffff" stroke-width="4.2"/>
+<line x1="1584.2" y1="1752.8" x2="1665.8" y2="1752.8" stroke="#475569" stroke-width="1.1"/>
+<line x1="1625.0" y1="1720.4" x2="1625.0" y2="1815.6" stroke="#ffffff" stroke-width="4.2"/>
+<line x1="1625.0" y1="1720.4" x2="1625.0" y2="1815.6" stroke="#475569" stroke-width="1.1"/>
+<rect x="1701.8" y="1715.7" width="101.3" height="104.7" fill="#ffffff" stroke="#475569" stroke-width="1.4"/>
+<rect x="1699.1" y="1712.3" width="106.8" height="4.1" fill="#f1f5f9" stroke="#334155" stroke-width="1.2"/>
+<rect x="1706.6" y="1720.4" width="91.8" height="95.2" fill="#cbd5e1" stroke="#1e293b" stroke-width="1.8"/>
+<rect x="1708.0" y="1721.8" width="89.1" height="92.5" fill="#dbeafe" stroke="none" stroke-width="1.5" opacity="0.75"/>
+<line x1="1706.6" y1="1752.8" x2="1798.4" y2="1752.8" stroke="#ffffff" stroke-width="4.2"/>
+<line x1="1706.6" y1="1752.8" x2="1798.4" y2="1752.8" stroke="#475569" stroke-width="1.1"/>
+<line x1="1752.5" y1="1720.4" x2="1752.5" y2="1815.6" stroke="#ffffff" stroke-width="4.2"/>
+<line x1="1752.5" y1="1720.4" x2="1752.5" y2="1815.6" stroke="#475569" stroke-width="1.1"/>
+<text x="1625.0" y="1836.0" font-size="12" font-weight="700" fill="#059669" text-anchor="middle">Vaskerom</text>
+<text x="1752.2" y="1836.0" font-size="12" font-weight="700" fill="#475569" text-anchor="middle">Vindfang</text>
 <rect x="1869.8" y="1857.8" width="102.0" height="27.2" fill="#94a3b8" stroke="#334155" stroke-width="1.5"/>
 <rect x="1960.2" y="1691.2" width="10.9" height="166.6" fill="#ffffff" stroke="#334155" stroke-width="1.8"/>
 <rect x="1869.8" y="1793.2" width="92.5" height="6.8" fill="#ffffff" stroke="#334155" stroke-width="1.4"/>
@@ -642,7 +655,7 @@
 <line x1="1540.0" y1="1932.6" x2="1869.8" y2="1932.6" stroke="#ea580c" stroke-width="1.8"/>
 <line x1="1540.0" y1="1925.8" x2="1540.0" y2="1939.4" stroke="#ea580c" stroke-width="1.8"/>
 <line x1="1869.8" y1="1925.8" x2="1869.8" y2="1939.4" stroke="#ea580c" stroke-width="1.8"/>
-<text x="1704.9" y="1925.8" font-size="14" font-weight="700" fill="#ea580c" text-anchor="middle">4,85 m (Bod + Vindfang)</text>
+<text x="1704.9" y="1925.8" font-size="14" font-weight="700" fill="#ea580c" text-anchor="middle">4,85 m (Vaskerom + Vindfang)</text>
 <line x1="1869.8" y1="1932.6" x2="1971.8" y2="1932.6" stroke="#475569" stroke-width="1.8"/>
 <line x1="1869.8" y1="1925.8" x2="1869.8" y2="1939.4" stroke="#475569" stroke-width="1.8"/>
 <line x1="1971.8" y1="1925.8" x2="1971.8" y2="1939.4" stroke="#475569" stroke-width="1.8"/>

@@ -31,7 +31,9 @@
 * **Innhold:**
   * **Vindfang (`5,4 m²`):** Garderobevegg mot øst, dobbelt kors-sprossevindu mot nord, inngangsdør `140/210` vendt vestover inn i overbygd inngangsparti.
   * **Overbygd inngangsparti / portico (`1,50 m` bredde på høyre/vestre side av tilbygget):** Trapp og klassisk tre-rekkverk mot nord.
-  * **Utvendig kjellernedgang & `Utebod (~2,6 m²)`:** **Én sentrert ytterdør (`110/210`) på østveggen** inn til toppen av kjellernedgangen, med innvendig dør videre derfra inn til `Utebod` (gir en mye renere østfasade + smalt enkelt vindu nord i boden).
+  * **Utvendig kjellernedgang & `Utebod (~2,3 m²)` (Alt 1) / `Vaskerom (5,0 m²)` + overbygd kjellertrapp øst (Alt 2):**
+    * *Alt 1:* Én sentrert ytterdør (`100/210`) på østveggen inn til flatt repos med dør nord til `Utebod` og kjellertrapp ned vestover.
+    * *Alt 2 (Catrine/Magnus):* Hele østhalvdelen av nord-tilbygget blir fullverdig **`Vaskerom (5,0 m²)`** rett vegg-i-vegg med `Bad 1. etg` (korteste rørstrekk!), mens utvendig kjellertrapp flyttes ut langs **østveggen** med eget **takoverbygg trukket `1,50 m` tilbake fra nordfasaden** (stopper klart nord for `Bad`-vinduet; avstand mot østre nabogrense verifiseres mot 4 m-regel i situasjonskart). Den lille nisjen sør for trappen (`2,2 m²`) frigjøres da til ren `Garderobe / Bod`.
 
 ### 1. etasje (Hovedetasje — eksisterende hovedkropp + vest-tilbygg)
 * **Nordvest:** Separat `Trapp (4,8 m²)`, `Vaskerom (3,9 m²)` (Alt 1) eller kompakt `Vask/Bod (2,7 m²)` (Alt 2), og `Gang`.

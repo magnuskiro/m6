@@ -226,7 +226,7 @@ def draw_west(d: ElevDraw, alt: int = 1):
         d.text(490, -1032, "3,20 m fra nord + eksist. sørvegg vest • Parallelt 32,7° saltak (samme vinkel som hovedtak — 33 cm klar av pipe!)", size=13, weight="600", fill="#059669")
 
 
-def draw_east(d: ElevDraw):
+def draw_east(d: ElevDraw, alt: int = 1):
     """FASADE ØST (Left = Sør y=1166, Right = Nord y=0, plus 1-etg Nord-tilbygg to the right y=0..-210).
     Coordinate x_plot = 1166 - y, so Sør is at x=0, Nord is at x=1166, North ext is x=1166..1376!"""
     d.rect(-80, -1020, 1540, 1020, fill="#f0f9ff", opacity=0.45)
@@ -271,18 +271,38 @@ def draw_east(d: ElevDraw):
     d.rect(1166, -290, 210, 290, fill="#ffffff", stroke="#0f172a", sw=2.5)
     d.siding(1166, -290, 210, 250)
     d.rect(1166, -40, 210, 40, fill="#475569", stroke="#1e293b", sw=1.5)
-    # SINGLE centered 110/210 external door on east face of north extension (utebod accessed internally from basement landing!)
-    d.solid_door(1224, -245, 96, 205, glass_top=True)
-    d.text(1272, -260, "Kjeller / Bod (110/210)", size=11, weight="700", fill="#475569")
+    if alt == 1:
+        # SINGLE centered 110/210 external door on east face of north extension (utebod accessed internally from basement landing!)
+        d.solid_door(1224, -245, 96, 205, glass_top=True)
+        d.text(1272, -260, "Kjeller / Bod (110/210)", size=11, weight="700", fill="#475569")
     # Parallel 32.7° saltak east roof slope (eaves -285, ridge -494!)
     d.poly([(1166, -285), (1395, -285), (1395, -494), (1166, -494)], fill="#1e293b", stroke="#0f172a", sw=2)
     for ry in range(-470, -285, 30):
         d.line(1168, ry, 1392, ry, stroke="#334155", sw=1)
 
+    if alt == 2:
+        # Alt 2: External covered basement stair along EAST wall, set back 1,50 m from north facade (x_plot = 1376 - 150 = 1226!)
+        # Runs south to x_plot = 1012 (y=+154 -> 100% clear of Bad 1.etg window at x_plot=884..1008!)
+        # Concrete stair side parapet & steps descending left (south)
+        d.poly([(1012, 0), (1226, 0), (1226, -75), (1012, -75)], fill="#cbd5e1", stroke="#334155", sw=1.6)
+        d.line(1020, -68, 1218, -10, stroke="#64748b", sw=1.5, dash="6,4")  # Stair slope inside parapet
+        # Support columns & clean matte-black lean-to roof overhang (Z = -238 wall -> -204 eave)
+        d.rect(1014, -206, 12, 206, fill="#ffffff", stroke="#334155", sw=1.5)
+        d.rect(1214, -206, 12, 206, fill="#ffffff", stroke="#334155", sw=1.5)
+        d.poly([(1006, -204), (1234, -204), (1234, -242), (1006, -242)], fill="#1e293b", stroke="#0f172a", sw=2.0)
+        d.line(1008, -222, 1232, -222, stroke="#334155", sw=1)
+        d.text(1120, -256, "Takoverbygg kjellertrapp", size=11, weight="700", fill="#059669")
+        d.dim_h(1226, 1376, -125, "1,50 m", color="#059669", bold=True, dy=-8)
+
     d.dim_h(0, 1166, 70, "11,66 m (eksisterende lengde)", bold=True)
     d.dim_h(1166, 1376, 70, "2,10 m nord", color="#ea580c", bold=True)
     d.text(650, -1065, "FASADE ØST (Nordøst)", size=23, weight="800", fill="#0f172a")
-    d.text(650, -1032, "4 stramme kors-sprosse-akser • 4 takvinduer linjert over vinduene • 1 sentrert kjeller-/boddør i nord-tilbygg", size=14, weight="600", fill="#059669")
+    sub_e = (
+        "4 stramme kors-sprosse-akser • 4 takvinduer linjert over vinduene • 1 sentrert kjeller-/boddør i nord-tilbygg"
+        if alt == 1
+        else "4 stramme kors-sprosse-akser • 4 takvinduer • Overbygd kjellertrapp trukket 1,50 m tilbake fra nordfasade (klar av badvindu!)"
+    )
+    d.text(650, -1032, sub_e, size=13, weight="600", fill="#059669")
 
 
 def draw_south(d: ElevDraw, alt: int = 1):
@@ -391,14 +411,28 @@ def draw_north(d: ElevDraw, alt: int = 1):
     d.kors_win(375, -768, 116, 115, single=False)   # Centered loft gable window
 
     # 1-STORY NORTH EXTENSION (x_plot = 0..635 = 6.35 m wide, PARALLEL 32.7° SALTAK!)
-    # Enclosed Utebod + Vindfang (x_plot = 0..485)
+    if alt == 2:
+        # Subtle recessed side view of covered east basement stair (set back 1,50 m behind north facade!)
+        d.rect(-112, -75, 112, 75, fill="#cbd5e1", stroke="#475569", sw=1.4, opacity=0.85)
+        d.rect(-108, -206, 12, 131, fill="#f8fafc", stroke="#475569", sw=1.3)
+        d.poly([(-122, -202), (0, -242), (0, -230), (-122, -192)], fill="#334155", stroke="#0f172a", sw=1.6)
+        d.text(-56, -252, "Kjellertrapp", size=10, weight="700", fill="#059669")
+        d.text(-56, -238, "(1,5 m bak)", size=9, weight="600", fill="#475569")
+
+    # Enclosed Utebod/Vaskerom + Vindfang (x_plot = 0..485)
     d.rect(0, -290, 485, 290, fill="#ffffff", stroke="#0f172a", sw=2.8)
     d.siding(0, -290, 485, 250)
     d.rect(0, -40, 485, 40, fill="#475569", stroke="#1e293b", sw=1.5)
-    d.kors_win(85, -238, 72, 132, single=True)      # Narrow single window (Utebod / kjellerlys)
-    d.kors_win(240, -242, 135, 140, single=False)   # Double kors-sprosse window (Vindfang)
-    d.text(121, -72, "Bod", size=12, weight="700", fill="#64748b")
-    d.text(308, -72, "Vindfang", size=12, weight="700", fill="#475569")
+    if alt == 1:
+        d.kors_win(85, -238, 72, 132, single=True)      # Narrow single window (Utebod / kjellerlys)
+        d.kors_win(240, -242, 135, 140, single=False)   # Double kors-sprosse window (Vindfang)
+        d.text(121, -72, "Bod", size=12, weight="700", fill="#64748b")
+        d.text(308, -72, "Vindfang", size=12, weight="700", fill="#475569")
+    else:
+        d.kors_win(65, -242, 120, 140, single=False)    # Double kors-sprosse window (Vaskerom 5,0 m²!)
+        d.kors_win(245, -242, 135, 140, single=False)   # Double kors-sprosse window (Vindfang)
+        d.text(125, -72, "Vaskerom", size=12, weight="700", fill="#059669")
+        d.text(312, -72, "Vindfang", size=12, weight="700", fill="#475569")
 
     # Covered entry porch / portico on RIGHT side of north extension (x_plot = 485..635) with classic vertical railing!
     d.rect(485, -40, 150, 40, fill="#94a3b8", stroke="#334155", sw=1.5)
@@ -420,7 +454,7 @@ def draw_north(d: ElevDraw, alt: int = 1):
     d.poly([(-28, -272), (317.5, -508), (663, -272), (648, -262), (317.5, -488), (-13, -262)], fill="#1e293b", stroke="#0f172a", sw=2)
     d.text(317.5, -524, "32,7° parallelt saltak", size=13, weight="700", fill="#ea580c")
 
-    d.dim_h(0, 485, 70, "4,85 m (Bod + Vindfang)", color="#ea580c", bold=True)
+    d.dim_h(0, 485, 70, "4,85 m (Bod + Vindfang)" if alt == 1 else "4,85 m (Vaskerom + Vindfang)", color="#ea580c", bold=True)
     d.dim_h(485, 635, 70, "1,50 m", color="#475569")
     d.dim_h(635, 866, 70, "2,31 m", color="#475569")
     d.dim_h(866, 866 + west_d, 70, "3,30 m vest" if alt == 1 else "2,30 m vest", color="#0284c7" if alt == 1 else "#059669", bold=True)
@@ -463,7 +497,7 @@ def build_sheet(alt: int):
 
     # Top-right: Fasade Øst
     d2 = ElevDraw(ox=1520, oy=955, scale=0.68)
-    draw_east(d2)
+    draw_east(d2, alt=alt)
     svg.extend(d2.els)
 
     # Bottom-left: Fasade Sør
