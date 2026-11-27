@@ -154,6 +154,9 @@ class PlanBuilder:
         if swing_down:
             self.path(f"M {px1:.1f} {py + half:.1f} A {half} {half} 0 0 0 {px1 + half:.1f} {py:.1f}", stroke="#64748b", sw=1.8, dash="5,4")
             self.path(f"M {px2:.1f} {py + half:.1f} A {half} {half} 0 0 1 {px2 - half:.1f} {py:.1f}", stroke="#64748b", sw=1.8, dash="5,4")
+        else:
+            self.path(f"M {px1:.1f} {py - half:.1f} A {half} {half} 0 0 1 {px1 + half:.1f} {py:.1f}", stroke="#64748b", sw=1.8, dash="5,4")
+            self.path(f"M {px2:.1f} {py - half:.1f} A {half} {half} 0 0 0 {px2 - half:.1f} {py:.1f}", stroke="#64748b", sw=1.8, dash="5,4")
 
     def dim_h(self, x1, x2, y, label, color="#334155", bold=False):
         self.line(x1, y, x2, y, stroke=color, sw=2)
@@ -448,6 +451,7 @@ def draw_shared_east_floor1(pb: PlanBuilder):
     pb.window_v(851, 433, 557, 30)   # Axis 3: Sov/Pult 1. etg (aligned under Bad 2. etg!)
     pb.window_v(851, 635, 745, 30)   # Axis 2: Sov sør 1. etg (aligned under Sov 2!)
     pb.window_v(851, 928, 1052, 30)  # Axis 1: Kitchen east (aligned under Sov 3!)
+    pb.window_h(631, 761, 1151, 30)  # Kitchen south window (symmetrisk øst for sør-verandadør)
 
     # Fixtures — North extension
     pb.wardrobe(498, -172, 54, 185, "Gard.")
@@ -542,7 +546,7 @@ def draw_shared_east_floor2(pb: PlanBuilder):
     pb.single_bed(626, 886, 200, 105, head="right")
     pb.desk(680, 1060, 140, 58)
     pb.rect(774, 878, 56, 250, fill="none", stroke="#d97706", sw=2, dash="7,5")
-    pb.room_label(595, 1015, "Soverom 3", "9,4 m²", "(el. kjøkken utleie)")
+    pb.room_label(610, 1015, "Soverom 3", "9,2 m²", "(el. kjøkken utleie)")
 
 
 def build_alt1_floor1(pb: PlanBuilder):
@@ -571,31 +575,34 @@ def build_alt1_floor1(pb: PlanBuilder):
     pb.line(170, 434, 170, 720, stroke="#94a3b8", sw=2.5, dash="8,8")
     pb.line(230, 756, 468, 756, stroke="#94a3b8", sw=2.5, dash="8,8")
 
-    # West & south windows + veranda door on south wall of west wing!
-    pb.window_v(-305, 510, 840, 30)
-    pb.double_terrace_door_h(-150, 915, 150, wall_t=30, swing_down=True)  # Verandadør fra vest-tverrfløy!
-    pb.window_h(-220, -85, 425, 30)  # Dobbeltvindu nord på vest-tilbygg (som i nordfasade-skissen)
-    pb.window_h(110, 290, 1151, 30)
-    pb.window_v(15, 95, 195, 30)
+    # West, north & south windows + veranda door on south wall of west wing (matching Fasade Vest/Nord/Sør!)
+    pb.window_v(-305, 475, 640, 30)  # Vestfløy vindu nord (kors-sprosse)
+    pb.window_v(-305, 700, 865, 30)  # Vestfløy vindu sør (kors-sprosse)
+    pb.double_terrace_door_h(-160, 915, 150, wall_t=30, swing_down=True)  # Verandadør fra vest-tverrfløy (x=-235..-85)!
+    pb.window_h(-234, -99, 425, 30)  # Dobbeltvindu nord på vest-tilbygg (som i nordfasade-skissen)
+    pb.window_h(105, 235, 1151, 30)  # Spisestue sør (symmetrisk vest for sentrert verandadør)
+    pb.window_v(15, 90, 195, 30)     # Trapp vest
+    pb.window_v(15, 285, 357, 30)    # Vask vest
+    pb.window_v(15, 992, 1107, 30)   # Spisestue vest
 
-    # Fixtures & furniture
+    # Fixtures & furniture — sofa & TV placed clear of BOTH north window, fireplace (100 cm) and BOTH veranda doors!
     pb.stairs_u(36, 36, 212, 212)
     pb.washer_dryer(42, 270, count=2, vertical=False)
     pb.sink(174, 270, 72, 45)
-    pb.dining_table(240, 1005, 240, 100, seats=8)
-    pb.tv_bench(-185, 444, 195, 42)
-    pb.sofa_l(-270, 650, w_horiz=280, h_vert=225, depth=92, corner="bl")
-    pb.coffee_table(-145, 625, 130, 75)
-    pb.armchair(32, 600, 76, 76)
+    pb.dining_table(205, 985, 200, 95, seats=8)
+    pb.tv_bench(-85, 444, 190, 42)   # På 100% tett nordvegg (klar av nordvindu x=-234..-99!)
+    pb.sofa_l(-270, 515, w_horiz=240, h_vert=225, depth=92, corner="bl")  # Rygg ved y=740 -> 1,60 m fri gang til verandadør!
+    pb.coffee_table(-145, 540, 120, 68)
+    pb.armchair(25, 542, 76, 76)
     pb.chimney_and_fireplace(135, 720, 95, 55, label_side="right")
 
     # Labels
     pb.room_label(142, 138, "Trapp", "4,8 m²")
     pb.room_label(125, 375, "Vask", "3,9 m²")
     pb.text(355, 265, "Gang", size=20, weight="700", fill="#475569")
-    pb.text(-80, 550, "STUE ~24 m²", size=24, weight="800", fill="#0369a1")
-    pb.text(-80, 578, "(4,25 × 4,60 m fritt vest for pipe)", size=17, weight="700", fill="#0284c7")
-    pb.text(240, 912, "SPISESTUE ~11 m²", size=19, weight="700", fill="#854d0e")
+    pb.text(-130, 812, "STUE ~24 m²", size=23, weight="800", fill="#0369a1")
+    pb.text(-130, 838, "(1,60 m fri gang til verandadør)", size=16, weight="700", fill="#0284c7")
+    pb.text(205, 882, "SPISESTUE ~11 m²", size=19, weight="700", fill="#854d0e")
 
     # Dimensions
     pb.dim_h(0, 866, -265, "8,66 m (eksisterende bredde)", bold=True)
@@ -632,36 +639,40 @@ def build_alt1_floor2(pb: PlanBuilder):
     pb.door(310, 256, 90, "h_right_down", wall_t=12)
     pb.door(256, 315, 80, "v_down_left", wall_t=12)
 
-    # South windows + EXISTING centered veranda door (x=353..513) in 2. etg!
-    pb.window_v(-305, 510, 840, 30)
-    pb.window_h(-220, -60, 915, 30)
-    pb.window_h(-220, -85, 425, 30)  # Dobbeltvindu nord på vest-tilbygg (2. etg)
-    pb.window_h(105, 235, 1151, 30)  # Flanking south window west (Opphold 2. etg)
+    # South windows + EXISTING centered veranda door (x=353..513) in 2. etg (matching all 4 facades!)
+    pb.window_v(-305, 475, 640, 30)   # Vestfløy vindu nord
+    pb.window_v(-305, 700, 865, 30)   # Vestfløy vindu sør
+    pb.window_h(-225, -95, 915, 30)   # Vestfløy sørvindu 2. etg
+    pb.window_h(-234, -99, 425, 30)   # Dobbeltvindu nord på vest-tilbygg (2. etg)
+    pb.window_h(105, 235, 1151, 30)   # Flanking south window west (Opphold 2. etg)
     pb.double_terrace_door_h(433, 1151, 160, wall_t=30, swing_down=False)  # Eksist. sentrert verandadør 2. etg sør!
-    pb.window_h(631, 761, 1151, 30)  # Flanking south window east (Sov 3)
-    pb.window_v(15, 95, 195, 30)
+    pb.window_h(631, 761, 1151, 30)   # Flanking south window east (Sov 3)
+    pb.window_v(15, 90, 195, 30)      # Trapp vest
+    pb.window_v(15, 285, 357, 30)     # Bod/Vask vest
+    pb.window_v(15, 992, 1107, 30)    # Spis/opphold vest
 
     pb.stairs_u(36, 36, 212, 212)
     pb.washer_dryer(42, 270, count=2, vertical=False)
     pb.wardrobe(42, 375, 195, 48)
-    pb.tv_bench(-185, 444, 195, 42)
-    pb.sofa_l(-270, 650, w_horiz=280, h_vert=225, depth=92, corner="bl")
-    pb.coffee_table(-145, 625, 130, 75)
-    pb.dining_table(240, 1005, 200, 95, seats=6)
+    pb.tv_bench(-85, 444, 190, 42)    # På 100% tett nordvegg (klar av nordvindu!)
+    pb.sofa_l(-270, 515, w_horiz=240, h_vert=225, depth=92, corner="bl")
+    pb.coffee_table(-145, 540, 120, 68)
+    pb.armchair(25, 542, 76, 76)
+    pb.dining_table(200, 985, 180, 90, seats=6)  # Helt klar av innadslående sør-verandadør!
     pb.chimney_and_fireplace(135, 720, 95, 55, label_side="right")
 
     pb.room_label(142, 138, "Trapp", "4,8 m²")
     pb.room_label(118, 352, "Bod / Vask", "3,6 m²")
     pb.room_label(362, 100, "Hall", "4,5 m²", "(2-mannsbolig)")
-    pb.text(-80, 550, "LOFTSTUE / HAGESTUE", size=22, weight="800", fill="#0369a1")
-    pb.text(-80, 578, "~24 m² + 11 m² spis (innbygd)", size=17, weight="700", fill="#0284c7")
+    pb.text(-130, 812, "LOFTSTUE / HAGESTUE", size=21, weight="800", fill="#0369a1")
+    pb.text(-130, 838, "~24 m² + 11 m² spis (innbygd)", size=16, weight="700", fill="#0284c7")
 
     pb.dim_h(0, 866, -265, "8,66 m", bold=True)
     pb.dim_h(-320, 0, -265, "3,20 m (innbygd 2. etg)", color="#0284c7", bold=True)
     pb.dim_v(925, 30, 392, "3,6 m", text_offset=24)
     pb.dim_v(925, 392, 598, "2,0 m", text_offset=24)
-    pb.dim_v(925, 598, 866, "2,7 m", text_offset=24)
-    pb.dim_v(925, 866, 1136, "2,8 m", text_offset=24)
+    pb.dim_v(925, 598, 842, "2,4 m", text_offset=24)
+    pb.dim_v(925, 842, 1136, "2,9 m", text_offset=24)
 
 
 def build_alt2_floor1(pb: PlanBuilder):
@@ -855,7 +866,7 @@ if __name__ == "__main__":
         [
             "Stue ~24 m² (4,25 × 4,60 m vest for pipe)",
             "Nord-tilbygg (Vindfang 5,4 m², Kjellernedg., Utebod) + 8,7 m² Bad",
-            "Krever ~0,9 m nytt fundament vest + 25° tak / 1-løps pipe (#38)",
+            "Krever ~0,9 m nytt fundament vest + 20° saltak (28 cm klar av 2-løps pipe)",
         ],
     )
     make_sheet(
