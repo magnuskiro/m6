@@ -26,14 +26,14 @@
 
 ## 2. Romprogram (synkronisert med 1:50-skisser)
 
-### 1-etasjes Nord-tilbygg (`2,10 m` ut mot nord, `6,35 m` bredt)
-* **Takform:** **Parallelt `32,7°` saltak** (samme takvinkel som hovedtaket, møne ved `4,94 m` under den tette nordveggen til hovedsoverommet i 2. etg; høyre takflate klarer 2. etasjes nordvindu med `47 cm`).
+### 1-etasjes Nord-tilbygg (`2,10 m` i Alt 1 / `2,50 m` i Alt 2, `6,35 m` bredt)
+* **Takform:** **Parallelt `32,7°` saltak** (samme takvinkel som hovedtaket, møne under den tette nordveggen til hovedsoverommet i 2. etg; høyre takflate klarer 2. etasjes nordvindu med god margin).
 * **Innhold:**
-  * **Vindfang (`5,4 m²`):** Garderobevegg mot øst, dobbelt kors-sprossevindu mot nord, inngangsdør `140/210` vendt vestover inn i overbygd inngangsparti.
+  * **Vindfang (`5,4 m²` i Alt 1 / `6,0 m²` i Alt 2):** Romslig garderobevegg mot øst (`60 × 120 cm` skap + lang sitte-/skobenk i Alt 2), dobbelt kors-sprossevindu mot nord, inngangsdør `140/210` vendt vestover inn i overbygd inngangsparti.
   * **Overbygd inngangsparti / portico (`1,50 m` bredde på høyre/vestre side av tilbygget):** Trapp og klassisk tre-rekkverk mot nord.
-  * **Utvendig kjellernedgang & `Utebod (~2,3 m²)` (Alt 1) / `Vaskerom (5,0 m²)` + overbygd kjellertrapp øst (Alt 2):**
-    * *Alt 1:* Én sentrert ytterdør (`100/210`) på østveggen inn til flatt repos med dør nord til `Utebod` og kjellertrapp ned vestover.
-    * *Alt 2 (Catrine/Magnus):* Hele østhalvdelen av nord-tilbygget blir fullverdig **`Vaskerom (5,0 m²)`** rett vegg-i-vegg med `Bad 1. etg` (korteste rørstrekk!), mens utvendig kjellertrapp flyttes ut langs **østveggen** med eget **takoverbygg trukket `1,50 m` tilbake fra nordfasaden** (stopper klart nord for `Bad`-vinduet; avstand mot østre nabogrense verifiseres mot 4 m-regel i situasjonskart). Den lille nisjen sør for trappen (`2,2 m²`) frigjøres da til ren `Garderobe / Bod`.
+  * **Utvendig kjellernedgang & `Utebod` (Alt 1) vs. `Vaskerom` + overbygd øst-kjellertrapp (Alt 2):**
+    * *Alt 1 (`2,10 m` nord):* Én sentrert ytterdør (`100/210`) på østveggen inn til flatt repos med dør nord til `Utebod (~2,3 m²)` og kjellertrapp ned vestover.
+    * *Alt 2 (Catrine/Magnus, `2,50 m` nord):* Hele østhalvdelen av nord-tilbygget blir fullverdig **`Vaskerom (6,0 m²)`** vegg-i-vegg med `Bad 1. etg` (korteste rørstrekk!), med halvt nordvindu. Den lille nisjen sør for trappen (`2,2 m²`) frigjøres til ren `Garderobe / Bod`. Utvendig kjellertrapp (`3,65 m` lang: 3 åpne øverste trinn + `2,90 m` lavt `12°` øst-hellende parallelt takoverbygg ved `Z = 1,86 → 1,63 m` rett under `Bad 1. etg`-vinduet) legges langs **østveggen (`y = +0,60 → +4,25 m`)** slik at nedre trappeavsats går rett inn **lengst syd i `U.04`** direkte inn mot kjellergangen (mens nordøstre hjørne i kjeller forblir ledig til kompakt kjellerbad; avstand mot østre nabogrense verifiseres mot 4 m-regel).
 
 ### 1. etasje (Hovedetasje — eksisterende hovedkropp + vest-tilbygg)
 * **Nordvest:** Separat `Trapp (4,8 m²)`, `Vaskerom (3,9 m²)` (Alt 1) eller kompakt `Vask/Bod (2,7 m²)` (Alt 2), og `Gang`.
@@ -56,12 +56,12 @@
 
 Eksisterende vest-utbygg (`2,28 × 4,07 m`) **rives helt** for enkel tilgang til bæring og presis prefabrikasjon av nytt innbygd 2-etasjes vest-tilbygg.
 
-### Peistest (innsats `65 × 78 cm` rett vest på original pipe + `100 cm` brannsone)
-| Alternativ vest-tilbygg | Fri sone vest for 100 cm brannsone | Fasadesymmetri vest | Tak & original 2-løps pipe (#38) |
+### Peistest (kompakt H2O-innsats `56 × 78 cm` + `30 cm` ildfast plate + `100 cm` brannsone)
+| Alternativ vest-tilbygg | Fri sone mot sofa / opphold | Fasadesymmetri vest | Tak & original 2-løps pipe (#38) |
 | :--- | :--- | :--- | :--- |
-| **Alt 1: `3,20–3,30 × 5,20 m`** *(foretrukket romlig)* | **`2,60–2,70 m`** (god plass til full `2,6 m` L-sofa) | `4,10 | 5,20 | 2,36 m` *(evt. `3,70 | 5,20 | 2,76 m` hvis skjøvet 40 cm nord)* | **`20°` slakt saltak** (`28 cm` fri klaring nord for pipe) eller **`10°` pulttak** (`35 cm` vest, 0 gradrenner). *NB: `32,7°` saltak krasjer i pipa!* |
-| **Alt 2B: `2,80 × 4,60 m`** *(symmetrisk kompromiss)* | **`2,20 m`** (`2,1–2,2 m` L-sofa går akkurat klar) | **100 % symmetrisk (`3,53 | 4,60 | 3,53 m`)** | **`24°` saltak** — 0 pipekonflikt på tak (grønn linje #38) |
-| **Alt 2: `2,30 × 4,60 m`** *(på eksist. mur)* | **`1,70 m`** (kun rett 3-seter/sjeselong i nord, eller peis på nord-/sørside) | **100 % symmetrisk (`3,53 | 4,60 | 3,53 m`)** | Rett på eksist. `2,32 m` kjellermur + 0 pipekonflikt på tak |
+| **Alt 1: `3,20–3,30 × 5,20 m`** *(dypere tverrfløy)* | **`1,09 m` klaring** fra `100 cm` brannsone til full `2,4 × 2,4 m` L-sofa (peis vest på pipe, verandadør flyttet til nordvegg av vest-fløy) | `4,10 \| 5,20 \| 2,36 m` | **`20°` slakt saltak** (`28 cm` fri klaring nord for pipe) eller **`10°` pulttak** (`35 cm` vest, 0 gradrenner). *NB: `32,7°` saltak krasjer i pipa!* |
+| **Alt 2 (Catrine): `2,30 × 5,02 m`** *(på eksist. kjellermur)* | **`1,03 m` klaring** til L-sofa med kompakt H2O-peis på **nordside av pipe** (innsyn nord+vest rett mot sofakrok i `~26 m²` stue) | **`3,20 \| 5,02 \| 3,44 m`** *(nær 100 % symmetrisk, beholder eksist. sørvegg + mur!)* | **Parallelt `32,7°` saltak** (samme takvinkel som hovedtak!) — **`33 cm` fri klaring** nord for pipa uten takkonflikt! |
+| **Alt 2B: `2,80 × 4,60 m`** *(symmetrisk kompromiss)* | **`2,20 m`** fri sone vest for brannsone | **100 % symmetrisk (`3,53 \| 4,60 \| 3,53 m`)** | **`24°` saltak** — 0 pipekonflikt på tak |
 
 ---
 
@@ -69,7 +69,7 @@ Eksisterende vest-utbygg (`2,28 × 4,07 m`) **rives helt** for enkel tilgang til
 
 * **Materialer:** Hvit liggende trekledning, mattsvart takstein (ev. båndtekking på pulttak), mørk grå grunnmur, sorte takrenner/nedløp.
 * **Vinduer:** Gjennomgående **ekte norske 4-ruts kors-sprossevinduer** (krysspost) på alle fasader.
-* **Østfasade:** 4 stramme, symmetriske vertikale vindusakser (`Bad/Hovedsov`, `Sov Pult/Bad`, `Sov sør/Sov 2`, `Kjøkken/Sov 3`) + **4 takvinduer linjert rett over fasadevinduene**.
+* **Østfasade:** 4 stramme, symmetriske vertikale vindusakser (`Bad/Hovedsov`, `Sov Pult/Bad`, `Sov sør/Sov 2`, `Kjøkken/Sov 3`) + **4 takvinduer linjert rett over fasadevinduene**. `Bad 2. etg` (akse 3 fra sør / nr. 2 fra nord) får **smalt halvbreddevindu (`62 × 145 cm`) linjert med sørkanten** av vinduet under (`Sov/Pult`), slik at `90 × 90 cm` dusjnisje får full veggplass i nordenden av badet. I **Alt 2** får `Bad 1. etg` et høytliggende overlys-vindu (øvre tredjedel, `124 × 50 cm`, `Z = 1,98–2,48 m`) som sitter helt fritt over det lave `12°` trappetaket.
 * **Nordfasade & Vest-tverrfløy (nordvegg):** Parallelt `32,7°` saltak på nord-tilbygg (smalt bodvindu + dobbelt vindfangvindu + portico m/ rekkverk), smalt trappevindu 1. etg + dobbelt 2. etg vindu til høyre, ingen nordvindu på hovedsoverom, sentrert loftsvindu, samt **dobbel sprosset verandadør i 1. etg** (ut mot nordvest-hage/kveldssol, som frigjør hele sørvest-hjørnet i stua til en lun hjørnesofa rett mot nett `56 × 78 cm` vannkappepeis!) og dobbelt kors-sprossevindu i 2. etg på nordsiden av vest-tilbygget.
 * **Sørgavl (verandadører):**
   * **1. etg:** Eksisterende **sentrerte verandadør-åpning midt på sørgavlen (`x = 3,53–5,13 m`)** beholdes mellom spisestue og kjøkken ut til markterrasse sør; vest-tverrfløyens sørvegg får symmetriske doble kors-sprossevinduer i både 1. og 2. etg.
@@ -80,19 +80,20 @@ Eksisterende vest-utbygg (`2,28 × 4,07 m`) **rives helt** for enkel tilgang til
 ## 5. Vedlagte tegninger, 3D-projeksjoner & renders i repoet
 
 * **Plantegninger 1. & 2. etg (1 px = 1 cm):**
-  * [Alternativ 1 (`3,20 × 5,20 m` vest + nord-tilbygg)](../assets/images/drawings/plan_alt1_dypere_vest.png)
-  * [Alternativ 2 (`2,30 × 4,60 m` symmetrisk + nord-tilbygg)](../assets/images/drawings/plan_alt2_symmetrisk_vest.png)
+  * [Alternativ 1 (`3,20 × 5,20 m` vest + `2,10 m` nord-tilbygg)](../assets/images/drawings/plan_alt1_dypere_vest.png)
+  * [Alternativ 2 — Catrine/Magnus (`2,30 × 5,02 m` på eksist. mur + `2,50 m` nord-tilbygg m/ `6 m² Vaskerom` & `U.04` øst-kjellertrapp)](../assets/images/drawings/plan_alt2_symmetrisk_vest.png)
 * **Peistest (rett vest på original pipe):**
   * [Sammenligning `2,30 m` vs `2,80 m` vs `3,20 m`](../assets/images/drawings/test_peis_vest_sammenligning.png)
 * **Tekniske fasader & 3D-takplan:**
-  * [Alle 4 fasader — Alternativ 1 (`5,20×3,20 m` vest, `20°` tak, nord-verandadør)](../assets/images/drawings/fasader_alt1_alle4.png)
-  * [Alle 4 fasader — Alternativ 2 (`5,02×2,30 m` vest: `3,20 m` nord + eksist. sørvegg, parallelt `32,7°` tak)](../assets/images/drawings/fasader_alt2_alle4.png)
+  * [Alle 4 fasader — Alternativ 1 (`5,20×3,20 m` vest, `20°` tak, nord-verandadør, smalt `Bad 2. etg`-vindu)](../assets/images/drawings/fasader_alt1_alle4.png)
+  * [Alle 4 fasader — Alternativ 2 (`5,02×2,30 m` vest, parallelt `32,7°` tak, `2,50 m` nord-tilbygg, `12°` øst-kjellertrapp under overlys `Bad 1. etg`)](../assets/images/drawings/fasader_alt2_alle4.png)
   * [3D-takplan & pipeklaring (`20°` saltak vs `10°` pulttak)](../assets/images/drawings/fasader_alt1_takalternativer.png)
 * **Matematisk eksakte 3D-perspektiver (null AI-forvrengning):**
-  * [Sørvest — reell `3,30 m` vs `2,80 m` dybde](../assets/images/drawings/perspektiv_3d_eksakt_dybde.png)
-  * [Nordvest — `32,7°` parallelt nord-saltak, inngangsdør `140/210` & `3,30 m` vest-tilbygg](../assets/images/drawings/perspektiv_3d_nordvest_eksakt.png)
-* **Fotorealistiske renders:**
-  * [Sørvest (kors-sprosser)](../assets/images/drawings/render_alt1_sorvest_v2_korssprosser.jpg) · [Nordøst (kors-sprosser)](../assets/images/drawings/render_alt1_nordost_korssprosser.jpg) · [Nordvest (inngangsparti)](../assets/images/drawings/render_alt1_nordvest_inngang.jpg) *(oppdatert 4-hjørners serie planlagt etter kvotenullstilling)*
+  * [Sørvest — direkte sammenligning Alt 1 (`3,30×5,20 m, 20°`) vs. Catrines Alt 2 (`2,30×5,02 m, 32,7°`)](../assets/images/drawings/perspektiv_3d_eksakt_dybde.png)
+  * [Nordvest — `32,7°` parallelt nord-saltak, inngangsdør `140/210`, nord-verandadør & `3,30 m` vest-tilbygg](../assets/images/drawings/perspektiv_3d_nordvest_eksakt.png)
+* **Fotorealistiske 3D-renders (oppdatert kors-sprosse-serie):**
+  * **Alternativ 1 — alle 4 hjørner:** [Sørvest](../assets/images/drawings/render_4hjorner_sorvest.jpg) · [Nordvest](../assets/images/drawings/render_4hjorner_nordvest.jpg) · [Nordøst](../assets/images/drawings/render_4hjorner_nordost.jpg) · [Sørøst](../assets/images/drawings/render_4hjorner_sorost.jpg)
+  * **Alternativ 2 (Catrine, `2,30 × 5,02 m`, `32,7°` parallelt saltak):** [Sørvest](../assets/images/drawings/render_alt2_sorvest.jpg)
 
 ---
 
