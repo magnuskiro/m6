@@ -303,20 +303,22 @@ def draw_east(d: ElevDraw, alt: int = 1):
         d.line(1168, ry, 1166 + nd + 16, ry, stroke="#334155", sw=1)
 
     if alt == 2:
-        # Alt 2 (2,50 m north ext): Full 3,65 m external basement stair set back 1,50 m from north facade (y=-100..+266 -> x_plot=1266..900)!
-        # Top 3 steps open (1266..1191), then LOW HORIZONTAL roof (12° east, Z=186->163) runs 1191..900 cleanly BELOW upper-third Bad window!
-        d.poly([(900, 0), (1266, 0), (1266, -65), (900, -65)], fill="#cbd5e1", stroke="#334155", sw=1.6)
-        d.poly([(900, 0), (1266, 0), (1266, 15), (1006, 195), (900, 195)], fill="#94a3b8", opacity=0.22, stroke="#64748b", sw=1.3, dash="5,4")
-        d.text(955, 115, "Kjellergulv (-1,95 m)", size=10, weight="700", fill="#475569")
-        d.rect(1180, -163, 12, 163, fill="#ffffff", stroke="#334155", sw=1.5)
-        d.rect(1042, -163, 12, 163, fill="#ffffff", stroke="#334155", sw=1.5)
-        d.rect(904, -163, 12, 163, fill="#ffffff", stroke="#334155", sw=1.5)
-        d.poly([(894, -163), (1198, -163), (1198, -186), (894, -186)], fill="#1e293b", stroke="#0f172a", sw=2.0)
-        d.line(896, -174, 1196, -174, stroke="#334155", sw=1.0)
-        d.text(1110, -110, "Lavt horisontalt tak (12° øst)", size=10, weight="700", fill="#059669")
-        d.text(1230, -82, "3 åpne trinn", size=9, weight="600", fill="#475569")
-        d.dim_h(1266, 1166 + nd, -125, "1,50 m", color="#059669", bold=True, dy=-8)
-        d.dim_h(900, 1266, 225, "3,65 m kjellertrapp (3 åpne trinn + 2,90 m tak -> 2,2-3,6 m høyde)", color="#0284c7", bold=True, dy=18)
+        # Alt 2 (2,50 m north ext): Full 3,65 m external basement stair landing at SOUTH END OF U.04 (y=+60..+425 -> x_plot=1106..741)!
+        # Top 3 steps open (1106..1031), then LOW HORIZONTAL roof (12° east, Z=186->163) runs 1031..741:
+        # - Cleanly BELOW upper-third Bad 1.etg window (x_plot=884..1008)
+        # - Stops 8 cm NORTH of Sov/Pult 1.etg window (x_plot=609..733) -> ZERO overlap!
+        # - Enters straight into south end of U.04 -> direct access to central basement hallway!
+        d.poly([(741, 0), (1106, 0), (1106, -65), (741, -65)], fill="#cbd5e1", stroke="#334155", sw=1.6)
+        d.poly([(741, 0), (1106, 0), (1106, 15), (846, 195), (741, 195)], fill="#94a3b8", opacity=0.22, stroke="#64748b", sw=1.3, dash="5,4")
+        d.text(795, 115, "Bunn-repos syd i U.04 (-1,95 m)", size=10, weight="700", fill="#475569")
+        d.rect(1020, -163, 12, 163, fill="#ffffff", stroke="#334155", sw=1.5)
+        d.rect(882, -163, 12, 163, fill="#ffffff", stroke="#334155", sw=1.5)
+        d.rect(745, -163, 12, 163, fill="#ffffff", stroke="#334155", sw=1.5)
+        d.poly([(738, -163), (1035, -163), (1035, -186), (738, -186)], fill="#1e293b", stroke="#0f172a", sw=2.0)
+        d.line(740, -174, 1033, -174, stroke="#334155", sw=1.0)
+        d.text(890, -110, "Lavt horisontalt tak (12° øst)", size=10, weight="700", fill="#059669")
+        d.text(1070, -82, "3 åpne trinn", size=9, weight="600", fill="#475569")
+        d.dim_h(741, 1106, 225, "3,65 m kjellertrapp -> bunn-repos syd i U.04 (rett inn i kjellergang!)", color="#0284c7", bold=True, dy=18)
 
     d.dim_h(0, 1166, 70, "11,66 m (eksisterende lengde)", bold=True)
     d.dim_h(1166, 1166 + nd, 70, "2,10 m nord" if alt == 1 else "2,50 m nord", color="#ea580c", bold=True)

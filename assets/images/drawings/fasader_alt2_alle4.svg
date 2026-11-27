@@ -320,24 +320,20 @@
 <line x1="2314.2" y1="717.0" x2="2493.8" y2="717.0" stroke="#334155" stroke-width="1"/>
 <line x1="2314.2" y1="737.4" x2="2493.8" y2="737.4" stroke="#334155" stroke-width="1"/>
 <line x1="2314.2" y1="757.8" x2="2493.8" y2="757.8" stroke="#334155" stroke-width="1"/>
-<polygon points="2132.0,955.0 2380.9,955.0 2380.9,910.8 2132.0,910.8" fill="#cbd5e1" stroke="#334155" stroke-width="1.6" stroke-linejoin="miter"/>
-<polygon points="2132.0,955.0 2380.9,955.0 2380.9,965.2 2204.1,1087.6 2132.0,1087.6" fill="#94a3b8" stroke="#64748b" stroke-width="1.3" stroke-linejoin="miter" stroke-dasharray="5,4" opacity="0.22"/>
-<text x="2169.4" y="1033.2" font-size="10" font-weight="700" fill="#475569" text-anchor="middle">Kjellergulv (-1,95 m)</text>
-<rect x="2322.4" y="844.2" width="8.2" height="110.8" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
-<rect x="2228.6" y="844.2" width="8.2" height="110.8" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
-<rect x="2134.7" y="844.2" width="8.2" height="110.8" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
-<polygon points="2127.9,844.2 2334.6,844.2 2334.6,828.5 2127.9,828.5" fill="#1e293b" stroke="#0f172a" stroke-width="2.0" stroke-linejoin="miter"/>
-<line x1="2129.3" y1="836.7" x2="2333.3" y2="836.7" stroke="#334155" stroke-width="1.0"/>
-<text x="2274.8" y="880.2" font-size="10" font-weight="700" fill="#059669" text-anchor="middle">Lavt horisontalt tak (12° øst)</text>
-<text x="2356.4" y="899.2" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">3 åpne trinn</text>
-<line x1="2380.9" y1="870.0" x2="2482.9" y2="870.0" stroke="#059669" stroke-width="1.8"/>
-<line x1="2380.9" y1="863.2" x2="2380.9" y2="876.8" stroke="#059669" stroke-width="1.8"/>
-<line x1="2482.9" y1="863.2" x2="2482.9" y2="876.8" stroke="#059669" stroke-width="1.8"/>
-<text x="2431.9" y="864.6" font-size="14" font-weight="700" fill="#059669" text-anchor="middle">1,50 m</text>
-<line x1="2132.0" y1="1108.0" x2="2380.9" y2="1108.0" stroke="#0284c7" stroke-width="1.8"/>
-<line x1="2132.0" y1="1101.2" x2="2132.0" y2="1114.8" stroke="#0284c7" stroke-width="1.8"/>
-<line x1="2380.9" y1="1101.2" x2="2380.9" y2="1114.8" stroke="#0284c7" stroke-width="1.8"/>
-<text x="2256.4" y="1120.2" font-size="14" font-weight="700" fill="#0284c7" text-anchor="middle">3,65 m kjellertrapp (3 åpne trinn + 2,90 m tak -&gt; 2,2-3,6 m høyde)</text>
+<polygon points="2023.9,955.0 2272.1,955.0 2272.1,910.8 2023.9,910.8" fill="#cbd5e1" stroke="#334155" stroke-width="1.6" stroke-linejoin="miter"/>
+<polygon points="2023.9,955.0 2272.1,955.0 2272.1,965.2 2095.3,1087.6 2023.9,1087.6" fill="#94a3b8" stroke="#64748b" stroke-width="1.3" stroke-linejoin="miter" stroke-dasharray="5,4" opacity="0.22"/>
+<text x="2060.6" y="1033.2" font-size="10" font-weight="700" fill="#475569" text-anchor="middle">Bunn-repos syd i U.04 (-1,95 m)</text>
+<rect x="2213.6" y="844.2" width="8.2" height="110.8" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+<rect x="2119.8" y="844.2" width="8.2" height="110.8" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+<rect x="2026.6" y="844.2" width="8.2" height="110.8" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+<polygon points="2021.8,844.2 2223.8,844.2 2223.8,828.5 2021.8,828.5" fill="#1e293b" stroke="#0f172a" stroke-width="2.0" stroke-linejoin="miter"/>
+<line x1="2023.2" y1="836.7" x2="2222.4" y2="836.7" stroke="#334155" stroke-width="1.0"/>
+<text x="2125.2" y="880.2" font-size="10" font-weight="700" fill="#059669" text-anchor="middle">Lavt horisontalt tak (12° øst)</text>
+<text x="2247.6" y="899.2" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">3 åpne trinn</text>
+<line x1="2023.9" y1="1108.0" x2="2272.1" y2="1108.0" stroke="#0284c7" stroke-width="1.8"/>
+<line x1="2023.9" y1="1101.2" x2="2023.9" y2="1114.8" stroke="#0284c7" stroke-width="1.8"/>
+<line x1="2272.1" y1="1101.2" x2="2272.1" y2="1114.8" stroke="#0284c7" stroke-width="1.8"/>
+<text x="2148.0" y="1120.2" font-size="14" font-weight="700" fill="#0284c7" text-anchor="middle">3,65 m kjellertrapp -&gt; bunn-repos syd i U.04 (rett inn i kjellergang!)</text>
 <line x1="1520.0" y1="1002.6" x2="2312.9" y2="1002.6" stroke="#334155" stroke-width="1.8"/>
 <line x1="1520.0" y1="995.8" x2="1520.0" y2="1009.4" stroke="#334155" stroke-width="1.8"/>
 <line x1="2312.9" y1="995.8" x2="2312.9" y2="1009.4" stroke="#334155" stroke-width="1.8"/>

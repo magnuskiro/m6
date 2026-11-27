@@ -578,26 +578,25 @@ def draw_shared_east_floor1(pb: PlanBuilder, north_vaskerom: bool = False, north
         pb.rect(782, -ni + 6, 48, 56, fill="#f1f5f9", stroke="#64748b", sw=1.5)  # Benkeskap
         pb.wardrobe(654, -56, 176, 52, "Høyskap / Tørk")
         pb.room_label(724, -108, "Vaskerom", "6,0 m²")
-        # NEW external basement stair along EAST wall — set back 1,50 m from NEW north facade (y=-250 -> y=-100 -> y=+266)!
-        # Top 3 steps open (-100..-25 -> drops 54 cm below grade), then LOW HORIZONTAL roof (12° east, Z=186->163)
-        # runs y=-25..+266 (ends even cleaner right at Bad 1.etg window south edge, still 2,17-3,60 m headroom!).
-        st_y1 = -nd + 150   # -100 cm
-        st_y2 = st_y1 + 366 # +266 cm
-        roof_y1 = st_y1 + 75 # -25 cm (3 open steps!)
+        # NEW external basement stair along EAST wall landing at SOUTH END OF U.04 (y=+320..+425 -> straight into basement hallway!):
+        # Starts at y=+60 (off the north extension!), top 3 steps open (+60..+135), then LOW HORIZONTAL roof (12° east, Z=186->163)
+        # runs y=+135..+425 (cleanly BELOW upper-third Bad 1.etg window y=158..282 AND stops 8 cm NORTH of Sov/Pult window y=433..557!).
+        st_y1 = 60          # +60 cm (clear of north ext, 3,10 m back from north facade y=-250)
+        st_y2 = st_y1 + 365 # +425 cm (helt mot syd i U.04, 8 cm klar nord for Sov/Pult-vindu!)
+        roof_y1 = st_y1 + 75 # +135 cm (3 open steps -> -54 cm -> 2,17-2,40 m headroom under roof!)
         pb.rect(866, roof_y1, 116, st_y2 - roof_y1, fill="#f1f5f9", stroke="#475569", sw=2.0, dash="8,5", opacity=0.85)
         pb.basement_stairs_v(872, st_y1 + 6, 98, 254, steps=11)
-        # Bottom landing (bunn-repos, -1,95 m under terreng) + kjellerdør inn under Bad
+        # Bottom landing (bunn-repos, -1,95 m under terreng, helt mot syd i U.04 -> rett inn i kjellergang!)
         pb.rect(872, st_y1 + 260, 98, 102, fill="#f8fafc", stroke="#64748b", sw=1.6)
-        pb.text(921, st_y1 + 306, "Bunn-", size=11, weight="700", fill="#475569")
-        pb.text(921, st_y1 + 320, "repos", size=11, weight="700", fill="#475569")
-        pb.text(921, st_y1 + 338, "(-1,95 m)", size=10, weight="600", fill="#0284c7")
+        pb.text(921, st_y1 + 300, "Bunn-repos", size=10, weight="700", fill="#475569")
+        pb.text(921, st_y1 + 314, "syd i U.04", size=10, weight="700", fill="#059669")
+        pb.text(921, st_y1 + 330, "(-1,95 m)", size=10, weight="600", fill="#0284c7")
         pb.rect(970, roof_y1, 12, 12, fill="#334155")
         pb.rect(970, (roof_y1 + st_y2) / 2 - 6, 12, 12, fill="#334155")
         pb.rect(970, st_y2 - 12, 12, 12, fill="#334155")
         pb.text(924, st_y1 - 14, "Kjellertrapp", size=12, weight="700", fill="#059669")
         pb.text(924, st_y2 + 18, "Lavt tak (12° øst)", size=11, weight="700", fill="#059669")
-        pb.dim_v(1005, -nd, st_y1, "1,50 m", color="#059669", bold=True, text_offset=20)
-        pb.dim_v(1005, st_y1, st_y2, "3,65 m (11 trinn + repos)", color="#0284c7", bold=False, text_offset=20)
+        pb.dim_v(1005, st_y1, st_y2, "3,65 m (til syd i U.04)", color="#0284c7", bold=False, text_offset=20)
     else:
         pb.wardrobe(498, -172, 54, 164, "Gard.")
         pb.rect(746, -88, 88, 86, fill="#f8fafc", stroke="#94a3b8", sw=1.4)  # Flat landing (Repos)
