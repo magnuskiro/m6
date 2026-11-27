@@ -150,8 +150,8 @@ def draw_west(d: ElevDraw, alt: int = 1):
         d.rect(145, -825, 110, 135, fill="#93c5fd", stroke="#0f172a", sw=2.2)
         d.rect(975, -825, 110, 135, fill="#93c5fd", stroke="#0f172a", sw=2.2)
     else:
-        d.rect(122, -825, 110, 135, fill="#93c5fd", stroke="#0f172a", sw=2.2)
-        d.rect(934, -825, 110, 135, fill="#93c5fd", stroke="#0f172a", sw=2.2)
+        d.rect(105, -825, 110, 135, fill="#93c5fd", stroke="#0f172a", sw=2.2)
+        d.rect(939, -825, 110, 135, fill="#93c5fd", stroke="#0f172a", sw=2.2)
 
     # ORIGINAL CHIMNEY — CORRECTLY ON WEST ROOF SLOPE (y=720..775)
     d.rect(720, -895, 55, 185, fill="#7c2d12", stroke="#431407", sw=2.2)
@@ -192,38 +192,38 @@ def draw_west(d: ElevDraw, alt: int = 1):
         d.text(490, -1065, "FASADE VEST (Sørvest)", size=23, weight="800", fill="#0f172a")
         d.text(490, -1032, "Kors-sprosser • 20° slak saltak-gavl • Orig. pipe på vest-takflate (28 cm klar av gradrenne)", size=14, weight="600", fill="#0284c7")
     else:
-        # Alt 2: 100% SYMMETRIC 4.60m wing (353..813, flanks 3.53m | 4.60m | 3.53m) + PARALLEL 32.7° SALTAK (peak -758, clears chimney by 42 cm!)
-        d.kors_win(112, -248, 130, 145, single=False)  # Trapp 1. etg (mirror symmetric!)
-        d.kors_win(112, -528, 130, 145, single=False)  # Trapp 2. etg
-        d.kors_win(924, -248, 130, 145, single=False)  # Spis 1. etg (mirror symmetric!)
-        d.kors_win(924, -528, 130, 145, single=False)  # Spis 2. etg
+        # Alt 2 (Catrines oppsett): 3.20 m from north + existing south wall (y=320..822 = 5.02 m wide, 3.44 m south) + PARALLEL 32.7° SALTAK (peak -771, 33 cm clear of chimney!)
+        d.kors_win(95, -248, 130, 145, single=False)   # Trapp 1. etg (centered in 3.20 m north flank!)
+        d.kors_win(95, -528, 130, 145, single=False)   # Trapp 2. etg
+        d.kors_win(929, -248, 130, 145, single=False)  # Spis 1. etg (centered in 3.44 m south flank!)
+        d.kors_win(929, -528, 130, 145, single=False)  # Spis 2. etg
 
-        d.rect(813, -605, 18, 605, fill="#94a3b8", opacity=0.35)
-        d.rect(353, -610, 460, 610, fill="#ffffff", stroke="#0f172a", sw=3)
-        d.siding(353, -610, 460, 570)
-        d.rect(353, -40, 460, 40, fill="#475569", stroke="#1e293b", sw=1.5)
+        d.rect(822, -605, 18, 605, fill="#94a3b8", opacity=0.35)
+        d.rect(320, -610, 502, 610, fill="#ffffff", stroke="#0f172a", sw=3)
+        d.siding(320, -610, 502, 570)
+        d.rect(320, -40, 502, 40, fill="#475569", stroke="#1e293b", sw=1.5)
 
-        # Two symmetrical paired kors-sprosse windows in 4.60m wing (center 583)
-        d.kors_win(413, -255, 145, 155, single=False)
-        d.kors_win(608, -255, 145, 155, single=False)
-        d.kors_win(413, -530, 145, 150, single=False)
-        d.kors_win(608, -530, 145, 150, single=False)
+        # Two symmetrical paired kors-sprosse windows in 5.02m wing (center 571)
+        d.kors_win(382, -255, 155, 155, single=False)
+        d.kors_win(605, -255, 155, 155, single=False)
+        d.kors_win(382, -530, 155, 150, single=False)
+        d.kors_win(605, -530, 155, 150, single=False)
 
-        # PARALLEL 32.7° SALTAK GABLE (half_w=230 -> peak = -610 - 230*0.642 = -758!)
-        d.poly([(328, -600), (583, -758), (838, -600)], fill="#ffffff", stroke="#0f172a", sw=3)
-        for sy in [-625, -650, -675, -700, -725]:
-            frac = (-sy - 600) / 158.0
-            hw = 255 * (1.0 - frac) - 10
+        # PARALLEL 32.7° SALTAK GABLE (half_w=251 -> peak = -610 - 251*0.642 = -771!)
+        d.poly([(295, -600), (571, -771), (847, -600)], fill="#ffffff", stroke="#0f172a", sw=3)
+        for sy in [-625, -650, -675, -700, -725, -750]:
+            frac = (-sy - 600) / 171.0
+            hw = 276 * (1.0 - frac) - 10
             if hw > 20:
-                d.line(583 - hw, sy, 583 + hw, sy, stroke="#e2e8f0", sw=0.9)
-        d.poly([(318, -594), (583, -772), (848, -594), (833, -585), (583, -752), (333, -585)], fill="#1e293b", stroke="#0f172a", sw=2)
+                d.line(571 - hw, sy, 571 + hw, sy, stroke="#e2e8f0", sw=0.9)
+        d.poly([(285, -594), (571, -785), (857, -594), (842, -585), (571, -765), (300, -585)], fill="#1e293b", stroke="#0f172a", sw=2)
 
-        d.dim_h(0, 353, 70, "3,53 m (symm.)", color="#059669", bold=True)
-        d.dim_h(353, 813, 70, "4,60 m (vest-tilbygg)", color="#059669", bold=True)
-        d.dim_h(813, 1166, 70, "3,53 m (symm.)", color="#059669", bold=True)
+        d.dim_h(0, 320, 70, "3,20 m (nord)", color="#059669", bold=True)
+        d.dim_h(320, 822, 70, "5,02 m (vest-tilbygg)", color="#059669", bold=True)
+        d.dim_h(822, 1166, 70, "3,44 m (eksist. sørvegg)", color="#059669", bold=True)
         d.dim_v(-285, -890, 0, "8,9 m møne", bold=True, dx=-20)
-        d.text(490, -1065, "FASADE VEST — 100 % SYMMETRISK (Alt 2)", size=23, weight="800", fill="#0f172a")
-        d.text(490, -1032, "3,53 | 4,60 | 3,53 m • Parallelt 32,7° saltak (samme vinkel som hovedtak & nord-tilbygg — 42 cm klar av pipe!)", size=13, weight="600", fill="#059669")
+        d.text(490, -1065, "FASADE VEST — ALT 2 (3,20 | 5,02 | 3,44 m)", size=23, weight="800", fill="#0f172a")
+        d.text(490, -1032, "3,20 m fra nord + eksist. sørvegg vest • Parallelt 32,7° saltak (samme vinkel som hovedtak — 33 cm klar av pipe!)", size=13, weight="600", fill="#059669")
 
 
 def draw_east(d: ElevDraw):
@@ -302,9 +302,9 @@ def draw_south(d: ElevDraw, alt: int = 1):
     d.kors_win(wx, -248, win_w, 145, single=False)  # Stue 1. etg
     d.kors_win(wx, -528, win_w, 145, single=False)  # Loftstue 2. etg
 
-    # West wing roof profile: Alt 1 = 20° saltak (-708, x_stop=147); Alt 2 = 32.7° parallel saltak (-758, x_stop=230)
-    z_wr = -708 if alt == 1 else -758
-    x_st = 147 if alt == 1 else 230
+    # West wing roof profile: Alt 1 = 20° saltak (-708, x_stop=147); Alt 2 = 32.7° parallel saltak (-771, x_stop=251)
+    z_wr = -708 if alt == 1 else -771
+    x_st = 147 if alt == 1 else 251
     d.poly([(-west_d - 25, -600), (-west_d - 25, z_wr), (x_st, z_wr), (0, -600)], fill="#1e293b", stroke="#0f172a", sw=2.2)
 
     # ORIGINAL CHIMNEY (x=135..230 = 95 cm wide EAST-WEST, rising cleanly from WEST roof slope!)
@@ -367,11 +367,11 @@ def draw_north(d: ElevDraw, alt: int = 1):
         d.text(1048, -6, "Uteplass NV (verandadør)", size=11, weight="700", fill="#78350f")
         d.poly([(719, -708), (866 + west_d + 25, -708), (866 + west_d + 25, -600), (866, -600)], fill="#1e293b", stroke="#0f172a", sw=2.2)
     else:
-        # Alt 2 (2.30 m deep): centered 120 cm double kors-sprosse windows in 1st & 2nd floor + parallel 32.7° saltak (-758)!
+        # Alt 2 (2.30 m deep, 5.02 m wide): centered 120 cm double kors-sprosse windows in 1st & 2nd floor + parallel 32.7° saltak (-771)!
         wx = 866 + west_d / 2 - 60
         d.kors_win(wx, -248, 120, 145, single=False)
         d.kors_win(wx, -528, 120, 145, single=False)
-        d.poly([(636, -758), (866 + west_d + 25, -758), (866 + west_d + 25, -600), (866, -600)], fill="#1e293b", stroke="#0f172a", sw=2.2)
+        d.poly([(615, -771), (866 + west_d + 25, -771), (866 + west_d + 25, -600), (866, -600)], fill="#1e293b", stroke="#0f172a", sw=2.2)
 
     # Original chimney on west slope (x_plot = 866 - 230..135 = 636..731, right/west side of main ridge!)
     d.rect(636, -895, 95, 200, fill="#7c2d12", stroke="#431407", sw=2.2)
@@ -439,12 +439,12 @@ def build_sheet(alt: int):
     title = (
         "M6 (#50) — Alle 4 fasader (Alternativ 1: 5,20×3,20 m vest + Nord-tilbygg)"
         if alt == 1
-        else "M6 (#50) — Alle 4 fasader (Alternativ 2: 100 % symmetrisk 4,60×2,30 m vest + Nord-tilbygg)"
+        else "M6 (#50) — Alle 4 fasader (Alternativ 2: 5,02×2,30 m vest — 3,20 m nord + eksist. sørvegg)"
     )
     subtitle = (
         "Korrigert pipeplassering (på vest-takflate, IKKE på mønet) • Norske kors-sprossevinduer • Romjustert mot 1:50-plantegning"
         if alt == 1
-        else "100 % symmetrisk vestfasade (3,53 | 4,60 | 3,53 m) • Parallelt 32,7° saltak over hele huset (42 cm klar av pipe) • Rett på eksisterende 2,3 m mur"
+        else "Catrines oppsett (3,20 | 5,02 | 3,44 m) • Parallelt 32,7° saltak over hele huset (33 cm klar av pipe) • Utnytter eksisterende sørvegg & 2,3 m mur"
     )
     svg = [
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" '

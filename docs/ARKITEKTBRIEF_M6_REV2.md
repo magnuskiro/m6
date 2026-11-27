@@ -84,7 +84,7 @@ Eksisterende vest-utbygg (`2,28 × 4,07 m`) **rives helt** for enkel tilgang til
   * [Sammenligning `2,30 m` vs `2,80 m` vs `3,20 m`](../assets/images/drawings/test_peis_vest_sammenligning.png)
 * **Tekniske fasader & 3D-takplan:**
   * [Alle 4 fasader — Alternativ 1 (`5,20×3,20 m` vest, `20°` tak, nord-verandadør)](../assets/images/drawings/fasader_alt1_alle4.png)
-  * [Alle 4 fasader — Alternativ 2 (`4,60×2,30 m` 100 % symmetrisk vest, parallelt `32,7°` tak)](../assets/images/drawings/fasader_alt2_alle4.png)
+  * [Alle 4 fasader — Alternativ 2 (`5,02×2,30 m` vest: `3,20 m` nord + eksist. sørvegg, parallelt `32,7°` tak)](../assets/images/drawings/fasader_alt2_alle4.png)
   * [3D-takplan & pipeklaring (`20°` saltak vs `10°` pulttak)](../assets/images/drawings/fasader_alt1_takalternativer.png)
 * **Matematisk eksakte 3D-perspektiver (null AI-forvrengning):**
   * [Sørvest — reell `3,30 m` vs `2,80 m` dybde](../assets/images/drawings/perspektiv_3d_eksakt_dybde.png)
