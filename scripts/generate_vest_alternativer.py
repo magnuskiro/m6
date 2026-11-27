@@ -442,11 +442,12 @@ def draw_shared_east_floor1(pb: PlanBuilder):
     # South terrace double door
     pb.double_terrace_door_h(530, 1151, 160, wall_t=30, swing_down=True)
 
-    # Windows on east wall & north wall
+    # Windows on east wall & north wall (4 vertical axes matching Fasade Øst!)
     pb.window_h(340, 470, -195, 30)  # Vindfang north window
-    pb.window_v(851, 90, 210, 30)  # Bad east window
-    pb.window_v(851, 475, 650, 30)  # Sov east window
-    pb.window_v(851, 860, 1040, 30)  # Kitchen east window
+    pb.window_v(851, 158, 282, 30)   # Axis 4: Bad 1. etg (aligned under Hovedsoverom!)
+    pb.window_v(851, 433, 557, 30)   # Axis 3: Sov/Pult 1. etg (aligned under Bad 2. etg!)
+    pb.window_v(851, 635, 745, 30)   # Axis 2: Sov sør 1. etg (aligned under Sov 2!)
+    pb.window_v(851, 928, 1052, 30)  # Axis 1: Kitchen east (aligned under Sov 3!)
 
     # Fixtures — North extension
     pb.wardrobe(498, -172, 54, 185, "Gard.")
@@ -509,12 +510,14 @@ def draw_shared_east_floor2(pb: PlanBuilder):
     pb.door(464, 635, 85, "v_down_right", wall_t=12)  # Sov 2
     pb.door(464, 900, 85, "v_down_right", wall_t=12)  # Sov 3
 
-    # East windows
-    pb.window_v(851, 140, 290, 30)  # Master
-    pb.window_v(851, 450, 550, 30)  # Bad
-    pb.window_v(851, 675, 800, 30)  # Sov 2
-    pb.window_v(851, 940, 1070, 30)  # Sov 3
-    pb.window_h(310, 415, 15, 30)  # Hall north
+    # East & north windows (4 clean vertical axes matching 1. etg & Fasade Øst!)
+    pb.window_v(851, 158, 282, 30)   # Axis 4: Master east
+    pb.window_v(851, 433, 557, 30)   # Axis 3: Bad east
+    pb.window_v(851, 648, 772, 30)   # Axis 2: Sov 2 east
+    pb.window_v(851, 928, 1052, 30)  # Axis 1: Sov 3 east
+    pb.window_h(360, 440, 15, 30)    # Hall north (symmetric center)
+    pb.window_h(80, 205, 15, 30)     # Trapp north (symmetric west)
+    pb.window_h(615, 745, 15, 30)    # Master north (symmetric east)
 
     # Fixtures — Master (north headboard, matching Magnus's 2. etg sketch!)
     pb.double_bed(605, 42, 180, 200, head="top")
