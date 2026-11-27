@@ -611,33 +611,33 @@ def build_alt1_floor1(pb: PlanBuilder):
     pb.line(170, 434, 170, 720, stroke="#94a3b8", sw=2.5, dash="8,8")
     pb.line(230, 756, 468, 756, stroke="#94a3b8", sw=2.5, dash="8,8")
 
-    # West, north & south windows + veranda door on south wall of west wing (matching Fasade Vest/Nord/Sør!)
+    # West, north & south windows + veranda door on NORTH wall of west wing (matching Fasade Vest/Nord/Sør!)
     pb.window_v(-305, 475, 640, 30)  # Vestfløy vindu nord (kors-sprosse)
     pb.window_v(-305, 700, 865, 30)  # Vestfløy vindu sør (kors-sprosse)
-    pb.double_terrace_door_h(-160, 915, 150, wall_t=30, swing_down=True)  # Verandadør fra vest-tverrfløy (x=-235..-85)!
-    pb.window_h(-234, -99, 425, 30)  # Dobbeltvindu nord på vest-tilbygg (som i nordfasade-skissen)
+    pb.window_h(-225, -95, 915, 30)  # Vestfløy dobbeltvindu sør (1. etg — frigjør hele SV-hjørnet til sofa!)
+    pb.double_terrace_door_h(-160, 425, 150, wall_t=30, swing_down=False)  # Verandadør NORD på vest-tverrfløy (utadslående!)
     pb.window_h(105, 235, 1151, 30)  # Spisestue sør (symmetrisk vest for sentrert verandadør)
     pb.window_v(15, 90, 195, 30)     # Trapp vest
     pb.window_v(15, 285, 357, 30)    # Vask vest
     pb.window_v(15, 992, 1107, 30)   # Spisestue vest
 
-    # Fixtures & furniture — sofa & TV placed clear of BOTH north window, fireplace (100 cm) and BOTH veranda doors!
+    # Fixtures & furniture — cozy SW corner sofa aligned directly with H2O fireplace + wide open corridor to north veranda door!
     pb.stairs_u(36, 36, 212, 212)
     pb.washer_dryer(42, 270, count=2, vertical=False)
     pb.sink(174, 270, 72, 45)
     pb.dining_table(205, 985, 200, 95, seats=8)
-    pb.tv_bench(-85, 444, 190, 42)   # På 100% tett nordvegg (klar av nordvindu x=-234..-99!)
-    pb.sofa_l(-270, 515, w_horiz=240, h_vert=225, depth=92, corner="bl")  # Rygg ved y=740 -> 1,60 m fri gang til verandadør!
-    pb.coffee_table(-145, 540, 120, 68)
-    pb.armchair(25, 542, 76, 76)
+    pb.tv_bench(-55, 444, 190, 42)   # På 100% tett vegg (30 cm klar av nord-verandadør x=-235..-85!)
+    pb.sofa_l(-270, 635, w_horiz=240, h_vert=240, depth=92, corner="bl")  # Lun SV-hjørnesofa rett mot H2O-peis (109 cm klar!)
+    pb.coffee_table(-142, 668, 120, 70)
+    pb.armchair(18, 555, 76, 76)
     pb.chimney_and_fireplace(135, 720, 95, 55, mode="west_insert")
 
     # Labels
     pb.room_label(142, 138, "Trapp", "4,8 m²")
     pb.room_label(125, 375, "Vask", "3,9 m²")
     pb.text(355, 265, "Gang", size=20, weight="700", fill="#475569")
-    pb.text(-160, 825, "STUE ~24 m²", size=23, weight="800", fill="#0369a1")
-    pb.text(-160, 851, "(1,60 m fri gang til verandadør)", size=15, weight="700", fill="#0284c7")
+    pb.text(-165, 535, "STUE ~24 m²", size=23, weight="800", fill="#0369a1")
+    pb.text(-165, 561, "(fri utgang nord)", size=15, weight="700", fill="#0284c7")
     pb.text(205, 882, "SPISESTUE ~11 m²", size=19, weight="700", fill="#854d0e")
 
     # Dimensions
@@ -690,18 +690,18 @@ def build_alt1_floor2(pb: PlanBuilder):
     pb.stairs_u(36, 36, 212, 212)
     pb.washer_dryer(42, 270, count=2, vertical=False)
     pb.wardrobe(42, 375, 195, 48)
-    pb.tv_bench(-85, 444, 190, 42)    # På 100% tett nordvegg (klar av nordvindu!)
-    pb.sofa_l(-270, 515, w_horiz=240, h_vert=225, depth=92, corner="bl")
-    pb.coffee_table(-145, 540, 120, 68)
-    pb.armchair(25, 542, 76, 76)
+    pb.tv_bench(-55, 444, 190, 42)    # På 100% tett nordvegg (klar av nordvindu!)
+    pb.sofa_l(-270, 635, w_horiz=240, h_vert=240, depth=92, corner="bl")
+    pb.coffee_table(-142, 668, 120, 70)
+    pb.armchair(18, 555, 76, 76)
     pb.dining_table(200, 985, 180, 90, seats=6)  # Helt klar av innadslående sør-verandadør!
     pb.chimney_and_fireplace(135, 720, 95, 55, mode="west_stove")
 
     pb.room_label(142, 138, "Trapp", "4,8 m²")
     pb.room_label(118, 352, "Bod / Vask", "3,6 m²")
     pb.room_label(362, 100, "Hall", "4,5 m²", "(2-mannsbolig)")
-    pb.text(-160, 825, "LOFTSTUE / HAGESTUE", size=20, weight="800", fill="#0369a1")
-    pb.text(-160, 851, "~24 m² + 11 m² spis (innbygd)", size=15, weight="700", fill="#0284c7")
+    pb.text(-165, 535, "LOFTSTUE / HAGESTUE", size=20, weight="800", fill="#0369a1")
+    pb.text(-165, 561, "~24 m² + 11 m² spis (innbygd)", size=15, weight="700", fill="#0284c7")
 
     pb.dim_h(0, 866, -265, "8,66 m", bold=True)
     pb.dim_h(-320, 0, -265, "3,20 m (innbygd 2. etg)", color="#0284c7", bold=True)

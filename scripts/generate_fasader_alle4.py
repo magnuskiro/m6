@@ -260,11 +260,11 @@ def draw_south(d: ElevDraw):
     d.rect(-400, 0, 1380, 42, fill="#dcfce7", opacity=0.8)
     d.line(-400, 0, 980, 0, stroke="#15803d", sw=3)
 
-    # West extension side wall (x=-320..0) — 1st floor DOUBLE VERANDA DOOR onto sheltered SW terrace!
+    # West extension side wall (x=-320..0) — symmetric double kors-sprosse windows 1st & 2nd floor (veranda door moved to NORTH wall!)
     d.rect(-320, -610, 320, 610, fill="#f8fafc", stroke="#1e293b", sw=2.5)
     d.siding(-320, -610, 320, 570)
     d.rect(-320, -40, 320, 40, fill="#64748b", stroke="#334155", sw=1.5)
-    d.french_door_kors(-235, -250, 150, 210)        # Verandadør ut fra vest-tverrfløy (1. etg)
+    d.kors_win(-225, -248, 130, 145, single=False)  # Stue 1. etg (symmetrisk under 2. etg!)
     d.kors_win(-225, -528, 130, 145, single=False)  # Loftstue 2. etg
 
     # 20° gable roof of west wing in side profile (eaves -600, ridge -708, meets main slope at x=147)
@@ -300,9 +300,9 @@ def draw_south(d: ElevDraw):
     d.kors_win(631, -528, 130, 145, single=False)   # Sov 3 (2. etg, bredde 3,1 m)
     d.kors_win(375, -768, 116, 115, single=False)   # Loft gavl (sentrert rett over dørene!)
 
-    # Timber terrace deck extending around SW corner to west-wing veranda door!
-    d.rect(-280, -24, 1180, 24, fill="#d97706", opacity=0.4, stroke="#92400e", sw=1.8)
-    d.text(320, -7, "Markterrasse sør & sørvest (kobler kjøkken + vest-tverrfløy)", size=12, weight="700", fill="#78350f")
+    # Timber terrace deck along main south gable
+    d.rect(-15, -24, 905, 24, fill="#d97706", opacity=0.4, stroke="#92400e", sw=1.8)
+    d.text(433, -7, "Markterrasse sør (fra sentrert verandadør 1. etg)", size=12, weight="700", fill="#78350f")
 
     d.dim_h(-320, 0, 70, "3,20 m vest", color="#0284c7", bold=True)
     d.dim_h(0, 866, 70, "8,66 m (eksist. bredde)", bold=True)
@@ -327,9 +327,11 @@ def draw_north(d: ElevDraw):
     d.rect(866, -610, 330, 610, fill="#f8fafc", stroke="#1e293b", sw=2.5)
     d.siding(866, -610, 330, 570)
     d.rect(866, -40, 330, 40, fill="#64748b", stroke="#334155", sw=1.5)
-    # 1st & 2nd floor double kors-sprosse windows on NORTH face of west extension (as sketched by Magnus!)
-    d.kors_win(965, -248, 135, 145, single=False)
-    d.kors_win(965, -528, 135, 145, single=False)
+    # 1st floor DOUBLE VERANDA DOOR + 2nd floor double kors-sprosse window on NORTH face of west extension!
+    d.french_door_kors(958, -250, 150, 210)         # Verandadør nord ut fra vest-tverrfløy (1. etg -> NW-hage/kveldssol!)
+    d.kors_win(965, -528, 135, 145, single=False)   # Loftstue 2. etg nord
+    d.rect(925, -22, 245, 22, fill="#d97706", opacity=0.38, stroke="#92400e", sw=1.5)
+    d.text(1048, -6, "Uteplass NV (verandadør)", size=11, weight="700", fill="#78350f")
     # West wing roof profile: solid 20° saltak (-708, clears chimney!) + dashed line showing 32.7° height (-778)
     d.poly([(719, -708), (1221, -708), (1221, -600), (866, -600)], fill="#1e293b", stroke="#0f172a", sw=2.2)
 

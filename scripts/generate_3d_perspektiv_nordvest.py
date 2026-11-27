@@ -18,20 +18,33 @@ from generate_3d_perspektiv_eksakt import Camera3D, Scene3D, esc
 OUT_DIR = "/home/kiro/repos/m6/assets/images/drawings"
 
 
-def add_kors_north(sc: Scene3D, y_wall, x1, x2, z1, z2, single=False, layer=3):
-    """4-pane Norwegian kors-sprosse window on a north-facing wall (y = y_wall, facing +Y)."""
+def add_kors_north(sc: Scene3D, y_wall, x1, x2, z1, z2, single=False, is_door=False, layer=3):
+    """4-pane Norwegian kors-sprosse window or double veranda door on a north-facing wall (y = y_wall, facing +Y)."""
     y_out = y_wall + 1.5
     sc.add_poly([(x1 - 6, y_out, z1 - 6), (x2 + 6, y_out, z1 - 6), (x2 + 6, y_out, z2 + 6), (x1 - 6, y_out, z2 + 6)],
                 "#ffffff", stroke="#475569", sw=1.0, layer=layer, auto_shade=False, depth_bias=-4.0)
     sc.add_poly([(x1, y_out + 0.5, z1), (x2, y_out + 0.5, z1), (x2, y_out + 0.5, z2), (x1, y_out + 0.5, z2)],
                 "#475569", stroke="#1e293b", sw=1.3, layer=layer, auto_shade=False, depth_bias=-6.0)
-    zm = z1 + (z2 - z1) * 0.66
-    sc.add_poly([(x1 + 2, y_out + 0.8, zm), (x2 - 2, y_out + 0.8, zm), (x2 - 2, y_out + 0.8, z2 - 2), (x1 + 2, y_out + 0.8, z2 - 2)],
-                "#bae6fd", stroke="none", sw=0, layer=layer, auto_shade=False, opacity=0.42, depth_bias=-7.0)
-    sc.add_line((x1, y_out + 1.2, zm), (x2, y_out + 1.2, zm), stroke="#ffffff", sw=2.6, layer=layer, depth_bias=-9.0)
-    if not single:
+    if is_door:
+        # Solid white lower kick panel + 4-pane glass upper section!
+        zb = z1 + (z2 - z1) * 0.28
+        sc.add_poly([(x1 + 2, y_out + 0.9, z1 + 2), (x2 - 2, y_out + 0.9, z1 + 2), (x2 - 2, y_out + 0.9, zb), (x1 + 2, y_out + 0.9, zb)],
+                    "#f8fafc", stroke="#64748b", sw=1.0, layer=layer, auto_shade=False, depth_bias=-7.0)
+        zm = zb + (z2 - zb) * 0.62
+        sc.add_poly([(x1 + 2, y_out + 0.8, zm), (x2 - 2, y_out + 0.8, zm), (x2 - 2, y_out + 0.8, z2 - 2), (x1 + 2, y_out + 0.8, z2 - 2)],
+                    "#bae6fd", stroke="none", sw=0, layer=layer, auto_shade=False, opacity=0.45, depth_bias=-7.0)
+        sc.add_line((x1, y_out + 1.2, zb), (x2, y_out + 1.2, zb), stroke="#ffffff", sw=2.6, layer=layer, depth_bias=-9.0)
+        sc.add_line((x1, y_out + 1.2, zm), (x2, y_out + 1.2, zm), stroke="#ffffff", sw=2.4, layer=layer, depth_bias=-9.0)
         xm = (x1 + x2) / 2.0
-        sc.add_line((xm, y_out + 1.2, z1), (xm, y_out + 1.2, z2), stroke="#ffffff", sw=2.6, layer=layer, depth_bias=-9.0)
+        sc.add_line((xm, y_out + 1.2, z1), (xm, y_out + 1.2, z2), stroke="#ffffff", sw=2.8, layer=layer, depth_bias=-9.0)
+    else:
+        zm = z1 + (z2 - z1) * 0.66
+        sc.add_poly([(x1 + 2, y_out + 0.8, zm), (x2 - 2, y_out + 0.8, zm), (x2 - 2, y_out + 0.8, z2 - 2), (x1 + 2, y_out + 0.8, z2 - 2)],
+                    "#bae6fd", stroke="none", sw=0, layer=layer, auto_shade=False, opacity=0.42, depth_bias=-7.0)
+        sc.add_line((x1, y_out + 1.2, zm), (x2, y_out + 1.2, zm), stroke="#ffffff", sw=2.6, layer=layer, depth_bias=-9.0)
+        if not single:
+            xm = (x1 + x2) / 2.0
+            sc.add_line((xm, y_out + 1.2, z1), (xm, y_out + 1.2, z2), stroke="#ffffff", sw=2.6, layer=layer, depth_bias=-9.0)
 
 
 def add_siding_north(sc: Scene3D, y_wall, x1, x2, z1, z2, step=28, layer=2):
@@ -79,10 +92,15 @@ def build_nw_scene(cam: Camera3D, west_d=330.0, y_s=236.0, y_n=756.0, wing_deg=2
     sc.add_kors_window_west(-west_d, y_mid + 22, y_mid + 178, 100, 255, layer=2)
     sc.add_kors_window_west(-west_d, y_mid - 178, y_mid - 22, 380, 530, layer=2)
     sc.add_kors_window_west(-west_d, y_mid + 22, y_mid + 178, 380, 530, layer=2)
-    # NORTH face of west wing: 1st & 2nd floor double kors-sprosse windows!
+    # NORTH face of west wing: 1st floor DOUBLE VERANDA DOOR + low NW timber deck + 2nd floor double kors-sprosse window!
     xc_n = -west_d / 2.0
-    add_kors_north(sc, y_n, xc_n - 68, xc_n + 68, 105, 250, layer=2)
+    add_kors_north(sc, y_n, xc_n - 75, xc_n + 75, 42, 252, is_door=True, layer=2)
     add_kors_north(sc, y_n, xc_n - 68, xc_n + 68, 385, 530, layer=2)
+    # Subtle low timber patio deck outside west-wing north veranda door
+    sc.add_poly([(-west_d + 10, y_n, 20), (-15, y_n, 20), (-15, y_n + 195, 20), (-west_d + 10, y_n + 195, 20)],
+                "#d6b084", stroke="#92400e", sw=1.2, layer=1, auto_shade=True, ambient=0.75)
+    sc.add_poly([(-west_d + 10, y_n + 195, 0), (-15, y_n + 195, 0), (-15, y_n + 195, 20), (-west_d + 10, y_n + 195, 20)],
+                "#a88358", stroke="#78350f", sw=1.0, layer=1, auto_shade=True)
 
     # --- MAIN HOUSE WALLS (X=0..866, Y=0..1166) ---
     # Main West wall (X=0, Y=y_n..1166 visible in front of wing)
@@ -226,7 +244,7 @@ def build_nw_scene(cam: Camera3D, west_d=330.0, y_s=236.0, y_n=756.0, wing_deg=2
     # Callouts cleanly positioned in clear space (sky/lawn/driveway)
     sc.add_text_at((nx_w - 60, 1340, 20), "Inngangsdør 140/210 (under portico)", dx=40, dy=42, size=18, weight="800", fill="#c2410c", anchor="start")
     sc.add_text_at((nx_mid, ny_n + 26, nz_ridge + 75), "32,7° parallelt saltak (nord-tilbygg)", dx=-45, dy=-12, size=17, weight="800", fill="#0f172a")
-    sc.add_text_at((-west_d / 2, y_n + 40, 0), "3,30 m vest-tilbygg (dobbeltvinduer nord)", dy=52, size=17, weight="800", fill="#0369a1")
+    sc.add_text_at((-west_d / 2, y_n + 40, 0), "3,30 m vest-tilbygg (verandadør nord 1.etg)", dy=52, size=17, weight="800", fill="#0369a1")
     sc.add_text_at((433, 1166, z_ridge + 42), "Ingen nordvindu på Hovedsov (bak gavlen)", dx=-180, dy=10, size=15, weight="700", fill="#475569", anchor="end")
 
     return sc.render()
