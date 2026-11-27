@@ -71,10 +71,13 @@ def build_ne_ref():
     # Main EAST wall (X=866, Y=0..1166)
     sc.add_poly([(866, 0, 0), (866, 1166, 0), (866, 1166, 40), (866, 0, 40)], "#64748b", layer=2)
     sc.add_poly([(866, 0, 40), (866, 1166, 40), (866, 1166, z_eaves), (866, 0, z_eaves)], "#ffffff", stroke="#1e293b", sw=1.8, layer=2)
-    # 4 clean vertical kors-sprosse axes on EAST wall (Y = 176, 456, 671, 946)
+    # 4 clean vertical kors-sprosse axes on EAST wall (Y = 176, 456, 671, 946) — Bad 2.etg (Y=671) half width!
     for cy in [176, 456, 671, 946]:
         add_kors_east(sc, 866, cy - 62, cy + 62, 105, 250, layer=3)
-        add_kors_east(sc, 866, cy - 62, cy + 62, 385, 530, layer=3)
+        if cy == 671:
+            add_kors_east(sc, 866, cy - 32, cy + 32, 385, 530, single=True, layer=3)
+        else:
+            add_kors_east(sc, 866, cy - 62, cy + 62, 385, 530, layer=3)
 
     # Main NORTH gable (Y=1166, X=0..866)
     sc.add_poly([(0, 1166, 0), (866, 1166, 0), (866, 1166, 40), (0, 1166, 40)], "#64748b", layer=2)
@@ -181,7 +184,10 @@ def build_se_ref():
     sc.add_poly([(866, 0, 40), (866, 1166, 40), (866, 1166, z_eaves), (866, 0, z_eaves)], "#f8fafc", stroke="#1e293b", sw=2.0, layer=3)
     for cy in [176, 456, 671, 946]:
         add_kors_east(sc, 866, cy - 62, cy + 62, 105, 250, layer=4)
-        add_kors_east(sc, 866, cy - 62, cy + 62, 385, 530, layer=4)
+        if cy == 671:
+            add_kors_east(sc, 866, cy - 32, cy + 32, 385, 530, single=True, layer=4)
+        else:
+            add_kors_east(sc, 866, cy - 62, cy + 62, 385, 530, layer=4)
 
     # Main EAST roof slope (with 4 skylights aligned directly over the 4 vertical east window axes!)
     ov_x = 866.0 + 35.0

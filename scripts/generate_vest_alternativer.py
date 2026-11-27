@@ -658,7 +658,7 @@ def draw_shared_east_floor2(pb: PlanBuilder):
 
     # East & north windows (4 clean vertical axes matching 1. etg & Fasade Øst/Nord!)
     pb.window_v(851, 158, 282, 30)   # Axis 4: Master east
-    pb.window_v(851, 433, 557, 30)   # Axis 3: Bad east
+    pb.window_v(851, 463, 527, 30)   # Axis 3: Bad 2.etg east — smalt vindu (halv bredde 64 cm, sentrert på akse!)
     pb.window_v(851, 648, 772, 30)   # Axis 2: Sov 2 east
     pb.window_v(851, 928, 1052, 30)  # Axis 1: Sov 3 east
     pb.window_h(305, 425, 15, 30)    # Hall north double window (matches Fasade Nord!)

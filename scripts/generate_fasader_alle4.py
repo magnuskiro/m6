@@ -279,7 +279,11 @@ def draw_east(d: ElevDraw, alt: int = 1):
         else:
             d.kors_win(cx - 62, -248, 124, 145, single=False)
             d.text(cx, -75, lbl1, size=11, weight="700", fill="#64748b")
-        d.kors_win(cx - 62, -528, 124, 145, single=False)
+        if cx == 671:
+            # Bad 2.etg: half-width single kors-sprosse window (64 x 145 cm, centered on Axis 3!)
+            d.kors_win(cx - 32, -528, 64, 145, single=True)
+        else:
+            d.kors_win(cx - 62, -528, 124, 145, single=False)
         d.text(cx, -355, lbl2, size=11, weight="700", fill="#64748b")
 
     # 1-story NORTH EXTENSION on the right (x=1166..1376 = 2.10 m north!) with SALTAK (ridge running N-S!)
