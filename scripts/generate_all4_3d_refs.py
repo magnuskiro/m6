@@ -68,9 +68,22 @@ def build_ne_ref():
     sc.add_poly([(230, 391, 800), (230, 446, 800), (230, 446, 905), (230, 391, 905)], "#475569", stroke="#1e293b", sw=1.4, layer=1)
     sc.add_poly([(135, 446, 800), (230, 446, 800), (230, 446, 905), (135, 446, 905)], "#64748b", stroke="#1e293b", sw=1.4, layer=1)
 
-    # Main EAST wall (X=866, Y=0..1166)
-    sc.add_poly([(866, 0, 0), (866, 1166, 0), (866, 1166, 40), (866, 0, 40)], "#64748b", layer=2)
-    sc.add_poly([(866, 0, 40), (866, 1166, 40), (866, 1166, z_eaves), (866, 0, z_eaves)], "#ffffff", stroke="#1e293b", sw=1.8, layer=2)
+    # Main EAST wall + 1-story NORTH EXTENSION east wall as ONE 100% FLUSH CONTINUOUS UNBROKEN PLANE (X=866, Y=0..1376)!
+    nx_w, nx_door, nx_e = 231.0, 381.0, 866.0
+    nx_mid = (nx_w + nx_e) / 2.0
+    ny_n, nz_eaves = 1376.0, 290.0
+    nz_ridge = nz_eaves + 317.5 * t_main  # 494 cm!
+    # Continuous concrete plinth from south corner (Y=0) all the way to north-extension corner (Y=1376) — ZERO step!
+    sc.add_poly([(866, 0, 0), (866, ny_n, 0), (866, ny_n, 40), (866, 0, 40)], "#64748b", stroke="#334155", sw=1.4, layer=2)
+    # Continuous L-shaped white east facade plane (Y=0..1376 flush at X=866!) — ZERO vertical seam at Y=1166!
+    sc.add_poly([
+        (866, 0, 40), (866, ny_n, 40), (866, ny_n, nz_eaves),
+        (866, 1166, nz_eaves), (866, 1166, z_eaves), (866, 0, z_eaves)
+    ], "#ffffff", stroke="#1e293b", sw=1.8, layer=2)
+    # Continuous horizontal siding lines running unbroken across Y=0..1376 (below Z=290) and Y=0..1166 (above Z=290)
+    for sz in range(68, int(z_eaves) - 6, 28):
+        y_end = ny_n if sz < nz_eaves - 4 else 1166.0
+        sc.add_line((866.4, 0, sz), (866.4, y_end, sz), stroke="#cbd5e1", sw=0.65, layer=2, depth_bias=-2.0, opacity=0.65)
     # 4 clean vertical kors-sprosse axes on EAST wall (Y = 176, 456, 671, 946) — Bad 2.etg (609..671) flush w/ south edge!
     for cy in [176, 456, 671, 946]:
         add_kors_east(sc, 866, cy - 62, cy + 62, 105, 250, layer=3)
@@ -78,6 +91,9 @@ def build_ne_ref():
             add_kors_east(sc, 866, cy - 62, cy, 385, 530, single=True, layer=3)
         else:
             add_kors_east(sc, 866, cy - 62, cy + 62, 385, 530, layer=3)
+    # SINGLE centered 110/210 door on the FLUSH east wall of north extension (Y=1222..1320)
+    sc.add_poly([(nx_e + 1.5, 1222, 42), (nx_e + 1.5, 1320, 42), (nx_e + 1.5, 1320, 248), (nx_e + 1.5, 1222, 248)], "#f8fafc", stroke="#334155", sw=1.6, layer=3, auto_shade=False)
+    sc.add_poly([(nx_e + 2.0, 1236, 155), (nx_e + 2.0, 1306, 155), (nx_e + 2.0, 1306, 232), (nx_e + 2.0, 1236, 232)], "#bae6fd", stroke="#475569", sw=1.0, layer=3, auto_shade=False)
 
     # Main NORTH gable (Y=1166, X=0..866)
     sc.add_poly([(0, 1166, 0), (866, 1166, 0), (866, 1166, 40), (0, 1166, 40)], "#64748b", layer=2)
@@ -97,17 +113,7 @@ def build_ne_ref():
         zb = z_ridge - (xb - 433.0) * t_main + 3.0
         sc.add_poly([(xa, sy - 55, za), (xa, sy + 55, za), (xb, sy + 55, zb), (xb, sy - 55, zb)], "#7dd3fc", stroke="#0f172a", sw=1.8, layer=5, auto_shade=False)
 
-    # 1-STORY NORTH EXTENSION (X=231..866, Y=1166..1376) with PARALLEL 32.7° SALTAK!
-    nx_w, nx_door, nx_e = 231.0, 381.0, 866.0
-    nx_mid = (nx_w + nx_e) / 2.0
-    ny_n, nz_eaves = 1376.0, 290.0
-    nz_ridge = nz_eaves + 317.5 * t_main  # 494 cm!
-    # East wall of north extension (Kjellernedgang + Utebod doors!)
-    sc.add_poly([(nx_e, 1166, 0), (nx_e, ny_n, 0), (nx_e, ny_n, 40), (nx_e, 1166, 40)], "#64748b", layer=6)
-    sc.add_poly([(nx_e, 1166, 40), (nx_e, ny_n, 40), (nx_e, ny_n, nz_eaves), (nx_e, 1166, nz_eaves)], "#ffffff", stroke="#1e293b", sw=1.8, layer=6)
-    # SINGLE centered 110/210 door on east face of north extension (utebod accessed internally!)
-    sc.add_poly([(nx_e + 1.5, 1222, 42), (nx_e + 1.5, 1320, 42), (nx_e + 1.5, 1320, 248), (nx_e + 1.5, 1222, 248)], "#f8fafc", stroke="#334155", sw=1.6, layer=7, auto_shade=False)
-    sc.add_poly([(nx_e + 2.0, 1236, 155), (nx_e + 2.0, 1306, 155), (nx_e + 2.0, 1306, 232), (nx_e + 2.0, 1236, 232)], "#bae6fd", stroke="#475569", sw=1.0, layer=7, auto_shade=False)
+    # 1-STORY NORTH EXTENSION (X=231..866, Y=1166..1376) north wall + portico + PARALLEL 32.7° SALTAK!
     # North wall of enclosed Utebod + Vindfang
     sc.add_poly([(nx_door, ny_n, 0), (nx_e, ny_n, 0), (nx_e, ny_n, 40), (nx_door, ny_n, 40)], "#64748b", layer=6)
     sc.add_poly([(nx_door, ny_n, 40), (nx_e, ny_n, 40), (nx_e, ny_n, nz_eaves), (nx_door, ny_n, nz_eaves)], "#ffffff", stroke="#1e293b", sw=1.8, layer=6)
@@ -154,15 +160,11 @@ def build_se_ref():
     sc.add_poly([(230, 391, 810), (230, 446, 810), (230, 446, 905), (230, 391, 905)], "#475569", stroke="#1e293b", sw=1.4, layer=1)
     sc.add_poly([(135, 391, 810), (230, 391, 810), (230, 391, 905), (135, 391, 905)], "#64748b", stroke="#1e293b", sw=1.4, layer=1)
 
-    # 1-story north extension peeking on the far right (X=866, Y=1166..1376, parallel 32.7° saltak!)
+    # 1-story north extension roof (X=548.5..892, Y=1166..1396, parallel 32.7° saltak!) — wall is merged flush with main EAST wall below!
     nz_eaves = 290.0
     nz_ridge = nz_eaves + 317.5 * t_main
-    sc.add_poly([(866, 1166, 0), (866, 1376, 0), (866, 1376, 40), (866, 1166, 40)], "#64748b", layer=2)
-    sc.add_poly([(866, 1166, 40), (866, 1376, 40), (866, 1376, nz_eaves), (866, 1166, nz_eaves)], "#ffffff", stroke="#1e293b", sw=1.6, layer=2)
-    sc.add_poly([(866 + 1.5, 1222, 42), (866 + 1.5, 1320, 42), (866 + 1.5, 1320, 248), (866 + 1.5, 1222, 248)], "#f8fafc", stroke="#334155", sw=1.5, layer=3, auto_shade=False)
-    sc.add_poly([(866 + 2.0, 1236, 155), (866 + 2.0, 1306, 155), (866 + 2.0, 1306, 232), (866 + 2.0, 1236, 232)], "#bae6fd", stroke="#475569", sw=1.0, layer=3, auto_shade=False)
     sc.add_poly([(548.5, 1166, nz_ridge), (548.5, 1396, nz_ridge), (892, 1396, nz_eaves - 26 * t_main), (892, 1166, nz_eaves - 26 * t_main)],
-                "#1e293b", stroke="#0f172a", sw=1.8, layer=3)
+                "#1e293b", stroke="#0f172a", sw=1.8, layer=5)
 
     # Main SOUTH GABLE (Y=0, X=0..866) — 100% SYMMETRIC around EXISTING centered veranda doors (x=353..513 in 1st & 2nd)!
     sc.add_poly([(0, 0, 0), (866, 0, 0), (866, 0, 40), (0, 0, 40)], "#64748b", layer=3)
@@ -179,15 +181,23 @@ def build_se_ref():
     sc.add_kors_window_south(0, 631, 761, 385, 530, layer=4)
     sc.add_kors_window_south(0, 375, 491, 655, 770, layer=4)
 
-    # Main EAST WALL (X=866, Y=0..1166)
-    sc.add_poly([(866, 0, 0), (866, 1166, 0), (866, 1166, 40), (866, 0, 40)], "#64748b", layer=3)
-    sc.add_poly([(866, 0, 40), (866, 1166, 40), (866, 1166, z_eaves), (866, 0, z_eaves)], "#f8fafc", stroke="#1e293b", sw=2.0, layer=3)
+    # Main EAST WALL + 1-story NORTH EXTENSION east wall as ONE 100% FLUSH CONTINUOUS UNBROKEN PLANE (X=866, Y=0..1376)!
+    sc.add_poly([(866, 0, 0), (866, 1376, 0), (866, 1376, 40), (866, 0, 40)], "#64748b", stroke="#334155", sw=1.4, layer=3)
+    sc.add_poly([
+        (866, 0, 40), (866, 1376, 40), (866, 1376, nz_eaves),
+        (866, 1166, nz_eaves), (866, 1166, z_eaves), (866, 0, z_eaves)
+    ], "#f8fafc", stroke="#1e293b", sw=2.0, layer=3)
+    for sz in range(68, int(z_eaves) - 6, 28):
+        y_end = 1376.0 if sz < nz_eaves - 4 else 1166.0
+        sc.add_line((866.4, 0, sz), (866.4, y_end, sz), stroke="#cbd5e1", sw=0.65, layer=3, depth_bias=-2.0, opacity=0.65)
     for cy in [176, 456, 671, 946]:
         add_kors_east(sc, 866, cy - 62, cy + 62, 105, 250, layer=4)
         if cy == 671:
             add_kors_east(sc, 866, cy - 62, cy, 385, 530, single=True, layer=4)
         else:
             add_kors_east(sc, 866, cy - 62, cy + 62, 385, 530, layer=4)
+    sc.add_poly([(866 + 1.5, 1222, 42), (866 + 1.5, 1320, 42), (866 + 1.5, 1320, 248), (866 + 1.5, 1222, 248)], "#f8fafc", stroke="#334155", sw=1.5, layer=4, auto_shade=False)
+    sc.add_poly([(866 + 2.0, 1236, 155), (866 + 2.0, 1306, 155), (866 + 2.0, 1306, 232), (866 + 2.0, 1236, 232)], "#bae6fd", stroke="#475569", sw=1.0, layer=4, auto_shade=False)
 
     # Main EAST roof slope (with 4 skylights aligned directly over the 4 vertical east window axes!)
     ov_x = 866.0 + 35.0
