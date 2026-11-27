@@ -49,7 +49,7 @@ def add_kors_north(sc: Scene3D, y_wall, x1, x2, z1, z2, single=False, layer=3):
 def build_ne_ref():
     """Northeast 3/4 exact 3D model (East 4x2 facade + North gable w/ parallel 32.7° saltak & NO north master window)."""
     W, H = 1400, 940
-    cam = Camera3D(pos=(2250.0, 2550.0, 720.0), target=(430.0, 680.0, 380.0), fov_deg=35.0, cx=W / 2.0, cy=H * 0.56, width=W)
+    cam = Camera3D(pos=(2480.0, 2760.0, 720.0), target=(440.0, 720.0, 360.0), fov_deg=35.0, cx=W / 2.0, cy=H * 0.54, width=W)
     sc = Scene3D(cam)
     sc.sun = (0.72, 0.45, 0.52)
     t_main = math.tan(math.radians(32.7))
@@ -160,10 +160,13 @@ def build_se_ref():
     sc.add_poly([(230, 391, 810), (230, 446, 810), (230, 446, 905), (230, 391, 905)], "#475569", stroke="#1e293b", sw=1.4, layer=1)
     sc.add_poly([(135, 391, 810), (230, 391, 810), (230, 391, 905), (135, 391, 905)], "#64748b", stroke="#1e293b", sw=1.4, layer=1)
 
-    # 1-story north extension roof (X=548.5..892, Y=1166..1396, parallel 32.7° saltak!) — wall is merged flush with main EAST wall below!
+    # 1-story north extension roof (X=548.5..892, Y=1166..1396, parallel 32.7° saltak!) — layer=2 so it sits BEHIND the main east wall!
     nz_eaves = 290.0
     nz_ridge = nz_eaves + 317.5 * t_main
     sc.add_poly([(548.5, 1166, nz_ridge), (548.5, 1396, nz_ridge), (892, 1396, nz_eaves - 26 * t_main), (892, 1166, nz_eaves - 26 * t_main)],
+                "#1e293b", stroke="#0f172a", sw=1.8, layer=2)
+    # Visible roof overhang strip protruding past X=866 (X=866..892, Y=1166..1396) on layer=5
+    sc.add_poly([(866, 1166, nz_eaves), (866, 1396, nz_eaves), (892, 1396, nz_eaves - 26 * t_main), (892, 1166, nz_eaves - 26 * t_main)],
                 "#1e293b", stroke="#0f172a", sw=1.8, layer=5)
 
     # Main SOUTH GABLE (Y=0, X=0..866) — 100% SYMMETRIC around EXISTING centered veranda doors (x=353..513 in 1st & 2nd)!
