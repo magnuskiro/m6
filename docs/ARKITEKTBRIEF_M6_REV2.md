@@ -93,8 +93,9 @@ Eksisterende vest-utbygg (`2,28 × 4,07 m`) **rives helt** for enkel tilgang til
   * [Nordvest — direkte sammenligning Alt 1 (`3,30×5,20 m, 20°`) vs. Alt 2 (`2,80×5,02 m, 32,7°`)](../assets/images/drawings/perspektiv_3d_nordvest_eksakt.png)
   * [Nordøst & Sørøst — Alternativ 2 (`100 %` fluktende østvegg, `2,50 m` nord-tilbygg, 3 åpne kjellertrinn + lavt `12°` trappetak under overlys `Bad 1.etg`)](../assets/images/drawings/perspektiv_3d_nordost_alt2_eksakt.png)
   * [Sydbalkong-sammenligning — `3,20×1,60 m` utkraget vs. `3,80×2,15 m` på 2 slanke søyler](../assets/images/drawings/perspektiv_3d_balkong_sammenligning.png)
-* **Fotorealistiske 3D-renders (oppdatert kors-sprosse-serie):**
-  * **Alternativ 1 — alle 4 hjørner:** [Sørvest](../assets/images/drawings/render_4hjorner_sorvest.jpg) · [Nordvest](../assets/images/drawings/render_4hjorner_nordvest.jpg) · [Nordøst](../assets/images/drawings/render_4hjorner_nordost.jpg) · [Sørøst](../assets/images/drawings/render_4hjorner_sorost.jpg) *(Nordøst/Sørøst/Nordvest re-rendres kl. 18:45 med 100 % fluktende østvegg og rene 4-ruts kors-sprosser; Alt 2 rendres etterpå)*
+* **Fotorealistiske 3D-renders (oppdatert kors-sprosse-serie m/ moderne `3,80 × 2,15 m` sydbalkong & fluktende nord-trappevinduer):**
+  * **Alternativ 2 (Catrine — `2,80 × 5,02 m` vest, parallelt `32,7°` saltak, `2,50 m` nord):** [Sørvest](../assets/images/drawings/render_alt2_sorvest.jpg) · [Nordvest](../assets/images/drawings/render_alt2_nordvest.jpg)
+  * **Alternativ 1 (`3,30 × 5,20 m` vest, `20°` saltak, nord-verandadør):** [Sørvest](../assets/images/drawings/render_4hjorner_sorvest.jpg) · [Nordvest](../assets/images/drawings/render_4hjorner_nordvest.jpg) · [Nordøst](../assets/images/drawings/render_4hjorner_nordost.jpg) · [Sørøst](../assets/images/drawings/render_4hjorner_sorost.jpg)
 
 ---
 
