@@ -215,7 +215,7 @@ class Scene3D:
         return [s for _, _, s in self.items]
 
 
-def build_house_3d(cam: Camera3D, west_d: float, y_s: float, y_n: float, wing_deg: float, label_wing: str):
+def build_house_3d(cam: Camera3D, west_d: float, y_s: float, y_n: float, wing_deg: float, label_wing: str, balcony=(243.0, 623.0, 215.0, True)):
     """Build exact 3D geometry of Myrteveien 6 from SW 3/4 view."""
     sc = Scene3D(cam)
     t_main = math.tan(math.radians(32.7))
@@ -276,8 +276,8 @@ def build_house_3d(cam: Camera3D, west_d: float, y_s: float, y_n: float, wing_de
     sc.add_kors_window_south(0, 631, 761, 105, 250, layer=2)                # Kitchen 1st (right)
     sc.add_kors_window_south(0, 105, 235, 385, 530, layer=2)                # Opphold 2nd (left)
     sc.add_kors_window_south(0, 353, 513, 322, 532, is_door=True, layer=2)  # EXISTING centered veranda door 2nd!
-    # Modern 2nd-floor south balcony (3,80 x 2,15 m = 8,2 m²) on 2 slim white columns down to south timber deck!
-    sc.add_south_balcony(243.0, 623.0, depth=215.0, z_floor=322.0, layer=4, columns=True)
+    bx1, bx2, bdepth, bcols = balcony
+    sc.add_south_balcony(bx1, bx2, depth=bdepth, z_floor=322.0, layer=4, columns=bcols)
     sc.add_kors_window_south(0, 631, 761, 385, 530, layer=2)                # Sov 3 2nd (right, 3.1m wide)
     sc.add_kors_window_south(0, 375, 491, 655, 770, layer=2)                # Loft gable (centered!)
 
