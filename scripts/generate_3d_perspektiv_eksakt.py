@@ -380,8 +380,8 @@ def main():
         # Header
         f'<rect x="0" y="0" width="{W}" height="130" fill="#0f172a"/>',
         f'<rect x="0" y="124" width="{W}" height="6" fill="#0284c7"/>',
-        f'<text x="60" y="56" font-size="36" font-weight="800" fill="#ffffff">M6 (#50) — Eksakt 3D-sammenligning (null AI-forvrengning): Alt 1 vs. Alt 2 (Catrine)</text>',
-        f'<text x="60" y="96" font-size="21" font-weight="500" fill="#cbd5e1">Matematisk 3D-projeksjon fra eksakt samme sørvest-kamera • Alt 1 (3,30 × 5,20 m, 20° tak) vs. Alt 2 (2,30 × 5,02 m, 32,7° parallelt saltak)</text>',
+        f'<text x="60" y="56" font-size="36" font-weight="800" fill="#ffffff">M6 (#50) — Eksakt 3D-sammenligning SØRVEST: Alternativ 1 vs. Alternativ 2</text>',
+        f'<text x="60" y="96" font-size="21" font-weight="500" fill="#cbd5e1">Matematisk 3D-projeksjon fra eksakt samme sørvest-kamera • Alt 1 (3,30 × 5,20 m, 20° tak) vs. Alt 2 (3,00 × 5,02 m, 32,7° parallelt saltak)</text>',
         # Left panel backdrop
         f'<rect x="40" y="160" width="1260" height="980" fill="url(#sky)" stroke="#cbd5e1" stroke-width="2" rx="12"/>',
         # Right panel backdrop
@@ -403,22 +403,22 @@ def main():
     svg.append("</g>")
 
     svg.append('<g clip-path="url(#clipR)">')
-    svg.extend(build_house_3d(camR, west_d=230.0, y_s=344.0, y_n=846.0, wing_deg=32.7, label_wing="2,30 m (EKSIST. MUR)"))
+    svg.extend(build_house_3d(camR, west_d=300.0, y_s=344.0, y_n=846.0, wing_deg=32.7, label_wing="3,00 m UT MOT VEST"))
     svg.append("</g>")
 
     # Panel banners
     svg.append('<rect x="65" y="180" width="760" height="72" fill="#ffffff" opacity="0.94" stroke="#0284c7" stroke-width="2" rx="10"/>')
-    svg.append('<text x="90" y="212" font-size="22" font-weight="800" fill="#0f172a">ALTERNATIV 1: 3,30 m dyp × 5,20 m bred (20° saltak)</text>')
-    svg.append('<text x="90" y="238" font-size="16" font-weight="600" fill="#0284c7">Tverrfløy 38 % av husbredden • Verandadør nord • +1 m nytt fundament vest</text>')
+    svg.append('<text x="90" y="212" font-size="22" font-weight="800" fill="#0f172a">ALTERNATIV 1: 3,30 × 5,20 m (20° slakt saltak)</text>')
+    svg.append('<text x="90" y="238" font-size="16" font-weight="600" fill="#0284c7">Netto stue ~25,4 m² • Verandadør nord • 28 cm klar av original 2-løps pipe</text>')
 
     svg.append('<rect x="1365" y="180" width="820" height="72" fill="#ffffff" opacity="0.94" stroke="#059669" stroke-width="2" rx="10"/>')
-    svg.append('<text x="1390" y="212" font-size="22" font-weight="800" fill="#0f172a">ALTERNATIV 2 (Catrine): 2,30 × 5,02 m (32,7° parallelt saltak)</text>')
-    svg.append('<text x="1390" y="238" font-size="16" font-weight="600" fill="#059669">3,20 m nord + eksist. sørvegg (3,44 m) • Samme takvinkel som hovedtak • 33 cm klar av pipe</text>')
+    svg.append('<text x="1390" y="212" font-size="22" font-weight="800" fill="#0f172a">ALTERNATIV 2: 3,00 × 5,02 m (32,7° parallelt saltak)</text>')
+    svg.append('<text x="1390" y="238" font-size="16" font-weight="600" fill="#059669">Netto stue ~26,8 m² • 3,20 | 5,02 | 3,44 m • Samme takvinkel som hovedtak • 33 cm klar av pipe</text>')
 
     # Footer
     svg.append(f'<rect x="40" y="1165" width="{W - 80}" height="88" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" rx="10"/>')
     svg.append('<text x="75" y="1200" font-size="19" font-weight="700" fill="#0f172a">Direkte volum- og taksammenligning (eksakt 3D-projeksjon):</text>')
-    svg.append('<text x="75" y="1230" font-size="18" font-weight="500" fill="#334155">Venstre: Alt 1 (3,30 m dyp, 20° slakere tak for å klare pipa). Høyre: Catrines Alt 2 (2,30 m rett på eksist. mur + 3,20 m nord -> parallelt 32,7° saltak som hovedtaket, 33 cm klar av pipa!).</text>')
+    svg.append('<text x="75" y="1230" font-size="18" font-weight="500" fill="#334155">Venstre: Alt 1 (3,30 × 5,20 m, 20° slakere tak, ~25,4 m² netto stue). Høyre: Alt 2 (3,00 × 5,02 m, 3,20 | 5,02 | 3,44 m -> parallelt 32,7° saltak som hovedtaket, 33 cm klar av pipa og ~26,8 m² netto stue!).</text>')
     svg.append("</svg>")
 
     out = os.path.join(OUT_DIR, "perspektiv_3d_eksakt_dybde.svg")

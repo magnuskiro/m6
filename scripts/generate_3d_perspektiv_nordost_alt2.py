@@ -53,11 +53,11 @@ def build_alt2_ne_scene(cam: Camera3D, with_labels=True, view="ne"):
     sc.add_poly([(-350, 1280, 1), (1650, 1280, 1), (1650, 2300, 1), (-350, 2300, 1)],
                 "#d6d3d1", stroke="#a8a29e", sw=1.0, layer=0, auto_shade=False)
 
-    # Subtle glimpse of Alt 2 west cross-wing behind NW/SW corner (X=-230..0, Y=344..846)
+    # Subtle glimpse of Alt 2 west cross-wing behind NW/SW corner (X=-300..0, Y=344..846)
     if view == "ne":
-        sc.add_poly([(-230, 846, 40), (0, 846, 40), (0, 846, z_eaves), (-230, 846, z_eaves)], "#f1f5f9", stroke="#334155", sw=1.3, layer=1)
+        sc.add_poly([(-300, 846, 40), (0, 846, 40), (0, 846, z_eaves), (-300, 846, z_eaves)], "#f1f5f9", stroke="#334155", sw=1.3, layer=1)
     else:
-        sc.add_poly([(-230, 344, 40), (0, 344, 40), (0, 344, z_eaves), (-230, 344, z_eaves)], "#f1f5f9", stroke="#334155", sw=1.3, layer=1)
+        sc.add_poly([(-300, 344, 40), (0, 344, 40), (0, 344, z_eaves), (-300, 344, z_eaves)], "#f1f5f9", stroke="#334155", sw=1.3, layer=1)
         # South timber deck (visible in SE view)
         sc.add_poly([(320, -240, 22), (910, -240, 22), (910, 0, 22), (320, 0, 22)], "#d6b084", stroke="#92400e", sw=1.2, layer=1)
         sc.add_poly([(320, -240, 0), (910, -240, 0), (910, -240, 22), (320, -240, 22)], "#a88358", stroke="#78350f", sw=1.0, layer=1)

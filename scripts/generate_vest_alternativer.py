@@ -1065,27 +1065,14 @@ if __name__ == "__main__":
     )
     make_sheet(
         "plan_alt2_symmetrisk_vest.svg",
-        "M6 — ALTERNATIV 2: 2,30 × 5,02 m vest + 2,50 m nord-tilbygg (6 m² Vindfang + 6 m² Vaskerom)",
-        "Catrines oppsett (3,20 | 5,02 | 3,44 m) • Netto Stue ~23,7 m² (ekskl. 110 cm gang) • 6 m² Vindfang & 6 m² Vaskerom",
-        "#059669",
-        build_alt2_floor1,
-        build_alt2_floor2,
-        [
-            "Netto Stue ~23,7 m² (4,42 × 5,48 m ekskl. 110 cm gangpassasje)",
-            "6 m² Vindfang + 6 m² Vaskerom (2,5 m nord) + overbygd øst-kjellertrapp (U.04)",
-            "Parallelt 32,7° saltak over hele huset — 33 cm klar av 2-løps pipe!",
-        ],
-    )
-    make_sheet(
-        "plan_alt25_3m_vest.svg",
-        "M6 — ALTERNATIV 2.5: 3,00 × 5,02 m vest + 2,50 m nord-tilbygg (6 m² Vindfang + 6 m² Vaskerom)",
-        "Catrines 3,20 | 5,02 | 3,44 m oppsett forlenget +0,70 m vestover • Netto Stue ~26,8 m² (ekskl. 110 cm gang) • Parallelt 32,7° saltak",
+        "M6 — ALTERNATIV 2: 3,00 × 5,02 m vest + 2,50 m nord-tilbygg (6 m² Vindfang + 6 m² Vaskerom)",
+        "Catrines 3,20 | 5,02 | 3,44 m oppsett (3,00 m vest) • Netto Stue ~26,8 m² (ekskl. 110 cm gang) • Parallelt 32,7° saltak (33 cm pipeklaring)",
         "#059669",
         lambda pb: build_alt2_floor1(pb, west_d=300),
         lambda pb: build_alt2_floor2(pb, west_d=300),
         [
             "Netto Stue ~26,8 m² (4,42 × 6,18 m ekskl. 110 cm gangpassasje!)",
             "6 m² Vindfang + 6 m² Vaskerom (2,5 m nord) + overbygd øst-kjellertrapp (U.04)",
-            "Parallelt 32,7° saltak over hele huset — uendret 33 cm klar av 2-løps pipe!",
+            "Parallelt 32,7° saltak over hele huset — 33 cm klar av original 2-løps pipe!",
         ],
     )
