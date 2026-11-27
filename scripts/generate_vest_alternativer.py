@@ -575,20 +575,21 @@ def draw_shared_east_floor1(pb: PlanBuilder, north_vaskerom: bool = False):
         pb.rect(782, -174, 48, 52, fill="#f1f5f9", stroke="#64748b", sw=1.5)  # Benkeskap
         pb.wardrobe(658, -46, 172, 42, "Høyskap / Tørk")
         pb.room_label(728, -82, "Vaskerom", "5,0 m²")
-        # NEW external covered basement stair along EAST wall, set back 1,50 m from north facade (y=-210 -> -60)!
-        # Full 3,65 m stair (11 risers + 1,05 m bottom landing) with ONE continuous sloped roof clearing adjusted high-sill Bad window!
-        pb.rect(866, -60, 116, 366, fill="#f1f5f9", stroke="#475569", sw=2.0, dash="8,5", opacity=0.82)  # Sammenhengende skrått takoverbygg
+        # NEW external basement stair along EAST wall (starts 1,50 m back at y=-60 -> y=+306):
+        # Top 3 steps open (-60..+15 -> drops 54 cm below grade), then LOW HORIZONTAL roof (12° east, Z=186->163)
+        # starts at y=+15 -> y=+306 (cleanly BELOW the upper-third Bad window Z=198..248, still 2,17-3,60 m headroom!).
+        pb.rect(866, 15, 116, 291, fill="#f1f5f9", stroke="#475569", sw=2.0, dash="8,5", opacity=0.85)  # Lavt horisontalt tak (y=+15..+306)
         pb.basement_stairs_v(872, -54, 98, 254, steps=11)
         # Bottom landing (bunn-repos, -1,95 m under terreng) + kjellerdør inn under Bad
         pb.rect(872, 200, 98, 102, fill="#f8fafc", stroke="#64748b", sw=1.6)
         pb.text(921, 246, "Bunn-", size=11, weight="700", fill="#475569")
         pb.text(921, 260, "repos", size=11, weight="700", fill="#475569")
         pb.text(921, 278, "(-1,95 m)", size=10, weight="600", fill="#0284c7")
-        pb.rect(970, -60, 12, 12, fill="#334155")   # Nordre søyle
-        pb.rect(970, 140, 12, 12, fill="#334155")   # Midtsøyle (nord for badvindu!)
-        pb.rect(970, 294, 12, 12, fill="#334155")   # Søndre søyle (sør for badvindu!)
+        pb.rect(970, 15, 12, 12, fill="#334155")    # Nordre taksøyle (3 trinn ned!)
+        pb.rect(970, 154, 12, 12, fill="#334155")   # Midtsøyle
+        pb.rect(970, 294, 12, 12, fill="#334155")   # Søndre søyle
         pb.text(924, -74, "Kjellertrapp", size=12, weight="700", fill="#059669")
-        pb.text(924, 322, "3,65 m (32,7° øst)", size=11, weight="700", fill="#059669")
+        pb.text(924, 322, "Lavt tak (12° øst)", size=11, weight="700", fill="#059669")
         # 1,50 m setback dimension on east side from north facade (y=-210) to stair roof (y=-60)
         pb.dim_v(1005, -210, -60, "1,50 m", color="#059669", bold=True, text_offset=20)
         pb.dim_v(1005, -60, 306, "3,65 m (11 trinn + repos)", color="#0284c7", bold=False, text_offset=20)

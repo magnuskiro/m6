@@ -286,15 +286,13 @@
 <line x1="1976.3" y1="596.0" x2="1976.3" y2="694.6" stroke="#ffffff" stroke-width="4.2"/>
 <line x1="1976.3" y1="596.0" x2="1976.3" y2="694.6" stroke="#475569" stroke-width="1.1"/>
 <text x="1976.3" y="713.6" font-size="11" font-weight="700" fill="#64748b" text-anchor="middle">Bad 2.etg</text>
-<rect x="2116.4" y="812.2" width="93.8" height="77.5" fill="#ffffff" stroke="#475569" stroke-width="1.4"/>
-<rect x="2113.6" y="808.8" width="99.3" height="4.1" fill="#f1f5f9" stroke="#334155" stroke-width="1.2"/>
-<rect x="2121.1" y="817.0" width="84.3" height="68.0" fill="#cbd5e1" stroke="#1e293b" stroke-width="1.8"/>
-<rect x="2122.5" y="818.3" width="81.6" height="65.3" fill="#dbeafe" stroke="none" stroke-width="1.5" opacity="0.75"/>
-<line x1="2121.1" y1="840.1" x2="2205.4" y2="840.1" stroke="#ffffff" stroke-width="4.2"/>
-<line x1="2121.1" y1="840.1" x2="2205.4" y2="840.1" stroke="#475569" stroke-width="1.1"/>
-<line x1="2163.3" y1="817.0" x2="2163.3" y2="885.0" stroke="#ffffff" stroke-width="4.2"/>
-<line x1="2163.3" y1="817.0" x2="2163.3" y2="885.0" stroke="#475569" stroke-width="1.1"/>
-<text x="2163.3" y="904.0" font-size="10" font-weight="700" fill="#059669" text-anchor="middle">Bad 1.etg (justert)</text>
+<rect x="2116.4" y="781.6" width="93.8" height="43.5" fill="#ffffff" stroke="#475569" stroke-width="1.4"/>
+<rect x="2113.6" y="778.2" width="99.3" height="4.1" fill="#f1f5f9" stroke="#334155" stroke-width="1.2"/>
+<rect x="2121.1" y="786.4" width="84.3" height="34.0" fill="#cbd5e1" stroke="#1e293b" stroke-width="1.8"/>
+<rect x="2122.5" y="787.7" width="81.6" height="31.3" fill="#dbeafe" stroke="none" stroke-width="1.5" opacity="0.75"/>
+<line x1="2163.3" y1="786.4" x2="2163.3" y2="820.4" stroke="#ffffff" stroke-width="4.2"/>
+<line x1="2163.3" y1="786.4" x2="2163.3" y2="820.4" stroke="#475569" stroke-width="1.1"/>
+<text x="2163.3" y="775.5" font-size="10" font-weight="700" fill="#059669" text-anchor="middle">Bad (øvre 1/3 vindu)</text>
 <rect x="2116.4" y="591.2" width="93.8" height="108.1" fill="#ffffff" stroke="#475569" stroke-width="1.4"/>
 <rect x="2113.6" y="587.8" width="99.3" height="4.1" fill="#f1f5f9" stroke="#334155" stroke-width="1.2"/>
 <rect x="2121.1" y="596.0" width="84.3" height="98.6" fill="#cbd5e1" stroke="#1e293b" stroke-width="1.8"/>
@@ -324,17 +322,16 @@
 <line x1="2314.2" y1="717.0" x2="2466.6" y2="717.0" stroke="#334155" stroke-width="1"/>
 <line x1="2314.2" y1="737.4" x2="2466.6" y2="737.4" stroke="#334155" stroke-width="1"/>
 <line x1="2314.2" y1="757.8" x2="2466.6" y2="757.8" stroke="#334155" stroke-width="1"/>
-<polygon points="2104.8,955.0 2353.7,955.0 2353.7,907.4 2104.8,907.4" fill="#cbd5e1" stroke="#334155" stroke-width="1.6" stroke-linejoin="miter"/>
+<polygon points="2104.8,955.0 2353.7,955.0 2353.7,910.8 2104.8,910.8" fill="#cbd5e1" stroke="#334155" stroke-width="1.6" stroke-linejoin="miter"/>
 <polygon points="2104.8,955.0 2353.7,955.0 2353.7,965.2 2176.9,1087.6 2104.8,1087.6" fill="#94a3b8" stroke="#64748b" stroke-width="1.3" stroke-linejoin="miter" stroke-dasharray="5,4" opacity="0.22"/>
 <text x="2142.2" y="1033.2" font-size="10" font-weight="700" fill="#475569" text-anchor="middle">Kjellergulv (-1,95 m)</text>
-<rect x="2345.5" y="811.5" width="8.2" height="143.5" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
-<rect x="2212.2" y="811.5" width="8.2" height="143.5" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
-<rect x="2107.5" y="811.5" width="8.2" height="143.5" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
-<polygon points="2099.4,811.5 2359.1,811.5 2359.1,761.2 2099.4,761.2" fill="#1e293b" stroke="#0f172a" stroke-width="2.0" stroke-linejoin="miter"/>
-<line x1="2100.7" y1="774.8" x2="2357.8" y2="774.8" stroke="#334155" stroke-width="1.0"/>
-<line x1="2100.7" y1="788.4" x2="2357.8" y2="788.4" stroke="#334155" stroke-width="1.0"/>
-<line x1="2100.7" y1="802.0" x2="2357.8" y2="802.0" stroke="#334155" stroke-width="1.0"/>
-<text x="2230.6" y="752.4" font-size="11" font-weight="700" fill="#059669" text-anchor="middle">Takoverbygg kjellertrapp (horisontalt, 32,7° fall østover)</text>
+<rect x="2295.2" y="844.2" width="8.2" height="110.8" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+<rect x="2201.4" y="844.2" width="8.2" height="110.8" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+<rect x="2107.5" y="844.2" width="8.2" height="110.8" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+<polygon points="2100.7,844.2 2307.4,844.2 2307.4,828.5 2100.7,828.5" fill="#1e293b" stroke="#0f172a" stroke-width="2.0" stroke-linejoin="miter"/>
+<line x1="2102.1" y1="836.7" x2="2306.1" y2="836.7" stroke="#334155" stroke-width="1.0"/>
+<text x="2261.2" y="880.2" font-size="10" font-weight="700" fill="#059669" text-anchor="middle">Lavt horisontalt tak (12° øst)</text>
+<text x="2329.2" y="899.2" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">3 åpne trinn</text>
 <line x1="2353.7" y1="870.0" x2="2455.7" y2="870.0" stroke="#059669" stroke-width="1.8"/>
 <line x1="2353.7" y1="863.2" x2="2353.7" y2="876.8" stroke="#059669" stroke-width="1.8"/>
 <line x1="2455.7" y1="863.2" x2="2455.7" y2="876.8" stroke="#059669" stroke-width="1.8"/>
@@ -342,7 +339,7 @@
 <line x1="2104.8" y1="1108.0" x2="2353.7" y2="1108.0" stroke="#0284c7" stroke-width="1.8"/>
 <line x1="2104.8" y1="1101.2" x2="2104.8" y2="1114.8" stroke="#0284c7" stroke-width="1.8"/>
 <line x1="2353.7" y1="1101.2" x2="2353.7" y2="1114.8" stroke="#0284c7" stroke-width="1.8"/>
-<text x="2229.2" y="1120.2" font-size="14" font-weight="700" fill="#0284c7" text-anchor="middle">3,65 m kjellertrapp (11 trinn + bunn-repos)</text>
+<text x="2229.2" y="1120.2" font-size="14" font-weight="700" fill="#0284c7" text-anchor="middle">3,65 m kjellertrapp (3 åpne trinn + 2,90 m tak -&gt; 2,2-3,6 m høyde)</text>
 <line x1="1520.0" y1="1002.6" x2="2312.9" y2="1002.6" stroke="#334155" stroke-width="1.8"/>
 <line x1="1520.0" y1="995.8" x2="1520.0" y2="1009.4" stroke="#334155" stroke-width="1.8"/>
 <line x1="2312.9" y1="995.8" x2="2312.9" y2="1009.4" stroke="#334155" stroke-width="1.8"/>
@@ -605,11 +602,11 @@
 <line x1="1795.0" y1="1389.3" x2="1873.9" y2="1389.3" stroke="#475569" stroke-width="1.1"/>
 <line x1="1834.4" y1="1362.8" x2="1834.4" y2="1441.0" stroke="#ffffff" stroke-width="4.2"/>
 <line x1="1834.4" y1="1362.8" x2="1834.4" y2="1441.0" stroke="#475569" stroke-width="1.1"/>
-<rect x="1461.8" y="1837.4" width="78.2" height="47.6" fill="#cbd5e1" stroke="#475569" stroke-width="1.4" opacity="0.85"/>
-<rect x="1463.8" y="1741.5" width="8.2" height="95.9" fill="#f8fafc" stroke="#475569" stroke-width="1.3"/>
-<polygon points="1454.3,1746.3 1540.0,1691.2 1540.0,1700.7 1454.3,1755.8" fill="#1e293b" stroke="#0f172a" stroke-width="1.8" stroke-linejoin="miter"/>
-<text x="1492.4" y="1706.8" font-size="10" font-weight="700" fill="#059669" text-anchor="middle">Kjellertrapp</text>
-<text x="1492.4" y="1716.4" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">(32,7° øst, 1,5m bak)</text>
+<rect x="1461.8" y="1840.8" width="78.2" height="44.2" fill="#cbd5e1" stroke="#475569" stroke-width="1.4" opacity="0.85"/>
+<rect x="1463.8" y="1774.2" width="8.2" height="66.6" fill="#f8fafc" stroke="#475569" stroke-width="1.3"/>
+<polygon points="1455.7,1775.5 1540.0,1758.5 1540.0,1765.3 1455.7,1782.3" fill="#1e293b" stroke="#0f172a" stroke-width="1.6" stroke-linejoin="miter"/>
+<text x="1493.8" y="1744.9" font-size="10" font-weight="700" fill="#059669" text-anchor="middle">Kjellertak</text>
+<text x="1493.8" y="1753.8" font-size="9" font-weight="600" fill="#475569" text-anchor="middle">(12° øst, bak)</text>
 <rect x="1540.0" y="1687.8" width="329.8" height="197.2" fill="#ffffff" stroke="#0f172a" stroke-width="2.8"/>
 <line x1="1540.0" y1="1704.1" x2="1869.8" y2="1704.1" stroke="#e2e8f0" stroke-width="0.9"/>
 <line x1="1540.0" y1="1720.4" x2="1869.8" y2="1720.4" stroke="#e2e8f0" stroke-width="0.9"/>

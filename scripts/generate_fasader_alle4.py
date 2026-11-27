@@ -84,6 +84,16 @@ class ElevDraw:
             self.line(vx, y, vx, y + h, stroke="#ffffff", sw=4.2)
             self.line(vx, y, vx, y + h, stroke="#475569", sw=1.1)
 
+    def top_third_win(self, x, y, w=124, h=50):
+        """Upper third (øvre 1/3) of a classic 4-pane Norwegian kors-sprosse window: 2 crisp panes matching adjacent top rows."""
+        self.rect(x - 7, y - 7, w + 14, h + 14, fill="#ffffff", stroke="#475569", sw=1.4)
+        self.rect(x - 11, y - 12, w + 22, 6, fill="#f1f5f9", stroke="#334155", sw=1.2)
+        self.rect(x, y, w, h, fill="#cbd5e1", stroke="#1e293b", sw=1.8)
+        self.rect(x + 2, y + 2, w - 4, h - 4, fill="#dbeafe", opacity=0.75)
+        vx = x + w / 2
+        self.line(vx, y, vx, y + h, stroke="#ffffff", sw=4.2)
+        self.line(vx, y, vx, y + h, stroke="#475569", sw=1.1)
+
     def french_door_kors(self, x, y, w=160, h=210):
         """Double French terrace door with matching upper kors-sprosser."""
         self.rect(x - 7, y - 7, w + 14, h + 7, fill="#ffffff", stroke="#475569", sw=1.4)
@@ -263,9 +273,9 @@ def draw_east(d: ElevDraw, alt: int = 1):
     ]
     for cx, lbl1, lbl2 in axes:
         if alt == 2 and cx == 946:
-            # Adjusted Bad 1.etg window (124 x 100 cm, sill aligned at -103, top at -203 cleanly BELOW 211 cm stair roof eave!)
-            d.kors_win(cx - 62, -203, 124, 100, single=False)
-            d.text(cx, -75, "Bad 1.etg (justert)", size=10, weight="700", fill="#059669")
+            # Upper third (øvre 1/3) of standard kors-sprosse window (124 x 50 cm, Z = 198..248, flush top!) ABOVE stair roof!
+            d.top_third_win(cx - 62, -248, 124, 50)
+            d.text(cx, -264, "Bad (øvre 1/3 vindu)", size=10, weight="700", fill="#059669")
         else:
             d.kors_win(cx - 62, -248, 124, 145, single=False)
             d.text(cx, -75, lbl1, size=11, weight="700", fill="#64748b")
@@ -286,26 +296,24 @@ def draw_east(d: ElevDraw, alt: int = 1):
         d.line(1168, ry, 1392, ry, stroke="#334155", sw=1)
 
     if alt == 2:
-        # Alt 2: Full-length 3,65 m external covered basement stair along EAST wall (ΔH ~1,95 m = 11 risers + 1,05 m bottom landing!)
-        # Set back 1,50 m from north facade (x_plot = 1376 - 150 = 1226) running south to x_plot = 860 (y = +306):
-        # HORIZONTAL roof parallel with horizontal cladding, sloping 32,7° EASTWARD away from house!
-        # Wall height Z = -285 (100% FLUSH with north extension eave!) -> Outer eave Z = -211 (2,11 m standing headroom!)
-        # Posts cleanly frame Bad 1.etg window (x_plot = 884..1008)!
-        d.poly([(860, 0), (1226, 0), (1226, -70), (860, -70)], fill="#cbd5e1", stroke="#334155", sw=1.6)
+        # Alt 2: Full 3,65 m external basement stair (y=-60..+306 -> x_plot=1226..860, ΔH=1,95 m = 11 risers + 1,05 m landing).
+        # HORIZONTAL low roof parallel to horizontal cladding, sloping 12° EASTWARD (Z_wall=186 -> Z_eave=163),
+        # cleanly BELOW the upper-third Bad 1.etg window (Z=198..248)!
+        # Roof starts 3 steps down (y=+15, x_plot=1151, feet already at -54 cm -> 2,17-2,40 m fri takhøyde under taket!).
+        d.poly([(860, 0), (1226, 0), (1226, -65), (860, -65)], fill="#cbd5e1", stroke="#334155", sw=1.6)
         # Dashed underground stair profile showing full descent to -1,95 m below grade!
         d.poly([(860, 0), (1226, 0), (1226, 15), (966, 195), (860, 195)], fill="#94a3b8", opacity=0.22, stroke="#64748b", sw=1.3, dash="5,4")
         d.text(915, 115, "Kjellergulv (-1,95 m)", size=10, weight="700", fill="#475569")
-        # 3 slender white posts framing Bad 1.etg window (north entry, north of Bad win, south of Bad win)
-        d.rect(1214, -211, 12, 211, fill="#ffffff", stroke="#334155", sw=1.5)
-        d.rect(1018, -211, 12, 211, fill="#ffffff", stroke="#334155", sw=1.5)
-        d.rect(864, -211, 12, 211, fill="#ffffff", stroke="#334155", sw=1.5)
-        # Horizontal matte-black roof parallel to cladding, sloping 32,7° EASTWARD (flush with north-ext eave -285 down to -211!)
-        d.poly([(852, -211), (1234, -211), (1234, -285), (852, -285)], fill="#1e293b", stroke="#0f172a", sw=2.0)
-        for ry in [-265, -245, -225]:
-            d.line(854, ry, 1232, ry, stroke="#334155", sw=1.0)
-        d.text(1045, -298, "Takoverbygg kjellertrapp (horisontalt, 32,7° fall østover)", size=11, weight="700", fill="#059669")
+        # Support columns & clean horizontal matte-black roof (12° fall østover, Z = -186 wall -> -163 eave!)
+        d.rect(1140, -163, 12, 163, fill="#ffffff", stroke="#334155", sw=1.5)
+        d.rect(1002, -163, 12, 163, fill="#ffffff", stroke="#334155", sw=1.5)
+        d.rect(864, -163, 12, 163, fill="#ffffff", stroke="#334155", sw=1.5)
+        d.poly([(854, -163), (1158, -163), (1158, -186), (854, -186)], fill="#1e293b", stroke="#0f172a", sw=2.0)
+        d.line(856, -174, 1156, -174, stroke="#334155", sw=1.0)
+        d.text(1090, -110, "Lavt horisontalt tak (12° øst)", size=10, weight="700", fill="#059669")
+        d.text(1190, -82, "3 åpne trinn", size=9, weight="600", fill="#475569")
         d.dim_h(1226, 1376, -125, "1,50 m", color="#059669", bold=True, dy=-8)
-        d.dim_h(860, 1226, 225, "3,65 m kjellertrapp (11 trinn + bunn-repos)", color="#0284c7", bold=True, dy=18)
+        d.dim_h(860, 1226, 225, "3,65 m kjellertrapp (3 åpne trinn + 2,90 m tak -> 2,2-3,6 m høyde)", color="#0284c7", bold=True, dy=18)
 
     d.dim_h(0, 1166, 70, "11,66 m (eksisterende lengde)", bold=True)
     d.dim_h(1166, 1376, 70, "2,10 m nord", color="#ea580c", bold=True)
@@ -425,13 +433,12 @@ def draw_north(d: ElevDraw, alt: int = 1):
 
     # 1-STORY NORTH EXTENSION (x_plot = 0..635 = 6.35 m wide, PARALLEL 32.7° SALTAK!)
     if alt == 2:
-        # Subtle recessed side view of covered east basement stair (set back 1,50 m behind north facade!)
-        # Continues the EXACT 32,7° east roof slope seamlessly from north extension eave (0, -285) out to (-115, -211)!
-        d.rect(-115, -70, 115, 70, fill="#cbd5e1", stroke="#475569", sw=1.4, opacity=0.85)
-        d.rect(-112, -211, 12, 141, fill="#f8fafc", stroke="#475569", sw=1.3)
-        d.poly([(-126, -204), (0, -285), (0, -271), (-126, -190)], fill="#1e293b", stroke="#0f172a", sw=1.8)
-        d.text(-70, -262, "Kjellertrapp", size=10, weight="700", fill="#059669")
-        d.text(-70, -248, "(32,7° øst, 1,5m bak)", size=9, weight="600", fill="#475569")
+        # Subtle recessed side view of low horizontal east-sloping stair roof (12° east, Z=186->163, set back 2,25 m behind north facade!)
+        d.rect(-115, -65, 115, 65, fill="#cbd5e1", stroke="#475569", sw=1.4, opacity=0.85)
+        d.rect(-112, -163, 12, 98, fill="#f8fafc", stroke="#475569", sw=1.3)
+        d.poly([(-124, -161), (0, -186), (0, -176), (-124, -151)], fill="#1e293b", stroke="#0f172a", sw=1.6)
+        d.text(-68, -206, "Kjellertak", size=10, weight="700", fill="#059669")
+        d.text(-68, -193, "(12° øst, bak)", size=9, weight="600", fill="#475569")
 
     # Enclosed Utebod/Vaskerom + Vindfang (x_plot = 0..485)
     d.rect(0, -290, 485, 290, fill="#ffffff", stroke="#0f172a", sw=2.8)
