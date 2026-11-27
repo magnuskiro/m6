@@ -30,7 +30,7 @@ def main():
         f'<rect x="0" y="0" width="{W}" height="130" fill="#0f172a"/>',
         f'<rect x="0" y="124" width="{W}" height="6" fill="#059669"/>',
         f'<text x="60" y="56" font-size="36" font-weight="800" fill="#ffffff">M6 (#50) — Balkong-sammenligning 2. etg sør: 1,60 m utkraget vs. 2,15 m på 2 søyler</text>',
-        f'<text x="60" y="96" font-size="21" font-weight="500" fill="#cbd5e1">Identisk hus (Alt 2: 3,00 × 5,02 m, 32,7°) og kameravinkel — kun balkongdybde (1,60 m vs. 2,15 m) og søyler varieres</text>',
+        f'<text x="60" y="96" font-size="21" font-weight="500" fill="#cbd5e1">Identisk hus (Alt 2: 2,80 × 5,02 m, 32,7°) og kameravinkel — kun balkongdybde (1,60 m vs. 2,15 m) og søyler varieres</text>',
         f'<rect x="40" y="160" width="1260" height="980" fill="url(#sky)" stroke="#cbd5e1" stroke-width="2" rx="12"/>',
         f'<rect x="1340" y="160" width="1260" height="980" fill="url(#sky)" stroke="#cbd5e1" stroke-width="2" rx="12"/>',
         '<clipPath id="clipL"><rect x="40" y="160" width="1260" height="980" rx="12"/></clipPath>',
@@ -44,13 +44,13 @@ def main():
     camR = Camera3D(cam_pos, cam_tgt, fov_deg=35.0, cx=1975.0, cy=715.0, width=1220.0)
 
     svg.append('<g clip-path="url(#clipL)">')
-    svg.extend(build_house_3d(camL, west_d=300.0, y_s=344.0, y_n=846.0, wing_deg=32.7,
-                              label_wing="3,00 m vest", balcony=(273.0, 593.0, 160.0, False)))
+    svg.extend(build_house_3d(camL, west_d=280.0, y_s=344.0, y_n=846.0, wing_deg=32.7,
+                              label_wing="2,80 m vest", balcony=(273.0, 593.0, 160.0, False)))
     svg.append("</g>")
 
     svg.append('<g clip-path="url(#clipR)">')
-    svg.extend(build_house_3d(camR, west_d=300.0, y_s=344.0, y_n=846.0, wing_deg=32.7,
-                              label_wing="3,00 m vest", balcony=(243.0, 623.0, 215.0, True)))
+    svg.extend(build_house_3d(camR, west_d=280.0, y_s=344.0, y_n=846.0, wing_deg=32.7,
+                              label_wing="2,80 m vest", balcony=(243.0, 623.0, 215.0, True)))
     svg.append("</g>")
 
     svg.append('<rect x="65" y="180" width="840" height="72" fill="#ffffff" opacity="0.94" stroke="#0284c7" stroke-width="2" rx="10"/>')

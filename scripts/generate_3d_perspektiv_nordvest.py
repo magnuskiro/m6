@@ -64,7 +64,7 @@ def build_nw_scene(cam: Camera3D, alt: int = 1):
         wing_deg = 20.0
         north_d = 210.0
     else:
-        west_d = 300.0                # Alt 2: 3,00 m deep x 5,02 m wide!
+        west_d = 280.0                # Alt 2 (Catrine): 2,80 m deep x 5,02 m wide!
         y_s, y_n = 344.0, 846.0       # 3,20 | 5,02 | 3,44 m
         wing_deg = 32.7               # Parallel 32,7° saltak!
         north_d = 250.0               # 2,50 m north extension (6 m² Vindfang + 6 m² Vaskerom)
@@ -263,7 +263,7 @@ def build_nw_scene(cam: Camera3D, alt: int = 1):
     else:
         sc.add_text_at((nx_mid, ny_n + 26, nz_ridge + 85), "2,50 m nord-tilbygg", dx=-75, dy=-34, size=14, weight="800", fill="#0f172a", anchor="middle")
         sc.add_text_at((nx_mid, ny_n + 26, nz_ridge + 85), "(6 m² Vask + 6 m² Vindfang)", dx=-75, dy=-16, size=12, weight="700", fill="#047857", anchor="middle")
-        sc.add_text_at((-west_d / 2, y_n + 40, 0), "3,00×5,02 m vest (parallelt 32,7° saltak!)", dx=-15, dy=52, size=14, weight="800", fill="#059669")
+        sc.add_text_at((-west_d / 2, y_n + 40, 0), "2,80×5,02 m vest (parallelt 32,7° saltak!)", dx=-15, dy=52, size=14, weight="800", fill="#059669")
 
     return sc.render()
 
@@ -290,7 +290,7 @@ def main():
         f'<rect x="0" y="0" width="{W}" height="122" fill="#0f172a"/>',
         f'<rect x="0" y="116" width="{W}" height="6" fill="#0284c7"/>',
         f'<text x="48" y="54" font-size="34" font-weight="800" fill="#ffffff">M6 (#50) — Eksakt 3D-modell NORDVEST: Alternativ 1 vs. Alternativ 2</text>',
-        f'<text x="48" y="92" font-size="19" font-weight="500" fill="#cbd5e1">Identisk kameravinkel fra oppkjørselen (null AI-forvrengning) — sammenligner 3,30×5,20 m (20°) + 2,10 m nord mot 3,00×5,02 m (32,7°) + 2,50 m nord</text>',
+        f'<text x="48" y="92" font-size="19" font-weight="500" fill="#cbd5e1">Identisk kameravinkel fra oppkjørselen (null AI-forvrengning) — sammenligner 3,30×5,20 m (20°) + 2,10 m nord mot 2,80×5,02 m (32,7°) + 2,50 m nord</text>',
 
         # Left Panel Header
         f'<rect x="{p1x}" y="138" width="{pw}" height="46" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5" rx="8"/>',
@@ -299,7 +299,7 @@ def main():
 
         # Right Panel Header
         f'<rect x="{p2x}" y="138" width="{pw}" height="46" fill="#d1fae5" stroke="#059669" stroke-width="1.5" rx="8"/>',
-        f'<text x="{p2x + pw / 2}" y="168" font-size="20" font-weight="800" fill="#047857" text-anchor="middle">ALTERNATIV 2 — 3,00 × 5,02 m vest (parallelt 32,7° saltak) + 2,50 m nord-tilbygg</text>',
+        f'<text x="{p2x + pw / 2}" y="168" font-size="20" font-weight="800" fill="#047857" text-anchor="middle">ALTERNATIV 2 (Catrine) — 2,80 × 5,02 m vest (parallelt 32,7° saltak) + 2,50 m nord-tilbygg</text>',
         f'<rect x="{p2x}" y="{py}" width="{pw}" height="{ph}" fill="url(#sky)" stroke="#cbd5e1" stroke-width="2" rx="10"/>',
     ]
 

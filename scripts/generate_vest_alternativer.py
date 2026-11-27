@@ -847,11 +847,10 @@ def build_alt1_floor2(pb: PlanBuilder):
     pb.dim_v(925, 842, 1136, "2,9 m", text_offset=24)
 
 
-def build_alt2_floor1(pb: PlanBuilder, west_d: int = 230):
-    """Alternativ 2 (2,30 m) / Alternativ 2.5 (3,00 m) - 1. etg: 2,50 m nord-tilbygg (6,0 m² Vindfang + 6,0 m² Vaskerom!)
-    + west_d × 5,02 m vest-tilbygg (y=320..822)!"""
+def build_alt2_floor1(pb: PlanBuilder, west_d: int = 280):
+    """Alternativ 2 (Catrines 2,80 × 5,02 m vest, 3,20 | 5,02 | 3,44 m) - 1. etg: 2,50 m nord-tilbygg (6,0 m² Vindfang + 6,0 m² Vaskerom!)."""
     wy1, wy2 = 320, 822
-    is_25 = west_d >= 290
+    is_25 = west_d >= 270
     dx_w = west_d - 230  # 0 for Alt 2, 70 for Alt 2.5
     draw_outer_shell(pb, west_d, wy1, wy2, north_ext=True, north_depth=250)
 
@@ -899,8 +898,8 @@ def build_alt2_floor1(pb: PlanBuilder, west_d: int = 230):
     pb.dining_table(205, 985, 200, 95, seats=8)
     pb.tv_bench(38, 356, 200, 42)
     if is_25:
-        pb.sofa_l(-255, 520, w_horiz=255, h_vert=250, depth=95, corner="bl")  # Romslig 2,55×2,50 m L-sofa!
-        pb.coffee_table(-125, 540, 130, 75)
+        pb.sofa_l(-235, 525, w_horiz=245, h_vert=245, depth=92, corner="bl")  # Romslig 2,45×2,45 m L-sofa!
+        pb.coffee_table(-110, 540, 125, 70)
         pb.armchair(218, 495, 76, 76)                                         # 14 cm klar vest for 120 cm gangpassasje!
     else:
         pb.sofa_l(-185, 540, w_horiz=225, h_vert=230, depth=92, corner="bl")
@@ -913,8 +912,8 @@ def build_alt2_floor1(pb: PlanBuilder, west_d: int = 230):
     pb.text(122, 278, "Gard. / Bod 2,2 m²", size=14, weight="700", fill="#1e293b")
     pb.text(365, 285, "Gang", size=20, weight="700", fill="#475569")
     if is_25:
-        pb.text(20, 434, "STUE ~25,0 m² (4,42 × 5,78 m)", size=20, weight="800", fill="#047857")
-        pb.text(20, 460, "Netto ekskl. 30 cm bokhylle + 120 cm gang", size=13, weight="700", fill="#059669")
+        pb.text(28, 434, "STUE ~24,1 m² (4,42 × 5,58 m)", size=20, weight="800", fill="#047857")
+        pb.text(28, 460, "Netto ekskl. 30 cm bokhylle + 120 cm gang", size=13, weight="700", fill="#059669")
     else:
         pb.text(45, 434, "STUE ~21,9 m² (4,42 × 5,08 m)", size=20, weight="800", fill="#047857")
         pb.text(45, 460, "Netto ekskl. 30 cm bokhylle + 120 cm gang", size=13, weight="700", fill="#059669")
@@ -922,7 +921,7 @@ def build_alt2_floor1(pb: PlanBuilder, west_d: int = 230):
 
     # Dimensions
     pb.dim_h(0, 866, -280, "8,66 m (eksisterende bredde)", bold=True)
-    pb.dim_h(-west_d, 0, -280, "3,00 m (+0,7 m mur)" if is_25 else "2,30 m (eksist. mur!)", color="#059669", bold=True)
+    pb.dim_h(-west_d, 0, -280, "2,80 m (+0,5 m mur)" if is_25 else "2,30 m (eksist. mur!)", color="#059669", bold=True)
     pb.dim_v(1085, -250, 0, "2,50 m nord", color="#ea580c", bold=True, text_offset=26)
     pb.dim_v(1085, 0, 1166, "11,66 m (eksisterende lengde — INGEN syd-tilbygg)", bold=True, text_offset=26)
     pb.dim_v(-west_d - 65, 0, 320, "3,20 m (nord)", color="#059669", bold=True)
@@ -930,10 +929,10 @@ def build_alt2_floor1(pb: PlanBuilder, west_d: int = 230):
     pb.dim_v(-west_d - 65, 822, 1166, "3,44 m (eksist. sørvegg)", color="#059669", bold=True)
 
 
-def build_alt2_floor2(pb: PlanBuilder, west_d: int = 230):
-    """Alternativ 2 (2,30 m) / Alternativ 2.5 (3,00 m) - 2. etg."""
+def build_alt2_floor2(pb: PlanBuilder, west_d: int = 280):
+    """Alternativ 2 (Catrines 2,80 × 5,02 m vest) - 2. etg."""
     wy1, wy2 = 320, 822
-    is_25 = west_d >= 290
+    is_25 = west_d >= 270
     dx_w = west_d - 230
     draw_outer_shell(pb, west_d, wy1, wy2, north_ext=False, north_depth=250)
 
@@ -992,8 +991,8 @@ def build_alt2_floor2(pb: PlanBuilder, west_d: int = 230):
     pb.wardrobe(106, 266, 62, 56)
     pb.tv_bench(38, 356, 200, 42)
     if is_25:
-        pb.sofa_l(-255, 520, w_horiz=255, h_vert=250, depth=95, corner="bl")
-        pb.coffee_table(-125, 540, 130, 75)
+        pb.sofa_l(-235, 525, w_horiz=245, h_vert=245, depth=92, corner="bl")
+        pb.coffee_table(-110, 540, 125, 70)
         pb.armchair(245, 495, 76, 76)
     else:
         pb.sofa_l(-185, 540, w_horiz=225, h_vert=230, depth=92, corner="bl")
@@ -1007,14 +1006,14 @@ def build_alt2_floor2(pb: PlanBuilder, west_d: int = 230):
     pb.text(210, 314, "2,2 m²", size=13, weight="600", fill="#475569")
     pb.room_label(362, 98, "Hall", "4,3 m²", "(2-mannsbolig)")
     if is_25:
-        pb.text(35, 434, "LOFTSTUE ~26,4 m² (4,42 × 6,08 m)", size=19, weight="800", fill="#047857")
-        pb.text(35, 460, "(netto ekskl. 120 cm gang + 12,5 m² spis)", size=14, weight="700", fill="#059669")
+        pb.text(42, 434, "LOFTSTUE ~25,5 m² (4,42 × 5,88 m)", size=19, weight="800", fill="#047857")
+        pb.text(42, 460, "(netto ekskl. 120 cm gang + 12,5 m² spis)", size=14, weight="700", fill="#059669")
     else:
         pb.text(60, 434, "LOFTSTUE ~23,3 m² (4,42 × 5,38 m)", size=19, weight="800", fill="#047857")
         pb.text(60, 460, "(netto ekskl. 120 cm gang + 12,5 m² spis)", size=14, weight="700", fill="#059669")
 
     pb.dim_h(0, 866, -280, "8,66 m", bold=True)
-    pb.dim_h(-west_d, 0, -280, "3,00 m (innbygd 2. etg)" if is_25 else "2,30 m (innbygd 2. etg)", color="#059669", bold=True)
+    pb.dim_h(-west_d, 0, -280, "2,80 m (innbygd 2. etg)" if is_25 else "2,30 m (innbygd 2. etg)", color="#059669", bold=True)
     pb.dim_v(925, 30, 392, "3,6 m", text_offset=24)
     pb.dim_v(925, 392, 598, "2,0 m", text_offset=24)
     pb.dim_v(925, 598, 842, "2,4 m", text_offset=24)
@@ -1096,13 +1095,13 @@ if __name__ == "__main__":
     )
     make_sheet(
         "plan_alt2_symmetrisk_vest.svg",
-        "M6 — ALTERNATIV 2: 3,00 × 5,02 m vest + 2,50 m nord-tilbygg (6 m² Vindfang + 6 m² Vaskerom)",
-        "Catrines 3,20 | 5,02 | 3,44 m oppsett (3,00 m vest) • Netto Stue ~25,0 m² (ekskl. 30 cm bokhylle + 120 cm gang) • Parallelt 32,7° saltak",
+        "M6 — ALTERNATIV 2: 2,80 × 5,02 m vest + 2,50 m nord-tilbygg (6 m² Vindfang + 6 m² Vaskerom)",
+        "Catrines oppsett (3,20 | 5,02 | 3,44 m; 2,80 m vest) • Netto Stue ~24,1 m² (ekskl. 30 cm bokhylle + 120 cm gang) • Parallelt 32,7° saltak",
         "#059669",
-        lambda pb: build_alt2_floor1(pb, west_d=300),
-        lambda pb: build_alt2_floor2(pb, west_d=300),
+        lambda pb: build_alt2_floor1(pb, west_d=280),
+        lambda pb: build_alt2_floor2(pb, west_d=280),
         [
-            "Netto Stue ~25,0 m² (4,42 × 5,78 m ekskl. 30 cm bokhylle + 120 cm gang!)",
+            "Netto Stue ~24,1 m² (4,42 × 5,58 m ekskl. 30 cm bokhylle + 120 cm gang!)",
             "6 m² Vindfang + 6 m² Vaskerom (2,5 m nord) + overbygd øst-kjellertrapp (U.04)",
             "Parallelt 32,7° saltak over hele huset — 33 cm klar av original 2-løps pipe!",
         ],

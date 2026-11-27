@@ -61,7 +61,7 @@ Eksisterende vest-utbygg (`2,28 × 4,07 m`) **rives helt** for enkel tilgang til
 | Alternativ vest-tilbygg | Fri sone mot sofa / opphold | Fasadesymmetri vest | Tak & original 2-løps pipe (#38) |
 | :--- | :--- | :--- | :--- |
 | **Alt 1: `3,20–3,30 × 5,20 m`** *(dypere tverrfløy)* | **`~24,0 m²` netto stue** *(1. etg ekskl. `30 cm` bokhylle + `120 cm` gangpassasje; `~25,0 m²` loftstue; `19,2 m²` vest for pipe)* | `4,10 \| 5,20 \| 2,36 m` | **`20°` slakt saltak** (`28 cm` fri klaring nord for pipe) eller **`10°` pulttak** (`35 cm` vest, 0 gradrenner). *NB: `32,7°` saltak krasjer i pipa!* |
-| **Alt 2: `3,00 × 5,02 m`** *(parallelt `32,7°` saltak)* | **`~25,0 m²` netto stue** (`4,42 × 5,78 m`, 1. etg ekskl. `30 cm` bokhylle + `120 cm` gangpassasje; `~26,4 m²` loftstue) — stor L-sofa & H2O-peis | **`3,20 \| 5,02 \| 3,44 m`** *(beholder eksist. sørvegg, +0,7 m mur vest)* | **Parallelt `32,7°` saltak** (samme takvinkel som hovedtak og nord-tilbygg!) — **`33 cm` fri klaring** nord for pipa uten takkonflikt! |
+| **Alt 2 (Catrine): `2,80 × 5,02 m`** *(parallelt `32,7°` saltak)* | **`~24,1 m²` netto stue** (`4,42 × 5,58 m`, 1. etg ekskl. `30 cm` bokhylle + `120 cm` gangpassasje; `~25,5 m²` loftstue) — romslig `2,45×2,45 m` L-sofa & H2O-peis | **`3,20 \| 5,02 \| 3,44 m`** *(beholder eksist. sørvegg, +0,5 m mur vest)* | **Parallelt `32,7°` saltak** (samme takvinkel som hovedtak og nord-tilbygg!) — **`33 cm` fri klaring** nord for pipa uten takkonflikt! |
 
 ---
 
@@ -81,17 +81,18 @@ Eksisterende vest-utbygg (`2,28 × 4,07 m`) **rives helt** for enkel tilgang til
 
 * **Plantegninger 1. & 2. etg (1 px = 1 cm, ekskl. `30 cm` bokhylle + `120 cm` gangpassasje):**
   * [Alternativ 1 (`3,20 × 5,20 m` vest, `~24,0 m²` netto stue + `2,10 m` nord-tilbygg)](../assets/images/drawings/plan_alt1_dypere_vest.png)
-  * [Alternativ 2 (`3,00 × 5,02 m` vest, `~25,0 m²` netto stue + `2,50 m` nord-tilbygg m/ `6 m² Vaskerom` & `U.04` øst-kjellertrapp)](../assets/images/drawings/plan_alt2_symmetrisk_vest.png)
+  * [Alternativ 2 — Catrine (`2,80 × 5,02 m` vest, `~24,1 m²` netto stue + `2,50 m` nord-tilbygg m/ `6 m² Vaskerom` & `U.04` øst-kjellertrapp)](../assets/images/drawings/plan_alt2_symmetrisk_vest.png)
 * **Peistest (rett vest på original pipe):**
   * [Sammenligning `2,30 m` vs `2,80 m` vs `3,20 m`](../assets/images/drawings/test_peis_vest_sammenligning.png)
 * **Tekniske fasader & 3D-takplan:**
   * [Alle 4 fasader — Alternativ 1 (`5,20×3,20 m` vest, `20°` tak, nord-verandadør, smalt `Bad 2. etg`-vindu)](../assets/images/drawings/fasader_alt1_alle4.png)
-  * [Alle 4 fasader — Alternativ 2 (`5,02×3,00 m` vest, parallelt `32,7°` tak, `2,50 m` nord-tilbygg, `12°` øst-kjellertrapp under overlys `Bad 1. etg`)](../assets/images/drawings/fasader_alt2_alle4.png)
+  * [Alle 4 fasader — Alternativ 2 (`5,02×2,80 m` vest, parallelt `32,7°` tak, `2,50 m` nord-tilbygg, `12°` øst-kjellertrapp under overlys `Bad 1. etg`)](../assets/images/drawings/fasader_alt2_alle4.png)
   * [3D-takplan & pipeklaring (`20°` saltak vs `10°` pulttak)](../assets/images/drawings/fasader_alt1_takalternativer.png)
 * **Matematisk eksakte 3D-perspektiver (null AI-forvrengning):**
-  * [Sørvest — direkte sammenligning Alt 1 (`3,30×5,20 m, 20°`) vs. Alt 2 (`3,00×5,02 m, 32,7°`)](../assets/images/drawings/perspektiv_3d_eksakt_dybde.png)
-  * [Nordvest — direkte sammenligning Alt 1 (`3,30×5,20 m, 20°`) vs. Alt 2 (`3,00×5,02 m, 32,7°`)](../assets/images/drawings/perspektiv_3d_nordvest_eksakt.png)
+  * [Sørvest — direkte sammenligning Alt 1 (`3,30×5,20 m, 20°`) vs. Alt 2 (`2,80×5,02 m, 32,7°`)](../assets/images/drawings/perspektiv_3d_eksakt_dybde.png)
+  * [Nordvest — direkte sammenligning Alt 1 (`3,30×5,20 m, 20°`) vs. Alt 2 (`2,80×5,02 m, 32,7°`)](../assets/images/drawings/perspektiv_3d_nordvest_eksakt.png)
   * [Nordøst & Sørøst — Alternativ 2 (`100 %` fluktende østvegg, `2,50 m` nord-tilbygg, 3 åpne kjellertrinn + lavt `12°` trappetak under overlys `Bad 1.etg`)](../assets/images/drawings/perspektiv_3d_nordost_alt2_eksakt.png)
+  * [Sydbalkong-sammenligning — `3,20×1,60 m` utkraget vs. `3,80×2,15 m` på 2 slanke søyler](../assets/images/drawings/perspektiv_3d_balkong_sammenligning.png)
 * **Fotorealistiske 3D-renders (oppdatert kors-sprosse-serie):**
   * **Alternativ 1 — alle 4 hjørner:** [Sørvest](../assets/images/drawings/render_4hjorner_sorvest.jpg) · [Nordvest](../assets/images/drawings/render_4hjorner_nordvest.jpg) · [Nordøst](../assets/images/drawings/render_4hjorner_nordost.jpg) · [Sørøst](../assets/images/drawings/render_4hjorner_sorost.jpg) *(Nordøst/Sørøst/Nordvest re-rendres kl. 18:45 med 100 % fluktende østvegg og rene 4-ruts kors-sprosser; Alt 2 rendres etterpå)*
 

@@ -334,7 +334,7 @@ def draw_east(d: ElevDraw, alt: int = 1):
 def draw_south(d: ElevDraw, alt: int = 1):
     """FASADE SØR (Left = Vest x=-west_d..0, Right = Main x=0..866).
     Original chimney at x=135..230 (95 cm wide EAST-WEST!) rising on the WEST roof slope!"""
-    west_d = 320 if alt == 1 else 300
+    west_d = 320 if alt == 1 else 280
     d.rect(-400, -1020, 1380, 1020, fill="#f0f9ff", opacity=0.45)
     d.rect(-400, 0, 1380, 42, fill="#dcfce7", opacity=0.8)
     d.line(-400, 0, 980, 0, stroke="#15803d", sw=3)
@@ -390,7 +390,7 @@ def draw_south(d: ElevDraw, alt: int = 1):
     d.rect(-15, -24, 905, 24, fill="#d97706", opacity=0.4, stroke="#92400e", sw=1.8)
     d.text(433, -7, "Markterrasse sør (fra sentrert verandadør 1. etg)", size=12, weight="700", fill="#78350f")
 
-    d.dim_h(-west_d, 0, 70, "3,20 m vest" if alt == 1 else "3,00 m vest (+0,7 m mur)", color="#0284c7" if alt == 1 else "#059669", bold=True)
+    d.dim_h(-west_d, 0, 70, "3,20 m vest" if alt == 1 else "2,80 m vest (+0,5 m mur)", color="#0284c7" if alt == 1 else "#059669", bold=True)
     d.dim_h(0, 866, 70, "8,66 m (eksist. bredde)", bold=True)
     d.text(275, -1065, "FASADE SØR (Sørgavl — uten syd-tilbygg)", size=23, weight="800", fill="#0f172a")
     d.text(275, -1032, "Orig. pipe plassert riktig på vestre takflate (x=1,35–2,30 m, IKKE på mønet!) • Sentrerte eksist. verandadører", size=14, weight="600", fill="#9a3412")
@@ -398,8 +398,8 @@ def draw_south(d: ElevDraw, alt: int = 1):
 
 def draw_north(d: ElevDraw, alt: int = 1):
     """FASADE NORD — Exact match to Magnus's hand sketch!
-    Left = Øst (x_plot=0), Right = Vest (x_plot=866), Far Right = West extension (3.30 m in Alt 1, 3.00 m in Alt 2)."""
-    west_d = 330 if alt == 1 else 300
+    Left = Øst (x_plot=0), Right = Vest (x_plot=866), Far Right = West extension (3.30 m in Alt 1, 2.80 m in Alt 2)."""
+    west_d = 330 if alt == 1 else 280
     d.rect(-100, -1020, 1410, 1020, fill="#f0f9ff", opacity=0.45)
     d.rect(-100, 0, 1410, 42, fill="#dcfce7", opacity=0.8)
     d.line(-100, 0, 1310, 0, stroke="#15803d", sw=3)
@@ -486,7 +486,7 @@ def draw_north(d: ElevDraw, alt: int = 1):
     d.dim_h(0, 485, 70, "4,85 m (Bod + Vindfang)" if alt == 1 else "4,85 m (Vaskerom + Vindfang)", color="#ea580c", bold=True)
     d.dim_h(485, 635, 70, "1,50 m", color="#475569")
     d.dim_h(635, 866, 70, "2,31 m", color="#475569")
-    d.dim_h(866, 866 + west_d, 70, "3,30 m vest" if alt == 1 else "3,00 m vest", color="#0284c7" if alt == 1 else "#059669", bold=True)
+    d.dim_h(866, 866 + west_d, 70, "3,30 m vest" if alt == 1 else "2,80 m vest", color="#0284c7" if alt == 1 else "#059669", bold=True)
     d.text(560, -1065, "FASADE NORD (Synkronisert med nordfasade-skissen!)", size=23, weight="800", fill="#0f172a")
     sub_n = (
         "Parallelt 32,7° saltak på nord-tilbygg • Rekkverk i inngangsparti • Ingen nordvindu på Hovedsov • Verandadør nord på vest-tilbygg"
@@ -502,12 +502,12 @@ def build_sheet(alt: int):
     title = (
         "M6 (#50) — Alle 4 fasader (Alternativ 1: 5,20×3,20 m vest + Nord-tilbygg)"
         if alt == 1
-        else "M6 (#50) — Alle 4 fasader (Alternativ 2: 5,02×3,00 m vest — 3,20 m nord + eksist. sørvegg)"
+        else "M6 (#50) — Alle 4 fasader (Alternativ 2: 5,02×2,80 m vest — 3,20 m nord + eksist. sørvegg)"
     )
     subtitle = (
         "Korrigert pipeplassering (på vest-takflate, IKKE på mønet) • Norske kors-sprossevinduer • Romjustert mot 1:50-plantegning"
         if alt == 1
-        else "Catrines oppsett forlenget til 3,00 m vest (3,20 | 5,02 | 3,44 m) • Parallelt 32,7° saltak over hele huset (33 cm klar av pipe) • 2,50 m nord-tilbygg"
+        else "Catrines oppsett (2,80 m vest • 3,20 | 5,02 | 3,44 m) • Parallelt 32,7° saltak over hele huset (33 cm klar av pipe) • 2,50 m nord-tilbygg"
     )
     svg = [
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" '
