@@ -558,7 +558,7 @@ def draw_shared_east_floor1(pb: PlanBuilder, north_vaskerom: bool = False):
     else:
         pb.window_h(620, 692, -195, 30)  # Utebod narrow north window (matches Fasade Nord Alt 1!)
     pb.window_v(851, 158, 282, 30)    # Axis 4: Bad 1. etg
-    pb.window_v(851, 433, 557, 30)    # Axis 3: Sov/Pult 1. etg
+    pb.window_v(851, 471, 595, 30)    # Axis 3: Sov/Pult 1. etg (linjert rett under smalt Bad 2.etg-vindu!)
     pb.window_v(851, 635, 745, 30)    # Axis 2: Sov sør 1. etg
     pb.window_v(851, 928, 1052, 30)   # Axis 1: Kitchen east
     pb.window_h(631, 761, 1151, 30)   # Kitchen south window
@@ -658,7 +658,7 @@ def draw_shared_east_floor2(pb: PlanBuilder):
 
     # East & north windows (4 clean vertical axes matching 1. etg & Fasade Øst/Nord!)
     pb.window_v(851, 158, 282, 30)   # Axis 4: Master east
-    pb.window_v(851, 463, 527, 30)   # Axis 3: Bad 2.etg east — smalt vindu (halv bredde 64 cm, sentrert på akse!)
+    pb.window_v(851, 501, 565, 30)   # Axis 3: Bad 2.etg east — smalt 64 cm vindu, 100% klar sør for 90×90 dusjnisje!
     pb.window_v(851, 648, 772, 30)   # Axis 2: Sov 2 east
     pb.window_v(851, 928, 1052, 30)  # Axis 1: Sov 3 east
     pb.window_h(305, 425, 15, 30)    # Hall north double window (matches Fasade Nord!)
@@ -669,13 +669,13 @@ def draw_shared_east_floor2(pb: PlanBuilder):
     pb.wardrobe(474, 36, 58, 225, "Skap")
     pb.room_label(680, 315, "Hovedsoverom", "13,3 m²")
 
-    # Fixtures — Bad 2. etg (WC, servant, dusj along north wall; skap/vask along south wall)
+    # Fixtures — Bad 2. etg (WC, servant, 90×90 dusjnisje along north wall; skap/vask shifted west to keep narrow east window bay 100% clear!)
     pb.wc(485, 404, rot=0)
-    pb.sink(580, 404, 115, 46)
-    pb.shower(734, 404, 92, 92)
-    pb.wardrobe(585, 542, 160, 46, "Skap")
-    pb.washer_dryer(766, 530, count=1, vertical=False)
-    pb.room_label(625, 495, "Bad", "7,0 m²", "(rør nær bad 1. etg)")
+    pb.sink(578, 404, 115, 46)
+    pb.shower(742, 402, 90, 90)
+    pb.wardrobe(565, 542, 130, 46, "Skap")
+    pb.washer_dryer(700, 528, count=1, vertical=False)
+    pb.room_label(620, 495, "Bad", "7,0 m²", "(rør nær bad 1. etg)")
 
     # Sov 2
     pb.single_bed(626, 616, 200, 105, head="right")

@@ -71,10 +71,10 @@ def build_ne_ref():
     # Main EAST wall (X=866, Y=0..1166)
     sc.add_poly([(866, 0, 0), (866, 1166, 0), (866, 1166, 40), (866, 0, 40)], "#64748b", layer=2)
     sc.add_poly([(866, 0, 40), (866, 1166, 40), (866, 1166, z_eaves), (866, 0, z_eaves)], "#ffffff", stroke="#1e293b", sw=1.8, layer=2)
-    # 4 clean vertical kors-sprosse axes on EAST wall (Y = 176, 456, 671, 946) — Bad 2.etg (Y=671) half width!
-    for cy in [176, 456, 671, 946]:
+    # 4 clean vertical kors-sprosse axes on EAST wall (Y = 176, 456, 633, 946) — Bad 2.etg (Y=633) half width!
+    for cy in [176, 456, 633, 946]:
         add_kors_east(sc, 866, cy - 62, cy + 62, 105, 250, layer=3)
-        if cy == 671:
+        if cy == 633:
             add_kors_east(sc, 866, cy - 32, cy + 32, 385, 530, single=True, layer=3)
         else:
             add_kors_east(sc, 866, cy - 62, cy + 62, 385, 530, layer=3)
@@ -91,7 +91,7 @@ def build_ne_ref():
     ov_x = 866.0 + 35.0
     z_ov = z_eaves - 35.0 * t_main
     sc.add_poly([(433, -35, z_ridge), (433, 1201, z_ridge), (ov_x, 1201, z_ov), (ov_x, -35, z_ov)], "#1e293b", stroke="#0f172a", sw=2.0, layer=4)
-    for sy in [176, 456, 671, 946]:
+    for sy in [176, 456, 633, 946]:
         xa, xb = 530.0, 645.0
         za = z_ridge - (xa - 433.0) * t_main + 3.0
         zb = z_ridge - (xb - 433.0) * t_main + 3.0
@@ -182,9 +182,9 @@ def build_se_ref():
     # Main EAST WALL (X=866, Y=0..1166)
     sc.add_poly([(866, 0, 0), (866, 1166, 0), (866, 1166, 40), (866, 0, 40)], "#64748b", layer=3)
     sc.add_poly([(866, 0, 40), (866, 1166, 40), (866, 1166, z_eaves), (866, 0, z_eaves)], "#f8fafc", stroke="#1e293b", sw=2.0, layer=3)
-    for cy in [176, 456, 671, 946]:
+    for cy in [176, 456, 633, 946]:
         add_kors_east(sc, 866, cy - 62, cy + 62, 105, 250, layer=4)
-        if cy == 671:
+        if cy == 633:
             add_kors_east(sc, 866, cy - 32, cy + 32, 385, 530, single=True, layer=4)
         else:
             add_kors_east(sc, 866, cy - 62, cy + 62, 385, 530, layer=4)
@@ -193,7 +193,7 @@ def build_se_ref():
     ov_x = 866.0 + 35.0
     z_ov = z_eaves - 35.0 * t_main
     sc.add_poly([(433, -35, z_ridge), (433, 1201, z_ridge), (ov_x, 1201, z_ov), (ov_x, -35, z_ov)], "#1e293b", stroke="#0f172a", sw=2.0, layer=5)
-    for sy in [176, 456, 671, 946]:
+    for sy in [176, 456, 633, 946]:
         xa, xb = 530.0, 645.0
         za = z_ridge - (xa - 433.0) * t_main + 3.0
         zb = z_ridge - (xb - 433.0) * t_main + 3.0
