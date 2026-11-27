@@ -200,14 +200,50 @@ class PlanBuilder:
         self.path(f"M {ax1:.1f} {ay:.1f} L {ax2:.1f} {ay:.1f}", stroke="#334155", sw=2.5)
         self.path(f"M {ax2 + 12:.1f} {ay - 10:.1f} L {ax2:.1f} {ay:.1f} L {ax2 + 12:.1f} {ay + 10:.1f}", stroke="#334155", sw=2.5)
 
-    def chimney_and_fireplace(self, x=135, y=720, w=95, h=55, label_side="right"):
-        """Exact original chimney core (95 cm east-west x 55 cm north-south) + fireplace insert."""
+    def chimney_and_fireplace(self, x=135, y=720, w=95, h=55, mode="west_insert"):
+        """Exact original chimney core (95 cm east-west x 55 cm north-south) + compact H2O fireplace/stove."""
+        if mode == "west_insert":
+            # Compact/slank vannkappepeis (e.g. Brunner HKD 2.2 SK Flat / Spartherm Varia 2R-55h H2O):
+            # 56 cm deep (x-56..x = 79..135) x 78 cm wide (y-11..y+67 = 709..787)
+            fp_d, fp_w = 56, 78
+            # 100 cm fire safety zone west of glass front (x-56-100..x-56 = -21..79 -> clears sofa at x=-30!)
+            self.rect(x - fp_d - 100, y - 32, 100, 120, fill="#ef4444", opacity=0.09, stroke="#dc2626", sw=1.6, dash="7,5")
+            self.text(x - fp_d - 50, y + 24, "100 cm", size=12, weight="700", fill="#dc2626")
+            self.text(x - fp_d - 50, y + 39, "brannsone", size=11, weight="600", fill="#dc2626")
+            # 30 cm non-combustible hearth plate (glass/skifer) west + corner south
+            self.rect(x - fp_d - 30, y - 19, 30, 96, fill="#cbd5e1", opacity=0.65, stroke="#64748b", sw=1.3)
+            self.rect(x - fp_d - 30, y + 67, fp_d + 30, 26, fill="#cbd5e1", opacity=0.55, stroke="#64748b", sw=1.2)
+            # Nett 56 x 78 cm H2O fireplace surround + firebox
+            self.rect(x - fp_d, y - 11, fp_d, fp_w, fill="#334155", stroke="#0f172a", sw=2.2, rx=2)
+            self.rect(x - fp_d + 8, y - 1, fp_d - 16, 58, fill="#f97316", stroke="#9a3412", sw=1.5, rx=2)
+            # 2-sided corner glass: west (toward sofa) + south (toward dining table)
+            self.rect(x - fp_d, y + 3, 8, 50, fill="#fef08a", stroke="#b45309", sw=1.3)
+            self.rect(x - fp_d + 6, y + 59, 40, 8, fill="#fef08a", stroke="#b45309", sw=1.2)
+            self.text(x - fp_d / 2, y + 26, "H2O", size=12, weight="800", fill="#ffffff")
+            self.text(x - fp_d / 2, y + 41, "PEIS", size=11, weight="800", fill="#ffffff")
+            self.text(x - fp_d / 2, y + 112, "Vannkappe 56×78", size=12, weight="700", fill="#c2410c")
+            self.text(x + w / 2, y - 12, "Orig. pipe 95×55", size=12, weight="700", fill="#9a3412")
+        elif mode == "west_stove":
+            # 2. etg: Compact optional Ø48 cm Scandinavian wood stove on flue 2 (1. etg H2O heats 2. etg!)
+            self.rect(x - 76, y - 10, 76, 75, fill="#cbd5e1", opacity=0.45, stroke="#94a3b8", sw=1.3, dash="5,4")
+            self.rect(x - 48, y + 4, 44, 44, fill="#475569", stroke="#0f172a", sw=2, rx=22)
+            self.rect(x - 41, y + 11, 28, 30, fill="#f97316", stroke="#9a3412", sw=1.3, rx=14)
+            self.rect(x - 48, y + 15, 7, 22, fill="#fef08a", stroke="#b45309", sw=1.2)
+            self.text(x - 28, y + 83, "Valgfri nett ovn (løp 2)", size=11, weight="700", fill="#c2410c")
+            self.text(x + w / 2, y - 12, "Orig. pipe 95×55", size=12, weight="700", fill="#9a3412")
+        else:
+            # South-mounted stove (for Alt 2 where sofa sits north of chimney)
+            self.rect(x + 10, y + h, 75, 72, fill="#cbd5e1", opacity=0.6, stroke="#64748b", sw=1.3)
+            self.rect(x + 22, y + h + 2, 50, 48, fill="#334155", stroke="#0f172a", sw=2, rx=6)
+            self.rect(x + 30, y + h + 10, 34, 30, fill="#f97316", stroke="#9a3412", sw=1.4, rx=3)
+            self.rect(x + 32, y + h + 42, 30, 8, fill="#fef08a", stroke="#b45309", sw=1.2)
+            self.text(x + w + 10, y + h + 30, "Nett peis (sør)", size=12, weight="700", fill="#c2410c", anchor="start")
+            self.text(x + w + 10, y + 32, "Orig. pipe 95×55", size=12, weight="700", fill="#9a3412", anchor="start")
+
+        # Original 2-flue brick chimney core (always on top)
         self.rect(x, y, w, h, fill="#b45309", stroke="#78350f", sw=3)
         self.rect(x + 12, y + 12, 28, 31, fill="#fef3c7", stroke="#78350f", sw=2)
         self.rect(x + 54, y + 12, 28, 31, fill="#fef3c7", stroke="#78350f", sw=2)
-        self.rect(x - 18, y + 8, 18, h - 16, fill="#fb923c", stroke="#9a3412", sw=2)
-        self.text(x + w / 2, y + h + 20, "Orig. pipe (95×55 cm Ø–V)", size=14, weight="700", fill="#9a3412", anchor="middle")
-        self.text(x + w / 2, y + h + 37, "(peis vest/sør)", size=13, weight="600", fill="#b45309", anchor="middle")
 
     def double_bed(self, x, y, w=180, h=200, head="right"):
         self.rect(x, y, w, h, fill="#ffffff", stroke="#64748b", sw=2, rx=4)
@@ -594,14 +630,14 @@ def build_alt1_floor1(pb: PlanBuilder):
     pb.sofa_l(-270, 515, w_horiz=240, h_vert=225, depth=92, corner="bl")  # Rygg ved y=740 -> 1,60 m fri gang til verandadør!
     pb.coffee_table(-145, 540, 120, 68)
     pb.armchair(25, 542, 76, 76)
-    pb.chimney_and_fireplace(135, 720, 95, 55, label_side="right")
+    pb.chimney_and_fireplace(135, 720, 95, 55, mode="west_insert")
 
     # Labels
     pb.room_label(142, 138, "Trapp", "4,8 m²")
     pb.room_label(125, 375, "Vask", "3,9 m²")
     pb.text(355, 265, "Gang", size=20, weight="700", fill="#475569")
-    pb.text(-130, 812, "STUE ~24 m²", size=23, weight="800", fill="#0369a1")
-    pb.text(-130, 838, "(1,60 m fri gang til verandadør)", size=16, weight="700", fill="#0284c7")
+    pb.text(-160, 825, "STUE ~24 m²", size=23, weight="800", fill="#0369a1")
+    pb.text(-160, 851, "(1,60 m fri gang til verandadør)", size=15, weight="700", fill="#0284c7")
     pb.text(205, 882, "SPISESTUE ~11 m²", size=19, weight="700", fill="#854d0e")
 
     # Dimensions
@@ -659,13 +695,13 @@ def build_alt1_floor2(pb: PlanBuilder):
     pb.coffee_table(-145, 540, 120, 68)
     pb.armchair(25, 542, 76, 76)
     pb.dining_table(200, 985, 180, 90, seats=6)  # Helt klar av innadslående sør-verandadør!
-    pb.chimney_and_fireplace(135, 720, 95, 55, label_side="right")
+    pb.chimney_and_fireplace(135, 720, 95, 55, mode="west_stove")
 
     pb.room_label(142, 138, "Trapp", "4,8 m²")
     pb.room_label(118, 352, "Bod / Vask", "3,6 m²")
     pb.room_label(362, 100, "Hall", "4,5 m²", "(2-mannsbolig)")
-    pb.text(-130, 812, "LOFTSTUE / HAGESTUE", size=21, weight="800", fill="#0369a1")
-    pb.text(-130, 838, "~24 m² + 11 m² spis (innbygd)", size=16, weight="700", fill="#0284c7")
+    pb.text(-160, 825, "LOFTSTUE / HAGESTUE", size=20, weight="800", fill="#0369a1")
+    pb.text(-160, 851, "~24 m² + 11 m² spis (innbygd)", size=15, weight="700", fill="#0284c7")
 
     pb.dim_h(0, 866, -265, "8,66 m", bold=True)
     pb.dim_h(-320, 0, -265, "3,20 m (innbygd 2. etg)", color="#0284c7", bold=True)
@@ -720,7 +756,7 @@ def build_alt2_floor1(pb: PlanBuilder):
     pb.coffee_table(-55, 530, 135, 75)
     pb.armchair(225, 515, 78, 78)
     pb.armchair(225, 615, 78, 78)
-    pb.chimney_and_fireplace(135, 720, 95, 55, label_side="right")
+    pb.chimney_and_fireplace(135, 720, 95, 55, mode="south_stove")
 
     # Labels
     pb.room_label(142, 135, "Trapp", "4,7 m²")
@@ -780,7 +816,7 @@ def build_alt2_floor2(pb: PlanBuilder):
     pb.sofa_l(-180, 540, w_horiz=285, h_vert=220, depth=92, corner="bl")
     pb.coffee_table(-55, 530, 135, 75)
     pb.dining_table(235, 975, 200, 95, seats=6)
-    pb.chimney_and_fireplace(135, 720, 95, 55, label_side="right")
+    pb.chimney_and_fireplace(135, 720, 95, 55, mode="south_stove")
 
     pb.room_label(142, 135, "Trapp", "4,7 m²")
     pb.room_label(162, 315, "Bod / Vask", "2,7 m²")
