@@ -63,6 +63,11 @@ def build_nw_scene(cam: Camera3D, alt: int = 1):
         y_s, y_n = 236.0, 756.0       # 5,20 m wide, 4,10 m from north wall
         wing_deg = 20.0
         north_d = 210.0
+    elif alt == 25:
+        west_d = 300.0                # Alt 2.5: 3,00 m deep x 5,02 m wide!
+        y_s, y_n = 344.0, 846.0       # 3,20 | 5,02 | 3,44 m
+        wing_deg = 32.7               # Parallel 32,7° saltak!
+        north_d = 250.0               # 2,50 m north extension
     else:
         west_d = 230.0
         y_s, y_n = 344.0, 846.0       # 5,02 m wide, 3,20 m from north wall (3,20 | 5,02 | 3,44 m!)
@@ -260,6 +265,10 @@ def build_nw_scene(cam: Camera3D, alt: int = 1):
     if alt == 1:
         sc.add_text_at((nx_mid, ny_n + 26, nz_ridge + 85), "2,10 m nord-tilbygg (32,7°)", dx=-65, dy=-18, size=14, weight="800", fill="#0f172a", anchor="middle")
         sc.add_text_at((-west_d / 2, y_n + 40, 0), "3,30×5,20 m vest (20° + nord-verandadør)", dx=-15, dy=52, size=14, weight="800", fill="#0369a1")
+    elif alt == 25:
+        sc.add_text_at((nx_mid, ny_n + 26, nz_ridge + 85), "2,50 m nord-tilbygg", dx=-75, dy=-34, size=14, weight="800", fill="#0f172a", anchor="middle")
+        sc.add_text_at((nx_mid, ny_n + 26, nz_ridge + 85), "(6 m² Vask + 6 m² Vindfang)", dx=-75, dy=-16, size=12, weight="700", fill="#047857", anchor="middle")
+        sc.add_text_at((-west_d / 2, y_n + 40, 0), "3,00×5,02 m vest (parallelt 32,7° saltak!)", dx=-15, dy=52, size=14, weight="800", fill="#059669")
     else:
         sc.add_text_at((nx_mid, ny_n + 26, nz_ridge + 85), "2,50 m nord-tilbygg", dx=-75, dy=-34, size=14, weight="800", fill="#0f172a", anchor="middle")
         sc.add_text_at((nx_mid, ny_n + 26, nz_ridge + 85), "(6 m² Vask + 6 m² Vindfang)", dx=-75, dy=-16, size=12, weight="700", fill="#047857", anchor="middle")
@@ -326,6 +335,46 @@ def main():
     with open(out, "w", encoding="utf-8") as f:
         f.write("\n".join(svg))
     print(f"Wrote {out}")
+
+    # Also write Alt 2 (2,30 m) vs Alt 2.5 (3,00 m) side-by-side NW comparison!
+    svg25 = [
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" '
+        f'style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;">',
+        "<defs>",
+        '  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">',
+        '    <stop offset="0%" stop-color="#bae6fd"/>',
+        '    <stop offset="68%" stop-color="#f0f9ff"/>',
+        '    <stop offset="100%" stop-color="#fef3c7"/>',
+        "  </linearGradient>",
+        f'  <clipPath id="clipL"><rect x="{p1x}" y="{py}" width="{pw}" height="{ph}" rx="10"/></clipPath>',
+        f'  <clipPath id="clipR"><rect x="{p2x}" y="{py}" width="{pw}" height="{ph}" rx="10"/></clipPath>',
+        "</defs>",
+        f'<rect width="{W}" height="{H}" fill="#f8fafc"/>',
+        f'<rect x="0" y="0" width="{W}" height="122" fill="#0f172a"/>',
+        f'<rect x="0" y="116" width="{W}" height="6" fill="#059669"/>',
+        f'<text x="48" y="54" font-size="34" font-weight="800" fill="#ffffff">M6 (#50) — Eksakt 3D-modell NORDVEST: Alternativ 2 (2,30 m) vs. Alternativ 2.5 (3,00 m)</text>',
+        f'<text x="48" y="92" font-size="19" font-weight="500" fill="#cbd5e1">Identisk 3,20 | 5,02 | 3,44 m plassering, 2,50 m nord-tilbygg og parallelt 32,7° saltak • +70 cm dypere tverrfløy i Alt 2.5 (~30 m² stue)</text>',
+        f'<rect x="{p1x}" y="138" width="{pw}" height="46" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5" rx="8"/>',
+        f'<text x="{p1x + pw / 2}" y="168" font-size="20" font-weight="800" fill="#0369a1" text-anchor="middle">ALTERNATIV 2 — 2,30 × 5,02 m vest (eksist. mur, 32,7° saltak) + 2,50 m nord</text>',
+        f'<rect x="{p1x}" y="{py}" width="{pw}" height="{ph}" fill="url(#sky)" stroke="#cbd5e1" stroke-width="2" rx="10"/>',
+        f'<rect x="{p2x}" y="138" width="{pw}" height="46" fill="#d1fae5" stroke="#059669" stroke-width="1.5" rx="8"/>',
+        f'<text x="{p2x + pw / 2}" y="168" font-size="20" font-weight="800" fill="#047857" text-anchor="middle">ALTERNATIV 2.5 — 3,00 × 5,02 m vest (+0,70 m dypere, 32,7° saltak) + 2,50 m nord</text>',
+        f'<rect x="{p2x}" y="{py}" width="{pw}" height="{ph}" fill="url(#sky)" stroke="#cbd5e1" stroke-width="2" rx="10"/>',
+        '<g clip-path="url(#clipL)">',
+        *build_nw_scene(cam_l, alt=2),
+        "</g>",
+        '<g clip-path="url(#clipR)">',
+        *build_nw_scene(cam_r, alt=25),
+        "</g>",
+        f'<text x="{W / 2}" y="1116" font-size="16" font-weight="600" fill="#475569" text-anchor="middle">'
+        f'Eksakt matematisk perspektiv (1:1 koordinater) • Alle 3 tak har eksakt 32,7° takvinkel • Fluktende nord-trappevinduer (62 cm / 124 cm) • Uendret 33 cm pipeklaring!'
+        f'</text>',
+        "</svg>",
+    ]
+    out25 = os.path.join(OUT_DIR, "perspektiv_3d_alt25_nordvest.svg")
+    with open(out25, "w", encoding="utf-8") as f:
+        f.write("\n".join(svg25))
+    print(f"Wrote {out25}")
 
 
 if __name__ == "__main__":

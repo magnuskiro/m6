@@ -83,6 +83,7 @@ Eksisterende vest-utbygg (`2,28 × 4,07 m`) **rives helt** for enkel tilgang til
 * **Plantegninger 1. & 2. etg (1 px = 1 cm):**
   * [Alternativ 1 (`3,20 × 5,20 m` vest + `2,10 m` nord-tilbygg)](../assets/images/drawings/plan_alt1_dypere_vest.png)
   * [Alternativ 2 — Catrine/Magnus (`2,30 × 5,02 m` på eksist. mur + `2,50 m` nord-tilbygg m/ `6 m² Vaskerom` & `U.04` øst-kjellertrapp)](../assets/images/drawings/plan_alt2_symmetrisk_vest.png)
+  * [**Alternativ 2.5 (`3,00 × 5,02 m` vest, `~30 m²` stue + `2,50 m` nord-tilbygg, parallelt `32,7°` saltak m/ `33 cm` pipeklaring)**](../assets/images/drawings/plan_alt25_3m_vest.png)
 * **Peistest (rett vest på original pipe):**
   * [Sammenligning `2,30 m` vs `2,80 m` vs `3,20 m`](../assets/images/drawings/test_peis_vest_sammenligning.png)
 * **Tekniske fasader & 3D-takplan:**
@@ -93,6 +94,7 @@ Eksisterende vest-utbygg (`2,28 × 4,07 m`) **rives helt** for enkel tilgang til
   * [Sørvest — direkte sammenligning Alt 1 (`3,30×5,20 m, 20°`) vs. Catrines Alt 2 (`2,30×5,02 m, 32,7°`)](../assets/images/drawings/perspektiv_3d_eksakt_dybde.png)
   * [Sørvest — Alt 2 (`2,30×5,02 m`) vs. **Alt 2.5 (`3,00×5,02 m`, parallelt `32,7°` saltak, uendret `33 cm` pipeklaring!)**](../assets/images/drawings/perspektiv_3d_alt25_sorvest.png)
   * [Nordvest — direkte sammenligning Alt 1 vs. Alt 2 (`32,7°` nord-tilbygg, fluktende nord-trappevinduer & vest-tverrfløy)](../assets/images/drawings/perspektiv_3d_nordvest_eksakt.png)
+  * [Nordvest — Alt 2 (`2,30×5,02 m`) vs. **Alt 2.5 (`3,00×5,02 m`, parallelt `32,7°` saltak & `2,50 m` nord-tilbygg)**](../assets/images/drawings/perspektiv_3d_alt25_nordvest.png)
   * [Nordøst & Sørøst — Alternativ 2 (`100 %` fluktende østvegg, `2,50 m` nord-tilbygg, 3 åpne kjellertrinn + lavt `12°` trappetak under overlys `Bad 1.etg`)](../assets/images/drawings/perspektiv_3d_nordost_alt2_eksakt.png)
 * **Fotorealistiske 3D-renders (oppdatert kors-sprosse-serie):**
   * **Alternativ 1 — alle 4 hjørner:** [Sørvest](../assets/images/drawings/render_4hjorner_sorvest.jpg) · [Nordvest](../assets/images/drawings/render_4hjorner_nordvest.jpg) · [Nordøst](../assets/images/drawings/render_4hjorner_nordost.jpg) · [Sørøst](../assets/images/drawings/render_4hjorner_sorost.jpg)

@@ -820,16 +820,18 @@ def build_alt1_floor2(pb: PlanBuilder):
     pb.dim_v(925, 842, 1136, "2,9 m", text_offset=24)
 
 
-def build_alt2_floor1(pb: PlanBuilder):
-    """Alternativ 2 (Catrines oppsett) - 1. etg: 2,50 m nord-tilbygg (6,0 m² Vindfang + 6,0 m² Vaskerom!)
-    + 2,30 m × 5,02 m vest-tilbygg (y=320..822) på eksist. mur!"""
-    west_d, wy1, wy2 = 230, 320, 822
+def build_alt2_floor1(pb: PlanBuilder, west_d: int = 230):
+    """Alternativ 2 (2,30 m) / Alternativ 2.5 (3,00 m) - 1. etg: 2,50 m nord-tilbygg (6,0 m² Vindfang + 6,0 m² Vaskerom!)
+    + west_d × 5,02 m vest-tilbygg (y=320..822)!"""
+    wy1, wy2 = 320, 822
+    is_25 = west_d >= 290
+    dx_w = west_d - 230  # 0 for Alt 2, 70 for Alt 2.5
     draw_outer_shell(pb, west_d, wy1, wy2, north_ext=True, north_depth=250)
 
-    pb.rect(-200, 350, 668, 442, fill="#fffbeb", opacity=0.85)
+    pb.rect(-west_d + 30, 350, 668 + dx_w, 442, fill="#fffbeb", opacity=0.85)
     pb.rect(30, 792, 440, 344, fill="#fefce8", opacity=0.75)
-    pb.rect(-196, 354, 586, 362, fill="none", stroke="#059669", sw=3.2, dash="12,8")
-    pb.rect(-196, 716, 318, 72, fill="none", stroke="#059669", sw=2.5, dash="8,6")
+    pb.rect(-west_d + 34, 354, 586 + dx_w, 362, fill="none", stroke="#059669", sw=3.2, dash="12,8")
+    pb.rect(-west_d + 34, 716, 318 + dx_w, 72, fill="none", stroke="#059669", sw=2.5, dash="8,6")
     pb.rect(30, 244, 220, 100, fill="#eff6ff", opacity=0.85)  # Garderobe / Bod (2,2 m²)
     pb.rect(256, 30, 200, 320, fill="#f8fafc", opacity=0.85)  # Gang
 
@@ -848,52 +850,65 @@ def build_alt2_floor1(pb: PlanBuilder):
     pb.line(170, 350, 170, 720, stroke="#94a3b8", sw=2.5, dash="8,8")
     pb.line(230, 756, 464, 756, stroke="#94a3b8", sw=2.5, dash="8,8")
 
-    # West, north & south windows (100% synced with Fasade Vest Alt 2!)
-    pb.window_v(-215, 382, 537, 30)  # Vestfløy nordre kors-sprosse
-    pb.window_v(-215, 605, 760, 30)  # Vestfløy søndre kors-sprosse
-    pb.window_h(-175, -55, 807, 30)  # Vestfløy sørvindu
-    pb.window_h(-175, -55, 335, 30)  # Vestfløy nordvindu
+    # West, north & south windows (100% synced with Fasade Vest Alt 2 / Alt 2.5!)
+    pb.window_v(-west_d + 15, 382, 537, 30)  # Vestfløy nordre kors-sprosse
+    pb.window_v(-west_d + 15, 605, 760, 30)  # Vestfløy søndre kors-sprosse
+    wx_c = -west_d / 2.0
+    wx_hw = 65 if is_25 else 60
+    pb.window_h(wx_c - wx_hw, wx_c + wx_hw, 807, 30)  # Vestfløy sørvindu
+    pb.window_h(wx_c - wx_hw, wx_c + wx_hw, 335, 30)  # Vestfløy nordvindu
     pb.window_h(105, 235, 1151, 30)  # Spisestue sør
     pb.window_v(15, 929, 1059, 30)   # Spisestue vest
     pb.window_v(15, 95, 225, 30)     # Trapp vest
 
     # Fixtures & furniture — H2O fireplace on NORTH/WEST of chimney facing directly into sofa lounge!
     pb.stairs_u(36, 36, 212, 200)
-    pb.wardrobe(38, 294, 155, 46, "Gard. / Skap")      # Garderobe/bod (vaskerom flyttet til nord-tilbygg!)
+    pb.wardrobe(38, 294, 155, 46, "Gard. / Skap")
     pb.dining_table(205, 985, 200, 95, seats=8)
     pb.tv_bench(38, 356, 200, 42)
-    pb.sofa_l(-185, 540, w_horiz=225, h_vert=230, depth=92, corner="bl")  # 103 cm klar til vestglass på H2O-peis!
-    pb.coffee_table(-65, 545, 120, 70)
-    pb.armchair(255, 495, 76, 76)
+    if is_25:
+        pb.sofa_l(-255, 520, w_horiz=255, h_vert=250, depth=95, corner="bl")  # Romslig 2,55×2,50 m L-sofa!
+        pb.coffee_table(-125, 540, 130, 75)
+        pb.armchair(255, 495, 76, 76)
+    else:
+        pb.sofa_l(-185, 540, w_horiz=225, h_vert=230, depth=92, corner="bl")  # 103 cm klar til vestglass på H2O-peis!
+        pb.coffee_table(-65, 545, 120, 70)
+        pb.armchair(255, 495, 76, 76)
     pb.chimney_and_fireplace(135, 720, 95, 55, mode="north_insert")
 
     # Labels
     pb.room_label(103, 136, "Trapp", "4,6 m²")
     pb.text(122, 278, "Gard. / Bod 2,2 m²", size=14, weight="700", fill="#1e293b")
     pb.text(365, 285, "Gang", size=20, weight="700", fill="#475569")
-    pb.text(80, 434, "STUE ~26 m² (4,42 × 5,90 m)", size=22, weight="800", fill="#047857")
-    pb.text(80, 460, "H2O-peis mot sofakrok • Utnytter eksist. sørvegg vest", size=15, weight="700", fill="#059669")
+    if is_25:
+        pb.text(55, 434, "STUE ~30 m² (4,42 × 6,60 m)", size=22, weight="800", fill="#047857")
+        pb.text(55, 460, "3,00 m vest-fløy • 2,49 m fri vest for peis (også plass til vest-peis!)", size=14, weight="700", fill="#059669")
+    else:
+        pb.text(80, 434, "STUE ~26 m² (4,42 × 5,90 m)", size=22, weight="800", fill="#047857")
+        pb.text(80, 460, "H2O-peis mot sofakrok • Utnytter eksist. sørvegg vest", size=15, weight="700", fill="#059669")
     pb.text(205, 882, "SPISESTUE ~12,5 m²", size=19, weight="700", fill="#854d0e")
 
-    # Dimensions (east vertical dims shifted clear of east-wall covered basement stair + 2,50 m north ext!)
+    # Dimensions
     pb.dim_h(0, 866, -280, "8,66 m (eksisterende bredde)", bold=True)
-    pb.dim_h(-230, 0, -280, "2,30 m (eksist. mur!)", color="#059669", bold=True)
+    pb.dim_h(-west_d, 0, -280, "3,00 m (+0,7 m mur)" if is_25 else "2,30 m (eksist. mur!)", color="#059669", bold=True)
     pb.dim_v(1085, -250, 0, "2,50 m nord", color="#ea580c", bold=True, text_offset=26)
     pb.dim_v(1085, 0, 1166, "11,66 m (eksisterende lengde — INGEN syd-tilbygg)", bold=True, text_offset=26)
-    pb.dim_v(-295, 0, 320, "3,20 m (nord)", color="#059669", bold=True)
-    pb.dim_v(-295, 320, 822, "5,02 m (vest-tilbygg)", color="#059669", bold=True)
-    pb.dim_v(-295, 822, 1166, "3,44 m (eksist. sørvegg)", color="#059669", bold=True)
+    pb.dim_v(-west_d - 65, 0, 320, "3,20 m (nord)", color="#059669", bold=True)
+    pb.dim_v(-west_d - 65, 320, 822, "5,02 m (vest-tilbygg)", color="#059669", bold=True)
+    pb.dim_v(-west_d - 65, 822, 1166, "3,44 m (eksist. sørvegg)", color="#059669", bold=True)
 
 
-def build_alt2_floor2(pb: PlanBuilder):
-    """Alternativ 2 (Catrines oppsett) - 2. etg."""
-    west_d, wy1, wy2 = 230, 320, 822
+def build_alt2_floor2(pb: PlanBuilder, west_d: int = 230):
+    """Alternativ 2 (2,30 m) / Alternativ 2.5 (3,00 m) - 2. etg."""
+    wy1, wy2 = 320, 822
+    is_25 = west_d >= 290
+    dx_w = west_d - 230
     draw_outer_shell(pb, west_d, wy1, wy2, north_ext=False, north_depth=250)
 
-    pb.rect(-200, 350, 668, 442, fill="#fffbeb", opacity=0.85)
+    pb.rect(-west_d + 30, 350, 668 + dx_w, 442, fill="#fffbeb", opacity=0.85)
     pb.rect(30, 792, 440, 344, fill="#fefce8", opacity=0.75)
-    pb.rect(-196, 354, 586, 362, fill="none", stroke="#059669", sw=3.2, dash="12,8")
-    pb.rect(-196, 716, 318, 72, fill="none", stroke="#059669", sw=2.5, dash="8,6")
+    pb.rect(-west_d + 34, 354, 586 + dx_w, 362, fill="none", stroke="#059669", sw=3.2, dash="12,8")
+    pb.rect(-west_d + 34, 716, 318 + dx_w, 72, fill="none", stroke="#059669", sw=2.5, dash="8,6")
     pb.rect(30, 244, 220, 100, fill="#eff6ff", opacity=0.85)
     pb.rect(256, 30, 210, 212, fill="#f8fafc", opacity=0.9)
     pb.rect(256, 242, 210, 108, fill="#f8fafc", opacity=0.7)
@@ -911,10 +926,12 @@ def build_alt2_floor2(pb: PlanBuilder):
     pb.door(310, 242, 90, "h_right_down", wall_t=12)  # 2-mannsbolig / leilighetsdør
     pb.door(256, 258, 76, "v_down_right", wall_t=12)  # Bod / Vask (swings into corridor!)
 
-    pb.window_v(-215, 382, 537, 30)
-    pb.window_v(-215, 605, 760, 30)
-    pb.window_h(-175, -55, 807, 30)
-    pb.window_h(-175, -55, 335, 30)
+    pb.window_v(-west_d + 15, 382, 537, 30)
+    pb.window_v(-west_d + 15, 605, 760, 30)
+    wx_c = -west_d / 2.0
+    wx_hw = 65 if is_25 else 60
+    pb.window_h(wx_c - wx_hw, wx_c + wx_hw, 807, 30)
+    pb.window_h(wx_c - wx_hw, wx_c + wx_hw, 335, 30)
     pb.window_h(105, 235, 1151, 30)
     pb.double_terrace_door_h(433, 1151, 160, wall_t=30, swing_down=False)  # Eksist. sentrert verandadør 2. etg sør!
     pb.window_h(631, 761, 1151, 30)
@@ -925,9 +942,14 @@ def build_alt2_floor2(pb: PlanBuilder):
     pb.washer_dryer(40, 262, count=1, vertical=False)
     pb.wardrobe(106, 266, 62, 56)
     pb.tv_bench(38, 356, 200, 42)
-    pb.sofa_l(-185, 540, w_horiz=225, h_vert=230, depth=92, corner="bl")
-    pb.coffee_table(-65, 545, 120, 70)
-    pb.armchair(255, 495, 76, 76)
+    if is_25:
+        pb.sofa_l(-255, 520, w_horiz=255, h_vert=250, depth=95, corner="bl")
+        pb.coffee_table(-125, 540, 130, 75)
+        pb.armchair(255, 495, 76, 76)
+    else:
+        pb.sofa_l(-185, 540, w_horiz=225, h_vert=230, depth=92, corner="bl")
+        pb.coffee_table(-65, 545, 120, 70)
+        pb.armchair(255, 495, 76, 76)
     pb.dining_table(200, 985, 180, 90, seats=6)
     pb.chimney_and_fireplace(135, 720, 95, 55, mode="north_stove")
 
@@ -935,11 +957,15 @@ def build_alt2_floor2(pb: PlanBuilder):
     pb.text(210, 294, "Bod/Vask", size=14, weight="700", fill="#1e293b")
     pb.text(210, 314, "2,2 m²", size=13, weight="600", fill="#475569")
     pb.room_label(362, 98, "Hall", "4,3 m²", "(2-mannsbolig)")
-    pb.text(80, 434, "LOFTSTUE / HAGESTUE ~26 m²", size=20, weight="800", fill="#047857")
-    pb.text(80, 460, "(4,42 × 5,90 m + 12,5 m² sørvest)", size=16, weight="700", fill="#059669")
+    if is_25:
+        pb.text(55, 434, "LOFTSTUE / HAGESTUE ~30 m²", size=20, weight="800", fill="#047857")
+        pb.text(55, 460, "(4,42 × 6,60 m + 12,5 m² sørvest)", size=16, weight="700", fill="#059669")
+    else:
+        pb.text(80, 434, "LOFTSTUE / HAGESTUE ~26 m²", size=20, weight="800", fill="#047857")
+        pb.text(80, 460, "(4,42 × 5,90 m + 12,5 m² sørvest)", size=16, weight="700", fill="#059669")
 
     pb.dim_h(0, 866, -280, "8,66 m", bold=True)
-    pb.dim_h(-230, 0, -280, "2,30 m (innbygd 2. etg)", color="#059669", bold=True)
+    pb.dim_h(-west_d, 0, -280, "3,00 m (innbygd 2. etg)" if is_25 else "2,30 m (innbygd 2. etg)", color="#059669", bold=True)
     pb.dim_v(925, 30, 392, "3,6 m", text_offset=24)
     pb.dim_v(925, 392, 598, "2,0 m", text_offset=24)
     pb.dim_v(925, 598, 842, "2,4 m", text_offset=24)
@@ -1030,5 +1056,18 @@ if __name__ == "__main__":
             "Stue ~26 m² + H2O-peis • 6 m² Vindfang + 6 m² Vaskerom (2,5 m nord)",
             "Kjellertrapp øst: 3 åpne trinn + lavt horisontalt tak under badvindu",
             "Parallelt 32,7° saltak over hele huset — 33 cm klar av 2-løps pipe!",
+        ],
+    )
+    make_sheet(
+        "plan_alt25_3m_vest.svg",
+        "M6 — ALTERNATIV 2.5: 3,00 × 5,02 m vest + 2,50 m nord-tilbygg (6 m² Vindfang + 6 m² Vaskerom)",
+        "Catrines 3,20 | 5,02 | 3,44 m oppsett forlenget +0,70 m vestover • ~30 m² stue • Parallelt 32,7° saltak (uendret 33 cm pipeklaring!)",
+        "#059669",
+        lambda pb: build_alt2_floor1(pb, west_d=300),
+        lambda pb: build_alt2_floor2(pb, west_d=300),
+        [
+            "Stue ~30 m² (4,42 × 6,60 m) • 2,49 m fri vest for peis (plass til stor L-sofa!)",
+            "6 m² Vindfang + 6 m² Vaskerom (2,5 m nord) + overbygd øst-kjellertrapp (U.04)",
+            "Parallelt 32,7° saltak over hele huset — uendret 33 cm klar av 2-løps pipe!",
         ],
     )
