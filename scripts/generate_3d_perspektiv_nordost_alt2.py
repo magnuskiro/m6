@@ -58,9 +58,9 @@ def build_alt2_ne_scene(cam: Camera3D, with_labels=True, view="ne"):
         sc.add_poly([(-300, 846, 40), (0, 846, 40), (0, 846, z_eaves), (-300, 846, z_eaves)], "#f1f5f9", stroke="#334155", sw=1.3, layer=1)
     else:
         sc.add_poly([(-300, 344, 40), (0, 344, 40), (0, 344, z_eaves), (-300, 344, z_eaves)], "#f1f5f9", stroke="#334155", sw=1.3, layer=1)
-        # South timber deck (visible in SE view)
-        sc.add_poly([(320, -240, 22), (910, -240, 22), (910, 0, 22), (320, 0, 22)], "#d6b084", stroke="#92400e", sw=1.2, layer=1)
-        sc.add_poly([(320, -240, 0), (910, -240, 0), (910, -240, 22), (320, -240, 22)], "#a88358", stroke="#78350f", sw=1.0, layer=1)
+        # South timber deck (visible in SE view, full width X=0..910 so both balcony columns land solidly on deck!)
+        sc.add_poly([(0, -240, 22), (910, -240, 22), (910, 0, 22), (0, 0, 22)], "#d6b084", stroke="#92400e", sw=1.2, layer=1)
+        sc.add_poly([(0, -240, 0), (910, -240, 0), (910, -240, 22), (0, -240, 22)], "#a88358", stroke="#78350f", sw=1.0, layer=1)
         sc.add_poly([(910, -240, 0), (910, 0, 0), (910, 0, 22), (910, -240, 22)], "#b48f64", stroke="#78350f", sw=1.0, layer=1)
 
     # Chimney top peeking behind ridge (X=135..230, Y=391..446, Z_top=905)
@@ -124,7 +124,7 @@ def build_alt2_ne_scene(cam: Camera3D, with_labels=True, view="ne"):
         sc.add_kors_window_south(0, 631, 761, 103, 248, layer=4)
         sc.add_kors_window_south(0, 105, 235, 383, 528, layer=4)
         sc.add_kors_window_south(0, 353, 513, 322, 532, is_door=True, layer=4)
-        sc.add_south_balcony(273.0, 593.0, depth=160.0, z_floor=322.0, layer=5)
+        sc.add_south_balcony(243.0, 623.0, depth=215.0, z_floor=322.0, layer=5, columns=True)
         sc.add_kors_window_south(0, 631, 761, 383, 528, layer=4)
         sc.add_kors_window_south(0, 375, 491, 655, 770, layer=4)
 

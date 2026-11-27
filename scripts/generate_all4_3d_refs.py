@@ -146,9 +146,9 @@ def build_se_ref():
     z_ridge = z_eaves + 433.0 * t_main
 
     sc.add_poly([(-600, -600, 0), (1600, -600, 0), (1600, 1900, 0), (-600, 1900, 0)], "#bbf7d0", stroke="none", sw=0, layer=0, auto_shade=False)
-    # South timber terrace deck
-    sc.add_poly([(320, -240, 22), (910, -240, 22), (910, 0, 22), (320, 0, 22)], "#d6b084", stroke="#92400e", sw=1.3, layer=1)
-    sc.add_poly([(320, -240, 0), (910, -240, 0), (910, -240, 22), (320, -240, 22)], "#a88358", stroke="#78350f", sw=1.1, layer=1)
+    # South timber terrace deck (full width X=0..910 so both balcony columns land solidly on deck!)
+    sc.add_poly([(0, -240, 22), (910, -240, 22), (910, 0, 22), (0, 0, 22)], "#d6b084", stroke="#92400e", sw=1.3, layer=1)
+    sc.add_poly([(0, -240, 0), (910, -240, 0), (910, -240, 22), (0, -240, 22)], "#a88358", stroke="#78350f", sw=1.1, layer=1)
     sc.add_poly([(910, -240, 0), (910, 0, 0), (910, 0, 22), (910, -240, 22)], "#b48f64", stroke="#78350f", sw=1.1, layer=1)
 
     # Subtle glimpse of 3.30m west extension behind SW corner (X=-330..0, Y=236)
@@ -177,7 +177,7 @@ def build_se_ref():
     sc.add_kors_window_south(0, 631, 761, 105, 250, layer=4)
     sc.add_kors_window_south(0, 105, 235, 385, 530, layer=4)
     sc.add_kors_window_south(0, 353, 513, 322, 532, is_door=True, layer=4)
-    sc.add_south_balcony(273.0, 593.0, depth=160.0, z_floor=322.0, layer=5)
+    sc.add_south_balcony(243.0, 623.0, depth=215.0, z_floor=322.0, layer=5, columns=True)
     sc.add_kors_window_south(0, 631, 761, 385, 530, layer=4)
     sc.add_kors_window_south(0, 375, 491, 655, 770, layer=4)
 

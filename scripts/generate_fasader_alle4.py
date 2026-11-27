@@ -374,12 +374,15 @@ def draw_south(d: ElevDraw, alt: int = 1):
     # 2. etg: flanking kors-sprosse + EXISTING centered veranda door (Opphold 2.etg, vest for Sov 3 ved x=526!) + flanking kors-sprosse (Sov 3)
     d.kors_win(105, -528, 130, 145, single=False)   # Opphold 2. etg (symmetrisk venstre)
     d.french_door_kors(353, -530, 160, 208)         # Eksist. sentrert verandadør 2. etg (rett over 1. etg!)
-    # Subtle matte-black wrought-iron French balcony railing (TEK17 fall protection until balcony is added)
-    d.rect(346, -422, 174, 6, fill="#1e293b")
-    d.rect(346, -326, 174, 5, fill="#1e293b")
-    for rx in range(356, 516, 16):
-        d.line(rx, -416, rx, -326, stroke="#1e293b", sw=1.8)
-    d.text(433, -545, "Eksist. verandadør 2.etg (fransk rekkv. / evt. balkong)", size=10, weight="700", fill="#475569")
+    # Modern 2nd-floor south balcony (3,80 x 2,15 m = 8,2 m²) on 2 slim white columns (aligned w/ flanking windows x=243..623!)
+    d.rect(249, -302, 14, 278, fill="#ffffff", stroke="#334155", sw=1.6)  # Left slim column down to terrace
+    d.rect(603, -302, 14, 278, fill="#ffffff", stroke="#334155", sw=1.6)  # Right slim column down to terrace
+    d.rect(243, -322, 380, 20, fill="#ffffff", stroke="#1e293b", sw=2.0)  # Balcony deck fascia
+    d.rect(243, -424, 380, 6, fill="#1e293b")                              # Top matte-black railing bar
+    d.rect(243, -330, 380, 5, fill="#1e293b")                              # Bottom railing bar
+    for rx in range(254, 618, 18):
+        d.line(rx, -418, rx, -330, stroke="#1e293b", sw=1.6)
+    d.text(433, -545, "Moderne sydbalkong 8,2 m² (3,80 × 2,15 m på 2 søyler)", size=10, weight="700", fill="#047857")
     d.kors_win(631, -528, 130, 145, single=False)   # Sov 3 (2. etg, bredde 3,1 m)
     d.kors_win(375, -768, 116, 115, single=False)   # Loft gavl (sentrert rett over dørene!)
 

@@ -171,28 +171,34 @@ class Scene3D:
             self.add_line((x1, y_wall - 0.5, z), (x2, y_wall - 0.5, z), stroke="#cbd5e1", sw=0.65, layer=layer, depth_bias=-2.0, opacity=0.65)
             z += step
 
-    def add_south_balcony(self, x1=273.0, x2=593.0, depth=160.0, z_floor=322.0, slab_t=18.0, rail_h=102.0, layer=5):
-        """Existing 2nd-floor cantilevered south balcony (~3,20 x 1,60 m = 5,2 m²) centered on veranda door."""
+    def add_south_balcony(self, x1=243.0, x2=623.0, depth=215.0, z_floor=322.0, slab_t=20.0, rail_h=102.0, layer=5, columns=True):
+        """Modern 2nd-floor south balcony (3,80 x 2,15 m = 8,2 m²) on 2 slim white timber columns down to south deck."""
         y0, y1 = 0.0, -depth
         z0 = z_floor - slab_t
         zr = z_floor + rail_h
-        # Underside soffit + deck top
+        # 2 slim white timber columns down to south timber deck (Z=22..z0) at front corners!
+        if columns:
+            cw = 14.0
+            for cx_a in [x1 + 6.0, x2 - 6.0 - cw]:
+                cx_b = cx_a + cw
+                cy_a, cy_b = y1 + 6.0, y1 + 6.0 + cw
+                self.add_poly([(cx_a, cy_a, 22), (cx_b, cy_a, 22), (cx_b, cy_a, z0), (cx_a, cy_a, z0)], "#ffffff", stroke="#334155", sw=1.2, layer=layer)
+                self.add_poly([(cx_a, cy_a, 22), (cx_a, cy_b, 22), (cx_a, cy_b, z0), (cx_a, cy_a, z0)], "#e2e8f0", stroke="#334155", sw=1.1, layer=layer)
+                self.add_poly([(cx_b, cy_a, 22), (cx_b, cy_b, 22), (cx_b, cy_b, z0), (cx_b, cy_a, z0)], "#e2e8f0", stroke="#334155", sw=1.1, layer=layer)
+        # Underside soffit + warm timber deck top
         self.add_poly([(x1, y1, z0), (x2, y1, z0), (x2, y0, z0), (x1, y0, z0)], "#cbd5e1", stroke="#475569", sw=1.1, layer=layer)
         self.add_poly([(x1, y1, z_floor), (x2, y1, z_floor), (x2, y0, z_floor), (x1, y0, z_floor)], "#d6b084", stroke="#78350f", sw=1.1, layer=layer, ambient=0.78)
         # Clean white fascia edges (south, west, east)
         self.add_poly([(x1, y1, z0), (x2, y1, z0), (x2, y1, z_floor), (x1, y1, z_floor)], "#ffffff", stroke="#1e293b", sw=1.5, layer=layer)
         self.add_poly([(x1, y1, z0), (x1, y0, z0), (x1, y0, z_floor), (x1, y1, z_floor)], "#f1f5f9", stroke="#1e293b", sw=1.4, layer=layer)
         self.add_poly([(x2, y1, z0), (x2, y0, z0), (x2, y0, z_floor), (x2, y1, z_floor)], "#f1f5f9", stroke="#1e293b", sw=1.4, layer=layer)
-        # Matte-black metal balustrade railing (TEK17 height ~102 cm) along west, south, east edges
-        # Top & bottom rails
+        # Sleek matte-black vertical metal balustrade railing (TEK17 height ~102 cm) along west, south, east edges
         for z_bar, sw_bar in [(zr, 2.6), (z_floor + 8.0, 1.8)]:
             self.add_line((x1 + 4, y0, z_bar), (x1 + 4, y1 + 4, z_bar), stroke="#0f172a", sw=sw_bar, layer=layer + 1)
             self.add_line((x1 + 4, y1 + 4, z_bar), (x2 - 4, y1 + 4, z_bar), stroke="#0f172a", sw=sw_bar, layer=layer + 1)
             self.add_line((x2 - 4, y1 + 4, z_bar), (x2 - 4, y0, z_bar), stroke="#0f172a", sw=sw_bar, layer=layer + 1)
-        # Corner posts
         for px, py in [(x1 + 4, y1 + 4), (x2 - 4, y1 + 4), (x1 + 4, y0 - 2), (x2 - 4, y0 - 2)]:
             self.add_line((px, py, z_floor), (px, py, zr), stroke="#0f172a", sw=2.4, layer=layer + 1)
-        # Vertical balusters (south front + west & east sides)
         rx = x1 + 24.0
         while rx < x2 - 12.0:
             self.add_line((rx, y1 + 4, z_floor + 8.0), (rx, y1 + 4, zr), stroke="#1e293b", sw=1.2, layer=layer + 1)
@@ -270,8 +276,8 @@ def build_house_3d(cam: Camera3D, west_d: float, y_s: float, y_n: float, wing_de
     sc.add_kors_window_south(0, 631, 761, 105, 250, layer=2)                # Kitchen 1st (right)
     sc.add_kors_window_south(0, 105, 235, 385, 530, layer=2)                # Opphold 2nd (left)
     sc.add_kors_window_south(0, 353, 513, 322, 532, is_door=True, layer=2)  # EXISTING centered veranda door 2nd!
-    # Existing cantilevered 2nd-floor south balcony (3,20 x 1,60 m = ~5,2 m²) centered on veranda door!
-    sc.add_south_balcony(273.0, 593.0, depth=160.0, z_floor=322.0, layer=4)
+    # Modern 2nd-floor south balcony (3,80 x 2,15 m = 8,2 m²) on 2 slim white columns down to south timber deck!
+    sc.add_south_balcony(243.0, 623.0, depth=215.0, z_floor=322.0, layer=4, columns=True)
     sc.add_kors_window_south(0, 631, 761, 385, 530, layer=2)                # Sov 3 2nd (right, 3.1m wide)
     sc.add_kors_window_south(0, 375, 491, 655, 770, layer=2)                # Loft gable (centered!)
 

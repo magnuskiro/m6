@@ -805,15 +805,20 @@ def build_alt1_floor2(pb: PlanBuilder):
     pb.window_h(105, 235, 1151, 30)   # Flanking south window west (Opphold 2. etg)
     pb.double_terrace_door_h(433, 1151, 160, wall_t=30, swing_down=False)  # Eksist. sentrert verandadør 2. etg sør!
     pb.window_h(631, 761, 1151, 30)
-    # Existing cantilevered 2nd-floor south balcony (3,20 × 1,60 m = 5,1 m²) centered on veranda door!
-    pb.rect(273, 1166, 320, 160, fill="#fef3c7", stroke="#334155", sw=2.6, opacity=0.72)
-    for bx in range(293, 593, 20):
-        pb.line(bx, 1168, bx, 1324, stroke="#d97706", sw=0.8, opacity=0.45)
-    pb.rect(277, 1170, 312, 152, fill="none", stroke="#0f172a", sw=1.4, dash="6,4")
-    pb.els.append(f'<circle cx="{pb.ox + 433:.1f}" cy="{pb.oy + 1258:.1f}" r="30" fill="#ffffff" stroke="#475569" stroke-width="1.6"/>')
-    pb.rect(342, 1236, 46, 44, fill="#e0f2fe", stroke="#0284c7", sw=1.4, rx=5)
-    pb.rect(478, 1236, 46, 44, fill="#e0f2fe", stroke="#0284c7", sw=1.4, rx=5)
-    pb.text(433, 1206, "Balkong 5,1 m² (3,20 × 1,60 m)", size=14, weight="700", fill="#78350f")   # Flanking south window east (Sov 3)
+    # Modern 2nd-floor south balcony (3,80 × 2,15 m = 8,2 m²) on 2 slim white columns, aligned w/ inner edges of flanking windows!
+    pb.rect(243, 1166, 380, 215, fill="#fef3c7", stroke="#334155", sw=2.6, opacity=0.72)
+    for bx in range(263, 623, 20):
+        pb.line(bx, 1168, bx, 1379, stroke="#d97706", sw=0.8, opacity=0.45)
+    pb.rect(247, 1170, 372, 207, fill="none", stroke="#0f172a", sw=1.4, dash="6,4")
+    # 2 slim white corner support columns (14x14 cm)
+    pb.rect(248, 1362, 14, 14, fill="#ffffff", stroke="#0f172a", sw=1.8)
+    pb.rect(604, 1362, 14, 14, fill="#ffffff", stroke="#0f172a", sw=1.8)
+    # Full 4-person outdoor dining set (140x82 cm table + 4 chairs) showing generous 2,15 m depth!
+    pb.rect(363, 1244, 140, 80, fill="#ffffff", stroke="#475569", sw=1.6, rx=4)
+    for cx_c in [385, 455]:
+        pb.rect(cx_c, 1212, 42, 26, fill="#e0f2fe", stroke="#0284c7", sw=1.3, rx=4)
+        pb.rect(cx_c, 1330, 42, 26, fill="#e0f2fe", stroke="#0284c7", sw=1.3, rx=4)
+    pb.text(433, 1196, "Balkong 8,2 m² (3,80 × 2,15 m på 2 søyler)", size=13, weight="700", fill="#78350f")   # Flanking south window east (Sov 3)
     pb.window_v(15, 90, 195, 30)      # Trapp vest
     pb.window_v(15, 285, 357, 30)     # Bod/Vask vest
     pb.window_v(15, 992, 1107, 30)    # Spis/opphold vest
@@ -965,15 +970,20 @@ def build_alt2_floor2(pb: PlanBuilder, west_d: int = 230):
     pb.window_h(105, 235, 1151, 30)
     pb.double_terrace_door_h(433, 1151, 160, wall_t=30, swing_down=False)  # Eksist. sentrert verandadør 2. etg sør!
     pb.window_h(631, 761, 1151, 30)
-    # Existing cantilevered 2nd-floor south balcony (3,20 × 1,60 m = 5,1 m²) centered on veranda door!
-    pb.rect(273, 1166, 320, 160, fill="#fef3c7", stroke="#334155", sw=2.6, opacity=0.72)
-    for bx in range(293, 593, 20):
-        pb.line(bx, 1168, bx, 1324, stroke="#d97706", sw=0.8, opacity=0.45)
-    pb.rect(277, 1170, 312, 152, fill="none", stroke="#0f172a", sw=1.4, dash="6,4")
-    pb.els.append(f'<circle cx="{pb.ox + 433:.1f}" cy="{pb.oy + 1258:.1f}" r="30" fill="#ffffff" stroke="#475569" stroke-width="1.6"/>')
-    pb.rect(342, 1236, 46, 44, fill="#e0f2fe", stroke="#0284c7", sw=1.4, rx=5)
-    pb.rect(478, 1236, 46, 44, fill="#e0f2fe", stroke="#0284c7", sw=1.4, rx=5)
-    pb.text(433, 1206, "Balkong 5,1 m² (3,20 × 1,60 m)", size=14, weight="700", fill="#78350f")
+    # Modern 2nd-floor south balcony (3,80 × 2,15 m = 8,2 m²) on 2 slim white columns, aligned w/ inner edges of flanking windows!
+    pb.rect(243, 1166, 380, 215, fill="#fef3c7", stroke="#334155", sw=2.6, opacity=0.72)
+    for bx in range(263, 623, 20):
+        pb.line(bx, 1168, bx, 1379, stroke="#d97706", sw=0.8, opacity=0.45)
+    pb.rect(247, 1170, 372, 207, fill="none", stroke="#0f172a", sw=1.4, dash="6,4")
+    # 2 slim white corner support columns (14x14 cm)
+    pb.rect(248, 1362, 14, 14, fill="#ffffff", stroke="#0f172a", sw=1.8)
+    pb.rect(604, 1362, 14, 14, fill="#ffffff", stroke="#0f172a", sw=1.8)
+    # Full 4-person outdoor dining set (140x82 cm table + 4 chairs) showing generous 2,15 m depth!
+    pb.rect(363, 1244, 140, 80, fill="#ffffff", stroke="#475569", sw=1.6, rx=4)
+    for cx_c in [385, 455]:
+        pb.rect(cx_c, 1212, 42, 26, fill="#e0f2fe", stroke="#0284c7", sw=1.3, rx=4)
+        pb.rect(cx_c, 1330, 42, 26, fill="#e0f2fe", stroke="#0284c7", sw=1.3, rx=4)
+    pb.text(433, 1196, "Balkong 8,2 m² (3,80 × 2,15 m på 2 søyler)", size=13, weight="700", fill="#78350f")
     pb.window_v(15, 929, 1059, 30)
     pb.window_v(15, 95, 225, 30)
 
@@ -1012,7 +1022,7 @@ def build_alt2_floor2(pb: PlanBuilder, west_d: int = 230):
 
 
 def make_sheet(filename: str, title: str, subtitle: str, accent: str, fn1, fn2, highlights: list[str]):
-    W, H = 3160, 2060
+    W, H = 3160, 2110
     svg = [
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" '
         f'style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;">',
@@ -1045,7 +1055,7 @@ def make_sheet(filename: str, title: str, subtitle: str, accent: str, fn1, fn2, 
     fn2(pb2)
     svg.extend(pb2.els)
 
-    fy = 1900
+    fy = 1950
     svg.append(f'<rect x="50" y="{fy}" width="{W - 100}" height="125" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" rx="12"/>')
     svg.append(f'<line x1="90" y1="{fy + 38}" x2="155" y2="{fy + 38}" stroke="#ea580c" stroke-width="4" stroke-dasharray="12,8"/>')
     svg.append(f'<text x="170" y="{fy + 45}" font-size="19" font-weight="600" fill="#334155">Eksisterende yttervegg / vest-utbygg (2,28 × 4,07 m)</text>')

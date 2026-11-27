@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3160 2060" width="3160" height="2060" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3160 2110" width="3160" height="2110" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;">
 <defs>
   <pattern id="grid100" width="100" height="100" patternUnits="userSpaceOnUse">
     <path d="M 100 0 L 0 0 0 100" fill="none" stroke="#e7e5e0" stroke-width="1.2"/>
   </pattern>
 </defs>
-<rect width="3160" height="2060" fill="#faf9f6"/>
-<rect width="3160" height="2060" fill="url(#grid100)"/>
+<rect width="3160" height="2110" fill="#faf9f6"/>
+<rect width="3160" height="2110" fill="url(#grid100)"/>
 <rect x="0" y="0" width="3160" height="150" fill="#0f172a"/>
 <rect x="0" y="144" width="3160" height="6" fill="#059669"/>
 <text x="70" y="68" font-size="40" font-weight="800" fill="#ffffff">M6 — ALTERNATIV 2: 3,00 × 5,02 m vest + 2,50 m nord-tilbygg (6 m² Vindfang + 6 m² Vaskerom)</text>
@@ -462,27 +462,34 @@
 <rect x="2651.0" y="1661.0" width="130.0" height="30.0" fill="#ffffff" stroke="#334155" stroke-width="2"/>
 <line x1="2651.0" y1="1671.0" x2="2781.0" y2="1671.0" stroke="#0284c7" stroke-width="3.5"/>
 <line x1="2651.0" y1="1681.0" x2="2781.0" y2="1681.0" stroke="#0284c7" stroke-width="3.5"/>
-<rect x="2293.0" y="1691.0" width="320.0" height="160.0" fill="#fef3c7" stroke="#334155" stroke-width="2.6" opacity="0.72"/>
-<line x1="2313.0" y1="1693.0" x2="2313.0" y2="1849.0" stroke="#d97706" stroke-width="0.8" opacity="0.45"/>
-<line x1="2333.0" y1="1693.0" x2="2333.0" y2="1849.0" stroke="#d97706" stroke-width="0.8" opacity="0.45"/>
-<line x1="2353.0" y1="1693.0" x2="2353.0" y2="1849.0" stroke="#d97706" stroke-width="0.8" opacity="0.45"/>
-<line x1="2373.0" y1="1693.0" x2="2373.0" y2="1849.0" stroke="#d97706" stroke-width="0.8" opacity="0.45"/>
-<line x1="2393.0" y1="1693.0" x2="2393.0" y2="1849.0" stroke="#d97706" stroke-width="0.8" opacity="0.45"/>
-<line x1="2413.0" y1="1693.0" x2="2413.0" y2="1849.0" stroke="#d97706" stroke-width="0.8" opacity="0.45"/>
-<line x1="2433.0" y1="1693.0" x2="2433.0" y2="1849.0" stroke="#d97706" stroke-width="0.8" opacity="0.45"/>
-<line x1="2453.0" y1="1693.0" x2="2453.0" y2="1849.0" stroke="#d97706" stroke-width="0.8" opacity="0.45"/>
-<line x1="2473.0" y1="1693.0" x2="2473.0" y2="1849.0" stroke="#d97706" stroke-width="0.8" opacity="0.45"/>
-<line x1="2493.0" y1="1693.0" x2="2493.0" y2="1849.0" stroke="#d97706" stroke-width="0.8" opacity="0.45"/>
-<line x1="2513.0" y1="1693.0" x2="2513.0" y2="1849.0" stroke="#d97706" stroke-width="0.8" opacity="0.45"/>
-<line x1="2533.0" y1="1693.0" x2="2533.0" y2="1849.0" stroke="#d97706" stroke-width="0.8" opacity="0.45"/>
-<line x1="2553.0" y1="1693.0" x2="2553.0" y2="1849.0" stroke="#d97706" stroke-width="0.8" opacity="0.45"/>
-<line x1="2573.0" y1="1693.0" x2="2573.0" y2="1849.0" stroke="#d97706" stroke-width="0.8" opacity="0.45"/>
-<line x1="2593.0" y1="1693.0" x2="2593.0" y2="1849.0" stroke="#d97706" stroke-width="0.8" opacity="0.45"/>
-<rect x="2297.0" y="1695.0" width="312.0" height="152.0" fill="none" stroke="#0f172a" stroke-width="1.4" stroke-dasharray="6,4"/>
-<circle cx="2453.0" cy="1783.0" r="30" fill="#ffffff" stroke="#475569" stroke-width="1.6"/>
-<rect x="2362.0" y="1761.0" width="46.0" height="44.0" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.4" rx="5"/>
-<rect x="2498.0" y="1761.0" width="46.0" height="44.0" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.4" rx="5"/>
-<text x="2453.0" y="1731.0" font-size="14" font-weight="700" fill="#78350f" text-anchor="middle">Balkong 5,1 m² (3,20 × 1,60 m)</text>
+<rect x="2263.0" y="1691.0" width="380.0" height="215.0" fill="#fef3c7" stroke="#334155" stroke-width="2.6" opacity="0.72"/>
+<line x1="2283.0" y1="1693.0" x2="2283.0" y2="1904.0" stroke="#d97706" stroke-width="0.8" opacity="0.45"/>
+<line x1="2303.0" y1="1693.0" x2="2303.0" y2="1904.0" stroke="#d97706" stroke-width="0.8" opacity="0.45"/>
+<line x1="2323.0" y1="1693.0" x2="2323.0" y2="1904.0" stroke="#d97706" stroke-width="0.8" opacity="0.45"/>
+<line x1="2343.0" y1="1693.0" x2="2343.0" y2="1904.0" stroke="#d97706" stroke-width="0.8" opacity="0.45"/>
+<line x1="2363.0" y1="1693.0" x2="2363.0" y2="1904.0" stroke="#d97706" stroke-width="0.8" opacity="0.45"/>
+<line x1="2383.0" y1="1693.0" x2="2383.0" y2="1904.0" stroke="#d97706" stroke-width="0.8" opacity="0.45"/>
+<line x1="2403.0" y1="1693.0" x2="2403.0" y2="1904.0" stroke="#d97706" stroke-width="0.8" opacity="0.45"/>
+<line x1="2423.0" y1="1693.0" x2="2423.0" y2="1904.0" stroke="#d97706" stroke-width="0.8" opacity="0.45"/>
+<line x1="2443.0" y1="1693.0" x2="2443.0" y2="1904.0" stroke="#d97706" stroke-width="0.8" opacity="0.45"/>
+<line x1="2463.0" y1="1693.0" x2="2463.0" y2="1904.0" stroke="#d97706" stroke-width="0.8" opacity="0.45"/>
+<line x1="2483.0" y1="1693.0" x2="2483.0" y2="1904.0" stroke="#d97706" stroke-width="0.8" opacity="0.45"/>
+<line x1="2503.0" y1="1693.0" x2="2503.0" y2="1904.0" stroke="#d97706" stroke-width="0.8" opacity="0.45"/>
+<line x1="2523.0" y1="1693.0" x2="2523.0" y2="1904.0" stroke="#d97706" stroke-width="0.8" opacity="0.45"/>
+<line x1="2543.0" y1="1693.0" x2="2543.0" y2="1904.0" stroke="#d97706" stroke-width="0.8" opacity="0.45"/>
+<line x1="2563.0" y1="1693.0" x2="2563.0" y2="1904.0" stroke="#d97706" stroke-width="0.8" opacity="0.45"/>
+<line x1="2583.0" y1="1693.0" x2="2583.0" y2="1904.0" stroke="#d97706" stroke-width="0.8" opacity="0.45"/>
+<line x1="2603.0" y1="1693.0" x2="2603.0" y2="1904.0" stroke="#d97706" stroke-width="0.8" opacity="0.45"/>
+<line x1="2623.0" y1="1693.0" x2="2623.0" y2="1904.0" stroke="#d97706" stroke-width="0.8" opacity="0.45"/>
+<rect x="2267.0" y="1695.0" width="372.0" height="207.0" fill="none" stroke="#0f172a" stroke-width="1.4" stroke-dasharray="6,4"/>
+<rect x="2268.0" y="1887.0" width="14.0" height="14.0" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<rect x="2624.0" y="1887.0" width="14.0" height="14.0" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<rect x="2383.0" y="1769.0" width="140.0" height="80.0" fill="#ffffff" stroke="#475569" stroke-width="1.6" rx="4"/>
+<rect x="2405.0" y="1737.0" width="42.0" height="26.0" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.3" rx="4"/>
+<rect x="2405.0" y="1855.0" width="42.0" height="26.0" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.3" rx="4"/>
+<rect x="2475.0" y="1737.0" width="42.0" height="26.0" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.3" rx="4"/>
+<rect x="2475.0" y="1855.0" width="42.0" height="26.0" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.3" rx="4"/>
+<text x="2453.0" y="1721.0" font-size="13" font-weight="700" fill="#78350f" text-anchor="middle">Balkong 8,2 m² (3,80 × 2,15 m på 2 søyler)</text>
 <rect x="2020.0" y="1454.0" width="30.0" height="130.0" fill="#ffffff" stroke="#334155" stroke-width="2"/>
 <line x1="2030.0" y1="1454.0" x2="2030.0" y2="1584.0" stroke="#0284c7" stroke-width="3.5"/>
 <line x1="2040.0" y1="1454.0" x2="2040.0" y2="1584.0" stroke="#0284c7" stroke-width="3.5"/>
@@ -571,19 +578,19 @@
 <line x1="2931.0" y1="1367.0" x2="2959.0" y2="1367.0" stroke="#334155" stroke-width="2"/>
 <line x1="2931.0" y1="1661.0" x2="2959.0" y2="1661.0" stroke="#334155" stroke-width="2"/>
 <text x="2969.0" y="1514.0" font-size="20" font-weight="600" fill="#334155" text-anchor="middle" transform="rotate(-90 2969.0 1514.0)">2,9 m</text>
-<rect x="50" y="1900" width="3060" height="125" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" rx="12"/>
-<line x1="90" y1="1938" x2="155" y2="1938" stroke="#ea580c" stroke-width="4" stroke-dasharray="12,8"/>
-<text x="170" y="1945" font-size="19" font-weight="600" fill="#334155">Eksisterende yttervegg / vest-utbygg (2,28 × 4,07 m)</text>
-<rect x="690" y="1924" width="38" height="22" fill="#b45309" stroke="#78350f" stroke-width="2"/>
-<text x="742" y="1945" font-size="19" font-weight="600" fill="#334155">Original teglpipe (95×55 cm øst–vest, ~1,3 m fra hovedvegg vest)</text>
-<rect x="1420" y="1924" width="36" height="24" fill="none" stroke="#059669" stroke-width="3" stroke-dasharray="8,5"/>
-<text x="1470" y="1945" font-size="19" font-weight="600" fill="#334155">Fri rektangulær stuesone</text>
-<line x1="2610" y1="1942" x2="2810" y2="1942" stroke="#0f172a" stroke-width="4"/>
-<line x1="2610" y1="1930" x2="2610" y2="1954" stroke="#0f172a" stroke-width="3"/>
-<line x1="2710" y1="1934" x2="2710" y2="1950" stroke="#0f172a" stroke-width="2"/>
-<line x1="2810" y1="1930" x2="2810" y2="1954" stroke="#0f172a" stroke-width="3"/>
-<text x="2710" y="1978" font-size="19" font-weight="700" fill="#0f172a" text-anchor="middle">Målestokk: 2 meter (1 px = 1 cm)</text>
-<text x="90" y="1996" font-size="20" font-weight="700" fill="#0f172a">• Netto Stue ~25,0 m² (4,42 × 5,78 m ekskl. 30 cm bokhylle + 120 cm gang!)</text>
-<text x="920" y="1996" font-size="20" font-weight="700" fill="#0f172a">• 6 m² Vindfang + 6 m² Vaskerom (2,5 m nord) + overbygd øst-kjellertrapp (U.04)</text>
-<text x="1750" y="1996" font-size="20" font-weight="700" fill="#0f172a">• Parallelt 32,7° saltak over hele huset — 33 cm klar av original 2-løps pipe!</text>
+<rect x="50" y="1950" width="3060" height="125" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" rx="12"/>
+<line x1="90" y1="1988" x2="155" y2="1988" stroke="#ea580c" stroke-width="4" stroke-dasharray="12,8"/>
+<text x="170" y="1995" font-size="19" font-weight="600" fill="#334155">Eksisterende yttervegg / vest-utbygg (2,28 × 4,07 m)</text>
+<rect x="690" y="1974" width="38" height="22" fill="#b45309" stroke="#78350f" stroke-width="2"/>
+<text x="742" y="1995" font-size="19" font-weight="600" fill="#334155">Original teglpipe (95×55 cm øst–vest, ~1,3 m fra hovedvegg vest)</text>
+<rect x="1420" y="1974" width="36" height="24" fill="none" stroke="#059669" stroke-width="3" stroke-dasharray="8,5"/>
+<text x="1470" y="1995" font-size="19" font-weight="600" fill="#334155">Fri rektangulær stuesone</text>
+<line x1="2610" y1="1992" x2="2810" y2="1992" stroke="#0f172a" stroke-width="4"/>
+<line x1="2610" y1="1980" x2="2610" y2="2004" stroke="#0f172a" stroke-width="3"/>
+<line x1="2710" y1="1984" x2="2710" y2="2000" stroke="#0f172a" stroke-width="2"/>
+<line x1="2810" y1="1980" x2="2810" y2="2004" stroke="#0f172a" stroke-width="3"/>
+<text x="2710" y="2028" font-size="19" font-weight="700" fill="#0f172a" text-anchor="middle">Målestokk: 2 meter (1 px = 1 cm)</text>
+<text x="90" y="2046" font-size="20" font-weight="700" fill="#0f172a">• Netto Stue ~25,0 m² (4,42 × 5,78 m ekskl. 30 cm bokhylle + 120 cm gang!)</text>
+<text x="920" y="2046" font-size="20" font-weight="700" fill="#0f172a">• 6 m² Vindfang + 6 m² Vaskerom (2,5 m nord) + overbygd øst-kjellertrapp (U.04)</text>
+<text x="1750" y="2046" font-size="20" font-weight="700" fill="#0f172a">• Parallelt 32,7° saltak over hele huset — 33 cm klar av original 2-løps pipe!</text>
 </svg>
