@@ -428,11 +428,11 @@ def draw_shared_east_floor1(pb: PlanBuilder):
     pb.text(200, -45, "140/210", size=14, weight="700", fill="#475569")
     # Inner door Vindfang -> Hall/gang
     pb.door(325, 24, 90, "h_right_down", wall_t=12)
-    # 110/210 external door into Kjellernedgang (east)
+    # 110/210 single external door into Kjellernedgang (east) — Utebod accessed internally from landing!
     pb.door(851, -80, 90, "v_down_right", wall_t=30)
     pb.text(900, -30, "110/210", size=14, weight="700", fill="#475569")
-    # Utebod door (east, north of kjellernedgang)
-    pb.door(851, -168, 75, "v_down_right", wall_t=30)
+    # Internal door from top of kjellernedgang landing into Utebod
+    pb.door(745, -85, 75, "h_right_up", wall_t=12)
     # WC door (from gang, south side as sketched)
     pb.door(468, 228, 75, "h_right_down", wall_t=12)
     # Bad 90/210 door (from gang)

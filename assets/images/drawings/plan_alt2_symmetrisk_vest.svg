@@ -60,9 +60,9 @@
 <line x1="1331.0" y1="440.0" x2="1421.0" y2="440.0" stroke="#334155" stroke-width="3.5"/>
 <path d="M 1421.0 440.0 A 90 90 0 0 1 1331.0 530.0" fill="none" stroke="#64748b" stroke-width="2" stroke-linejoin="miter" stroke-dasharray="6,5"/>
 <text x="1380.0" y="490.0" font-size="14" font-weight="700" fill="#475569" text-anchor="middle">110/210</text>
-<rect x="1315.0" y="352.0" width="32.0" height="75.0" fill="#ffffff" stroke="none" stroke-width="1"/>
-<line x1="1331.0" y1="352.0" x2="1406.0" y2="352.0" stroke="#334155" stroke-width="3.5"/>
-<path d="M 1406.0 352.0 A 75 75 0 0 1 1331.0 427.0" fill="none" stroke="#64748b" stroke-width="2" stroke-linejoin="miter" stroke-dasharray="6,5"/>
+<rect x="1225.0" y="428.0" width="75.0" height="14.0" fill="#ffffff" stroke="none" stroke-width="1"/>
+<line x1="1225.0" y1="435.0" x2="1225.0" y2="360.0" stroke="#334155" stroke-width="3.5"/>
+<path d="M 1225.0 360.0 A 75 75 0 0 1 1300.0 435.0" fill="none" stroke="#64748b" stroke-width="2" stroke-linejoin="miter" stroke-dasharray="6,5"/>
 <rect x="948.0" y="741.0" width="75.0" height="14.0" fill="#ffffff" stroke="none" stroke-width="1"/>
 <line x1="948.0" y1="748.0" x2="948.0" y2="823.0" stroke="#334155" stroke-width="3.5"/>
 <path d="M 948.0 823.0 A 75 75 0 0 0 1023.0 748.0" fill="none" stroke="#64748b" stroke-width="2" stroke-linejoin="miter" stroke-dasharray="6,5"/>

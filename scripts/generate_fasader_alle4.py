@@ -239,11 +239,9 @@ def draw_east(d: ElevDraw):
     d.rect(1166, -290, 210, 290, fill="#ffffff", stroke="#0f172a", sw=2.5)
     d.siding(1166, -290, 210, 250)
     d.rect(1166, -40, 210, 40, fill="#475569", stroke="#1e293b", sw=1.5)
-    # 110/210 external basement stair door + Utebod door on east face of north extension!
-    d.solid_door(1182, -245, 82, 205, glass_top=True)   # Kjellernedgang 110/210
-    d.solid_door(1280, -245, 76, 205, glass_top=False)  # Utebod
-    d.text(1223, -260, "Kjeller", size=11, weight="700", fill="#475569")
-    d.text(1318, -260, "Bod", size=11, weight="700", fill="#475569")
+    # SINGLE centered 110/210 external door on east face of north extension (utebod accessed internally from basement landing!)
+    d.solid_door(1224, -245, 96, 205, glass_top=True)
+    d.text(1272, -260, "Kjeller / Bod (110/210)", size=11, weight="700", fill="#475569")
     # Parallel 32.7° saltak east roof slope (eaves -285, ridge -494!)
     d.poly([(1166, -285), (1395, -285), (1395, -494), (1166, -494)], fill="#1e293b", stroke="#0f172a", sw=2)
     for ry in range(-470, -285, 30):

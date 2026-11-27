@@ -102,9 +102,9 @@ def build_ne_ref():
     # East wall of north extension (Kjellernedgang + Utebod doors!)
     sc.add_poly([(nx_e, 1166, 0), (nx_e, ny_n, 0), (nx_e, ny_n, 40), (nx_e, 1166, 40)], "#64748b", layer=6)
     sc.add_poly([(nx_e, 1166, 40), (nx_e, ny_n, 40), (nx_e, ny_n, nz_eaves), (nx_e, 1166, nz_eaves)], "#ffffff", stroke="#1e293b", sw=1.8, layer=6)
-    # Two neat doors on east face of north extension
-    sc.add_poly([(nx_e + 1.5, 1185, 42), (nx_e + 1.5, 1265, 42), (nx_e + 1.5, 1265, 245), (nx_e + 1.5, 1185, 245)], "#f8fafc", stroke="#334155", sw=1.5, layer=7, auto_shade=False)
-    sc.add_poly([(nx_e + 1.5, 1280, 42), (nx_e + 1.5, 1358, 42), (nx_e + 1.5, 1358, 245), (nx_e + 1.5, 1280, 245)], "#f8fafc", stroke="#334155", sw=1.5, layer=7, auto_shade=False)
+    # SINGLE centered 110/210 door on east face of north extension (utebod accessed internally!)
+    sc.add_poly([(nx_e + 1.5, 1222, 42), (nx_e + 1.5, 1320, 42), (nx_e + 1.5, 1320, 248), (nx_e + 1.5, 1222, 248)], "#f8fafc", stroke="#334155", sw=1.6, layer=7, auto_shade=False)
+    sc.add_poly([(nx_e + 2.0, 1236, 155), (nx_e + 2.0, 1306, 155), (nx_e + 2.0, 1306, 232), (nx_e + 2.0, 1236, 232)], "#bae6fd", stroke="#475569", sw=1.0, layer=7, auto_shade=False)
     # North wall of enclosed Utebod + Vindfang
     sc.add_poly([(nx_door, ny_n, 0), (nx_e, ny_n, 0), (nx_e, ny_n, 40), (nx_door, ny_n, 40)], "#64748b", layer=6)
     sc.add_poly([(nx_door, ny_n, 40), (nx_e, ny_n, 40), (nx_e, ny_n, nz_eaves), (nx_door, ny_n, nz_eaves)], "#ffffff", stroke="#1e293b", sw=1.8, layer=6)
@@ -156,8 +156,8 @@ def build_se_ref():
     nz_ridge = nz_eaves + 317.5 * t_main
     sc.add_poly([(866, 1166, 0), (866, 1376, 0), (866, 1376, 40), (866, 1166, 40)], "#64748b", layer=2)
     sc.add_poly([(866, 1166, 40), (866, 1376, 40), (866, 1376, nz_eaves), (866, 1166, nz_eaves)], "#ffffff", stroke="#1e293b", sw=1.6, layer=2)
-    sc.add_poly([(866 + 1.5, 1185, 42), (866 + 1.5, 1265, 42), (866 + 1.5, 1265, 245), (866 + 1.5, 1185, 245)], "#f8fafc", stroke="#334155", sw=1.4, layer=3, auto_shade=False)
-    sc.add_poly([(866 + 1.5, 1280, 42), (866 + 1.5, 1358, 42), (866 + 1.5, 1358, 245), (866 + 1.5, 1280, 245)], "#f8fafc", stroke="#334155", sw=1.4, layer=3, auto_shade=False)
+    sc.add_poly([(866 + 1.5, 1222, 42), (866 + 1.5, 1320, 42), (866 + 1.5, 1320, 248), (866 + 1.5, 1222, 248)], "#f8fafc", stroke="#334155", sw=1.5, layer=3, auto_shade=False)
+    sc.add_poly([(866 + 2.0, 1236, 155), (866 + 2.0, 1306, 155), (866 + 2.0, 1306, 232), (866 + 2.0, 1236, 232)], "#bae6fd", stroke="#475569", sw=1.0, layer=3, auto_shade=False)
     sc.add_poly([(548.5, 1166, nz_ridge), (548.5, 1396, nz_ridge), (892, 1396, nz_eaves - 26 * t_main), (892, 1166, nz_eaves - 26 * t_main)],
                 "#1e293b", stroke="#0f172a", sw=1.8, layer=3)
 

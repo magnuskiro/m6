@@ -31,7 +31,7 @@
 * **Innhold:**
   * **Vindfang (`5,4 m²`):** Garderobevegg mot øst, dobbelt kors-sprossevindu mot nord, inngangsdør `140/210` vendt vestover inn i overbygd inngangsparti.
   * **Overbygd inngangsparti / portico (`1,50 m` bredde på høyre/vestre side av tilbygget):** Trapp og klassisk tre-rekkverk mot nord.
-  * **Utvendig kjellernedgang (`110/210` dør øst)** + **`Utebod (~2,6 m²)`** (dør øst + smalt enkelt vindu nord).
+  * **Utvendig kjellernedgang & `Utebod (~2,6 m²)`:** **Én sentrert ytterdør (`110/210`) på østveggen** inn til toppen av kjellernedgangen, med innvendig dør videre derfra inn til `Utebod` (gir en mye renere østfasade + smalt enkelt vindu nord i boden).
 
 ### 1. etasje (Hovedetasje — eksisterende hovedkropp + vest-tilbygg)
 * **Nordvest:** Separat `Trapp (4,8 m²)`, `Vaskerom (3,9 m²)` (Alt 1) eller kompakt `Vask/Bod (2,7 m²)` (Alt 2), og `Gang`.
