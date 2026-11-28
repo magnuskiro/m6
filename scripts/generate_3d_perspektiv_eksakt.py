@@ -192,22 +192,26 @@ class Scene3D:
         self.add_poly([(x1, y1, z0), (x2, y1, z0), (x2, y1, z_floor), (x1, y1, z_floor)], "#ffffff", stroke="#1e293b", sw=1.5, layer=layer)
         self.add_poly([(x1, y1, z0), (x1, y0, z0), (x1, y0, z_floor), (x1, y1, z_floor)], "#f1f5f9", stroke="#1e293b", sw=1.4, layer=layer)
         self.add_poly([(x2, y1, z0), (x2, y0, z0), (x2, y0, z_floor), (x2, y1, z_floor)], "#f1f5f9", stroke="#1e293b", sw=1.4, layer=layer)
-        # Sleek matte-black vertical metal balustrade railing (TEK17 height ~102 cm) along west, south, east edges
-        for z_bar, sw_bar in [(zr, 2.6), (z_floor + 8.0, 1.8)]:
-            self.add_line((x1 + 4, y0, z_bar), (x1 + 4, y1 + 4, z_bar), stroke="#0f172a", sw=sw_bar, layer=layer + 1)
-            self.add_line((x1 + 4, y1 + 4, z_bar), (x2 - 4, y1 + 4, z_bar), stroke="#0f172a", sw=sw_bar, layer=layer + 1)
-            self.add_line((x2 - 4, y1 + 4, z_bar), (x2 - 4, y0, z_bar), stroke="#0f172a", sw=sw_bar, layer=layer + 1)
+        # Modern clear tempered GLASS BALUSTRADE railing (TEK17 height ~102 cm) with slim dark handrail & corner posts
+        self.add_poly([(x1 + 4, y1 + 4, z_floor + 4), (x2 - 4, y1 + 4, z_floor + 4), (x2 - 4, y1 + 4, zr - 2), (x1 + 4, y1 + 4, zr - 2)],
+                      "#bae6fd", stroke="#475569", sw=1.1, layer=layer + 1, auto_shade=False, opacity=0.34)
+        self.add_poly([(x1 + 4, y0, z_floor + 4), (x1 + 4, y1 + 4, z_floor + 4), (x1 + 4, y1 + 4, zr - 2), (x1 + 4, y0, zr - 2)],
+                      "#bae6fd", stroke="#475569", sw=1.1, layer=layer + 1, auto_shade=False, opacity=0.30)
+        self.add_poly([(x2 - 4, y0, z_floor + 4), (x2 - 4, y1 + 4, z_floor + 4), (x2 - 4, y1 + 4, zr - 2), (x2 - 4, y0, zr - 2)],
+                      "#bae6fd", stroke="#475569", sw=1.1, layer=layer + 1, auto_shade=False, opacity=0.30)
+        # Subtle glass panel seams along front & sides
+        for frac in [0.25, 0.50, 0.75]:
+            rx = x1 + 4 + (x2 - x1 - 8) * frac
+            self.add_line((rx, y1 + 4, z_floor + 4), (rx, y1 + 4, zr - 2), stroke="#64748b", sw=0.9, layer=layer + 1, opacity=0.65)
+        ym_b = (y0 + y1) / 2.0
+        self.add_line((x1 + 4, ym_b, z_floor + 4), (x1 + 4, ym_b, zr - 2), stroke="#64748b", sw=0.9, layer=layer + 1, opacity=0.65)
+        self.add_line((x2 - 4, ym_b, z_floor + 4), (x2 - 4, ym_b, zr - 2), stroke="#64748b", sw=0.9, layer=layer + 1, opacity=0.65)
+        # Slim dark handrail + minimal corner posts
+        self.add_line((x1 + 4, y0, zr), (x1 + 4, y1 + 4, zr), stroke="#0f172a", sw=2.4, layer=layer + 1)
+        self.add_line((x1 + 4, y1 + 4, zr), (x2 - 4, y1 + 4, zr), stroke="#0f172a", sw=2.4, layer=layer + 1)
+        self.add_line((x2 - 4, y1 + 4, zr), (x2 - 4, y0, zr), stroke="#0f172a", sw=2.4, layer=layer + 1)
         for px, py in [(x1 + 4, y1 + 4), (x2 - 4, y1 + 4), (x1 + 4, y0 - 2), (x2 - 4, y0 - 2)]:
-            self.add_line((px, py, z_floor), (px, py, zr), stroke="#0f172a", sw=2.4, layer=layer + 1)
-        rx = x1 + 24.0
-        while rx < x2 - 12.0:
-            self.add_line((rx, y1 + 4, z_floor + 8.0), (rx, y1 + 4, zr), stroke="#1e293b", sw=1.2, layer=layer + 1)
-            rx += 22.0
-        ry = y1 + 24.0
-        while ry < y0 - 10.0:
-            self.add_line((x1 + 4, ry, z_floor + 8.0), (x1 + 4, ry, zr), stroke="#1e293b", sw=1.1, layer=layer + 1)
-            self.add_line((x2 - 4, ry, z_floor + 8.0), (x2 - 4, ry, zr), stroke="#1e293b", sw=1.1, layer=layer + 1)
-            ry += 22.0
+            self.add_line((px, py, z_floor), (px, py, zr), stroke="#0f172a", sw=2.0, layer=layer + 1)
 
     def render(self):
         # Sort by (layer ascending, depth descending = painter's algorithm)
