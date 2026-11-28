@@ -222,19 +222,27 @@ def build_house_3d(cam: Camera3D, west_d: float, y_s: float, y_n: float, wing_de
     z_eaves = 610.0
     z_ridge = z_eaves + 433.0 * t_main  # 888 cm
 
-    # Ground lawn plane & south timber terrace
-    sc.add_poly([(-700, -500, 0), (1300, -500, 0), (1300, 1800, 0), (-700, 1800, 0)],
+    # Ground lawn plane & 4,0 m wrap-around L-shaped SLATE terrace (skiferterrasse)
+    sc.add_poly([(-800, -780, 0), (1350, -780, 0), (1350, 1800, 0), (-800, 1800, 0)],
                 "#bbf7d0", stroke="none", sw=0, layer=0, auto_shade=False)
     # Gravel driveway north-west
     sc.add_poly([(-700, 1180, 1), (1050, 1180, 1), (1050, 1750, 1), (-700, 1750, 1)],
                 "#d6d3d1", stroke="#a8a29e", sw=1, layer=0, auto_shade=False)
-    # South timber terrace deck (Z = 22) along main south gable (centered veranda door)
-    sc.add_poly([(0, -240, 22), (910, -240, 22), (910, 0, 22), (0, 0, 22)],
-                "#d6b084", stroke="#92400e", sw=1.3, layer=1, auto_shade=True, ambient=0.75)
-    sc.add_poly([(0, -240, 0), (910, -240, 0), (910, -240, 22), (0, -240, 22)],
-                "#a88358", stroke="#78350f", sw=1.1, layer=1, auto_shade=True)
-    sc.add_poly([(0, -240, 0), (0, 0, 0), (0, 0, 22), (0, -240, 22)],
-                "#b48f64", stroke="#78350f", sw=1.1, layer=1, auto_shade=True)
+    # 4,00 m deep SLATE terrace south (Y=-400..0) wrapping cleanly around SW corner up to west wing (Y=0..y_s, X=-west_d..0)!
+    sc.add_poly([(-west_d, -400, 22), (866, -400, 22), (866, 0, 22), (0, 0, 22), (0, y_s, 22), (-west_d, y_s, 22)],
+                "#64748b", stroke="#334155", sw=1.5, layer=1, auto_shade=True, ambient=0.72)
+    # Slate flagstone joint lines on terrace top (Z=22.6)
+    for gx in range(int(-west_d) + 80, 866, 80):
+        y_end = y_s if gx < 0 else 0.0
+        sc.add_line((gx, -400, 22.6), (gx, y_end, 22.6), stroke="#334155", sw=0.75, layer=1, depth_bias=-2.0, opacity=0.6)
+    for gy in range(-320, int(y_s), 80):
+        x_end = 866.0 if gy <= 0 else 0.0
+        sc.add_line((-west_d, gy, 22.6), (x_end, gy, 22.6), stroke="#334155", sw=0.75, layer=1, depth_bias=-2.0, opacity=0.6)
+    # Slate terrace outer risers (south front edge & west outer edge)
+    sc.add_poly([(-west_d, -400, 0), (866, -400, 0), (866, -400, 22), (-west_d, -400, 22)],
+                "#475569", stroke="#1e293b", sw=1.2, layer=1, auto_shade=True)
+    sc.add_poly([(-west_d, -400, 0), (-west_d, y_s, 0), (-west_d, y_s, 22), (-west_d, -400, 22)],
+                "#475569", stroke="#1e293b", sw=1.2, layer=1, auto_shade=True)
 
     # --- 1-STORY NORTH EXTENSION (Y=1166..1376, X=0..866, saltak facing north) ---
     # West side of north extension (covered portico X=0..250, enclosed from X=250..866)
@@ -375,11 +383,11 @@ def build_house_3d(cam: Camera3D, west_d: float, y_s: float, y_n: float, wing_de
                 "#f1f5f9", stroke="#1e293b", sw=1.2, layer=9)
 
     # --- 3D DIMENSION CALLOUTS directly in world space ---
-    # Depth arrow along south side of west wing (at Z = 10, Y = y_s - 55)
-    sc.add_line((-west_d, y_s - 55, 10), (0, y_s - 55, 10), stroke="#0284c7", sw=3.2, layer=9)
-    sc.add_line((-west_d, y_s - 35, 10), (-west_d, y_s - 75, 10), stroke="#0284c7", sw=2.6, layer=9)
-    sc.add_line((0, y_s - 35, 10), (0, y_s - 75, 10), stroke="#0284c7", sw=2.6, layer=9)
-    sc.add_text_at((-west_d / 2, y_s - 105, 10), label_wing, dx=16, dy=22, size=19, weight="800", fill="#0369a1")
+    # Depth arrow along south side of west wing (at Z = 26 on dark slate -> crisp sky-blue/white high contrast!)
+    sc.add_line((-west_d, y_s - 55, 26), (0, y_s - 55, 26), stroke="#7dd3fc", sw=3.2, layer=9)
+    sc.add_line((-west_d, y_s - 35, 26), (-west_d, y_s - 75, 26), stroke="#7dd3fc", sw=2.6, layer=9)
+    sc.add_line((0, y_s - 35, 26), (0, y_s - 75, 26), stroke="#7dd3fc", sw=2.6, layer=9)
+    sc.add_text_at((-west_d / 2, y_s - 105, 26), label_wing, dx=10, dy=20, size=17, weight="800", fill="#f8fafc")
 
     # Width arrow along west face of west wing (at X = -west_d - 65, Z = 10)
     sc.add_line((-west_d - 65, y_s, 10), (-west_d - 65, y_n, 10), stroke="#0f172a", sw=2.6, layer=9)
@@ -387,11 +395,17 @@ def build_house_3d(cam: Camera3D, west_d: float, y_s: float, y_n: float, wing_de
     sc.add_line((-west_d - 45, y_n, 10), (-west_d - 85, y_n, 10), stroke="#0f172a", sw=2.2, layer=9)
     sc.add_text_at((-west_d - 115, y_mid, 10), f"{(y_n - y_s)/100:.2f} m bred", dy=6, size=18, weight="800", fill="#0f172a", anchor="end")
 
-    # Main south width arrow (8.66 m)
-    sc.add_line((0, -295, 10), (866, -295, 10), stroke="#475569", sw=2.2, layer=9)
-    sc.add_line((0, -275, 10), (0, -315, 10), stroke="#475569", sw=2.0, layer=9)
-    sc.add_line((866, -275, 10), (866, -315, 10), stroke="#475569", sw=2.0, layer=9)
-    sc.add_text_at((433, -345, 10), "8,66 m hovedbredde", dy=18, size=17, weight="700", fill="#334155")
+    # Main south width arrow (8.66 m) + 4,0 m slate terrace depth callout (placed cleanly in open lawn south of Y=-400!)
+    sc.add_line((0, -455, 10), (866, -455, 10), stroke="#475569", sw=2.2, layer=9)
+    sc.add_line((0, -435, 10), (0, -475, 10), stroke="#475569", sw=2.0, layer=9)
+    sc.add_line((866, -435, 10), (866, -475, 10), stroke="#475569", sw=2.0, layer=9)
+    sc.add_text_at((433, -535, 10), "8,66 m bredde • 4,0 m skiferterrasse rundt SV-hjørnet", dx=-15, dy=26, size=15, weight="700", fill="#1e293b")
+
+    # 4,0 m depth arrow along west edge of south terrace
+    sc.add_line((-west_d - 55, -400, 10), (-west_d - 55, 0, 10), stroke="#334155", sw=2.4, layer=9)
+    sc.add_line((-west_d - 38, -400, 10), (-west_d - 72, -400, 10), stroke="#334155", sw=2.0, layer=9)
+    sc.add_line((-west_d - 38, 0, 10), (-west_d - 72, 0, 10), stroke="#334155", sw=2.0, layer=9)
+    sc.add_text_at((-west_d - 95, -200, 10), "4,0 m skifer", dy=6, size=16, weight="800", fill="#334155", anchor="end")
 
     # Chimney callout cleanly above chimney
     sc.add_text_at((182, 418, 920), "Orig. pipe (på vestflate)", dy=-10, size=15, weight="800", fill="#9a3412")
@@ -416,7 +430,7 @@ def main():
         f'<rect x="0" y="0" width="{W}" height="130" fill="#0f172a"/>',
         f'<rect x="0" y="124" width="{W}" height="6" fill="#0284c7"/>',
         f'<text x="60" y="56" font-size="36" font-weight="800" fill="#ffffff">M6 (#50) — Eksakt 3D-sammenligning SØRVEST: Alternativ 1 vs. Alternativ 2</text>',
-        f'<text x="60" y="96" font-size="21" font-weight="500" fill="#cbd5e1">Matematisk 3D-projeksjon fra eksakt samme sørvest-kamera • Alt 1 (3,30 × 5,20 m, 20° tak) vs. Alt 2 (2,80 × 5,02 m, 32,7° parallelt saltak)</text>',
+        f'<text x="60" y="96" font-size="21" font-weight="500" fill="#cbd5e1">Matematisk 3D-projeksjon fra eksakt samme sørvest-kamera • Begge med 4,0 m L-formet skiferterrasse mot syd/SV og moderne 3,80×2,15 m sydbalkong</text>',
         # Left panel backdrop
         f'<rect x="40" y="160" width="1260" height="980" fill="url(#sky)" stroke="#cbd5e1" stroke-width="2" rx="12"/>',
         # Right panel backdrop
@@ -426,9 +440,9 @@ def main():
         '<clipPath id="clipR"><rect x="1340" y="160" width="1260" height="980" rx="12"/></clipPath>',
     ]
 
-    # Exact same elevated SW 3/4 camera for BOTH panels (pulled back so full house & 8,66m width fit with clean margin!)
-    cam_pos = (-1980.0, -1750.0, 840.0)
-    cam_tgt = (240.0, 480.0, 400.0)
+    # Exact same elevated SW 3/4 camera for BOTH panels (pulled back cleanly so full 4,0 m wrap-around slate terrace fits!)
+    cam_pos = (-2180.0, -2050.0, 930.0)
+    cam_tgt = (180.0, 380.0, 355.0)
 
     camL = Camera3D(cam_pos, cam_tgt, fov_deg=35.0, cx=675.0, cy=720.0, width=1220.0)
     camR = Camera3D(cam_pos, cam_tgt, fov_deg=35.0, cx=1975.0, cy=720.0, width=1220.0)

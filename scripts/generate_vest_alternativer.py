@@ -578,25 +578,27 @@ def draw_shared_east_floor1(pb: PlanBuilder, north_vaskerom: bool = False, north
         pb.rect(782, -ni + 6, 48, 56, fill="#f1f5f9", stroke="#64748b", sw=1.5)  # Benkeskap
         pb.wardrobe(654, -56, 176, 52, "Høyskap / Tørk")
         pb.room_label(724, -108, "Vaskerom", "6,0 m²")
-        # NEW external basement stair along EAST wall landing at SOUTH END OF U.04 (y=+320..+425 -> straight into basement hallway!):
-        # Starts at y=+60 (off the north extension!), top 3 steps open (+60..+135), then LOW HORIZONTAL roof (12° east, Z=186->163)
-        # runs y=+135..+425 (cleanly BELOW upper-third Bad 1.etg window y=158..282 AND stops 8 cm NORTH of Sov/Pult window y=433..557!).
-        st_y1 = 60          # +60 cm (clear of north ext, 3,10 m back from north facade y=-250)
-        st_y2 = st_y1 + 365 # +425 cm (helt mot syd i U.04, 8 cm klar nord for Sov/Pult-vindu!)
-        roof_y1 = st_y1 + 75 # +135 cm (3 open steps -> -54 cm -> 2,17-2,40 m headroom under roof!)
+        # NEW external basement stair along EAST wall moved 1,35 m FURTHER NORTH (y=-75..+290 -> 1,43 m clear of Sov/Pult window y=433!):
+        # Top 3 steps open along blank north-extension east wall (y=-75..0), then LOW HORIZONTAL roof (12° east, Z=186->159)
+        # runs y=0..+290 (starts cleanly at main north corner, sits below upper-third Bad 1.etg window y=158..282, 1,43 m clear of Sov 1.etg!).
+        st_y1 = -75         # -75 cm (along blank 2,50 m north-ext east wall, still 1,75 m back from north facade y=-250!)
+        st_y2 = st_y1 + 365 # +290 cm (1,43 m FREE WALL before Sov/Pult window y=433..557!)
+        roof_y1 = 0         # Roof begins cleanly at main house north corner (after 3 open top steps y=-75..0!)
         pb.rect(866, roof_y1, 116, st_y2 - roof_y1, fill="#f1f5f9", stroke="#475569", sw=2.0, dash="8,5", opacity=0.85)
         pb.basement_stairs_v(872, st_y1 + 6, 98, 254, steps=11)
-        # Bottom landing (bunn-repos, -1,95 m under terreng, helt mot syd i U.04 -> rett inn i kjellergang!)
+        # Bottom landing (bunn-repos, -1,95 m under terreng, inn i kjeller under Bad 1.etg)
         pb.rect(872, st_y1 + 260, 98, 102, fill="#f8fafc", stroke="#64748b", sw=1.6)
         pb.text(921, st_y1 + 300, "Bunn-repos", size=10, weight="700", fill="#475569")
-        pb.text(921, st_y1 + 314, "syd i U.04", size=10, weight="700", fill="#059669")
+        pb.text(921, st_y1 + 314, "kjeller øst", size=10, weight="700", fill="#059669")
         pb.text(921, st_y1 + 330, "(-1,95 m)", size=10, weight="600", fill="#0284c7")
         pb.rect(970, roof_y1, 12, 12, fill="#334155")
         pb.rect(970, (roof_y1 + st_y2) / 2 - 6, 12, 12, fill="#334155")
         pb.rect(970, st_y2 - 12, 12, 12, fill="#334155")
         pb.text(924, st_y1 - 14, "Kjellertrapp", size=12, weight="700", fill="#059669")
-        pb.text(924, st_y2 + 18, "Lavt tak (12° øst)", size=11, weight="700", fill="#059669")
-        pb.dim_v(1005, st_y1, st_y2, "3,65 m (til syd i U.04)", color="#0284c7", bold=False, text_offset=20)
+        pb.text(924, st_y2 + 18, "Lavt tak 12° øst", size=11, weight="700", fill="#059669")
+        pb.text(924, st_y2 + 34, "(1,43 m til sov-vindu!)", size=10, weight="700", fill="#0284c7")
+        pb.dim_v(1005, st_y1, st_y2, "3,65 m (flyttet nord)", color="#0284c7", bold=False, text_offset=20)
+        pb.dim_v(1005, st_y2, 433, "1,43 m fri", color="#059669", bold=True, text_offset=20)
     else:
         pb.wardrobe(498, -172, 54, 164, "Gard.")
         pb.rect(746, -88, 88, 86, fill="#f8fafc", stroke="#94a3b8", sw=1.4)  # Flat landing (Repos)
@@ -696,9 +698,57 @@ def draw_shared_east_floor2(pb: PlanBuilder):
     pb.room_label(610, 1015, "Soverom 3", "9,2 m²", "(el. kjøkken utleie)")
 
 
+def draw_slate_terraces_floor1(pb: PlanBuilder, west_d: float, wy1: float, wy2: float):
+    """Draw BOTH matching slate stone terraces identically across Alt 1 & Alt 2:
+    1. NW Skiferplatting right outside the west-wing north veranda door (x=-west_d..0, 2,20 m deep north)
+    2. 4,00 m deep South Skiferterrasse wrapping around SW corner up to the west wing (y=wy2..1566)!
+    """
+    # 1. NW Skiferplatting (x = -west_d .. 0, y = wy1-220 .. wy1)
+    nw_y1 = wy1 - 220
+    pb.rect(-west_d, nw_y1, west_d, 220, fill="#64748b", opacity=0.26, stroke="#334155", sw=2.4)
+    for gx in range(int(-west_d) + 70, 0, 70):
+        pb.line(gx, nw_y1, gx, wy1, stroke="#475569", sw=0.9, opacity=0.45)
+    for gy in range(int(nw_y1) + 55, int(wy1), 55):
+        pb.line(-west_d, gy, 0, gy, stroke="#475569", sw=0.9, opacity=0.45)
+    pb.text(-west_d / 2, nw_y1 + 88, "SKIFERPLATTING NV", size=14, weight="800", fill="#1e293b")
+    pb.text(-west_d / 2, nw_y1 + 108, f"({west_d/100:.2f} × 2,20 m — fra verandadør)", size=12, weight="600", fill="#475569")
+
+    # 2. Wrap-around L-shaped South Skiferterrasse (4,00 m deep south + wraps around SW corner to meet west wing!)
+    s_y2 = 1566  # 1166 + 400 cm = EXACTLY 4,00 m deep!
+    l_pts = [
+        (-west_d, wy2),
+        (0, wy2),
+        (0, 1166),
+        (866, 1166),
+        (866, s_y2),
+        (-west_d, s_y2),
+    ]
+    pb.poly(l_pts, fill="#64748b", opacity=0.26, stroke="#334155", sw=2.6)
+    # Crisp slate flagstone grid lines inside L-polygon
+    for gx in range(int(-west_d) + 80, 866, 80):
+        y_top = wy2 if gx < 0 else 1166
+        pb.line(gx, y_top, gx, s_y2, stroke="#475569", sw=0.9, opacity=0.42)
+    for gy in range(int(wy2) + 80, s_y2, 80):
+        x_end = 0 if gy < 1166 else 866
+        pb.line(-west_d, gy, x_end, gy, stroke="#475569", sw=0.9, opacity=0.42)
+
+    # Dashed overhead projection of 2nd-floor south balcony (3,80 × 2,15 m) + 2 slim white support columns on slate terrace!
+    pb.rect(243, 1166, 380, 215, fill="none", stroke="#0f172a", sw=1.6, dash="8,6", opacity=0.7)
+    pb.rect(248, 1362, 14, 14, fill="#ffffff", stroke="#0f172a", sw=2.0)
+    pb.rect(604, 1362, 14, 14, fill="#ffffff", stroke="#0f172a", sw=2.0)
+    pb.text(433, 1352, "Overbygd balkong 2.etg (2 søyler)", size=12, weight="700", fill="#334155")
+
+    # Main terrace labels & 4,00 m depth dimension
+    pb.text(433, 1468, "SKIFERTERRASSE SØR — 4,00 m dyp", size=19, weight="800", fill="#0f172a")
+    pb.text(433, 1495, "(går rundt SV-hjørnet og treffer vest-tverrfløyen)", size=14, weight="600", fill="#334155")
+    pb.text(-west_d / 2, (wy2 + 1166) / 2 + 5, "Skifer rundt hjørnet", size=13, weight="700", fill="#334155")
+    pb.dim_v(925, 1166, s_y2, "4,00 m skifer", color="#334155", bold=True, text_offset=22)
+
+
 def build_alt1_floor1(pb: PlanBuilder):
     """Alternativ 1 - 1. etg: Nord-tilbygg + 3.20m x 5.20m vest-tilbygg (y=410..930) + Vask (3.9 m²) sør for trapp."""
     west_d, wy1, wy2 = 320, 410, 930
+    draw_slate_terraces_floor1(pb, west_d, wy1, wy2)
     draw_outer_shell(pb, west_d, wy1, wy2, north_ext=True)
 
     # Social & hall tints — strictly EXCLUDE 30 cm Bokhylle (x=428..458) + 120 cm Gangpassasje (x=308..428) from Stue!
@@ -852,6 +902,7 @@ def build_alt2_floor1(pb: PlanBuilder, west_d: int = 280):
     wy1, wy2 = 320, 822
     is_25 = west_d >= 270
     dx_w = west_d - 230  # 0 for Alt 2, 70 for Alt 2.5
+    draw_slate_terraces_floor1(pb, west_d, wy1, wy2)
     draw_outer_shell(pb, west_d, wy1, wy2, north_ext=True, north_depth=250)
 
     # Social & hall tints — strictly EXCLUDE 30 cm Bokhylle (x=428..458) + 120 cm Gangpassasje (x=308..428) from Stue!
@@ -887,7 +938,7 @@ def build_alt2_floor1(pb: PlanBuilder, west_d: int = 280):
     wx_c = -west_d / 2.0
     wx_hw = 65 if is_25 else 60
     pb.window_h(wx_c - wx_hw, wx_c + wx_hw, 807, 30)  # Vestfløy sørvindu
-    pb.window_h(wx_c - wx_hw, wx_c + wx_hw, 335, 30)  # Vestfløy nordvindu
+    pb.double_terrace_door_h(wx_c, 335, 150, wall_t=30, swing_down=False)  # Verandadør NORD på vest-tverrfløy -> skiferplatting NV (likt for begge alt!)
     pb.window_h(105, 235, 1151, 30)  # Spisestue sør
     pb.window_v(15, 929, 1059, 30)   # Spisestue vest
     pb.window_v(15, 95, 225, 30)     # Trapp vest
@@ -1021,7 +1072,7 @@ def build_alt2_floor2(pb: PlanBuilder, west_d: int = 280):
 
 
 def make_sheet(filename: str, title: str, subtitle: str, accent: str, fn1, fn2, highlights: list[str]):
-    W, H = 3160, 2110
+    W, H = 3160, 2360
     svg = [
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" '
         f'style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;">',
@@ -1041,20 +1092,20 @@ def make_sheet(filename: str, title: str, subtitle: str, accent: str, fn1, fn2, 
         '  <polygon points="0,-34 -14,14 0,4 14,14" fill="#f8fafc"/>',
         '  <text x="0" y="34" font-size="20" font-weight="800" fill="#38bdf8" text-anchor="middle">N</text>',
         "</g>",
-        f'<text x="780" y="196" font-size="28" font-weight="800" fill="#0f172a" text-anchor="middle">1. ETASJE (inkl. 1-etg nord-tilbygg)</text>',
-        f'<text x="2340" y="196" font-size="28" font-weight="800" fill="#0f172a" text-anchor="middle">2. ETASJE (Soverom + Stue / Utleie-opsjon)</text>',
-        f'<line x1="1575" y1="185" x2="1575" y2="1870" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="10,8"/>',
+        f'<text x="780" y="186" font-size="26" font-weight="800" fill="#0f172a" text-anchor="middle">1. ETASJE (inkl. 1-etg nord-tilbygg + skiferterrasser)</text>',
+        f'<text x="2340" y="186" font-size="26" font-weight="800" fill="#0f172a" text-anchor="middle">2. ETASJE (Soverom + Stue / Utleie-opsjon)</text>',
+        f'<line x1="1575" y1="180" x2="1575" y2="2150" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="10,8"/>',
     ]
 
-    pb1 = PlanBuilder(ox=480, oy=525)
+    pb1 = PlanBuilder(ox=480, oy=520)
     fn1(pb1)
     svg.extend(pb1.els)
 
-    pb2 = PlanBuilder(ox=2020, oy=525)
+    pb2 = PlanBuilder(ox=2020, oy=520)
     fn2(pb2)
     svg.extend(pb2.els)
 
-    fy = 1950
+    fy = 2205
     svg.append(f'<rect x="50" y="{fy}" width="{W - 100}" height="125" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" rx="12"/>')
     svg.append(f'<line x1="90" y1="{fy + 38}" x2="155" y2="{fy + 38}" stroke="#ea580c" stroke-width="4" stroke-dasharray="12,8"/>')
     svg.append(f'<text x="170" y="{fy + 45}" font-size="19" font-weight="600" fill="#334155">Eksisterende yttervegg / vest-utbygg (2,28 × 4,07 m)</text>')

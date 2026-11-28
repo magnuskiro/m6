@@ -138,18 +138,25 @@ def build_ne_ref():
 def build_se_ref():
     """Southeast 3/4 exact 3D model (Clean 1947 south gable w/ timber deck + 4x2 East facade w/ 3 skylights + North ext right)."""
     W, H = 1400, 940
-    cam = Camera3D(pos=(2320.0, -1520.0, 740.0), target=(430.0, 560.0, 380.0), fov_deg=35.0, cx=W / 2.0, cy=H * 0.56, width=W)
+    cam = Camera3D(pos=(2540.0, -1720.0, 790.0), target=(430.0, 500.0, 355.0), fov_deg=35.0, cx=W / 2.0, cy=H * 0.56, width=W)
     sc = Scene3D(cam)
     sc.sun = (0.55, -0.65, 0.52)
     t_main = math.tan(math.radians(32.7))
     z_eaves = 610.0
     z_ridge = z_eaves + 433.0 * t_main
 
-    sc.add_poly([(-600, -600, 0), (1600, -600, 0), (1600, 1900, 0), (-600, 1900, 0)], "#bbf7d0", stroke="none", sw=0, layer=0, auto_shade=False)
-    # South timber terrace deck (full width X=0..910 so both balcony columns land solidly on deck!)
-    sc.add_poly([(0, -240, 22), (910, -240, 22), (910, 0, 22), (0, 0, 22)], "#d6b084", stroke="#92400e", sw=1.3, layer=1)
-    sc.add_poly([(0, -240, 0), (910, -240, 0), (910, -240, 22), (0, -240, 22)], "#a88358", stroke="#78350f", sw=1.1, layer=1)
-    sc.add_poly([(910, -240, 0), (910, 0, 0), (910, 0, 22), (910, -240, 22)], "#b48f64", stroke="#78350f", sw=1.1, layer=1)
+    sc.add_poly([(-600, -750, 0), (1600, -750, 0), (1600, 1900, 0), (-600, 1900, 0)], "#bbf7d0", stroke="none", sw=0, layer=0, auto_shade=False)
+    # 4,00 m deep wrap-around SLATE terrace south (Y=-400..0) wrapping around SW corner up to west wing (Y=0..236, X=-330..0)!
+    sc.add_poly([(-330, -400, 22), (866, -400, 22), (866, 0, 22), (0, 0, 22), (0, 236, 22), (-330, 236, 22)],
+                "#64748b", stroke="#334155", sw=1.4, layer=1, auto_shade=True, ambient=0.72)
+    for gx in range(-250, 866, 80):
+        y_end = 236.0 if gx < 0 else 0.0
+        sc.add_line((gx, -400, 22.6), (gx, y_end, 22.6), stroke="#334155", sw=0.75, layer=1, depth_bias=-2.0, opacity=0.6)
+    for gy in range(-320, 236, 80):
+        x_end = 866.0 if gy <= 0 else 0.0
+        sc.add_line((-330, gy, 22.6), (x_end, gy, 22.6), stroke="#334155", sw=0.75, layer=1, depth_bias=-2.0, opacity=0.6)
+    sc.add_poly([(-330, -400, 0), (866, -400, 0), (866, -400, 22), (-330, -400, 22)], "#475569", stroke="#1e293b", sw=1.1, layer=1)
+    sc.add_poly([(866, -400, 0), (866, 0, 0), (866, 0, 22), (866, -400, 22)], "#475569", stroke="#1e293b", sw=1.1, layer=1)
 
     # Subtle glimpse of 3.30m west extension behind SW corner (X=-330..0, Y=236)
     sc.add_poly([(-330, 236, 40), (0, 236, 40), (0, 236, z_eaves), (-330, 236, z_eaves)], "#f1f5f9", stroke="#334155", sw=1.4, layer=1)

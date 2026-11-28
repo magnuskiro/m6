@@ -102,20 +102,21 @@ def build_nw_scene(cam: Camera3D, alt: int = 1):
     sc.add_kors_window_west(-west_d, y_mid - win_half_span, y_mid - win_gap, 380, 530, layer=2)
     sc.add_kors_window_west(-west_d, y_mid + win_gap, y_mid + win_half_span, 380, 530, layer=2)
 
-    # West wing NORTH face (Y = y_n)
+    # West wing NORTH face (Y = y_n) — IDENTICAL double veranda door + NW SKIFERPLATTING for BOTH Alt 1 and Alt 2!
     xc_n = -west_d / 2.0
-    if alt == 1:
-        add_kors_north(sc, y_n, xc_n - 75, xc_n + 75, 42, 252, is_door=True, layer=2)
-        add_kors_north(sc, y_n, xc_n - 68, xc_n + 68, 385, 530, layer=2)
-        # Low timber patio deck outside west-wing north veranda door
-        sc.add_poly([(-west_d + 10, y_n, 20), (-15, y_n, 20), (-15, y_n + 195, 20), (-west_d + 10, y_n + 195, 20)],
-                    "#d6b084", stroke="#92400e", sw=1.2, layer=1, auto_shade=True, ambient=0.75)
-        sc.add_poly([(-west_d + 10, y_n + 195, 0), (-15, y_n + 195, 0), (-15, y_n + 195, 20), (-west_d + 10, y_n + 195, 20)],
-                    "#a88358", stroke="#78350f", sw=1.0, layer=1, auto_shade=True)
-    else:
-        # Alt 2 (2,30 m deep): centered 120 cm double kors-sprosse windows in 1st & 2nd floor
-        add_kors_north(sc, y_n, xc_n - 60, xc_n + 60, 103, 248, single=False, layer=2)
-        add_kors_north(sc, y_n, xc_n - 60, xc_n + 60, 383, 528, single=False, layer=2)
+    add_kors_north(sc, y_n, xc_n - 75, xc_n + 75, 42, 252, is_door=True, layer=2)
+    add_kors_north(sc, y_n, xc_n - 65, xc_n + 65, 383, 528, single=False, layer=2)
+    # NW SLATE PATIO (skiferplatting, X = -west_d..0, Y = y_n..y_n+220, Z = 18) right outside north veranda door!
+    sc.add_poly([(-west_d, y_n, 18), (0, y_n, 18), (0, y_n + 220, 18), (-west_d, y_n + 220, 18)],
+                "#64748b", stroke="#334155", sw=1.4, layer=1, auto_shade=True, ambient=0.72)
+    for gx in range(int(-west_d) + 70, 0, 70):
+        sc.add_line((gx, y_n, 18.6), (gx, y_n + 220, 18.6), stroke="#334155", sw=0.75, layer=1, depth_bias=-2.0, opacity=0.6)
+    for gy in range(int(y_n) + 55, int(y_n + 220), 55):
+        sc.add_line((-west_d, gy, 18.6), (0, gy, 18.6), stroke="#334155", sw=0.75, layer=1, depth_bias=-2.0, opacity=0.6)
+    sc.add_poly([(-west_d, y_n + 220, 0), (0, y_n + 220, 0), (0, y_n + 220, 18), (-west_d, y_n + 220, 18)],
+                "#475569", stroke="#1e293b", sw=1.1, layer=1, auto_shade=True)
+    sc.add_poly([(-west_d, y_n, 0), (-west_d, y_n + 220, 0), (-west_d, y_n + 220, 18), (-west_d, y_n, 18)],
+                "#475569", stroke="#1e293b", sw=1.1, layer=1, auto_shade=True)
 
     # --- MAIN HOUSE WALLS (X=0..866, Y=0..1166) ---
     # Main West wall north of wing (X=0, Y=y_n..1166)
@@ -259,11 +260,11 @@ def build_nw_scene(cam: Camera3D, alt: int = 1):
     # Clean callouts (placed strictly in open sky/lawn with zero wall overlap)
     if alt == 1:
         sc.add_text_at((nx_mid, ny_n + 26, nz_ridge + 85), "2,10 m nord-tilbygg (32,7°)", dx=-65, dy=-18, size=14, weight="800", fill="#0f172a", anchor="middle")
-        sc.add_text_at((-west_d / 2, y_n + 40, 0), "3,30×5,20 m vest (20° + nord-verandadør)", dx=-15, dy=52, size=14, weight="800", fill="#0369a1")
+        sc.add_text_at((-west_d / 2, y_n + 40, 0), "3,30×5,20 m (20°) • Verandadør + skiferplatting NV", dx=-15, dy=58, size=13, weight="800", fill="#0369a1")
     else:
         sc.add_text_at((nx_mid, ny_n + 26, nz_ridge + 85), "2,50 m nord-tilbygg", dx=-75, dy=-34, size=14, weight="800", fill="#0f172a", anchor="middle")
         sc.add_text_at((nx_mid, ny_n + 26, nz_ridge + 85), "(6 m² Vask + 6 m² Vindfang)", dx=-75, dy=-16, size=12, weight="700", fill="#047857", anchor="middle")
-        sc.add_text_at((-west_d / 2, y_n + 40, 0), "2,80×5,02 m vest (parallelt 32,7° saltak!)", dx=-15, dy=52, size=14, weight="800", fill="#059669")
+        sc.add_text_at((-west_d / 2, y_n + 40, 0), "2,80×5,02 m (32,7°) • Verandadør + skiferplatting NV", dx=-15, dy=58, size=13, weight="800", fill="#059669")
 
     return sc.render()
 

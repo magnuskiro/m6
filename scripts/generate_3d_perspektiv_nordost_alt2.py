@@ -48,7 +48,7 @@ def build_alt2_ne_scene(cam: Camera3D, with_labels=True, view="ne"):
     z_ridge = z_eaves + 433.0 * t_main  # 888 cm
 
     # Ground lawn + gravel driveway north
-    sc.add_poly([(-500, -450, 0), (1850, -450, 0), (1850, 2300, 0), (-500, 2300, 0)],
+    sc.add_poly([(-500, -700, 0), (1850, -700, 0), (1850, 2300, 0), (-500, 2300, 0)],
                 "#bbf7d0", stroke="none", sw=0, layer=0, auto_shade=False)
     sc.add_poly([(-350, 1280, 1), (1650, 1280, 1), (1650, 2300, 1), (-350, 2300, 1)],
                 "#d6d3d1", stroke="#a8a29e", sw=1.0, layer=0, auto_shade=False)
@@ -58,10 +58,17 @@ def build_alt2_ne_scene(cam: Camera3D, with_labels=True, view="ne"):
         sc.add_poly([(-280, 846, 40), (0, 846, 40), (0, 846, z_eaves), (-280, 846, z_eaves)], "#f1f5f9", stroke="#334155", sw=1.3, layer=1)
     else:
         sc.add_poly([(-280, 344, 40), (0, 344, 40), (0, 344, z_eaves), (-280, 344, z_eaves)], "#f1f5f9", stroke="#334155", sw=1.3, layer=1)
-        # South timber deck (visible in SE view, full width X=0..910 so both balcony columns land solidly on deck!)
-        sc.add_poly([(0, -240, 22), (910, -240, 22), (910, 0, 22), (0, 0, 22)], "#d6b084", stroke="#92400e", sw=1.2, layer=1)
-        sc.add_poly([(0, -240, 0), (910, -240, 0), (910, -240, 22), (0, -240, 22)], "#a88358", stroke="#78350f", sw=1.0, layer=1)
-        sc.add_poly([(910, -240, 0), (910, 0, 0), (910, 0, 22), (910, -240, 22)], "#b48f64", stroke="#78350f", sw=1.0, layer=1)
+        # 4,00 m deep SLATE terrace south (Y=-400..0) wrapping around SW corner up to west wing (Y=0..344, X=-280..0)!
+        sc.add_poly([(-280, -400, 22), (866, -400, 22), (866, 0, 22), (0, 0, 22), (0, 344, 22), (-280, 344, 22)],
+                    "#64748b", stroke="#334155", sw=1.4, layer=1, auto_shade=True, ambient=0.72)
+        for gx in range(-200, 866, 80):
+            y_end = 344.0 if gx < 0 else 0.0
+            sc.add_line((gx, -400, 22.6), (gx, y_end, 22.6), stroke="#334155", sw=0.75, layer=1, depth_bias=-2.0, opacity=0.6)
+        for gy in range(-320, 344, 80):
+            x_end = 866.0 if gy <= 0 else 0.0
+            sc.add_line((-280, gy, 22.6), (x_end, gy, 22.6), stroke="#334155", sw=0.75, layer=1, depth_bias=-2.0, opacity=0.6)
+        sc.add_poly([(-280, -400, 0), (866, -400, 0), (866, -400, 22), (-280, -400, 22)], "#475569", stroke="#1e293b", sw=1.1, layer=1)
+        sc.add_poly([(866, -400, 0), (866, 0, 0), (866, 0, 22), (866, -400, 22)], "#475569", stroke="#1e293b", sw=1.1, layer=1)
 
     # Chimney top peeking behind ridge (X=135..230, Y=391..446, Z_top=905)
     sc.add_poly([(230, 391, 800), (230, 446, 800), (230, 446, 905), (230, 391, 905)], "#475569", stroke="#1e293b", sw=1.4, layer=1)
@@ -160,13 +167,13 @@ def build_alt2_ne_scene(cam: Camera3D, with_labels=True, view="ne"):
                     "#1e293b", stroke="#0f172a", sw=1.8, layer=5)
 
     # =========================================================================
-    # HERO ELEMENT: ALT 2 EXTERNAL EAST-WALL BASEMENT STAIR + LOW 12° ROOF!
-    # Y_world = 1106 (north entry) -> 741 (south end entering U.04, 8 cm clear of Sov/Pult 609..733!)
-    # Top 3 steps OPEN (Y = 1106..1031), low horizontal 12° east-sloping roof (Y = 1031..741)!
+    # HERO ELEMENT: ALT 2 EXTERNAL EAST-WALL BASEMENT STAIR — MOVED 1,35 m FURTHER NORTH!
+    # Y_world = 1241 (north entry alongside blank north-ext wall) -> 876 (south end, 1,43 m CLEAR of Sov/Pult 609..733!)
+    # Top 3 steps OPEN (Y = 1241..1166), low horizontal 12° east-sloping roof (Y = 1166..876) under Bad 1.etg window!
     # =========================================================================
-    sy_top = 1106.0      # Start of stair (60 cm south of main north wall Y=1166)
-    sy_roof_n = 1031.0   # Roof begins after 3 open steps (75 cm run!)
-    sy_bot = 741.0       # End of stair / bottom landing (8 cm north of Sov/Pult window 733!)
+    sy_top = 1241.0      # Start of stair (75 cm north along blank 2,50 m north-ext east wall, still 1,75 m back from north gable!)
+    sy_roof_n = 1166.0   # Low 12° roof begins cleanly at main house north corner (after 3 open top steps!)
+    sy_bot = 876.0       # End of stair / bottom landing (1,43 m FREE WHITE WALL north of Sov/Pult window 733!)
     sx_in = 866.0        # Flush against house east wall
     sx_out = 981.0       # Outer east concrete stairwell wall (1,15 m wide)
     sx_roof = 994.0      # Roof outer eave (1,28 m wide incl. subtle overhang)
@@ -258,17 +265,16 @@ def build_alt2_ne_scene(cam: Camera3D, with_labels=True, view="ne"):
     if with_labels:
         if view == "ne":
             # Clean open lawn callouts strictly INSIDE left panel bounds (no edge clipping, no text on wall!)
-            sc.add_line((sx_roof, 885, 165), (1080, 620, 0), stroke="#0f172a", sw=1.4, dash="4,3", layer=11)
-            sc.add_text_at((1080, 620, 0), "Lavt 12° trappetak (under overlys Bad 1.etg)", dx=-120, dy=20, size=13, weight="800", fill="#0f172a", anchor="start")
-            sc.add_line((sx_out, 1068, 50), (1160, 1020, 0), stroke="#0369a1", sw=1.4, dash="4,3", layer=11)
-            sc.add_text_at((1160, 1020, 0), "3 åpne øverste trinn → bunn-repos syd i U.04", dx=-40, dy=28, size=13, weight="800", fill="#0369a1", anchor="middle")
+            sc.add_line((sx_roof, 1020, 165), (1120, 740, 0), stroke="#0f172a", sw=1.4, dash="4,3", layer=11)
+            sc.add_text_at((1120, 740, 0), "Lavt 12° trappetak (1,43 m fri vegg før sov-vindu!)", dx=-150, dy=20, size=13, weight="800", fill="#0f172a", anchor="start")
+            sc.add_line((sx_out, 1205, 50), (1180, 1140, 0), stroke="#0369a1", sw=1.4, dash="4,3", layer=11)
+            sc.add_text_at((1180, 1140, 0), "3 åpne øverste trinn langs nord-tilbygg", dx=-30, dy=28, size=13, weight="800", fill="#0369a1", anchor="middle")
             sc.add_text_at((866, 1416, 40), "100 % fluktende østvegg (2,50 m nord-tilbygg)", dx=-10, dy=48, size=13, weight="800", fill="#ea580c", anchor="start")
         else:
             # Clean open lawn callouts strictly INSIDE right panel bounds (anchor="end" so zero right-edge clipping!)
-            sc.add_line((sx_roof, 840, 162), (1140, 740, 0), stroke="#0f172a", sw=1.4, dash="4,3", layer=11)
-            sc.add_text_at((1140, 740, 0), "Lavt 12° trappetak (8 cm klar av Sov/Pult)", dx=85, dy=22, size=13, weight="800", fill="#0f172a", anchor="end")
-            sc.add_line((866, 1300, 120), (1100, 1280, 0), stroke="#ea580c", sw=1.4, dash="4,3", layer=11)
-            sc.add_text_at((1100, 1280, 0), "100 % fluktende østvegg (2,50 m nord)", dx=45, dy=24, size=13, weight="800", fill="#ea580c", anchor="end")
+            sc.add_line((sx_roof, 990, 162), (1140, 880, 0), stroke="#0f172a", sw=1.4, dash="4,3", layer=11)
+            sc.add_text_at((1140, 880, 0), "Flyttet nord -> 1,43 m fri vegg før Sov/Pult!", dx=95, dy=22, size=13, weight="800", fill="#0f172a", anchor="end")
+            sc.add_text_at((866, -435, 0), "4,0 m skiferterrasse (rundt SV-hjørnet)", dx=16, dy=26, size=13, weight="800", fill="#1e293b", anchor="start")
 
     return sc.render()
 
@@ -296,21 +302,21 @@ def main():
         f'<rect x="0" y="0" width="{W}" height="122" fill="#0f172a"/>',
         f'<rect x="0" y="116" width="{W}" height="6" fill="#059669"/>',
         f'<text x="48" y="54" font-size="34" font-weight="800" fill="#ffffff">M6 (#50) — Eksakt 3D-modell NORDØST &amp; SØRØST: Alternativ 2 (Catrine)</text>',
-        f'<text x="48" y="92" font-size="19" font-weight="500" fill="#cbd5e1">100 % fluktende østvegg m/ 2,50 m nord-tilbygg • 3 åpne kjellertrinn + lavt 12° øst-hellende tak rett under overlys Bad 1.etg • Bunn-repos syd i U.04</text>',
+        f'<text x="48" y="92" font-size="19" font-weight="500" fill="#cbd5e1">Kjellertrapp flyttet 1,35 m nord (1,43 m fri vegg før soveromsvindu!) • 100 % fluktende østvegg • 4,0 m skiferterrasse sør/SV</text>',
 
         # Left Panel Header (NE)
         f'<rect x="{p1x}" y="138" width="{pw}" height="46" fill="#d1fae5" stroke="#059669" stroke-width="1.5" rx="8"/>',
-        f'<text x="{p1x + pw / 2}" y="168" font-size="20" font-weight="800" fill="#047857" text-anchor="middle">NORDØST 3/4 — 2,50 m nord-tilbygg + kjellernedgang (3 åpne trinn + 12° tak)</text>',
+        f'<text x="{p1x + pw / 2}" y="168" font-size="20" font-weight="800" fill="#047857" text-anchor="middle">NORDØST 3/4 — Kjellertrapp flyttet nord (1,43 m klaring til soveromsvindu!)</text>',
         f'<rect x="{p1x}" y="{py}" width="{pw}" height="{ph}" fill="url(#sky)" stroke="#cbd5e1" stroke-width="2" rx="10"/>',
 
         # Right Panel Header (SE)
         f'<rect x="{p2x}" y="138" width="{pw}" height="46" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5" rx="8"/>',
-        f'<text x="{p2x + pw / 2}" y="168" font-size="20" font-weight="800" fill="#0369a1" text-anchor="middle">SØRØST 3/4 — Helhetlig fluktende østfasade, smalt Bad 2.etg &amp; 8 cm klaring til Sov/Pult</text>',
+        f'<text x="{p2x + pw / 2}" y="168" font-size="20" font-weight="800" fill="#0369a1" text-anchor="middle">SØRØST 3/4 — 4,0 m skiferterrasse sør + luftig østfasade med 1,43 m fri vegg</text>',
         f'<rect x="{p2x}" y="{py}" width="{pw}" height="{ph}" fill="url(#sky)" stroke="#cbd5e1" stroke-width="2" rx="10"/>',
     ]
 
     cam_ne = Camera3D(pos=(2520.0, 2750.0, 720.0), target=(480.0, 740.0, 355.0), fov_deg=35.0, cx=p1x + pw / 2.0 - 10, cy=py + ph * 0.54, width=pw * 0.96)
-    cam_se = Camera3D(pos=(2520.0, -1480.0, 730.0), target=(480.0, 620.0, 365.0), fov_deg=35.0, cx=p2x + pw / 2.0 - 15, cy=py + ph * 0.54, width=pw * 0.96)
+    cam_se = Camera3D(pos=(2640.0, -1720.0, 790.0), target=(450.0, 520.0, 350.0), fov_deg=35.0, cx=p2x + pw / 2.0 - 15, cy=py + ph * 0.54, width=pw * 0.96)
 
     svg.append('<g clip-path="url(#clipL)">')
     svg.extend(build_alt2_ne_scene(cam_ne, with_labels=True, view="ne"))

@@ -196,6 +196,11 @@ def draw_west(d: ElevDraw, alt: int = 1):
                 d.line(670 - hw, sy, 670 + hw, sy, stroke="#e2e8f0", sw=0.9)
         d.poly([(375, -595), (670, -722), (965, -595), (950, -588), (670, -704), (390, -588)], fill="#1e293b", stroke="#0f172a", sw=2)
 
+        d.rect(190, -20, 220, 20, fill="#64748b", opacity=0.72, stroke="#334155", sw=1.4)
+        d.text(300, -5, "Skifer NV", size=10, weight="700", fill="#ffffff")
+        d.rect(930, -22, 330, 22, fill="#64748b", opacity=0.72, stroke="#334155", sw=1.5)
+        d.text(1095, -6, "Skiferterrasse 4,0 m (rundt hjørnet)", size=10, weight="700", fill="#ffffff")
+
         d.dim_h(0, 410, 70, "4,10 m", color="#475569")
         d.dim_h(410, 930, 70, "5,20 m (vest-tilbygg)", color="#0284c7", bold=True)
         d.dim_h(930, 1166, 70, "2,36 m", color="#475569")
@@ -228,6 +233,11 @@ def draw_west(d: ElevDraw, alt: int = 1):
             if hw > 20:
                 d.line(571 - hw, sy, 571 + hw, sy, stroke="#e2e8f0", sw=0.9)
         d.poly([(285, -594), (571, -785), (857, -594), (842, -585), (571, -765), (300, -585)], fill="#1e293b", stroke="#0f172a", sw=2)
+
+        d.rect(100, -20, 220, 20, fill="#64748b", opacity=0.72, stroke="#334155", sw=1.4)
+        d.text(210, -5, "Skifer NV", size=10, weight="700", fill="#ffffff")
+        d.rect(822, -22, 438, 22, fill="#64748b", opacity=0.72, stroke="#334155", sw=1.5)
+        d.text(1041, -6, "Skiferterrasse 4,0 m (rundt hjørnet)", size=10, weight="700", fill="#ffffff")
 
         d.dim_h(0, 320, 70, "3,20 m (nord)", color="#059669", bold=True)
         d.dim_h(320, 822, 70, "5,02 m (vest-tilbygg)", color="#059669", bold=True)
@@ -303,22 +313,25 @@ def draw_east(d: ElevDraw, alt: int = 1):
         d.line(1168, ry, 1166 + nd + 16, ry, stroke="#334155", sw=1)
 
     if alt == 2:
-        # Alt 2 (2,50 m north ext): Full 3,65 m external basement stair landing at SOUTH END OF U.04 (y=+60..+425 -> x_plot=1106..741)!
-        # Top 3 steps open (1106..1031), then LOW HORIZONTAL roof (12° east, Z=186->163) runs 1031..741:
-        # - Cleanly BELOW upper-third Bad 1.etg window (x_plot=884..1008)
-        # - Stops 8 cm NORTH of Sov/Pult 1.etg window (x_plot=609..733) -> ZERO overlap!
-        # - Enters straight into south end of U.04 -> direct access to central basement hallway!
-        d.poly([(741, 0), (1106, 0), (1106, -65), (741, -65)], fill="#cbd5e1", stroke="#334155", sw=1.6)
-        d.poly([(741, 0), (1106, 0), (1106, 15), (846, 195), (741, 195)], fill="#94a3b8", opacity=0.22, stroke="#64748b", sw=1.3, dash="5,4")
-        d.text(795, 115, "Bunn-repos syd i U.04 (-1,95 m)", size=10, weight="700", fill="#475569")
-        d.rect(1020, -163, 12, 163, fill="#ffffff", stroke="#334155", sw=1.5)
-        d.rect(882, -163, 12, 163, fill="#ffffff", stroke="#334155", sw=1.5)
-        d.rect(745, -163, 12, 163, fill="#ffffff", stroke="#334155", sw=1.5)
-        d.poly([(738, -163), (1035, -163), (1035, -186), (738, -186)], fill="#1e293b", stroke="#0f172a", sw=2.0)
-        d.line(740, -174, 1033, -174, stroke="#334155", sw=1.0)
-        d.text(890, -110, "Lavt horisontalt tak (12° øst)", size=10, weight="700", fill="#059669")
-        d.text(1070, -82, "3 åpne trinn", size=9, weight="600", fill="#475569")
-        d.dim_h(741, 1106, 225, "3,65 m kjellertrapp -> bunn-repos syd i U.04 (rett inn i kjellergang!)", color="#0284c7", bold=True, dy=18)
+        # Alt 2 (2,50 m north ext): 3,65 m external basement stair MOVED 1,35 m FURTHER NORTH (y=-75..+290 -> x_plot=1241..876)!
+        # Top 3 steps open along blank north-extension east wall (x_plot=1241..1166), then LOW HORIZONTAL roof (12° east, Z=186->159)
+        # runs x_plot=1166..876: cleanly BELOW upper-third Bad 1.etg window (x_plot=884..1008) AND 1,43 m CLEAR of Sov/Pult window (609..733)!
+        d.poly([(876, 0), (1241, 0), (1241, -58), (876, -58)], fill="#cbd5e1", stroke="#334155", sw=1.6)
+        d.poly([(876, 0), (1241, 0), (1241, 15), (981, 195), (876, 195)], fill="#94a3b8", opacity=0.22, stroke="#64748b", sw=1.3, dash="5,4")
+        d.text(930, 115, "Bunn-repos (-1,95 m)", size=10, weight="700", fill="#475569")
+        d.rect(1154, -159, 12, 159, fill="#ffffff", stroke="#334155", sw=1.5)
+        d.rect(1018, -159, 12, 159, fill="#ffffff", stroke="#334155", sw=1.5)
+        d.rect(880, -159, 12, 159, fill="#ffffff", stroke="#334155", sw=1.5)
+        d.poly([(872, -159), (1168, -159), (1168, -186), (872, -186)], fill="#1e293b", stroke="#0f172a", sw=2.0)
+        d.line(874, -172, 1166, -172, stroke="#334155", sw=1.0)
+        d.text(1020, -110, "Lavt horisontalt tak (12° øst)", size=10, weight="700", fill="#059669")
+        d.text(1204, -76, "3 åpne trinn", size=9, weight="600", fill="#475569")
+        d.dim_h(733, 876, -115, "1,43 m fri", color="#059669", bold=True, dy=-8)
+        d.dim_h(876, 1241, 225, "3,65 m kjellertrapp (flyttet 1,35 m nord -> 1,43 m klar av soveromsvindu!)", color="#0284c7", bold=True, dy=18)
+
+    # 4,0 m deep south slate terrace visible on the left edge (x_plot=-400..0 -> clipped cleanly at -80..0)
+    d.rect(-80, -22, 80, 22, fill="#64748b", opacity=0.72, stroke="#334155", sw=1.6)
+    d.text(-40, -6, "Skifer", size=10, weight="700", fill="#ffffff")
 
     d.dim_h(0, 1166, 70, "11,66 m (eksisterende lengde)", bold=True)
     d.dim_h(1166, 1166 + nd, 70, "2,10 m nord" if alt == 1 else "2,50 m nord", color="#ea580c", bold=True)
@@ -326,7 +339,7 @@ def draw_east(d: ElevDraw, alt: int = 1):
     sub_e = (
         "4 stramme kors-sprosse-akser • 4 takvinduer linjert over vinduene • 1 sentrert kjeller-/boddør i nord-tilbygg"
         if alt == 1
-        else "4 stramme kors-sprosse-akser • 4 takvinduer • Overbygd kjellertrapp trukket 1,50 m tilbake fra nordfasade (klar av badvindu!)"
+        else "4 stramme kors-sprosse-akser • 4 takvinduer • Kjellertrapp flyttet nord (1,43 m fri vegg før soveromsvindu!)"
     )
     d.text(650, -1032, sub_e, size=13, weight="600", fill="#059669")
 
@@ -386,9 +399,9 @@ def draw_south(d: ElevDraw, alt: int = 1):
     d.kors_win(631, -528, 130, 145, single=False)   # Sov 3 (2. etg, bredde 3,1 m)
     d.kors_win(375, -768, 116, 115, single=False)   # Loft gavl (sentrert rett over dørene!)
 
-    # Timber terrace deck along main south gable
-    d.rect(-15, -24, 905, 24, fill="#d97706", opacity=0.4, stroke="#92400e", sw=1.8)
-    d.text(433, -7, "Markterrasse sør (fra sentrert verandadør 1. etg)", size=12, weight="700", fill="#78350f")
+    # 4,0 m deep wrap-around SLATE terrace along main south gable & SW corner up to west wing!
+    d.rect(-west_d, -22, west_d + 866, 22, fill="#64748b", opacity=0.72, stroke="#334155", sw=1.8)
+    d.text((866 - west_d) / 2, -6, "Skiferterrasse sør — 4,0 m dyp (går rundt SV-hjørnet til vest-tverrfløy)", size=12, weight="700", fill="#ffffff")
 
     d.dim_h(-west_d, 0, 70, "3,20 m vest" if alt == 1 else "2,80 m vest (+0,5 m mur)", color="#0284c7" if alt == 1 else "#059669", bold=True)
     d.dim_h(0, 866, 70, "8,66 m (eksist. bredde)", bold=True)
@@ -404,22 +417,18 @@ def draw_north(d: ElevDraw, alt: int = 1):
     d.rect(-100, 0, 1410, 42, fill="#dcfce7", opacity=0.8)
     d.line(-100, 0, 1310, 0, stroke="#15803d", sw=3)
 
-    # West extension on the RIGHT (x_plot=866..866+west_d)
+    # West extension on the RIGHT (x_plot=866..866+west_d) — IDENTICAL north veranda door + NW slate patio for BOTH alternatives!
     d.rect(866, -610, west_d, 610, fill="#f8fafc", stroke="#1e293b", sw=2.5)
     d.siding(866, -610, west_d, 570)
     d.rect(866, -40, west_d, 40, fill="#64748b", stroke="#334155", sw=1.5)
+    dc = 866 + west_d / 2.0
+    d.french_door_kors(dc - 75, -250, 150, 210)
+    d.kors_win(dc - 65, -528, 130, 145, single=False)
+    d.rect(866, -22, west_d, 22, fill="#64748b", opacity=0.72, stroke="#334155", sw=1.5)
+    d.text(dc, -6, "Skiferplatting NV (verandadør)", size=11, weight="700", fill="#ffffff")
     if alt == 1:
-        # 1st floor DOUBLE VERANDA DOOR + 2nd floor double kors-sprosse window on NORTH face of west extension!
-        d.french_door_kors(958, -250, 150, 210)
-        d.kors_win(965, -528, 135, 145, single=False)
-        d.rect(925, -22, 245, 22, fill="#d97706", opacity=0.38, stroke="#92400e", sw=1.5)
-        d.text(1048, -6, "Uteplass NV (verandadør)", size=11, weight="700", fill="#78350f")
         d.poly([(719, -708), (866 + west_d + 25, -708), (866 + west_d + 25, -600), (866, -600)], fill="#1e293b", stroke="#0f172a", sw=2.2)
     else:
-        # Alt 2 (3.00 m deep, 5.02 m wide): centered 130 cm double kors-sprosse windows in 1st & 2nd floor + parallel 32.7° saltak (-771)!
-        wx = 866 + west_d / 2 - 65
-        d.kors_win(wx, -248, 130, 145, single=False)
-        d.kors_win(wx, -528, 130, 145, single=False)
         d.poly([(615, -771), (866 + west_d + 25, -771), (866 + west_d + 25, -600), (866, -600)], fill="#1e293b", stroke="#0f172a", sw=2.2)
 
     # Original chimney on west slope (x_plot = 866 - 230..135 = 636..731, right/west side of main ridge!)
@@ -489,9 +498,9 @@ def draw_north(d: ElevDraw, alt: int = 1):
     d.dim_h(866, 866 + west_d, 70, "3,30 m vest" if alt == 1 else "2,80 m vest", color="#0284c7" if alt == 1 else "#059669", bold=True)
     d.text(560, -1065, "FASADE NORD (Synkronisert med nordfasade-skissen!)", size=23, weight="800", fill="#0f172a")
     sub_n = (
-        "Parallelt 32,7° saltak på nord-tilbygg • Rekkverk i inngangsparti • Ingen nordvindu på Hovedsov • Verandadør nord på vest-tilbygg"
+        "Parallelt 32,7° saltak på nord-tilbygg • Rekkverk i inngangsparti • Ingen nordvindu på Hovedsov • Verandadør + skiferplatting NV"
         if alt == 1
-        else "Parallelt 32,7° saltak på BÅDE nord-tilbygg og vest-tilbygg • Rekkverk i inngangsparti • Ingen nordvindu på Hovedsov"
+        else "Parallelt 32,7° saltak på BÅDE nord- og vest-tilbygg • Verandadør + skiferplatting NV (likt som Alt 1) • Ingen nordvindu på Hovedsov"
     )
     d.text(560, -1032, sub_n, size=13, weight="600", fill="#ea580c")
 
