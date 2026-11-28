@@ -260,11 +260,11 @@ def build_nw_scene(cam: Camera3D, alt: int = 1):
     # Clean callouts (placed strictly in open sky/lawn with zero wall overlap)
     if alt == 1:
         sc.add_text_at((nx_mid, ny_n + 26, nz_ridge + 85), "2,10 m nord-tilbygg (32,7°)", dx=-65, dy=-18, size=14, weight="800", fill="#0f172a", anchor="middle")
-        sc.add_text_at((-west_d / 2, y_n + 40, 0), "3,30×5,20 m (20°) • Verandadør + skiferplatting NV", dx=-15, dy=58, size=13, weight="800", fill="#0369a1")
+        sc.add_text_at((-west_d / 2, 1166, 0), "3,30×5,20 m (20°) • Verandadør + skiferplatting NV", dx=30, dy=42, size=13, weight="800", fill="#0369a1")
     else:
         sc.add_text_at((nx_mid, ny_n + 26, nz_ridge + 85), "2,50 m nord-tilbygg", dx=-75, dy=-34, size=14, weight="800", fill="#0f172a", anchor="middle")
         sc.add_text_at((nx_mid, ny_n + 26, nz_ridge + 85), "(6 m² Vask + 6 m² Vindfang)", dx=-75, dy=-16, size=12, weight="700", fill="#047857", anchor="middle")
-        sc.add_text_at((-west_d / 2, y_n + 40, 0), "2,80×5,02 m (32,7°) • Verandadør + skiferplatting NV", dx=-15, dy=58, size=13, weight="800", fill="#059669")
+        sc.add_text_at((-west_d / 2, 1166, 0), "2,80×5,02 m (32,7°) • Verandadør + skiferplatting NV", dx=30, dy=42, size=13, weight="800", fill="#059669")
 
     return sc.render()
 

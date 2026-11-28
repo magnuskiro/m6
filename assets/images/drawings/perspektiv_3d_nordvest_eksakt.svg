@@ -248,7 +248,7 @@
 <polygon points="482.1,755.5 372.8,774.4 233.3,619.8 343.7,611.1" fill="#1a2435" stroke="#0f172a" stroke-width="1.8" stroke-linejoin="round"/>
 <polygon points="372.8,774.4 233.3,619.8 233.1,611.3 372.6,765.5" fill="#dadada" stroke="#1e293b" stroke-width="1.1" stroke-linejoin="round"/>
 <text x="167.0" y="550.5" font-size="14" font-weight="800" fill="#0f172a" text-anchor="middle">2,10 m nord-tilbygg (32,7°)</text>
-<text x="779.7" y="969.7" font-size="13" font-weight="800" fill="#0369a1" text-anchor="middle">3,30×5,20 m (20°) • Verandadør + skiferplatting NV</text>
+<text x="684.2" y="1000.0" font-size="13" font-weight="800" fill="#0369a1" text-anchor="middle">3,30×5,20 m (20°) • Verandadør + skiferplatting NV</text>
 </g>
 <g clip-path="url(#clipR)">
 <polygon points="2630.3,864.7 1738.9,741.5 643.8,930.2 1620.4,1449.1" fill="#bbf7d0" stroke="none" stroke-width="0" stroke-linejoin="round"/>
@@ -470,7 +470,7 @@
 <polygon points="1532.8,777.9 1393.3,621.3 1393.0,612.8 1532.6,768.8" fill="#dadada" stroke="#1e293b" stroke-width="1.1" stroke-linejoin="round"/>
 <text x="1316.9" y="535.6" font-size="14" font-weight="800" fill="#0f172a" text-anchor="middle">2,50 m nord-tilbygg</text>
 <text x="1316.9" y="553.6" font-size="12" font-weight="700" fill="#047857" text-anchor="middle">(6 m² Vask + 6 m² Vindfang)</text>
-<text x="1915.8" y="977.6" font-size="13" font-weight="800" fill="#059669" text-anchor="middle">2,80×5,02 m (32,7°) • Verandadør + skiferplatting NV</text>
+<text x="1851.7" y="997.1" font-size="13" font-weight="800" fill="#059669" text-anchor="middle">2,80×5,02 m (32,7°) • Verandadør + skiferplatting NV</text>
 </g>
 <text x="1200.0" y="1116" font-size="16" font-weight="600" fill="#475569" text-anchor="middle">Eksakt matematisk perspektiv (1:1 koordinater) • Begge viser parallelt 32,7° nord-tilbygg, portico m/ inngangsdør 140/210, tett nordvegg på Hovedsoverom og fluktende trappevinduer</text>
 </svg>
