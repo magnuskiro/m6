@@ -106,16 +106,16 @@ def build_nw_scene(cam: Camera3D, alt: int = 1):
     xc_n = -west_d / 2.0
     add_kors_north(sc, y_n, xc_n - 75, xc_n + 75, 42, 252, is_door=True, layer=2)
     add_kors_north(sc, y_n, xc_n - 65, xc_n + 65, 383, 528, single=False, layer=2)
-    # NW SLATE PATIO (skiferplatting, X = -west_d..0, Y = y_n..y_n+220, Z = 18) right outside north veranda door!
-    sc.add_poly([(-west_d, y_n, 18), (0, y_n, 18), (0, y_n + 220, 18), (-west_d, y_n + 220, 18)],
+    # NW SLATE PATIO (skiferplatting, X = -west_d..0, Y = y_n..1166 — FLUSH ALL THE WAY OUT TO MAIN NORTH WALL!)
+    sc.add_poly([(-west_d, y_n, 18), (0, y_n, 18), (0, 1166, 18), (-west_d, 1166, 18)],
                 "#64748b", stroke="#334155", sw=1.4, layer=1, auto_shade=True, ambient=0.72)
     for gx in range(int(-west_d) + 70, 0, 70):
-        sc.add_line((gx, y_n, 18.6), (gx, y_n + 220, 18.6), stroke="#334155", sw=0.75, layer=1, depth_bias=-2.0, opacity=0.6)
-    for gy in range(int(y_n) + 55, int(y_n + 220), 55):
+        sc.add_line((gx, y_n, 18.6), (gx, 1166, 18.6), stroke="#334155", sw=0.75, layer=1, depth_bias=-2.0, opacity=0.6)
+    for gy in range(int(y_n) + 60, 1166, 60):
         sc.add_line((-west_d, gy, 18.6), (0, gy, 18.6), stroke="#334155", sw=0.75, layer=1, depth_bias=-2.0, opacity=0.6)
-    sc.add_poly([(-west_d, y_n + 220, 0), (0, y_n + 220, 0), (0, y_n + 220, 18), (-west_d, y_n + 220, 18)],
+    sc.add_poly([(-west_d, 1166, 0), (0, 1166, 0), (0, 1166, 18), (-west_d, 1166, 18)],
                 "#475569", stroke="#1e293b", sw=1.1, layer=1, auto_shade=True)
-    sc.add_poly([(-west_d, y_n, 0), (-west_d, y_n + 220, 0), (-west_d, y_n + 220, 18), (-west_d, y_n, 18)],
+    sc.add_poly([(-west_d, y_n, 0), (-west_d, 1166, 0), (-west_d, 1166, 18), (-west_d, y_n, 18)],
                 "#475569", stroke="#1e293b", sw=1.1, layer=1, auto_shade=True)
 
     # --- MAIN HOUSE WALLS (X=0..866, Y=0..1166) ---

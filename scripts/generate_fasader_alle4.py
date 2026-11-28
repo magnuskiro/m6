@@ -196,8 +196,8 @@ def draw_west(d: ElevDraw, alt: int = 1):
                 d.line(670 - hw, sy, 670 + hw, sy, stroke="#e2e8f0", sw=0.9)
         d.poly([(375, -595), (670, -722), (965, -595), (950, -588), (670, -704), (390, -588)], fill="#1e293b", stroke="#0f172a", sw=2)
 
-        d.rect(190, -20, 220, 20, fill="#64748b", opacity=0.72, stroke="#334155", sw=1.4)
-        d.text(300, -5, "Skifer NV", size=10, weight="700", fill="#ffffff")
+        d.rect(0, -20, 410, 20, fill="#64748b", opacity=0.72, stroke="#334155", sw=1.4)
+        d.text(205, -5, "Skiferplatting NV (helt til nordvegg)", size=10, weight="700", fill="#ffffff")
         d.rect(930, -22, 330, 22, fill="#64748b", opacity=0.72, stroke="#334155", sw=1.5)
         d.text(1095, -6, "Skiferterrasse 4,0 m (rundt hjørnet)", size=10, weight="700", fill="#ffffff")
 
@@ -234,8 +234,8 @@ def draw_west(d: ElevDraw, alt: int = 1):
                 d.line(571 - hw, sy, 571 + hw, sy, stroke="#e2e8f0", sw=0.9)
         d.poly([(285, -594), (571, -785), (857, -594), (842, -585), (571, -765), (300, -585)], fill="#1e293b", stroke="#0f172a", sw=2)
 
-        d.rect(100, -20, 220, 20, fill="#64748b", opacity=0.72, stroke="#334155", sw=1.4)
-        d.text(210, -5, "Skifer NV", size=10, weight="700", fill="#ffffff")
+        d.rect(0, -20, 320, 20, fill="#64748b", opacity=0.72, stroke="#334155", sw=1.4)
+        d.text(160, -5, "Skiferplatting NV (helt til nordvegg)", size=10, weight="700", fill="#ffffff")
         d.rect(822, -22, 438, 22, fill="#64748b", opacity=0.72, stroke="#334155", sw=1.5)
         d.text(1041, -6, "Skiferterrasse 4,0 m (rundt hjørnet)", size=10, weight="700", fill="#ffffff")
 

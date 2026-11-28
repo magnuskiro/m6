@@ -703,15 +703,15 @@ def draw_slate_terraces_floor1(pb: PlanBuilder, west_d: float, wy1: float, wy2: 
     1. NW Skiferplatting right outside the west-wing north veranda door (x=-west_d..0, 2,20 m deep north)
     2. 4,00 m deep South Skiferterrasse wrapping around SW corner up to the west wing (y=wy2..1566)!
     """
-    # 1. NW Skiferplatting (x = -west_d .. 0, y = wy1-220 .. wy1)
-    nw_y1 = wy1 - 220
-    pb.rect(-west_d, nw_y1, west_d, 220, fill="#64748b", opacity=0.26, stroke="#334155", sw=2.4)
+    # 1. NW Skiferplatting ALL THE WAY OUT TO FLUSH WITH MAIN NORTH WALL (x = -west_d .. 0, y = 0 .. wy1)!
+    nw_y1 = 0
+    pb.rect(-west_d, nw_y1, west_d, wy1, fill="#64748b", opacity=0.26, stroke="#334155", sw=2.4)
     for gx in range(int(-west_d) + 70, 0, 70):
         pb.line(gx, nw_y1, gx, wy1, stroke="#475569", sw=0.9, opacity=0.45)
-    for gy in range(int(nw_y1) + 55, int(wy1), 55):
+    for gy in range(60, int(wy1), 60):
         pb.line(-west_d, gy, 0, gy, stroke="#475569", sw=0.9, opacity=0.45)
-    pb.text(-west_d / 2, nw_y1 + 88, "SKIFERPLATTING NV", size=14, weight="800", fill="#1e293b")
-    pb.text(-west_d / 2, nw_y1 + 108, f"({west_d/100:.2f} × 2,20 m — fra verandadør)", size=12, weight="600", fill="#475569")
+    pb.text(-west_d / 2, wy1 / 2 - 12, "SKIFERPLATTING NV", size=14, weight="800", fill="#1e293b")
+    pb.text(-west_d / 2, wy1 / 2 + 8, f"({west_d/100:.2f} × {wy1/100:.2f} m — helt til nordvegg)", size=12, weight="600", fill="#475569")
 
     # 2. Wrap-around L-shaped South Skiferterrasse (4,00 m deep south + wraps around SW corner to meet west wing!)
     s_y2 = 1566  # 1166 + 400 cm = EXACTLY 4,00 m deep!

@@ -170,8 +170,8 @@
 <line x1="629.6" y1="462.0" x2="717.0" y2="462.0" stroke="#e2e8f0" stroke-width="0.9"/>
 <line x1="657.0" y1="445.0" x2="689.5" y2="445.0" stroke="#e2e8f0" stroke-width="0.9"/>
 <polygon points="478.8,551.1 673.3,421.2 867.8,551.1 857.6,557.2 673.3,434.8 489.0,557.2" fill="#1e293b" stroke="#0f172a" stroke-width="2" stroke-linejoin="miter"/>
-<rect x="353.0" y="941.4" width="149.6" height="13.6" fill="#64748b" stroke="#334155" stroke-width="1.4" opacity="0.72"/>
-<text x="427.8" y="951.6" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">Skifer NV</text>
+<rect x="285.0" y="941.4" width="217.6" height="13.6" fill="#64748b" stroke="#334155" stroke-width="1.4" opacity="0.72"/>
+<text x="393.8" y="951.6" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">Skiferplatting NV (helt til nordvegg)</text>
 <rect x="844.0" y="940.0" width="297.8" height="15.0" fill="#64748b" stroke="#334155" stroke-width="1.5" opacity="0.72"/>
 <text x="992.9" y="950.9" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">Skiferterrasse 4,0 m (rundt hjørnet)</text>
 <line x1="285.0" y1="1002.6" x2="502.6" y2="1002.6" stroke="#059669" stroke-width="1.8"/>
